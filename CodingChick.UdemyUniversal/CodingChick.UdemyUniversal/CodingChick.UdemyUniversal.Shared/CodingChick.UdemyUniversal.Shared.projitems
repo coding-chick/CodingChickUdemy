@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>9f0c50f5-a32d-4069-acf4-6692a5c9ad75</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>CodingChick.UdemyUniversal</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Base\HttpClientAccessor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Base\HttpUtilityHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Base\IHttpClientAccessor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Base\IUdemyHttpEngine.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Base\UdemyHttpEngine.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Services\IOauthService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Services\OAuthService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Error.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\TokenData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CoursesViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CourseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\DiscoveryViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LoginViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\CoursesView.xaml.cs">
+      <DependentUpon>CoursesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MainPageView.xaml.cs">
+      <DependentUpon>MainPageView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Views\CoursesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\MainPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+</Project>
