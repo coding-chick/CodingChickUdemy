@@ -22,7 +22,7 @@ namespace CodingChick.UdemyUniversal.Core.Base
             get { return "https://www.udemy.com/api-1.1/"; }
         }
 
-        public async Task<HttpContent> GetAsyncWithToken(string method, List<KeyValuePair<string, string>> queryParams)
+        public async Task<HttpContent> GetAsyncWithIdSecret(string method, List<KeyValuePair<string, string>> queryParams)
         {
             IDictionary<string, IEnumerable<string>> headers = new Dictionary<string, IEnumerable<string>>()
             {
@@ -30,9 +30,26 @@ namespace CodingChick.UdemyUniversal.Core.Base
                 {"X-Udemy-Client-Secret", new List<string>() {ClientSecret}}
             };
 
+            var result = await GetHttpContent(method, queryParams, headers);
+            return result;
+        }
+
+        private async Task<HttpContent> GetHttpContent(string method, List<KeyValuePair<string, string>> queryParams, IDictionary<string, IEnumerable<string>> headers)
+        {
             var finalAddress = HttpUtilityHelper.CreateFullAddess(BaseApiAddress, method, queryParams);
             var result = await _clientAccessor.GetAsync(finalAddress, headers);
+            return result;
+        }
 
+        public async Task<HttpContent> GetAsyncWithIdToken(string method, List<KeyValuePair<string, string>> queryParams, string token)
+        {
+            IDictionary<string, IEnumerable<string>> headers = new Dictionary<string, IEnumerable<string>>()
+            {
+                {"X-Udemy-Client-Id", new List<string>() {ClientId}},
+                {"X-Udemy-Bearer-Token", new List<string>() {token}}
+            };
+
+            var result = await GetHttpContent(method, queryParams, headers);
             return result;
         }
     }

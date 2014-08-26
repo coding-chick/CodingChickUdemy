@@ -8,11 +8,11 @@ namespace CodingChick.UdemyUniversal.Core.Services
 {
     public class OAuthService : IOAuthService
     {
-        private readonly IUdemyHttpEngine _iUdemyHttpEngine;
+        private readonly IUdemyDataManager _iUdemyDataManager;
 
-        public OAuthService(IUdemyHttpEngine iUdemyHttpEngine)
+        public OAuthService(IUdemyDataManager iUdemyDataManager)
         {
-            _iUdemyHttpEngine = iUdemyHttpEngine;
+            _iUdemyDataManager = iUdemyDataManager;
         }
 
         public string Token { get; private set; }
@@ -25,15 +25,13 @@ namespace CodingChick.UdemyUniversal.Core.Services
                 new KeyValuePair<string, string>("password", password)
             };
 
-            var httpResult = await _iUdemyHttpEngine.GetAsyncWithToken("oauth", methodParams);
-            var httpString = await httpResult.ReadAsStringAsync();
-            var tokenResult = JsonConvert.DeserializeObject<TokenData>(httpString);
+            var tokenResult = await _iUdemyDataManager.GetDataAsync<TokenRoot>("oauth/token", methodParams);
             if (tokenResult.Error == null && !string.IsNullOrEmpty(tokenResult.Token))
             {
                 Token = tokenResult.Token;
-                return false;
+                return true;
             }
-            return true;
+            return false;
         }
     }
 }

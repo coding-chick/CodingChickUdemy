@@ -148,23 +148,43 @@ namespace CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlType
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[7];
+            _typeNameTable = new string[17];
             _typeNameTable[0] = "Caliburn.Micro.CaliburnApplication";
             _typeNameTable[1] = "Windows.UI.Xaml.Application";
-            _typeNameTable[2] = "CodingChick.UdemyUniversal.Views.CoursesView";
-            _typeNameTable[3] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[4] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[5] = "CodingChick.UdemyUniversal.Views.LoginView";
-            _typeNameTable[6] = "CodingChick.UdemyUniversal.Views.MainPageView";
+            _typeNameTable[2] = "CodingChick.UdemyUniversal.Controls.CourseItemControl";
+            _typeNameTable[3] = "Windows.UI.Xaml.Controls.ContentControl";
+            _typeNameTable[4] = "Windows.UI.Xaml.Media.Brush";
+            _typeNameTable[5] = "CodingChick.UdemyUniversal.Controls.CoursesListControl";
+            _typeNameTable[6] = "Windows.UI.Xaml.Controls.ListView";
+            _typeNameTable[7] = "Windows.UI.Xaml.Controls.ItemsControl";
+            _typeNameTable[8] = "Caliburn.Micro.Bind";
+            _typeNameTable[9] = "Object";
+            _typeNameTable[10] = "Boolean";
+            _typeNameTable[11] = "Windows.UI.Xaml.DependencyObject";
+            _typeNameTable[12] = "CodingChick.UdemyUniversal.Views.CoursesView";
+            _typeNameTable[13] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[14] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[15] = "CodingChick.UdemyUniversal.Views.LoginView";
+            _typeNameTable[16] = "CodingChick.UdemyUniversal.Views.MainPageView";
 
-            _typeTable = new global::System.Type[7];
+            _typeTable = new global::System.Type[17];
             _typeTable[0] = typeof(global::Caliburn.Micro.CaliburnApplication);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Application);
-            _typeTable[2] = typeof(global::CodingChick.UdemyUniversal.Views.CoursesView);
-            _typeTable[3] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[4] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[5] = typeof(global::CodingChick.UdemyUniversal.Views.LoginView);
-            _typeTable[6] = typeof(global::CodingChick.UdemyUniversal.Views.MainPageView);
+            _typeTable[2] = typeof(global::CodingChick.UdemyUniversal.Controls.CourseItemControl);
+            _typeTable[3] = typeof(global::Windows.UI.Xaml.Controls.ContentControl);
+            _typeTable[4] = typeof(global::Windows.UI.Xaml.Media.Brush);
+            _typeTable[5] = typeof(global::CodingChick.UdemyUniversal.Controls.CoursesListControl);
+            _typeTable[6] = typeof(global::Windows.UI.Xaml.Controls.ListView);
+            _typeTable[7] = typeof(global::Windows.UI.Xaml.Controls.ItemsControl);
+            _typeTable[8] = typeof(global::Caliburn.Micro.Bind);
+            _typeTable[9] = typeof(global::System.Object);
+            _typeTable[10] = typeof(global::System.Boolean);
+            _typeTable[11] = typeof(global::Windows.UI.Xaml.DependencyObject);
+            _typeTable[12] = typeof(global::CodingChick.UdemyUniversal.Views.CoursesView);
+            _typeTable[13] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[14] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[15] = typeof(global::CodingChick.UdemyUniversal.Views.LoginView);
+            _typeTable[16] = typeof(global::CodingChick.UdemyUniversal.Views.MainPageView);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -199,9 +219,11 @@ namespace CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlType
             return -1;
         }
 
-        private object Activate_2_CoursesView() { return new global::CodingChick.UdemyUniversal.Views.CoursesView(); }
-        private object Activate_5_LoginView() { return new global::CodingChick.UdemyUniversal.Views.LoginView(); }
-        private object Activate_6_MainPageView() { return new global::CodingChick.UdemyUniversal.Views.MainPageView(); }
+        private object Activate_2_CourseItemControl() { return new global::CodingChick.UdemyUniversal.Controls.CourseItemControl(); }
+        private object Activate_5_CoursesListControl() { return new global::CodingChick.UdemyUniversal.Controls.CoursesListControl(); }
+        private object Activate_12_CoursesView() { return new global::CodingChick.UdemyUniversal.Views.CoursesView(); }
+        private object Activate_15_LoginView() { return new global::CodingChick.UdemyUniversal.Views.LoginView(); }
+        private object Activate_16_MainPageView() { return new global::CodingChick.UdemyUniversal.Views.MainPageView(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -222,31 +244,82 @@ namespace CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlType
                 xamlType = new global::CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 2:   //  CodingChick.UdemyUniversal.Views.CoursesView
-                userType = new global::CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_2_CoursesView;
+            case 2:   //  CodingChick.UdemyUniversal.Controls.CourseItemControl
+                userType = new global::CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.ContentControl"));
+                userType.Activator = Activate_2_CourseItemControl;
+                userType.AddMemberName("PriceColorBrush");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 3:   //  Windows.UI.Xaml.Controls.Page
+            case 3:   //  Windows.UI.Xaml.Controls.ContentControl
                 xamlType = new global::CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 4:   //  Windows.UI.Xaml.Controls.UserControl
+            case 4:   //  Windows.UI.Xaml.Media.Brush
                 xamlType = new global::CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 5:   //  CodingChick.UdemyUniversal.Views.LoginView
-                userType = new global::CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_5_LoginView;
+            case 5:   //  CodingChick.UdemyUniversal.Controls.CoursesListControl
+                userType = new global::CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.ListView"));
+                userType.Activator = Activate_5_CoursesListControl;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 6:   //  CodingChick.UdemyUniversal.Views.MainPageView
+            case 6:   //  Windows.UI.Xaml.Controls.ListView
+                xamlType = new global::CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 7:   //  Windows.UI.Xaml.Controls.ItemsControl
+                xamlType = new global::CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 8:   //  Caliburn.Micro.Bind
+                userType = new global::CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.AddMemberName("AtDesignTime");
+                userType.AddMemberName("ModelWithoutContext");
+                userType.AddMemberName("Model");
+                xamlType = userType;
+                break;
+
+            case 9:   //  Object
+                xamlType = new global::CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 10:   //  Boolean
+                xamlType = new global::CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 11:   //  Windows.UI.Xaml.DependencyObject
+                xamlType = new global::CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 12:   //  CodingChick.UdemyUniversal.Views.CoursesView
                 userType = new global::CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_6_MainPageView;
+                userType.Activator = Activate_12_CoursesView;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 13:   //  Windows.UI.Xaml.Controls.Page
+                xamlType = new global::CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 14:   //  Windows.UI.Xaml.Controls.UserControl
+                xamlType = new global::CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 15:   //  CodingChick.UdemyUniversal.Views.LoginView
+                userType = new global::CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_15_LoginView;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 16:   //  CodingChick.UdemyUniversal.Views.MainPageView
+                userType = new global::CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_16_MainPageView;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -308,11 +381,80 @@ namespace CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlType
             return foundXamlType;
         }
 
+        private object get_0_CourseItemControl_PriceColorBrush(object instance)
+        {
+            var that = (global::CodingChick.UdemyUniversal.Controls.CourseItemControl)instance;
+            return that.PriceColorBrush;
+        }
+        private void set_0_CourseItemControl_PriceColorBrush(object instance, object Value)
+        {
+            var that = (global::CodingChick.UdemyUniversal.Controls.CourseItemControl)instance;
+            that.PriceColorBrush = (global::Windows.UI.Xaml.Media.Brush)Value;
+        }
+        private object get_1_Bind_AtDesignTime(object instance)
+        {
+            return global::Caliburn.Micro.Bind.GetAtDesignTime((global::Windows.UI.Xaml.DependencyObject)instance);
+        }
+        private void set_1_Bind_AtDesignTime(object instance, object Value)
+        {
+            global::Caliburn.Micro.Bind.SetAtDesignTime((global::Windows.UI.Xaml.DependencyObject)instance, (global::System.Boolean)Value);
+        }
+        private object get_2_Bind_ModelWithoutContext(object instance)
+        {
+            return global::Caliburn.Micro.Bind.GetModelWithoutContext((global::Windows.UI.Xaml.DependencyObject)instance);
+        }
+        private void set_2_Bind_ModelWithoutContext(object instance, object Value)
+        {
+            global::Caliburn.Micro.Bind.SetModelWithoutContext((global::Windows.UI.Xaml.DependencyObject)instance, (global::System.Object)Value);
+        }
+        private object get_3_Bind_Model(object instance)
+        {
+            return global::Caliburn.Micro.Bind.GetModel((global::Windows.UI.Xaml.DependencyObject)instance);
+        }
+        private void set_3_Bind_Model(object instance, object Value)
+        {
+            global::Caliburn.Micro.Bind.SetModel((global::Windows.UI.Xaml.DependencyObject)instance, (global::System.Object)Value);
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
             global::CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlTypeInfo.XamlMember xamlMember = null;
-            // No Local Properties
+            global::CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlTypeInfo.XamlUserType userType;
+
+            switch (longMemberName)
+            {
+            case "CodingChick.UdemyUniversal.Controls.CourseItemControl.PriceColorBrush":
+                userType = (global::CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CodingChick.UdemyUniversal.Controls.CourseItemControl");
+                xamlMember = new global::CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlTypeInfo.XamlMember(this, "PriceColorBrush", "Windows.UI.Xaml.Media.Brush");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_0_CourseItemControl_PriceColorBrush;
+                xamlMember.Setter = set_0_CourseItemControl_PriceColorBrush;
+                break;
+            case "Caliburn.Micro.Bind.AtDesignTime":
+                userType = (global::CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Caliburn.Micro.Bind");
+                xamlMember = new global::CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlTypeInfo.XamlMember(this, "AtDesignTime", "Boolean");
+                xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
+                xamlMember.SetIsAttachable();
+                xamlMember.Getter = get_1_Bind_AtDesignTime;
+                xamlMember.Setter = set_1_Bind_AtDesignTime;
+                break;
+            case "Caliburn.Micro.Bind.ModelWithoutContext":
+                userType = (global::CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Caliburn.Micro.Bind");
+                xamlMember = new global::CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlTypeInfo.XamlMember(this, "ModelWithoutContext", "Object");
+                xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
+                xamlMember.SetIsAttachable();
+                xamlMember.Getter = get_2_Bind_ModelWithoutContext;
+                xamlMember.Setter = set_2_Bind_ModelWithoutContext;
+                break;
+            case "Caliburn.Micro.Bind.Model":
+                userType = (global::CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Caliburn.Micro.Bind");
+                xamlMember = new global::CodingChick.UdemyUniversal.CodingChick_UdemyUniversal_Windows_XamlTypeInfo.XamlMember(this, "Model", "Object");
+                xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
+                xamlMember.SetIsAttachable();
+                xamlMember.Getter = get_3_Bind_Model;
+                xamlMember.Setter = set_3_Bind_Model;
+                break;
+            }
             return xamlMember;
         }
     }

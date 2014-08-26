@@ -57,3 +57,8 @@ C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\
 C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\obj\Debug\Views\CoursesView.g.cs
 C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\obj\Debug\Views\CoursesView.xaml
 C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\obj\Debug\Views\CoursesView.xbf
+C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\bin\Debug\Themes\Generic.xbf
+C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\obj\Debug\Themes\Generic.g.i.cs
+C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\obj\Debug\Themes\Generic.g.cs
+C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\obj\Debug\Themes\Generic.xaml
+C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\obj\Debug\Themes\Generic.xbf

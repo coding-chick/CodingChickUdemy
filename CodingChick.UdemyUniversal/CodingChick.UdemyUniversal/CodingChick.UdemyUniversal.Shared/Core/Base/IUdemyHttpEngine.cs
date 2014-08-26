@@ -6,6 +6,7 @@ namespace CodingChick.UdemyUniversal.Core.Base
 {
     public interface IUdemyHttpEngine
     {
-        Task<HttpContent> GetAsyncWithToken(string method, List<KeyValuePair<string, string>> queryParams);
+        Task<HttpContent> GetAsyncWithIdSecret(string method, List<KeyValuePair<string, string>> queryParams);
+        Task<HttpContent> GetAsyncWithIdToken(string method, List<KeyValuePair<string, string>> queryParams, string token);
     }
 }

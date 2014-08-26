@@ -15,14 +15,32 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\CourseItemControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\CoursesListControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CoreUI\PagedCollection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Base\HttpClientAccessor.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Base\HttpUtilityHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Base\IHttpClientAccessor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Base\IUdemyDataManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Base\IUdemyHttpEngine.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Base\UdemyDataManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Base\UdemyHttpEngine.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Services\DataService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Services\IDataService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Services\IOauthService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Services\OAuthService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Category.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Course.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\AdvancedResolutionImages.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\CoursesListPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Data.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\DownloadUrl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Error.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Owner.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Pagination.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\PromoAsset.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\SimpleResolutionImages.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\TokenData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CoursesViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CourseViewModel.cs" />
@@ -40,6 +58,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="$(MSBuildThisFileDirectory)Views\CoursesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

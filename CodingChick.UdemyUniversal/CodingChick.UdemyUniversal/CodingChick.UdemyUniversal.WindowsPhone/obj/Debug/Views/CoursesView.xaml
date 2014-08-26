@@ -5,10 +5,32 @@
     xmlns:local="using:CodingChick.UdemyUniversal.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    xmlns:cal="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro.Platform"
+    xmlns:micro="using:Caliburn.Micro"
+    xmlns:viewModels="using:CodingChick.UdemyUniversal.ViewModels"
+    mc:Ignorable="d" 
+    d:DataContext="{d:DesignInstance Type=viewModels:CoursesViewModel, IsDesignTimeCreatable=True}"
+    micro:Bind.AtDesignTime="True"
+    xmlns:c="clr-namespace:CodingChick.UdemyUniversal.Controls"
+    xmlns:controls="using:CodingChick.UdemyUniversal.Controls">
+    <Page.Resources>
+    	<DataTemplate x:Key="HubSectionHeaderTemplate">
+    		<TextBlock Text="On Sale" FontSize="26.667" />
+    	</DataTemplate>
+    </Page.Resources>
+    
     <Grid>
         <Hub>
-            <HubSection x:Uid="Discovery" Header="Discovery" DataContext="{Binding DiscoveryCourses}">
+            <Hub.HeaderTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Foreground="Green">
+							<Run Text="Udemy Courses"/>
+                        </TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </Hub.HeaderTemplate>
+            <HubSection x:Uid="OnSale" Header="On Sale" DataContext="{Binding OnSaleCourses}" HeaderTemplate="{StaticResource HubSectionHeaderTemplate}">
                 <DataTemplate>
                     <ListView
                         ItemsSource="{Binding}"
@@ -16,14 +38,28 @@
                         <!--ItemClick="GroupSection_ItemClick"-->
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <StackPanel>
-                                    <TextBlock Text="{Binding Name}"/>
-                                    <Image x:Name="Image"/>
-                                </StackPanel>
+                                <controls:CourseItemControl PriceColorBrush="Red" />
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
                 </DataTemplate>
+            </HubSection>
+            <HubSection x:Uid="New" Header="New" DataContext="{Binding NewCourses}" >
+                <DataTemplate>
+                    <ListView
+                        ItemsSource="{Binding}"
+                        IsItemClickEnabled="True">
+                        <!--ItemClick="GroupSection_ItemClick"-->
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <controls:CourseItemControl PriceColorBrush="Black" />
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </DataTemplate>
+            </HubSection>
+            <HubSection x:Uid="Categories" Header="Categories" DataContext="{Binding Categories}">
+                
             </HubSection>
         </Hub>
     </Grid>

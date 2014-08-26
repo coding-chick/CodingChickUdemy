@@ -30,10 +30,10 @@ namespace CodingChick.UdemyUniversal.Core.Base
         {
             foreach (var header in headers)
             {
-                _httpClient.DefaultRequestHeaders.Add(header.Key, header.Value);
+                if (!_httpClient.DefaultRequestHeaders.Contains(header.Key))
+                    _httpClient.DefaultRequestHeaders.Add(header.Key, header.Value);
             }
 
-            //_httpClient
             var response = await _httpClient.GetAsync(address);
             return response.Content;
         }

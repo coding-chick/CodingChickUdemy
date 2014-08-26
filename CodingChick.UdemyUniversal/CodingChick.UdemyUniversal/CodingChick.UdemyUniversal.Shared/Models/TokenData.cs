@@ -2,7 +2,7 @@
 
 namespace CodingChick.UdemyUniversal.Models
 {
-    public class TokenData
+    public class TokenRoot
     {
         [JsonProperty("token")]
         public string Token { get; set; }

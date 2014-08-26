@@ -49,7 +49,9 @@ namespace CodingChick.UdemyUniversal
             container.PerRequest<MainPageViewModel>();
             container.PerRequest<LoginViewModel>();
             container.PerRequest<CoursesViewModel>();
-            container.PerRequest<IOAuthService, OAuthService>();
+            container.Singleton<IOAuthService, OAuthService>(); 
+            container.PerRequest<IUdemyDataManager, UdemyDataManager>();
+            container.PerRequest<IDataService, DataService>();
             container.PerRequest<IHttpClientAccessor, HttpClientAccessor>();
             container.PerRequest<IUdemyHttpEngine, UdemyHttpEngine>();
         }
