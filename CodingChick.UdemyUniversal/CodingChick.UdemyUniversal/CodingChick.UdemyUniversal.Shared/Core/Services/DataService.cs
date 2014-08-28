@@ -31,14 +31,14 @@ namespace CodingChick.UdemyUniversal.Core.Services
         }
 
 
-        public async Task<CoursesListPage> GetCoursesOnSaleBasic()
+        public async Task<CoursesListPage> GetCoursesOnSaleBasic(int numberOfResults, int pageNumber)
         {
             var methodParams =
             new List<KeyValuePair<string, string>>()
             {
                 new KeyValuePair<string, string>("mobileCompatible", "2"),
             };
-            return await _iUdemyDataManager.GetDataAsync<CoursesListPage>("discover/on-sale/12/1", methodParams, _iOAuthService.Token);
+            return await _iUdemyDataManager.GetDataAsync<CoursesListPage>(string.Format("discover/on-sale/{0}/{1}", numberOfResults, pageNumber), methodParams, _iOAuthService.Token);
         }
 
         public async Task<List<Category>> GetCategories()

@@ -1,25 +1,25 @@
 ﻿using Caliburn.Micro;
+using CodingChick.UdemyUniversal.Core.Services;
 
 namespace CodingChick.UdemyUniversal.ViewModels
 {
     public class MainPageViewModel : Screen
     {
         private readonly INavigationService _navigationService;
+        private readonly IOAuthService _iOAuthService;
 
-        public MainPageViewModel(INavigationService navigationService)
+        public MainPageViewModel(INavigationService navigationService, IOAuthService iOAuthService)
         {
             _navigationService = navigationService;
+            _iOAuthService = iOAuthService;          
         }
 
-
-        private string _test;
-        public string Test
+        protected override void OnViewReady(object view)
         {
-            get { return _test; }
-            set
+            base.OnViewReady(view);
+            if (!string.IsNullOrEmpty(_iOAuthService.Token))
             {
-                _test = value;
-                NotifyOfPropertyChange(() => Test);
+                _navigationService.NavigateToViewModel<CoursesViewModel>(_navigationService);
             }
         }
 

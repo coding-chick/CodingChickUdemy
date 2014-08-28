@@ -52,7 +52,7 @@
                         <!--ItemClick="GroupSection_ItemClick"-->
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <controls:CourseItemControl PriceColorBrush="Black" />
+                                <controls:CourseItemControl PriceColorBrush="White" />
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>

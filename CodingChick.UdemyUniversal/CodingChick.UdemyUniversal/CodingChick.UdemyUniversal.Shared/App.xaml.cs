@@ -29,7 +29,7 @@ namespace CodingChick.UdemyUniversal
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
-    public sealed partial class App 
+    public sealed partial class App
     {
         private WinRTContainer container;
 
@@ -49,11 +49,12 @@ namespace CodingChick.UdemyUniversal
             container.PerRequest<MainPageViewModel>();
             container.PerRequest<LoginViewModel>();
             container.PerRequest<CoursesViewModel>();
-            container.Singleton<IOAuthService, OAuthService>(); 
+            container.Singleton<IOAuthService, OAuthService>();
             container.PerRequest<IUdemyDataManager, UdemyDataManager>();
             container.PerRequest<IDataService, DataService>();
             container.PerRequest<IHttpClientAccessor, HttpClientAccessor>();
             container.PerRequest<IUdemyHttpEngine, UdemyHttpEngine>();
+            container.PerRequest<IUdemyStorageManager, UdemyStorageManager>();
         }
 
         protected override void PrepareViewFirst(Frame rootFrame)

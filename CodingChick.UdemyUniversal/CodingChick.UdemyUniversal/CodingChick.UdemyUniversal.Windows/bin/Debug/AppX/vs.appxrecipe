@@ -20,13 +20,13 @@
     <AppXManifest Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Windows\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2014-08-26T03:13:01.146</Modified>
+      <Modified>2014-08-27T23:18:02.945</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Windows\bin\Debug\CodingChick.UdemyUniversal.Windows.exe">
       <PackagePath>CodingChick.UdemyUniversal.Windows.exe</PackagePath>
-      <Modified>2014-08-26T04:32:09.827</Modified>
+      <Modified>2014-08-28T20:22:38.657</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\packages\Caliburn.Micro.Core.2.0.0\lib\portable-net45+win8+wp8+wpa81\Caliburn.Micro.dll">
       <PackagePath>Caliburn.Micro.dll</PackagePath>
@@ -82,11 +82,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Windows\bin\Debug\Themes\Generic.xbf">
       <PackagePath>Themes\Generic.xbf</PackagePath>
-      <Modified>2014-08-26T04:21:48.997</Modified>
+      <Modified>2014-08-28T20:22:38.373</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Windows\bin\Debug\Views\CoursesView.xbf">
       <PackagePath>Views\CoursesView.xbf</PackagePath>
-      <Modified>2014-08-26T04:32:09.541</Modified>
+      <Modified>2014-08-27T23:18:01.796</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Windows\bin\Debug\Views\LoginView.xbf">
       <PackagePath>Views\LoginView.xbf</PackagePath>
@@ -98,11 +98,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Windows\bin\Debug\CodingChick.UdemyUniversal.Windows.xr.xml">
       <PackagePath>CodingChick.UdemyUniversal.Windows.xr.xml</PackagePath>
-      <Modified>2014-08-26T04:32:09.527</Modified>
+      <Modified>2014-08-28T20:18:21.799</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Windows\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2014-08-26T03:13:00.617</Modified>
+      <Modified>2014-08-27T23:18:02.429</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

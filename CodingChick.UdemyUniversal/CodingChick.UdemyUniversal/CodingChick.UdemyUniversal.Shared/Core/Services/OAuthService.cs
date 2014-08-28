@@ -9,13 +9,31 @@ namespace CodingChick.UdemyUniversal.Core.Services
     public class OAuthService : IOAuthService
     {
         private readonly IUdemyDataManager _iUdemyDataManager;
+        private readonly IUdemyStorageManager _iUdemyStorageManager;
+        private string _token;
 
-        public OAuthService(IUdemyDataManager iUdemyDataManager)
+        public OAuthService(IUdemyDataManager iUdemyDataManager, IUdemyStorageManager iUdemyStorageManager)
         {
             _iUdemyDataManager = iUdemyDataManager;
+            _iUdemyStorageManager = iUdemyStorageManager;
         }
 
-        public string Token { get; private set; }
+        public string Token
+        {
+            get
+            {
+                var token = _iUdemyStorageManager.GetValueFromSettings("token");
+                //if (token != null)
+                    return (string)token;
+                //return string.Empty;
+            }
+            private set
+            {
+                _token = value;
+                _iUdemyStorageManager.SaveValueToSettings("token", _token);
+
+            }
+        }
 
         public async Task<bool> GetUserToken(string userEmail, string password)
         {

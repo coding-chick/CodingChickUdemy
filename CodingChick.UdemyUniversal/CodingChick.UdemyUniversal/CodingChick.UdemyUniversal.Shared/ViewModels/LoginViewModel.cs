@@ -14,7 +14,10 @@ namespace CodingChick.UdemyUniversal.ViewModels
         public LoginViewModel(INavigationService navigationService, IOAuthService iOAuthService)
         {
             _navigationService = navigationService;
+         
             _iOAuthService = iOAuthService;
+            _navigationService.NavigateToViewModel<CoursesViewModel>(_navigationService);
+
         }
 
         private string _user;

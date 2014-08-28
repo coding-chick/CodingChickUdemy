@@ -16,13 +16,13 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Controls\CourseItemControl.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Controls\CoursesListControl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CoreUI\PagedCollection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Base\HttpClientAccessor.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Base\HttpUtilityHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Base\IHttpClientAccessor.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Base\IUdemyDataManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Base\IUdemyHttpEngine.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Base\IUdemyStorageManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Base\UdemyDataManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Base\UdemyHttpEngine.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Services\DataService.cs" />

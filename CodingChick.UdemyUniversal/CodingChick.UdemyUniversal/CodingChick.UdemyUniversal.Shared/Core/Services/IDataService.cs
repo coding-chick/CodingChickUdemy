@@ -8,7 +8,7 @@ namespace CodingChick.UdemyUniversal.Core.Services
     {
         Task<CoursesListPage> GetCoursesOnSaleFull();
         Task<CoursesListPage> GetCoursesNewBasic(int numberOfResults, int pageNumber);
-        Task<CoursesListPage> GetCoursesOnSaleBasic();
+        Task<CoursesListPage> GetCoursesOnSaleBasic(int numberOfResults, int pageNumber);
         Task<List<Category>> GetCategories();
     }
 }
