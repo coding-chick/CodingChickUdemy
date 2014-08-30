@@ -38,6 +38,14 @@ namespace CodingChick.UdemyUniversal.ViewModels
                     new CourseViewModel() {ImageUri = new Uri("https://udemyimages-a.akamaihd.net/course/480x270/140238_dd80_2.jpg"), Name = "course to learn something", OriginalPrice = "50$", Price = "14.9"},
                     new CourseViewModel() {ImageUri = new Uri("https://udemyimages-a.akamaihd.net/course/480x270/140238_dd80_2.jpg"), Name = "course to learn something", OriginalPrice = "50$", Price = "14.9"},
                 };
+
+                Categories = new List<Category>()
+                {
+                    new Category() {Id = "1", Title = "Development"},
+                    new Category() {Id = "2", Title = "Buisness"},
+                    new Category() {Id = "3", Title = "Marketing"},
+                    new Category() {Id = "4", Title = "Design"},
+                };
             }
         }
 
@@ -56,9 +64,14 @@ namespace CodingChick.UdemyUniversal.ViewModels
 
         private async void IntializeCoursesData()
         {
+#if WINDOWS_PHONE_APP
             OnSaleCourses = new PagedCollection<CourseViewModel>(LoadMoreOnSaleCourses);
             NewCourses = new PagedCollection<CourseViewModel>(LoadMoreNewCourses);
-
+#endif
+#if WINDOWS_APP
+            OnSaleCourses = new PagedCollection<CourseViewModel>(LoadMoreOnSaleCourses, 1);
+            NewCourses = new PagedCollection<CourseViewModel>(LoadMoreNewCourses, 1);
+#endif
             Categories = await _iDataService.GetCategories();
         }
 
@@ -67,6 +80,7 @@ namespace CodingChick.UdemyUniversal.ViewModels
             var onSaleCourses = await _iDataService.GetCoursesOnSaleBasic(12, pageNumber);
             return onSaleCourses.Courses.Select(course => new CourseViewModel()
             {
+                CourseId = course.Id,
                 ImageUri = new Uri(course.Images.Img480X270),
                 Name = course.Title,
                 Price = course.InAppPurchasePriceText,
@@ -79,6 +93,7 @@ namespace CodingChick.UdemyUniversal.ViewModels
             var newCourses = await _iDataService.GetCoursesNewBasic(12, pageNumber);
             return newCourses.Courses.Select(course => new CourseViewModel()
             {
+                CourseId = course.Id,
                 ImageUri = new Uri(course.Images.Img480X270),
                 Name = course.Title,
                 Price = course.OriginalPriceText,

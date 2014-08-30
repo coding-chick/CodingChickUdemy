@@ -20,13 +20,13 @@
     <AppXManifest Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Windows\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2014-08-27T23:18:02.945</Modified>
+      <Modified>2014-08-30T04:23:48.013</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Windows\bin\Debug\CodingChick.UdemyUniversal.Windows.exe">
       <PackagePath>CodingChick.UdemyUniversal.Windows.exe</PackagePath>
-      <Modified>2014-08-28T20:22:38.657</Modified>
+      <Modified>2014-08-30T06:22:45.588</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\packages\Caliburn.Micro.Core.2.0.0\lib\portable-net45+win8+wp8+wpa81\Caliburn.Micro.dll">
       <PackagePath>Caliburn.Micro.dll</PackagePath>
@@ -56,6 +56,10 @@
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
       <Modified>2014-08-17T04:36:14.294</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Windows\Assets\HubBackground.jpg">
+      <PackagePath>Assets\HubBackground.jpg</PackagePath>
+      <Modified>2014-08-29T22:45:08.878</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Windows\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
@@ -82,11 +86,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Windows\bin\Debug\Themes\Generic.xbf">
       <PackagePath>Themes\Generic.xbf</PackagePath>
-      <Modified>2014-08-28T20:22:38.373</Modified>
+      <Modified>2014-08-28T22:14:27.600</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Windows\bin\Debug\Views\CoursesView.xbf">
       <PackagePath>Views\CoursesView.xbf</PackagePath>
-      <Modified>2014-08-27T23:18:01.796</Modified>
+      <Modified>2014-08-30T06:22:45.291</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Windows\bin\Debug\Views\LoginView.xbf">
       <PackagePath>Views\LoginView.xbf</PackagePath>
@@ -98,11 +102,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Windows\bin\Debug\CodingChick.UdemyUniversal.Windows.xr.xml">
       <PackagePath>CodingChick.UdemyUniversal.Windows.xr.xml</PackagePath>
-      <Modified>2014-08-28T20:18:21.799</Modified>
+      <Modified>2014-08-30T04:18:52.110</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Windows\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2014-08-27T23:18:02.429</Modified>
+      <Modified>2014-08-30T04:23:47.545</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -24,9 +24,7 @@ namespace CodingChick.UdemyUniversal.Core.Services
 
         public object GetValueFromSettings(string name)
         {
-            //if (_localSettings.Values.ContainsKey(name))
-                return _localSettings.Values[name];
-            //return null;
+            return _localSettings.Values[name];
         }
     }
 }

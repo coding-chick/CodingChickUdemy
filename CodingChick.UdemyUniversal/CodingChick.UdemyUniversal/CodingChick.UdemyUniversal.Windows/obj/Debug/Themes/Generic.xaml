@@ -21,7 +21,7 @@
 							<RowDefinition Height="10"/>
 							<RowDefinition Height="Auto"/>
 						</Grid.RowDefinitions>
-						<Image x:Name="BackgroundImage" Source="{Binding ImageUri}" Grid.RowSpan="4" Grid.ColumnSpan="2"/>
+						<Image x:Name="BackgroundImage" Source="{Binding ImageUri}" Grid.RowSpan="4" Grid.ColumnSpan="2" />
 						<Rectangle x:Name="LowerTitleBackground" Stroke="Black" Grid.Row="3" Grid.ColumnSpan="2" Fill="#3FF4F4F5" StrokeThickness="0"/>
 						<TextBlock x:Name="CourseTitle" Text="{Binding Name}" Foreground="Black" Grid.Row="3" FontSize="18.667" FontWeight="Bold" TextWrapping="Wrap" HorizontalAlignment="Left" Width="340" Grid.ColumnSpan="2" Margin="5,0,5,5"/>
 						<Rectangle x:Name="UpperCornerGradient" Stroke="Black" Grid.Column="1" Grid.Row="0" StrokeThickness="0">
@@ -39,7 +39,7 @@
 								<CompositeTransform Rotation="47.401"/>
 							</TextBlock.RenderTransform>
 						</TextBlock>
-						<TextBlock x:Name="OriginalPrice" Text="{Binding OriginalPrice}" HorizontalAlignment="Right" Margin="0,10,0,0" Foreground="#FF070000"/>
+						<TextBlock x:Name="OriginalPrice" Text="{Binding OriginalPrice}" HorizontalAlignment="Right" Margin="0,5,0,0" Foreground="#FF070000"/>
 						<Rectangle x:Name="LowerTitleGradient" Stroke="Black" StrokeThickness="0" Grid.Row="2" Grid.ColumnSpan="2">
 							<Rectangle.Fill>
 								<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">

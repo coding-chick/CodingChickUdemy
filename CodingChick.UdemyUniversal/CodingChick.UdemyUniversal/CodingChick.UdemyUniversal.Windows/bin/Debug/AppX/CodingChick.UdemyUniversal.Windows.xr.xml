@@ -7,6 +7,7 @@
     <RootPropertyPathName Name="Name" />
     <RootPropertyPathName Name="ImageUri" />
     <RootPropertyPathName Name="Categories" />
+    <RootPropertyPathName Name="Title" />
     <RootPropertyPathName Name="NewCourses" />
     <RootPropertyPathName Name="OnSaleCourses" />
     <RootPropertyPathName Name="Password" />
@@ -61,6 +62,9 @@
       <RootProperty Name="Stroke" />
       <RootProperty Name="Fill" />
       <RootProperty Name="StrokeThickness" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
       <RootProperty Name="Text" />
@@ -97,7 +101,6 @@
       <RootProperty Name="Rotation" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
-      <RootProperty Name="Resources" />
       <RootProperty Name="Content" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="Background" />
@@ -106,12 +109,16 @@
       <RootMethod Name="GetAtDesignTime" />
       <RootMethod Name="SetAtDesignTime" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.DataTemplate">
-      <RootProperty Name="Template" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Hub">
+      <RootProperty Name="Background" />
       <RootProperty Name="HeaderTemplate" />
       <RootProperty Name="Sections" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Media.ImageBrush">
+      <RootProperty Name="ImageSource" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.DataTemplate">
+      <RootProperty Name="Template" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
       <RootProperty Name="Orientation" />
@@ -123,15 +130,13 @@
     <RootType FullName="Windows.UI.Xaml.Controls.HubSection">
       <RootProperty Name="Header" />
       <RootProperty Name="DataContext" />
-      <RootProperty Name="HeaderTemplate" />
       <RootProperty Name="ContentTemplate" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ListView">
+    <RootType FullName="Windows.UI.Xaml.Controls.GridView">
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="IsItemClickEnabled" />
       <RootProperty Name="ItemTemplate" />
     </RootType>
-    <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="CodingChick.UdemyUniversal.Views.CoursesView" />
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">

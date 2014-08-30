@@ -18,14 +18,16 @@ namespace CodingChick.UdemyUniversal.CoreUI
     public class PagedCollection<T> : ObservableCollection<T>, ISupportIncrementalLoading
     {
         private Func<uint, int, Task<IEnumerable<T>>> _loadMoreItemsOperation;
+        private readonly int _maxLoadedPages;
         public bool HasMoreItems { get; protected set; }
 
         public int PageNumber { get; set; }
 
-        public PagedCollection(Func<uint, int, Task<IEnumerable<T>>> loadMoreItemsOperation)
+        public PagedCollection(Func<uint, int, Task<IEnumerable<T>>> loadMoreItemsOperation, int maxLoadedPages = 1000)
         {
             HasMoreItems = true;
             this._loadMoreItemsOperation = loadMoreItemsOperation;
+            _maxLoadedPages = maxLoadedPages;
             PageNumber = 1;
 
             if (DesignMode.DesignModeEnabled)
@@ -41,9 +43,8 @@ namespace CodingChick.UdemyUniversal.CoreUI
             return Task.Run<LoadMoreItemsResult>(async () =>
             {
                 var newItems = await _loadMoreItemsOperation(count, PageNumber);
-                ++PageNumber;
 
-                if (newItems == null)
+                if (newItems == null || PageNumber > _maxLoadedPages)
                 {
                     count = 0;
                     HasMoreItems = false;
@@ -68,6 +69,7 @@ namespace CodingChick.UdemyUniversal.CoreUI
                     }
                 }
 
+                ++PageNumber;
                 return new LoadMoreItemsResult() { Count = count };
             }).AsAsyncOperation<LoadMoreItemsResult>();
         }

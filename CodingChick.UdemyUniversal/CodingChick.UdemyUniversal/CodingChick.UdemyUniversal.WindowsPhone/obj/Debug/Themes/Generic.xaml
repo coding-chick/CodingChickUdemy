@@ -13,38 +13,38 @@
 					<Grid Height="200" Width="340">
 						<Grid.ColumnDefinitions>
 							<ColumnDefinition Width="*"/>
-							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="70"/>
 						</Grid.ColumnDefinitions>
 						<Grid.RowDefinitions>
-							<RowDefinition/>
+							<RowDefinition Height="70" />
 							<RowDefinition/>
 							<RowDefinition Height="10"/>
 							<RowDefinition Height="Auto"/>
 						</Grid.RowDefinitions>
-						<Image x:Name="BackgroundImage" Source="{Binding ImageUri}" Grid.RowSpan="4" Grid.ColumnSpan="2"/>
-						<Rectangle x:Name="LowerTitleBackground" Stroke="Black" Grid.Row="3" Grid.ColumnSpan="2" Fill="#7FF4F4F5" StrokeThickness="0"/>
-						<TextBlock x:Name="CourseTitle" Text="{Binding Name}" Foreground="Black" Grid.Row="3" FontSize="18.667" FontWeight="Bold" TextWrapping="Wrap" HorizontalAlignment="Left" Width="340" Grid.ColumnSpan="2" Margin="5,0,5,5"/>
+						<Image x:Name="BackgroundImage" Source="{Binding ImageUri}" Grid.RowSpan="4" Grid.ColumnSpan="2" />
+						<Rectangle x:Name="LowerTitleBackground" Stroke="Black" Grid.Row="3" Grid.ColumnSpan="2" Fill="#3FF4F4F5" StrokeThickness="0"/>
+						<TextBlock x:Name="CourseTitle" Text="{Binding Name}" Foreground="Black" Grid.Row="3" FontSize="18.667" TextWrapping="Wrap" HorizontalAlignment="Left" Width="340" Grid.ColumnSpan="2" Margin="5,0,5,5" FontFamily="Segoe WP Semibold"/>
 						<Rectangle x:Name="UpperCornerGradient" Stroke="Black" Grid.Column="1" Grid.Row="0" StrokeThickness="0">
 							<Rectangle.Fill>
 								<LinearGradientBrush EndPoint="0,1" StartPoint="1,0">
-									<GradientStop Color="#4C000000" Offset="0.009"/>
+									<GradientStop Color="#66000000" Offset="0.009"/>
 									<GradientStop Offset="1"/>
-									<GradientStop Color="#33000000" Offset="0.452"/>
-									<GradientStop Offset="0.504"/>
+									<GradientStop Color="#4C000000" Offset="0.483"/>
+									<GradientStop Offset="0.531"/>
 								</LinearGradientBrush>
 							</Rectangle.Fill>
 						</Rectangle>
-						<TextBlock x:Name="Price" Text="{Binding Price}" Foreground="{Binding PriceColorBrush, RelativeSource={RelativeSource Mode=TemplatedParent}}"  TextWrapping="Wrap" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Grid.RowSpan="2" FontWeight="Bold" Grid.Column="1" Margin="5,12,0,0">
+						<TextBlock x:Name="Price" Text="{Binding Price}" Foreground="{Binding PriceColorBrush, RelativeSource={RelativeSource Mode=TemplatedParent}}"  TextWrapping="Wrap" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Grid.RowSpan="2" FontWeight="Bold" Grid.Column="1" Margin="5,15,0,0">
 							<TextBlock.RenderTransform>
-								<CompositeTransform Rotation="41.218"/>
+								<CompositeTransform Rotation="47.401"/>
 							</TextBlock.RenderTransform>
 						</TextBlock>
-						<TextBlock x:Name="OriginalPrice" Text="{Binding OriginalPrice}" HorizontalAlignment="Right" Margin="0,0,0,0" Foreground="#FF070000"/>
+						<TextBlock x:Name="OriginalPrice" Text="{Binding OriginalPrice}" HorizontalAlignment="Right" Margin="0,5,0,0" Foreground="#FF070000"/>
 						<Rectangle x:Name="LowerTitleGradient" Stroke="Black" StrokeThickness="0" Grid.Row="2" Grid.ColumnSpan="2">
 							<Rectangle.Fill>
 								<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
 									<GradientStop Color="Transparent" Offset="0"/>
-									<GradientStop Color="#7FFFFFFF" Offset="1"/>
+									<GradientStop Color="#3FFFFFFF" Offset="1"/>
 								</LinearGradientBrush>
 							</Rectangle.Fill>
 						</Rectangle>

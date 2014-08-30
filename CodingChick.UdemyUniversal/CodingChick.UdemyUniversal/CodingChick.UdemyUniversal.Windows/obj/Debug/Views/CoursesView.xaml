@@ -13,14 +13,12 @@
     micro:Bind.AtDesignTime="True"
     xmlns:c="clr-namespace:CodingChick.UdemyUniversal.Controls"
     xmlns:controls="using:CodingChick.UdemyUniversal.Controls">
-    <Page.Resources>
-    	<DataTemplate x:Key="HubSectionHeaderTemplate">
-    		<TextBlock Text="On Sale" FontSize="26.667" />
-    	</DataTemplate>
-    </Page.Resources>
-    
+
     <Grid>
         <Hub>
+            <Hub.Background>
+                <ImageBrush ImageSource="/Assets/HubBackground.jpg"/>
+            </Hub.Background>
             <Hub.HeaderTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -30,36 +28,50 @@
                     </StackPanel>
                 </DataTemplate>
             </Hub.HeaderTemplate>
-            <HubSection x:Uid="OnSale" Header="On Sale" DataContext="{Binding OnSaleCourses}" HeaderTemplate="{StaticResource HubSectionHeaderTemplate}">
+            <HubSection x:Uid="OnSale" Header="On Sale" DataContext="{Binding OnSaleCourses}">
                 <DataTemplate>
-                    <ListView
+                    <GridView
                         ItemsSource="{Binding}"
                         IsItemClickEnabled="True">
                         <!--ItemClick="GroupSection_ItemClick"-->
-                        <ListView.ItemTemplate>
+                        <GridView.ItemTemplate>
                             <DataTemplate>
                                 <controls:CourseItemControl PriceColorBrush="Red" />
                             </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
+                        </GridView.ItemTemplate>
+                    </GridView>
                 </DataTemplate>
             </HubSection>
             <HubSection x:Uid="New" Header="New" DataContext="{Binding NewCourses}" >
                 <DataTemplate>
-                    <ListView
+                    <GridView
                         ItemsSource="{Binding}"
                         IsItemClickEnabled="True">
                         <!--ItemClick="GroupSection_ItemClick"-->
-                        <ListView.ItemTemplate>
+                        <GridView.ItemTemplate>
                             <DataTemplate>
                                 <controls:CourseItemControl PriceColorBrush="White" />
                             </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
+                        </GridView.ItemTemplate>
+                    </GridView>
                 </DataTemplate>
             </HubSection>
             <HubSection x:Uid="Categories" Header="Categories" DataContext="{Binding Categories}">
-                
+                <DataTemplate>
+                    <GridView
+                        ItemsSource="{Binding}"
+                        IsItemClickEnabled="True">
+                        <!--ItemClick="GroupSection_ItemClick"-->
+                        <GridView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Rectangle Fill="Transparent" Height="100" Stroke="#FF0B482B" Width="100" Margin="0,0,5,5" StrokeThickness="2"/>
+                                    <TextBlock Text="{Binding Title}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16"/>
+                                </Grid>
+                            </DataTemplate>
+                        </GridView.ItemTemplate>
+                    </GridView>
+                </DataTemplate>
             </HubSection>
         </Hub>
     </Grid>
