@@ -39,12 +39,12 @@ namespace CodingChick.UdemyUniversal.ViewModels
                     new CourseViewModel() {ImageUri = new Uri("https://udemyimages-a.akamaihd.net/course/480x270/140238_dd80_2.jpg"), Name = "course to learn something", OriginalPrice = "50$", Price = "14.9"},
                 };
 
-                Categories = new List<Category>()
+                Categories = new ObservableCollection<CategoryViewModel>()
                 {
-                    new Category() {Id = "1", Title = "Development"},
-                    new Category() {Id = "2", Title = "Buisness"},
-                    new Category() {Id = "3", Title = "Marketing"},
-                    new Category() {Id = "4", Title = "Design"},
+                    new CategoryViewModel() {Id = "1", Title = "Humanities"},
+                    new CategoryViewModel() {Id = "2", Title = "Math & Science"},
+                    new CategoryViewModel() {Id = "3", Title = "Language"},
+                    new CategoryViewModel() {Id = "4", Title = "Unrecognized"},
                 };
             }
         }
@@ -72,13 +72,33 @@ namespace CodingChick.UdemyUniversal.ViewModels
             OnSaleCourses = new PagedCollection<CourseViewModel>(LoadMoreOnSaleCourses, 1);
             NewCourses = new PagedCollection<CourseViewModel>(LoadMoreNewCourses, 1);
 #endif
-            Categories = await _iDataService.GetCategories();
+
+            var categories = await _iDataService.GetCategories();
+            Categories = new ObservableCollection<CategoryViewModel>(categories.Select(category => new CategoryViewModel()
+            {
+                Id = category.Id,
+                Title = category.Title
+            }));
+
+            MyCourses = new PagedCollection<MyCourseViewModel>(LoadMoreMyCourses, 1);
+        }
+
+        //TODO: mycourses api don't really support paging so something needs to be done in an app level
+        private async Task<IEnumerable<MyCourseViewModel>> LoadMoreMyCourses(uint count, int pageNumber)
+        {
+            var myCourses = await _iDataService.GetMyCourses();
+            return myCourses.CoursesList.Select(course => new MyCourseViewModel()
+            {
+                CourseId = course.Id,
+                ImageUri = new Uri(course.Images.Img480X270),
+                Name = course.Title,
+            });
         }
 
         private async Task<IEnumerable<CourseViewModel>> LoadMoreOnSaleCourses(uint count, int pageNumber)
         {
             var onSaleCourses = await _iDataService.GetCoursesOnSaleBasic(12, pageNumber);
-            return onSaleCourses.Courses.Select(course => new CourseViewModel()
+            return onSaleCourses.CoursesList.Select(course => new CourseViewModel()
             {
                 CourseId = course.Id,
                 ImageUri = new Uri(course.Images.Img480X270),
@@ -91,7 +111,7 @@ namespace CodingChick.UdemyUniversal.ViewModels
         private async Task<IEnumerable<CourseViewModel>> LoadMoreNewCourses(uint u, int pageNumber)
         {
             var newCourses = await _iDataService.GetCoursesNewBasic(12, pageNumber);
-            return newCourses.Courses.Select(course => new CourseViewModel()
+            return newCourses.CoursesList.Select(course => new CourseViewModel()
             {
                 CourseId = course.Id,
                 ImageUri = new Uri(course.Images.Img480X270),
@@ -123,16 +143,34 @@ namespace CodingChick.UdemyUniversal.ViewModels
             }
         }
 
+        private PagedCollection<MyCourseViewModel> _myCourses;
+        public PagedCollection<MyCourseViewModel> MyCourses
+        {
+            get { return _myCourses; }
+            set
+            {
+                _myCourses = value;
+                NotifyOfPropertyChange(() => MyCourses);
+            }
+        }
 
-        private List<Category> _categories;
-        public List<Category> Categories
+
+        private ObservableCollection<CategoryViewModel> _categories;
+        public ObservableCollection<CategoryViewModel> Categories
         {
             get { return _categories; }
             set
             {
                 _categories = value;
-                NotifyOfPropertyChange(() => OnSaleCourses);
+                NotifyOfPropertyChange(() => Categories);
             }
+        }
+
+        public void ShowCourseDetails(ItemClickEventArgs args)
+        {
+            var selectedCourse = (CourseViewModel) args.ClickedItem;
+
+            _navigationService.NavigateToViewModel<CourseDetailsViewModel>(selectedCourse.CourseId);
         }
     }
 }

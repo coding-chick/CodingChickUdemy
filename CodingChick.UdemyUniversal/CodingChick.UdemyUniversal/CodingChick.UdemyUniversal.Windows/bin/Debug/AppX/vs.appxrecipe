@@ -20,13 +20,13 @@
     <AppXManifest Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Windows\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2014-08-30T04:23:48.013</Modified>
+      <Modified>2014-09-03T21:56:10.005</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Windows\bin\Debug\CodingChick.UdemyUniversal.Windows.exe">
       <PackagePath>CodingChick.UdemyUniversal.Windows.exe</PackagePath>
-      <Modified>2014-08-30T06:22:45.588</Modified>
+      <Modified>2014-09-03T23:41:51.016</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\packages\Caliburn.Micro.Core.2.0.0\lib\portable-net45+win8+wp8+wpa81\Caliburn.Micro.dll">
       <PackagePath>Caliburn.Micro.dll</PackagePath>
@@ -58,7 +58,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Windows\Assets\HubBackground.jpg">
       <PackagePath>Assets\HubBackground.jpg</PackagePath>
-      <Modified>2014-08-29T22:45:08.878</Modified>
+      <Modified>2014-09-01T17:49:39.584</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Windows\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
@@ -80,17 +80,93 @@
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2014-03-14T17:54:50.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\Business.png">
+      <PackagePath>Assets\Categories\Business.png</PackagePath>
+      <Modified>2014-09-02T00:23:46.043</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\Default.png">
+      <PackagePath>Assets\Categories\Default.png</PackagePath>
+      <Modified>2014-09-02T03:47:53.543</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\Design.png">
+      <PackagePath>Assets\Categories\Design.png</PackagePath>
+      <Modified>2014-09-01T21:52:53.097</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\Development.png">
+      <PackagePath>Assets\Categories\Development.png</PackagePath>
+      <Modified>2014-09-02T00:29:58.123</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\Health&amp;Fitness.png">
+      <PackagePath>Assets\Categories\Health&amp;Fitness.png</PackagePath>
+      <Modified>2014-09-02T00:27:17.813</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\Humanities.png">
+      <PackagePath>Assets\Categories\Humanities.png</PackagePath>
+      <Modified>2014-09-01T21:22:01.497</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\IT&amp;Software.png">
+      <PackagePath>Assets\Categories\IT&amp;Software.png</PackagePath>
+      <Modified>2014-09-02T00:21:55.783</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\Language.png">
+      <PackagePath>Assets\Categories\Language.png</PackagePath>
+      <Modified>2014-09-01T21:50:07.844</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\Lifestyle.png">
+      <PackagePath>Assets\Categories\Lifestyle.png</PackagePath>
+      <Modified>2014-09-02T00:28:18.652</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\Marketing.png">
+      <PackagePath>Assets\Categories\Marketing.png</PackagePath>
+      <Modified>2014-09-02T03:47:10.167</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\Math&amp;Science.png">
+      <PackagePath>Assets\Categories\Math&amp;Science.png</PackagePath>
+      <Modified>2014-09-01T21:50:30.241</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\Music.png">
+      <PackagePath>Assets\Categories\Music.png</PackagePath>
+      <Modified>2014-09-01T21:51:49.722</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\OfficeProductivity.png">
+      <PackagePath>Assets\Categories\OfficeProductivity.png</PackagePath>
+      <Modified>2014-09-02T03:44:30.931</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\PersonalDevelopment.png">
+      <PackagePath>Assets\Categories\PersonalDevelopment.png</PackagePath>
+      <Modified>2014-09-02T00:26:04.906</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\Photography.png">
+      <PackagePath>Assets\Categories\Photography.png</PackagePath>
+      <Modified>2014-09-02T00:20:32.019</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\SocialScience.png">
+      <PackagePath>Assets\Categories\SocialScience.png</PackagePath>
+      <Modified>2014-09-01T21:52:20.900</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\TeacherTraining.png">
+      <PackagePath>Assets\Categories\TeacherTraining.png</PackagePath>
+      <Modified>2014-09-02T00:31:12.561</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\TestPrep.png">
+      <PackagePath>Assets\Categories\TestPrep.png</PackagePath>
+      <Modified>2014-09-02T00:32:04.604</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Windows\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2014-08-16T02:42:48.846</Modified>
+      <Modified>2014-08-30T21:49:56.201</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Windows\bin\Debug\Themes\Generic.xbf">
       <PackagePath>Themes\Generic.xbf</PackagePath>
-      <Modified>2014-08-28T22:14:27.600</Modified>
+      <Modified>2014-08-30T21:49:56.201</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Windows\bin\Debug\Views\CourseDetailsView.xbf">
+      <PackagePath>Views\CourseDetailsView.xbf</PackagePath>
+      <Modified>2014-09-03T21:28:23.667</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Windows\bin\Debug\Views\CoursesView.xbf">
       <PackagePath>Views\CoursesView.xbf</PackagePath>
-      <Modified>2014-08-30T06:22:45.291</Modified>
+      <Modified>2014-09-03T23:41:50.712</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Windows\bin\Debug\Views\LoginView.xbf">
       <PackagePath>Views\LoginView.xbf</PackagePath>
@@ -102,11 +178,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Windows\bin\Debug\CodingChick.UdemyUniversal.Windows.xr.xml">
       <PackagePath>CodingChick.UdemyUniversal.Windows.xr.xml</PackagePath>
-      <Modified>2014-08-30T04:18:52.110</Modified>
+      <Modified>2014-09-03T23:41:50.696</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Windows\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2014-08-30T04:23:47.545</Modified>
+      <Modified>2014-09-03T21:56:09.360</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

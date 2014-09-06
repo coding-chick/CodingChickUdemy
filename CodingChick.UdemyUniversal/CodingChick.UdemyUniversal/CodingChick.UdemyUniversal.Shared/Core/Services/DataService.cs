@@ -18,7 +18,7 @@ namespace CodingChick.UdemyUniversal.Core.Services
             _iOAuthService = iOAuthService;
         }
 
-        public async Task<CoursesListPage> GetCoursesOnSaleFull()
+        public async Task<CoursesListPage<Course>> GetCoursesOnSaleFull()
         {
             var methodParams =
             new List<KeyValuePair<string, string>>()
@@ -27,18 +27,18 @@ namespace CodingChick.UdemyUniversal.Core.Services
                 new KeyValuePair<string, string>("fields[user]",
                     "=@min,jobTitle,description,-timeZone&&fields[course]=@default,-settings,-avgRatingRatio,-isInstructor,-canEdit,-isPremium,-giftUrl,-isPrivate,-publishedTime,description&fields[asset]=@default,-description,-thumbnailUrl,-remainingProcessingTime,-status&locale=en")
             };
-            return await _iUdemyDataManager.GetDataAsync<CoursesListPage>("discover/on-sale/12/1", methodParams, _iOAuthService.Token);
+            return await _iUdemyDataManager.GetDataAsync<CoursesListPage<Course>>("discover/on-sale/12/1", methodParams, _iOAuthService.Token);
         }
 
 
-        public async Task<CoursesListPage> GetCoursesOnSaleBasic(int numberOfResults, int pageNumber)
+        public async Task<CoursesListPage<Course>> GetCoursesOnSaleBasic(int numberOfResults, int pageNumber)
         {
             var methodParams =
             new List<KeyValuePair<string, string>>()
             {
                 new KeyValuePair<string, string>("mobileCompatible", "2"),
             };
-            return await _iUdemyDataManager.GetDataAsync<CoursesListPage>(string.Format("discover/on-sale/{0}/{1}", numberOfResults, pageNumber), methodParams, _iOAuthService.Token);
+            return await _iUdemyDataManager.GetDataAsync<CoursesListPage<Course>>(string.Format("discover/on-sale/{0}/{1}", numberOfResults, pageNumber), methodParams, _iOAuthService.Token);
         }
 
         public async Task<List<Category>> GetCategories()
@@ -47,7 +47,15 @@ namespace CodingChick.UdemyUniversal.Core.Services
 
         }
 
-        public async Task<CoursesListPage> GetCoursesNewBasic(int numberOfResults, int pageNumber)
+        public async Task<CoursesListPage<MyCourse>> GetMyCourses()
+        {
+            return
+                await
+                    _iUdemyDataManager.GetDataAsync<CoursesListPage<MyCourse>>("users/me/taking",
+                        new List<KeyValuePair<string, string>>(), _iOAuthService.Token);
+        }
+
+        public async Task<CoursesListPage<Course>> GetCoursesNewBasic(int numberOfResults, int pageNumber)
         {
             var methodParams =
             new List<KeyValuePair<string, string>>()
@@ -55,7 +63,7 @@ namespace CodingChick.UdemyUniversal.Core.Services
                 new KeyValuePair<string, string>("mobileCompatible", "2"),
             };
 
-            return await _iUdemyDataManager.GetDataAsync<CoursesListPage>(string.Format("discover/new/{0}/{1}", numberOfResults, pageNumber), methodParams, _iOAuthService.Token);
+            return await _iUdemyDataManager.GetDataAsync<CoursesListPage<Course>>(string.Format("discover/new/{0}/{1}", numberOfResults, pageNumber), methodParams, _iOAuthService.Token);
         }
     }
 }

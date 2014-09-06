@@ -6,8 +6,10 @@
     <RootPropertyPathName Name="PriceColorBrush" />
     <RootPropertyPathName Name="Name" />
     <RootPropertyPathName Name="ImageUri" />
+    <RootPropertyPathName Name="MyCourses" />
     <RootPropertyPathName Name="Categories" />
     <RootPropertyPathName Name="Title" />
+    <RootPropertyPathName Name="CategoryIconUri" />
     <RootPropertyPathName Name="NewCourses" />
     <RootPropertyPathName Name="OnSaleCourses" />
     <RootPropertyPathName Name="Password" />
@@ -40,6 +42,7 @@
       <RootProperty Name="RowDefinitions" />
       <RootProperty Name="Children" />
       <RootProperty Name="Background" />
+      <RootProperty Name="Margin" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
       <RootMethod Name="GetRowSpan" />
@@ -59,14 +62,17 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Image">
       <RootProperty Name="Source" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Opacity" />
+      <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Shapes.Rectangle">
       <RootProperty Name="Stroke" />
       <RootProperty Name="Fill" />
       <RootProperty Name="StrokeThickness" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
       <RootProperty Name="Text" />
@@ -104,11 +110,13 @@
       <RootProperty Name="Rotation" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
-      <RootProperty Name="Resources" />
       <RootProperty Name="Content" />
+      <RootProperty Name="Resources" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="Background" />
     </RootType>
+    <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
+    <RootType FullName="CodingChick.UdemyUniversal.Views.CourseDetailsView" />
     <RootType FullName="Caliburn.Micro.Bind">
       <RootMethod Name="GetAtDesignTime" />
       <RootMethod Name="SetAtDesignTime" />
@@ -133,18 +141,24 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.HubSection">
       <RootProperty Name="Header" />
-      <RootProperty Name="DataContext" />
       <RootProperty Name="HeaderTemplate" />
+      <RootProperty Name="IsTapEnabled" />
       <RootProperty Name="ContentTemplate" />
+      <RootProperty Name="DataContext" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.GridView">
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="IsItemClickEnabled" />
       <RootProperty Name="ItemTemplate" />
+      <RootProperty Name="Footer" />
+      <RootProperty Name="SelectionMode" />
+    </RootType>
+    <RootType FullName="Caliburn.Micro.Message">
+      <RootMethod Name="GetAttach" />
+      <RootMethod Name="SetAttach" />
     </RootType>
     <RootType FullName="CodingChick.UdemyUniversal.Views.CoursesView" />
-    <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="Text" />
       <RootProperty Name="PlaceholderText" />

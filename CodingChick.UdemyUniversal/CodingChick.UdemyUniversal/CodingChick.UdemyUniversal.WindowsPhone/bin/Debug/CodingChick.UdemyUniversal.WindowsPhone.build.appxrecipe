@@ -43,8 +43,11 @@
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\Assets\HubBackground.jpg">
       <PackagePath>Assets\HubBackground.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\Assets\HubBackground1.jpg">
-      <PackagePath>Assets\HubBackground1.jpg</PackagePath>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\Assets\SplashScreen.scale-100.jpg">
+      <PackagePath>Assets\SplashScreen.scale-100.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\Assets\SplashScreen.scale-140.jpg">
+      <PackagePath>Assets\SplashScreen.scale-140.jpg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\Assets\Logo.scale-240.png">
       <PackagePath>Assets\Logo.scale-240.png</PackagePath>
@@ -70,11 +73,68 @@
       <PackagePath>Assets\WideLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\Business.png">
+      <PackagePath>Assets\Categories\Business.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\Default.png">
+      <PackagePath>Assets\Categories\Default.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\Design.png">
+      <PackagePath>Assets\Categories\Design.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\Development.png">
+      <PackagePath>Assets\Categories\Development.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\Health&amp;Fitness.png">
+      <PackagePath>Assets\Categories\Health&amp;Fitness.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\Humanities.png">
+      <PackagePath>Assets\Categories\Humanities.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\IT&amp;Software.png">
+      <PackagePath>Assets\Categories\IT&amp;Software.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\Language.png">
+      <PackagePath>Assets\Categories\Language.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\Lifestyle.png">
+      <PackagePath>Assets\Categories\Lifestyle.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\Marketing.png">
+      <PackagePath>Assets\Categories\Marketing.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\Math&amp;Science.png">
+      <PackagePath>Assets\Categories\Math&amp;Science.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\Music.png">
+      <PackagePath>Assets\Categories\Music.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\OfficeProductivity.png">
+      <PackagePath>Assets\Categories\OfficeProductivity.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\PersonalDevelopment.png">
+      <PackagePath>Assets\Categories\PersonalDevelopment.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\Photography.png">
+      <PackagePath>Assets\Categories\Photography.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\SocialScience.png">
+      <PackagePath>Assets\Categories\SocialScience.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\TeacherTraining.png">
+      <PackagePath>Assets\Categories\TeacherTraining.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\Categories\TestPrep.png">
+      <PackagePath>Assets\Categories\TestPrep.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\bin\Debug\Themes\Generic.xbf">
       <PackagePath>Themes\Generic.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\bin\Debug\Views\CourseDetailsView.xbf">
+      <PackagePath>Views\CourseDetailsView.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\bin\Debug\Views\CoursesView.xbf">
       <PackagePath>Views\CoursesView.xbf</PackagePath>

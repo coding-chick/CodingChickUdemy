@@ -17,6 +17,7 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Controls\CourseItemControl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CoreUI\PagedCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CoreUI\StringConsts.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Base\HttpClientAccessor.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Base\HttpUtilityHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Base\IHttpClientAccessor.cs" />
@@ -37,16 +38,24 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\DownloadUrl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Error.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Extras.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\MyCourse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Owner.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Pagination.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\PromoAsset.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\SimpleResolutionImages.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\TokenData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CategoryViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CourseDetailsViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CoursesViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CourseViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\DiscoveryViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LoginViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MyCourseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\CourseDetailsView.xaml.cs">
+      <DependentUpon>CourseDetailsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\CoursesView.xaml.cs">
       <DependentUpon>CoursesView.xaml</DependentUpon>
     </Compile>
@@ -59,6 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="$(MSBuildThisFileDirectory)Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\CourseDetailsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -76,6 +89,23 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Assets\" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Categories\Business.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Categories\Default.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Categories\Design.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Categories\Development.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Categories\Health&amp;Fitness.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Categories\Humanities.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Categories\IT&amp;Software.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Categories\Language.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Categories\Lifestyle.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Categories\Marketing.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Categories\Math&amp;Science.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Categories\Music.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Categories\OfficeProductivity.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Categories\PersonalDevelopment.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Categories\Photography.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Categories\SocialScience.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Categories\TeacherTraining.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Categories\TestPrep.png" />
   </ItemGroup>
 </Project>

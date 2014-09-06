@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
@@ -12,6 +13,7 @@ using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Data;
+using CodingChick.UdemyUniversal.ViewModels;
 
 namespace CodingChick.UdemyUniversal.CoreUI
 {
