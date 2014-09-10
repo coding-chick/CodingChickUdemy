@@ -76,6 +76,7 @@ namespace CodingChick.UdemyUniversal.ViewModels
             var categories = await _iDataService.GetCategories();
             Categories = new ObservableCollection<CategoryViewModel>(categories.Select(category => new CategoryViewModel()
             {
+
                 Id = category.Id,
                 Title = category.Title
             }));
@@ -89,33 +90,32 @@ namespace CodingChick.UdemyUniversal.ViewModels
             var myCourses = await _iDataService.GetMyCourses();
             return myCourses.CoursesList.Select(course => new MyCourseViewModel()
             {
+                CourseModel = course,
                 CourseId = course.Id,
                 ImageUri = new Uri(course.Images.Img480X270),
-                Name = course.Title,
             });
         }
 
         private async Task<IEnumerable<CourseViewModel>> LoadMoreOnSaleCourses(uint count, int pageNumber)
         {
-            var onSaleCourses = await _iDataService.GetCoursesOnSaleBasic(12, pageNumber);
+            var onSaleCourses = await _iDataService.GetCoursesOnSaleFull(12, pageNumber);
             return onSaleCourses.CoursesList.Select(course => new CourseViewModel()
             {
+                CourseModel = course,
                 CourseId = course.Id,
                 ImageUri = new Uri(course.Images.Img480X270),
-                Name = course.Title,
                 Price = course.InAppPurchasePriceText,
-                OriginalPrice = course.OriginalPriceText,
             });
         }
 
         private async Task<IEnumerable<CourseViewModel>> LoadMoreNewCourses(uint u, int pageNumber)
         {
-            var newCourses = await _iDataService.GetCoursesNewBasic(12, pageNumber);
+            var newCourses = await _iDataService.GetCoursesNewFull(12, pageNumber);
             return newCourses.CoursesList.Select(course => new CourseViewModel()
             {
+                CourseModel = course,
                 CourseId = course.Id,
                 ImageUri = new Uri(course.Images.Img480X270),
-                Name = course.Title,
                 Price = course.OriginalPriceText,
             });
         }
@@ -170,7 +170,7 @@ namespace CodingChick.UdemyUniversal.ViewModels
         {
             var selectedCourse = (CourseViewModel) args.ClickedItem;
 
-            _navigationService.NavigateToViewModel<CourseDetailsViewModel>(selectedCourse.CourseId);
+            _navigationService.NavigateToViewModel<CourseDetailsViewModel>(selectedCourse.CourseModel);
         }
     }
 }

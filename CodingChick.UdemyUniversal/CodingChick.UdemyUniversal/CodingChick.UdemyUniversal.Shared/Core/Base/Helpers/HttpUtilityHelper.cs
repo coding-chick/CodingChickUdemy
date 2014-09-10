@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CodingChick.UdemyUniversal.Core.Base
+namespace CodingChick.UdemyUniversal.Core.Base.Helpers
 {
     public class HttpUtilityHelper
     {

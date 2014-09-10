@@ -133,6 +133,9 @@
     <Reference Include="Caliburn.Micro.Platform">
       <HintPath>..\..\packages\Caliburn.Micro.2.0.0\lib\win81\Caliburn.Micro.Platform.dll</HintPath>
     </Reference>
+    <Reference Include="MetroRate">
+      <HintPath>..\..\packages\MetroRate.1.0.3\lib\winrt45\MetroRate.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Xaml.Interactions">
       <HintPath>..\..\packages\Caliburn.Micro.2.0.0\lib\win81\Microsoft.Xaml.Interactions.dll</HintPath>
     </Reference>
@@ -145,6 +148,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Telerik UI For Windows Universal, Version=1.0">
+      <Name>Telerik UI For Windows Universal</Name>
+    </SDKReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>

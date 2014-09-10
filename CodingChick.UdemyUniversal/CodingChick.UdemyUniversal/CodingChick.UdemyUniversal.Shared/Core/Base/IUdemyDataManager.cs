@@ -7,5 +7,8 @@ namespace CodingChick.UdemyUniversal.Core.Base
     {
         Task<T> GetDataAsync<T>(string method, List<KeyValuePair<string, string>> queryParams, string token);
         Task<T> GetDataAsync<T>(string method, List<KeyValuePair<string, string>> queryParams);
+
+        Task<T> GetDataAsyncWithConverter<T>(string method, List<KeyValuePair<string, string>> queryParams,
+            string token);
     }
 }

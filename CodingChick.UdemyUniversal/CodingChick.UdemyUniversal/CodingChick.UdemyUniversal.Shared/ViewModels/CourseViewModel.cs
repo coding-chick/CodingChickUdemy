@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
+using CodingChick.UdemyUniversal.Models;
 
 namespace CodingChick.UdemyUniversal.ViewModels
 {
     public class CourseViewModel
     {
+        public Course CourseModel { get; set; }
+
         public string CourseId { get; set; }
 
         private string _price;

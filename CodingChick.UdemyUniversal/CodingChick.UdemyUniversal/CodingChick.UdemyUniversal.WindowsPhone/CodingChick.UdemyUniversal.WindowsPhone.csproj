@@ -91,6 +91,7 @@
   <ItemGroup>
     <Content Include="Assets\HubBackground.jpg" />
     <Content Include="Assets\Logo.scale-240.png" />
+    <Content Include="Assets\SingleBackground.scale-240.png" />
     <Content Include="Assets\SmallLogo.scale-240.png" />
     <Content Include="Assets\SplashScreen.scale-100.jpg" />
     <Content Include="Assets\SplashScreen.scale-140.jpg" />
@@ -127,6 +128,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <SDKReference Include="Telerik UI For Windows Universal, Version=1.0">
+      <Name>Telerik UI For Windows Universal</Name>
+    </SDKReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>

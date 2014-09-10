@@ -7,7 +7,6 @@ namespace CodingChick.UdemyUniversal.Models
     {
         [JsonProperty("courses")]
         public List<T> CoursesList { get; set; }
-        [JsonProperty("pagination")]
         public Pagination Pagination { get; set; }
     }
 }

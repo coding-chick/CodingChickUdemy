@@ -35,7 +35,6 @@
             </Hub.HeaderTemplate>
             <HubSection x:Uid="OnSale" Header="On Sale"  
                         HeaderTemplate="{StaticResource HubHeaderTemplate}" IsTapEnabled="True">
-                        <!--DataContext="{Binding OnSaleCourses}"-->
                 <DataTemplate>
                     <GridView x:Name="OnSaleCourses"
                         SelectionMode="Single"
