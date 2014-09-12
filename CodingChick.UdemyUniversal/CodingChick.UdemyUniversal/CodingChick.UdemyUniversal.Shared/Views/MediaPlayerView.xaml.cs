@@ -20,15 +20,11 @@ namespace CodingChick.UdemyUniversal.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class CourseDetailsView : Page
+    public sealed partial class MediaPlayerView : Page
     {
-        public CourseDetailsView()
+        public MediaPlayerView()
         {
             this.InitializeComponent();
-        }
-
-        private void ListViewBase_OnItemClick(object sender, ItemClickEventArgs e)
-        {
         }
     }
 }

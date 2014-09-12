@@ -1,4 +1,6 @@
-﻿namespace CodingChick.UdemyUniversal.Models
+﻿using System.Collections.Generic;
+
+namespace CodingChick.UdemyUniversal.Models
 {
     public class Lecture : Chapter
     {
@@ -14,5 +16,11 @@
         public string IconClass { get; set; }
         public bool? NoteExists { get; set; }
         public Asset Asset { get; set; }
+        public List<object> Extras { get; set; }
+        public int? AssessmentCount { get; set; }
+        public int? QuizIndex { get; set; }
+        public bool? IsCompleted { get; set; }
+        public int? CompletionRatio { get; set; }
+
     }
 }

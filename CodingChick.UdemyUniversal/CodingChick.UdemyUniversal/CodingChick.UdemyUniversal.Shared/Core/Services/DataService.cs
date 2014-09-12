@@ -68,5 +68,19 @@ namespace CodingChick.UdemyUniversal.Core.Services
 
             return await _iUdemyDataManager.GetDataAsyncWithConverter<List<Chapter>>(string.Format("courses/{0}/curriculum", courseId), methodParams, _iOAuthService.Token);
         }
+
+        public async Task<CourseDetails> GetFullCourseCuriculum(string courseId)
+        {
+            var methodParams =
+             new List<KeyValuePair<string, string>>()
+                {
+                    new KeyValuePair<string, string>("fields[user]","@min,jobTitle,description"),
+                    new KeyValuePair<string, string>("fields[course]", "description,curriculum,faq,whatYouWillLearnData,requirementsData,whoShouldAttendData-giftUrl,-isPrivate,-isInAppPurchaseEnabled,-notifications,-inAppPurchaseEnabled,-isAvailableOnIos,-inAppPurchasePriceText,-isPremium,-canEdit,-isInstructor,-publishedTime,-isPaid,-originalPriceText,-promoAsset,-settings"),
+                    new KeyValuePair<string, string>("fields[lecture]", "@min,-images,asset,-publicUrl,-isDownloadable,-isPublished,-questionExists,-sourceCodeExists,-externalLinkExists,extras"),
+                    new KeyValuePair<string, string>("FIELDS[ASSET]", "@default,-description,-remainingProcessingTime,-status"),
+                };
+
+            return await _iUdemyDataManager.GetDataAsyncWithConverter<CourseDetails>(string.Format("courses/{0}", courseId), methodParams, _iOAuthService.Token);
+        }
     }
 }

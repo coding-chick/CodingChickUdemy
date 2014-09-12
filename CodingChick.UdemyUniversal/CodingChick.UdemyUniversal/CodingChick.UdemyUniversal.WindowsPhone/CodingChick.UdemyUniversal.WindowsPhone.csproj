@@ -130,6 +130,9 @@
     <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
+    <SDKReference Include="Microsoft.PlayerFramework.Xaml, Version=2.0.0.0">
+      <Name>Microsoft Player Framework</Name>
+    </SDKReference>
     <SDKReference Include="Telerik UI For Windows Universal, Version=1.0">
       <Name>Telerik UI For Windows Universal</Name>
     </SDKReference>

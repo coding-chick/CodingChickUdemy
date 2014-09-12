@@ -53,8 +53,8 @@
                 <DataTemplate>
                     <GridView
                         ItemsSource="{Binding}"
-                        IsItemClickEnabled="True">
-                        <!--ItemClick="GroupSection_ItemClick"-->
+                        IsItemClickEnabled="True"
+                        micro:Message.Attach="[Event ItemClick] = [ShowCourseDetails($eventArgs)]">
                         <GridView.ItemTemplate>
                             <DataTemplate>
                                 <controls:CourseItemControl PriceColorBrush="White" />
@@ -68,7 +68,6 @@
                     <GridView
                         ItemsSource="{Binding}"
                         IsItemClickEnabled="True"  >
-                        <!--ItemClick="GroupSection_ItemClick"-->
                         <GridView.ItemTemplate>
                             <DataTemplate>
                                 <Grid Margin="0">
@@ -90,8 +89,8 @@
                 <DataTemplate>
                     <GridView
                         ItemsSource="{Binding}"
-                        IsItemClickEnabled="True">
-                        <!--ItemClick="GroupSection_ItemClick"-->
+                        IsItemClickEnabled="True"
+                        micro:Message.Attach="[Event ItemClick] = [ShowCourseDetails($eventArgs)]">
                         <GridView.ItemTemplate>
                             <DataTemplate>
                                 <controls:CourseItemControl PriceColorBrush="Black" />

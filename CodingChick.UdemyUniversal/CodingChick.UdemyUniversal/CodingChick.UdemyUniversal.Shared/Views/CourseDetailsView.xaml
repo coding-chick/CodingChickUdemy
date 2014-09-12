@@ -8,46 +8,60 @@
     xmlns:viewModels="using:CodingChick.UdemyUniversal.ViewModels"
     mc:Ignorable="d"
     d:DataContext="{d:DesignInstance Type=viewModels:CourseDetailsViewModel, IsDesignTimeCreatable=True}"    
-    xmlns:telerikUniversal="using:Telerik.Universal.UI.Xaml.Controls.Input">
-	<Page.Resources>
-	    <Style TargetType="ContentPresenter" x:Key="MyRatingIconStyle">
-			<Setter Property="FontFamily" Value="Segoe UI Symbol"/>
-			<Setter Property="HorizontalAlignment" Value="Center"/>
-			<Setter Property="VerticalAlignment" Value="Center"/>
-			<Setter Property="FontSize" Value="16"/>
-		</Style>
+    xmlns:telerikUniversal="using:Telerik.Universal.UI.Xaml.Controls.Input"
+    xmlns:controls="using:CodingChick.UdemyUniversal.Controls"
+    xmlns:micro="using:Caliburn.Micro">
+    <Page.Resources>
+        <Style TargetType="ContentPresenter" x:Key="MyRatingIconStyle">
+            <Setter Property="FontFamily" Value="Segoe UI Symbol"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
 
-		<Style TargetType="ContentPresenter" x:Key="MyEmptyIconStyle" BasedOn="{StaticResource MyRatingIconStyle}">
-			<Setter Property="Foreground" Value="Beige"/>
-		</Style>
+        <Style TargetType="ContentPresenter" x:Key="MyEmptyIconStyle" BasedOn="{StaticResource MyRatingIconStyle}">
+            <Setter Property="Foreground" Value="Beige"/>
+        </Style>
 
-		<Style TargetType="ContentPresenter" x:Key="MyFilledIconStyle" BasedOn="{StaticResource MyRatingIconStyle}">
-			<Setter Property="Foreground" Value="#296887"/>
-		</Style>
+        <Style TargetType="ContentPresenter" x:Key="MyFilledIconStyle" BasedOn="{StaticResource MyRatingIconStyle}">
+            <Setter Property="Foreground" Value="#296887"/>
+        </Style>
 
-		<Style TargetType="ContentPresenter" x:Key="MyHighlightedIconStyle" BasedOn="{StaticResource MyRatingIconStyle}">
-			<Setter Property="Foreground" Value="Red"/>
-		</Style>
-	</Page.Resources>
-	<Page.Background>
-		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-			<GradientStop Color="#FFC5E3F2" Offset="0"/>
-			<GradientStop Color="White" Offset="1"/>
-		</LinearGradientBrush>
-	</Page.Background>
+        <Style TargetType="ContentPresenter" x:Key="MyHighlightedIconStyle" BasedOn="{StaticResource MyRatingIconStyle}">
+            <Setter Property="Foreground" Value="Red"/>
+        </Style>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,25,0,0">
+        <controls:ChapterLectureTemplateSelector x:Key="ChapterLectureTemplateSelector">
+            <controls:ChapterLectureTemplateSelector.Chapter>
+                <DataTemplate>
+                    <Grid Width="360">
+                        <Grid.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FFD5D5D5" Offset="1"/>
+                                <GradientStop Color="White"/>
+                            </LinearGradientBrush>
+                        </Grid.Background>
+                        <TextBlock Text="{Binding Title}" FontSize="21.333" FontFamily="Segoe WP Semibold"/>
+                    </Grid>
+                </DataTemplate>
+            </controls:ChapterLectureTemplateSelector.Chapter>
+            <controls:ChapterLectureTemplateSelector.Lecture>
+                <DataTemplate>
+                    <Grid Width="360">
+                        <TextBlock Text="{Binding Title}" FontSize="16" FontFamily="Segoe WP" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0"/>
+                    </Grid>
+                </DataTemplate>
+            </controls:ChapterLectureTemplateSelector.Lecture>
+        </controls:ChapterLectureTemplateSelector>
+    </Page.Resources>
+
+
+    <Grid Margin="0,25,0,0">
+    	<Grid.Background>
+    		<ImageBrush Stretch="UniformToFill" ImageSource="/Assets/SingleBackground.png"/>
+    	</Grid.Background>
         <Hub>
-        	<Hub.Background>
-        		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-        			<GradientStop Color="#FFC5E3F2" Offset="0"/>
-        			<GradientStop Color="White" Offset="1"/>
-        		</LinearGradientBrush>
-        	</Hub.Background>
-            <HubSection x:Uid="AboutCourse" Header="Course Details">
-                <HubSection.Background>
-                    <ImageBrush ImageSource="/Assets/SingleBackground.png" />
-                </HubSection.Background>
+            <HubSection x:Uid="AboutCourse" Header="About" Background="{x:Null}" >
                 <DataTemplate>
                     <Grid>
                         <Grid.RowDefinitions>
@@ -70,6 +84,20 @@
                         <TextBlock x:Name="Description" Text="{Binding Parameter.Description}" Grid.Row="4" Grid.ColumnSpan="2"
                                    Grid.Column="0" TextWrapping="Wrap" FontSize="14.667" Margin="0,5,0,0" />
                     </Grid>
+                </DataTemplate>
+            </HubSection>
+            <HubSection x:Uid="Curiculum" Header="Lectures" Background="{x:Null}">
+                <DataTemplate>
+                    <ListView ItemsSource="{Binding Curiculum}" 
+                              IsItemClickEnabled="True"
+                        ItemTemplateSelector="{StaticResource ChapterLectureTemplateSelector}"
+                        micro:Message.Attach="[Event ItemClick] = [PlayLecture($eventArgs)]" >
+                        <!--<ListView.ItemTemplate>
+                            <DataTemplate>
+                                 
+                            </DataTemplate>
+                        </ListView.ItemTemplate>-->
+                    </ListView>
                 </DataTemplate>
             </HubSection>
         </Hub>

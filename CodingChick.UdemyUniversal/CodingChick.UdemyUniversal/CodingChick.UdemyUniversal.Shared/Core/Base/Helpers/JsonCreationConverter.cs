@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using Caliburn.Micro;
-using CodingChick.UdemyUniversal.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -47,27 +46,6 @@ namespace CodingChick.UdemyUniversal.Core.Base.Helpers
             JsonSerializer serializer)
         {
             throw new NotImplementedException();
-        }
-    }
-
-
-    public class BaseDataConverter : JsonCreationConverter<Chapter>
-    {
-        protected override Chapter Create(Type objectType, JObject jObject)
-        {
-            if (FieldExists("lectureIndex", jObject))
-            {
-                return new Lecture();
-            }
-            else
-            {
-                return new Chapter();
-            }
-        }
-
-        private bool FieldExists(string fieldName, JObject jObject)
-        {
-            return jObject[fieldName] != null;
         }
     }
 }

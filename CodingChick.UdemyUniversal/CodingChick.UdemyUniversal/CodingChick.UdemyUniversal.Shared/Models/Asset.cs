@@ -1,4 +1,6 @@
-﻿namespace CodingChick.UdemyUniversal.Models
+﻿using System.Collections.Generic;
+
+namespace CodingChick.UdemyUniversal.Models
 {
     public class Asset
     {
@@ -13,5 +15,7 @@
         public string StreamUrl { get; set; }
         public DownloadUrl DownloadUrl { get; set; }
         public Data Data { get; set; }
+        public List<object> Captions { get; set; }
+
     }
 }

@@ -19,6 +19,9 @@
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\bin\Debug\CodingChick.UdemyUniversal.WindowsPhone.exe">
       <PackagePath>CodingChick.UdemyUniversal.WindowsPhone.exe</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.PlayerFramework.Xaml\2.0.0.0\References\CommonConfiguration\neutral\Microsoft.PlayerFramework.dll">
+      <PackagePath>Microsoft.PlayerFramework.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Efrat Barak\AppData\Local\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\References\CommonConfiguration\neutral\Telerik.Universal.Core.dll">
       <PackagePath>Telerik.Universal.Core.dll</PackagePath>
     </AppxPackagedFile>
@@ -64,6 +67,15 @@
     <AppxPackagedFile Include="C:\Users\Efrat Barak\AppData\Local\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Primitives\App.xbf">
       <PackagePath>Telerik.Universal.UI.Xaml.Primitives\App.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.PlayerFramework.Xaml\2.0.0.0\Redist\CommonConfiguration\neutral\Microsoft.PlayerFramework\Themes\Classic.xbf">
+      <PackagePath>Microsoft.PlayerFramework\Themes\Classic.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.PlayerFramework.Xaml\2.0.0.0\Redist\CommonConfiguration\neutral\Microsoft.PlayerFramework\Themes\Entertainment.xbf">
+      <PackagePath>Microsoft.PlayerFramework\Themes\Entertainment.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.PlayerFramework.Xaml\2.0.0.0\Redist\CommonConfiguration\neutral\Microsoft.PlayerFramework\Themes\Generic.xbf">
+      <PackagePath>Microsoft.PlayerFramework\Themes\Generic.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Efrat Barak\AppData\Local\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Chart\Themes\Generic.xbf">
       <PackagePath>Telerik.Universal.UI.Xaml.Chart\Themes\Generic.xbf</PackagePath>
     </AppxPackagedFile>
@@ -78,6 +90,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Efrat Barak\AppData\Local\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Primitives\Themes\ListBox.xbf">
       <PackagePath>Telerik.Universal.UI.Xaml.Primitives\Themes\ListBox.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.PlayerFramework.Xaml\2.0.0.0\Redist\CommonConfiguration\neutral\Microsoft.PlayerFramework\Themes\Phone.xbf">
+      <PackagePath>Microsoft.PlayerFramework\Themes\Phone.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Efrat Barak\AppData\Local\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Primitives\Themes\ThemeColorsDark.xbf">
       <PackagePath>Telerik.Universal.UI.Xaml.Primitives\Themes\ThemeColorsDark.xbf</PackagePath>
@@ -210,6 +225,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\bin\Debug\Views\MainPageView.xbf">
       <PackagePath>Views\MainPageView.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\bin\Debug\Views\MediaPlayerView.xbf">
+      <PackagePath>Views\MediaPlayerView.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\bin\Debug\CodingChick.UdemyUniversal.WindowsPhone.xr.xml">
       <PackagePath>CodingChick.UdemyUniversal.WindowsPhone.xr.xml</PackagePath>

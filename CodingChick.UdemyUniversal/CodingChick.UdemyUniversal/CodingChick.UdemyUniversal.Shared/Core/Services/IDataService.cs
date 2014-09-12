@@ -11,5 +11,6 @@ namespace CodingChick.UdemyUniversal.Core.Services
         Task<List<Category>> GetCategories();
         Task<CoursesListPage<MyCourse>> GetMyCourses();
         Task<List<Chapter>> GetCourseCuriculum(string courseId);
+        Task<CourseDetails> GetFullCourseCuriculum(string courseId);
     }
 }

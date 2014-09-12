@@ -16,8 +16,10 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Controls\CourseItemControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ChapterLectureTemplateSelector.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CoreUI\PagedCollection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CoreUI\StringConsts.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Base\Helpers\BaseDataConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Base\Helpers\JsonCreationConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Base\Helpers\HttpUtilityHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Base\HttpClientAccessor.cs" />
@@ -57,6 +59,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\DiscoveryViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LoginViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MediaPlayerViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MyCourseViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\CourseDetailsView.xaml.cs">
       <DependentUpon>CourseDetailsView.xaml</DependentUpon>
@@ -69,6 +72,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\MainPageView.xaml.cs">
       <DependentUpon>MainPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\MediaPlayerView.xaml.cs">
+      <DependentUpon>MediaPlayerView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -89,6 +95,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="$(MSBuildThisFileDirectory)Views\MainPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\MediaPlayerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

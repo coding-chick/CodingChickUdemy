@@ -168,9 +168,13 @@ namespace CodingChick.UdemyUniversal.ViewModels
 
         public void ShowCourseDetails(ItemClickEventArgs args)
         {
-            var selectedCourse = (CourseViewModel) args.ClickedItem;
+            Course courseModel;
+            if (args.ClickedItem.GetType() == typeof(MyCourseViewModel))
+                courseModel = ((MyCourseViewModel)args.ClickedItem).CourseModel;
+            else
+                courseModel = ((CourseViewModel)args.ClickedItem).CourseModel;
 
-            _navigationService.NavigateToViewModel<CourseDetailsViewModel>(selectedCourse.CourseModel);
+            _navigationService.NavigateToViewModel<CourseDetailsViewModel>(courseModel);
         }
     }
 }
