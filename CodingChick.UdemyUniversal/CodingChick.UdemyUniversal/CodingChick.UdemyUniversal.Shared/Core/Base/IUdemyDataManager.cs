@@ -10,5 +10,7 @@ namespace CodingChick.UdemyUniversal.Core.Base
 
         Task<T> GetDataAsyncWithConverter<T>(string method, List<KeyValuePair<string, string>> queryParams,
             string token);
+
+        Task<T> PostDataAsync<T>(string method, string token);
     }
 }

@@ -33,37 +33,6 @@ namespace CodingChick.UdemyUniversal.ViewModels
 
             Students = Parameter.NumSubscribers.ToString();
 
-            //Curiculum = new List<ChapterViewModel>()
-            //{
-            //    new ChapterViewModel()
-            //    {
-            //        Chapter = new Chapter() {ChapterIndex = 1, Title = "First chapter"},
-            //        Lectures = new List<Lecture>
-            //        {
-            //             new Lecture() {ChapterIndex = 1, Title = "First lecture"},
-            //             new Lecture() {ChapterIndex = 1, Title = "Second lecture"}
-            //        }
-            //    },
-            //    new ChapterViewModel()
-            //    {
-            //        Chapter = new Chapter() {ChapterIndex = 2, Title = "Second chapter"},
-            //        Lectures = new List<Lecture>
-            //        {
-            //            new Lecture() {ChapterIndex = 1, Title = "Third lecture"},
-            //            new Lecture() {ChapterIndex = 1, Title = "Forth lecture"},
-            //        }
-            //    },
-            //    new ChapterViewModel()
-            //    {
-            //        Chapter = new Chapter() {ChapterIndex = 3, Title = "Third chapter"},
-            //        Lectures = new List<Lecture>
-            //        {
-            //           new Lecture() {ChapterIndex = 1, Title = "Fifth lecture"},
-            //           new Lecture() {ChapterIndex = 1, Title = "Sixth lecture"},
-            //        }
-            //    },
-            //};
-
             Curiculum = new List<Chapter>()
             {
                 new Chapter() {ChapterIndex = 1, Title = "First chapter"},
@@ -97,24 +66,6 @@ namespace CodingChick.UdemyUniversal.ViewModels
         {
             var courseDetails = await _iDataService.GetFullCourseCuriculum(Parameter.Id);
             Curiculum = courseDetails.Curriculum;
-            //var allChapters = from chapter in result
-            //                  where typeof(Chapter) == chapter.GetType()
-            //                  select chapter;
-
-            //var chapterViewModels = new List<ChapterViewModel>();
-            //foreach (Chapter chapter in allChapters)
-            //{
-            //    var lecturesForChapter = (from lecture in result
-            //                              where typeof(Lecture) == lecture.GetType() && lecture.ChapterIndex == chapter.Index
-            //                              select lecture as Lecture).ToList();
-
-
-            //    chapterViewModels.Add(new ChapterViewModel()
-            //    {
-            //        Chapter = chapter,
-            //        Lectures = lecturesForChapter
-            //    });
-            //}
         }
 
 
@@ -144,13 +95,22 @@ namespace CodingChick.UdemyUniversal.ViewModels
 
         public void PlayLecture(ItemClickEventArgs args)
         {
-            var selectedLecture = (Chapter) args.ClickedItem;
-            if (selectedLecture.GetType() == typeof (Lecture))
+            var selectedLecture = (Chapter)args.ClickedItem;
+            if (selectedLecture.GetType() == typeof(Lecture))
             {
-                _navigationService.NavigateToViewModel<MediaPlayerViewModel>(new Uri(((Lecture)selectedLecture).Asset.StreamUrl));
+                var lecturesListViewModel = new LecturesListViewModel();
+                lecturesListViewModel.Lectures = (from lecture in Curiculum
+                                                  where lecture.GetType() == typeof(Lecture)
+                                                  orderby lecture.ObjectIndex
+                                                  select lecture as Lecture).ToList();
+
+                lecturesListViewModel.CurrentLecture = selectedLecture as Lecture;
+
+                _navigationService.NavigateToViewModel<LecturePlayerViewModel>(lecturesListViewModel);
             }
         }
     }
+
 
     public class ChapterViewModel
     {

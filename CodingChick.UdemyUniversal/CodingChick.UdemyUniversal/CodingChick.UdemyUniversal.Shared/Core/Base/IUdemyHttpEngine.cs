@@ -8,5 +8,6 @@ namespace CodingChick.UdemyUniversal.Core.Base
     {
         Task<HttpContent> GetAsyncWithIdSecret(string method, List<KeyValuePair<string, string>> queryParams);
         Task<HttpContent> GetAsyncWithIdToken(string method, List<KeyValuePair<string, string>> queryParams, string token);
+        Task<HttpContent> PostAsync(string method, string token);
     }
 }

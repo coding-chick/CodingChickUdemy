@@ -28,14 +28,19 @@ namespace CodingChick.UdemyUniversal.Core.Base
 
         public async Task<HttpContent> GetAsync(string address, IDictionary<string, IEnumerable<string>> headers)
         {
+            AddHeadersToCall(headers);
+
+            var response = await _httpClient.GetAsync(address);
+            return response.Content;
+        }
+
+        private void AddHeadersToCall(IDictionary<string, IEnumerable<string>> headers)
+        {
             foreach (var header in headers)
             {
                 if (!_httpClient.DefaultRequestHeaders.Contains(header.Key))
                     _httpClient.DefaultRequestHeaders.Add(header.Key, header.Value);
             }
-
-            var response = await _httpClient.GetAsync(address);
-            return response.Content;
         }
 
 
@@ -67,7 +72,7 @@ namespace CodingChick.UdemyUniversal.Core.Base
         public async Task<HttpContent> PutAsync(string address, HttpContent content, string charSet = "",
             string mediaType = "")
         {
-            AddHeadersToContent(content, charSet, mediaType);
+            AddHeadersToContent(content, new Dictionary<string, IEnumerable<string>>(), charSet, mediaType);
 
             var response = await _httpClient.PutAsync(address, content);
             return response.Content;
@@ -75,10 +80,11 @@ namespace CodingChick.UdemyUniversal.Core.Base
 
 
         public async Task<HttpContent> PostAsync(string address, HttpContent content,
+            IDictionary<string, IEnumerable<string>> headers,
             string charSet = "",
             string mediaType = "")
         {
-            AddHeadersToContent(content, charSet, mediaType);
+            AddHeadersToContent(content, headers, charSet, mediaType);
 
             try
             {
@@ -92,12 +98,16 @@ namespace CodingChick.UdemyUniversal.Core.Base
             }
         }
 
-        private static void AddHeadersToContent(HttpContent content, string charSet, string mediaType)
+        private static void AddHeadersToContent(HttpContent content, IDictionary<string, IEnumerable<string>> headers, string charSet, string mediaType)
         {
             if (charSet != string.Empty && mediaType != string.Empty)
             {
                 content.Headers.ContentType.CharSet = charSet;
                 content.Headers.ContentType.MediaType = mediaType;
+            }
+            foreach (var header in headers)
+            {
+                content.Headers.Add(header.Key, header.Value);
             }
         }
     }

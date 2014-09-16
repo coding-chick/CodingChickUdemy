@@ -47,5 +47,13 @@ namespace CodingChick.UdemyUniversal.Core.Base
             var dataResult = JsonConvert.DeserializeObject<T>(httpString, new BaseDataConverter());
             return dataResult;
         }
+
+        public async Task<T> PostDataAsync<T>(string method, string token)
+        {
+            var httpResult = await _udemyHttpEngine.PostAsync(method, token);
+            var httpString = await httpResult.ReadAsStringAsync();            
+            var dataResult = JsonConvert.DeserializeObject<T>(httpString);
+            return dataResult;
+        }
     }
 }

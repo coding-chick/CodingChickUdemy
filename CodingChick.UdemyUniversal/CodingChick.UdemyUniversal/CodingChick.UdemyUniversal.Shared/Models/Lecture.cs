@@ -21,6 +21,5 @@ namespace CodingChick.UdemyUniversal.Models
         public int? QuizIndex { get; set; }
         public bool? IsCompleted { get; set; }
         public int? CompletionRatio { get; set; }
-
     }
 }

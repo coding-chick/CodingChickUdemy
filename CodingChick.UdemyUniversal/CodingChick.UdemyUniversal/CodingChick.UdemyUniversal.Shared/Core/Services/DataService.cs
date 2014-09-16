@@ -82,5 +82,14 @@ namespace CodingChick.UdemyUniversal.Core.Services
 
             return await _iUdemyDataManager.GetDataAsyncWithConverter<CourseDetails>(string.Format("courses/{0}", courseId), methodParams, _iOAuthService.Token);
         }
+
+        public async Task<Success> PostLectureProgress(string lectureId, bool isFinished)
+        {
+            if (isFinished)
+            {
+                return await _iUdemyDataManager.PostDataAsync<Success>(string.Format("lectures/{0}/completed", lectureId), _iOAuthService.Token);
+            }
+            return await _iUdemyDataManager.PostDataAsync<Success>(string.Format("lectures/{0}/viewed", lectureId), _iOAuthService.Token);
+        }
     }
 }

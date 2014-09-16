@@ -36,10 +36,7 @@
                 <DataTemplate>
                     <Grid Width="360">
                         <Grid.Background>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="#FFD5D5D5" Offset="1"/>
-                                <GradientStop Color="White"/>
-                            </LinearGradientBrush>
+                            <SolidColorBrush Color="White"/>
                         </Grid.Background>
                         <TextBlock Text="{Binding Title}" FontSize="21.333" FontFamily="Segoe WP Semibold"/>
                     </Grid>
@@ -57,9 +54,9 @@
 
 
     <Grid Margin="0,25,0,0">
-    	<Grid.Background>
-    		<ImageBrush Stretch="UniformToFill" ImageSource="/Assets/SingleBackground.png"/>
-    	</Grid.Background>
+        <Grid.Background>
+            <ImageBrush Stretch="UniformToFill" ImageSource="/Assets/SingleBackground.png"/>
+        </Grid.Background>
         <Hub>
             <HubSection x:Uid="AboutCourse" Header="About" Background="{x:Null}" >
                 <DataTemplate>

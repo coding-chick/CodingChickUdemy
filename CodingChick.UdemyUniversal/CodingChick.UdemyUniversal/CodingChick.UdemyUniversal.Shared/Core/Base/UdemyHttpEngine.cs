@@ -44,14 +44,28 @@ namespace CodingChick.UdemyUniversal.Core.Base
 
         public async Task<HttpContent> GetAsyncWithIdToken(string method, List<KeyValuePair<string, string>> queryParams, string token)
         {
+            var headers = CreateClientIdTokenHeaders(token);
+
+            var result = await GetHttpContent(method, queryParams, headers);
+            return result;
+        }
+
+        private IDictionary<string, IEnumerable<string>> CreateClientIdTokenHeaders(string token)
+        {
             IDictionary<string, IEnumerable<string>> headers = new Dictionary<string, IEnumerable<string>>()
             {
                 {"X-Udemy-Client-Id", new List<string>() {ClientId}},
                 {"X-Udemy-Bearer-Token", new List<string>() {token}}
             };
+            return headers;
+        }
 
-            var result = await GetHttpContent(method, queryParams, headers);
-            return result;
+        public async Task<HttpContent> PostAsync(string method, string token)
+        {
+            var headers = CreateClientIdTokenHeaders(token);
+            var finalAddress = HttpUtilityHelper.CreateFullAddess(BaseApiAddress, method, new List<KeyValuePair<string, string>>());
+            var httpContent = new StringContent(string.Empty);
+            return await _clientAccessor.PostAsync(finalAddress, httpContent, headers);
         }
     }
 }

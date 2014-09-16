@@ -21,6 +21,8 @@
     <RootPropertyPathName Name="OnSaleCourses" />
     <RootPropertyPathName Name="Password" />
     <RootPropertyPathName Name="User" />
+    <RootPropertyPathName Name="DataContext" />
+    <RootPropertyPathName Name="PositionInLecture" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Caliburn.Micro.CaliburnApplication">
@@ -109,6 +111,7 @@
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="RelativeSource" />
       <RootProperty Name="Mode" />
+      <RootProperty Name="ElementName" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.RelativeSource">
       <RootProperty Name="Mode" />
@@ -209,8 +212,13 @@
     <RootType FullName="CodingChick.UdemyUniversal.Views.LoginView" />
     <RootType FullName="CodingChick.UdemyUniversal.Views.MainPageView" />
     <RootType FullName="Microsoft.PlayerFramework.MediaPlayer">
-      <RootProperty Name="Source" />
+      <RootProperty Name="Position" />
+      <RootProperty Name="AutoLoadPlugins" />
+      <RootProperty Name="IsSkipNextEnabled" />
+      <RootProperty Name="IsSkipNextVisible" />
+      <RootProperty Name="Plugins" />
     </RootType>
-    <RootType FullName="CodingChick.UdemyUniversal.Views.MediaPlayerView" />
+    <RootType FullName="Microsoft.PlayerFramework.PlaylistPlugin" />
+    <RootType FullName="CodingChick.UdemyUniversal.Views.LecturePlayerView" />
   </Roots.RootTypes>
 </Roots>

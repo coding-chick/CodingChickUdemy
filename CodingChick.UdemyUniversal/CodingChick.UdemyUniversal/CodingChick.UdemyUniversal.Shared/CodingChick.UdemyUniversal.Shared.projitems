@@ -17,6 +17,7 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Controls\CourseItemControl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\ChapterLectureTemplateSelector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CoreUI\LecturePlayItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CoreUI\PagedCollection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CoreUI\StringConsts.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Base\Helpers\BaseDataConverter.cs" />
@@ -51,15 +52,17 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Pagination.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\PromoAsset.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\SimpleResolutionImages.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Success.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\TokenData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CategoryViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CourseDetailsViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CoursesViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CourseViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\DiscoveryViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LecturesListViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LoginViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainPageViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MediaPlayerViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LecturePlayerViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MyCourseViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\CourseDetailsView.xaml.cs">
       <DependentUpon>CourseDetailsView.xaml</DependentUpon>
@@ -73,8 +76,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\MainPageView.xaml.cs">
       <DependentUpon>MainPageView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Views\MediaPlayerView.xaml.cs">
-      <DependentUpon>MediaPlayerView.xaml</DependentUpon>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\LecturePlayerView.xaml.cs">
+      <DependentUpon>LecturePlayerView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -98,7 +101,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="$(MSBuildThisFileDirectory)Views\MediaPlayerView.xaml">
+    <Page Include="$(MSBuildThisFileDirectory)Views\LecturePlayerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

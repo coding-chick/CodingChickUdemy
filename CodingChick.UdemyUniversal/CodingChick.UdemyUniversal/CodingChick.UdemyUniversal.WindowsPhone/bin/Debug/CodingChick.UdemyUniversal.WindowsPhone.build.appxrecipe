@@ -226,8 +226,8 @@
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\bin\Debug\Views\MainPageView.xbf">
       <PackagePath>Views\MainPageView.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\bin\Debug\Views\MediaPlayerView.xbf">
-      <PackagePath>Views\MediaPlayerView.xbf</PackagePath>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\bin\Debug\Views\LecturePlayerView.xbf">
+      <PackagePath>Views\LecturePlayerView.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\bin\Debug\CodingChick.UdemyUniversal.WindowsPhone.xr.xml">
       <PackagePath>CodingChick.UdemyUniversal.WindowsPhone.xr.xml</PackagePath>
