@@ -4,6 +4,7 @@ using System.Text;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using CodingChick.UdemyUniversal.Models;
+using CodingChick.UdemyUniversal.ViewModels;
 
 namespace CodingChick.UdemyUniversal.Controls
 {
@@ -15,7 +16,7 @@ namespace CodingChick.UdemyUniversal.Controls
 
         protected override DataTemplate SelectTemplateCore(object item, DependencyObject container)
         {
-            if (item.GetType() == typeof (Lecture))
+            if (item.GetType() == typeof (LectureViewModel))
             {
                 return Lecture;
             }

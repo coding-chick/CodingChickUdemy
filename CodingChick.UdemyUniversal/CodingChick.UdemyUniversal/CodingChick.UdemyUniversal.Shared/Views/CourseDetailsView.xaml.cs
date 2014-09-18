@@ -26,9 +26,5 @@ namespace CodingChick.UdemyUniversal.Views
         {
             this.InitializeComponent();
         }
-
-        private void ListViewBase_OnItemClick(object sender, ItemClickEventArgs e)
-        {
-        }
     }
 }

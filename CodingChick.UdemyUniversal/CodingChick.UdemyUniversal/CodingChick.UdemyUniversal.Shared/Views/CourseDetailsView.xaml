@@ -38,14 +38,21 @@
                         <Grid.Background>
                             <SolidColorBrush Color="White"/>
                         </Grid.Background>
-                        <TextBlock Text="{Binding Title}" FontSize="21.333" FontFamily="Segoe WP Semibold"/>
+                        <TextBlock Text="{Binding Chapter.Title}" FontSize="21.333" FontFamily="Segoe WP Semibold"/>
                     </Grid>
                 </DataTemplate>
             </controls:ChapterLectureTemplateSelector.Chapter>
             <controls:ChapterLectureTemplateSelector.Lecture>
                 <DataTemplate>
                     <Grid Width="360">
-                        <TextBlock Text="{Binding Title}" FontSize="16" FontFamily="Segoe WP" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0"/>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding Lecture.Title}" FontSize="16" FontFamily="Segoe WP" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0" 
+                                   Grid.Column="1" />
+                        <controls:PlayLectureControl PlayLectureControlState="{Binding PlayLectureState}" HorizontalAlignment="Left"
+                                                     Grid.Column="0" Visibility="{Binding ShowPlayButton}"/>
                     </Grid>
                 </DataTemplate>
             </controls:ChapterLectureTemplateSelector.Lecture>
@@ -87,13 +94,8 @@
                 <DataTemplate>
                     <ListView ItemsSource="{Binding Curiculum}" 
                               IsItemClickEnabled="True"
-                        ItemTemplateSelector="{StaticResource ChapterLectureTemplateSelector}"
-                        micro:Message.Attach="[Event ItemClick] = [PlayLecture($eventArgs)]" >
-                        <!--<ListView.ItemTemplate>
-                            <DataTemplate>
-                                 
-                            </DataTemplate>
-                        </ListView.ItemTemplate>-->
+                              micro:Message.Attach="[Event ItemClick] = [PlayLecture($eventArgs)]" 
+                        ItemTemplateSelector="{StaticResource ChapterLectureTemplateSelector}" >
                     </ListView>
                 </DataTemplate>
             </HubSection>

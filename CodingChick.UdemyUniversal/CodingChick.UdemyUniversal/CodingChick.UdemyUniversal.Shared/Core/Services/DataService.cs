@@ -76,7 +76,7 @@ namespace CodingChick.UdemyUniversal.Core.Services
                 {
                     new KeyValuePair<string, string>("fields[user]","@min,jobTitle,description"),
                     new KeyValuePair<string, string>("fields[course]", "description,curriculum,faq,whatYouWillLearnData,requirementsData,whoShouldAttendData-giftUrl,-isPrivate,-isInAppPurchaseEnabled,-notifications,-inAppPurchaseEnabled,-isAvailableOnIos,-inAppPurchasePriceText,-isPremium,-canEdit,-isInstructor,-publishedTime,-isPaid,-originalPriceText,-promoAsset,-settings"),
-                    new KeyValuePair<string, string>("fields[lecture]", "@min,-images,asset,-publicUrl,-isDownloadable,-isPublished,-questionExists,-sourceCodeExists,-externalLinkExists,extras"),
+                    new KeyValuePair<string, string>("fields[lecture]", "@min,-images,asset,-publicUrl,-isDownloadable,-isPublished,-questionExists,-sourceCodeExists,-externalLinkExists,extras,isCompleted,completionRatio"),
                     new KeyValuePair<string, string>("FIELDS[ASSET]", "@default,-description,-remainingProcessingTime,-status"),
                 };
 

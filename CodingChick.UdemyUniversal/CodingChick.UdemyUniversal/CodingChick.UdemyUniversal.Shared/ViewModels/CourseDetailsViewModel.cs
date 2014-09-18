@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Caliburn.Micro;
 using CodingChick.UdemyUniversal.Core.Services;
@@ -16,7 +18,7 @@ namespace CodingChick.UdemyUniversal.ViewModels
         private readonly IDataService _iDataService;
         private Course _parameter;
         private string _students;
-        private List<Chapter> _curiculum;
+        private ObservableCollection<CurciculumViewModelBase> _curiculum;
 
         public CourseDetailsViewModel()
         {
@@ -33,14 +35,13 @@ namespace CodingChick.UdemyUniversal.ViewModels
 
             Students = Parameter.NumSubscribers.ToString();
 
-            Curiculum = new List<Chapter>()
+            Curiculum = new ObservableCollection<CurciculumViewModelBase>()
             {
-                new Chapter() {ChapterIndex = 1, Title = "First chapter"},
-                 new Lecture() {ChapterIndex = 1, Title = "First lecture"},
-                 new Lecture() {ChapterIndex = 1, Title = "Second lecture"},
-                new Chapter() { ChapterIndex = 2, Title = "Second chapter" },
-                new Lecture() {ChapterIndex = 1, Title = "Third lecture"},
-                        new Lecture() {ChapterIndex = 1, Title = "Forth lecture"},
+                new ChapterViewModel() {Chapter = new Chapter(){ChapterIndex = 1, Title = "First chapter"}},
+                new LectureViewModel() {Lecture = new Lecture(){ChapterIndex = 1, Title = "First lecture"}},
+                new LectureViewModel() {Lecture = new Lecture(){ChapterIndex = 2, Title = "Second lecture"}},
+                new ChapterViewModel() {Chapter = new Chapter(){ChapterIndex = 2, Title = "First lecture"}},
+
             };
         }
 
@@ -65,11 +66,28 @@ namespace CodingChick.UdemyUniversal.ViewModels
         private async Task CreateCuriculumViewModels()
         {
             var courseDetails = await _iDataService.GetFullCourseCuriculum(Parameter.Id);
-            Curiculum = courseDetails.Curriculum;
+            Curiculum = new ObservableCollection<CurciculumViewModelBase>();
+            foreach (var chapter in courseDetails.Curriculum)
+            {
+                if (chapter.GetType() == typeof (Chapter))
+                {
+                    Curiculum.Add(new ChapterViewModel(){Chapter = chapter});
+                }
+                else
+                {
+                    var lectureViewModel = new LectureViewModel() {Lecture = chapter as Lecture};
+                    if (Parameter.GetType() == typeof (MyCourse))
+                        lectureViewModel.OwnedLecture = true;
+                    else
+                        lectureViewModel.OwnedLecture = false;
+
+                    Curiculum.Add(lectureViewModel);
+                }
+            }
         }
 
 
-        public List<Chapter> Curiculum
+        public ObservableCollection<CurciculumViewModelBase> Curiculum
         {
             get { return _curiculum; }
             set
@@ -100,22 +118,15 @@ namespace CodingChick.UdemyUniversal.ViewModels
             {
                 var lecturesListViewModel = new LecturesListViewModel();
                 lecturesListViewModel.Lectures = (from lecture in Curiculum
-                                                  where lecture.GetType() == typeof(Lecture)
-                                                  orderby lecture.ObjectIndex
-                                                  select lecture as Lecture).ToList();
+                                                  where lecture.GetType() == typeof(LectureViewModel) && 
+                                                  ((LectureViewModel)lecture).ShowPlayButton == Visibility.Visible
+                                                  orderby ((LectureViewModel)lecture).Lecture.ObjectIndex
+                                                  select ((LectureViewModel)lecture).Lecture).ToList();
 
                 lecturesListViewModel.CurrentLecture = selectedLecture as Lecture;
 
                 _navigationService.NavigateToViewModel<LecturePlayerViewModel>(lecturesListViewModel);
             }
         }
-    }
-
-
-    public class ChapterViewModel
-    {
-        public Chapter Chapter { get; set; }
-
-        public List<Lecture> Lectures { get; set; }
     }
 }

@@ -17,6 +17,7 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Controls\CourseItemControl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\ChapterLectureTemplateSelector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\PlayLectureControl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CoreUI\LecturePlayItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CoreUI\PagedCollection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CoreUI\StringConsts.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CourseViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\DiscoveryViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LecturesListViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LectureViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LoginViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LecturePlayerViewModel.cs" />

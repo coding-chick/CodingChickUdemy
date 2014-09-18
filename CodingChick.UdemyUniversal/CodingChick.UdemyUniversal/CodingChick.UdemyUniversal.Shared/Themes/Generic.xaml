@@ -4,54 +4,109 @@
     xmlns:local="using:CodingChick.UdemyUniversal.Themes"
     xmlns:controls="using:CodingChick.UdemyUniversal.Controls" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
 
+    <Style TargetType="controls:PlayLectureControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:PlayLectureControl">
+                    <Grid Margin="0,0,10,0">
+                    	<VisualStateManager.VisualStateGroups>
+                    		<VisualStateGroup x:Name="LectureCompleteStates">
+                    			<VisualState x:Name="Notviewed"/>
+                    			<VisualState x:Name="PartiallyViewed">
+                    				<Storyboard>
+                    					<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="PartiallyFilled">
+                    						<DiscreteObjectKeyFrame KeyTime="0">
+                    							<DiscreteObjectKeyFrame.Value>
+                    								<Visibility>Visible</Visibility>
+                    							</DiscreteObjectKeyFrame.Value>
+                    						</DiscreteObjectKeyFrame>
+                    					</ObjectAnimationUsingKeyFrames>
+                    					<DoubleAnimation Duration="0" To="0.487" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[3].(GradientStop.Offset)" Storyboard.TargetName="PartiallyFilled" d:IsOptimized="True"/>
+                    					<ColorAnimation Duration="0" To="#FFA0F37B" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Color)" Storyboard.TargetName="PartiallyFilled" d:IsOptimized="True"/>
+                    					<ColorAnimation Duration="0" To="#FFA0F37B" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="PartiallyFilled" d:IsOptimized="True"/>
+                    					<DoubleAnimation Duration="0" To="0.48" Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[2].(GradientStop.Offset)" Storyboard.TargetName="PartiallyFilled" d:IsOptimized="True"/>
+                    				</Storyboard>
+                    			</VisualState>
+                    			<VisualState x:Name="Complete">
+                    				<Storyboard>
+                    					<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Solid">
+                    						<DiscreteObjectKeyFrame KeyTime="0">
+                    							<DiscreteObjectKeyFrame.Value>
+                    								<Visibility>Visible</Visibility>
+                    							</DiscreteObjectKeyFrame.Value>
+                    						</DiscreteObjectKeyFrame>
+                    					</ObjectAnimationUsingKeyFrames>
+                    					<ColorAnimation Duration="0" To="#E5A0F37B" Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Solid" d:IsOptimized="True"/>
+                    				</Storyboard>
+                    			</VisualState>
+                    		</VisualStateGroup>
+                    	</VisualStateManager.VisualStateGroups>                     
+                        <Ellipse x:Name="Solid" HorizontalAlignment="Center" Height="31" Stroke="Black" VerticalAlignment="Center" Width="31"  Fill="#FF198D28" Visibility="Collapsed"/>
+                        <Ellipse x:Name="None" HorizontalAlignment="Center" Height="31" Stroke="Black" VerticalAlignment="Center" Width="31" />                     
+                    	<Ellipse x:Name="PartiallyFilled" HorizontalAlignment="Center" Height="31" Stroke="Black" VerticalAlignment="Center" Width="31" Visibility="Collapsed">
+                    		<Ellipse.Fill>
+                    			<LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                    				<GradientStop Color="#FF66E276" Offset="0"/>
+                    				<GradientStop Color="#00F8F8F8" Offset="1"/>
+                    				<GradientStop Color="#FF198D28" Offset="0.525"/>
+                    				<GradientStop Color="#00F5FDF6" Offset="0.526"/>
+                    			</LinearGradientBrush>
+                    		</Ellipse.Fill>
+                    	</Ellipse>
+                    	<SymbolIcon Symbol="Play" Foreground="#7F000000"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontFamily" Value="Global User Interface"/>
+    </Style>
 
-
-	<Style TargetType="controls:CourseItemControl">
-		<Setter Property="Template">
-			<Setter.Value>
-				<ControlTemplate TargetType="controls:CourseItemControl">
-					<Grid Height="200" Width="340">
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="*"/>
-							<ColumnDefinition Width="70"/>
-						</Grid.ColumnDefinitions>
-						<Grid.RowDefinitions>
-							<RowDefinition Height="70" />
-							<RowDefinition/>
-							<RowDefinition Height="10"/>
-							<RowDefinition Height="Auto"/>
-						</Grid.RowDefinitions>
-						<Image x:Name="BackgroundImage" Source="{Binding ImageUri}" Grid.RowSpan="4" Grid.ColumnSpan="2" />
-						<Rectangle x:Name="LowerTitleBackground" Stroke="Black" Grid.Row="3" Grid.ColumnSpan="2" Fill="#3FF4F4F5" StrokeThickness="0"/>
+    <Style TargetType="controls:CourseItemControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:CourseItemControl">
+                    <Grid Height="200" Width="340">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="70"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="70" />
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Image x:Name="BackgroundImage" Source="{Binding ImageUri}" Grid.RowSpan="4" Grid.ColumnSpan="2" />
+                        <Rectangle x:Name="LowerTitleBackground" Stroke="Black" Grid.Row="3" Grid.ColumnSpan="2" Fill="#3FF4F4F5" StrokeThickness="0"/>
                         <TextBlock x:Name="CourseTitle" Text="{Binding CourseModel.Title}" Foreground="Black" Grid.Row="3" FontSize="18.667" TextWrapping="Wrap" HorizontalAlignment="Left" Width="340" Grid.ColumnSpan="2" Margin="5,0,5,5" FontFamily="Segoe WP Semibold"/>
-						<Rectangle x:Name="UpperCornerGradient" Stroke="Black" Grid.Column="1" Grid.Row="0" StrokeThickness="0">
-							<Rectangle.Fill>
-								<LinearGradientBrush EndPoint="0,1" StartPoint="1,0">
-									<GradientStop Color="#66000000" Offset="0.009"/>
-									<GradientStop Offset="1"/>
-									<GradientStop Color="#4C000000" Offset="0.483"/>
-									<GradientStop Offset="0.531"/>
-								</LinearGradientBrush>
-							</Rectangle.Fill>
-						</Rectangle>
-						<TextBlock x:Name="Price" Text="{Binding Price}" Foreground="{Binding PriceColorBrush, RelativeSource={RelativeSource Mode=TemplatedParent}}"  TextWrapping="Wrap" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Grid.RowSpan="2" FontWeight="Bold" Grid.Column="1" Margin="5,15,0,0">
-							<TextBlock.RenderTransform>
-								<CompositeTransform Rotation="47.401"/>
-							</TextBlock.RenderTransform>
-						</TextBlock>
+                        <Rectangle x:Name="UpperCornerGradient" Stroke="Black" Grid.Column="1" Grid.Row="0" StrokeThickness="0">
+                            <Rectangle.Fill>
+                                <LinearGradientBrush EndPoint="0,1" StartPoint="1,0">
+                                    <GradientStop Color="#66000000" Offset="0.009"/>
+                                    <GradientStop Offset="1"/>
+                                    <GradientStop Color="#4C000000" Offset="0.483"/>
+                                    <GradientStop Offset="0.531"/>
+                                </LinearGradientBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <TextBlock x:Name="Price" Text="{Binding Price}" Foreground="{Binding PriceColorBrush, RelativeSource={RelativeSource Mode=TemplatedParent}}"  TextWrapping="Wrap" HorizontalAlignment="Right" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Grid.RowSpan="2" FontWeight="Bold" Grid.Column="1" Margin="5,15,0,0">
+                            <TextBlock.RenderTransform>
+                                <CompositeTransform Rotation="47.401"/>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
                         <TextBlock x:Name="OriginalPrice" Text="{Binding CourseModel.OriginalPriceText}" HorizontalAlignment="Right" Margin="0,5,0,0" Foreground="#FF070000"/>
-						<Rectangle x:Name="LowerTitleGradient" Stroke="Black" StrokeThickness="0" Grid.Row="2" Grid.ColumnSpan="2">
-							<Rectangle.Fill>
-								<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-									<GradientStop Color="Transparent" Offset="0"/>
-									<GradientStop Color="#3FFFFFFF" Offset="1"/>
-								</LinearGradientBrush>
-							</Rectangle.Fill>
-						</Rectangle>
-					</Grid>
-				</ControlTemplate>
-			</Setter.Value>
-		</Setter>
-		<Setter Property="FontFamily" Value="Global User Interface"/>
-	</Style>
+                        <Rectangle x:Name="LowerTitleGradient" Stroke="Black" StrokeThickness="0" Grid.Row="2" Grid.ColumnSpan="2">
+                            <Rectangle.Fill>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="Transparent" Offset="0"/>
+                                    <GradientStop Color="#3FFFFFFF" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontFamily" Value="Global User Interface"/>
+    </Style>
 </ResourceDictionary>

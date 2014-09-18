@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using CodingChick.UdemyUniversal.Controls;
 
 namespace CodingChick.UdemyUniversal.Models
 {
@@ -21,5 +22,17 @@ namespace CodingChick.UdemyUniversal.Models
         public int? QuizIndex { get; set; }
         public bool? IsCompleted { get; set; }
         public int? CompletionRatio { get; set; }
+
+        public PlayLectureControlState PlayLectureState
+        {
+            get
+            {
+                if (CompletionRatio.HasValue && CompletionRatio.Value == 100)
+                    return PlayLectureControlState.Complete;
+                if (CompletionRatio.HasValue && CompletionRatio.Value == 50)
+                    return PlayLectureControlState.Viewed;
+                return PlayLectureControlState.NotViewed;
+            }
+        }
     }
 }
