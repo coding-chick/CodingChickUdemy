@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.System;
+using Windows.UI.Popups;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Caliburn.Micro;
 using CodingChick.UdemyUniversal.Core.Services;
+using CodingChick.UdemyUniversal.CoreUI;
 using CodingChick.UdemyUniversal.Models;
 using System.Linq;
+using Action = System.Action;
 
 namespace CodingChick.UdemyUniversal.ViewModels
 {
@@ -16,9 +21,11 @@ namespace CodingChick.UdemyUniversal.ViewModels
     {
         private readonly INavigationService _navigationService;
         private readonly IDataService _iDataService;
+        private readonly IEventAggregator _eventAggregator;
         private Course _parameter;
         private string _students;
         private ObservableCollection<CurciculumViewModelBase> _curiculum;
+        private Visibility _purchaceButtonVisibility;
 
         public CourseDetailsViewModel()
         {
@@ -45,10 +52,11 @@ namespace CodingChick.UdemyUniversal.ViewModels
             };
         }
 
-        public CourseDetailsViewModel(INavigationService navigationService, IDataService iDataService)
+        public CourseDetailsViewModel(INavigationService navigationService, IDataService iDataService, IEventAggregator eventAggregator)
         {
             _navigationService = navigationService;
             _iDataService = iDataService;
+            _eventAggregator = eventAggregator;
         }
 
         public string Students
@@ -69,14 +77,14 @@ namespace CodingChick.UdemyUniversal.ViewModels
             Curiculum = new ObservableCollection<CurciculumViewModelBase>();
             foreach (var chapter in courseDetails.Curriculum)
             {
-                if (chapter.GetType() == typeof (Chapter))
+                if (chapter.GetType() == typeof(Chapter))
                 {
-                    Curiculum.Add(new ChapterViewModel(){Chapter = chapter});
+                    Curiculum.Add(new ChapterViewModel() { Chapter = chapter });
                 }
                 else
                 {
-                    var lectureViewModel = new LectureViewModel() {Lecture = chapter as Lecture};
-                    if (Parameter.GetType() == typeof (MyCourse))
+                    var lectureViewModel = new LectureViewModel() { Lecture = chapter as Lecture };
+                    if (IsCourseMine)
                         lectureViewModel.OwnedLecture = true;
                     else
                         lectureViewModel.OwnedLecture = false;
@@ -105,28 +113,85 @@ namespace CodingChick.UdemyUniversal.ViewModels
                 _parameter = value;
                 CourseImage = new Uri(_parameter.Images.Img480X270);
                 Students = _parameter.NumSubscribers.ToString();
+
+                NotifyOfPropertyChange(() => Parameter);
             }
+        }
+
+        public bool IsCourseMine
+        {
+            get { return Parameter.GetType() == typeof(MyCourse); }
         }
 
         public Uri CourseImage { get; set; }
 
+        public Visibility PurchaceButtonVisibility
+        {
+            get
+            {
+                if (IsCourseMine)
+                {
+                    return Visibility.Collapsed;
+                }
+                return Visibility.Visible;
+            }
+        }
 
         public void PlayLecture(ItemClickEventArgs args)
         {
-            var selectedLecture = (Chapter)args.ClickedItem;
-            if (selectedLecture.GetType() == typeof(Lecture))
+            var selectedLecture = (CurciculumViewModelBase)args.ClickedItem;
+            if (selectedLecture.GetType() == typeof(LectureViewModel))
             {
-                var lecturesListViewModel = new LecturesListViewModel();
-                lecturesListViewModel.Lectures = (from lecture in Curiculum
-                                                  where lecture.GetType() == typeof(LectureViewModel) && 
-                                                  ((LectureViewModel)lecture).ShowPlayButton == Visibility.Visible
-                                                  orderby ((LectureViewModel)lecture).Lecture.ObjectIndex
-                                                  select ((LectureViewModel)lecture).Lecture).ToList();
-
-                lecturesListViewModel.CurrentLecture = selectedLecture as Lecture;
-
-                _navigationService.NavigateToViewModel<LecturePlayerViewModel>(lecturesListViewModel);
+                if (((LectureViewModel)selectedLecture).ShowPlayButton == Visibility.Visible)
+                {
+                    var lecturesListViewModel = CreateLecturesListViewModels(selectedLecture);
+                    _navigationService.NavigateToViewModel<LecturePlayerViewModel>(lecturesListViewModel);
+                }
+                else
+                {
+                    UiServicesss.ShowCustomMessage(string.Format("Would you like to purchase this course for {0} on Udemy.com?", Parameter.Price), "You don't own this course", "Yes", "No", 
+                        new UICommand("Purchase", command => PurchaceCourse()),
+                        new UICommand("Cancel"));
+                }
             }
+        }
+
+        private LecturesListViewModel CreateLecturesListViewModels(CurciculumViewModelBase selectedLecture)
+        {
+            var lecturesListViewModel = new LecturesListViewModel();
+            lecturesListViewModel.Lectures = (from lecture in Curiculum
+                where lecture.GetType() == typeof (LectureViewModel) &&
+                      ((LectureViewModel) lecture).ShowPlayButton == Visibility.Visible
+                orderby ((LectureViewModel) lecture).Lecture.ObjectIndex
+                select ((LectureViewModel) lecture).Lecture).ToList();
+
+            lecturesListViewModel.CurrentLecture = ((LectureViewModel) selectedLecture).Lecture;
+            return lecturesListViewModel;
+        }
+
+        public string PurchaseButtonContent
+        {
+            get { return string.Format("Buy on Udemy.com for {0}", Parameter.Price); }
+        }
+
+        public void PurchaceCourse()
+        {
+            Launcher.LaunchUriAsync(new Uri(Parameter.Url));
+        }
+
+        public async void ReloadCourseDetails()
+        {
+            await UiServicesss.ShowProgressIndicatorForAction(async () =>
+            {
+                var myCourses = await _iDataService.GetMyCourses();
+                var myCourse = myCourses.CoursesList.Select(c => c).Where(c => c.Id == Parameter.Id).ToList();
+
+                if (myCourse.Any())
+                {
+                    Parameter = myCourse.FirstOrDefault();
+                    await CreateCuriculumViewModels();
+                }
+            });
         }
     }
 }

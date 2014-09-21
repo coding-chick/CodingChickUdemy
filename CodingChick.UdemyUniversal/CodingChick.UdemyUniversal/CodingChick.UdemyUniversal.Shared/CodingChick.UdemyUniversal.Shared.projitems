@@ -21,6 +21,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)CoreUI\LecturePlayItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CoreUI\PagedCollection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CoreUI\StringConsts.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CoreUI\UiServices.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CoreUI\WebBrowserExtentions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Base\Helpers\BaseDataConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Base\Helpers\JsonCreationConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Base\Helpers\HttpUtilityHelper.cs" />

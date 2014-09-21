@@ -7,6 +7,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -84,5 +85,17 @@ namespace CodingChick.UdemyUniversal
         {
             container.BuildUp(instance);
         }
+
+        protected override void OnActivated(IActivatedEventArgs args)
+        {
+            base.OnActivated(args);
+        }
+
+        //protected override async void OnResuming(object sender, object e)
+        //{
+        //    new MessageDialog("OnResuming").ShowAsync();
+        //    base.OnResuming(sender, e);
+        //}
+
     }
 }

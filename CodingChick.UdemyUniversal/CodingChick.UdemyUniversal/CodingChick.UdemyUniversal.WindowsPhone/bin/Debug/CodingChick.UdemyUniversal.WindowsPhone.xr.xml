@@ -11,9 +11,11 @@
     <RootPropertyPathName Name="PlayLectureState" />
     <RootPropertyPathName Name="ShowPlayButton" />
     <RootPropertyPathName Name="Lecture" />
-    <RootPropertyPathName Name="Curiculum" />
     <RootPropertyPathName Name="Parameter" />
     <RootPropertyPathName Name="Description" />
+    <RootPropertyPathName Name="Curiculum" />
+    <RootPropertyPathName Name="PurchaseButtonContent" />
+    <RootPropertyPathName Name="PurchaceButtonVisibility" />
     <RootPropertyPathName Name="Headline" />
     <RootPropertyPathName Name="AvgRating" />
     <RootPropertyPathName Name="Students" />
@@ -72,6 +74,12 @@
       <RootMethod Name="GetColumn" />
       <RootMethod Name="SetColumn" />
     </RootType>
+    <RootType FullName="FirstFloor.XamlSpy.XamlMetadata">
+      <RootMethod Name="GetSourceInfo" />
+      <RootMethod Name="SetSourceInfo" />
+      <RootMethod Name="GetSpyServiceSettings" />
+      <RootMethod Name="SetSpyServiceSettings" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
       <RootProperty Name="Width" />
     </RootType>
@@ -82,10 +90,10 @@
       <RootProperty Name="Source" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Margin" />
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
       <RootProperty Name="Opacity" />
-      <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Shapes.Rectangle">
       <RootProperty Name="Stroke" />
@@ -217,6 +225,11 @@
       <RootProperty Name="DataContext" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.NullExtension" />
+    <RootType FullName="Windows.UI.Xaml.Controls.WebView" />
+    <RootType FullName="CodingChick.UdemyUniversal.CoreUI.WebBrowserExtentions">
+      <RootMethod Name="GetHTML" />
+      <RootMethod Name="SetHTML" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="IsItemClickEnabled" />
@@ -232,6 +245,17 @@
       <RootProperty Name="EmptyIconStyle" />
       <RootProperty Name="FilledIconStyle" />
       <RootProperty Name="HighlightedIconStyle" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Margin" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Button">
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Content" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="BorderThickness" />
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="Background" />
+      <RootProperty Name="Visibility" />
     </RootType>
     <RootType FullName="CodingChick.UdemyUniversal.Views.CourseDetailsView" />
     <RootType FullName="Caliburn.Micro.Bind">
@@ -261,10 +285,6 @@
     <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
       <RootProperty Name="Password" />
       <RootProperty Name="PlaceholderText" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Button">
-      <RootProperty Name="Content" />
-      <RootProperty Name="HorizontalAlignment" />
     </RootType>
     <RootType FullName="CodingChick.UdemyUniversal.Views.LoginView" />
     <RootType FullName="CodingChick.UdemyUniversal.Views.MainPageView" />
