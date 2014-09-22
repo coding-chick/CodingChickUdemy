@@ -75,6 +75,7 @@ namespace CodingChick.UdemyUniversal.ViewModels
         private async Task CreateCuriculumViewModels()
         {
             var courseDetails = await _iDataService.GetFullCourseCuriculum(Parameter.Id);
+            Parameter.Description = courseDetails.Description; 
             Curiculum = new ObservableCollection<CurciculumViewModelBase>();
             foreach (var chapter in courseDetails.Curriculum)
             {
@@ -150,7 +151,7 @@ namespace CodingChick.UdemyUniversal.ViewModels
                 }
                 else
                 {
-                    UiServices.ShowCustomMessage(string.Format("Would you like to purchase this course for {0} on Udemy.com?", Parameter.Price), "You don't own this course", "Yes", "No", 
+                    UiServices.ShowCustomMessage(string.Format("Would you like to purchase this course for {0} on Udemy.com?", PriceText), "You don't own this course", "Yes", "No", 
                         new UICommand("Purchase", command => PurchaceCourse()),
                         new UICommand("Cancel"));
                 }
@@ -172,7 +173,20 @@ namespace CodingChick.UdemyUniversal.ViewModels
 
         public string PurchaseButtonContent
         {
-            get { return string.Format("Buy on Udemy.com for {0}", Parameter.Price); }
+            get
+            {
+                return string.Format("Buy on Udemy.com for {0}", PriceText);
+            }
+        }
+
+        public string PriceText
+        {
+            get
+            {
+                if (Parameter != null)
+                    return Parameter.GoogleInAppPurchasePriceText.TrimStart('$') + "$";
+                return string.Empty;
+            }
         }
 
         public void PurchaceCourse()

@@ -35,11 +35,11 @@
         <controls:ChapterLectureTemplateSelector x:Key="ChapterLectureTemplateSelector">
             <controls:ChapterLectureTemplateSelector.Chapter>
                 <DataTemplate>
-                    <Grid Width="360">
+                    <Grid Width="360" >
                         <Grid.Background>
-                            <SolidColorBrush Color="White"/>
+                            <SolidColorBrush Color="White" />
                         </Grid.Background>
-                        <TextBlock Text="{Binding Chapter.Title}" FontSize="21.333" FontFamily="Segoe WP Semibold"/>
+                        <TextBlock Text="{Binding Chapter.Title}" FontSize="23.333" FontFamily="Segoe WP Semibold" Margin="0,3,0,3" />
                     </Grid>
                 </DataTemplate>
             </controls:ChapterLectureTemplateSelector.Chapter>

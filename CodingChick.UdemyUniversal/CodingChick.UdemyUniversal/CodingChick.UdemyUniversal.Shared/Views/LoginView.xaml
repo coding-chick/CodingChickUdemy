@@ -7,7 +7,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d" FontSize="18.667">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+    <Grid HorizontalAlignment="Stretch">
+    	<Grid.Background>
+    		<ImageBrush ImageSource="ms-appx:///Assets/SingleBackground.png"/>
+    	</Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="*"/>
@@ -17,9 +20,9 @@
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="User Email" Grid.Row="0" Grid.Column="0" />
-        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding User, Mode=TwoWay}" PlaceholderText="User email"/>
-        <TextBlock Text="Password" Grid.Row="1" Grid.Column="0" />
+        <TextBlock Text="User Email" Grid.Row="0" Grid.Column="0" VerticalAlignment="Bottom" Margin="0,0,0,15" />
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding User, Mode=TwoWay}" PlaceholderText="User email" FontFamily="Global User Interface" VerticalAlignment="Bottom"/>
+        <TextBlock Text="Password" Grid.Row="1" Grid.Column="0" Margin="0,18,0,0" />
         <PasswordBox Grid.Row="1" Grid.Column="1" Password="{Binding Password, Mode=TwoWay}" PlaceholderText="Password"/>
         <Button Grid.Row="2" Grid.ColumnSpan="2" Content="Sign In" HorizontalAlignment="Center" x:Name="SignIn" />
     </Grid>

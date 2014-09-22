@@ -1,10 +1,13 @@
 ﻿using System.Collections.Generic;
+using Caliburn.Micro;
 using Newtonsoft.Json;
+using Telerik.Universal.Core;
 
 namespace CodingChick.UdemyUniversal.Models
 {
-    public class Course
+    public class Course :PropertyChangedBase
     {
+        private string _description;
         //public string __class { get; set; }
         public string Id { get; set; }
         public string Title { get; set; }
@@ -37,6 +40,15 @@ namespace CodingChick.UdemyUniversal.Models
         public bool HasCertificate { get; set; }
         public string Locale { get; set; }
         public string Status { get; set; }
-        public string Description { get; set; }
+
+        public string Description
+        {
+            get { return _description; }
+            set
+            {
+                _description = value;
+                NotifyOfPropertyChange(() => Description);
+            }
+        }
     }
 }

@@ -64,7 +64,6 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="Background" />
       <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="VerticalAlignment" />
       <RootMethod Name="GetRowSpan" />
       <RootMethod Name="SetRowSpan" />
       <RootMethod Name="GetColumnSpan" />
@@ -273,16 +272,18 @@
       <RootProperty Name="SelectionMode" />
     </RootType>
     <RootType FullName="CodingChick.UdemyUniversal.Views.CoursesView" />
-    <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="Text" />
       <RootProperty Name="PlaceholderText" />
+      <RootProperty Name="FontFamily" />
+      <RootProperty Name="VerticalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
       <RootProperty Name="Password" />
       <RootProperty Name="PlaceholderText" />
     </RootType>
     <RootType FullName="CodingChick.UdemyUniversal.Views.LoginView" />
+    <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="CodingChick.UdemyUniversal.Views.MainPageView" />
     <RootType FullName="Microsoft.PlayerFramework.MediaPlayer">
       <RootProperty Name="Position" />
