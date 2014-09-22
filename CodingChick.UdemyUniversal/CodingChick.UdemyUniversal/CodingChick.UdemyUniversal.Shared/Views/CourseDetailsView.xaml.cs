@@ -48,6 +48,7 @@ namespace CodingChick.UdemyUniversal.Views
 
         void Current_Resuming(object sender, object e)
         {
+            //This is the only event that gets invoked when app resumes back from launcher web browser.
             ((CourseDetailsViewModel) this.DataContext).ReloadCourseDetails();
         }
     }

@@ -28,15 +28,15 @@ namespace CodingChick.UdemyUniversal.Views
         {
             this.InitializeComponent();
             this.Loaded += LecturePlayerView_Loaded;
-            //BindingOperations.SetBinding(PlaylistPlugin, PlaylistPlugin.PlaylistProperty, new Binding() { Path = new PropertyPath("LecturesPlaylist"), Source = this.DataContext });
         }
 
         void LecturePlayerView_Loaded(object sender, RoutedEventArgs e)
         {
+            //This hack is because playlistplugin doesn't have a data context of its own and could not be bounded via xaml
             PlaylistPlugin plugin = (PlaylistPlugin) Player.Plugins.First();
             
-            plugin.Playlist = ((LecturePlayerViewModel)this.DataContext).LecturesPlaylist;
-            plugin.CurrentPlaylistItem = ((LecturePlayerViewModel)this.DataContext).CurrentLecture;
+            plugin.Playlist = ((LecturePlayerViewModel)this.DataContext).Parameter.LecturesPlaylist;
+            plugin.CurrentPlaylistItem = ((LecturePlayerViewModel)this.DataContext).Parameter.CurrentPlaylistItem;
             plugin.CurrentPlaylistItemChanged += plugin_CurrentPlaylistItemChanged;
 
             ((IPlugin)plugin).Load();
@@ -44,9 +44,18 @@ namespace CodingChick.UdemyUniversal.Views
 
         void plugin_CurrentPlaylistItemChanged(object sender, EventArgs e)
         {
-            //PlaylistPlugin.PreviousPlaylistItem
-            ((LecturePlayerViewModel)this.DataContext).PostLecturePosition(sender, e);
+            ((LecturePlayerViewModel) this.DataContext).Parameter.CurrentPlaylistItem = ((PlaylistPlugin) sender).CurrentPlaylistItem;
+          //
         }
 
+        private void Player_OnMediaStarted(object sender, RoutedEventArgs e)
+        {
+            ((LecturePlayerViewModel)this.DataContext).PostStartedWatchingLecture();
+        }
+
+        private void Player_OnMediaEnded(object sender, MediaPlayerActionEventArgs e)
+        {
+            ((LecturePlayerViewModel)this.DataContext).PostFinishLecture();
+        }
     }
 }

@@ -61,11 +61,20 @@
     </Page.Resources>
 
 
-    <Grid Margin="0,20,0,0">
-        <Grid.Background>
-            <ImageBrush Stretch="UniformToFill" ImageSource="/Assets/SingleBackground.png"/>
-        </Grid.Background>
+    <Grid>
         <Hub>
+            <Hub.HeaderTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Foreground="#FF023002" FontWeight="Normal" FontFamily="Segoe WP Semibold" Margin="0,20,0,0" FontSize="50">
+							<Run Text="{Binding Parameter.Title}"/>
+                        </TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </Hub.HeaderTemplate>
+            <Hub.Background>
+                <ImageBrush Stretch="UniformToFill" ImageSource="/Assets/SingleBackground.png"/>
+            </Hub.Background>
             <HubSection x:Uid="AboutCourse" Header="About" Background="{x:Null}" >
                 <DataTemplate>
                     <Grid>
@@ -110,7 +119,7 @@
             </HubSection>
             <HubSection x:Uid="Description" Header="Desciption" Background="{x:Null}">
                 <DataTemplate>
-                    <WebView x:Name="Description" coreUi:WebBrowserExtentions.HTML="{Binding Parameter.Description}" />
+                    <WebView x:Name="Description" coreUi:WebBrowserExtentions.HTML="{Binding Parameter.Description}" CompositeMode="MinBlend" />
                 </DataTemplate>
             </HubSection>
         </Hub>

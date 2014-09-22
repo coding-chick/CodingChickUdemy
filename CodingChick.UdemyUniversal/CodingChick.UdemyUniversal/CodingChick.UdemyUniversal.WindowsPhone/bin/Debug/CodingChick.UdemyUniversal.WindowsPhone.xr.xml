@@ -74,12 +74,6 @@
       <RootMethod Name="GetColumn" />
       <RootMethod Name="SetColumn" />
     </RootType>
-    <RootType FullName="FirstFloor.XamlSpy.XamlMetadata">
-      <RootMethod Name="GetSourceInfo" />
-      <RootMethod Name="SetSourceInfo" />
-      <RootMethod Name="GetSpyServiceSettings" />
-      <RootMethod Name="SetSpyServiceSettings" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
       <RootProperty Name="Width" />
     </RootType>
@@ -207,14 +201,21 @@
       <RootProperty Name="Color" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Hub">
+      <RootProperty Name="HeaderTemplate" />
+      <RootProperty Name="Background" />
+      <RootProperty Name="Sections" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
+      <RootProperty Name="Orientation" />
+      <RootProperty Name="Children" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Documents.Run">
+      <RootProperty Name="Text" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Media.ImageBrush">
       <RootProperty Name="Stretch" />
       <RootProperty Name="ImageSource" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Hub">
-      <RootProperty Name="Sections" />
-      <RootProperty Name="Background" />
-      <RootProperty Name="HeaderTemplate" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.HubSection">
       <RootProperty Name="Header" />
@@ -225,7 +226,9 @@
       <RootProperty Name="DataContext" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.NullExtension" />
-    <RootType FullName="Windows.UI.Xaml.Controls.WebView" />
+    <RootType FullName="Windows.UI.Xaml.Controls.WebView">
+      <RootProperty Name="CompositeMode" />
+    </RootType>
     <RootType FullName="CodingChick.UdemyUniversal.CoreUI.WebBrowserExtentions">
       <RootMethod Name="GetHTML" />
       <RootMethod Name="SetHTML" />
@@ -262,13 +265,6 @@
       <RootMethod Name="GetAtDesignTime" />
       <RootMethod Name="SetAtDesignTime" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
-      <RootProperty Name="Orientation" />
-      <RootProperty Name="Children" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Documents.Run">
-      <RootProperty Name="Text" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.GridView">
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="IsItemClickEnabled" />
@@ -294,6 +290,8 @@
       <RootProperty Name="IsSkipNextEnabled" />
       <RootProperty Name="IsSkipNextVisible" />
       <RootProperty Name="Plugins" />
+      <RootEvent Name="MediaStarted" />
+      <RootEvent Name="MediaEnded" />
     </RootType>
     <RootType FullName="Microsoft.PlayerFramework.PlaylistPlugin" />
     <RootType FullName="CodingChick.UdemyUniversal.Views.LecturePlayerView" />

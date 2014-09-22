@@ -8,6 +8,7 @@
     xmlns:playerFramework="using:Microsoft.PlayerFramework"
     xmlns:viewModels="using:CodingChick.UdemyUniversal.ViewModels"
     xmlns:micro="using:Caliburn.Micro"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
     mc:Ignorable="d" x:Name="LecturePlayer"
     d:DataContext="{d:DesignInstance Type=viewModels:LecturePlayerViewModel, IsDesignTimeCreatable=True}">
 
@@ -15,10 +16,10 @@
         <playerFramework:MediaPlayer x:Name="Player" 
                                      Position="{Binding DataContext.PositionInLecture, Mode=TwoWay, ElementName=LecturePlayer}"
                                      AutoLoadPlugins="False"
-                                     IsSkipNextEnabled="True" IsSkipNextVisible="True">
+                                     IsSkipNextEnabled="True" IsSkipNextVisible="True"
+                                     MediaStarted="Player_OnMediaStarted" MediaEnded="Player_OnMediaEnded">
             <playerFramework:MediaPlayer.Plugins>
                 <playerFramework:PlaylistPlugin x:Name="PlaylistPlugin"/>
-                                                <!--micro:Message.Attach="[Event CurrentPlaylistItemChanged] = [PostLecturePosition($eventArgs)]" />--> 
             </playerFramework:MediaPlayer.Plugins>
         </playerFramework:MediaPlayer>
     </Grid>

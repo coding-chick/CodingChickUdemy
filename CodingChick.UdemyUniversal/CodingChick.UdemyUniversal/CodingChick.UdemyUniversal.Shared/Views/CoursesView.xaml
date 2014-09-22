@@ -15,7 +15,7 @@
     xmlns:controls="using:CodingChick.UdemyUniversal.Controls">
 	<Page.Resources>
 		<DataTemplate x:Key="HubHeaderTemplate">
-			<TextBlock Text="{Binding}" FontSize="29.333" Margin="0,-10" FontFamily="Segoe WP Semibold"/>
+			<TextBlock Text="{Binding}" FontSize="29.333" Margin="0,-10" FontFamily="Segoe WP"/>
 		</DataTemplate>
 	</Page.Resources>
 
@@ -27,7 +27,8 @@
             <Hub.HeaderTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Foreground="#FF023002" FontWeight="Normal" FontFamily="Segoe WP Semibold" Margin="0,10,0,0">
+                        <TextBlock Foreground="#FF469BC5" FontWeight="Normal" FontFamily="Segoe WP Semibold" 
+                                   Margin="0,20,0,0" FontSize="55">
 							<Run Text="Udemy Courses"/>
                         </TextBlock>
                     </StackPanel>

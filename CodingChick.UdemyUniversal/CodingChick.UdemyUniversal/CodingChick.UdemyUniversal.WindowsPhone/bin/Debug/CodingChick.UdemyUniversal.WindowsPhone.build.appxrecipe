@@ -55,9 +55,6 @@
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\packages\Newtonsoft.Json.6.0.4\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\First Floor Software\XAML Spy\Libraries\WindowsPhone\XamlSpy.WP81.dll">
-      <PackagePath>XamlSpy.WP81.dll</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Efrat Barak\AppData\Local\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.Core\App.xbf">
       <PackagePath>Telerik.Universal.Core\App.xbf</PackagePath>
     </AppxPackagedFile>

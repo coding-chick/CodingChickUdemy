@@ -59,6 +59,7 @@ namespace CodingChick.UdemyUniversal.ViewModels
             _eventAggregator = eventAggregator;
         }
 
+        
         public string Students
         {
             get { return _students; }
@@ -149,7 +150,7 @@ namespace CodingChick.UdemyUniversal.ViewModels
                 }
                 else
                 {
-                    UiServicesss.ShowCustomMessage(string.Format("Would you like to purchase this course for {0} on Udemy.com?", Parameter.Price), "You don't own this course", "Yes", "No", 
+                    UiServices.ShowCustomMessage(string.Format("Would you like to purchase this course for {0} on Udemy.com?", Parameter.Price), "You don't own this course", "Yes", "No", 
                         new UICommand("Purchase", command => PurchaceCourse()),
                         new UICommand("Cancel"));
                 }
@@ -181,7 +182,7 @@ namespace CodingChick.UdemyUniversal.ViewModels
 
         public async void ReloadCourseDetails()
         {
-            await UiServicesss.ShowProgressIndicatorForAction(async () =>
+            await UiServices.ShowProgressIndicatorForAction(async () =>
             {
                 var myCourses = await _iDataService.GetMyCourses();
                 var myCourse = myCourses.CoursesList.Select(c => c).Where(c => c.Id == Parameter.Id).ToList();

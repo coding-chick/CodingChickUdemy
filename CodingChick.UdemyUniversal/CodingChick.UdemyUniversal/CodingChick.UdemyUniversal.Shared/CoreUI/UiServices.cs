@@ -9,22 +9,26 @@ using Windows.UI.ViewManagement;
 
 namespace CodingChick.UdemyUniversal.CoreUI
 {
-    public class UiServicesss
+    public class UiServices
     {
-        public static void ShowCustomMessage(string messageContent, string messageTitle, string confirmButtonText,
+        public static async Task ShowCustomMessage(string messageContent, string messageTitle, string confirmButtonText,
             string cancelButtonText, UICommand action, UICommand actionCancel)
         {
             CoreDispatcher dispatcher = Window.Current == null ? null : Window.Current.Dispatcher;
 
             MessageDialog messageDialog = new MessageDialog(messageContent);
-            messageDialog.Commands.Add(new UICommand(confirmButtonText, action.Invoked));
-            messageDialog.Commands.Add(new UICommand(cancelButtonText, actionCancel.Invoked));
             messageDialog.Title = messageTitle;
+            
+            if (!string.IsNullOrEmpty(confirmButtonText))
+                messageDialog.Commands.Add(new UICommand(confirmButtonText, action.Invoked));
+
+            if (!string.IsNullOrEmpty(cancelButtonText))
+                messageDialog.Commands.Add(new UICommand(cancelButtonText, actionCancel.Invoked));
 
             if (dispatcher != null)
                 dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => messageDialog.ShowAsync());
             else
-                messageDialog.ShowAsync();
+                await messageDialog.ShowAsync();
         }
 
 
