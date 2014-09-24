@@ -176,5 +176,11 @@ namespace CodingChick.UdemyUniversal.ViewModels
 
             _navigationService.NavigateToViewModel<CourseDetailsViewModel>(courseModel);
         }
+
+        public void ShowCategoryDetails(ItemClickEventArgs args)
+        {
+            var category = (CategoryViewModel) args.ClickedItem;
+            _navigationService.NavigateToViewModel<CoursesListViewModel>(category);
+        }
     }
 }

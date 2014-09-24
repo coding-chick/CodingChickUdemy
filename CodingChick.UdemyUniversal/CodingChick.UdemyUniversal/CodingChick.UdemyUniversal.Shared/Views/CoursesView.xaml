@@ -68,7 +68,8 @@
                 <DataTemplate>
                     <GridView
                         ItemsSource="{Binding}"
-                        IsItemClickEnabled="True"  >
+                        IsItemClickEnabled="True"  
+                        micro:Message.Attach="[Event ItemClick] = [ShowCategoryDetails($eventArgs)]">
                         <GridView.ItemTemplate>
                             <DataTemplate>
                                 <Grid Margin="0">

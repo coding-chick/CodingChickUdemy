@@ -17,6 +17,7 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Controls\CourseItemControl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\ChapterLectureTemplateSelector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\Custom\Loader.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\PlayLectureControl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CoreUI\LecturePlayItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CoreUI\PagedCollection.cs" />
@@ -43,22 +44,27 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Course.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\AdvancedResolutionImages.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\CourseCuriculumRoot.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\CourseDetails.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\CoursesListPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Data.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Dimensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\DownloadUrl.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Error.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Extras.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Faq.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Lecture.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\MyCourse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Owner.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Pagination.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\PromoAsset.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\RequirementsData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\SimpleResolutionImages.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Success.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\TokenData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\WhatYouWillLearnData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CategoryViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CourseDetailsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CoursesListViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CoursesViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CourseViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\DiscoveryViewModel.cs" />
@@ -70,6 +76,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MyCourseViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\CourseDetailsView.xaml.cs">
       <DependentUpon>CourseDetailsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\CoursesListView.xaml.cs">
+      <DependentUpon>CoursesListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\CoursesView.xaml.cs">
       <DependentUpon>CoursesView.xaml</DependentUpon>
@@ -90,6 +99,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="$(MSBuildThisFileDirectory)Views\CourseDetailsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\CoursesListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

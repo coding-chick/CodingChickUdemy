@@ -91,5 +91,13 @@ namespace CodingChick.UdemyUniversal.Core.Services
             }
             return await _iUdemyDataManager.PostDataAsync<Success>(string.Format("lectures/{0}/viewed", lectureId), _iOAuthService.Token);
         }
+
+        public async Task<CoursesListPage<Course>> GetCoursesInCategory(string categoryId, int numberOfResults, int pageNumber)
+        {
+            var methodParams = AddAllFieldsMethodParams();
+            return await _iUdemyDataManager.GetDataAsync<CoursesListPage<Course>>
+                (string.Format("discover/category/{0}/{1}/{2}", categoryId, numberOfResults, pageNumber), methodParams, _iOAuthService.Token);
+           
+        }
     }
 }

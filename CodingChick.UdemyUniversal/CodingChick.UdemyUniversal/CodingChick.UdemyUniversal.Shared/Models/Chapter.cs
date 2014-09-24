@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace CodingChick.UdemyUniversal.Models
+﻿namespace CodingChick.UdemyUniversal.Models
 {
     public class Chapter
     {
@@ -15,31 +13,5 @@ namespace CodingChick.UdemyUniversal.Models
         public string Title { get; set; }
         public int Index { get; set; }
         public bool IsLocked { get; set; }
-    }    
- 
-    public class Faq
-    {
-        public string Question { get; set; }
-        public string Answer { get; set; }
-    }
-
-    public class WhatYouWillLearnData
-    {
-        public List<string> Items { get; set; }
-    }
-
-    public class RequirementsData
-    {
-        public List<string> Items { get; set; }
-    }
-
-    public class CourseDetails
-    {
-        public string Id { get; set; }
-        public string Description { get; set; }
-        public List<Chapter> Curriculum { get; set; }
-        public List<Faq> Faq { get; set; }
-        public WhatYouWillLearnData WhatYouWillLearnData { get; set; }
-        public RequirementsData RequirementsData { get; set; }
     }
 }

@@ -8,6 +8,7 @@ using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Popups;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -52,6 +53,7 @@ namespace CodingChick.UdemyUniversal
             container.PerRequest<CoursesViewModel>();
             container.PerRequest<CourseDetailsViewModel>();
             container.PerRequest<LecturePlayerViewModel>();
+            container.PerRequest<CoursesListViewModel>();
 
             container.Singleton<IOAuthService, OAuthService>();
             container.PerRequest<IUdemyDataManager, UdemyDataManager>();
@@ -68,6 +70,11 @@ namespace CodingChick.UdemyUniversal
 
         protected override void OnLaunched(LaunchActivatedEventArgs args)
         {
+#if WINDOWS_PHONE
+            // makes awesome SystemTray merge with the content
+            ApplicationView.GetForCurrentView().SetDesiredBoundsMode(ApplicationViewBoundsMode.UseCoreWindow);
+#endif
+
             DisplayRootView<MainPageView>();
         }
 
