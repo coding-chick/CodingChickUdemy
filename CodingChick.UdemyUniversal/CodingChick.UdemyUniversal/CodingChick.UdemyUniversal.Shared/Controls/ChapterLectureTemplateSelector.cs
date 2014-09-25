@@ -16,7 +16,7 @@ namespace CodingChick.UdemyUniversal.Controls
 
         protected override DataTemplate SelectTemplateCore(object item, DependencyObject container)
         {
-            if (item.GetType() == typeof (LectureViewModel))
+            if (item is LectureViewModel)
             {
                 return Lecture;
             }

@@ -20,7 +20,8 @@ namespace CodingChick.UdemyUniversal.CoreUI
             messageDialog.Title = messageTitle;
             
             if (!string.IsNullOrEmpty(confirmButtonText))
-                messageDialog.Commands.Add(new UICommand(confirmButtonText, action.Invoked));
+            //    if (action.Invoked != null)
+                    messageDialog.Commands.Add(new UICommand(confirmButtonText, action.Invoked));
 
             if (!string.IsNullOrEmpty(cancelButtonText))
                 messageDialog.Commands.Add(new UICommand(cancelButtonText, actionCancel.Invoked));

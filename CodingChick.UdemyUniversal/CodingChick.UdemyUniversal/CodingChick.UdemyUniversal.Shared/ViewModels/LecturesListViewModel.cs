@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
+using Windows.UI.Popups;
 using Caliburn.Micro;
 using CodingChick.UdemyUniversal.CoreUI;
 using CodingChick.UdemyUniversal.Models;
@@ -20,6 +21,7 @@ namespace CodingChick.UdemyUniversal.ViewModels
         private List<Lecture> _lectures;
         private Lecture _currentLecture;
         private PlaylistItem _currentPlaylistItem;
+        private PlaylistItem _newPlaylistItem;
 
         public Lecture CurrentLecture
         {
@@ -62,7 +64,7 @@ namespace CodingChick.UdemyUniversal.ViewModels
             if (!ReachedEndOfList)
             {
                 CurrentLecture = Lectures[LectureLocation];
-                CurrentPlaylistItem = LecturesPlaylist[LectureLocation];
+                //CurrentPlaylistItem = LecturesPlaylist[LectureLocation];
             }
         }
 
@@ -81,13 +83,23 @@ namespace CodingChick.UdemyUniversal.ViewModels
             }
         }
 
+        public PlaylistItem NewPlaylistItem
+        {
+            get { return _newPlaylistItem; }
+            set
+            {
+                _newPlaylistItem = value;
+                GetNextLecture();
+            }
+        }
+
         private async void CheckIfCanPlayItem()
         {
             if (string.IsNullOrEmpty(CurrentLecture.Asset.StreamUrl))
             {
                 await
                     UiServices.ShowCustomMessage("Media isn't playeable at this time, moving to the next lecture", "Sorry", "Ok",
-                        string.Empty, null, null);
+                        string.Empty, new UICommand("Ok"), null);
                 GetNextLecture();
             }
         }

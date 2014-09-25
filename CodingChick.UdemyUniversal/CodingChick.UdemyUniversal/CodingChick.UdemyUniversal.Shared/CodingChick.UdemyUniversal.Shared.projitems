@@ -58,6 +58,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Pagination.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\PromoAsset.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\RequirementsData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Review.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ReviewsListPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\SimpleResolutionImages.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Success.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\TokenData.cs" />

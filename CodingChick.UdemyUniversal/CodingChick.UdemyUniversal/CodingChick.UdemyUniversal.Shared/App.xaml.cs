@@ -70,7 +70,7 @@ namespace CodingChick.UdemyUniversal
 
         protected override void OnLaunched(LaunchActivatedEventArgs args)
         {
-#if WINDOWS_PHONE
+#if WINDOWS_PHONE_APP
             // makes awesome SystemTray merge with the content
             ApplicationView.GetForCurrentView().SetDesiredBoundsMode(ApplicationViewBoundsMode.UseCoreWindow);
 #endif

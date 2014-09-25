@@ -26,6 +26,7 @@ namespace CodingChick.UdemyUniversal.ViewModels
         private string _students;
         private ObservableCollection<CurciculumViewModelBase> _curiculum;
         private Visibility _purchaceButtonVisibility;
+        private PagedCollection<Review> _reviews;
 
         public CourseDetailsViewModel()
         {
@@ -50,6 +51,34 @@ namespace CodingChick.UdemyUniversal.ViewModels
                 new ChapterViewModel() {Chapter = new Chapter(){ChapterIndex = 2, Title = "First lecture"}},
 
             };
+
+            Parameter.VisibleInstructors = new List<User>()
+            {
+                new User()
+                {
+                    Title = "John Nichols", 
+                    JobTitle = "Designer, developer, teacher", 
+                    Description = @"<p>  \t            John was the lead iOS developer at Fast Society and Cameo until he started BitFountain in 2012. The apps that John has contributed to have appeared in TechCrunch, Mashable and the New York Times. At BitFountain, John oversees all projects from a technical and strategic perspective. Before becoming a techie John was a student at Boston College and a researcher in Biophysics at Harvard.  <\/p>",
+                    Images = new SimpleResolutionImages() {Img75X75 = @"https://dujk9xa5fr1wz.cloudfront.net/user/75x75/2075428_aa9b_2.jpg"},
+                },
+
+                new User()
+                {
+                    Title = "Someone Else", 
+                    JobTitle = "With another title", 
+                    Description = @"<p>  \t            John was the lead iOS developer at Fast Society and Cameo until he started BitFountain in 2012. The apps that John has contributed to have appeared in TechCrunch, Mashable and the New York Times. At BitFountain, John oversees all projects from a technical and strategic perspective. Before becoming a techie John was a student at Boston College and a researcher in Biophysics at Harvard.  <\/p>",
+                    Images = new SimpleResolutionImages() {Img75X75 = @"https://dujk9xa5fr1wz.cloudfront.net/user/75x75/2075428_aa9b_2.jpg"},
+                }
+            };
+
+            Reviews = new PagedCollection<Review>(null)
+            {
+                new Review(){Rating = 4, Content = "I've completed the first 100 lectures so far in just a few days and I am really enjoying the course. I've learnt so much already and I'm excited to complete the course.\n\nI had very very little prior programming experience yet I found the course easy to follow. Unlike other iOS app development courses the coding is explained well so you understand what you're writing rather than just resorting to copying and pasting chunks of code from tutorials into your project without really understanding the syntax or what is going on.\n\nI think the challenges are great and a really good way to review content in the lectures. I definitely think the course is worth the money.", 
+                    Title = "Fantastic course", Created = DateTime.Now.Date, User = new User(){Title = "Someone somewhere"}},
+                new Review(){Rating = 3.2},
+                new Review(){Rating = 3},
+                new Review(){Rating = 1},
+            };
         }
 
         public CourseDetailsViewModel(INavigationService navigationService, IDataService iDataService, IEventAggregator eventAggregator)
@@ -70,6 +99,24 @@ namespace CodingChick.UdemyUniversal.ViewModels
         {
             base.OnActivate();
             await CreateCuriculumViewModels();
+            Reviews = new PagedCollection<Review>(LoadMoreReviews);
+        }
+
+        private async Task<IEnumerable<Review>> LoadMoreReviews(uint count, int pageNumber)
+        {
+            var reviewsPage = await _iDataService.GetReviews(Parameter.Id, pageNumber, 12);
+            return reviewsPage.Data;
+        }
+
+
+        public PagedCollection<Review> Reviews
+        {
+            get { return _reviews; }
+            set
+            {
+                _reviews = value;
+                NotifyOfPropertyChange(() => Reviews);
+            }
         }
 
         private async Task CreateCuriculumViewModels()
@@ -122,7 +169,7 @@ namespace CodingChick.UdemyUniversal.ViewModels
 
         public bool IsCourseMine
         {
-            get { return Parameter.GetType() == typeof(MyCourse); }
+            get { return Parameter is MyCourse; }
         }
 
         public Uri CourseImage { get; set; }
@@ -142,7 +189,7 @@ namespace CodingChick.UdemyUniversal.ViewModels
         public void PlayLecture(ItemClickEventArgs args)
         {
             var selectedLecture = (CurciculumViewModelBase)args.ClickedItem;
-            if (selectedLecture.GetType() == typeof(LectureViewModel))
+            if (selectedLecture is LectureViewModel)
             {
                 if (((LectureViewModel)selectedLecture).ShowPlayButton == Visibility.Visible)
                 {
@@ -162,7 +209,7 @@ namespace CodingChick.UdemyUniversal.ViewModels
         {
             var lecturesListViewModel = new LecturesListViewModel();
             lecturesListViewModel.Lectures = (from lecture in Curiculum
-                where lecture.GetType() == typeof (LectureViewModel) &&
+                where lecture is LectureViewModel &&
                       ((LectureViewModel) lecture).ShowPlayButton == Visibility.Visible
                 orderby ((LectureViewModel) lecture).Lecture.ObjectIndex
                 select ((LectureViewModel) lecture).Lecture).ToList();
@@ -183,7 +230,7 @@ namespace CodingChick.UdemyUniversal.ViewModels
         {
             get
             {
-                if (Parameter != null)
+                if (Parameter.GoogleInAppPurchasePriceText != null)
                     return Parameter.GoogleInAppPurchasePriceText.TrimStart('$') + "$";
                 return string.Empty;
             }
@@ -208,5 +255,7 @@ namespace CodingChick.UdemyUniversal.ViewModels
                 }
             });
         }
+
+        public ObservableCollection<User> InstructorList { get; set; }
     }
 }

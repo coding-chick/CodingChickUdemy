@@ -14,5 +14,6 @@ namespace CodingChick.UdemyUniversal.Core.Services
         Task<CourseDetails> GetFullCourseCuriculum(string courseId);
         Task<Success> PostLectureProgress(string lectureId, bool isFinished);
         Task<CoursesListPage<Course>> GetCoursesInCategory(string categoryId, int numberOfResults, int pageNumber);
+        Task<ReviewsListPage> GetReviews(string courseId, int numberOfResults, int pageNumber);
     }
 }

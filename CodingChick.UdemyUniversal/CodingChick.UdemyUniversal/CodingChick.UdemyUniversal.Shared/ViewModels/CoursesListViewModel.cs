@@ -84,7 +84,7 @@ namespace CodingChick.UdemyUniversal.ViewModels
         public void ShowCourseDetails(ItemClickEventArgs args)
         {
             Course courseModel;
-            if (args.ClickedItem.GetType() == typeof(MyCourseViewModel))
+            if (args.ClickedItem is MyCourseViewModel)
                 courseModel = ((MyCourseViewModel)args.ClickedItem).CourseModel;
             else
                 courseModel = ((CourseViewModel)args.ClickedItem).CourseModel;

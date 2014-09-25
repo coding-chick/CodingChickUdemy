@@ -63,5 +63,10 @@ namespace CodingChick.UdemyUniversal.ViewModels
             var lecture = (LecturePlayItem)Parameter.CurrentPlaylistItem;
             var succeed = await _dataService.PostLectureProgress(lecture.Lecture.Id, false);
         }
+
+        public void ReachedEndNavigateBack()
+        {
+            _navigationService.GoBack();
+        }
     }
 }

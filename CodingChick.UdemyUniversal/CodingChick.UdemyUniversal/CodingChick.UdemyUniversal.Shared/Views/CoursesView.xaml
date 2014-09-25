@@ -20,14 +20,17 @@
 	</Page.Resources>
 
     <Grid>
+        <Grid.Background>
+            <SolidColorBrush Color="White" />
+        </Grid.Background>
         <Hub>
             <Hub.Background>				
-                <ImageBrush ImageSource="/Assets/HubBackground.jpg" />
+                <ImageBrush ImageSource="/Assets/HubBackground.jpg" Opacity="0.8" />
             </Hub.Background>
             <Hub.HeaderTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Foreground="#FF469BC5" FontWeight="Normal" FontFamily="Segoe WP Semibold" 
+                        <TextBlock Foreground="#FF0C577C" FontWeight="Normal" FontFamily="Segoe WP Semibold" 
                                    Margin="0,20,0,0" FontSize="55">
 							<Run Text="Udemy Courses"/>
                         </TextBlock>

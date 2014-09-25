@@ -88,36 +88,42 @@ namespace CodingChick.UdemyUniversal.ViewModels
         private async Task<IEnumerable<MyCourseViewModel>> LoadMoreMyCourses(uint count, int pageNumber)
         {
             var myCourses = await _iDataService.GetMyCourses();
-            return myCourses.CoursesList.Select(course => new MyCourseViewModel()
-            {
-                CourseModel = course,
-                CourseId = course.Id,
-                ImageUri = new Uri(course.Images.Img480X270),
-            });
+            if (myCourses != null)
+                return myCourses.CoursesList.Select(course => new MyCourseViewModel()
+                {
+                    CourseModel = course,
+                    CourseId = course.Id,
+                    ImageUri = new Uri(course.Images.Img480X270),
+                });
+            return new List<MyCourseViewModel>();
         }
 
         private async Task<IEnumerable<CourseViewModel>> LoadMoreOnSaleCourses(uint count, int pageNumber)
         {
             var onSaleCourses = await _iDataService.GetCoursesOnSaleFull(12, pageNumber);
-            return onSaleCourses.CoursesList.Select(course => new CourseViewModel()
-            {
-                CourseModel = course,
-                CourseId = course.Id,
-                ImageUri = new Uri(course.Images.Img480X270),
-                Price = course.InAppPurchasePriceText,
-            });
+            if (onSaleCourses != null)
+                return onSaleCourses.CoursesList.Select(course => new CourseViewModel()
+                {
+                    CourseModel = course,
+                    CourseId = course.Id,
+                    ImageUri = new Uri(course.Images.Img480X270),
+                    Price = course.InAppPurchasePriceText,
+                });
+            return new List<CourseViewModel>();
         }
 
         private async Task<IEnumerable<CourseViewModel>> LoadMoreNewCourses(uint u, int pageNumber)
         {
             var newCourses = await _iDataService.GetCoursesNewFull(12, pageNumber);
-            return newCourses.CoursesList.Select(course => new CourseViewModel()
-            {
-                CourseModel = course,
-                CourseId = course.Id,
-                ImageUri = new Uri(course.Images.Img480X270),
-                Price = course.OriginalPriceText,
-            });
+            if (newCourses != null)
+                return newCourses.CoursesList.Select(course => new CourseViewModel()
+                {
+                    CourseModel = course,
+                    CourseId = course.Id,
+                    ImageUri = new Uri(course.Images.Img480X270),
+                    Price = course.OriginalPriceText,
+                });
+            return new List<CourseViewModel>();
         }
 
 
@@ -169,7 +175,7 @@ namespace CodingChick.UdemyUniversal.ViewModels
         public void ShowCourseDetails(ItemClickEventArgs args)
         {
             Course courseModel;
-            if (args.ClickedItem.GetType() == typeof(MyCourseViewModel))
+            if (args.ClickedItem is MyCourseViewModel)
                 courseModel = ((MyCourseViewModel)args.ClickedItem).CourseModel;
             else
                 courseModel = ((CourseViewModel)args.ClickedItem).CourseModel;
@@ -179,7 +185,7 @@ namespace CodingChick.UdemyUniversal.ViewModels
 
         public void ShowCategoryDetails(ItemClickEventArgs args)
         {
-            var category = (CategoryViewModel) args.ClickedItem;
+            var category = (CategoryViewModel)args.ClickedItem;
             _navigationService.NavigateToViewModel<CoursesListViewModel>(category);
         }
     }

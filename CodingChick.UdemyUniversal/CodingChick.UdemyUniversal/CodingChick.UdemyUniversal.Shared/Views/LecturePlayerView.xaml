@@ -12,7 +12,8 @@
     mc:Ignorable="d" x:Name="LecturePlayer"
     d:DataContext="{d:DesignInstance Type=viewModels:LecturePlayerViewModel, IsDesignTimeCreatable=True}">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <TextBlock Text="Loading next lecture..." />
         <playerFramework:MediaPlayer x:Name="Player" 
                                      Position="{Binding DataContext.PositionInLecture, Mode=TwoWay, ElementName=LecturePlayer}"
                                      AutoLoadPlugins="False"

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Graphics.Display;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -28,6 +29,7 @@ namespace CodingChick.UdemyUniversal.Views
         {
             this.InitializeComponent();
             this.Loaded += LecturePlayerView_Loaded;
+            DisplayInformation.AutoRotationPreferences = DisplayOrientations.Landscape;
         }
 
         void LecturePlayerView_Loaded(object sender, RoutedEventArgs e)
@@ -44,8 +46,11 @@ namespace CodingChick.UdemyUniversal.Views
 
         void plugin_CurrentPlaylistItemChanged(object sender, EventArgs e)
         {
-            ((LecturePlayerViewModel) this.DataContext).Parameter.CurrentPlaylistItem = ((PlaylistPlugin) sender).CurrentPlaylistItem;
-          //
+            ((LecturePlayerViewModel)this.DataContext).Parameter.NewPlaylistItem = ((PlaylistPlugin)sender).CurrentPlaylistItem;
+            if (((PlaylistPlugin) sender).NextPlaylistItem == null)
+            {
+                ((LecturePlayerViewModel) this.DataContext).ReachedEndNavigateBack();
+            }
         }
 
         private void Player_OnMediaStarted(object sender, RoutedEventArgs e)

@@ -99,5 +99,21 @@ namespace CodingChick.UdemyUniversal.Core.Services
                 (string.Format("discover/category/{0}/{1}/{2}", categoryId, numberOfResults, pageNumber), methodParams, _iOAuthService.Token);
            
         }
+
+        public async Task<ReviewsListPage> GetReviews(string courseId, int numberOfResults, int pageNumber)
+        {
+            var methodParams =
+                new List<KeyValuePair<string, string>>()
+                {
+                    new KeyValuePair<string, string>("fields[user]", "@min,-timeZone,-url"),
+                    new KeyValuePair<string, string>("p", pageNumber.ToString()),
+                    new KeyValuePair<string, string>("pageSize", numberOfResults.ToString())
+                };
+
+            return
+                await
+                    _iUdemyDataManager.GetDataAsync<ReviewsListPage>(string.Format("courses/{0}/reviews", courseId),
+                        methodParams);
+        }
     }
 }
