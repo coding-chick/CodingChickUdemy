@@ -25,7 +25,7 @@
         </Grid.Background>
         <Hub>
             <Hub.Background>				
-                <ImageBrush ImageSource="/Assets/HubBackground.jpg" Opacity="0.8" />
+                <ImageBrush ImageSource="/Assets/HubBackground.png"  />
             </Hub.Background>
             <Hub.HeaderTemplate>
                 <DataTemplate>

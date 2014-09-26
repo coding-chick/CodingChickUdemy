@@ -26,7 +26,7 @@ namespace CodingChick.UdemyUniversal.ViewModels
                 string price = value;
                 if (string.IsNullOrEmpty(price))
                 {
-                    price = "0";
+                    price = "FREE";
                 }
 
                 if (price[0] == '$')
@@ -39,6 +39,16 @@ namespace CodingChick.UdemyUniversal.ViewModels
                 }
 
                 price = price + '$';
+
+                if (price.Length == 3)
+                {
+                    price = " " + price + " ";
+                }
+                else if (price.Length == 4)
+                {
+                    price = " " + price;
+                }
+
                 _price = price;
             }
         }

@@ -40,8 +40,18 @@ namespace CodingChick.UdemyUniversal.Views
             plugin.Playlist = ((LecturePlayerViewModel)this.DataContext).Parameter.LecturesPlaylist;
             plugin.CurrentPlaylistItem = ((LecturePlayerViewModel)this.DataContext).Parameter.CurrentPlaylistItem;
             plugin.CurrentPlaylistItemChanged += plugin_CurrentPlaylistItemChanged;
-
+            
+            ((LecturePlayerViewModel)this.DataContext).Parameter.OnCurrentPlaylistItemChanged += Parameter_OnCurrentPlaylistItemChanged;
+            
             ((IPlugin)plugin).Load();
+        }
+
+        void Parameter_OnCurrentPlaylistItemChanged(object sender, EventArgs e)
+        {
+            ((LecturePlayerViewModel) this.DataContext).Parameter.ChangedPlaylistItemFromCode = false;
+
+            PlaylistPlugin plugin = (PlaylistPlugin)Player.Plugins.First();
+            plugin.CurrentPlaylistItem = ((LecturePlayerViewModel)this.DataContext).Parameter.CurrentPlaylistItem;
         }
 
         void plugin_CurrentPlaylistItemChanged(object sender, EventArgs e)

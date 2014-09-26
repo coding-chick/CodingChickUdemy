@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,8 +15,11 @@ namespace CodingChick.UdemyUniversal.ViewModels
     {
         public LecturesListViewModel()
         {
-
+            ChangedPlaylistItemFromCode = false;
         }
+
+        public event EventHandler OnCurrentPlaylistItemChanged;
+
         public int LectureLocation { get; set; }
 
         private List<Lecture> _lectures;
@@ -33,6 +37,7 @@ namespace CodingChick.UdemyUniversal.ViewModels
                 {
                     LectureLocation = Lectures.FindIndex(lecture => lecture.Id == CurrentLecture.Id);
                     CurrentPlaylistItem = LecturesPlaylist[LectureLocation];
+                   
                 }
 
             }
@@ -80,8 +85,15 @@ namespace CodingChick.UdemyUniversal.ViewModels
                 _currentPlaylistItem = value;
                 CheckIfCanPlayItem();
                 NotifyOfPropertyChange(() => CurrentPlaylistItem);
+                if (OnCurrentPlaylistItemChanged != null && ChangedPlaylistItemFromCode)
+                {
+                    OnCurrentPlaylistItemChanged(this, new EventArgs());
+                    ChangedPlaylistItemFromCode = false;
+                }
             }
         }
+
+        public bool ChangedPlaylistItemFromCode { get; set; }
 
         public PlaylistItem NewPlaylistItem
         {
@@ -100,8 +112,10 @@ namespace CodingChick.UdemyUniversal.ViewModels
                 await
                     UiServices.ShowCustomMessage("Media isn't playeable at this time, moving to the next lecture", "Sorry", "Ok",
                         string.Empty, new UICommand("Ok"), null);
+                ChangedPlaylistItemFromCode = true;
                 GetNextLecture();
             }
+          
         }
     }
 }

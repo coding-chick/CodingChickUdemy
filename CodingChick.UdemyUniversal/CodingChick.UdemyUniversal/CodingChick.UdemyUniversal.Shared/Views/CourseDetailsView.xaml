@@ -60,9 +60,7 @@
 
 
     <Grid>
-        <Grid.Background>
-            <ImageBrush Stretch="UniformToFill" ImageSource="/Assets/SingleBackground.png"/>
-        </Grid.Background>
+        <Image Source="/Assets/TreeSingle.png" Stretch="Fill" />
         <Hub>
             <Hub.HeaderTemplate>
                 <DataTemplate>

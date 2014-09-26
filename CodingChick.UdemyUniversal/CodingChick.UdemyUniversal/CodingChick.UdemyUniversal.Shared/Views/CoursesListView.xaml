@@ -12,14 +12,17 @@
     mc:Ignorable="d">
 
     <Grid>
-        <Grid.Background>
-            <ImageBrush Stretch="UniformToFill" ImageSource="/Assets/SingleBackground.png"/>
-        </Grid.Background>
+        <!--<Grid.Background>
+            <ImageBrush Stretch="UniformToFill" ImageSource="/Assets/SingleBackground.png" >
+                <Image CreateOptions="None"></Image>
+            </ImageBrush>
+        </Grid.Background>-->
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="{Binding Parameter.Title}" Grid.Row="0" FontSize="26.667" Margin="0,5,0,10" FontFamily="Segoe UI Semibold"/>
+        <Image Source="/Assets/TreeSingle.png" Stretch="Fill" Grid.RowSpan="2"/>
+        <TextBlock Text="{Binding Parameter.Title}" Grid.Row="0" FontSize="26.667" Margin="15,20,0,10" FontFamily="Segoe UI Semibold"/>
         <GridView ItemsSource="{Binding CoursesList}"
                   IsItemClickEnabled="True"
                   Grid.Row="1"

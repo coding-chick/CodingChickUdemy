@@ -9,7 +9,7 @@
 
     <Grid HorizontalAlignment="Stretch">
     	<Grid.Background>
-    		<ImageBrush ImageSource="ms-appx:///Assets/SingleBackground.png"/>
+    		<ImageBrush ImageSource="ms-appx:///Assets/TreeSingle.png"/>
     	</Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
