@@ -21,6 +21,8 @@ namespace CodingChick.UdemyUniversal.CoreUI
     {
         private Func<uint, int, Task<IEnumerable<T>>> _loadMoreItemsOperation;
         private readonly int _maxLoadedPages;
+        private Visibility _displayVisibility;
+
         public bool HasMoreItems { get; protected set; }
 
         public int PageNumber { get; set; }

@@ -7,6 +7,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Popups;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
@@ -38,7 +39,6 @@ namespace CodingChick.UdemyUniversal
         public App()
         {
             InitializeComponent();
-
             LogManager.GetLog = type => new DebugLogger(type);
         }
 
@@ -48,12 +48,12 @@ namespace CodingChick.UdemyUniversal
 
             container.RegisterWinRTServices();
 
-            container.PerRequest<MainPageViewModel>();
             container.PerRequest<LoginViewModel>();
             container.PerRequest<CoursesViewModel>();
             container.PerRequest<CourseDetailsViewModel>();
             container.PerRequest<LecturePlayerViewModel>();
             container.PerRequest<CoursesListViewModel>();
+            container.PerRequest<AboutViewModel>();
 
             container.Singleton<IOAuthService, OAuthService>();
             container.PerRequest<IUdemyDataManager, UdemyDataManager>();
@@ -74,8 +74,12 @@ namespace CodingChick.UdemyUniversal
             // makes awesome SystemTray merge with the content
             ApplicationView.GetForCurrentView().SetDesiredBoundsMode(ApplicationViewBoundsMode.UseCoreWindow);
 #endif
-
-            DisplayRootView<MainPageView>();
+            //yes we check directly to the API, life's hard without container being up yet so no IoC
+            var token = ApplicationData.Current.LocalSettings.Values["token"] as string;
+            if (!string.IsNullOrEmpty(token))
+                DisplayRootView<CoursesView>();
+            else
+                DisplayRootView<LoginViewModel>();
         }
 
         protected override object GetInstance(Type service, string key)
@@ -97,12 +101,5 @@ namespace CodingChick.UdemyUniversal
         {
             base.OnActivated(args);
         }
-
-        //protected override async void OnResuming(object sender, object e)
-        //{
-        //    new MessageDialog("OnResuming").ShowAsync();
-        //    base.OnResuming(sender, e);
-        //}
-
     }
 }

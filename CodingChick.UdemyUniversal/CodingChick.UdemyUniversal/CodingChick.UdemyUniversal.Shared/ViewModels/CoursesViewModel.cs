@@ -160,8 +160,22 @@ namespace CodingChick.UdemyUniversal.ViewModels
             }
         }
 
+        public Visibility MyCoursesVisbility
+        {
+            get
+            {
+                Visibility visibility;
+                if (MyCourses != null && MyCourses.Count == 0)
+                    return Visibility.Visible;
+                else
+                    return Visibility.Collapsed;
+
+            }
+        }
 
         private ObservableCollection<CategoryViewModel> _categories;
+        private Visibility _myCoursesVisbility;
+
         public ObservableCollection<CategoryViewModel> Categories
         {
             get { return _categories; }
@@ -187,6 +201,11 @@ namespace CodingChick.UdemyUniversal.ViewModels
         {
             var category = (CategoryViewModel)args.ClickedItem;
             _navigationService.NavigateToViewModel<CoursesListViewModel>(category);
+        }
+
+        public void NavigateToAbout()
+        {
+            _navigationService.NavigateToViewModel<AboutViewModel>();
         }
     }
 }

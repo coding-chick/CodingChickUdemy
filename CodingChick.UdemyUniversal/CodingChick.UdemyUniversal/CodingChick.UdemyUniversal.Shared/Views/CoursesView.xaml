@@ -13,27 +13,34 @@
     micro:Bind.AtDesignTime="True"
     xmlns:c="clr-namespace:CodingChick.UdemyUniversal.Controls"
     xmlns:controls="using:CodingChick.UdemyUniversal.Controls">
-	<Page.Resources>
-		<DataTemplate x:Key="HubHeaderTemplate">
-			<TextBlock Text="{Binding}" FontSize="29.333" Margin="0,-10" FontFamily="Segoe WP"/>
-		</DataTemplate>
-	</Page.Resources>
+    <Page.Resources>
+        <DataTemplate x:Key="HubHeaderTemplate">
+            <TextBlock Text="{Binding}" FontSize="29.333" Margin="0,-10" FontFamily="Segoe WP"/>
+        </DataTemplate>
+        <ControlTemplate x:Key="EmptyButtonTemplate" TargetType="Button">
+            <ContentPresenter Content="{TemplateBinding Content}" />
+        </ControlTemplate>
+    </Page.Resources>
 
     <Grid>
         <Grid.Background>
             <SolidColorBrush Color="White" />
         </Grid.Background>
         <Hub>
-            <Hub.Background>				
+            <Hub.Background>
                 <ImageBrush ImageSource="/Assets/HubBackground.png"  />
             </Hub.Background>
             <Hub.HeaderTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Foreground="#FF0C577C" FontWeight="Normal" FontFamily="Segoe WP Semibold" 
-                                   Margin="0,20,0,0" FontSize="55">
+                        <TextBlock Foreground="#FFE2F3FB" FontWeight="Normal" FontFamily="Segoe WP Semibold" 
+                                   Margin="0,20,10,0" FontSize="55">
 							<Run Text="Udemy Courses"/>
                         </TextBlock>
+                        <Button BorderThickness="0" VerticalAlignment="Center" Foreground="{x:Null}" Background="{x:Null}" x:Name="NavigateToAbout" micro:Message.Attach="NavigateToAbout"
+                                BorderBrush="{x:Null}" MinWidth="0" MinHeight="0" Width="30" Height="30" Margin="0,27,0,0" Padding="0" Template="{StaticResource EmptyButtonTemplate}" >
+                            <Image Stretch="Uniform" Source="ms-appx:///Assets/feature.settings.png" Margin="0"/>
+                        </Button>
                     </StackPanel>
                 </DataTemplate>
             </Hub.HeaderTemplate>
@@ -90,18 +97,21 @@
                     </GridView>
                 </DataTemplate>
             </HubSection>
-            <HubSection x:Uid="MyCourses" Header="My Courses" DataContext="{Binding MyCourses}" HeaderTemplate="{StaticResource HubHeaderTemplate}">
+            <HubSection x:Uid="MyCourses" Header="My Courses" HeaderTemplate="{StaticResource HubHeaderTemplate}">
                 <DataTemplate>
-                    <GridView
-                        ItemsSource="{Binding}"
+                    <Grid>
+                        <GridView
+                        ItemsSource="{Binding MyCourses}"
                         IsItemClickEnabled="True"
                         micro:Message.Attach="[Event ItemClick] = [ShowCourseDetails($eventArgs)]">
-                        <GridView.ItemTemplate>
-                            <DataTemplate>
-                                <controls:CourseItemControl PriceColorBrush="Black" />
-                            </DataTemplate>
-                        </GridView.ItemTemplate>
-                    </GridView>
+                            <GridView.ItemTemplate>
+                                <DataTemplate>
+                                    <controls:CourseItemControl PriceColorBrush="Black" />
+                                </DataTemplate>
+                            </GridView.ItemTemplate>
+                        </GridView>
+                        <TextBlock Text="All these courses and nothing to watch?" Visibility="{Binding MyCoursesVisbility}"/>
+                    </Grid>
                 </DataTemplate>
             </HubSection>
         </Hub>

@@ -1,0 +1,43 @@
+﻿<Page
+    x:Class="CodingChick.UdemyUniversal.Views.AboutView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CodingChick.UdemyUniversal.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="using:CodingChick.UdemyUniversal.ViewModels"
+    mc:Ignorable="d"
+    d:DataContext="{d:DesignInstance IsDesignTimeCreatable=True, Type=viewModels:AboutViewModel}">
+	<Grid>
+		<Grid.Background>
+			<ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/TreeSingle.png"/>
+		</Grid.Background>
+
+    <StackPanel Margin="24,0,0,0">    
+		<TextBlock x:Name="Title" Text="{Binding Title}" FontSize="34.667" HorizontalAlignment="Left" FontFamily="Segoe UI Semibold" Height="42" Margin="0,30,0,0"/>
+		<StackPanel Orientation="Horizontal" Margin="0,30,0,10" >
+			<TextBlock x:Name="WrittenBy" FontSize="18.667" HorizontalAlignment="Left" Text="Developer: " FontFamily="Segoe UI Semibold" FontWeight="Bold"/>
+			<TextBlock x:Name="Name" Text="Efrat Barak (&quot;CodingChick&quot;)" FontSize="18.667" Margin="5,0,0,0"/>
+		</StackPanel>
+		<StackPanel Orientation="Horizontal" Margin="0,0,0,10" >
+			<TextBlock Text="Support Email: " FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Segoe UI Semibold" FontWeight="Bold" />
+			<HyperlinkButton NavigateUri="{Binding Email}" Content="{Binding EmailText}" FontFamily="Global User Interface" FontSize="16" BorderThickness="5,0,0,0" Foreground="#FF006BFF" FontWeight="Normal" />
+		</StackPanel>
+		<StackPanel Orientation="Horizontal" Margin="0,0,0,10" >
+			<TextBlock Text="Privacy Policy: " VerticalAlignment="Center" FontSize="16" HorizontalAlignment="Left" FontFamily="Segoe UI Semibold" FontWeight="Bold"/>
+			<HyperlinkButton NavigateUri="{Binding PrivcayPolicyLink}" FontFamily="Global User Interface" FontSize="16" HorizontalAlignment="Left"  Content="link" BorderThickness="5,0,0,0" Foreground="#FF006BFF" />
+		</StackPanel>
+		<StackPanel Margin="0" Orientation="Horizontal" HorizontalAlignment="Left">
+			<TextBlock HorizontalAlignment="Right" FontSize="16" FontFamily="Segoe WP" FontWeight="Bold" >
+				<Run Text="Version:"/>
+				<LineBreak/>
+				<Run/>
+				<LineBreak/>
+				<Run/>
+			</TextBlock>
+			<TextBlock Text="{Binding Version}" HorizontalAlignment="Left" FontSize="16" FontFamily="Segoe WP" Margin="5,0,0,0"  />        
+		</StackPanel>
+        
+	</StackPanel>
+	</Grid>
+</Page>

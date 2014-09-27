@@ -64,6 +64,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Success.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\TokenData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\WhatYouWillLearnData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AboutViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CategoryViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CourseDetailsViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CoursesListViewModel.cs" />
@@ -73,9 +74,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LecturesListViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LectureViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LoginViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LecturePlayerViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MyCourseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\AboutView.xaml.cs">
+      <DependentUpon>AboutView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\CourseDetailsView.xaml.cs">
       <DependentUpon>CourseDetailsView.xaml</DependentUpon>
     </Compile>
@@ -88,15 +91,16 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Views\MainPageView.xaml.cs">
-      <DependentUpon>MainPageView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\LecturePlayerView.xaml.cs">
       <DependentUpon>LecturePlayerView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Include="$(MSBuildThisFileDirectory)Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Views\AboutView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -113,10 +117,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="$(MSBuildThisFileDirectory)Views\LoginView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="$(MSBuildThisFileDirectory)Views\MainPageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -144,5 +144,6 @@
     <Content Include="$(MSBuildThisFileDirectory)Assets\Categories\SocialScience.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Categories\TeacherTraining.png" />
     <Content Include="$(MSBuildThisFileDirectory)Assets\Categories\TestPrep.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\feature.settings.png" />
   </ItemGroup>
 </Project>
