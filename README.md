@@ -14,8 +14,8 @@ The app features:
 
 NOTE: This app requires you have an existing Udemy user and doesn’t support purchasing new courses in-app.
 
-![Course List](http://i.imgur.com/3CwoJkJ.png)   ![Course Details](http://i.imgur.com/rAvuiBC.png)
+![Course List](http://i.imgur.com/3CwoJkJ.png)&nbsp&nbsp&nbsp&nbsp&nbsp ![Course Details](http://i.imgur.com/rAvuiBC.png)
 ![Lectures List](http://i.imgur.com/g5bWA07.png)
 ![Watch Lectures](http://i.imgur.com/IwyVHAO.png) 
-![Course Reviews](http://i.imgur.com/20lAr82.png)    ![Categories](http://i.imgur.com/s2Qoaei.png)   
+![Course Reviews](http://i.imgur.com/20lAr82.png)&nbsp&nbsp&nbsp&nbsp&nbsp  ![Categories](http://i.imgur.com/s2Qoaei.png)   
 ![My courses](http://i.imgur.com/M8o7MB8.png)
