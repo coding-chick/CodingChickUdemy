@@ -14,16 +14,23 @@ The app features:
 
 NOTE: This app requires you have an existing Udemy user and doesn’t support purchasing new courses in-app.
 
-Get the complete Udemy course list ![Course List](http://i.imgur.com/3CwoJkJ.png)
+Get the complete Udemy course list 
+![Course List](http://i.imgur.com/3CwoJkJ.png)
 
-Get specific course details![Course Details](http://i.imgur.com/rAvuiBC.png)
+Get specific course details
+![Course Details](http://i.imgur.com/rAvuiBC.png)
 
-Get lecture list and how much you've watched on lectures you own ![Lectures List](http://i.imgur.com/g5bWA07.png)
+Get lecture list and how much you've watched on lectures you own 
+![Lectures List](http://i.imgur.com/g5bWA07.png)
 
-Watch yours and free lectures ![Watch Lectures](http://i.imgur.com/IwyVHAO.png) 
+Watch yours and free lectures 
+![Watch Lectures](http://i.imgur.com/IwyVHAO.png) 
 
-Get specific course reviews ![Course Reviews](http://i.imgur.com/20lAr82.png)
+Get specific course reviews 
+![Course Reviews](http://i.imgur.com/20lAr82.png)
 
-Get courses by categories ![Categories](http://i.imgur.com/s2Qoaei.png)   
+Get courses by categories 
+![Categories](http://i.imgur.com/s2Qoaei.png)   
 
-Get courses you own ![My courses](http://i.imgur.com/M8o7MB8.png)
+Get courses you own 
+![My courses](http://i.imgur.com/M8o7MB8.png)
