@@ -6,7 +6,7 @@
     <TargetPlatformIdentifier>WindowsPhoneApp</TargetPlatformIdentifier>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
-    <PackageIdentityName>e4686275-40cd-4a0b-82a0-01fbe64f314d</PackageIdentityName>
+    <PackageIdentityName>cf643ff5-8861-478d-9259-e9ac3f735730</PackageIdentityName>
     <IntermediateOutputPath>C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\obj\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
@@ -139,6 +139,14 @@
       <PackagePath>Assets\SmallLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\Assets\SplashScreen.scale-140.png">
+      <PackagePath>Assets\SplashScreen.scale-140.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\Assets\SplashScreen.scale-240.png">
       <PackagePath>Assets\SplashScreen.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
@@ -221,12 +229,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.Shared\Assets\feature.settings.png">
       <PackagePath>Assets\feature.settings.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\Assets\SplashScreen.scale-100.jpg">
-      <PackagePath>Assets\SplashScreen.scale-100.jpg</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\Assets\SplashScreen.scale-140.jpg">
-      <PackagePath>Assets\SplashScreen.scale-140.jpg</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>

@@ -1,8 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
+using Windows.System;
+using Windows.UI.Popups;
+using Windows.UI.Xaml.Input;
 using Caliburn.Micro;
 using CodingChick.UdemyUniversal.Core.Services;
+using CodingChick.UdemyUniversal.CoreUI;
 
 namespace CodingChick.UdemyUniversal.ViewModels
 {
@@ -14,7 +19,7 @@ namespace CodingChick.UdemyUniversal.ViewModels
         public LoginViewModel(INavigationService navigationService, IOAuthService iOAuthService)
         {
             _navigationService = navigationService;
-         
+
             _iOAuthService = iOAuthService;
             _navigationService.NavigateToViewModel<CoursesViewModel>(_navigationService);
 
@@ -32,6 +37,8 @@ namespace CodingChick.UdemyUniversal.ViewModels
         }
 
         private string _password;
+        private bool _signinButtonEnabled;
+
         public string Password
         {
             get { return _password; }
@@ -39,15 +46,61 @@ namespace CodingChick.UdemyUniversal.ViewModels
             {
                 _password = value;
                 NotifyOfPropertyChange(() => Password);
+                CheckIfEnableSignIn();
             }
         }
 
-        public async void SignIn()
+        private void CheckIfEnableSignIn()
         {
-            var loginSucceed = await _iOAuthService.GetUserToken(User, Password);
+            if (!string.IsNullOrEmpty(User) && !string.IsNullOrEmpty(Password))
+            {
+                SigninButtonEnabled = true;
+            }
+            else
+            {
+                SigninButtonEnabled = false;
+            }
+        }
 
-            if (loginSucceed)
-                _navigationService.NavigateToViewModel<CoursesViewModel>(_navigationService);
+        public bool SigninButtonEnabled
+        {
+            get { return _signinButtonEnabled; }
+            set
+            {
+                _signinButtonEnabled = value;
+                NotifyOfPropertyChange(() => SigninButtonEnabled);
+            }
+        }
+
+        public async Task SignIn()
+        {
+            if (SigninButtonEnabled)
+            {
+                if (!string.IsNullOrEmpty(User) && !string.IsNullOrEmpty(Password))
+                {
+                    SigninButtonEnabled = false;
+                    var loginSucceed = await _iOAuthService.GetUserToken(User, Password);
+
+                    if (loginSucceed)
+                        _navigationService.NavigateToViewModel<CoursesViewModel>(_navigationService);
+                    else
+                         await UiServices.ShowCustomMessage("Sorry, login was unsuccessful, please try again", "Login failed", "Ok", string.Empty,
+                            new UICommand("Ok"), null);
+
+                    SigninButtonEnabled = true;
+                }
+            }
+        }
+
+        public async void OkSignin(KeyRoutedEventArgs e)
+        {
+            if (e.Key == VirtualKey.Enter)
+            {
+                if (SigninButtonEnabled)
+                {
+                   await SignIn();
+                }
+            }
         }
     }
 }

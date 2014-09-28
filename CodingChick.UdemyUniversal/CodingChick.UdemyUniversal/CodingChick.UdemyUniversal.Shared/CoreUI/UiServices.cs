@@ -27,7 +27,7 @@ namespace CodingChick.UdemyUniversal.CoreUI
                 messageDialog.Commands.Add(new UICommand(cancelButtonText, actionCancel.Invoked));
 
             if (dispatcher != null)
-                dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => messageDialog.ShowAsync());
+                dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () => await messageDialog.ShowAsync());
             else
                 await messageDialog.ShowAsync();
         }

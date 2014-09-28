@@ -79,7 +79,7 @@ namespace CodingChick.UdemyUniversal
             if (!string.IsNullOrEmpty(token))
                 DisplayRootView<CoursesView>();
             else
-                DisplayRootView<LoginViewModel>();
+                DisplayRootView<LoginView>();
         }
 
         protected override object GetInstance(Type service, string key)

@@ -37,6 +37,7 @@
     <RootPropertyPathName Name="NewCourses" />
     <RootPropertyPathName Name="OnSaleCourses" />
     <RootPropertyPathName Name="Password" />
+    <RootPropertyPathName Name="SigninButtonEnabled" />
     <RootPropertyPathName Name="DataContext" />
     <RootPropertyPathName Name="PositionInLecture" />
   </Roots.PropertyPathNames>
@@ -205,6 +206,7 @@
       <RootProperty Name="Content" />
       <RootProperty Name="Resources" />
       <RootProperty Name="FontSize" />
+      <RootProperty Name="BottomAppBar" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Media.ImageBrush">
       <RootProperty Name="Stretch" />
@@ -229,6 +231,7 @@
       <RootProperty Name="BorderThickness" />
       <RootProperty Name="Foreground" />
       <RootProperty Name="FontWeight" />
+      <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="CodingChick.UdemyUniversal.Views.AboutView" />
     <RootType FullName="Windows.UI.Xaml.Controls.ContentPresenter">
@@ -329,10 +332,24 @@
       <RootProperty Name="PlaceholderText" />
       <RootProperty Name="FontFamily" />
       <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="Height" />
+      <RootEvent Name="KeyDown" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
       <RootProperty Name="Password" />
       <RootProperty Name="PlaceholderText" />
+      <RootProperty Name="FontFamily" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="Height" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.CommandBar">
+      <RootProperty Name="PrimaryCommands" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.AppBarButton">
+      <RootProperty Name="Icon" />
+      <RootProperty Name="Label" />
+      <RootProperty Name="IsEnabled" />
     </RootType>
     <RootType FullName="CodingChick.UdemyUniversal.Views.LoginView" />
     <RootType FullName="Microsoft.PlayerFramework.MediaPlayer">

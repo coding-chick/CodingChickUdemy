@@ -5,25 +5,44 @@
     xmlns:local="using:CodingChick.UdemyUniversal.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:micro="using:Caliburn.Micro"
     mc:Ignorable="d" FontSize="18.667">
 
     <Grid HorizontalAlignment="Stretch">
-    	<Grid.Background>
-    		<ImageBrush ImageSource="ms-appx:///Assets/TreeSingle.png"/>
-    	</Grid.Background>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <TextBlock Text="User Email" Grid.Row="0" Grid.Column="0" VerticalAlignment="Bottom" Margin="0,0,0,15" />
-        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding User, Mode=TwoWay}" PlaceholderText="User email" FontFamily="Global User Interface" VerticalAlignment="Bottom"/>
-        <TextBlock Text="Password" Grid.Row="1" Grid.Column="0" Margin="0,18,0,0" />
-        <PasswordBox Grid.Row="1" Grid.Column="1" Password="{Binding Password, Mode=TwoWay}" PlaceholderText="Password"/>
-        <Button Grid.Row="2" Grid.ColumnSpan="2" Content="Sign In" HorizontalAlignment="Center" x:Name="SignIn" />
+        <Grid.Background>
+            <ImageBrush ImageSource="ms-appx:///Assets/TreeSingle.png"/>
+        </Grid.Background>
+        <Grid Margin="24,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Sign in to Udemy" Grid.Row="0" Grid.ColumnSpan="2" Margin="0,40,0,20" FontFamily="Segoe WP Semibold" FontSize="29.333" />
+            <TextBlock Text="User Email" Grid.Row="1" Grid.Column="0" Margin="0,13,20,0" FontFamily="Segoe WP" FontSize="21.333" />
+            <TextBox x:Name="UserEmail" Grid.Row="1" Grid.Column="1" Text="{Binding User, Mode=TwoWay}" 
+                     PlaceholderText="Your email" FontFamily="Segoe WP" 
+                     VerticalAlignment="Bottom" KeyDown="UIElement_OnKeyDown" FontSize="18.667" Height="33"/>
+            <TextBlock Text="Password" Grid.Row="2" Grid.Column="0" Margin="0,11,0,0" FontFamily="Segoe WP" FontSize="21.333" />
+            <PasswordBox x:Name="Password" Grid.Row="2" Grid.Column="1" Password="{Binding Password, Mode=TwoWay}" 
+                         PlaceholderText="Your password" FontFamily="Segoe WP" 
+                         micro:Message.Attach="[Event KeyDown] = [Action OkSignin($eventArgs)]" FontSize="18.667" Height="33" />
+            <TextBlock Text="Sign up to Udemy" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,200,0,0" FontSize="29.333" />
+            <HyperlinkButton Content="Don't have an account? Sign up for Udemy " FontFamily="Global User Interface" FontSize="12" Foreground="#FF006BFF" 
+			HorizontalAlignment="Left" Grid.Row="5" Grid.ColumnSpan="2" Margin="0,0,0,0" />
+        </Grid>
     </Grid>
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:Uid="SignIn" Icon="Accept" Label="SignIn" micro:Message.Attach="SignIn" IsEnabled="{Binding SigninButtonEnabled}" />
+        </CommandBar>
+    </Page.BottomAppBar>
 </Page>

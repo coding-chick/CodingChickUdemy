@@ -21,7 +21,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Image Source="/Assets/TreeSingle.png" Stretch="Fill" Grid.RowSpan="2"/>
+        <Image Source="/Assets/TreeSingle.png" Stretch="UniformToFill" Grid.RowSpan="2"/>
         <TextBlock Text="{Binding Parameter.Title}" Grid.Row="0" FontSize="26.667" Margin="15,20,0,10" FontFamily="Segoe UI Semibold"/>
         <GridView ItemsSource="{Binding CoursesList}"
                   IsItemClickEnabled="True"
