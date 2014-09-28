@@ -11,7 +11,7 @@ using Microsoft.PlayerFramework;
 
 namespace CodingChick.UdemyUniversal.ViewModels
 {
-    public class LecturePlayerViewModel : Screen
+    public class LecturePlayerViewModel : ScreenWithAnalytics
     {
         private readonly INavigationService _navigationService;
         private readonly IDataService _dataService;
@@ -21,7 +21,8 @@ namespace CodingChick.UdemyUniversal.ViewModels
         {
         }
 
-        public LecturePlayerViewModel(INavigationService navigationService, IDataService dataService)
+        public LecturePlayerViewModel(INavigationService navigationService, IDataService dataService, IAnalyticsService analyticsService)
+            : base(navigationService, analyticsService)
         {
             _navigationService = navigationService;
             _dataService = dataService;

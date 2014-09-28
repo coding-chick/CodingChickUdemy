@@ -11,12 +11,13 @@ using CodingChick.UdemyUniversal.CoreUI;
 
 namespace CodingChick.UdemyUniversal.ViewModels
 {
-    public class LoginViewModel : Screen
+    public class LoginViewModel : ScreenWithAnalytics
     {
         private readonly IOAuthService _iOAuthService;
         private readonly INavigationService _navigationService;
 
-        public LoginViewModel(INavigationService navigationService, IOAuthService iOAuthService)
+        public LoginViewModel(INavigationService navigationService, IOAuthService iOAuthService, IAnalyticsService analyticsService)
+            : base(navigationService, analyticsService)
         {
             _navigationService = navigationService;
 

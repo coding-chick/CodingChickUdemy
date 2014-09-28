@@ -15,7 +15,7 @@ using CodingChick.UdemyUniversal.Models;
 
 namespace CodingChick.UdemyUniversal.ViewModels
 {
-    public class CoursesViewModel : Screen
+    public class CoursesViewModel : ScreenWithAnalytics
     {
         private readonly INavigationService _navigationService;
         private readonly IDataService _iDataService;
@@ -49,7 +49,8 @@ namespace CodingChick.UdemyUniversal.ViewModels
             }
         }
 
-        public CoursesViewModel(INavigationService navigationService, IDataService iDataService)
+        public CoursesViewModel(INavigationService navigationService, IDataService iDataService, IAnalyticsService analyticsService)
+            : base(navigationService, analyticsService)
         {
             _navigationService = navigationService;
             _iDataService = iDataService;

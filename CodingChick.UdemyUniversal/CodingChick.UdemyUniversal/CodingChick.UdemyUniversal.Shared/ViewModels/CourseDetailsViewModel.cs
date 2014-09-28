@@ -17,7 +17,7 @@ using Action = System.Action;
 
 namespace CodingChick.UdemyUniversal.ViewModels
 {
-    public class CourseDetailsViewModel : Screen
+    public class CourseDetailsViewModel : ScreenWithAnalytics
     {
         private readonly INavigationService _navigationService;
         private readonly IDataService _iDataService;
@@ -81,7 +81,8 @@ namespace CodingChick.UdemyUniversal.ViewModels
             };
         }
 
-        public CourseDetailsViewModel(INavigationService navigationService, IDataService iDataService, IEventAggregator eventAggregator)
+        public CourseDetailsViewModel(INavigationService navigationService, IDataService iDataService, IEventAggregator eventAggregator,
+            IAnalyticsService analyticsService ) : base(navigationService, analyticsService)
         {
             _navigationService = navigationService;
             _iDataService = iDataService;

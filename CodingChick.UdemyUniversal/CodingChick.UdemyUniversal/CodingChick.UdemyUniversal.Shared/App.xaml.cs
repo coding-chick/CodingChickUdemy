@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
@@ -40,6 +41,16 @@ namespace CodingChick.UdemyUniversal
         {
             InitializeComponent();
             LogManager.GetLog = type => new DebugLogger(type);
+
+            TaskScheduler.UnobservedTaskException += TaskScheduler_UnobservedTaskException;
+        }
+
+
+
+        void TaskScheduler_UnobservedTaskException(object sender, UnobservedTaskExceptionEventArgs e)
+        {
+            CreateAndSendExceptionsToGoogleAnalytics(e.Exception);
+
         }
 
         protected override void Configure()
@@ -61,6 +72,7 @@ namespace CodingChick.UdemyUniversal
             container.PerRequest<IHttpClientAccessor, HttpClientAccessor>();
             container.PerRequest<IUdemyHttpEngine, UdemyHttpEngine>();
             container.PerRequest<IUdemyStorageManager, UdemyStorageManager>();
+            container.PerRequest<IAnalyticsService, GoogleAnalyticsService>();
         }
 
         protected override void PrepareViewFirst(Frame rootFrame)
@@ -74,6 +86,7 @@ namespace CodingChick.UdemyUniversal
             // makes awesome SystemTray merge with the content
             ApplicationView.GetForCurrentView().SetDesiredBoundsMode(ApplicationViewBoundsMode.UseCoreWindow);
 #endif
+            
             //yes we check directly to the API, life's hard without container being up yet so no IoC
             var token = ApplicationData.Current.LocalSettings.Values["token"] as string;
             if (!string.IsNullOrEmpty(token))
@@ -100,6 +113,26 @@ namespace CodingChick.UdemyUniversal
         protected override void OnActivated(IActivatedEventArgs args)
         {
             base.OnActivated(args);
+        }
+
+
+        protected override void OnUnhandledException(object sender, UnhandledExceptionEventArgs e)
+        {
+            base.OnUnhandledException(sender, e);
+            CreateAndSendExceptionsToGoogleAnalytics(e.Exception);
+        }
+
+        private void CreateAndSendExceptionsToGoogleAnalytics(Exception e)
+        {
+            if (container != null)
+            {
+                container.GetInstance<IAnalyticsService>().SendException(e);
+            }
+            else
+            {
+                var analyticService = new GoogleAnalyticsService();
+                analyticService.SendException(e);
+            }
         }
     }
 }

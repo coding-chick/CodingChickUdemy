@@ -35,6 +35,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Core\Base\UdemyDataManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Base\UdemyHttpEngine.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Services\DataService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Services\GoogleAnalyticsService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Services\IAnalyticsService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Services\IDataService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Services\IOauthService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Services\OAuthService.cs" />
@@ -76,6 +78,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LoginViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LecturePlayerViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MyCourseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ScreenWithAnalytics.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\AboutView.xaml.cs">
       <DependentUpon>AboutView.xaml</DependentUpon>
     </Compile>

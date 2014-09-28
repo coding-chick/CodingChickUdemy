@@ -15,6 +15,8 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{76F1466A-8B6D-4E39-A767-685A06062A39};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <SynthesizeLinkMetadata>true</SynthesizeLinkMetadata>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxBundlePlatforms>neutral</AppxBundlePlatforms>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -89,6 +91,7 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="analytics.xml" />
     <Content Include="Assets\HubBackground.scale-100.png" />
     <Content Include="Assets\HubBackground.scale-140.png" />
     <Content Include="Assets\HubBackground.scale-240.png" />
@@ -105,6 +108,10 @@
     <Content Include="Assets\TreeSingle.scale-180.png" />
     <Content Include="Assets\TreeSingle.scale-200.png" />
     <Content Include="Assets\TreeSingle.scale-240.png" />
+    <None Include="analytics.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Caliburn.Micro">
@@ -118,6 +125,12 @@
     </Reference>
     <Reference Include="Caliburn.Micro.Platform">
       <HintPath>..\..\packages\Caliburn.Micro.2.0.0\lib\wpa81\Caliburn.Micro.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="GoogleAnalytics">
+      <HintPath>..\..\packages\GoogleAnalyticsSDK.1.2.12\lib\wpa81\GoogleAnalytics.winmd</HintPath>
+    </Reference>
+    <Reference Include="GoogleAnalytics.Core">
+      <HintPath>..\..\packages\GoogleAnalyticsSDK.1.2.12\lib\wpa81\GoogleAnalytics.Core.winmd</HintPath>
     </Reference>
     <Reference Include="Microsoft.Xaml.Interactions">
       <HintPath>..\..\packages\Caliburn.Micro.2.0.0\lib\wpa81\Microsoft.Xaml.Interactions.dll</HintPath>
