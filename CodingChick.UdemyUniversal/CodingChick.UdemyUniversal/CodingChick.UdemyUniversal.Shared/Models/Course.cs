@@ -49,6 +49,6 @@ namespace CodingChick.UdemyUniversal.Models
                 _description = value;
                 NotifyOfPropertyChange(() => Description);
             }
-        }
+        }       
     }
 }

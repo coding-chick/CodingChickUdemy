@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <DeviceId>30F105C9-681E-420b-A277-7C086EAD8A4E</DeviceId>
+    <DeviceId>D363CCA4-0764-4F2C-9EE1-12E55E13C0FC</DeviceId>
   </PropertyGroup>
   <PropertyGroup>
     <AppxPackageIsForStore>True</AppxPackageIsForStore>
@@ -9,6 +9,6 @@
     <AppxBuildConfigurationSelection>neutral</AppxBuildConfigurationSelection>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <DeviceId>57B0267A-6444-41EB-9127-2ED594284A2D</DeviceId>
+    <DeviceId>D363CCA4-0764-4F2C-9EE1-12E55E13C0FC</DeviceId>
   </PropertyGroup>
 </Project>

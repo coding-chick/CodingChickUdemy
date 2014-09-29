@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Graphics.Display;
 using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -26,6 +27,8 @@ namespace CodingChick.UdemyUniversal.Views
         public LoginView()
         {
             this.InitializeComponent();
+            DisplayInformation.AutoRotationPreferences = DisplayOrientations.None;
+
         }
 
      

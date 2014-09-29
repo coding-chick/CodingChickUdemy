@@ -4,7 +4,7 @@ namespace CodingChick.UdemyUniversal.Models
 {
     public class MyCourse : Course
     {
-        public int AvgRatingRatio { get; set; }
+        public double AvgRatingRatio { get; set; }
         public string PublishedTime { get; set; }
         public object IsInstructor { get; set; }
         public bool CanEdit { get; set; }

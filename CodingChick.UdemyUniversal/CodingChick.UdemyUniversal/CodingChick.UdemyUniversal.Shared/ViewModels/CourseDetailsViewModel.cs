@@ -233,7 +233,7 @@ namespace CodingChick.UdemyUniversal.ViewModels
             {
                 if (Parameter.GoogleInAppPurchasePriceText != null)
                     return Parameter.GoogleInAppPurchasePriceText.TrimStart('$') + "$";
-                return string.Empty;
+                return "Free!";
             }
         }
 

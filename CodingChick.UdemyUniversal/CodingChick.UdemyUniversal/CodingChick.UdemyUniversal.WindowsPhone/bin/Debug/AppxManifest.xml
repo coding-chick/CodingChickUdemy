@@ -7,11 +7,11 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="e4686275-40cd-4a0b-82a0-01fbe64f3140" Publisher="CN=Efrat Barak" Version="1.0.0.0" ProcessorArchitecture="neutral" />
-  <mp:PhoneIdentity PhoneProductId="cf643ff5-8861-478d-9259-e9ac3f735730" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="49323CodingChick.CodingChicksUdemy" Publisher="CN=76FBECEC-B622-4356-B7B9-BBDD5D8A2D22" Version="1.0.0.0" ProcessorArchitecture="neutral" />
+  <mp:PhoneIdentity PhoneProductId="b611c56d-c586-4f01-9ddc-ddcf9beb4c77" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>CodingChick's Udemy</DisplayName>
-    <PublisherDisplayName>Efrat Barak</PublisherDisplayName>
+    <PublisherDisplayName>CodingChick</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Prerequisites>
@@ -38,6 +38,28 @@
   <Capabilities>
     <Capability Name="internetClientServer" />
   </Capabilities>
+  <Extensions>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>CLRHost.dll</Path>
+        <ActivatableClass ActivatableClassId="GoogleAnalytics.Core.TransactionItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="GoogleAnalytics.Core.Payload" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="GoogleAnalytics.Core.TrackerManager" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="GoogleAnalytics.Core.GAServiceManager" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="GoogleAnalytics.Core.Dimensions" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="GoogleAnalytics.Core.PlatformInfoProvider" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="GoogleAnalytics.Core.Tracker" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="GoogleAnalytics.Core.Transaction" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="GoogleAnalytics.EasyTracker" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="GoogleAnalytics.AppReceipt" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="GoogleAnalytics.ProductReceipt" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="GoogleAnalytics.PlatformInfoProvider" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="GoogleAnalytics.AnalyticsEngine" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="GoogleAnalytics.EasyTrackerConfig" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="GoogleAnalytics.TransactionBuilder" ThreadingModel="both" />
+      </InProcessServer>
+    </Extension>
+  </Extensions>
   <build:Metadata>
     <build:Item Name="SharedGUID" Value="9f0c50f5-a32d-4069-acf4-6692a5c9ad75" />
     <build:Item Name="CodeSharingProject" Value="248F659F-DAC5-46E8-AC09-60EC9FC95053" />

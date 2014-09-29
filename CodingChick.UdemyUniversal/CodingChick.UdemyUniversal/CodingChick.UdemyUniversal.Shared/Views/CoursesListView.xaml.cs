@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Graphics.Display;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -25,6 +26,7 @@ namespace CodingChick.UdemyUniversal.Views
         public CoursesListView()
         {
             this.InitializeComponent();
+            DisplayInformation.AutoRotationPreferences = DisplayOrientations.None;
         }
     }
 }
