@@ -1,6 +1,6 @@
 CodingChick's Udemy
 ===================
-Coding Chick's Udemy is an unofficial Windows Phone 8.1 client for Udemy developed solely by CodingChick (Efrat Barak). 
+CodingChick's Udemy is an unofficial Windows Phone 8.1 client for Udemy developed solely by CodingChick (Efrat Barak). 
 
 To install CodingChick's Udemy please visit the [Windows Phone Store](http://www.windowsphone.com/en-us/store/app/codingchick-udemy/f4ea6edc-b3a6-4569-9f21-864965a04470?signin=true)
 
