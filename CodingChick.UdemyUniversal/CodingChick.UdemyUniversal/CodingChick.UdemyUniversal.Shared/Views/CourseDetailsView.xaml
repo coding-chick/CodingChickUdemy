@@ -178,7 +178,7 @@
                     </GridView>
                 </DataTemplate>
             </HubSection>-->
-            <HubSection x:Uid="Description" Header="Desciption">
+            <HubSection x:Uid="Description" Header="Description">
                 <DataTemplate>
                     <WebView x:Name="Description" coreUi:WebBrowserExtentions.HTML="{Binding Parameter.Description}" CompositeMode="MinBlend" />
                 </DataTemplate>

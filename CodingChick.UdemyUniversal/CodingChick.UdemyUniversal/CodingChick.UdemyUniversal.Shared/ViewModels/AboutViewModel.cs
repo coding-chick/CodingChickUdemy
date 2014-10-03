@@ -13,7 +13,7 @@ namespace CodingChick.UdemyUniversal.ViewModels
             PrivcayPolicyLink = @"http://codingchick.net/Privacy/PrivacyPolicy.txt";
             EmailText = "efratb@codingchick.net";
             CreatedBy = "Efrat Barak aka CodingChick";
-            Version = "1.0.0.1";
+            Version = "1.1.0.0";
         }
 
         public string Version { get; set; }

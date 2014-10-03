@@ -36,7 +36,7 @@
                          micro:Message.Attach="[Event KeyDown] = [Action OkSignin($eventArgs)]" FontSize="18.667" Height="33" />
             <TextBlock Text="Sign up to Udemy" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,200,0,0" FontSize="29.333" />
             <HyperlinkButton Content="Don't have an account? Sign up for Udemy " FontFamily="Global User Interface" FontSize="12" Foreground="#FF006BFF" 
-			HorizontalAlignment="Left" Grid.Row="5" Grid.ColumnSpan="2" Margin="0,0,0,0" />
+			HorizontalAlignment="Left" Grid.Row="5" Grid.ColumnSpan="2" Margin="0,0,0,0"  NavigateUri="https://www.udemy.com/join" />
         </Grid>
     </Grid>
 

@@ -7,7 +7,7 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="49323CodingChick.CodingChicksUdemy" Publisher="CN=76FBECEC-B622-4356-B7B9-BBDD5D8A2D22" Version="1.0.0.0" ProcessorArchitecture="neutral" />
+  <Identity Name="49323CodingChick.CodingChicksUdemy" Publisher="CN=76FBECEC-B622-4356-B7B9-BBDD5D8A2D22" Version="1.0.0.1" ProcessorArchitecture="neutral" />
   <mp:PhoneIdentity PhoneProductId="b611c56d-c586-4f01-9ddc-ddcf9beb4c77" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>CodingChick's Udemy</DisplayName>
