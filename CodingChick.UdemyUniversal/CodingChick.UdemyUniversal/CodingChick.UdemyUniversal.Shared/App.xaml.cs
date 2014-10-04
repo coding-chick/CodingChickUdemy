@@ -40,7 +40,7 @@ namespace CodingChick.UdemyUniversal
         public App()
         {
             InitializeComponent();
-            LogManager.GetLog = type => new DebugLogger(type);
+            LogManager.GetLog = type => new DebugLog(type);
 
             TaskScheduler.UnobservedTaskException += TaskScheduler_UnobservedTaskException;
         }

@@ -9,9 +9,9 @@ namespace CodingChick.UdemyUniversal.Core.Base
     {
         private readonly IHttpClientAccessor _clientAccessor;
 
-        public string ClientId { get { return "ad12eca9cbe17afac6259fe5d98471a6"; } }
+        public string ClientId { get { return ""; } }
 
-        public string ClientSecret { get { return "a7c630646308824b2301fdb60ecfd8a0947e82d5"; } }
+        public string ClientSecret { get { return ""; } }
 
         public UdemyHttpEngine(IHttpClientAccessor clientAccessor)
         {
