@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Microsoft.Phone.WinJS.2.1/js/ui/WinJS.UI.AppBarCommand" name="WinJS.UI.AppBarCommand" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="false" xmlns="http://openajax.org/metadata">
+  <author name="Microsoft Corporation" />
+  <description locid="WinJS.UI.AppBarCommand" type="text/plain">Represents a command to display in an AppBar.</description>
+  <icons>
+    <icon src="ui_winjs.ui.appbarcommand.12x12.png" />
+    <icon src="ui_winjs.ui.appbarcommand.16x16.png" />
+  </icons>
+  <properties>
+    <property name="id" datatype="String" required="false" blend:isAdvanced="true">
+      <description locid="WinJS.UI.AppBarCommand.id" type="text/plain">Gets or sets the ID of the AppBarCommand.</description>
+    </property>
+    <property name="type" datatype="WinJS.UI.AppBarCommand.type" required="false" readonly="true" blend:isAdvanced="true">
+      <description locid="WinJS.UI.AppBarCommand.type" type="text/plain">Gets or sets the type of the AppBarCommand. Possible values are "button" and "toggle"</description>
+    </property>
+    <property name="label" datatype="String" required="false">
+      <description locid="WinJS.UI.AppBarCommand.label" type="text/plain">Gets or sets the label of the AppBarCommand.</description>
+    </property>
+    <property name="icon" datatype="String" required="false">
+      <description locid="WinJS.UI.AppBarCommand.icon" type="text/plain">Gets or sets the icon of the AppBarCommand.</description>
+    </property>
+    <property name="onclick" datatype="Function" required="false">
+      <description locid="WinJS.UI.AppBarCommand.onclick" type="text/plain">Gets or sets the function to invoke when the command is clicked.</description>
+    </property>
+    <property name="section" datatype="WinJS.UI.AppBarCommand.section" required="false">
+      <description locid="WinJS.UI.AppBarCommand.section" type="text/plain">Gets or sets the section that the AppBarCommand is in. Possible values are "selection" and "global".</description>
+    </property>
+    <property name="selected" datatype="Boolean" required="false">
+      <description locid="WinJS.UI.AppBarCommand.selected" type="text/plain">Set or get the selected state of a toggle button.</description>
+    </property>
+    <property name="element" datatype="HTMLElement" required="false" hidden="true" readonly="true">
+      <description locid="WinJS.UI.AppBarCommand.element" type="text/plain">The DOM element that hosts the AppBarCommad.</description>
+    </property>
+    <property name="disabled" datatype="Boolean" required="false">
+      <description locid="WinJS.UI.AppBarCommand.disabled" type="text/plain">Gets or sets a value that indicates whether the AppBarCommand is disabled. A value of true disables the AppBarCommand, and a value of false enables it.</description>
+    </property>
+    <property name="hidden" datatype="Boolean" required="false" hidden="true">
+      <description locid="WinJS.UI.AppBarCommand.hidden" type="text/plain">Gets a value that indicates whether the AppBarCommand is hiding or in the process of becoming hidden.
+ A value of true indicates that the AppBarCommand is hiding or in the process of becoming hidden.</description>
+    </property>
+    <property name="extraClass" datatype="String" required="false" blend:isAdvanced="true">
+      <description locid="WinJS.UI.AppBarCommand.extraClass" type="text/plain">Adds an extra CSS class during construction.</description>
+    </property>
+  </properties>
+  <content><![CDATA[<button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{type:'button',label:'Button'}"></button>]]></content>
+  <requires>
+    <require type="javascript" src="//Microsoft.Phone.WinJS.2.1/js/base.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="//Microsoft.Phone.WinJS.2.1/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="//Microsoft.Phone.WinJS.2.1/css/ui-dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript"><![CDATA[WinJS.UI.processAll();]]></require>
+  </requires>
+  <blend:parts>
+    <part name="appBarCommand" class="win-command">
+      <description locid="WinJS.UI.AppBarCommand_part:appBarCommand" type="text/plain">The AppBarCommand control itself.</description>
+    </part>
+  </blend:parts><locale messages="ui_loc_oam.xml" />
+</widget>

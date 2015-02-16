@@ -1,0 +1,19 @@
+﻿<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
+  <Metadata>
+    <Identity Id="MMP.PF.WP81.Analytics.Advertising.VSIX.1EB025D0-0E11-4AD7-BAA7-D3CB207255E4" Version="2.0.0.0" Language="en-US" Publisher="Microsoft" />
+    <DisplayName>Microsoft Player Framework Advertising Analytics Adapter</DisplayName>
+    <Description>Microsoft Media Platform: Player Framework Advertising Analytics Adapter for Windows 8 Store Apps</Description>
+    <MoreInfo>http://playerframework.codeplex.com/</MoreInfo>
+    <License>License.rtf</License>
+    <Icon>MMPPF.ico</Icon>
+    <PreviewImage>MMPPF.ico</PreviewImage>
+    <Tags>Microsoft Media Platform Player Framework, Analytics, Advertising, Xaml, JS, MMPPF</Tags>
+  </Metadata>
+  <Installation Scope="Global" AllUsers="true">
+    <InstallationTarget Id="Microsoft.ExtensionSDK" TargetPlatformIdentifier="WindowsPhoneApp" TargetPlatformVersion="v8.1" SdkName="Microsoft.PlayerFramework.Advertising.Analytics" SdkVersion="2.0.0.0" />
+  </Installation>
+  <Dependencies/>
+  <Assets>
+    <Asset Type="Microsoft.ExtensionSDK" Path="SDKManifest.xml" />
+  </Assets>
+</PackageManifest>

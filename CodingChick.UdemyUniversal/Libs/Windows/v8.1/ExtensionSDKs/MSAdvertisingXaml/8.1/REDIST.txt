@@ -1,0 +1,9 @@
+The following is a list of files available for redistribution under the terms
+of the Microsoft Advertising SDK for Windows 8 license agreement:
+
+MicrosoftAdvertising.winmd
+Microsoft.Advertising.WinRT.UI.winmd
+ad.js
+ormma.js
+bootstrap.html
+bootstrap.js

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Microsoft.Phone.WinJS.2.1/js/ui/WinJS.UI.ToggleSwitch" name="WinJS.UI.ToggleSwitch" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="false" xmlns="http://openajax.org/metadata">
+  <author name="Microsoft Corporation" />
+  <description locid="WinJS.UI.ToggleSwitch" type="text/plain">A control that lets the user switch an option on or off.</description>
+  <icons>
+    <icon src="ui_winjs.ui.toggleswitch.12x12.png" />
+    <icon src="ui_winjs.ui.toggleswitch.16x16.png" />
+  </icons>
+  <properties>
+    <property name="checked" datatype="Boolean" required="false">
+      <description locid="WinJS.UI.ToggleSwitch.checked" type="text/plain">Gets or sets whether the control is on (checked is set to true) or off (checked is set to false).</description>
+    </property>
+    <property name="disabled" datatype="Boolean" required="false">
+      <description locid="WinJS.UI.ToggleSwitch.disabled" type="text/plain">Gets or sets a value that specifies whether the control is disabled.</description>
+    </property>
+    <property name="element" datatype="HTMLElement" required="false" hidden="true">
+      <description locid="WinJS.UI.ToggleSwitch.element" type="text/plain">The DOM element that hosts the ToggleSwitch control.</description>
+    </property>
+    <property name="labelOn" datatype="String" required="false">
+      <description locid="WinJS.UI.ToggleSwitch.labelOn" type="text/plain">Gets or sets the text that displays when the control is on (checked is set to true). The default value is "On".</description>
+    </property>
+    <property name="labelOff" datatype="String" required="false">
+      <description locid="WinJS.UI.ToggleSwitch.labelOff" type="text/plain">Gets or sets the text that displays when the control is off (checked is set to false). The default value is "Off".</description>
+    </property>
+    <property name="title" datatype="String" required="false">
+      <description locid="WinJS.UI.ToggleSwitch.title" type="text/plain">Gets or sets the main text for the ToggleSwitch control. This text is always displayed, regardless of whether
+ the control is switched on or off.</description>
+    </property>
+  </properties>
+  <content><![CDATA[<div data-win-control="WinJS.UI.ToggleSwitch"></div>]]></content>
+  <requires>
+    <require type="javascript" src="//Microsoft.Phone.WinJS.2.1/js/base.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="//Microsoft.Phone.WinJS.2.1/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="//Microsoft.Phone.WinJS.2.1/css/ui-dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript"><![CDATA[WinJS.UI.processAll();]]></require>
+  </requires>
+  <blend:parts>
+    <part name="toggle" class="win-toggleSwitch">
+      <description locid="WinJS.UI.ToggleSwitch_part:toggle" type="text/plain">The entire ToggleSwitch control.</description>
+    </part>
+    <part name="switch" class="win-switch">
+      <description locid="WinJS.UI.ToggleSwitch_part:switch" type="text/plain">The slider that enables the user to switch the state of the ToggleSwitch.</description>
+    </part>
+    <part name="title" class="win-title">
+      <description locid="WinJS.UI.ToggleSwitch_part:title" type="text/plain">The main text for the ToggleSwitch control.</description>
+    </part>
+    <part name="label-on" class="win-on">
+      <description locid="WinJS.UI.ToggleSwitch_part:label-on" type="text/plain">The text for when the switch is on.</description>
+    </part>
+    <part name="label-off" class="win-off">
+      <description locid="WinJS.UI.ToggleSwitch_part:label-off:" type="text/plain">The text for when the switch is off.</description>
+    </part>
+  </blend:parts><locale messages="ui_loc_oam.xml" />
+</widget>

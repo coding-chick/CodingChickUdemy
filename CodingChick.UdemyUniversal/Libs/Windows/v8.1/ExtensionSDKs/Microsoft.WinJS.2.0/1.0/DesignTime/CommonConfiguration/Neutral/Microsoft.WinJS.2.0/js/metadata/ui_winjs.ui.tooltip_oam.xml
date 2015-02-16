@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Microsoft.WinJS.2.0/js/ui/WinJS.UI.Tooltip" name="WinJS.UI.Tooltip" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="true" xmlns="http://openajax.org/metadata">
+  <author name="Microsoft Corporation" />
+  <description locid="WinJS.UI.Tooltip" type="text/plain">Displays a tooltip that can contain images and formatting.</description>
+  <blend:compatibleWiths>
+    <blend:compatibleWith platform="Windows" minVersion="8.0" />
+  </blend:compatibleWiths>
+  <icons>
+    <icon src="ui_winjs.ui.tooltip.12x12.png" />
+    <icon src="ui_winjs.ui.tooltip.16x16.png" />
+  </icons>
+  <properties>
+    <property name="innerHTML" datatype="String" required="false">
+      <description locid="WinJS.UI.Tooltip.innerHTML" type="text/plain">Gets or sets the HTML content of the Tooltip.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="element" datatype="HTMLElement" required="false" hidden="true">
+      <description locid="WinJS.UI.Tooltip.element" type="text/plain">Gets or sets the DOM element that hosts the Tooltip.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="contentElement" datatype="HTMLElement" required="false" blend:potentialValueSelector="div[style='display: none;']&gt;div[id], div[style='display: none;']&gt;div[class]">
+      <description locid="WinJS.UI.Tooltip.contentElement" type="text/plain">Gets or sets the DOM element that is the content for the ToolTip.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="placement" datatype="WinJS.UI.Tooltip.placement" required="false">
+      <description locid="WinJS.UI.Tooltip.placement" type="text/plain">Gets or sets the position for the Tooltip relative to its target element: top, bottom, left or right.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="infotip" datatype="Boolean" required="false">
+      <description locid="WinJS.UI.Tooltip.infotip" type="text/plain">Gets or sets a value that specifies whether the Tooltip is an infotip, a tooltip that contains
+ a lot of info and should be displayed for longer than a typical Tooltip.
+ The default value is false.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="extraClass" datatype="String" required="false" blend:isAdvanced="true">
+      <description locid="WinJS.UI.Tooltip.extraClass" type="text/plain">Gets or sets additional CSS classes to apply to the Tooltip control's host element.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+  </properties>
+  <content><![CDATA[<div style="display:inline-block;" data-win-control="WinJS.UI.Tooltip" data-win-options="{innerHTML:'Tooltip content goes here'}"></div>]]></content>
+  <requires>
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/base.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="//Microsoft.WinJS.2.0/css/ui-dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript"><![CDATA[WinJS.UI.processAll();]]></require>
+  </requires>
+  <blend:parts>
+    <part name="tooltip" class="win-tooltip">
+      <description locid="WinJS.UI.Tooltip_e:tooltip" type="text/plain">The entire Tooltip control.</description>
+    </part>
+  </blend:parts><locale messages="ui_loc_oam.xml" />
+</widget>

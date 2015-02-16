@@ -1,0 +1,21 @@
+﻿<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
+  <Metadata>
+    <Identity Id="MMP.PF.WP81.CaptionSettings.XAML.SDK.VSIX.ad25c61c-f211-4f8c-eeee-b349c8a6873c" Version="2.0.0.0" Language="en-US" Publisher="Microsoft" />
+    <DisplayName>Microsoft Player Framework Caption Settings Plugin</DisplayName>
+    <Description>Microsoft Media Platform: Player Framework Caption Settings Plugin for Windows 8 Xaml Windows Store Apps</Description>
+    <MoreInfo>http://playerframework.codeplex.com/</MoreInfo>
+    <License>License.rtf</License>
+    <Icon>MMPPF.ico</Icon>
+    <PreviewImage>MMPPF.ico</PreviewImage>
+    <Tags>Closed caption settings, Microsoft Media Platform Player Framework, Windows 8 Xaml, MMPPF</Tags>
+  </Metadata>
+  <Installation Scope="Global" AllUsers="true">
+    <InstallationTarget Id="Microsoft.ExtensionSDK" TargetPlatformIdentifier="WindowsPhoneApp" TargetPlatformVersion="v8.1" SdkName="Microsoft.PlayerFramework.Xaml.CaptionSettings" SdkVersion="2.0.0.0" />
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" Version="4.5" />
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.ExtensionSDK" Path="SDKManifest.xml" />
+  </Assets>
+</PackageManifest>

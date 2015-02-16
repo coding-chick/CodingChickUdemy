@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Microsoft.WinJS.2.0/js/ui/WinJS.UI.Flyout" name="WinJS.UI.Flyout" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="true" xmlns="http://openajax.org/metadata">
+  <author name="Microsoft Corporation" />
+  <title locid="WinJS.UI.Flyout_name" type="text/plain">Flyout</title>
+  <description locid="WinJS.UI.Flyout" type="text/plain">Displays lightweight UI that is either informational, or requires user interaction.
+ Unlike a dialog, a Flyout can be light dismissed by clicking or tapping off of it.</description>
+  <blend:compatibleWiths>
+    <blend:compatibleWith platform="Windows" minVersion="8.0" />
+  </blend:compatibleWiths>
+  <icons>
+    <icon src="ui_winjs.ui.flyout.12x12.png" />
+    <icon src="ui_winjs.ui.flyout.16x16.png" />
+  </icons>
+  <properties>
+    <property name="anchor" datatype="String" required="false">
+      <description locid="WinJS.UI.Flyout.anchor" type="text/plain">Gets or sets the Flyout control's anchor. The anchor element is the HTML element which the Flyout originates from and is positioned relative to.
+ (This setting can be overridden when you call the show method.)</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="placement" datatype="WinJS.UI.Flyout.placement" required="false">
+      <description locid="WinJS.UI.Flyout.placement" type="text/plain">Gets or sets the default placement of this Flyout. (This setting can be overridden when you call the show method.)</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="alignment" datatype="WinJS.UI.Flyout.alignment" required="false">
+      <description locid="WinJS.UI.Flyout.alignment" type="text/plain">Gets or sets the default alignment for this Flyout. (This setting can be overridden when you call the show method.)</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+  </properties>
+  <content><![CDATA[<div data-win-control="WinJS.UI.Flyout"></div>]]></content>
+  <requires>
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/base.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="//Microsoft.WinJS.2.0/css/ui-dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript"><![CDATA[WinJS.UI.processAll();]]></require>
+  </requires>
+  <blend:parts>
+    <part name="flyout" class="win-flyout">
+      <description locid="WinJS.UI.Flyout_part:flyout" type="text/plain">The Flyout control itself.</description>
+    </part>
+  </blend:parts><locale messages="ui_loc_oam.xml" />
+</widget>

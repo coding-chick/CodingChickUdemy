@@ -19,22 +19,19 @@
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\bin\Debug\CodingChick.UdemyUniversal.WindowsPhone.exe">
       <PackagePath>CodingChick.UdemyUniversal.WindowsPhone.exe</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\bin\Debug\CodingChick.UdemyUniversal.WindowsPhone.exe.config">
-      <PackagePath>CodingChick.UdemyUniversal.WindowsPhone.exe.config</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\libs\WindowsPhoneApp\8.1\ExtensionSDKs\Microsoft.PlayerFramework.Xaml\2.0.0.0\References\CommonConfiguration\neutral\Microsoft.PlayerFramework.dll">
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\Libs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.PlayerFramework.Xaml\2.0.0.0\References\CommonConfiguration\neutral\Microsoft.PlayerFramework.dll">
       <PackagePath>Microsoft.PlayerFramework.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\libs\WindowsPhoneApp\8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\References\CommonConfiguration\neutral\Telerik.Universal.Core.dll">
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\Libs\WindowsPhoneApp\v8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\References\CommonConfiguration\neutral\Telerik.Universal.Core.dll">
       <PackagePath>Telerik.Universal.Core.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\libs\WindowsPhoneApp\8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\References\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Chart.dll">
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\Libs\WindowsPhoneApp\v8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\References\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Chart.dll">
       <PackagePath>Telerik.Universal.UI.Xaml.Chart.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\libs\WindowsPhoneApp\8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\References\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Input.dll">
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\Libs\WindowsPhoneApp\v8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\References\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Input.dll">
       <PackagePath>Telerik.Universal.UI.Xaml.Input.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\libs\WindowsPhoneApp\8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\References\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Primitives.dll">
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\Libs\WindowsPhoneApp\v8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\References\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Primitives.dll">
       <PackagePath>Telerik.Universal.UI.Xaml.Primitives.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\packages\Caliburn.Micro.Core.2.0.1\lib\portable-net45+win8+wp8+wpa81\Caliburn.Micro.dll">
@@ -55,7 +52,7 @@
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\packages\Caliburn.Micro.2.0.1\lib\wpa81\Microsoft.Xaml.Interactivity.dll">
       <PackagePath>Microsoft.Xaml.Interactivity.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\packages\Newtonsoft.Json.6.0.5\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll">
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\packages\Newtonsoft.Json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\packages\GoogleAnalyticsSDK.1.2.12\lib\wpa81\GoogleAnalytics.Core.winmd">
@@ -64,67 +61,67 @@
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\packages\GoogleAnalyticsSDK.1.2.12\lib\wpa81\GoogleAnalytics.winmd">
       <PackagePath>GoogleAnalytics.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\libs\WindowsPhoneApp\8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.Core\App.xbf">
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\Libs\WindowsPhoneApp\v8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.Core\App.xbf">
       <PackagePath>Telerik.Universal.Core\App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\libs\WindowsPhoneApp\8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Chart\App.xbf">
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\Libs\WindowsPhoneApp\v8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Chart\App.xbf">
       <PackagePath>Telerik.Universal.UI.Xaml.Chart\App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\libs\WindowsPhoneApp\8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Input\App.xbf">
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\Libs\WindowsPhoneApp\v8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Input\App.xbf">
       <PackagePath>Telerik.Universal.UI.Xaml.Input\App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\libs\WindowsPhoneApp\8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Primitives\App.xbf">
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\Libs\WindowsPhoneApp\v8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Primitives\App.xbf">
       <PackagePath>Telerik.Universal.UI.Xaml.Primitives\App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\libs\WindowsPhoneApp\8.1\ExtensionSDKs\Microsoft.PlayerFramework.Xaml\2.0.0.0\Redist\CommonConfiguration\neutral\Microsoft.PlayerFramework\Themes\Classic.xbf">
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\Libs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.PlayerFramework.Xaml\2.0.0.0\Redist\CommonConfiguration\neutral\Microsoft.PlayerFramework\Themes\Classic.xbf">
       <PackagePath>Microsoft.PlayerFramework\Themes\Classic.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\libs\WindowsPhoneApp\8.1\ExtensionSDKs\Microsoft.PlayerFramework.Xaml\2.0.0.0\Redist\CommonConfiguration\neutral\Microsoft.PlayerFramework\Themes\Entertainment.xbf">
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\Libs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.PlayerFramework.Xaml\2.0.0.0\Redist\CommonConfiguration\neutral\Microsoft.PlayerFramework\Themes\Entertainment.xbf">
       <PackagePath>Microsoft.PlayerFramework\Themes\Entertainment.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\libs\WindowsPhoneApp\8.1\ExtensionSDKs\Microsoft.PlayerFramework.Xaml\2.0.0.0\Redist\CommonConfiguration\neutral\Microsoft.PlayerFramework\Themes\Generic.xbf">
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\Libs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.PlayerFramework.Xaml\2.0.0.0\Redist\CommonConfiguration\neutral\Microsoft.PlayerFramework\Themes\Generic.xbf">
       <PackagePath>Microsoft.PlayerFramework\Themes\Generic.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\libs\WindowsPhoneApp\8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Chart\Themes\Generic.xbf">
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\Libs\WindowsPhoneApp\v8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Chart\Themes\Generic.xbf">
       <PackagePath>Telerik.Universal.UI.Xaml.Chart\Themes\Generic.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\libs\WindowsPhoneApp\8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Input\Themes\Generic.xbf">
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\Libs\WindowsPhoneApp\v8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Input\Themes\Generic.xbf">
       <PackagePath>Telerik.Universal.UI.Xaml.Input\Themes\Generic.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\libs\WindowsPhoneApp\8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Primitives\Themes\Generic.xbf">
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\Libs\WindowsPhoneApp\v8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Primitives\Themes\Generic.xbf">
       <PackagePath>Telerik.Universal.UI.Xaml.Primitives\Themes\Generic.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\libs\WindowsPhoneApp\8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Primitives\Themes\HubTilePalette.xbf">
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\Libs\WindowsPhoneApp\v8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Primitives\Themes\HubTilePalette.xbf">
       <PackagePath>Telerik.Universal.UI.Xaml.Primitives\Themes\HubTilePalette.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\libs\WindowsPhoneApp\8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Primitives\Themes\Listbox.xbf">
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\Libs\WindowsPhoneApp\v8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Primitives\Themes\Listbox.xbf">
       <PackagePath>Telerik.Universal.UI.Xaml.Primitives\Themes\Listbox.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\libs\WindowsPhoneApp\8.1\ExtensionSDKs\Microsoft.PlayerFramework.Xaml\2.0.0.0\Redist\CommonConfiguration\neutral\Microsoft.PlayerFramework\Themes\Phone.xbf">
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\Libs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.PlayerFramework.Xaml\2.0.0.0\Redist\CommonConfiguration\neutral\Microsoft.PlayerFramework\Themes\Phone.xbf">
       <PackagePath>Microsoft.PlayerFramework\Themes\Phone.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\libs\WindowsPhoneApp\8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Primitives\Themes\ThemeColorsDark.xbf">
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\Libs\WindowsPhoneApp\v8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Primitives\Themes\ThemeColorsDark.xbf">
       <PackagePath>Telerik.Universal.UI.Xaml.Primitives\Themes\ThemeColorsDark.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\libs\WindowsPhoneApp\8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Primitives\Themes\ThemeColorsLight.xbf">
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\Libs\WindowsPhoneApp\v8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Primitives\Themes\ThemeColorsLight.xbf">
       <PackagePath>Telerik.Universal.UI.Xaml.Primitives\Themes\ThemeColorsLight.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\libs\WindowsPhoneApp\8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Chart\Themes\ThemeResourcesDark.xbf">
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\Libs\WindowsPhoneApp\v8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Chart\Themes\ThemeResourcesDark.xbf">
       <PackagePath>Telerik.Universal.UI.Xaml.Chart\Themes\ThemeResourcesDark.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\libs\WindowsPhoneApp\8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Input\Themes\ThemeResourcesDark.xbf">
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\Libs\WindowsPhoneApp\v8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Input\Themes\ThemeResourcesDark.xbf">
       <PackagePath>Telerik.Universal.UI.Xaml.Input\Themes\ThemeResourcesDark.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\libs\WindowsPhoneApp\8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Primitives\Themes\ThemeResourcesDark.xbf">
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\Libs\WindowsPhoneApp\v8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Primitives\Themes\ThemeResourcesDark.xbf">
       <PackagePath>Telerik.Universal.UI.Xaml.Primitives\Themes\ThemeResourcesDark.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\libs\WindowsPhoneApp\8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Chart\Themes\ThemeResourcesLight.xbf">
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\Libs\WindowsPhoneApp\v8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Chart\Themes\ThemeResourcesLight.xbf">
       <PackagePath>Telerik.Universal.UI.Xaml.Chart\Themes\ThemeResourcesLight.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\libs\WindowsPhoneApp\8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Input\Themes\ThemeResourcesLight.xbf">
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\Libs\WindowsPhoneApp\v8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Input\Themes\ThemeResourcesLight.xbf">
       <PackagePath>Telerik.Universal.UI.Xaml.Input\Themes\ThemeResourcesLight.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\libs\WindowsPhoneApp\8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Primitives\Themes\ThemeResourcesLight.xbf">
+    <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\Libs\WindowsPhoneApp\v8.1\ExtensionSDKs\Telerik UI For Windows Universal\1.0\Redist\CommonConfiguration\neutral\Telerik.Universal.UI.Xaml.Primitives\Themes\ThemeResourcesLight.xbf">
       <PackagePath>Telerik.Universal.UI.Xaml.Primitives\Themes\ThemeResourcesLight.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Code\OS\UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal\CodingChick.UdemyUniversal.WindowsPhone\analytics.xml">

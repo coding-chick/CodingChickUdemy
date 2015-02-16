@@ -1,0 +1,18 @@
+<FileList
+  FrameworkIdentity-Debug = "Name = Microsoft.VCLibs.120.00.Debug, MinVersion = 12.0.21005.1"
+  FrameworkIdentity-Retail = "Name = Microsoft.VCLibs.120.00, MinVersion = 12.0.21005.1"
+  MinVSVersion = "12.0"
+  DisplayName = "Microsoft Visual C++ 2013 Runtime Package for Windows"
+  AppliesTo = "WindowsAppContainer + (Managed | Javascript)"
+  AppX-Debug-x86 = ".\AppX\Debug\x86\Microsoft.VCLibs.x86.Debug.12.00.appx"
+  AppX-Debug-x64 = ".\AppX\Debug\x64\Microsoft.VCLibs.x64.Debug.12.00.appx"
+  AppX-Debug-ARM = ".\AppX\Debug\ARM\Microsoft.VCLibs.ARM.Debug.12.00.appx"
+  AppX-Retail-x86 = ".\AppX\Retail\x86\Microsoft.VCLibs.x86.12.00.appx"
+  AppX-Retail-x64 = ".\AppX\Retail\x64\Microsoft.VCLibs.x64.12.00.appx"
+  AppX-Retail-ARM = ".\AppX\Retail\ARM\Microsoft.VCLibs.ARM.12.00.appx"
+  SupportsMultipleVersions="Error"
+  SupportedArchitectures="x86;x64;ARM"
+  MaxPlatformVersion="8.1"
+  MinOSVersion="6.3.0"
+  MaxOSVersionTested="6.3.0">
+</FileList>

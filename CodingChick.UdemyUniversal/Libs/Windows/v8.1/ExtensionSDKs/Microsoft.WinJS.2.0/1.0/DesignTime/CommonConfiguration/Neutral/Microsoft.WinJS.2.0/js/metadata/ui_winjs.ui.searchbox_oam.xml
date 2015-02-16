@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Microsoft.WinJS.2.0/js/ui/WinJS.UI.SearchBox" name="WinJS.UI.SearchBox" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="false" xmlns="http://openajax.org/metadata">
+  <author name="Microsoft Corporation" />
+  <description locid="WinJS.UI.SearchBox" type="text/plain">Enables the user to perform search queries and select suggestions.</description>
+  <blend:compatibleWiths>
+    <blend:compatibleWith platform="Windows" minVersion="8.1" />
+  </blend:compatibleWiths>
+  <icons>
+    <icon src="ui_winjs.ui.search.12x12.png" />
+    <icon src="ui_winjs.ui.search.16x16.png" />
+  </icons>
+  <properties>
+    <property name="element" datatype="HTMLElement" required="false" hidden="true">
+      <description locid="WinJS.UI.SearchBox.constructor_p:element" type="text/plain">The DOM element that hosts the SearchBox.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="placeholderText" datatype="String" required="false">
+      <description locid="WinJS.UI.SearchBox.placeholderText" type="text/plain">Gets or sets the placeholder text for the SearchBox. This text is displayed if there is no
+ other text in the input box.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="queryText" datatype="String" required="false">
+      <description locid="WinJS.UI.SearchBox.queryText" type="text/plain">Gets or sets the query text for the SearchBox.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="searchHistoryDisabled" datatype="bool" required="false">
+      <description locid="WinJS.UI.SearchBox.searchHistoryDisabled" type="text/plain">Gets or sets a value that specifies whether search history is disabled for the SearchBox. The default value is false.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="searchHistoryContext" datatype="String" required="false">
+      <description locid="WinJS.UI.SearchBox.searchHistoryContext" type="text/plain">Gets or sets the search history context for the SearchBox. The search history context string is used as a secondary key for storing search history. 
+ (The primary key is the AppId.) An app can use the search history context string to store different search histories based on the context of the application. 
+ If you don't set this property, the system assumes that all searches in your app occur in the same context. 
+ If you update this property while the search pane is open with suggestions showing, the changes won't take effect until the user enters the next character.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="focusOnKeyboardInput" datatype="String" required="false">
+      <description locid="WinJS.UI.SearchBox.focusOnKeyboardInput" type="text/plain">Enable automatically focusing the search box when the user types into the app window (off by default) While this is enabled, 
+ input on the current thread will be intercepted and redirected to the search box. Only textual input will trigger the search box to focus. 
+ The caller will continue to receive non-text keys (such as arrows, tab, etc
+ This will also not affect WIN/CTRL/ALT key combinations (except for Ctrl-V for paste). 
+ If the client needs more to happen than just set focus in the box (make control visible, etc.), they will need to handle the event. 
+ If enabled, the app must be sure to disable this if the user puts focus in some other edit field.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="chooseSuggestionOnEnter" datatype="String" required="false">
+      <description locid="WinJS.UI.SearchBox.chooseSuggestionOnEnter" type="text/plain">Gets or sets whether the first suggestion is chosen when the user presses Enter. 
+ When set to true, as the user types in the search box, a focus rectangle is drawn on the first search suggestion 
+ (if present and no IME composition in progress).  Pressing enter will behave the same as if clicked on the focused suggestion, 
+ and the down arrow key press will put real focus to the second suggestion and the up arrow key will remove focus.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="disabled" datatype="bool" required="false">
+      <description locid="WinJS.UI.SearchBox.disabled" type="text/plain">Gets or sets a value that specifies whether the SearchBox is disabled.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+  </properties>
+  <content><![CDATA[<div data-win-control="WinJS.UI.SearchBox"></div>]]></content>
+  <requires>
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/base.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="//Microsoft.WinJS.2.0/css/ui-dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript"><![CDATA[WinJS.UI.processAll();]]></require>
+  </requires>
+  <blend:parts>
+    <part name="searchbox" class="win-searchbox">
+      <description locid="WinJS.UI.SearchBox:search" type="text/plain">Styles the entire Search box control.</description>
+    </part>
+    <part name="searchbox-input" class="win-searchbox-input">
+      <description locid="WinJS.UI.SearchBox_part:Input" type="text/plain">Styles the query input box.</description>
+    </part>
+    <part name="searchbox-button" class="win-searchbox-button">
+      <description locid="WinJS.UI.SearchBox_part:Button" type="text/plain">Styles the search button.</description>
+    </part>
+    <part name="searchbox-flyout" class="win-searchbox-flyout">
+      <description locid="WinJS.UI.SearchBox_part:Flyout" type="text/plain">Styles the result suggestions flyout.</description>
+    </part>
+    <part name="searchbox-suggestion-result" class="win-searchbox-suggestion-result">
+      <description locid="WinJS.UI.SearchBox_part:Suggestion_Result" type="text/plain">Styles the result type suggestion.</description>
+    </part>
+    <part name="searchbox-suggestion-query" class="win-searchbox-suggestion-query">
+      <description locid="WinJS.UI.SearchBox_part:Suggestion_Query" type="text/plain">Styles the query type suggestion.</description>
+    </part>
+    <part name="searchbox-suggestion-separator" class="win-searchbox-suggestion-separator">
+      <description locid="WinJS.UI.SearchBox_part:Suggestion_Separator" type="text/plain">Styles the separator type suggestion.</description>
+    </part>
+    <part name="searchbox-suggestion-selected" class="win-searchbox-suggestion-selected">
+      <description locid="WinJS.UI.SearchBox_part:Suggestion_Selected" type="text/plain">Styles the currently selected suggestion.</description>
+    </part>
+  </blend:parts><locale messages="ui_loc_oam.xml" />
+</widget>

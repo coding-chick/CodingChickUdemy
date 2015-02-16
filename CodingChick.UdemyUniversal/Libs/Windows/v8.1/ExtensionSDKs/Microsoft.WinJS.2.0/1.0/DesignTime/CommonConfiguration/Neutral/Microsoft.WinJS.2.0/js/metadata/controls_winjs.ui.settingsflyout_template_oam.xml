@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Microsoft.WinJS.2.0/js/ui/WinJS.UI.SettingsFlyout" name="WinJS.UI.SettingsFlyout_Template" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="true" xmlns="http://openajax.org/metadata">
+  <author name="Microsoft Corporation" />
+  <title locid="WinJS.UI.SettingsFlyout_template" type="text/plain">Settings Flyout Template</title>
+  <description locid="WinJS.UI.SettingsFlyout_Template" type="text/plain">SettingsFlyout content template.</description>
+  <icons>
+    <icon src="ui_winjs.ui.settingsflyout.12x12.png" />
+    <icon src="ui_winjs.ui.settingsflyout.16x16.png" />
+  </icons>
+  <properties>
+    <property name="width" datatype="WinJS.UI.SettingsFlyout.width" required="false">
+      <description locid="WinJS.UI.SettingsFlyout.width" type="text/plain">Width of the SettingsFlyout, "narrow", or "wide".</description>
+    </property>
+    <property name="settingsCommandId" datatype="String" required="false">
+      <description locid="WinJS.UI.SettingsFlyout.settingsCommandId" type="text/plain">Define the settings command Id for the SettingsFlyout control.</description>
+    </property>
+  </properties>
+  <content><![CDATA[<div data-win-control="WinJS.UI.SettingsFlyout" aria-label="App Settings Flyout" data-win-options="{width:'wide', settingsCommandId:'SettingsTemplate'}">
+    <!-- Add the background color matching you app tile color to the settings flyout header. -->
+    <!-- Use add the win-ui-dark class if the background color requires a white text-->
+    <!-- Add the app small logo to the settings flyout header -->
+    <div class="win-header win-ui-light" style="background-color:#dbf9ff">
+        <button type="button" onclick="WinJS.UI.SettingsFlyout.show()" class="win-backbutton"></button>
+        <div class="win-label">Example</div>
+        <img alt="smalllogo" src="/images/smalllogo.png" style="position: absolute; right: 40px;">
+    </div>
+    <div class="win-content">
+        <div class="win-settings-section">
+            <h3>Example settings section</h3>
+            <p>Example description: toggle and select are common settings controls</p>
+            <div id="Toggle1" data-win-control="WinJS.UI.ToggleSwitch" data-win-options="{title:'Example toggle switch',checked:true}"></div>
+        </div>
+        <div class="win-settings-section">
+            <h3>Select control</h3>
+            <p>Use the select to allow users to select one item from a set of text only items.</p>
+            <label>Example select control</label>
+            <select aria-label="Example select control">
+                <option value="1">Value 1</option>
+                <option value="2">Value 2</option>
+                <option value="3" selected>Value 3</option>
+                <option value="4">Value 4</option>
+            </select>
+        </div>
+    </div>
+    </div>]]>
+  </content>
+  <requires>
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/base.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="//Microsoft.WinJS.2.0/css/ui-dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript"><![CDATA[WinJS.UI.processAll();]]></require>
+    <require type="javascript"><![CDATA[
+            WinJS.Application.onsettings = function (e) {
+                e.detail.applicationcommands = {
+                    "SettingsTemplate": {title: "Settings Template" }
+                };
+                WinJS.UI.SettingsFlyout.populateSettings(e);}]]>
+    </require>
+  </requires>
+  <blend:parts>
+    <part name="settingsTemplate" class="win-settingsflyout">
+      <description locid="WinJS.UI.SettingsFlyout_template:settings" type="text/plain">The SettingsFlyout content template.</description>
+    </part>
+  </blend:parts><locale messages="ui_loc_oam.xml" />
+</widget>

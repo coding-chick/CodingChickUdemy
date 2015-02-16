@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Microsoft.Phone.WinJS.2.1/js/ui/WinJS.UI.Pivot" name="WinJS.UI.Pivot" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="true" xmlns="http://openajax.org/metadata">
+  <author name="Microsoft Corporation" />
+  <description locid="WinJS.UI.Pivot" type="text/plain">Tab control which displays a item of content.</description>
+  <blend:compatibleWiths>
+    <blend:compatibleWith platform="WindowsPhoneApp" minVersion="8.1" />
+  </blend:compatibleWiths>
+  <icons>
+    <icon src="ui_winjs.ui.pivot.12x12.png" />
+    <icon src="ui_winjs.ui.pivot.16x16.png" />
+  </icons>
+  <properties>
+    <property name="element" datatype="HTMLElement" required="false" hidden="true">
+      <description locid="WinJS.UI.Pivot.element" type="text/plain">Gets the DOM element that hosts the Pivot.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="WindowsPhoneApp" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="locked" datatype="Boolean" required="false">
+      <description locid="WinJS.UI.Pivot.locked" type="text/plain">Gets or sets a value that specifies whether the Pivot is locked to the current item.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="WindowsPhoneApp" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="items" datatype="WinJS.Binding.List" required="false">
+      <description locid="WinJS.UI.Pivot.items" type="text/plain">Gets or sets the WinJS.Binding.List of PivotItem objects that belong to this Pivot.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="WindowsPhoneApp" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="title" datatype="String" required="false">
+      <description locid="WinJS.UI.Pivot.title" type="text/plain">Gets or sets the title of the Pivot.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="WindowsPhoneApp" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="selectedIndex" datatype="Number" isInteger="true" required="false">
+      <description locid="WinJS.UI.Pivot.selectedIndex" type="text/plain">Gets or sets the index of the item in view. This property is useful for restoring a previous view when your app launches or resumes.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="WindowsPhoneApp" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="selectedItem" datatype="Number" isInteger="true" required="false">
+      <description locid="WinJS.UI.Pivot.selectedItem" type="text/plain">Gets or sets the item in view. This property is useful for restoring a previous view when your app launches or resumes.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="WindowsPhoneApp" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+  </properties>
+  <content><![CDATA[<div data-win-control="WinJS.UI.Pivot">
+ <div data-win-control="WinJS.UI.PivotItem" data-win-options="{header: 'PivotItem Header'}">PivotItem Content</div>
+ </div>]]></content>
+  <requires>
+    <require type="javascript" src="//Microsoft.Phone.WinJS.2.1/js/base.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="//Microsoft.Phone.WinJS.2.1/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="//Microsoft.Phone.WinJS.2.1/css/ui-dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript"><![CDATA[WinJS.UI.processAll();]]></require>
+  </requires>
+  <blend:parts>
+    <part name="pivot" class="win-pivot">
+      <description locid="WinJS.UI.Pivot_part:pivot" type="text/plain">The entire Pivot control.</description>
+    </part>
+    <part name="title" class="win-pivot-title">
+      <description locid="WinJS.UI.Pivot_part:title" type="text/plain">The title for the Pivot control.</description>
+    </part>
+    <part name="header" class="win-pivot-header">
+      <description locid="WinJS.UI.Pivot_part:header" type="text/plain">A header of a Pivot Item.</description>
+    </part>
+  </blend:parts><locale messages="ui_loc_oam.xml" />
+</widget>

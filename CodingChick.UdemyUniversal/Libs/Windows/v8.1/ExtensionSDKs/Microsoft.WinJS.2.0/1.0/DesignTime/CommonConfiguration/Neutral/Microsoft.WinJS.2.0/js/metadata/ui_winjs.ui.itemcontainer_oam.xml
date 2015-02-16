@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Microsoft.WinJS.2.0/js/ui/WinJS.UI.ItemContainer" name="WinJS.UI.ItemContainer" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="true" xmlns="http://openajax.org/metadata">
+  <author name="Microsoft Corporation" />
+  <description locid="WinJS.UI.ItemContainer" type="text/plain">Defines an item that can be pressed, swiped, and dragged.</description>
+  <icons>
+    <icon src="ui_winjs.ui.itemcontainer.12x12.png" />
+    <icon src="ui_winjs.ui.itemcontainer.16x16.png" />
+  </icons>
+  <properties>
+    <property name="element" datatype="HTMLElement" required="false" hidden="true">
+      <description locid="WinJS.UI.ItemContainer.element" type="text/plain">Gets the DOM element that hosts the itemContainer control.</description>
+    </property>
+    <property name="draggable" datatype="Boolean" required="false">
+      <description locid="WinJS.UI.ItemContainer.draggable" type="text/plain">Gets or sets a value that specifies whether the item can be dragged. The default value is false.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="selected" datatype="Boolean" required="false">
+      <description locid="WinJS.UI.ItemContainer.selected" type="text/plain">Gets or sets a value that specifies whether the item is selected.</description>
+    </property>
+    <property name="swipeOrientation" datatype="WinJS.UI.Orientation" required="false">
+      <description locid="WinJS.UI.ItemContainer.swipeOrientation" type="text/plain">Gets or sets the swipe orientation of the ItemContainer control.
+ The default value is "vertical".</description>
+    </property>
+    <property name="tapBehavior" datatype="WinJS.UI.TapBehavior" required="false">
+      <description locid="WinJS.UI.ItemContainer.tapBehavior" type="text/plain">Gets or sets how the ItemContainer control reacts when the user taps or clicks an item.
+ The tap or click can invoke the item, select it and invoke it, or have no effect. 
+ Possible values: "toggleSelect", "invokeOnly", and "none". The default value is "invokeOnly".</description>
+    </property>
+    <property name="swipeBehavior" datatype="WinJS.UI.SwipeBehavior" required="false">
+      <description locid="WinJS.UI.ItemContainer.swipeBehavior" type="text/plain">Gets or sets how the ItemContainer control reacts to the swipe interaction.
+ The swipe gesture can select the item or it can have no effect on the current selection.
+ Possible values: "select", "none". The default value is: "select".</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="selectionDisabled" datatype="Boolean" required="false">
+      <description locid="WinJS.UI.ItemContainer.selectionDisabled" type="text/plain">Gets or sets whether the item selection is disabled. The default value is false.</description>
+    </property>
+  </properties>
+  <content><![CDATA[
+ <div data-win-control="WinJS.UI.ItemContainer" data-win-options="{swipeBehavior: 'select'}">HTML content</div>
+ ]]></content>
+  <requires>
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/base.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="//Microsoft.WinJS.2.0/css/ui-dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript"><![CDATA[WinJS.UI.processAll();]]></require>
+  </requires>
+  <blend:parts>
+    <part name="itemcontainer" class="win-itemcontainer">
+      <description locid="WinJS.UI.ItemContainer_part:itemcontainer" type="text/plain">Main container for the selection item control.</description>
+    </part>
+    <part name="selectionbackground" class="win-selectionbackground">
+      <description locid="WinJS.UI.ListView_part:selectionbackground" type="text/plain">The background of a selection checkmark.</description>
+    </part>
+    <part name="selectioncheckmark" class="win-selectioncheckmark">
+      <description locid="WinJS.UI.ListView_part:selectioncheckmark" type="text/plain">A selection checkmark.</description>
+    </part>
+    <part name="focusedoutline" class="win-focusedoutline">
+      <description locid="WinJS.UI.ItemContainer_part:focusedoutline" type="text/plain">Used to display an outline when the main container has keyboard focus.</description>
+    </part>
+  </blend:parts><locale messages="ui_loc_oam.xml" />
+</widget>

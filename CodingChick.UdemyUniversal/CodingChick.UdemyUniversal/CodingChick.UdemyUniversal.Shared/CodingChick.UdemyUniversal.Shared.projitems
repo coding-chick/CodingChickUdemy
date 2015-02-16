@@ -27,6 +27,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Core\Base\Helpers\BaseDataConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Base\Helpers\JsonCreationConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Base\Helpers\HttpUtilityHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Base\Helpers\PropertyChangedBaseNoContract.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Base\HttpClientAccessor.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Base\IHttpClientAccessor.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Base\IUdemyDataManager.cs" />

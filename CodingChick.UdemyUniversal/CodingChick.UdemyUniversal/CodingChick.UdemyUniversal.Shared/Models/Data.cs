@@ -6,7 +6,7 @@ namespace CodingChick.UdemyUniversal.Models
     {
         public string Name { get; set; }
         public string TicketId { get; set; }
-        public int IsHd { get; set; }
+        //public int? IsHd { get; set; }
         public int? JobId { get; set; }
         public int InputHeight { get; set; }
         public double Duration { get; set; }

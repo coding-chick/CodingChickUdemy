@@ -1,0 +1,952 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<messagebundle>
+  <msg name="WinJS.UI.IListDataSource.endEdits">Notifies the data source that a sequence of edits has ended.  The data source will call
+ IListNotificationHandler.beginNotifications and endNotifications once each for a sequence of edits.</msg>
+  <msg name="WinJS.UI.IListDataSource.moveToEnd">Moves an item to the end of the data source.</msg>
+  <msg name="WinJS.UI.IListDataSource.moveToEnd_p:key">The key of the item to move.</msg>
+  <msg name="WinJS.UI.IListDataSource.moveToEnd_returnValue">A Promise that contains the IItem that was moved or an EditError if an error occurred.</msg>
+  <msg name="WinJS.UI.StorageDataSource">Creates a data source that enumerates an IStorageQueryResultBase.</msg>
+  <msg name="WinJS.UI.StorageDataSource_p:query">The object to enumerate. It must support IStorageQueryResultBase.</msg>
+  <msg name="WinJS.UI.StorageDataSource_p:options">An object that specifies options for the data source. This parameter is optional. It can contain these properties: 
+
+ mode:
+ A Windows.Storage.FileProperties.ThumbnailMode - a value that specifies whether to request
+ thumbnails and the type of thumbnails to request.
+
+ requestedThumbnailSize:
+ A Number that specifies the size of the thumbnails.
+
+ thumbnailOptions:
+ A Windows.Storage.FileProperties.ThumbnailOptions value that specifies additional options for the thumbnails.
+
+ waitForFileLoad:
+ If you set this to true, the data source returns items only after it loads their properties and thumbnails.</msg>
+  <msg name="WinJS.UI.StorageDataSource.loadThumbnail">Returns a promise for an image element that completes when the full quality thumbnail of the provided item is drawn to the
+ image element.</msg>
+  <msg name="WinJS.UI.StorageDataSource.loadThumbnail_p:item">The item to retrieve a thumbnail for.</msg>
+  <msg name="WinJS.UI.StorageDataSource.loadThumbnail_p:image">The image element to use. If not provided, a new image element is created.</msg>
+  <msg name="WinJS.UI.FlipView.constructor">Creates a new FlipView.</msg>
+  <msg name="WinJS.UI.FlipView.constructor_p:element">The DOM element that hosts the control.</msg>
+  <msg name="WinJS.UI.FlipView.constructor_p:options">An object that contains one or more property/value pairs to apply to the new control.
+ Each property of the options object corresponds to one of the control's properties or events.
+ Event names must begin with "on". For example, to provide a handler for the pageselected event,
+ add a property named "onpageselected" to the options object and set its value to the event handler.
+ This parameter is optional.</msg>
+  <msg name="WinJS.UI.FlipView.constructor_returnValue">The new FlipView control.</msg>
+  <msg name="WinJS.UI.FlipView.dispose">Disposes this FlipView.</msg>
+  <msg name="WinJS.UI.FlipView.next">Navigates to the next item.</msg>
+  <msg name="WinJS.UI.FlipView.next_returnValue">true if the FlipView begins navigating to the next page;
+ false if the FlipView is at the last page or is in the middle of another navigation animation.</msg>
+  <msg name="WinJS.UI.FlipView.previous">Navigates to the previous item.</msg>
+  <msg name="WinJS.UI.FlipView.previous_returnValue">true if FlipView begins navigating to the previous page;
+ false if the FlipView is already at the first page or is in the middle of another navigation animation.</msg>
+  <msg name="WinJS.UI.FlipView.element">The DOM element that hosts the FlipView control.</msg>
+  <msg name="WinJS.UI.FlipView.currentPage">Gets or sets the index of the currently displayed page. The minimum value is 0 and the maximum value is one less than the total number of items returned by the data source.</msg>
+  <msg name="WinJS.UI.FlipView.orientation">Gets or sets the layout orientation of the FlipView, horizontal or vertical.</msg>
+  <msg name="WinJS.UI.FlipView.itemDataSource">Gets or sets the data source that provides the FlipView with items to display.
+ The FlipView displays one item at a time, each on its own page.</msg>
+  <msg name="WinJS.UI.FlipView.itemTemplate">Gets or sets a WinJS.Binding.Template or a function that defines the HTML for each item's page.</msg>
+  <msg name="WinJS.UI.FlipView.itemSpacing">Gets or sets the spacing between items, in pixels.</msg>
+  <msg name="WinJS.UI.FlipView.count">Returns the number of items in the FlipView object's itemDataSource.</msg>
+  <msg name="WinJS.UI.FlipView.count_returnValue">A Promise that contains the number of items in the list
+ or WinJS.UI.CountResult.unknown if the count is unavailable.</msg>
+  <msg name="WinJS.UI.FlipView.setCustomAnimations">Sets custom animations for the FlipView to use when navigating between pages.</msg>
+  <msg name="WinJS.UI.FlipView.setCustomAnimations_p:animations">An object containing up to three fields, one for each navigation action: next, previous, and jump
+ Each of those fields must be a function with this signature: function (outgoingPage, incomingPage).
+ This function returns a WinJS.Promise object that completes once the animations are finished.
+ If a field is null or undefined, the FlipView reverts to its default animation for that action.</msg>
+  <msg name="WinJS.UI.FlipView.forceLayout">Forces the FlipView to update its layout.
+ Use this function when making the FlipView visible again after its style.display property had been set to "none".</msg>
+  <msg name="WinJS.UI.FlipView">Displays a collection, such as a set of photos, one item at a time.</msg>
+  <msg name="WinJS.UI.FlipView_e:datasourcecountchanged">Raised when the number of items in the itemDataSource changes.</msg>
+  <msg name="WinJS.UI.FlipView_e:pagevisibilitychanged">Raised when a FlipView page becomes visible or invisible.</msg>
+  <msg name="WinJS.UI.FlipView_e:pageselected">Raised when the FlipView flips to a page.</msg>
+  <msg name="WinJS.UI.FlipView_e:pagecompleted">Raised when the FlipView flips to a page and its renderer function completes.</msg>
+  <msg name="WinJS.UI.FlipView_part:flipView">The entire FlipView control.</msg>
+  <msg name="WinJS.UI.FlipView_part:navigationButton">The general class for all FlipView navigation buttons.</msg>
+  <msg name="WinJS.UI.FlipView_part:leftNavigationButton">The left navigation button.</msg>
+  <msg name="WinJS.UI.FlipView_part:rightNavigationButton">The right navigation button.</msg>
+  <msg name="WinJS.UI.FlipView_part:topNavigationButton">The top navigation button.</msg>
+  <msg name="WinJS.UI.FlipView_part:bottomNavigationButton">The bottom navigation button.</msg>
+  <msg name="WinJS.UI._LayoutCommon.groupHeaderPosition">Gets or sets the position of group headers relative to their items.
+ The default value is "top".</msg>
+  <msg name="1">Gets or sets the orientation for the layout.
+ The default value is "horizontal".</msg>
+  <msg name="WinJS.UI.Layout.constructor">Creates a new Layout object.</msg>
+  <msg name="WinJS.UI.Layout.constructor_p:options">The set of options to be applied initially to the new Layout object.</msg>
+  <msg name="WinJS.UI.Layout.constructor_returnValue">The new Layout object.</msg>
+  <msg name="WinJS.UI._LegacyLayout.disableBackdrop">Gets or sets a value that indicates whether the layout should disable the backdrop feature
+ which avoids blank areas while panning in a virtualized list.
+ 
+ disableBackdrop is deprecated. Style: .win-listview .win-container.win-backdrop { background-color:transparent; } instead.</msg>
+  <msg name="WinJS.UI._LegacyLayout.backdropColor">Gets or sets the fill color for the default pattern used for the backdrops.
+ The default value is "rgba(155,155,155,0.23)".
+ 
+ backdropColor is deprecated. Style: .win-listview .win-container.win-backdrop { rgba(155,155,155,0.23); } instead.</msg>
+  <msg name="WinJS.UI.GridLayout">Creates a new GridLayout.</msg>
+  <msg name="WinJS.UI.GridLayout_p:options">An object that contains one or more property/value pairs to apply to the new control. Each property of the options
+ object corresponds to one of the control's properties or events.</msg>
+  <msg name="WinJS.UI.GridLayout_returnValue">The new GridLayout.</msg>
+  <msg name="WinJS.UI.GridLayout.maximumRowsOrColumns">Gets the maximum number of rows or columns, depending on the orientation, that should present before it introduces wrapping to the layout.
+ A value of 0 indicates that there is no maximum. The default value is 0.</msg>
+  <msg name="WinJS.UI.GridLayout.maxRows">Gets or sets the maximum number of rows displayed by the ListView.
+ 
+ WinJS.UI.GridLayout.maxRows may be altered or unavailable after the Windows Library for JavaScript 2.0. Instead, use the maximumRowsOrColumns property.</msg>
+  <msg name="WinJS.UI.GridLayout.itemInfo">Determines the size of the item and whether
+ the item should be placed in a new column.
+ 
+ GridLayout.itemInfo may be altered or unavailable in future versions. Instead, use CellSpanningLayout.</msg>
+  <msg name="WinJS.UI.GridLayout.groupInfo">Indicates whether a group has cell spanning items and specifies the dimensions of the cell.
+ 
+ GridLayout.groupInfo may be altered or unavailable in future versions. Instead, use CellSpanningLayout.</msg>
+  <msg name="WinJS.UI.ListLayout">Creates a new ListLayout object.</msg>
+  <msg name="WinJS.UI.ListLayout_p:options">An object that contains one or more property/value pairs to apply to the new control. Each property of the options 
+ object corresponds to one of the object's properties or events. Event names must begin with "on".</msg>
+  <msg name="WinJS.UI.ListLayout_returnValue">The new ListLayout object.</msg>
+  <msg name="WinJS.UI.CellSpanningLayout">Creates a new CellSpanningLayout object.</msg>
+  <msg name="WinJS.UI.CellSpanningLayout_p:options">An object that contains one or more property/value pairs to apply to the new object. Each property of the options 
+ object corresponds to one of the object's properties or events. Event names must begin with "on".</msg>
+  <msg name="WinJS.UI.CellSpanningLayout_returnValue">The new CellSpanningLayout object.</msg>
+  <msg name="WinJS.UI.CellSpanningLayout.maximumRowsOrColumns">Gets or set the maximum number of rows or columns, depending on the orientation, to display before content begins to wrap.
+ A value of 0 indicates that there is no maximum.</msg>
+  <msg name="WinJS.UI.CellSpanningLayout.itemInfo">Gets or sets a function that returns the width and height of an item, as well as whether 
+ it should  appear in a new column. Setting this function improves performance because 
+ the ListView can allocate space for an item without having to measure it first. 
+ The function takes a single parameter: the index of the item to render. 
+ The function returns an object that has three properties: 
+ width: The  total width of the item.
+ height: The total height of the item.
+ newColumn: Set to true to create a column break; otherwise, false.</msg>
+  <msg name="WinJS.UI.CellSpanningLayout.groupInfo">Gets or sets a function that enables cell-spanning and establishes base cell dimensions.
+ The function returns an object that has these properties:
+ enableCellSpanning: Set to true to allow the ListView to contain items of multiple sizes. 
+ cellWidth: The width of the base cell.
+ cellHeight: The height of the base cell.</msg>
+  <msg name="2">Gets the orientation of the layout. CellSpanning layout only supports horizontal orientation.</msg>
+  <msg name="WinJS.UI.ListView.constructor">Creates a new ListView.</msg>
+  <msg name="WinJS.UI.ListView.constructor_p:element">The DOM element that hosts the ListView control.</msg>
+  <msg name="WinJS.UI.ListView.constructor_p:options">An object that contains one or more property/value pairs to apply to the new control.
+ Each property of the options object corresponds to one of the control's properties or events.
+ Event names must begin with "on". For example, to provide a handler for the selectionchanged event,
+ add a property named "onselectionchanged" to the options object and set its value to the event handler.</msg>
+  <msg name="WinJS.UI.ListView.constructor_returnValue">The new ListView.</msg>
+  <msg name="WinJS.UI.ListView.element">Gets the DOM element that hosts the ListView.</msg>
+  <msg name="WinJS.UI.ListView.layout">Gets or sets an object that controls the layout of the ListView.</msg>
+  <msg name="WinJS.UI.ListView.pagesToLoad">Gets or sets the number of pages to load when the user scrolls beyond the
+ threshold specified by the pagesToLoadThreshold property if
+ the loadingBehavior property is set to incremental.
+ 
+ pagesToLoad is deprecated. The control will not use this property. Please refer to the 'ListView loading behaviors' SDK Sample for guidance on how to implement incremental load behavior.</msg>
+  <msg name="WinJS.UI.ListView.pagesToLoadThreshold">Gets or sets the threshold (in pages) for initiating an incremental load. When the last visible item is
+ within the specified number of pages from the end of the loaded portion of the list,
+ and if automaticallyLoadPages is true and loadingBehavior is set to "incremental",
+ the ListView initiates an incremental load.
+ 
+ pagesToLoadThreshold is deprecated.  The control will not use this property. Please refer to the 'ListView loading behaviors' SDK Sample for guidance on how to implement incremental load behavior.</msg>
+  <msg name="WinJS.UI.ListView.groupDataSource">Gets or sets the data source that contains the groups for the items in the itemDataSource.</msg>
+  <msg name="WinJS.UI.ListView.automaticallyLoadPages">Gets or sets a value that indicates whether the next set of pages is automatically loaded
+ when the user scrolls beyond the number of pages specified by the
+ pagesToLoadThreshold property.
+ 
+ automaticallyLoadPages is deprecated. The control will default this property to false. Please refer to the 'ListView loading behaviors' SDK Sample for guidance on how to implement incremental load behavior.</msg>
+  <msg name="WinJS.UI.ListView.loadingBehavior">Gets or sets a value that determines how many data items are loaded into the DOM.
+ 
+ pagesToLoadThreshold is deprecated. The control will default this property to 'randomAccess'. Please refer to the 'ListView loading behaviors' SDK Sample for guidance on how to implement incremental load behavior.</msg>
+  <msg name="WinJS.UI.ListView.selectionMode">Gets or sets a value that specifies how many ListView items the user can select: "none", "single", or "multi".</msg>
+  <msg name="WinJS.UI.ListView.tapBehavior">Gets or sets how the ListView reacts when the user taps or clicks an item.
+ The tap or click can invoke the item, select it and invoke it, or have no
+ effect.</msg>
+  <msg name="WinJS.UI.ListView.groupHeaderTapBehavior">Gets or sets how the ListView reacts when the user taps or clicks a group header.</msg>
+  <msg name="WinJS.UI.ListView.swipeBehavior">Gets or sets how the ListView reacts to the swipe interaction.
+ The swipe gesture can select the swiped items or it can
+ have no effect on the current selection.</msg>
+  <msg name="WinJS.UI.ListView.itemDataSource">Gets or sets the data source that provides items for the ListView.</msg>
+  <msg name="WinJS.UI.ListView.itemTemplate">Gets or sets the templating function that creates the DOM elements
+ for each item in the itemDataSource. Each item can contain multiple
+ DOM elements, but we recommend that it have a single root element.</msg>
+  <msg name="WinJS.UI.ListView.resetItem">Gets or sets the function that is called when the ListView recycles the
+ element representation of an item.
+ 
+ resetItem may be altered or unavailable in future versions. Instead, mark the element as disposable using WinJS.Utilities.markDisposable.</msg>
+  <msg name="WinJS.UI.ListView.groupHeaderTemplate">Gets or sets the templating function that creates the DOM elements
+ for each group header in the groupDataSource. Each group header
+ can contain multiple elements, but it must have a single root element.</msg>
+  <msg name="WinJS.UI.ListView.resetGroupHeader">Gets or sets the function that is called when the ListView recycles the DOM element representation
+ of a group header.
+ 
+ resetGroupHeader may be altered or unavailable in future versions. Instead, mark the header element as disposable using WinJS.Utilities.markDisposable.</msg>
+  <msg name="WinJS.UI.ListView.loadingState">Gets a value that indicates whether the ListView is still loading or whether
+ loading is complete.  This property can return one of these values:
+ "itemsLoading", "viewPortLoaded", "itemsLoaded", or "complete".</msg>
+  <msg name="WinJS.UI.ListView.selection">Gets an ISelection object that contains the currently selected items.</msg>
+  <msg name="WinJS.UI.ListView.indexOfFirstVisible">Gets or sets the first visible item. When setting this property, the ListView scrolls so that the
+ item with the specified index is at the top of the list.</msg>
+  <msg name="WinJS.UI.ListView.indexOfLastVisible">Gets the index of the last visible item.</msg>
+  <msg name="WinJS.UI.ListView.currentItem">Gets or sets an object that indicates which item should get keyboard focus and its focus status.
+ The object has these properties:
+ index: the index of the item in the itemDataSource.
+ key: the key of the item in the itemDataSource.
+ hasFocus: when getting this property, this value is true if the item already has focus; otherwise, it's false.
+ When setting this property, set this value to true if the item should get focus immediately; otherwise, set it to
+ false and the item will get focus eventually.
+ showFocus: true if the item displays the focus rectangle; otherwise, false.</msg>
+  <msg name="WinJS.UI.ListView.zoomableView">Gets a ZoomableView. This API supports the SemanticZoom infrastructure
+ and is not intended to be used directly from your code.</msg>
+  <msg name="WinJS.UI.ListView.itemsDraggable">Gets or sets whether the ListView's items can be dragged via drag and drop.</msg>
+  <msg name="WinJS.UI.ListView.itemsReorderable">Gets or sets whether the ListView's items can be reordered within itself via drag and drop. When a ListView is marked as reorderable, its items can be dragged about inside itself, but it will not require the itemdrag events it fires to be handled.</msg>
+  <msg name="WinJS.UI.ListView.maxDeferredItemCleanup">Gets or sets the maximum number of realized items.</msg>
+  <msg name="WinJS.UI.ListView.dispose">Disposes this ListView.</msg>
+  <msg name="WinJS.UI.ListView.elementFromIndex">Returns the DOM element that represents the item at the specified index.</msg>
+  <msg name="WinJS.UI.ListView.elementFromIndex_p:itemIndex">The index of the item.</msg>
+  <msg name="WinJS.UI.ListView.elementFromIndex_returnValue">The DOM element that represents the specified item.</msg>
+  <msg name="WinJS.UI.ListView.indexOfElement">Returns the index of the item that the specified DOM element displays.</msg>
+  <msg name="WinJS.UI.ListView.indexOfElement_p:element">The DOM element that displays the item.</msg>
+  <msg name="WinJS.UI.ListView.indexOfElement_returnValue">The index of item that the specified DOM element displays.</msg>
+  <msg name="WinJS.UI.ListView.ensureVisible">Makes the specified item visible. The ListView scrolls to the item if needed.</msg>
+  <msg name="WinJS.UI.ListView.ensureVisible_p:value">The index of the ListView item or IListViewEntity to bring into view.</msg>
+  <msg name="WinJS.UI.ListView.loadMorePages">Loads the next set of pages if the ListView object's loadingBehavior is set to incremental.
+ 
+ loadMorePages is deprecated. Invoking this function will not have any effect. Please refer to the 'ListView loading behaviors' SDK Sample for guidance on how to implement incremental load behavior.</msg>
+  <msg name="WinJS.UI.ListView.recalculateItemPosition">Repositions all the visible items in the ListView to adjust for items whose sizes have changed. Use this function or forceLayout when making the ListView visible again after you set its style.display property to "none" or after style changes have been made that affect the size or position of the ListView or its items. Unlike forceLayout, this method doesn’t recreate items and it doesn’t display entrance animation.</msg>
+  <msg name="WinJS.UI.ListView.forceLayout">Forces the ListView to update its layout. Use this function or relcaculateItemPosition when making the ListView visible again after you set its style.display property to "none” or after style changes have been made that affect the size or position of the ListView or its items. 
+ after you set its style.display property to "none".</msg>
+  <msg name="WinJS.UI.ListView.scrollPosition">Gets or sets the position of the ListView's scrollbar.</msg>
+  <msg name="WinJS.UI.ListView.triggerDispose">Triggers the ListView disposal service manually. In normal operation this is triggered
+ at ListView instantiation. However in some scenarios it may be appropriate to run
+ the disposal service manually.</msg>
+  <msg name="WinJS.UI.ListView">Displays items in a customizable list or grid.</msg>
+  <msg name="WinJS.UI.ListView_e:contentanimating">Raised when the ListView is about to play an entrance or a transition animation.</msg>
+  <msg name="WinJS.UI.ListView_e:iteminvoked">Raised when the user taps or clicks an item.</msg>
+  <msg name="WinJS.UI.ListView_e:groupheaderinvoked">Raised when the user taps or clicks a group header.</msg>
+  <msg name="WinJS.UI.ListView_e:selectionchanging">Raised before items are selected or deselected.</msg>
+  <msg name="WinJS.UI.ListView_e:selectionchanged">Raised after items are selected or deselected.</msg>
+  <msg name="WinJS.UI.ListView_e:loadingstatechanged">Raised when the loading state changes.</msg>
+  <msg name="WinJS.UI.ListView_e:keyboardnavigating">Raised when the focused item changes.</msg>
+  <msg name="WinJS.UI.ListView_e:itemdragstart">Raised when the the user begins dragging ListView items.</msg>
+  <msg name="WinJS.UI.ListView_e:itemdragenter">Raised when the user drags into the ListView.</msg>
+  <msg name="WinJS.UI.ListView_e:itemdragend">Raised when a drag operation begun in a ListView ends.</msg>
+  <msg name="WinJS.UI.ListView_e:itemdragbetween">Raised when the user drags between two ListView items.</msg>
+  <msg name="WinJS.UI.ListView_e:itemdragleave">Raised when the user drags outside of the ListView region.</msg>
+  <msg name="WinJS.UI.ListView_e:itemdragchanged">Raised when the items being dragged are changed due to a datasource modification.</msg>
+  <msg name="WinJS.UI.ListView_e:itemdragdrop">Raised when the user drops items into the ListView.</msg>
+  <msg name="WinJS.UI.ListView_e:accessibilityannotationcomplete">Raised when the accessibility attributes have been added to the ListView items.</msg>
+  <msg name="WinJS.UI.ListView_part:listView">The entire ListView control.</msg>
+  <msg name="WinJS.UI.ListView_part:viewport">The viewport of the ListView.</msg>
+  <msg name="WinJS.UI.ListView_part:surface">The scrollable region of the ListView.</msg>
+  <msg name="WinJS.UI.ListView_part:item">An item in the ListView.</msg>
+  <msg name="WinJS.UI.ListView_part:selectionbackground">The background of a selection checkmark.</msg>
+  <msg name="WinJS.UI.ListView_part:selectioncheckmark">A selection checkmark.</msg>
+  <msg name="WinJS.UI.ListView_part:groupHeader">The header of a group.</msg>
+  <msg name="WinJS.UI.ListView_part:progressbar">The progress indicator of the ListView.</msg>
+  <msg name="WinJS.UI.Repeater.constructor">Creates a new Repeater control.</msg>
+  <msg name="WinJS.UI.Repeater.constructor_p:element">The DOM element that will host the new control. The Repeater will create an element if this value is null.</msg>
+  <msg name="WinJS.UI.Repeater.constructor_p:options">An object that contains one or more property/value pairs to apply to the 
+ new Repeater. Each property of the options object corresponds to one of the 
+ object's properties or events. Event names must begin with "on".</msg>
+  <msg name="WinJS.UI.Repeater.constructor_returnValue">The new Repeater control.</msg>
+  <msg name="WinJS.UI.Repeater.element">Gets the DOM element that hosts the Repeater.</msg>
+  <msg name="WinJS.UI.Repeater.data">Gets or sets the WinJS.Binding.List that provides the Repeater control with items to display.</msg>
+  <msg name="WinJS.UI.Repeater.template">Gets or sets a Template or custom rendering function that defines the HTML of each item within the Repeater.</msg>
+  <msg name="WinJS.UI.Repeater.length">Gets the number of items in the Repeater control.</msg>
+  <msg name="WinJS.UI.Repeater.elementFromIndex">Returns the HTML element for the item with the specified index.</msg>
+  <msg name=" WinJS.UI.Repeater.elementFromIndex_returnValue">The DOM element for the specified item.</msg>
+  <msg name="WinJS.UI.Repeater.dispose">Prepare this Repeater for garbage collection.</msg>
+  <msg name="WinJS.UI.Repeater">Uses templates to generate HTML from a set of data.</msg>
+  <msg name="WinJS.UI.Repeater_part:repeater">The Repeater control itself</msg>
+  <msg name="WinJS.UI._Selection.prototype.clear">Clears the selection.</msg>
+  <msg name="WinJS.UI._Selection.prototype.clear_returnValue">A Promise that is fulfilled when the clear operation completes.</msg>
+  <msg name="WinJS.UI._Selection.prototype.set">Clears the current selection and replaces it with the specified items.</msg>
+  <msg name="WinJS.UI._Selection.prototype.set_items">The indexes or keys of the items that make up the selection. 
+ You can provide different types of objects for the items parameter: 
+ you can specify an index, a key, or a range of indexes. 
+ It can also be an array that contains one or more of these objects.</msg>
+  <msg name="WinJS.UI._Selection.prototype.set_returnValue">A Promise that is fulfilled when the operation completes.</msg>
+  <msg name="WinJS.UI._Selection.prototype.add">Adds one or more items to the selection.</msg>
+  <msg name="WinJS.UI._Selection.prototype.add_items">The indexes or keys of the items to add. 
+ You can provide different types of objects for the items parameter: 
+ you can specify an index, a key, or a range of indexes. 
+ It can also be an array that contains one or more of these objects.</msg>
+  <msg name="WinJS.UI._Selection.prototype.remove">Removes the specified items from the selection.</msg>
+  <msg name="WinJS.UI._Selection.prototype.remove_items">The indexes or keys of the items to remove. You can provide different types of objects for the items parameter: 
+ you can specify an index, a key, or a range of indexes. 
+ It can also be an array that contains one or more of these objects.</msg>
+  <msg name="WinJS.UI._Selection.prototype.selectAll">Adds all the items in the ListView to the selection.</msg>
+  <msg name="WinJS.UI._Overlay">Constructs the Overlay control and associates it with the underlying DOM element.</msg>
+  <msg name="WinJS.UI._Overlay_p:element">The DOM element to be associated with the Overlay control.</msg>
+  <msg name="WinJS.UI._Overlay_p:options">The set of options to be applied initially to the Overlay control.</msg>
+  <msg name="WinJS.UI._Overlay_returnValue">A fully constructed Overlay control.</msg>
+  <msg name="WinJS.UI._Overlay.element">The DOM element the Overlay is attached to</msg>
+  <msg name="WinJS.UI._Overlay.disabled">Disable an Overlay, setting or getting the HTML disabled attribute.  When disabled the Overlay will no longer display with show(), and will hide if currently visible.</msg>
+  <msg name="WinJS.UI.Overlay.dispose">Disposes this Overlay.</msg>
+  <msg name="WinJS.UI._Overlay.show">Shows the Overlay, if hidden, regardless of other state</msg>
+  <msg name="WinJS.UI._Overlay.hide">Hides the Overlay, if visible, regardless of other state</msg>
+  <msg name="WinJS.UI._Overlay.hidden">Read only, true if an overlay is currently not visible.</msg>
+  <msg name="WinJS.UI._Overlay.addEventListener">Add an event listener to the DOM element for this Overlay</msg>
+  <msg name="WinJS.UI._Overlay.addEventListener_p:type">Required. Event type to add, "beforehide", "afterhide", "beforeshow", or "aftershow"</msg>
+  <msg name="WinJS.UI._Overlay.addEventListener_p:listener">Required. The event handler function to associate with this event.</msg>
+  <msg name="WinJS.UI._Overlay.addEventListener_p:useCapture">Optional. True, register for the event capturing phase.  False for the event bubbling phase.</msg>
+  <msg name="WinJS.UI._Overlay.removeEventListener">Remove an event listener to the DOM element for this Overlay</msg>
+  <msg name="WinJS.UI._Overlay.removeEventListener_p:type">Required. Event type to remove, "beforehide", "afterhide", "beforeshow", or "aftershow"</msg>
+  <msg name="WinJS.UI.AppBarCommand.constructor">Creates a new AppBarCommand control.</msg>
+  <msg name="WinJS.UI.AppBarCommand.constructor_p:element">The DOM element that will host the control. AppBarCommand will create one if null.</msg>
+  <msg name="WinJS.UI.AppBarCommand.constructor_p:options">The set of properties and values to apply to the new AppBarCommand.</msg>
+  <msg name="WinJS.UI.AppBarCommand.constructor_returnValue">The new AppBarCommand control.</msg>
+  <msg name="WinJS.UI.AppBarCommand.id">Gets or sets the ID of the AppBarCommand.</msg>
+  <msg name="WinJS.UI.AppBarCommand.type">Gets or sets the type of the AppBarCommand. Possible values are "button", "toggle", "flyout", or "separator".</msg>
+  <msg name="WinJS.UI.AppBarCommand.label">Gets or sets the label of the AppBarCommand.</msg>
+  <msg name="WinJS.UI.AppBarCommand.icon">Gets or sets the icon of the AppBarCommand.</msg>
+  <msg name="WinJS.UI.AppBarCommand.onclick">Gets or sets the function to invoke when the command is clicked.</msg>
+  <msg name="WinJS.UI.AppBarCommand.flyout">For flyout-type AppBarCommands, this property returns the WinJS.UI.Flyout that this command invokes.
+ When setting this property, you may also use the String ID of the flyout to invoke, the DOM object 
+ for the flyout, or the WinJS.UI.Flayout object itself.</msg>
+  <msg name="WinJS.UI.AppBarCommand.section">Gets or sets the section that the AppBarCommand is in. Possible values are "selection" and "global".</msg>
+  <msg name="WinJS.UI.AppBarCommand.tooltip">Gets or sets the tooltip text of the AppBarCommand.</msg>
+  <msg name="WinJS.UI.AppBarCommand.selected">Set or get the selected state of a toggle button.</msg>
+  <msg name="WinJS.UI.AppBarCommand.element">The DOM element that hosts the AppBarCommad.</msg>
+  <msg name="WinJS.UI.AppBarCommand.disabled">Gets or sets a value that indicates whether the AppBarCommand is disabled. A value of true disables the AppBarCommand, and a value of false enables it.</msg>
+  <msg name="WinJS.UI.AppBarCommand.hidden">Gets a value that indicates whether the AppBarCommand is hiding or in the process of becoming hidden.
+ A value of true indicates that the AppBarCommand is hiding or in the process of becoming hidden.</msg>
+  <msg name="WinJS.UI.AppBarCommand.firstElementFocus">Gets or sets the HTMLElement within a "content" type AppBarCommand that should receive focus whenever focus moves via Home or the arrow keys, 
+ from the previous AppBarCommand to the this AppBarCommand. Returns the AppBarCommand object's host element by default.</msg>
+  <msg name="WinJS.UI.AppBarCommand.lastElementFocus">Gets or sets the HTMLElement within a "content" type AppBarCommand that should receive focus whenever focus would move, via End or arrow keys,
+ from the next AppBarCommand to this AppBarCommand. Returns this AppBarCommand object's host element by default.</msg>
+  <msg name="WinJS.UI.AppBarCommand.dispose">Disposes this control.</msg>
+  <msg name="WinJS.UI.AppBarCommand.addEventListener">Registers an event handler for the specified event.</msg>
+  <msg name="WinJS.UI.AppBarCommand.addEventListener_p:type">Required. The name of the event to register. It must be "beforeshow", "beforehide", "aftershow", or "afterhide".</msg>
+  <msg name="WinJS.UI.AppBarCommand.addEventListener_p:useCapture">Optional. Set to true to register the event handler for the capturing phase; otherwise, set to false to register the event handler for the bubbling phase.</msg>
+  <msg name="WinJS.UI.AppBarCommand.removeEventListener">Removes an event handler that the addEventListener method registered.</msg>
+  <msg name="WinJS.UI.AppBarCommand.removeEventListener_p:type">Required. The name of the event to remove.</msg>
+  <msg name="WinJS.UI.AppBarCommand.removeEventListener_p:listener">Required. The event handler function to remove.</msg>
+  <msg name="WinJS.UI.AppBarCommand.removeEventListener_p:useCapture">Optional. Set to true to remove the capturing phase event handler; otherwise, set to false to remove the bubbling phase event handler.</msg>
+  <msg name="WinJS.UI.AppBarCommand.extraClass">Adds an extra CSS class during construction.</msg>
+  <msg name="WinJS.UI.AppBarCommand">Represents a command to display in an AppBar.</msg>
+  <msg name="WinJS.UI.AppBarCommand_part:appBarCommand">The AppBarCommand control itself.</msg>
+  <msg name="WinJS.UI.AppBarCommand_part:appBarCommandIcon">The AppBarCommand's icon box.</msg>
+  <msg name="WinJS.UI.AppBarCommand_part:appBarCommandImage">The AppBarCommand's icon's image formatting.</msg>
+  <msg name="WinJS.UI.AppBarCommand_part:appBarCommandRing">The AppBarCommand's icon's ring.</msg>
+  <msg name="WinJS.UI.AppBarCommand_part:appBarCommandLabel">The AppBarCommand's label</msg>
+  <msg name="WinJS.UI.AppBar.constructor">Creates a new AppBar control.</msg>
+  <msg name="WinJS.UI.AppBar.constructor_p:element">The DOM element that will host the control.</msg>
+  <msg name="WinJS.UI.AppBar.constructor_p:options">The set of properties and values to apply to the new AppBar control.</msg>
+  <msg name="WinJS.UI.AppBar.constructor_returnValue">The new AppBar control.</msg>
+  <msg name="WinJS.UI.AppBar.placement">The placement of the AppBar on the display.  Values are "top" or "bottom".</msg>
+  <msg name="WinJS.UI.AppBar.layout">Gets or sets the layout of the AppBar contents to either "commands" or "custom".</msg>
+  <msg name="WinJS.UI.AppBar.sticky">Gets or sets value that indicates whether the AppBar is sticky.
+ This value is true if the AppBar is sticky; otherwise, it's false.</msg>
+  <msg name="WinJS.UI.AppBar.commands">Sets the commands for the AppBar. This property accepts an array of AppBarCommand objects.</msg>
+  <msg name="WinJS.UI.AppBar.getCommandById">Retrieves the command with the specified ID from this AppBar.
+ If more than one command is found, this method returns them all.</msg>
+  <msg name="WinJS.UI.AppBar.getCommandById_p:id">Id of the command to return.</msg>
+  <msg name="WinJS.UI.AppBar.getCommandById_returnValue">The command found, an array of commands if more than one have the same ID, or null if no command is found.</msg>
+  <msg name="WinJS.UI.AppBar.showCommands">Show the specified commands of the AppBar.</msg>
+  <msg name="WinJS.UI.AppBar.showCommands_p:commands">An array of the commands to show. The array elements may be AppBarCommand objects, or the string identifiers (IDs) of commands.</msg>
+  <msg name="WinJS.UI.AppBar.hideCommands">Hides the specified commands of the AppBar.</msg>
+  <msg name="WinJS.UI.AppBar.hideCommands_p:commands">Required. Command or Commands to hide, either String, DOM elements, or WinJS objects.</msg>
+  <msg name="WinJS.UI.AppBar.showOnlyCommands">Show the specified commands, hiding all of the others in the AppBar.</msg>
+  <msg name="WinJS.UI.AppBar.show">Shows the AppBar, if hidden, regardless of other state</msg>
+  <msg name="WinJS.UI.AppBar.hide">Hides the AppBar.</msg>
+  <msg name="WinJS.UI.AppBar">Represents an application toolbar for display commands.</msg>
+  <msg name="WinJS.UI.AppBar_e:beforeshow">Raised just before showing the AppBar.</msg>
+  <msg name="WinJS.UI.AppBar_e:aftershow">Raised immediately after the AppBar is fully shown.</msg>
+  <msg name="WinJS.UI.AppBar_e:beforehide">Raised just before hiding the AppBar.</msg>
+  <msg name="WinJS.UI.AppBar_e:afterhide">Raised immediately after the AppBar is fully hidden.</msg>
+  <msg name="WinJS.UI.AppBar_part:appbar">The AppBar control itself.</msg>
+  <msg name="WinJS.UI.AppBar_part:appBarCustom">Style for a custom layout AppBar.</msg>
+  <msg name="WinJS.UI.Flyout.constructor">Creates a new Flyout control.</msg>
+  <msg name="WinJS.UI.Flyout.constructor_p:options">The set of properties and values to apply to the new Flyout.</msg>
+  <msg name="WinJS.UI.Flyout.constructor_returnValue">The new Flyout control.</msg>
+  <msg name="WinJS.UI.Flyout.anchor">Gets or sets the Flyout control's anchor. The anchor element is the HTML element which the Flyout originates from and is positioned relative to.
+ (This setting can be overridden when you call the show method.)</msg>
+  <msg name="WinJS.UI.Flyout.placement">Gets or sets the default placement of this Flyout. (This setting can be overridden when you call the show method.)</msg>
+  <msg name="WinJS.UI.Flyout.alignment">Gets or sets the default alignment for this Flyout. (This setting can be overridden when you call the show method.)</msg>
+  <msg name="WinJS.UI.Flyout.show">Shows the Flyout, if hidden, regardless of other states.</msg>
+  <msg name="WinJS.UI.Flyout.show_p:anchor">The DOM element, or ID of a DOM element to anchor the Flyout, overriding the anchor property for this time only.</msg>
+  <msg name="WinJS.UI.Flyout.show_p:placement">The placement of the Flyout to the anchor: 'auto' (default), 'top', 'bottom', 'left', or 'right'.  This parameter overrides the placement property for this show only.</msg>
+  <msg name="WinJS.UI.Flyout.show:alignment">For 'top' or 'bottom' placement, the alignment of the Flyout to the anchor's edge: 'center' (default), 'left', or 'right'.
+ This parameter overrides the alignment property for this show only.</msg>
+  <msg name="WinJS.UI.Flyout.hide">Hides the Flyout, if visible, regardless of other states.</msg>
+  <msg name="WinJS.UI.Flyout">Displays lightweight UI that is either informational, or requires user interaction.
+ Unlike a dialog, a Flyout can be light dismissed by clicking or tapping off of it.</msg>
+  <msg name="WinJS.UI.Flyout_name">Flyout</msg>
+  <msg name="WinJS.UI.Flyout_e:beforeshow">Raised just before showing a flyout.</msg>
+  <msg name="WinJS.UI.Flyout_e:aftershow">Raised immediately after a flyout is fully shown.</msg>
+  <msg name="WinJS.UI.Flyout_e:beforehide">Raised just before hiding a flyout.</msg>
+  <msg name="WinJS.UI.Flyout_e:afterhide">Raised immediately after a flyout is fully hidden.</msg>
+  <msg name="WinJS.UI.Flyout_part:flyout">The Flyout control itself.</msg>
+  <msg name="WinJS.UI.Menu.constructor">Creates a new Menu control.</msg>
+  <msg name="WinJS.UI.Menu.constructor_p:options">The set of properties and values to apply to the control.</msg>
+  <msg name="WinJS.UI.Menu.constructor_returnValue">The new Menu control.</msg>
+  <msg name="WinJS.UI.Menu.commands">Sets the MenuCommand objects that appear in the Menu. You can set this to a single MenuCommand or an array of MenuCommand objects.</msg>
+  <msg name="WinJS.UI.Menu.getCommandById">Retrieve the command with the specified ID from this Menu.  If more than one command is found, all are returned.</msg>
+  <msg name="WinJS.UI.Menu.getCommandById_p:id">The ID of the command to find.</msg>
+  <msg name="WinJS.UI.Menu.showCommands">Shows the specified commands of the Menu.</msg>
+  <msg name="WinJS.UI.Menu.showCommands_p:commands">The commands to show. The array elements may be Menu objects, or the string identifiers (IDs) of commands.</msg>
+  <msg name="WinJS.UI.Menu.hideCommands">Hides the Menu.</msg>
+  <msg name="WinJS.UI.Menu.showOnlyCommands">Shows the specified commands of the Menu while hiding all other commands.</msg>
+  <msg name="WinJS.UI.Menu.showOnlyCommands_p:commands">The commands to show. The array elements may be MenuCommand objects, or the string identifiers (IDs) of commands.</msg>
+  <msg name="WinJS.UI.Menu.show">Shows the Menu, if hidden, regardless of other states.</msg>
+  <msg name="WinJS.UI.Menu.show_p:anchor">The DOM element, or ID of a DOM element,  to anchor the Menu. This parameter overrides the anchor property for this method call only.</msg>
+  <msg name="WinJS.UI.Menu.show_p:placement">The placement of the Menu to the anchor: 'auto' (default), 'top', 'bottom', 'left', or 'right'. This parameter overrides the placement
+ property for this method call only.</msg>
+  <msg name="WinJS.UI.Menu.show_p:alignment">For 'top' or 'bottom' placement, the alignment of the Menu to the anchor's edge: 'center' (default), 'left', or 'right'. This parameter 
+ overrides the alignment property for this method call only.</msg>
+  <msg name="WinJS.UI.Menu">Represents a menu flyout for displaying commands.</msg>
+  <msg name="WinJS.UI.Menu_name">Menu</msg>
+  <msg name="WinJS.UI.Menu_e:beforeshow">Raised just before showing a menu.</msg>
+  <msg name="WinJS.UI.Menu_e:aftershow">Raised immediately after a menu is fully shown.</msg>
+  <msg name="WinJS.UI.Menu_e:beforehide">Raised just before hiding a menu.</msg>
+  <msg name="WinJS.UI.Menu_e:afterhide">Raised immediately after a menu is fully hidden.</msg>
+  <msg name="WinJS.UI.Menu_part:menu">The Menu control itself</msg>
+  <msg name="WinJS.UI.MenuCommand.constructor">Creates a new MenuCommand object.</msg>
+  <msg name="WinJS.UI.MenuCommand.constructor_p:options">The set of properties and values to apply to the new MenuCommand.</msg>
+  <msg name="WinJS.UI.MenuCommand.constructor_returnValue">A MenuCommand control.</msg>
+  <msg name="WinJS.UI.MenuCommand.id">Gets the  ID of the MenuCommand.</msg>
+  <msg name="WinJS.UI.MenuCommand.type">Gets the type of the MenuCommand. Possible values are "button", "toggle", "flyout", or "separator".</msg>
+  <msg name="WinJS.UI.MenuCommand.label">The label of the MenuCommand</msg>
+  <msg name="WinJS.UI.MenuCommand.flyout">For flyout type MenuCommands, this property  returns the WinJS.UI.Flyout that this command invokes. When setting this property, you can set 
+ it to the string ID of the Flyout, the DOM object that hosts the Flyout, or the Flyout object itself.</msg>
+  <msg name="WinJS.UI.MenuCommand.selected">Gets or sets the selected state of a toggle button. This property is true if the toggle button is selected; otherwise, it's false.</msg>
+  <msg name="WinJS.UI.MenuCommand.element">Gets the DOM element that hosts this MenuCommand.</msg>
+  <msg name="WinJS.UI.MenuCommand.disabled">Gets or sets a value that indicates whether the MenuCommand is disabled. This value is true if the MenuCommand is disabled; otherwise, false.</msg>
+  <msg name="WinJS.UI.MenuCommand.hidden">Determine if a command is currently hidden.</msg>
+  <msg name="WinJS.UI.MenuCommand.extraClass">Gets or sets the extra CSS class that is applied to the host DOM element.</msg>
+  <msg name="WinJS.UI.MenuCommand.addEventListener_p:type">The name of the event to register.</msg>
+  <msg name="WinJS.UI.MenuCommand.addEventListener_p:listener">The function that handles the event.</msg>
+  <msg name="WinJS.UI.MenuCommand.addEventListener_p:useCapture">Set to true to register the event handler for the capturing phase; otherwise, set to false to register the  event handler for the bubbling phase.</msg>
+  <msg name="WinJS.UI.MenuCommand.removeEventListener">Removes the specified event handler that the addEventListener method registered.</msg>
+  <msg name="WinJS.UI.MenuCommand.removeEventListener_p:type">The name of the event to remove.</msg>
+  <msg name="WinJS.UI.MenuCommand.removeEventListener_p:listener">The event handler function to remove.</msg>
+  <msg name="WinJS.UI.MenuCommand.removeEventListener_p:useCapture">Set to true to remove the capturing phase event handler; set to false to remove the bubbling phase event handler.</msg>
+  <msg name="WinJS.UI.MenuCommand">Represents a command to be displayed in a Menu. MenuCommand objects provide button, toggle button, flyout button, 
+ or separator functionality for Menu controls.</msg>
+  <msg name="WinJS.UI.MenuCommand_name">The MenuCommand control itself</msg>
+  <msg name="WinJS.UI.Pivot.constructor">Creates a new Pivot control.</msg>
+  <msg name="WinJS.UI.Pivot.constructor_p:element">The DOM element that hosts the Pivot control.</msg>
+  <msg name="WinJS.UI.Pivot.constructor_p:options">An object that contains one or more property/value pairs to apply to the new control. 
+ Each property of the options object corresponds to one of the control's properties or events. 
+ Event names must begin with "on". For example, to provide a handler for the index changed event,  
+ add a property named "onselectionchanged" to the options object and set its value to the event handler.</msg>
+  <msg name="WinJS.UI.Pivot.constructor_returnValue">The new Pivot.</msg>
+  <msg name="WinJS.UI.Pivot.element">Gets the DOM element that hosts the Pivot.</msg>
+  <msg name="WinJS.UI.Pivot.locked">Gets or sets a value that specifies whether the Pivot is locked to the current item.</msg>
+  <msg name="WinJS.UI.Pivot.items">Gets or sets the WinJS.Binding.List of PivotItem objects that belong to this Pivot.</msg>
+  <msg name="WinJS.UI.Pivot.title">Gets or sets the title of the Pivot.</msg>
+  <msg name="WinJS.UI.Pivot.selectedIndex">Gets or sets the index of the item in view. This property is useful for restoring a previous view when your app launches or resumes.</msg>
+  <msg name="WinJS.UI.Pivot.selectedItem">Gets or sets the item in view. This property is useful for restoring a previous view when your app launches or resumes.</msg>
+  <msg name="WinJS.UI.Pivot">Tab control which displays a item of content.</msg>
+  <msg name="WinJS.UI.Pivot_e:selectionchanged">Raised when the item on screen has changed.</msg>
+  <msg name="WinJS.UI.Pivot_e:itemloaded">Raised when the item's animation starts.</msg>
+  <msg name="WinJS.UI.Pivot_e:itemanimationend">Raised when the item's animation ends.</msg>
+  <msg name="WinJS.UI.Pivot_part:pivot">The entire Pivot control.</msg>
+  <msg name="WinJS.UI.Pivot_part:title">The title for the Pivot control.</msg>
+  <msg name="WinJS.UI.Pivot_part:header">A header of a Pivot Item.</msg>
+  <msg name="WinJS.UI.Pivot_part:progress">The progress indicator for the Pivot.</msg>
+  <msg name="WinJS.UI.PivotItem.constructor">Creates a new PivotItem.</msg>
+  <msg name="WinJS.UI.PivotItem.constructor_p:element">The DOM element that hosts the PivotItem control.</msg>
+  <msg name="WinJS.UI.PivotItem.constructor_p:options">An object that contains one or more property/value pairs to apply to the new control. 
+ Each property of the options object corresponds to one of the control's properties or events.</msg>
+  <msg name="WinJS.UI.PivotItem.constructor_returnValue">The new PivotItem.</msg>
+  <msg name="WinJS.UI.PivotItem.element">Gets the DOM element that hosts the PivotItem.</msg>
+  <msg name="WinJS.UI.PivotItem.contentElement">Gets the DOM element that hosts the PivotItem's content.</msg>
+  <msg name="WinJS.UI.PivotItem.header">Get or set the PivotItem's header. After you set this property, the Pivot renders the header again.</msg>
+  <msg name="WinJS.UI.PivotItem">Defines a Item of a Pivot control.</msg>
+  <msg name="WinJS.UI.PivotItem_part:pivotitem">The entire PivotItem control.</msg>
+  <msg name="WinJS.UI.PivotItem_part:content">The content region of the PivotItem.</msg>
+  <msg name="WinJS.UI.ItemContainer.constructor">Creates a new ItemContainer control.</msg>
+  <msg name="WinJS.UI.ItemContainer.constructor_p:element">The DOM element that hosts the ItemContainer control.</msg>
+  <msg name="WinJS.UI.ItemContainer.constructor_p:options">An object that contains one or more property/value pairs to apply to the new control.
+ Each property of the options object corresponds to one of the control's properties or events.
+ Event names must begin with "on". For example, to provide a handler for the selectionchanging event,
+ add a property named "onselectionchanging" to the options object and set its value to the event handler.</msg>
+  <msg name="WinJS.UI.ItemContainer.constructor_returnValue">The new ItemContainer control.</msg>
+  <msg name="WinJS.UI.ItemContainer.element">Gets the DOM element that hosts the itemContainer control.</msg>
+  <msg name="WinJS.UI.ItemContainer.draggable">Gets or sets a value that specifies whether the item can be dragged. The default value is false.</msg>
+  <msg name="WinJS.UI.ItemContainer.selected">Gets or sets a value that specifies whether the item is selected.</msg>
+  <msg name="WinJS.UI.ItemContainer.swipeOrientation">Gets or sets the swipe orientation of the ItemContainer control.
+ The default value is "vertical".</msg>
+  <msg name="WinJS.UI.ItemContainer.tapBehavior">Gets or sets how the ItemContainer control reacts when the user taps or clicks an item.
+ The tap or click can invoke the item, select it and invoke it, or have no effect. 
+ Possible values: "toggleSelect", "invokeOnly", and "none". The default value is "invokeOnly".</msg>
+  <msg name="WinJS.UI.ItemContainer.swipeBehavior">Gets or sets how the ItemContainer control reacts to the swipe interaction.
+ The swipe gesture can select the item or it can have no effect on the current selection.
+ Possible values: "select", "none". The default value is: "select".</msg>
+  <msg name="WinJS.UI.ItemContainer.selectionDisabled">Gets or sets whether the item selection is disabled. The default value is false.</msg>
+  <msg name="WinJS.UI.ItemContainer.forceLayout">Forces the ItemContainer control to update its layout.
+ Use this function when the reading direction  of the app changes after the control has been initialized.</msg>
+  <msg name="WinJS.UI.ItemContainer">Defines an item that can be pressed, swiped, and dragged.</msg>
+  <msg name="WinJS.UI.ItemContainer_e:invoked">Raised when the user taps or clicks the item.</msg>
+  <msg name="WinJS.UI.ItemContainer_e:selectionchanging">Raised before the item is selected or deselected.</msg>
+  <msg name="WinJS.UI.ItemContainer_e:selectionchanged">Raised after the item is selected or deselected.</msg>
+  <msg name="WinJS.UI.ItemContainer_part:itemcontainer">Main container for the selection item control.</msg>
+  <msg name="WinJS.UI.ItemContainer_part:focusedoutline">Used to display an outline when the main container has keyboard focus.</msg>
+  <msg name="WinJS.UI.Tooltip.constructor">Creates a new Tooltip.</msg>
+  <msg name="WinJS.UI.Tooltip.constructor_p:element">The DOM element that hosts the Tooltip.</msg>
+  <msg name="WinJS.UI.Tooltip.constructor_p:options">An object that contains one or more property/value pairs to apply to the new control.
+ Each property of the options object corresponds to one of the control's properties or events.
+ Event names must begin with "on". For example, to provide a handler for the opened event,
+ add a property named "onopened" to the options object and set its value to the event handler.
+ This parameter is optional.</msg>
+  <msg name="WinJS.UI.Tooltip.constructor_returnValue">The new Tooltip.</msg>
+  <msg name="WinJS.UI.Tooltip.innerHTML">Gets or sets the HTML content of the Tooltip.</msg>
+  <msg name="WinJS.UI.Tooltip.element">Gets or sets the DOM element that hosts the Tooltip.</msg>
+  <msg name="WinJS.UI.Tooltip.contentElement">Gets or sets the DOM element that is the content for the ToolTip.</msg>
+  <msg name="WinJS.UI.Tooltip.placement">Gets or sets the position for the Tooltip relative to its target element: top, bottom, left or right.</msg>
+  <msg name="WinJS.UI.Tooltip.infotip">Gets or sets a value that specifies whether the Tooltip is an infotip, a tooltip that contains
+ a lot of info and should be displayed for longer than a typical Tooltip.
+ The default value is false.</msg>
+  <msg name="WinJS.UI.Tooltip.extraClass">Gets or sets additional CSS classes to apply to the Tooltip control's host element.</msg>
+  <msg name="WinJS.UI.Tooltip.dispose">Disposes this Tooltip.</msg>
+  <msg name="WinJS.UI.Tooltip.addEventListener_p:eventName">The name of the event.</msg>
+  <msg name="WinJS.UI.Tooltip.addEventListener_p:eventCallback">The event handler function to associate with this event.</msg>
+  <msg name="WinJS.UI.Tooltip.addEventListener_p:capture">Set to true to register the event handler for the capturing phase; set to false to register for the bubbling phase.</msg>
+  <msg name="WinJS.UI.Tooltip.removeEventListener">Unregisters an event handler for the specified event.</msg>
+  <msg name="WinJS.UI.Tooltip.removeEventListener:capture">Set to true to unregister the event handler for the capturing phase; otherwise, set to false to unregister the event handler for the bubbling phase.</msg>
+  <msg name="WinJS.UI.Tooltip.open">Shows the Tooltip.</msg>
+  <msg name="WinJS.UI.Tooltip.open_p:type">The type of tooltip to show: "touch", "mouseover", "mousedown", or "keyboard". The default value is "mousedown".</msg>
+  <msg name="WinJS.UI.Tooltip.close">Hids the Tooltip.</msg>
+  <msg name="WinJS.UI.Tooltip">Displays a tooltip that can contain images and formatting.</msg>
+  <msg name="WinJS.UI.Tooltip_e:beforeopen">Raised when the tooltip is about to appear.</msg>
+  <msg name="WinJS.UI.Tooltip_e:opened">Raised when the tooltip is showing.</msg>
+  <msg name="WinJS.UI.Tooltip_e:beforeclose">Raised when the tooltip is about to become hidden.</msg>
+  <msg name="WinJS.UI.Tooltip_e:close">Raised when the tooltip is hidden.</msg>
+  <msg name="WinJS.UI.Tooltip_e:tooltip">The entire Tooltip control.</msg>
+  <msg name="WinJS.UI.Animation.createExpandAnimation">Creates an expand animation.
+ After creating the ExpandAnimation object,
+ modify the document to move the elements to their new positions,
+ then call the execute method on the ExpandAnimation object.</msg>
+  <msg name="WinJS.UI.Animation.createExpandAnimation_p:revealed">Single element or collection of elements which were revealed.</msg>
+  <msg name="WinJS.UI.Animation.createExpandAnimation_p:affected">Single element or collection of elements whose positions were
+ affected by the expand.</msg>
+  <msg name="WinJS.UI.Animation.createExpandAnimation_returnValue">ExpandAnimation object whose execute method returns
+ a Promise that completes when the animation is complete.</msg>
+  <msg name="WinJS.UI.Animation.createCollapseAnimation">Creates a collapse animation.
+ After creating the CollapseAnimation object,
+ modify the document to move the elements to their new positions,
+ then call the execute method on the CollapseAnimation object.</msg>
+  <msg name="WinJS.UI.Animation.createCollapseAnimation_p:hidden">Single element or collection of elements being removed from view.
+ When the animation completes, the application should hide the elements
+ or remove them from the document.</msg>
+  <msg name="WinJS.UI.Animation.createCollapseAnimation_p:affected">Single element or collection of elements whose positions were
+ affected by the collapse.</msg>
+  <msg name="WinJS.UI.Animation.createCollapseAnimation_returnValue">CollapseAnimation object whose execute method returns
+ a Promise that completes when the animation is complete.</msg>
+  <msg name="WinJS.UI.Animation.createRepositionAnimation">Creates a reposition animation.
+ After creating the RepositionAnimation object,
+ modify the document to move the elements to their new positions,
+ then call the execute method on the RepositionAnimation object.</msg>
+  <msg name="WinJS.UI.Animation.createRepositionAnimation_p:element">Single element or collection of elements which were repositioned.</msg>
+  <msg name="WinJS.UI.Animation.createRepositionAnimation_returnValue">RepositionAnimation object whose execute method returns
+ a Promise that completes when the animation is complete.</msg>
+  <msg name="WinJS.UI.Animation.fadeIn">Execute a fade-in animation.</msg>
+  <msg name="WinJS.UI.Animation.fadeIn_p:element">Single element or collection of elements to fade in.
+ At the end of the animation, the opacity of the elements is 1.</msg>
+  <msg name="WinJS.UI.Animation.fadeIn_returnValue">Promise object that completes when the animation is complete.</msg>
+  <msg name="WinJS.UI.Animation.fadeOut">Execute a fade-out animation.</msg>
+  <msg name="WinJS.UI.Animation.fadeOut_p:element">Single element or collection of elements to fade out.
+ At the end of the animation, the opacity of the elements is 0.</msg>
+  <msg name="WinJS.UI.Animation.createAddToListAnimation">Creates an animation for adding to a list.
+ After creating the AddToListAnimation object,
+ modify the document to move the elements to their new positions,
+ then call the execute method on the AddToListAnimation object.</msg>
+  <msg name="WinJS.UI.Animation.createAddToListAnimation_p:added">Single element or collection of elements which were added.</msg>
+  <msg name="WinJS.UI.Animation.createAddToListAnimation_p:affected">Single element or collection of elements whose positions were
+ affected by the add.</msg>
+  <msg name="WinJS.UI.Animation.createAddToListAnimation_returnValue">AddToListAnimation object whose execute method returns
+ a Promise that completes when the animation is complete.</msg>
+  <msg name="WinJS.UI.Animation.createDeleteFromListAnimation">Crestes an animation for deleting from a list.
+ After creating the DeleteFromListAnimation object,
+ modify the document to reflect the deletion,
+ then call the execute method on the DeleteFromListAnimation object.</msg>
+  <msg name="WinJS.UI.Animation.createDeleteFromListAnimation_p:deleted">Single element or collection of elements which will be deleted.
+ When the animation completes, the application should hide the elements
+ or remove them from the document.</msg>
+  <msg name="WinJS.UI.Animation.createDeleteFromListAnimation_p:remaining">Single element or collection of elements whose positions were
+ affected by the deletion.</msg>
+  <msg name="WinJS.UI.Animation.createDeleteFromListAnimation_returnValue">DeleteFromListAnimation object whose execute method returns
+ a Promise that completes when the animation is complete.</msg>
+  <msg name="WinJS.UI.Animation.createAddToSearchListAnimation">Creates an animation for adding to a list of search results.
+ This is similar to an AddToListAnimation, but faster.
+ After creating the AddToSearchListAnimation object,
+ modify the document to move the elements to their new positions,
+ then call the execute method on the AddToSearchListAnimation object.</msg>
+  <msg name="WinJS.UI.Animation.createAddToSearchListAnimation_returnValue">AddToSearchListAnimation object whose execute method returns
+ a Promise that completes when the animation is complete.</msg>
+  <msg name="WinJS.UI.Animation.createDeleteFromSearchListAnimation">Creates an animation for deleting from a list of search results.
+ This is similar to an DeleteFromListAnimation, but faster.
+ After creating the DeleteFromSearchListAnimation object,
+ modify the document to move the elements to their new positions,
+ then call the execute method on the DeleteFromSearchListAnimation object.</msg>
+  <msg name="WinJS.UI.Animation.createDeleteFromSearchListAnimation_returnValue">DeleteFromSearchListAnimation object whose execute method returns
+ a Promise that completes when the animation is complete.</msg>
+  <msg name="WinJS.UI.Animation.showEdgeUI">Slides an element or elements into position at the edge of the screen.
+ This animation is designed for a small object like an appbar.</msg>
+  <msg name="WinJS.UI.Animation.showEdgeUI_p:element">Single element or collection of elements to be slid into position.
+ The elements should be at their final positions
+ at the time the function is called.</msg>
+  <msg name="WinJS.UI.Animation.showEdgeUI_p:offset">Optional offset object or collection of offset objects
+ array describing the starting point of the animation.
+ If the number of offset objects is less than the length of the
+ element parameter, then the last value is repeated for all
+ remaining elements.
+ If this parameter is omitted, then a default value is used.</msg>
+  <msg name="WinJS.UI.Animation.showEdgeUI_p:options">Optional object which can specify the mechanism to use to play the animation. By default css
+ animations are used but if { mechanism: "transition" } is provided css transitions will be used.</msg>
+  <msg name="WinJS.UI.Animation.showPanel">Slides an element or elements into position at the edge of the screen.
+ This animation is designed for a large object like a keyboard.</msg>
+  <msg name="WinJS.UI.Animation.showPanel_returnValue">promise object</msg>
+  <msg name="WinJS.UI.Animation.hideEdgeUI">Slides an element or elements at the edge of the screen out of view.
+ This animation is designed for a small object like an appbar.</msg>
+  <msg name="WinJS.UI.Animation.hideEdgeUI_p:element">Single element or collection of elements to be slid out.
+ The elements should be at their onscreen positions
+ at the time the function is called.</msg>
+  <msg name="WinJS.UI.Animation.hideEdgeUI_p:offset">Optional offset object or collection of offset objects
+ array describing the ending point of the animation.
+ If the number of offset objects is less than the length of the
+ element parameter, then the last value is repeated for all
+ remaining elements.
+ If this parameter is omitted, then a default value is used.</msg>
+  <msg name="WinJS.UI.Animation.hidePanel">Slides an element or elements at the edge of the screen out of view.
+ This animation is designed for a large object like a keyboard.</msg>
+  <msg name="WinJS.UI.Animation.showPopup">Displays an element or elements in the style of a popup.</msg>
+  <msg name="WinJS.UI.Animation.showPopup_p:element">Single element or collection of elements to be shown like a popup.</msg>
+  <msg name="WinJS.UI.Animation.hidePopup">Removes a popup from the screen.</msg>
+  <msg name="WinJS.UI.Animation.hidePopup_p:element">Single element or collection of elements to be hidden like a popup.
+ When the animation completes, the application should hide the elements
+ or remove them from the document.</msg>
+  <msg name="WinJS.UI.Animation.pointerDown">Execute a pointer-down animation.
+ Use the pointerUp animation to reverse the effect of this animation.</msg>
+  <msg name="WinJS.UI.Animation.pointerDown_p:element">Single element or collection of elements responding to the
+ pointer-down event.
+ At the end of the animation, the elements' properties have been
+ modified to reflect the pointer-down state.</msg>
+  <msg name="WinJS.UI.Animation.pointerUp">Execute a pointer-up animation.
+ This reverses the effect of a pointerDown animation.</msg>
+  <msg name="WinJS.UI.Animation.pointerUp_p:element">Single element or collection of elements responding to
+ the pointer-up event.
+ At the end of the animation, the elements' properties have been
+ returned to normal.</msg>
+  <msg name="WinJS.UI.Animation.dragSourceStart">Execute a drag-start animation.
+ Use the dragSourceEnd animation to reverse the effects of this animation.</msg>
+  <msg name="WinJS.UI.Animation.dragSourceStart_p:dragSource">Single element or collection of elements being dragged.
+ At the end of the animation, the elements' properties have been
+ modified to reflect the drag state.</msg>
+  <msg name="WinJS.UI.Animation.dragSourceStart_p:affected">Single element or collection of elements to highlight as not
+ being dragged.
+ At the end of the animation, the elements' properties have been
+ modified to reflect the drag state.</msg>
+  <msg name="WinJS.UI.Animation.dragSourceEnd">Execute a drag-end animation.
+ This reverses the effect of the dragSourceStart animation.</msg>
+  <msg name="WinJS.UI.Animation.dragSourceEnd_p:dragSource">Single element or collection of elements no longer being dragged.
+ At the end of the animation, the elements' properties have been
+ returned to normal.</msg>
+  <msg name="WinJS.UI.Animation.dragSourceEnd_p:offset">Optional offset object or collection of offset objects
+ array describing the starting point of the animation.
+ If the number of offset objects is less than the length of the
+ dragSource parameter, then the last value is repeated for all
+ remaining elements.
+ If this parameter is omitted, then a default value is used.</msg>
+  <msg name="WinJS.UI.Animation.dragSourceEnd_p:affected">Single element or collection of elements which were highlighted as not
+ being dragged.
+ At the end of the animation, the elements' properties have been
+ returned to normal.</msg>
+  <msg name="WinJS.UI.Animation.enterContent">Execute an enter-content animation.</msg>
+  <msg name="WinJS.UI.Animation.enterContent_p:incoming">Single element or collection of elements which represent
+ the incoming content.
+ At the end of the animation, the opacity of the elements is 1.</msg>
+  <msg name="WinJS.UI.Animation.enterContent_p:offset">Optional offset object or collection of offset objects
+ array describing the starting point of the animation.
+ If the number of offset objects is less than the length of the
+ incoming parameter, then the last value is repeated for all
+ remaining elements.
+ If this parameter is omitted, then a default value is used.</msg>
+  <msg name="WinJS.UI.Animation.exitContent">Execute an exit-content animation.</msg>
+  <msg name="WinJS.UI.Animation.exitContent_p:outgoing">Single element or collection of elements which represent
+ the outgoing content.
+ At the end of the animation, the opacity of the elements is 0.</msg>
+  <msg name="WinJS.UI.Animation.exitContent_p:offset">Optional offset object or collection of offset objects
+ array describing the ending point of the animation.
+ If the number of offset objects is less than the length of the
+ outgoing parameter, then the last value is repeated for all
+ remaining elements.
+ If this parameter is omitted, then a default value is used.</msg>
+  <msg name="WinJS.UI.Animation.dragBetweenEnter">Execute an animation which indicates that a dragged object
+ can be dropped between other elements.
+ Use the dragBetweenLeave animation to reverse the effects of this animation.</msg>
+  <msg name="WinJS.UI.Animation.dragBetweenEnter_p:target">Single element or collection of elements (usually two)
+ that the dragged object can be dropped between.
+ At the end of the animation, the elements' properties have been
+ modified to reflect the drag-between state.</msg>
+  <msg name="WinJS.UI.Animation.dragBetweenLeave">Execute an animation which indicates that a dragged object
+ will no longer be dropped between other elements.
+ This reverses the effect of the dragBetweenEnter animation.</msg>
+  <msg name="WinJS.UI.Animation.dragBetweenLeave_p:target">Single element or collection of elements (usually two)
+ that the dragged object no longer will be dropped between.
+ At the end of the animation, the elements' properties have been
+ set to the dragSourceStart state.</msg>
+  <msg name="WinJS.UI.Animation.swipeSelect">Slide a swipe-selected object back into position when the
+ pointer is released, and show the selection mark.</msg>
+  <msg name="WinJS.UI.Animation.swipeSelect_p:selected">Single element or collection of elements being selected.
+ At the end of the animation, the elements' properties have been
+ returned to normal.</msg>
+  <msg name="WinJS.UI.Animation.swipeSelect_p:selection">Single element or collection of elements that is the selection mark.</msg>
+  <msg name="WinJS.UI.Animation.swipeDeselect">Slide a swipe-deselected object back into position when the
+ pointer is released, and hide the selection mark.</msg>
+  <msg name="WinJS.UI.Animation.swipeDeselect_p:deselected">Single element or collection of elements being deselected.
+ At the end of the animation, the elements' properties have been
+ returned to normal.</msg>
+  <msg name="WinJS.UI.Animation.swipeReveal">Reveal an object as the result of a swipe, or slide the
+ swipe-selected object back into position after the reveal.</msg>
+  <msg name="WinJS.UI.Animation.swipeReveal_p:target">Single element or collection of elements being selected.
+ At the end of the animation, the elements' properties have been
+ modified to reflect the specified offset.</msg>
+  <msg name="WinJS.UI.Animation.swipeReveal_p:offset">Optional offset object or collection of offset objects
+ array describing the ending point of the animation.
+ When moving the object back into position, the offset should be
+ { top: "0px", left: "0px" }.
+ If the number of offset objects is less than the length of the
+ element parameter, then the last value is repeated for all
+ remaining elements.
+ If this parameter is omitted, then a default value is used.
+ The default value describes the motion for a reveal.</msg>
+  <msg name="WinJS.UI.Animation.enterPage">Execute an enterPage animation.</msg>
+  <msg name="WinJS.UI.Animation.enterPage_p:element">Single element or collection of elements representing the
+ incoming page.
+ At the end of the animation, the opacity of the elements is 1.</msg>
+  <msg name="WinJS.UI.Animation.exitPage">Execute an exitPage animation.</msg>
+  <msg name="WinJS.UI.Animation.exitPage_p:outgoing">Single element or collection of elements representing
+ the outgoing page.
+ At the end of the animation, the opacity of the elements is 0.</msg>
+  <msg name="WinJS.UI.Animation.crossFade">Execute a crossFade animation.</msg>
+  <msg name="WinJS.UI.Animation.crossFade_p:incoming">Single incoming element or collection of incoming elements.
+ At the end of the animation, the opacity of the elements is 1.</msg>
+  <msg name="WinJS.UI.Animation.crossFade_p:outgoing">Single outgoing element or collection of outgoing elements.
+ At the end of the animation, the opacity of the elements is 0.</msg>
+  <msg name="WinJS.UI.Animation.createPeekAnimation">Creates a peek animation.
+ After creating the PeekAnimation object,
+ modify the document to move the elements to their new positions,
+ then call the execute method on the PeekAnimation object.</msg>
+  <msg name="WinJS.UI.Animation.createPeekAnimation_p:element">Single element or collection of elements to be repositioned for peek.</msg>
+  <msg name="WinJS.UI.Animation.createPeekAnimation_returnValue">PeekAnimation object whose execute method returns
+ a Promise that completes when the animation is complete.</msg>
+  <msg name="WinJS.UI.Animation.updateBadge">Execute an updateBadge animation.</msg>
+  <msg name="WinJS.UI.Animation.updateBadge_p:incoming">Single element or collection of elements representing the
+ incoming badge.</msg>
+  <msg name="WinJS.UI.VirtualizedDataSource._baseDataSourceConstructor">Initializes the VirtualizedDataSource base class of a custom data source.</msg>
+  <msg name="WinJS.UI.VirtualizedDataSource._baseDataSourceConstructor_p:itemIndex">An object that implements IListDataAdapter and supplies data to the VirtualizedDataSource.</msg>
+  <msg name="WinJS.UI.VirtualizedDataSource._baseDataSourceConstructor_p:options">An object that contains properties that specify additonal options for the VirtualizedDataSource:
+
+ cacheSize
+ A Number that specifies minimum number of unrequested items to cache in case they are requested.
+
+ The options parameter is optional.</msg>
+  <msg name="WinJS.UI.VirtualizedDataSource.ListDataNotificationHandler">An implementation of IListDataNotificationHandler that is passed to the
+ IListDataAdapter.setNotificationHandler method.</msg>
+  <msg name="WinJS.UI.VirtualizedDataSource.ListDataNotificationHandler.invalidateAll">Notifies the VirtualizedDataSource that some data has changed, without specifying which data. It might
+ be impractical for some data sources to call this method for any or all changes, so this call is optional.
+ But if a given data adapter never calls it, the application should periodically call
+ invalidateAll on the VirtualizedDataSource to refresh the data.</msg>
+  <msg name="WinJS.UI.VirtualizedDataSource.ListDataNotificationHandler.invalidateAll_returnValue">A Promise that completes when the data has been completely refreshed and all change notifications have
+ been sent.</msg>
+  <msg name="WinJS.UI.VirtualizedDataSource.ListDataNotificationHandler.reload">Notifies the list data source that the list data has changed so much that it is better
+ to reload the data from scratch.</msg>
+  <msg name="WinJS.UI.VirtualizedDataSource.ListDataNotificationHandler.beginNotifications">Indicates the start of a notification batch. 
+ Call it before a sequence of other notification calls to minimize the number of countChanged and
+ indexChanged notifications sent to the client of the VirtualizedDataSource. You must pair it with a call
+ to endNotifications, and pairs can't be nested.</msg>
+  <msg name="WinJS.UI.VirtualizedDataSource.ListDataNotificationHandler.inserted">Raises a notification that an item was inserted.</msg>
+  <msg name="WinJS.UI.VirtualizedDataSource.ListDataNotificationHandler.inserted_p:newItem">The inserted item. It must have a key and a data property (it must implement the IItem interface).</msg>
+  <msg name="WinJS.UI.VirtualizedDataSource.ListDataNotificationHandler.inserted_p:previousKey">The key of the item before the insertion point, or null if the item was inserted at the start of the
+ list.  It can be null if you specified nextKey.</msg>
+  <msg name="WinJS.UI.VirtualizedDataSource.ListDataNotificationHandler.inserted_p:nextKey">The key of the item after the insertion point, or null if the item was inserted at the end of the list.
+ It can be null if you specified previousKey.</msg>
+  <msg name="WinJS.UI.VirtualizedDataSource.ListDataNotificationHandler.inserted_p:index">The index of the inserted item.</msg>
+  <msg name="WinJS.UI.VirtualizedDataSource.ListDataNotificationHandler.changed">Raises a notification that an item changed.</msg>
+  <msg name="WinJS.UI.VirtualizedDataSource.ListDataNotificationHandler.changed_p:item">An IItem that represents the item that changed.</msg>
+  <msg name="WinJS.UI.VirtualizedDataSource.ListDataNotificationHandler.moved">Raises a notfication that an item was moved.</msg>
+  <msg name="WinJS.UI.VirtualizedDataSource.ListDataNotificationHandler.moved_p:item">The item that was moved.</msg>
+  <msg name="WinJS.UI.VirtualizedDataSource.ListDataNotificationHandler.moved_p:previousKey">The key of the item before the insertion point, or null if the item was moved to the beginning of the list.
+ It can be null if you specified nextKey.</msg>
+  <msg name="WinJS.UI.VirtualizedDataSource.ListDataNotificationHandler.moved_p:nextKey">The key of the item after the insertion point, or null if the item was moved to the end of the list.
+ It can be null if you specified previousKey.</msg>
+  <msg name="WinJS.UI.VirtualizedDataSource.ListDataNotificationHandler.moved_p:oldIndex">The index of the item before it was moved.</msg>
+  <msg name="WinJS.UI.VirtualizedDataSource.ListDataNotificationHandler.moved_p:newIndex">The index of the item after it was moved.</msg>
+  <msg name="WinJS.UI.VirtualizedDataSource.ListDataNotificationHandler.removed">Raises a notification that an item was removed.</msg>
+  <msg name="WinJS.UI.VirtualizedDataSource.ListDataNotificationHandler.removed_p:key">The key of the item that was removed.</msg>
+  <msg name="WinJS.UI.VirtualizedDataSource.ListDataNotificationHandler.removed_p:index">The index of the item that was removed.</msg>
+  <msg name="WinJS.UI.VirtualizedDataSource.ListDataNotificationHandler.endNotifications">Concludes a sequence of notifications that began with a call to beginNotifications.</msg>
+  <msg name="WinJS.UI.IListDataSource.createListBinding">Creates an IListBinding object that allows a client to read from the list and receive notifications for
+ changes that affect those portions of the list that the client already read.</msg>
+  <msg name="WinJS.UI.IListDataSource.createListBinding_p:notificationHandler">An object that implements the IListNotificationHandler interface.  If you omit this parameter,
+ change notifications won't be available.</msg>
+  <msg name="WinJS.UI.IListDataSource.createListBinding_returnValue">An object that implements the IListBinding interface.</msg>
+  <msg name="WinJS.UI.IListBinding">An interface that enables a client to read from the list and receive notifications for changes that affect
+ those portions of the list that the client already read.  IListBinding can also enumerate through lists
+ that can change at any time.</msg>
+  <msg name="WinJS.UI.IListBinding.jumpToItem">Makes the specified item the current item.</msg>
+  <msg name="WinJS.UI.IListBinding.jumpToItem_p:item">The IItem or IItemPromise to make the current item.</msg>
+  <msg name="WinJS.UI.IListBinding.jumpToItem_returnValue">An object that implements the IItemPromise interface and serves as a promise for the specified item.  If
+ the specified item is not in the list, the promise completes with a value of null.</msg>
+  <msg name="WinJS.UI.IListBinding.current">Retrieves the current item.</msg>
+  <msg name="WinJS.UI.IListBinding.current_returnValue">An object that implements the IItemPromise interface and serves as a promise for the current item.
+ If the cursor has moved past the start or end of the list, the promise completes with a value
+ of null.  If the current item has been deleted or moved, the promise returns an error.</msg>
+  <msg name="WinJS.UI.IListBinding.previous">Retrieves the item before the current item and makes it the current item.</msg>
+  <msg name="WinJS.UI.IListBinding.previous_returnValue">An object that implements the IItemPromise interface and serves as a promise for the previous item.
+ If the cursor moves past the start of the list, the promise completes with a value of null.</msg>
+  <msg name="WinJS.UI.IListBinding.next">Retrieves the item after the current item and makes it the current item.</msg>
+  <msg name="WinJS.UI.IListBinding.next_returnValue">An object that implements the IItemPromise interface and serves as a promise for the next item.  If
+ the cursor moves past the end of the list, the promise completes with a value of null.</msg>
+  <msg name="WinJS.UI.IListBinding.releaseItem">Creates a request to stop change notfications for the specified item. The item is released only when the
+ number of release calls matches the number of IItemPromise.retain calls. The number of release calls cannot
+ exceed the number of retain calls. This method is present only if you passed an IListNotificationHandler
+ to IListDataSource.createListBinding when it created this IListBinding.</msg>
+  <msg name="WinJS.UI.IListBinding.releaseItem_p:item">The IItem or IItemPromise to release.</msg>
+  <msg name="WinJS.UI.IListBinding.release">Releases resources, stops notifications, and cancels outstanding promises 
+ for all tracked items that this IListBinding returned.</msg>
+  <msg name="WinJS.UI.IListBinding.first">Retrieves the first item in the list and makes it the current item.</msg>
+  <msg name="WinJS.UI.IListBinding.first_returnValue">An IItemPromise that serves as a promise for the requested item.
+ If the list is empty, the Promise completes with a value of null.</msg>
+  <msg name="WinJS.UI.IListBinding.last">Retrieves the last item in the list and makes it the current item.</msg>
+  <msg name="WinJS.UI.IListBinding.fromKey">Retrieves the item with the specified key and makes it the current item.</msg>
+  <msg name="WinJS.UI.IListBinding.fromKey_p:key">The key of the requested item. It must be a non-empty string.</msg>
+  <msg name="WinJS.UI.IListBinding.fromKey_p:hints">Domain-specific hints to the IListDataAdapter 
+ about the location of the item to improve retrieval time.</msg>
+  <msg name="WinJS.UI.IListBinding.fromKey_returnValue">An IItemPromise that serves as a promise for the requested item.
+ If the list doesn't contain an item with the specified key, the Promise completes with a value of null.</msg>
+  <msg name="WinJS.UI.IListBinding.fromIndex">Retrieves the item with the specified index and makes it the current item.</msg>
+  <msg name="WinJS.UI.IListBinding.fromIndex_p:index">A value greater than or equal to 0 that is the index of the item to retrieve.</msg>
+  <msg name="WinJS.UI.IListBinding.fromIndex_returnValue">An IItemPromise that serves as a promise for the requested item.
+ If the list doesn't contain an item with the specified index, the IItemPromise completes with a value of null.</msg>
+  <msg name="WinJS.UI.IListBinding.fromDescription">Retrieves the item with the specified description and makes it the current item.</msg>
+  <msg name="WinJS.UI.IListDataSource.fromDescription_p:description">The domain-specific description of the requested item, to be interpreted by the list data adapter.</msg>
+  <msg name="WinJS.UI.IListDataSource.fromDescription_returnValue">A Promise for the requested item. If the list doesn't contain an item with the specified description,
+ the IItemPromise completes with a value of null.</msg>
+  <msg name="WinJS.UI.IListDataSource.invalidateAll">Makes the data source refresh its cached items by re-requesting them from the data adapter.
+ The data source generates notifications if the data has changed.</msg>
+  <msg name="WinJS.UI.IListDataSource.invalidateAll_returnValue">A Promise that completes when the data has been completely refreshed and all change notifications have been
+ sent.</msg>
+  <msg name="WinJS.UI.IListDataSource.getCount">Retrieves the number of items in the data source.</msg>
+  <msg name="WinJS.UI.IListDataSource.itemFromKey">Retrieves the item with the specified key.</msg>
+  <msg name="WinJS.UI.IListDataSource.itemFromKey_p:hints">Domain-specific hints to IListDataAdapter about the location of the item 
+ to improve the retrieval time.</msg>
+  <msg name="WinJS.UI.IListDataSource.itemFromKey_returnValue">A Promise for the requested item. If the list doesn't contain an item with the specified key,
+ the Promise completes with a value of null.</msg>
+  <msg name="WinJS.UI.IListDataSource.itemFromIndex">Retrieves the item at the specified index.</msg>
+  <msg name="WinJS.UI.IListDataSource.itemFromIndex_p:index">A value greater than or equal to zero that is the index of the requested item.</msg>
+  <msg name="WinJS.UI.IListDataSource.itemFromIndex_returnValue">A Promise for the requested item. If the list doesn't contain an item with the specified index,
+ the Promise completes with a value of null.</msg>
+  <msg name="WinJS.UI.IListDataSource.itemFromDescription">Retrieves the item with the specified description.</msg>
+  <msg name="WinJS.UI.IListDataSource.itemFromDescription_p:description">Domain-specific info that describes the item to retrieve, to be interpreted by the IListDataAdapter,</msg>
+  <msg name="WinJS.UI.IListDataSource.itemFromDescription_returnValue">A Promise for the requested item. If the list doesn't contain an item with the specified description,
+ the Promise completes with a value of null.</msg>
+  <msg name="WinJS.UI.IListDataSource.beginEdits">Notifies the data source that a sequence of edits is about to begin.  The data source calls
+ IListNotificationHandler.beginNotifications and endNotifications each one time for a sequence of edits.</msg>
+  <msg name="WinJS.UI.IListDataSource.insertAtStart">Adds an item to the beginning of the data source.</msg>
+  <msg name="WinJS.UI.IListDataSource.insertAtStart_p:key">The key of the item to insert, if known; otherwise, null.</msg>
+  <msg name="WinJS.UI.IListDataSource.insertAtStart_p:data">The data for the item to add.</msg>
+  <msg name="WinJS.UI.IListDataSource.insertAtStart_returnValue">A Promise that contains the IItem that was added or an EditError if an error occurred.</msg>
+  <msg name="WinJS.UI.IListDataSource.insertBefore">Inserts an item before another item.</msg>
+  <msg name="WinJS.UI.IListDataSource.insertBefore_p:data">The data for the item to insert.</msg>
+  <msg name="WinJS.UI.IListDataSource.insertBefore_p:nextKey">The key of an item in the data source. The new data is inserted before this item.</msg>
+  <msg name="WinJS.UI.IListDataSource.insertAfter">Inserts an item after another item.</msg>
+  <msg name="WinJS.UI.IListDataSource.insertAfter_p:previousKey">The key for an item in the data source. The new item is added after this item.</msg>
+  <msg name="WinJS.UI.IListDataSource.insertAtEnd">Adds an item to the end of the data source.</msg>
+  <msg name="WinJS.UI.IListDataSource.change">Overwrites the data of the specified item.</msg>
+  <msg name="WinJS.UI.IListDataSource.change_p:key">The key for the item to replace.</msg>
+  <msg name="WinJS.UI.IListDataSource.change_p:newData">The new data for the item.</msg>
+  <msg name="WinJS.UI.IListDataSource.change_returnValue">A Promise that contains the IItem that was updated or an EditError if an error occurred.</msg>
+  <msg name="WinJS.UI.IListDataSource.moveToStart">Moves the specified item to the beginning of the data source.</msg>
+  <msg name="WinJS.UI.IListDataSource.moveBefore">Moves the specified item before another item.</msg>
+  <msg name="WinJS.UI.IListDataSource.moveBefore_p:nextKey">The key of another item in the data source. The item specified by the key parameter
+ is moved to a position immediately before this item.</msg>
+  <msg name="WinJS.UI.IListDataSource.moveAfter">Moves an item after another item.</msg>
+  <msg name="WinJS.UI.IListDataSource.moveAfter_p:previousKey">The key of another item in the data source. The item specified by the key parameter will
+ is moved to a position immediately after this item.</msg>
+  <msg name="WinJS.UI.IListDataSource.remove">Removes an item from the data source.</msg>
+  <msg name="WinJS.UI.IListDataSource.remove_p:key">The key of the item to remove.</msg>
+  <msg name="WinJS.UI.IListDataSource.remove_returnValue">A Promise that contains nothing if the operation was successful or an EditError if an error occurred.</msg>
+  <msg name="WinJS.UI.VirtualizedDataSource">Use as a base class when defining a custom data source. Do not instantiate directly.</msg>
+  <msg name="WinJS.UI.computeDataSourceGroups">Returns a data source that adds group information to the items of another data source.  The "groups" property
+ of this data source evaluates to yet another data source that enumerates the groups themselves.</msg>
+  <msg name="WinJS.UI.computeDataSourceGroups_p:listDataSource">The data source for the individual items to group.</msg>
+  <msg name="WinJS.UI.computeDataSourceGroups_p:groupKey">A callback function that takes an item in the list as an argument. The function is called
+ for each item in the list and returns the group key for the item as a string.</msg>
+  <msg name="WinJS.UI.computeDataSourceGroups_p:groupData">A callback function that takes an item in the IListDataSource as an argument. 
+ The function is called on one item in each group and returns 
+ an object that represents the header of that group.</msg>
+  <msg name="WinJS.UI.computeDataSourceGroups_p:options">An object that can contain properties that specify additional options: 
+
+ groupCountEstimate:
+ A Number value that is the initial estimate for the number of groups. If you specify -1, 
+ this function returns no result is until the actual number of groups
+ has been determined.
+
+ batchSize:
+ A Number greater than 0 that specifies the number of items to fetch during each processing pass when 
+ searching for groups. (In addition to the number specified, one item from the previous batch
+ is always included.)</msg>
+  <msg name="WinJS.UI.computeDataSourceGroups_returnValue">An IListDataSource that contains the items in the original data source and provides additional
+ group info in a "groups" property. The "groups" property returns another
+ IListDataSource that enumerates the different groups in the list.</msg>
+  <msg name="WinJS.UI.BrowseMode.selectionchanging.setPromise">Used to inform the ListView that asynchronous work is being performed, and that this
+ event handler should not be considered complete until the promise completes.</msg>
+  <msg name="WinJS.UI.BrowseMode.selectionchanging.setPromise_p:promise">The promise to wait for.</msg>
+  <msg name="WinJS.UI.ListView.ObjectType">Specifies the type of an IListViewEntity.</msg>
+  <msg name="WinJS.UI.ListView.ObjectType.item">This value represents a ListView item.</msg>
+  <msg name="WinJS.UI.ListView.ObjectType.groupHeader">This value represents a ListView group header.</msg>
+  <msg name="WinJS.UI.ListView.SelectionMode">Specifies the selection mode for a ListView.</msg>
+  <msg name="WinJS.UI.ListView.SelectionMode.none">Items cannot be selected.</msg>
+  <msg name="WinJS.UI.ListView.SelectionMode.single">A single item may be selected.</msg>
+  <msg name="WinJS.UI.ListView.SelectionMode.multi">Multiple items may be selected.</msg>
+  <msg name="WinJS.UI.TapBehavior">Specifies how an ItemContainer or items in a ListView respond to the tap interaction.</msg>
+  <msg name="WinJS.UI.TapBehavior.directSelect">Tapping the item invokes it and selects it. Navigating to the item with the keyboard changes the
+ the selection so that the focused item is the only item that is selected.</msg>
+  <msg name="WinJS.UI.TapBehavior.toggleSelect">Tapping the item invokes it. If the item was selected, tapping it clears the selection. If the item wasn't
+ selected, tapping the item selects it.
+ Navigating to the item with the keyboard does not select or invoke it.</msg>
+  <msg name="WinJS.UI.TapBehavior.invokeOnly">Tapping the item invokes it. Navigating to the item with keyboard does not select it or invoke it.</msg>
+  <msg name="WinJS.UI.TapBehavior.none">Nothing happens.</msg>
+  <msg name="WinJS.UI.GroupHeaderTapBehavior">Specifies how group headers in a ListView respond to the tap interaction.</msg>
+  <msg name="WinJS.UI.GroupHeaderTapBehavior.invoke">Tapping the group header invokes it.</msg>
+  <msg name="WinJS.UI.SwipeBehavior">Specifies whether items are selected when the user performs a swipe interaction.</msg>
+  <msg name="WinJS.UI.SwipeBehavior.select">The swipe interaction selects the items touched by the swipe.</msg>
+  <msg name="WinJS.UI.SwipeBehavior.none">The swipe interaction does not change which items are selected.</msg>
+  <msg name="WinJS.UI.ListView.ListViewAnimationType">Specifies whether the ListView animation is an entrance animation or a transition animation.</msg>
+  <msg name="WinJS.UI.ListView.ListViewAnimationType.entrance">The animation plays when the ListView is first displayed.</msg>
+  <msg name="WinJS.UI.ListView.ListViewAnimationType.contentTransition">The animation plays when the ListView is changing its content.</msg>
+  <msg name="WinJS.UI.Repeater.onitemsloaded">Raised when the Repeater has finished loading a new set of data. This event is only fired on construction
+ or when the Repeater control's data source or template is replaced.</msg>
+  <msg name="WinJS.UI.Repeater.onitemchanging">Raised after an item in the Repeater control's data source changes but before the corresponding DOM element has been updated.</msg>
+  <msg name="WinJS.UI.Repeater.onitemchanged">Raised after an item in the Repeater control's data source changes and after the corresponding DOM element has been updated.</msg>
+  <msg name="WinJS.UI.Repeater.oniteminserting">Raised after an item has been added to the Repeater control's data source but before the corresponding DOM element has been added.</msg>
+  <msg name="WinJS.UI.Repeater.oniteminserted">Raised after an item has been added to the Repeater control's data source and after the corresponding DOM element has been added.</msg>
+  <msg name="WinJS.UI.Repeater.onitemmoving">Raised after an item has been moved from one index to another in the Repeater control's data source but before the corresponding DOM element has been moved.</msg>
+  <msg name="WinJS.UI.Repeater.onitemmoved">Raised after an item has been moved from one index to another in the Repeater control's data source and after the corresponding DOM element has been moved.</msg>
+  <msg name="WinJS.UI.Repeater.onitemremoving">Raised after an item has been removed from the Repeater control's data source but before the corresponding DOM element has been removed.</msg>
+  <msg name="WinJS.UI.Repeater.onitemremoved">Raised after an item has been removed from one index to another in the Repeater control's data source and after the corresponding DOM element has been removed.</msg>
+  <msg name="WinJS.UI.Repeater.onitemsreloading">The list has been refreshed and any references to data in the list may be incorrect.
+ Raised after the Repeater control's underlying data has been updated but before the updated HTML has been reloaded.</msg>
+  <msg name="WinJS.UI.Repeater.onitemsreloaded">Raised after the Repeater control's underlying data has been updated and after the updated HTML has been reloaded.</msg>
+  <msg name="WinJS.UI._SelectionManager.prototype.count">Returns the number of items in the selection.</msg>
+  <msg name="WinJS.UI._SelectionManager.prototype.count_returnValue">The number of items in the selection.</msg>
+  <msg name="WinJS.UI._SelectionManager.prototype.getIndices">Returns a list of the indexes for the items in the selection.</msg>
+  <msg name="WinJS.UI._SelectionManager.prototype.getIndices_returnValue">The list of indexes for the items in the selection as an array of Number objects.</msg>
+  <msg name="WinJS.UI._SelectionManager.prototype.getItems">Returns an array that contains the items in the selection.</msg>
+  <msg name="WinJS.UI._SelectionManager.prototype.getItems_returnValue">A Promise that contains an array of the requested IItem objects.</msg>
+  <msg name="WinJS.UI._SelectionManager.prototype.getRanges">Gets an array of the index ranges for the selected items.</msg>
+  <msg name="WinJS.UI._SelectionManager.prototype.getRanges_returnValue">An array that contains an ISelectionRange object for each index range in the selection.</msg>
+  <msg name="WinJS.UI._SelectionManager.prototype.isEverything">Returns a value that indicates whether the selection contains every item in the data source.</msg>
+  <msg name="WinJS.UI._SelectionManager.prototype.isEverything_returnValue">true if the selection contains every item in the data source; otherwise, false.</msg>
+  <msg name="WinJS.UI._Overlay.onbeforeshow">Occurs immediately before the control is shown.</msg>
+  <msg name="WinJS.UI._Overlay.onaftershow">Occurs immediately after the control is shown.</msg>
+  <msg name="WinJS.UI._Overlay.onbeforehide">Occurs immediately before the control is hidden.</msg>
+  <msg name="WinJS.UI._Overlay.onafterhide">Occurs immediately after the control is hidden.</msg>
+  <msg name="WinJS.UI.AppBarIcon">The AppBarIcon enumeration provides a set of glyphs for use with the AppBarCommand icon property.</msg>
+  <msg name="WinJS.UI.Pivot.onselectionchanged">Raised when the user changes to a different item.</msg>
+  <msg name="WinJS.UI.ItemCotrol.oninvoked">Raised when the item is invoked. You can use the tapBehavior property to specify whether taps and clicks invoke the item.</msg>
+  <msg name="WinJS.UI.ItemCotrol.onselectionchanging">Raised just before the item is selected or deselected.</msg>
+  <msg name="WinJS.UI.Tooltip.onbeforeopen">Raised just before the Tooltip appears.</msg>
+  <msg name="WinJS.UI.Tooltip.onopened">Raised when the Tooltip is shown.</msg>
+  <msg name="WinJS.UI.Tooltip.onbeforeclose">Raised just before the Tooltip is hidden.</msg>
+  <msg name="WinJS.UI.Tooltip.onclosed">Raised when the Tooltip is no longer displayed.</msg>
+</messagebundle>

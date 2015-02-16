@@ -1,9 +1,10 @@
 ﻿using Caliburn.Micro;
+using CodingChick.UdemyUniversal.Core.Base.Helpers;
 using Newtonsoft.Json;
 
 namespace CodingChick.UdemyUniversal.Models
 {
-    public class User : PropertyChangedBase
+    public class User : PropertyChangedBaseNoContract
     {
         private string _description;
         //[JsonProperty("img_480x270")]

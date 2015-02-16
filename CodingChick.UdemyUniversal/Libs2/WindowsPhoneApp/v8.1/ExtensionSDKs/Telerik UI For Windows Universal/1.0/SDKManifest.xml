@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FileList DisplayName="Telerik UI For Windows Universal" ProductFamilyName="Telerik UI For Windows Universal" MinVSVersion="12.0" MinToolsVersion="4.0" CopyToSubDirectory="." CopyRedistToSubDirectory="." AppliesTo="WindowsAppContainer + (Managed | Native)" MoreInfo="http://www.telerik.com" DependsOn="" SupportsMultipleVersions="Error" >
+	<File Reference="Core.Windows.dll">
+		<ContainsControls>False</ContainsControls>
+	</File>
+	<File Reference="Telerik.UI.Xaml.Primitives.dll">
+		<ContainsControls>True</ContainsControls>
+		<ToolboxItems VSCategory="Telerik UI for Windows Universal" BlendCategory="Telerik UI for Windows Universal">
+			<Item Type = "Telerik.UI.Xaml.Controls.Primitives.RadDataBoundListBox"/>
+		</ToolboxItems>
+	</File>
+	<File Reference="Telerik.UI.Xaml.Input.dll">
+		<ContainsControls>True</ContainsControls>
+		<ToolboxItems VSCategory="Telerik UI for Windows Universal" BlendCategory="Telerik UI for Windows Universal">
+			<Item Type = "Telerik.Universal.UI.Xaml.Controls.Input.RadDatePicker"/>
+			<Item Type = "Telerik.Universal.UI.Xaml.Controls.Input.RadTimePicker"/>
+		</ToolboxItems>
+	</File>
+	<File Reference="Telerik.UI.Xaml.Chart.dll">
+		<ContainsControls>True</ContainsControls>
+		<ToolboxItems VSCategory="Telerik UI for Windows Universal" BlendCategory="Telerik UI for Windows Universal">
+			<Item Type = "Telerik.UI.Xaml.Controls.Chart.RadCartesianChart"/>
+		</ToolboxItems>
+	</File>
+</FileList>

@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<api version="1.0" spec="1.0" xmlns="http://openajax.org/metadata">
+  <author name="Microsoft Corporation" />
+  <enum name="WinJS.UI.AppBar.layout" datatype="String">
+    <option value="commands">
+      <label locid="WinJS.UI.AppBar.layout_commands">AppBar contains AppBarCommand objects</label>
+    </option>
+    <option value="custom">
+      <label locid="WinJS.UI.AppBar.layout_custom">AppBar containing custom content</label>
+    </option>
+  </enum>
+  <enum name="WinJS.UI.AppBar.placement" datatype="String">
+    <options unconstrained="true">
+      <option value="top">
+        <label locid="WinJS.UI.AppBar.placement_top">Place AppBar at the top edge</label>
+      </option>
+      <option value="bottom">
+        <label locid="WinJS.UI.AppBar.placement_bottom">Place AppBar at the bottom edge</label>
+      </option>
+    </options>
+  </enum>
+  <enum name="WinJS.UI.AppBarCommand.section" datatype="String">
+    <options unconstrained="true">
+      <option value="global">
+        <label locid="WinJS.UI.AppBarCommand.section_global">Place AppBarCommand in the section for global commands</label>
+      </option>
+      <option value="selection">
+        <label locid="WinJS.UI.AppBarCommand.section_selection">Place AppBarCommand in the section for selection commands</label>
+      </option>
+    </options>
+  </enum>
+  <enum name="WinJS.UI.AppBarCommand.type" datatype="String">
+    <option value="button">
+      <label locid="WinJS.UI.AppBarCommand.type_button">A simple press button</label>
+    </option>
+    <option value="content">
+      <label locid="WinJS.UI.AppBarCommand.type_content">A container for hosting arbitrary HTML content</label>
+    </option>
+    <option value="flyout">
+      <label locid="WinJS.UI.AppBarCommand.type_flyout">A command that shows a flyout when pressed</label>
+    </option>
+    <option value="separator">
+      <label locid="WinJS.UI.AppBarCommand.type_separator">A separator between commands</label>
+    </option>
+    <option value="toggle">
+      <label locid="WinJS.UI.AppBarCommand.type_toggle">A command that can be selected or unselected</label>
+    </option>
+  </enum>
+  <enum name="WinJS.UI.Orientation" datatype="String">
+    <options>
+      <option value="horizontal">
+        <label locid="WinJS.UI.Orientation_horizontal">Horizontal</label>
+      </option>
+      <option value="vertical">
+        <label locid="WinJS.UI.Orientation_vertical">Vertical</label>
+      </option>
+    </options>
+  </enum>
+  <enum name="WinJS.UI.Flyout.alignment" datatype="String">
+    <option value="center">
+      <label locid="WinJS.UI.Flyout.alignment_center">Align center of flyout with center of anchor</label>
+    </option>
+    <option value="left">
+      <label locid="WinJS.UI.Flyout.alignment_left">Align left edge of flyout with left edge of anchor</label>
+    </option>
+    <option value="right">
+      <label locid="WinJS.UI.Flyout.alignment_right">Aligh right edge of flyout with right edge of anchor</label>
+    </option>
+  </enum>
+  <enum name="WinJS.UI.Flyout.placement" datatype="String">
+    <option value="auto">
+      <label locid="WinJS.UI.Flyout.placement_auto">Automatic placement</label>
+    </option>
+    <option value="bottom">
+      <label locid="WinJS.UI.Flyout.placement_bottom">Place flyout on bottom of anchor, resizing if necessary to fit</label>
+    </option>
+    <option value="left">
+      <label locid="WinJS.UI.Flyout.placement_left">Place flyout to left of anchor, resizing if necessary to fit</label>
+    </option>
+    <option value="right">
+      <label locid="WinJS.UI.Flyout.placement_right">Place flyout to right of anchor, resizing if necessary to fit</label>
+    </option>
+    <option value="top">
+      <label locid="WinJS.UI.Flyout.placement_top">Place flyout on top of anchor, resizing if necessary to fit</label>
+    </option>
+  </enum>
+  <enum name="WinJS.UI.HeaderPosition" datatype="String">
+    <options>
+      <option value="top">
+        <label locid="WinJS.UI.HeaderPosition_top">Place the header of each group above its items</label>
+      </option>
+      <option value="left">
+        <label locid="WinJS.UI.HeaderPosition_left">Place the header of each group to the left of its items</label>
+      </option>
+    </options>
+  </enum>
+  <enum name="WinJS.UI.ListView.LoadingBehavior" datatype="String">
+    <options>
+      <option value="incremental">
+        <label locid="WinJS.UI.ListView.LoadingBehavior_incremental">ListView represents the beginning of the collection. As the user scrolls, additional items are loaded.</label>
+      </option>
+      <option value="randomAccess">
+        <label locid="WinJS.UI.ListView.LoadingBehavior_randomAccess">ListView represents the complete collection. As the user jumps around the collection, items are loaded and unloaded.</label>
+      </option>
+    </options>
+  </enum>
+  <enum name="WinJS.UI.ListView.SelectionMode" datatype="String">
+    <options>
+      <option value="none">
+        <label locid="WinJS.UI.ListView.SelectionMode_none">Disables the selection of items in ListView</label>
+      </option>
+      <option value="single">
+        <label locid="WinJS.UI.ListView.SelectionMode_single">Allows up to one item to be selected in ListView</label>
+      </option>
+      <option value="multi">
+        <label locid="WinJS.UI.ListView.SelectionMode_multi">Allows multiple items to be selected in ListView</label>
+      </option>
+    </options>
+  </enum>
+  <enum name="WinJS.UI.SwipeBehavior" datatype="String">
+    <options>
+      <option value="none">
+        <label locid="WinJS.UI.SwipeBehavior_none">Swiping an item has no effect</label>
+      </option>
+      <option value="select">
+        <label locid="WinJS.UI.SwipeBehavior_select">Swiping an item toggles its selection state</label>
+      </option>
+    </options>
+  </enum>
+  <enum name="WinJS.UI.TapBehavior" datatype="String">
+    <options>
+      <option value="none">
+        <label locid="WinJS.UI.TapBehavior_none">Tapping an item has no effect</label>
+      </option>
+      <option value="invokeOnly">
+        <label locid="WinJS.UI.TapBehavior_invokeOnly">Tapping an item invokes it</label>
+      </option>
+      <option value="toggleSelect">
+        <label locid="WinJS.UI.TapBehavior_toggleSelect">Tapping an item invokes it and toggles its selection state</label>
+      </option>
+      <option value="directSelect">
+        <label locid="WinJS.UI.TapBehavior_directSelect">Tapping an item invokes it and causes it to be the only item that is selected</label>
+      </option>
+    </options>
+  </enum>
+  <enum name="WinJS.UI.GroupHeaderTapBehavior" datatype="String">
+    <options>
+      <option value="none">
+        <label locid="WinJS.UI.GroupHeaderTapBehavior_none">Tapping a header has no effect</label>
+      </option>
+      <option value="invoke">
+        <label locid="WinJS.UI.GroupHeaderTapBehavior_invoke">Tapping a header invokes it</label>
+      </option>
+    </options>
+  </enum>
+  <enum name="WinJS.UI.MenuCommand.type" datatype="String">
+    <option value="button">
+      <label locid="WinJS.UI.MenuCommand.type_button">A simple press button</label>
+    </option>
+    <option value="flyout">
+      <label locid="WinJS.UI.MenuCommand.type_flyout">A command that shows an additional flyout when pressed</label>
+    </option>
+    <option value="separator">
+      <label locid="WinJS.UI.MenuCommand.type_separator">A separator between commands</label>
+    </option>
+    <option value="toggle">
+      <label locid="WinJS.UI.MenuCommand.type_toggle">A command that can be selected or unselected</label>
+    </option>
+  </enum>
+  <enum name="WinJS.UI.SettingsFlyout.width" datatype="String">
+    <option value="narrow">
+      <label locid="WinJS.UI.SettingsFlyout.width_narrow">Narrow SettingsFlyout</label>
+    </option>
+    <option value="wide">
+      <label locid="WinJS.UI.SettingsFlyout.width_wide">Wide SettingsFlyout</label>
+    </option>
+  </enum>
+  <enum name="WinJS.UI.Tooltip.placement" datatype="String">
+    <options unconstrained="true">
+      <option value="top">
+        <label locid="WinJS.UI.Tooltip.placement_top">Display the Tooltip above its contentElement.</label>
+      </option>
+      <option value="bottom">
+        <label locid="WinJS.UI.Tooltip.placement_bottom">Display the Tooltip below its contentElement.</label>
+      </option>
+      <option value="left">
+        <label locid="WinJS.UI.Tooltip.placement_left">Display the Tooltip to the left of its contentElement.</label>
+      </option>
+      <option value="right">
+        <label locid="WinJS.UI.Tooltip.placement_right">Display the Tooltip to the right of its contentElement.</label>
+      </option>
+    </options>
+  </enum>
+  <locale messages="controls_winjs.ui.enums_loc_oam.xml" />
+</api>

@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.PlayerFramework.Adaptive</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.PlayerFramework.Adaptive.AdaptivePlugin">
+            <summary>
+            Represents a plugin that can be used to automatically intialize the smooth streaming SDK.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Adaptive.AdaptivePlugin.#ctor">
+            <summary>
+            Creates a new instance of AdaptivePlugin.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Adaptive.AdaptivePlugin.UpdateQuality">
+            <summary>
+            Called when the selected video track has changed. Used to update the signal strength and media quality properties on the MediaPlayer.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Adaptive.AdaptivePlugin.AutoRestrictSize">
+            <summary>
+            Gets or sets whether to automatically prevent video tracks greater than the size of the player from ever being chosen.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Adaptive.AdaptivePlugin.MaxBitrate">
+            <summary>
+            Gets or sets the maximum bitrate that can be used for video. This is useful for limiting the bitrate under metered network situations.
+            Note: additional tracks will also be unselected based on the size of the player if AutoRestrictSize = false.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Adaptive.AdaptivePlugin.MinBitrate">
+            <summary>
+            Gets or sets the Minimum bitrate that can be used for video. This is useful for limiting the bitrate so quality never dips below a certain amount.
+            Note: additional tracks will also be unselected based on the size of the player if AutoRestrictSize = false.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Adaptive.AdaptivePlugin.StartupBitrate">
+            <summary>
+            Gets or sets the startup bitrate to be used. This is useful for starting at a higher quality when you know the user has a good connection.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Adaptive.AdaptivePlugin.AutoSchemeDownloaderPlugin">
+            <summary>
+            Gets or sets whether media URL schemes should automatically use the custom scheme 'ms-sstr:' in order to automatically invoke the DownloaderPlugin. Default true.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Adaptive.AdaptivePlugin.Manager">
+            <summary>
+            Gets the instance of the WinRT AdaptiveStreamingManager class used to communicate with the Smooth Streaming SDK.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Adaptive.AdaptivePlugin.ByteStreamHandlers">
+            <summary>
+            Gets or sets the list of byte stream handlers that should be registered with the MediaExtensionManager for the Smooth Streaming SDK.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Adaptive.AdaptivePlugin.InstreamCaptionsEnabled">
+            <summary>
+            Gets or sets whether in-stream text tracks should be used as captions. Default = false.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Adaptive.AdaptivePlugin.SchemeHandlers">
+            <summary>
+            Gets or sets the list of scheme handlers that should be registered with the MediaExtensionManager for the Smooth Streaming SDK.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Adaptive.AdaptivePlugin.DownloaderPlugin">
+            <summary>
+            Gets or set the DownloaderPlugin to be used.
+            This is a class that allows you to intercept each request to the Smooth Streaming SDK before it tries to process the data.
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Adaptive.ByteStreamHandler">
+            <summary>
+            Provides a way to store data associated with MediaExtensionManager.RegisterByteStreamHandler
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Adaptive.ByteStreamHandler.#ctor">
+            <summary>
+            Creates a new instance of ByteStreamHandler.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Adaptive.ByteStreamHandler.#ctor(System.String,System.String)">
+            <summary>
+            Creates and initializes a new instance of ByteStreamHandler.
+            </summary>
+            <param name="fileExtension">The file name extension that is registered for this byte-stream handler.</param>
+            <param name="mimeType">The MIME type that is registered for this byte-stream handler.</param>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Adaptive.ByteStreamHandler.FileExtension">
+            <summary>
+            The file name extension that is registered for this byte-stream handler.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Adaptive.ByteStreamHandler.MimeType">
+            <summary>
+            The MIME type that is registered for this byte-stream handler.
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Adaptive.SchemeHandler">
+            <summary>
+            Provides a way to store data associated with MediaExtensionManager.RegisterSchemeHandler
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Adaptive.SchemeHandler.#ctor">
+            <summary>
+            Creates a new instance of ByteStreamHandler.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Adaptive.SchemeHandler.#ctor(System.String)">
+            <summary>
+            Creates and initializes a new instance of ByteStreamHandler.
+            </summary>
+            <param name="scheme">The URL scheme that will be recognized to invoke the scheme handler. For example, myscheme://.</param>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Adaptive.SchemeHandler.Scheme">
+            <summary>
+            The URL scheme that will be recognized to invoke the scheme handler. For example, myscheme://.
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Adaptive.AudioStreamWrapper">
+            <summary>
+            Wraps a smooth streaming AdaptiveAudioStream class to allow it to inherit AudioStream and participate in the player framework's audio selection APIs.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Adaptive.AudioStreamWrapper.AdaptiveAudioStream">
+            <summary>
+            Gets the underlying smooth streaming AdaptiveAudioStream instance.
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Adaptive.CaptionStreamWrapper">
+            <summary>
+            Wraps a smooth streaming AdaptiveCaptionStream class to allow it to inherit Caption and participate in the player framework's caption selection APIs.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Adaptive.CaptionStreamWrapper.AdaptiveCaptionStream">
+            <summary>
+            Gets the underlying smooth streaming AdaptiveCaptionStream instance.
+            </summary>
+        </member>
+    </members>
+</doc>

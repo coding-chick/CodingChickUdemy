@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Microsoft.WinJS.2.0/js/ui/WinJS.UI.Hub" name="WinJS.UI.Hub" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="true" xmlns="http://openajax.org/metadata">
+  <author name="Microsoft Corporation" />
+  <description locid="WinJS.UI.Hub" type="text/plain">Displays sections of content.</description>
+  <blend:compatibleWiths>
+    <blend:compatibleWith platform="Windows" minVersion="8.1" />
+  </blend:compatibleWiths>
+  <icons>
+    <icon src="ui_winjs.ui.hub.12x12.png" />
+    <icon src="ui_winjs.ui.hub.16x16.png" />
+  </icons>
+  <properties>
+    <property name="element" datatype="HTMLElement" required="false" hidden="true">
+      <description locid="WinJS.UI.Hub.element" type="text/plain">Gets the DOM element that hosts the Hub.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="orientation" datatype="WinJS.UI.Orientation" required="false">
+      <description locid="WinJS.UI.Hub.orientation" type="text/plain">Gets or sets the orientation of sections within the Hub.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="sections" datatype="WinJS.Binding.List" required="false">
+      <description locid="WinJS.UI.Hub.sections" type="text/plain">Gets or sets the WinJS.Binding.List of HubSection objects that belong to this Hub.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="headerTemplate" datatype="Object" required="false" blend:potentialValueSelector="[data-win-control='WinJS.Binding.Template']">
+      <description locid="WinJS.UI.Hub.headerTemplate" type="text/plain">Gets or sets the WinJS.Binding.Template or template function that creates the DOM elements
+ which represent the header for each HubSection. Each header can 
+ contain multiple DOM elements, but we recommend that it have a single 
+ root element.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="scrollPosition" datatype="Number" isInteger="true" required="false">
+      <description locid="WinJS.UI.Hub.scrollPosition" type="text/plain">Gets or sets the position of the Hub's scrollbar.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="sectionOnScreen" datatype="Number" isInteger="true" required="false">
+      <description locid="WinJS.UI.Hub.sectionOnScreen" type="text/plain">Gets or sets the index of first section in view. This property is useful for restoring a previous view when your app launches or resumes.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="indexOfFirstVisible" datatype="Number" isInteger="true" required="false" blend:isAdvanced="true">
+      <description locid="WinJS.UI.Hub.indexOfFirstVisible" type="text/plain">Gets or sets the index of first section at least partially in view. Use for animations.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="indexOfLastVisible" datatype="Number" isInteger="true" required="false" blend:isAdvanced="true">
+      <description locid="WinJS.UI.Hub.indexOfLastVisible" type="text/plain">Gets or sets the index of last section at least partially in view. Use for animations.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="loadingState" datatype="String" required="false" hidden="true">
+      <description locid="WinJS.UI.Hub.loadingState" type="text/plain">Gets a value that indicates whether the Hub is still loading or whether
+ loading is complete.  This property can return one of these values: 
+ "loading" or "complete".</description>
+    </property>
+    <property name="zoomableView" datatype="Object" required="false" blend:isAdvanced="true">
+      <description locid="WinJS.UI.Hub.zoomableView" type="text/plain">Gets a ZoomableView. This API supports the SemanticZoom infrastructure 
+ and is not intended to be used directly from your code.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="AnimationType" required="false">
+      <description locid="WinJS.UI.Hub.AnimationType" type="text/plain">Specifies whether the Hub animation is an entrance animation or a transition animation.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+  </properties>
+  <content><![CDATA[<div data-win-control="WinJS.UI.Hub">
+ <div data-win-control="WinJS.UI.HubSection" data-win-options="{header: 'HubSection Header'}">HubSection Content</div>
+ </div>]]></content>
+  <requires>
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/base.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="//Microsoft.WinJS.2.0/css/ui-dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript"><![CDATA[WinJS.UI.processAll();]]></require>
+  </requires>
+  <blend:parts>
+    <part name="hub" class="win-hub">
+      <description locid="WinJS.UI.Hub_part:hub" type="text/plain">The entire Hub control.</description>
+    </part>
+    <part name="progress" class="win-hub-progress">
+      <description locid="WinJS.UI.Hub_part:progress" type="text/plain">The progress indicator for the Hub.</description>
+    </part>
+    <part name="viewport" class="win-hub-viewport">
+      <description locid="WinJS.UI.Hub_part:viewport" type="text/plain">The viewport of the Hub.</description>
+    </part>
+    <part name="surface" class="win-hub-surface">
+      <description locid="WinJS.UI.Hub_part:surface" type="text/plain">The scrollable region of the Hub.</description>
+    </part>
+  </blend:parts><locale messages="ui_loc_oam.xml" />
+</widget>

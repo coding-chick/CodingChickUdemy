@@ -1,0 +1,882 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<api version="1.0" spec="1.0" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" xmlns="http://openajax.org/metadata">
+  <author name="Microsoft Corporation" />
+  <class name="WinJS.Promise">
+    <ancestor datatype="PromiseStateMachine" />
+    <constructor>
+      <description locid="WinJS.Promise" type="text/plain">A promise provides a mechanism to schedule work to be done on a value that
+ has not yet been computed. It is a convenient abstraction for managing
+ interactions with asynchronous APIs.</description>
+      <parameter name="init" datatype="Function">
+        <description locid="WinJS.Promise_p:init" type="text/plain">The function that is called during construction of the  promise. The function
+ is given three arguments (complete, error, progress). Inside this function
+ you should add event listeners for the notifications supported by this value.</description>
+      </parameter>
+      <parameter name="oncancel">
+        <description locid="WinJS.Promise_p:oncancel" type="text/plain">The function to call if a consumer of this promise wants
+ to cancel its undone work. Promises are not required to
+ support cancellation.</description>
+      </parameter>
+      <returnType datatype="*" />
+    </constructor>
+    <properties>
+      <property name="cancel" datatype="WinJS.Promise" required="false">
+        <description locid="WinJS.Promise.cancel" type="text/plain">Canceled promise value, can be returned from a promise completion handler
+ to indicate cancelation of the promise chain.</description>
+      </property>
+      <property name="supportedForProcessing" required="false" />
+    </properties>
+    <events />
+    <methods>
+      <method name="addEventListener">
+        <description locid="WinJS.Promise.addEventListener" type="text/plain">Adds an event listener to the control.</description>
+        <parameter name="eventType">
+          <description locid="WinJS.Promise.addEventListener_p:eventType" type="text/plain">The type (name) of the event.</description>
+        </parameter>
+        <parameter name="listener">
+          <description locid="WinJS.Promise.addEventListener_p:listener" type="text/plain">The listener to invoke when the event is raised.</description>
+        </parameter>
+        <parameter name="capture">
+          <description locid="WinJS.Promise.addEventListener_p:capture" type="text/plain">Specifies whether or not to initiate capture.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+      <method name="any">
+        <description locid="WinJS.Promise.any" type="text/plain">Returns a promise that is fulfilled when one of the input promises
+ has been fulfilled.</description>
+        <parameter name="values" datatype="Array">
+          <description locid="WinJS.Promise.any_p:values" type="text/plain">An array that contains promise objects or objects whose property
+ values include promise objects.</description>
+        </parameter>
+        <returnType datatype="WinJS.Promise">
+          <description locid="WinJS.Promise.any_returnValue" type="text/plain">A promise that on fulfillment yields the value of the input (complete or error).</description>
+        </returnType>
+      </method>
+      <method name="as">
+        <description locid="WinJS.Promise.as" type="text/plain">Returns a promise. If the object is already a promise it is returned;
+ otherwise the object is wrapped in a promise.</description>
+        <parameter name="value">
+          <description locid="WinJS.Promise.as_p:value" type="text/plain">The value to be treated as a promise.</description>
+        </parameter>
+        <returnType datatype="WinJS.Promise">
+          <description locid="WinJS.Promise.as_returnValue" type="text/plain">A promise.</description>
+        </returnType>
+      </method>
+      <method name="dispatchEvent">
+        <description locid="WinJS.Promise.dispatchEvent" type="text/plain">Raises an event of the specified type and properties.</description>
+        <parameter name="eventType">
+          <description locid="WinJS.Promise.addEventListener_p:eventType" type="text/plain">The type (name) of the event.</description>
+        </parameter>
+        <parameter name="details">
+          <description locid="WinJS.Promise.dispatchEvent_p:details" type="text/plain">The set of additional properties to be attached to the event object.</description>
+        </parameter>
+        <returnType datatype="Boolean">
+          <description locid="WinJS.Promise.dispatchEvent_returnValue" type="text/plain">Specifies whether preventDefault was called on the event.</description>
+        </returnType>
+      </method>
+      <method name="is">
+        <description locid="WinJS.Promise.is" type="text/plain">Determines whether a value fulfills the promise contract.</description>
+        <parameter name="value">
+          <description locid="WinJS.Promise.is_p:value" type="text/plain">A value that may be a promise.</description>
+        </parameter>
+        <returnType datatype="Boolean">
+          <description locid="WinJS.Promise.is_returnValue" type="text/plain">true if the specified value is a promise, otherwise false.</description>
+        </returnType>
+      </method>
+      <method name="join">
+        <description locid="WinJS.Promise.join" type="text/plain">Creates a promise that is fulfilled when all the values are fulfilled.</description>
+        <parameter name="values" datatype="Object">
+          <description locid="WinJS.Promise.join_p:values" type="text/plain">An object whose fields contain values, some of which may be promises.</description>
+        </parameter>
+        <returnType datatype="WinJS.Promise">
+          <description locid="WinJS.Promise.join_returnValue" type="text/plain">A promise whose value is an object with the same field names as those of the object in the values parameter, where
+ each field value is the fulfilled value of a promise.</description>
+        </returnType>
+      </method>
+      <method name="removeEventListener">
+        <description locid="WinJS.Promise.removeEventListener" type="text/plain">Removes an event listener from the control.</description>
+        <parameter name="eventType">
+          <description locid="WinJS.Promise.addEventListener_p:eventType" type="text/plain">The type (name) of the event.</description>
+        </parameter>
+        <parameter name="listener">
+          <description locid="WinJS.Promise.removeEventListener_listener" type="text/plain">The listener to remove.</description>
+        </parameter>
+        <parameter name="capture">
+          <description locid="WinJS.Promise.addEventListener_p:capture" type="text/plain">Specifies whether or not to initiate capture.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+      <method name="then">
+        <description locid="WinJS.Promise.then" type="text/plain">A static version of the promise instance method then().</description>
+        <parameter name="value">
+          <description locid="WinJS.Promise.then_p:value" type="text/plain">the value to be treated as a promise.</description>
+        </parameter>
+        <parameter name="onComplete" datatype="Function">
+          <description locid="WinJS.Promise.then_p:complete" type="text/plain">The function to be called if the promise is fulfilled with a value.
+ If it is null, the promise simply
+ returns the value. The value is passed as the single argument.</description>
+        </parameter>
+        <parameter name="onError" datatype="Function">
+          <description locid="WinJS.Promise.then_p:error" type="text/plain">The function to be called if the promise is fulfilled with an error. The error
+ is passed as the single argument.</description>
+        </parameter>
+        <parameter name="onProgress" datatype="Function">
+          <description locid="WinJS.PromiseStateMachine.then_p:onProgress" type="text/plain">The function to be called if the promise reports progress. Data about the progress
+ is passed as the single argument. Promises are not required to support
+ progress.</description>
+        </parameter>
+        <returnType datatype="WinJS.Promise">
+          <description locid="WinJS.Promise.then_returnValue" type="text/plain">A promise whose value is the result of executing the provided complete function.</description>
+        </returnType>
+      </method>
+      <method name="thenEach">
+        <description locid="WinJS.Promise.thenEach" type="text/plain">Performs an operation on all the input promises and returns a promise
+ that has the shape of the input and contains the result of the operation
+ that has been performed on each input.</description>
+        <parameter name="values">
+          <description locid="WinJS.Promise.thenEach_p:values" type="text/plain">A set of values (which could be either an array or an object) of which some or all are promises.</description>
+        </parameter>
+        <parameter name="onComplete" datatype="Function">
+          <description locid="WinJS.Promise.thenEach_p:complete" type="text/plain">The function to be called if the promise is fulfilled with a value.
+ If the value is null, the promise returns the value.
+ The value is passed as the single argument.</description>
+        </parameter>
+        <parameter name="onError" datatype="Function">
+          <description locid="WinJS.Promise.then_p:error" type="text/plain">The function to be called if the promise is fulfilled with an error. The error
+ is passed as the single argument.</description>
+        </parameter>
+        <parameter name="onProgress" datatype="Function">
+          <description locid="WinJS.PromiseStateMachine.then_p:onProgress" type="text/plain">The function to be called if the promise reports progress. Data about the progress
+ is passed as the single argument. Promises are not required to support
+ progress.</description>
+        </parameter>
+        <returnType datatype="WinJS.Promise">
+          <description locid="WinJS.Promise.thenEach_returnValue" type="text/plain">A promise that is the result of calling Promise.join on the values parameter.</description>
+        </returnType>
+      </method>
+      <method name="timeout">
+        <description locid="WinJS.Promise.timeout" type="text/plain">Creates a promise that is fulfilled after a timeout.</description>
+        <parameter name="timeout" datatype="Number">
+          <description locid="WinJS.Promise.timeout_p:timeout" type="text/plain">The timeout period in milliseconds. If this value is zero or not specified
+ setImmediate is called, otherwise setTimeout is called.</description>
+        </parameter>
+        <parameter name="promise" datatype="Promise">
+          <description locid="WinJS.Promise.timeout_p:promise" type="text/plain">A promise that will be canceled if it doesn't complete before the
+ timeout has expired.</description>
+        </parameter>
+        <returnType datatype="WinJS.Promise">
+          <description locid="WinJS.Promise.timeout_returnValue" type="text/plain">A promise that is completed asynchronously after the specified timeout.</description>
+        </returnType>
+      </method>
+      <method name="wrap">
+        <description locid="WinJS.Promise.wrap" type="text/plain">Wraps a non-promise value in a promise. You can use this function if you need
+ to pass a value to a function that requires a promise.</description>
+        <parameter name="value">
+          <description locid="WinJS.Promise.wrap_p:value" type="text/plain">Some non-promise value to be wrapped in a promise.</description>
+        </parameter>
+        <returnType datatype="WinJS.Promise">
+          <description locid="WinJS.Promise.wrap_returnValue" type="text/plain">A promise that is successfully fulfilled with the specified value</description>
+        </returnType>
+      </method>
+      <method name="wrapError">
+        <description locid="WinJS.Promise.wrapError" type="text/plain">Wraps a non-promise error value in a promise. You can use this function if you need
+ to pass an error to a function that requires a promise.</description>
+        <parameter name="error">
+          <description locid="WinJS.Promise.wrapError_p:error" type="text/plain">A non-promise error value to be wrapped in a promise.</description>
+        </parameter>
+        <returnType datatype="WinJS.Promise">
+          <description locid="WinJS.Promise.wrapError_returnValue" type="text/plain">A promise that is in an error state with the specified value.</description>
+        </returnType>
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS._Signal">
+    <properties>
+      <property name="promise" required="false" />
+      <property name="supportedForProcessing" required="false" />
+    </properties>
+    <events />
+    <methods>
+      <method name="cancel">
+        <returnType datatype="*" />
+      </method>
+      <method name="complete">
+        <returnType datatype="*" />
+      </method>
+      <method name="error">
+        <returnType datatype="*" />
+      </method>
+      <method name="progress">
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.Utilities.Scheduler._JobNode">
+    <properties>
+      <property name="completed" datatype="Boolean" required="false">
+        <description locid="WinJS.Utilities.Scheduler._JobNode.completed" type="text/plain">Gets a value that indicates whether the job has completed. This value is true if job has run to completion
+ and false if it hasn't yet run or was canceled.</description>
+      </property>
+      <property name="id" datatype="Number" isInteger="false" required="false">
+        <description locid="WinJS.Utilities.Scheduler._JobNode.id" type="text/plain">Gets the unique identifier for this job.</description>
+      </property>
+      <property name="name" datatype="String" required="false">
+        <description locid="WinJS.Utilities.Scheduler._JobNode.name" type="text/plain">Gets or sets a string that specifies the diagnostic name for this job.</description>
+      </property>
+      <property name="owner" datatype="WinJS.Utilities.Scheduler._OwnerToken" required="false">
+        <description locid="WinJS.Utilities.Scheduler._JobNode.owner" type="text/plain">Gets an owner token for the job. You can use this owner token�s cancelAll method to cancel related jobs.</description>
+      </property>
+      <property name="priority" datatype="WinJS.Utilities.Scheduler.Priority" required="false">
+        <description locid="WinJS.Utilities.Scheduler._JobNode.priority" type="text/plain">Gets or sets the priority at which this job is executed by the scheduler.</description>
+      </property>
+    </properties>
+    <events />
+    <methods>
+      <method name="cancel">
+        <description locid="WinJS.Utilities.Scheduler._JobNode.cancel" type="text/plain">Cancels the job.</description>
+        <returnType datatype="*" />
+      </method>
+      <method name="pause">
+        <description locid="WinJS.Utilities.Scheduler._JobNode.pause" type="text/plain">Pauses the job.</description>
+        <returnType datatype="*" />
+      </method>
+      <method name="resume">
+        <description locid="WinJS.Utilities.Scheduler._JobNode.resume" type="text/plain">Resumes the job if it's been paused.</description>
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.Utilities.Scheduler._JobInfo">
+    <properties>
+      <property name="job" datatype="WinJS.Utilities.Scheduler._JobNode" required="false">
+        <description locid="WinJS.Utilities.Scheduler._JobInfo.job" type="text/plain">The job instance for which the work is currently being executed.</description>
+      </property>
+      <property name="shouldYield" datatype="Boolean" required="false">
+        <description locid="WinJS.Utilities.Scheduler._JobInfo.shouldYield" type="text/plain">A boolean which will become true when the work item is requested to cooperatively yield by the scheduler.</description>
+      </property>
+    </properties>
+    <events />
+    <methods>
+      <method name="setPromise">
+        <description locid="WinJS.Utilities.Scheduler._JobInfo.setPromise" type="text/plain">Called when the  work item is blocked on asynchronous work.
+ The scheduler waits for the specified Promise to complete before rescheduling the job.</description>
+        <parameter name="promise" datatype="WinJS.Promise">
+          <description locid="WinJS.Utilities.Scheduler._JobInfo.setPromise_p:promise" type="text/plain">A Promise value which, when completed, provides a work item function to be re-scheduled.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+      <method name="setWork">
+        <description locid="WinJS.Utilities.Scheduler._JobInfo.setWork" type="text/plain">Called  when the work item is cooperatively yielding to the scheduler and has more work to complete in the future.
+ Use this method to schedule additonal work for when the work item is about to yield.</description>
+        <parameter name="work" datatype="Function">
+          <description locid="WinJS.Utilities.Scheduler._JobInfo.setWork_p:work" type="text/plain">The work function which will be re-scheduled.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.Utilities.Scheduler._OwnerToken">
+    <properties />
+    <events />
+    <methods>
+      <method name="cancelAll">
+        <description locid="WinJS.Utilities.Scheduler._OwnerToken.cancelAll" type="text/plain">Cancels all jobs that are associated with this owner token.</description>
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.ErrorFromName">
+    <ancestor datatype="Error" />
+    <constructor>
+      <description locid="WinJS.ErrorFromName" type="text/plain">Creates an Error object with the specified name and message properties.</description>
+      <parameter name="name" datatype="String">
+        <description locid="WinJS.ErrorFromName_p:name" type="text/plain">The name of this error. The name is meant to be consumed programmatically and should not be localized.</description>
+      </parameter>
+      <parameter name="message" datatype="String">
+        <description locid="WinJS.ErrorFromName_p:message" type="text/plain">The message for this error. The message is meant to be consumed by humans and should be localized.</description>
+      </parameter>
+      <returnType datatype="Error">
+        <description locid="WinJS.ErrorFromName_returnValue" type="text/plain">Error instance with .name and .message properties populated</description>
+      </returnType>
+    </constructor>
+    <properties>
+      <property name="supportedForProcessing" required="false" />
+    </properties>
+    <events />
+    <methods />
+  </class>
+  <class name="WinJS.Utilities.QueryCollection">
+    <ancestor datatype="Array" />
+    <constructor>
+      <description locid="WinJS.Utilities.QueryCollection" type="text/plain">Represents the result of a query selector, and provides
+ various operations that perform actions over the elements of
+ the collection.</description>
+      <parameter name="items">
+        <description locid="WinJS.Utilities.QueryCollection_p:items" type="text/plain">The items resulting from the query.</description>
+      </parameter>
+      <returnType datatype="*" />
+    </constructor>
+    <properties>
+      <property name="supportedForProcessing" required="false" />
+    </properties>
+    <events />
+    <methods>
+      <method name="forEach">
+        <description locid="WinJS.Utilities.QueryCollection.forEach" type="text/plain">Performs an action on each item in the QueryCollection</description>
+        <parameter name="callbackFn" datatype="function(value, Number index, traversedObject)">
+          <description locid="WinJS.Utilities.QueryCollection.forEach_p:callbackFn" type="text/plain">Action to perform on each item.</description>
+        </parameter>
+        <parameter name="thisArg" datatype="function(value, Number index, traversedObject)">
+          <description locid="WinJS.Utilities.QueryCollection.forEach_p:thisArg" type="text/plain">Argument to bind to callbackFn</description>
+        </parameter>
+        <returnType datatype="WinJS.Utilities.QueryCollection">
+          <description locid="WinJS.Utilities.QueryCollection.forEach_returnValue" type="text/plain">Returns the QueryCollection</description>
+        </returnType>
+      </method>
+      <method name="get">
+        <description locid="WinJS.Utilities.QueryCollection.get" type="text/plain">Gets an item from the QueryCollection.</description>
+        <parameter name="index" datatype="Number">
+          <description locid="WinJS.Utilities.QueryCollection.get_p:index" type="text/plain">The index of the item to return.</description>
+        </parameter>
+        <returnType datatype="Object">
+          <description locid="WinJS.Utilities.QueryCollection.get_returnValue" type="text/plain">A single item from the collection.</description>
+        </returnType>
+      </method>
+      <method name="setAttribute">
+        <description locid="WinJS.Utilities.QueryCollection.setAttribute" type="text/plain">Sets an attribute value on all the items in the collection.</description>
+        <parameter name="name" datatype="String">
+          <description locid="WinJS.Utilities.QueryCollection.setAttribute_p:name" type="text/plain">The name of the attribute to be set.</description>
+        </parameter>
+        <parameter name="value" datatype="String">
+          <description locid="WinJS.Utilities.QueryCollection.setAttribute_p:value" type="text/plain">The value of the attribute to be set.</description>
+        </parameter>
+        <returnType datatype="WinJS.Utilities.QueryCollection">
+          <description locid="WinJS.Utilities.QueryCollection.setAttribute_returnValue" type="text/plain">This QueryCollection object.</description>
+        </returnType>
+      </method>
+      <method name="getAttribute">
+        <description locid="WinJS.Utilities.QueryCollection.getAttribute" type="text/plain">Gets an attribute value from the first element in the collection.</description>
+        <parameter name="name" datatype="String">
+          <description locid="WinJS.Utilities.QueryCollection.getAttribute_p:name" type="text/plain">The name of the attribute.</description>
+        </parameter>
+        <returnType datatype="String">
+          <description locid="WinJS.Utilities.QueryCollection.getAttribute_returnValue" type="text/plain">The value of the attribute.</description>
+        </returnType>
+      </method>
+      <method name="addClass">
+        <description locid="WinJS.Utilities.QueryCollection.addClass" type="text/plain">Adds the specified class to all the elements in the collection.</description>
+        <parameter name="name" datatype="String">
+          <description locid="WinJS.Utilities.QueryCollection.addClass_p:name" type="text/plain">The name of the class to add.</description>
+        </parameter>
+        <returnType datatype="WinJS.Utilities.QueryCollection">
+          <description locid="WinJS.Utilities.QueryCollection.setAttribute_returnValue" type="text/plain">This QueryCollection object.</description>
+        </returnType>
+      </method>
+      <method name="hasClass">
+        <description locid="WinJS.Utilities.QueryCollection.hasClass" type="text/plain">Determines whether the specified class exists on the first element of the collection.</description>
+        <parameter name="name" datatype="String">
+          <description locid="WinJS.Utilities.QueryCollection.hasClass_p:name" type="text/plain">The name of the class.</description>
+        </parameter>
+        <returnType datatype="Boolean">
+          <description locid="WinJS.Utilities.QueryCollection.hasClass_returnValue" type="text/plain">true if the element has the specified class; otherwise, false.</description>
+        </returnType>
+      </method>
+      <method name="removeClass">
+        <description locid="WinJS.Utilities.QueryCollection.removeClass" type="text/plain">Removes the specified class from all the elements in the collection.</description>
+        <parameter name="name" datatype="String">
+          <description locid="WinJS.Utilities.QueryCollection.removeClass_p:name" type="text/plain">The name of the class to be removed.</description>
+        </parameter>
+        <returnType datatype="WinJS.Utilities.QueryCollection">
+          <description locid="WinJS.Utilities.QueryCollection.setAttribute_returnValue" type="text/plain">This QueryCollection object.</description>
+        </returnType>
+      </method>
+      <method name="toggleClass">
+        <description locid="WinJS.Utilities.QueryCollection.toggleClass" type="text/plain">Toggles (adds or removes) the specified class on all the elements in the collection.
+ If the class is present, it is removed; if it is absent, it is added.</description>
+        <parameter name="name" datatype="String">
+          <description locid="WinJS.Utilities.QueryCollection.toggleClass_p:name" type="text/plain">The name of the class to be toggled.</description>
+        </parameter>
+        <returnType datatype="WinJS.Utilities.QueryCollection">
+          <description locid="WinJS.Utilities.QueryCollection.setAttribute_returnValue" type="text/plain">This QueryCollection object.</description>
+        </returnType>
+      </method>
+      <method name="listen">
+        <description locid="WinJS.Utilities.QueryCollection.listen" type="text/plain">Registers the listener for the specified event on all the elements in the collection.</description>
+        <parameter name="eventType" datatype="String">
+          <description locid="WinJS.Utilities.QueryCollection.listen_p:eventType" type="text/plain">The name of the event.</description>
+        </parameter>
+        <parameter name="listener" datatype="Function">
+          <description locid="WinJS.Utilities.QueryCollection.listen_p:listener" type="text/plain">The event handler function to be called when the event occurs.</description>
+        </parameter>
+        <parameter name="capture" datatype="Boolean">
+          <description locid="WinJS.Utilities.QueryCollection.listen_p:capture" type="text/plain">true if capture == true is to be passed to addEventListener; otherwise, false.</description>
+        </parameter>
+        <returnType datatype="WinJS.Utilities.QueryCollection">
+          <description locid="WinJS.Utilities.QueryCollection.setAttribute_returnValue" type="text/plain">This QueryCollection object.</description>
+        </returnType>
+      </method>
+      <method name="removeEventListener">
+        <description locid="WinJS.Utilities.QueryCollection.removeEventListener" type="text/plain">Unregisters the listener for the specified event on all the elements in the collection.</description>
+        <parameter name="eventType" datatype="String">
+          <description locid="WinJS.Utilities.QueryCollection.listen_p:eventType" type="text/plain">The name of the event.</description>
+        </parameter>
+        <parameter name="listener" datatype="Function">
+          <description locid="WinJS.Utilities.QueryCollection.removeEventListener_p:listener" type="text/plain">The event handler function.</description>
+        </parameter>
+        <parameter name="capture" datatype="Boolean">
+          <description locid="WinJS.Utilities.QueryCollection.removeEventListener_p:capture" type="text/plain">true if capture == true; otherwise, false.</description>
+        </parameter>
+        <returnType datatype="WinJS.Utilities.QueryCollection">
+          <description locid="WinJS.Utilities.QueryCollection.setAttribute_returnValue" type="text/plain">This QueryCollection object.</description>
+        </returnType>
+      </method>
+      <method name="setStyle">
+        <description locid="WinJS.Utilities.QueryCollection.setStyle" type="text/plain">Sets the specified style property for all the elements in the collection.</description>
+        <parameter name="name" datatype="String">
+          <description locid="WinJS.Utilities.QueryCollection.setStyle_p:name" type="text/plain">The name of the style property.</description>
+        </parameter>
+        <parameter name="value" datatype="String">
+          <description locid="WinJS.Utilities.QueryCollection.setStyle_p:value" type="text/plain">The value for the property.</description>
+        </parameter>
+        <returnType datatype="WinJS.Utilities.QueryCollection">
+          <description locid="WinJS.Utilities.QueryCollection.setAttribute_returnValue" type="text/plain">This QueryCollection object.</description>
+        </returnType>
+      </method>
+      <method name="clearStyle">
+        <description locid="WinJS.Utilities.QueryCollection.clearStyle" type="text/plain">Clears the specified style property for all the elements in the collection.</description>
+        <parameter name="name" datatype="String">
+          <description locid="WinJS.Utilities.QueryCollection.clearStyle_p:name" type="text/plain">The name of the style property to be cleared.</description>
+        </parameter>
+        <returnType datatype="WinJS.Utilities.QueryCollection">
+          <description locid="WinJS.Utilities.QueryCollection.setAttribute_returnValue" type="text/plain">This QueryCollection object.</description>
+        </returnType>
+      </method>
+      <method name="query">
+        <description locid="WinJS.Utilities.QueryCollection.query" type="text/plain">Executes a query selector on all the elements in the collection
+ and aggregates the result into a QueryCollection.</description>
+        <parameter name="query" datatype="String">
+          <description locid="WinJS.Utilities.QueryCollection.query_p:query" type="text/plain">The query selector string.</description>
+        </parameter>
+        <returnType datatype="WinJS.Utilities.QueryCollection">
+          <description locid="WinJS.Utilities.QueryCollection.query_returnValue" type="text/plain">A QueryCollection object containing the aggregate results of
+ executing the query on all the elements in the collection.</description>
+        </returnType>
+      </method>
+      <method name="include">
+        <description locid="WinJS.Utilities.QueryCollection.include" type="text/plain">Adds a set of items to this QueryCollection.</description>
+        <parameter name="items">
+          <description locid="WinJS.Utilities.QueryCollection.include_p:items" type="text/plain">The items to add to the QueryCollection. This may be an
+ array-like object, a document fragment, or a single item.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+      <method name="control">
+        <description locid="WinJS.Utilities.QueryCollection.control" type="text/plain">Creates controls that are attached to the elements in this QueryCollection.</description>
+        <parameter name="Ctor">
+          <description locid="WinJS.Utilities.QueryCollection.control_p:ctor" type="text/plain">A constructor function that is used to create controls to attach to the elements.</description>
+        </parameter>
+        <parameter name="options">
+          <description locid="WinJS.Utilities.QueryCollection.control_p:options" type="text/plain">The options passed to the newly-created controls.</description>
+        </parameter>
+        <parameter name="ctor">
+          <description locid="WinJS.Utilities.QueryCollection.control_p:ctor2" type="text/plain">The options passed to the controls.</description>
+        </parameter>
+        <returnType datatype="WinJS.Utilities.QueryCollection">
+          <description locid="WinJS.Utilities.QueryCollection.setAttribute_returnValue" type="text/plain">This QueryCollection object.</description>
+        </returnType>
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI.HtmlControl">
+    <title locid="WinJS.UI.HtmlControl_name" type="text/plain">HtmlControl</title>
+    <description locid="WinJS.UI.HtmlControl" type="text/plain">Enables you to include an HTML page dynamically.</description>
+    <constructor>
+      <description locid="WinJS.UI.HtmlControl.constructor" type="text/plain">Initializes a new instance of HtmlControl to define a new page control.</description>
+      <parameter name="element">
+        <description locid="WinJS.UI.HtmlControl.constructor_p:element" type="text/plain">The element that hosts the HtmlControl.</description>
+      </parameter>
+      <parameter name="options">
+        <description locid="WinJS.UI.HtmlControl.constructor_p:options" type="text/plain">The options for configuring the page. The uri option is required in order to specify the source
+ document for the content of the page.</description>
+      </parameter>
+      <returnType datatype="*" />
+    </constructor>
+    <properties />
+    <events />
+    <methods />
+  </class>
+  <class name="WinJS.UI._CallExpression">
+    <properties />
+    <events />
+    <methods />
+  </class>
+  <class name="WinJS.UI._IdentifierExpression">
+    <properties />
+    <events />
+    <methods />
+  </class>
+  <class name="WinJS.UI.TabContainer">
+    <constructor>
+      <description locid="WinJS.UI.TabContainer.constructor" type="text/plain">Constructs the TabContainer.</description>
+      <parameter name="element" datatype="HTMLElement" p5:domElement="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.TabContainer.constructor_p:element" type="text/plain">The DOM element to be associated with the TabContainer.</description>
+      </parameter>
+      <parameter name="options" datatype="Object">
+        <description locid="WinJS.UI.TabContainer.constructor_p:options" type="text/plain">The set of options to be applied initially to the TabContainer.</description>
+      </parameter>
+      <returnType datatype="WinJS.UI.TabContainer">
+        <description locid="WinJS.UI.TabContainer.constructor_returnValue" type="text/plain">A constructed TabContainer.</description>
+      </returnType>
+    </constructor>
+    <properties>
+      <property name="childFocus" datatype="HTMLElement" required="false">
+        <description locid="WinJS.UI.TabContainer.childFocus" type="text/plain">Gets or sets the child element that has focus.</description>
+      </property>
+      <property name="tabIndex" datatype="Number" isInteger="true" required="false">
+        <description locid="WinJS.UI.TabContainer.tabIndex" type="text/plain">Gets or sets the tab order of the control within its container.</description>
+      </property>
+      <property name="supportedForProcessing" required="false" />
+    </properties>
+    <events />
+    <methods>
+      <method name="dispose">
+        <description locid="WinJS.UI.TabContainer.dispose" type="text/plain">Disposes the Tab Container.</description>
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.Binding.Template">
+    <title locid="WinJS.Binding.Template_name" type="text/plain">Template</title>
+    <description locid="WinJS.Binding.Template" type="text/plain">Provides a reusable declarative binding element.</description>
+    <constructor>
+      <description locid="WinJS.Binding.Template.constructor" type="text/plain">Creates a template that provides a reusable declarative binding element.</description>
+      <parameter name="element" datatype="DOMElement">
+        <description locid="WinJS.Binding.Template.constructor_p:element" type="text/plain">The DOM element to convert to a template.</description>
+      </parameter>
+      <parameter name="options" datatype="{href:String}">
+        <description locid="WinJS.Binding.Template.constructor_p:options" type="text/plain">If this parameter is supplied, the template is loaded from the URI and
+ the content of the element parameter is ignored.</description>
+      </parameter>
+      <returnType datatype="*" />
+    </constructor>
+    <properties>
+      <property name="bindingInitializer" datatype="Function" required="false">
+        <description locid="WinJS.Binding.Template.bindingInitializer" type="text/plain">If specified this function is used as the default initializer for any data bindings which do not explicitly specify one. The
+ provided function must be marked as supported for processing.</description>
+      </property>
+      <property name="debugBreakOnRender" datatype="Boolean" required="false">
+        <description locid="WinJS.Binding.Template.debugBreakOnRender" type="text/plain">Indicates whether a templates should break in the debugger on first render</description>
+      </property>
+      <property name="disableOptimizedProcessing" datatype="Boolean" required="false">
+        <description locid="WinJS.Binding.Template.disableOptimizedProcessing" type="text/plain">Set this property to true to resotre classic template processing and data binding and disable template compilation.</description>
+      </property>
+      <property name="element" datatype="HTMLElement" required="false" hidden="true">
+        <description locid="WinJS.Binding.Template.element" type="text/plain">Gets the DOM element that is used as the template.</description>
+      </property>
+      <property name="extractChild" datatype="Boolean" required="false">
+        <description locid="WinJS.Binding.Template.extractChild" type="text/plain">Return the first element child of the template instead of a wrapper element hosting all the template content.</description>
+      </property>
+      <property name="processTimeout" datatype="Number" isInteger="true" required="false">
+        <description locid="WinJS.Binding.Template.processTimeout" type="text/plain">Number of milliseconds to delay instantiating declarative controls. Zero (0) will result in no delay, any negative number
+ will result in a setImmediate delay, any positive number will be treated as the number of milliseconds.</description>
+      </property>
+      <property name="isDeclarativeControlContainer" required="false" />
+      <property name="render" required="false" />
+    </properties>
+    <events />
+    <methods>
+      <method name="render">
+        <description locid="WinJS.Binding.Template.render" type="text/plain">Binds values from the specified data context to elements that are descendents of the specified root element
+ and have the declarative binding attributes (data-win-bind).</description>
+        <parameter name="dataContext" datatype="Object">
+          <description locid="WinJS.Binding.Template.render_p:dataContext" type="text/plain">The object to use for default data binding.</description>
+        </parameter>
+        <parameter name="container" datatype="DOMElement">
+          <description locid="WinJS.Binding.Template.render_p:container" type="text/plain">The element to which to add this rendered template. If this parameter is omitted, a new DIV is created.</description>
+        </parameter>
+        <returnType datatype="WinJS.Promise">
+          <description locid="WinJS.Binding.Template.render_returnValue" type="text/plain">A promise that is completed after binding has finished. The value is
+ either the element specified in the container parameter or the created DIV.</description>
+        </returnType>
+      </method>
+      <method name="renderItem">
+        <description locid="WinJS.Binding.Template.renderItem" type="text/plain">Renders an instance of this template bound to the data contained in item. If
+ the recycled parameter is present, and enableRecycling is true, then the template attempts
+ to reuse the DOM elements from the recycled parameter.</description>
+        <parameter name="item" datatype="Object">
+          <description locid="WinJS.Binding.Template.renderItem_p:item" type="text/plain">The object that contains the data to bind to. Only item.data is required.</description>
+        </parameter>
+        <parameter name="recycled" datatype="DOMElement">
+          <description locid="WinJS.Binding.Template.renderItem_p:recycled" type="text/plain">A previously-generated template instance.</description>
+        </parameter>
+        <returnType datatype="DOMElement">
+          <description locid="WinJS.Binding.Template.renderItem_returnValue" type="text/plain">The DOM element.</description>
+        </returnType>
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.Binding.List">
+    <ancestor datatype="ns.ListBaseWithMutators" />
+    <constructor>
+      <description locid="WinJS.Binding.List.constructor" type="text/plain">Creates a WinJS.Binding.List object.</description>
+      <parameter name="list" datatype="Array">
+        <description locid="WinJS.Binding.List.constructor_p:list" type="text/plain">The array containing the elements to initalize the list.</description>
+      </parameter>
+      <parameter name="options" datatype="Object">
+        <description locid="WinJS.Binding.List.constructor_p:options" type="text/plain">If options.binding is true, the list will contain the result of calling WinJS.Binding.as() on the element values. If options.proxy is true, the list specified as the first parameter is used as the storage for the WinJS.Binding.List. This option should be used with care because uncoordinated edits to the data storage will result in errors.</description>
+      </parameter>
+      <returnType datatype="WinJS.Binding.List">
+        <description locid="WinJS.Binding.List.constructor_returnValue" type="text/plain">The newly-constructed WinJS.Binding.List instance.</description>
+      </returnType>
+    </constructor>
+    <properties>
+      <property name="length" datatype="Number" isInteger="true" required="false">
+        <description locid="WinJS.Binding.List.length" type="text/plain">Gets or sets the length of the list, which is an integer value one higher than the highest element defined in the list.</description>
+      </property>
+      <property name="supportedForProcessing" required="false" />
+    </properties>
+    <events />
+    <methods>
+      <method name="getItem">
+        <description locid="WinJS.Binding.List.getItem" type="text/plain">Gets a key/data pair for the specified list index.</description>
+        <parameter name="index" datatype="Number">
+          <description locid="WinJS.Binding.List.getItem_p:index" type="text/plain">The index of value to retrieve.</description>
+        </parameter>
+        <returnType datatype="Object">
+          <description locid="WinJS.Binding.List.getItem_returnValue" type="text/plain">An object with .key and .data properties.</description>
+        </returnType>
+      </method>
+      <method name="getItemFromKey">
+        <description locid="WinJS.Binding.List.getItemFromKey" type="text/plain">Gets a key/data pair for the list item key specified.</description>
+        <parameter name="key" datatype="String">
+          <description locid="WinJS.Binding.List.getItemFromKey_p:key" type="text/plain">The key of the value to retrieve.</description>
+        </parameter>
+        <returnType datatype="Object">
+          <description locid="WinJS.Binding.List.getItem_returnValue" type="text/plain">An object with .key and .data properties.</description>
+        </returnType>
+      </method>
+      <method name="indexOfKey">
+        <description locid="WinJS.Binding.List.indexOfKey" type="text/plain">Gets the index of the first occurrence of a key in a list.</description>
+        <parameter name="key" datatype="String">
+          <description locid="WinJS.Binding.List.indexOfKey_p:key" type="text/plain">The key to locate in the list.</description>
+        </parameter>
+        <returnType datatype="Number">
+          <description locid="WinJS.Binding.List.indexOfKey_returnValue" type="text/plain">The index of the first occurrence of a key in a list, or -1 if not found.</description>
+        </returnType>
+      </method>
+      <method name="move">
+        <description locid="WinJS.Binding.List.move" type="text/plain">Moves the value at index to the specified position.</description>
+        <parameter name="index" datatype="Number">
+          <description locid="WinJS.Binding.List.move_p:index" type="text/plain">The original index of the value.</description>
+        </parameter>
+        <parameter name="newIndex" datatype="Number">
+          <description locid="WinJS.Binding.List.move_p:newIndex" type="text/plain">The index of the value after the move.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+      <method name="notifyMutated">
+        <description locid="WinJS.Binding.List.notifyMutated" type="text/plain">Forces the list to send a itemmutated notification to any listeners for the value at the specified index.</description>
+        <parameter name="index" datatype="Number">
+          <description locid="WinJS.Binding.List.notifyMutated_p:index" type="text/plain">The index of the value that was mutated.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+      <method name="setAt">
+        <description locid="WinJS.Binding.List.setAt" type="text/plain">Replaces the value at the specified index with a new value.</description>
+        <parameter name="index" datatype="Number">
+          <description locid="WinJS.Binding.List.setAt_p:index" type="text/plain">The index of the value that was replaced.</description>
+        </parameter>
+        <parameter name="newValue" datatype="Object">
+          <description locid="WinJS.Binding.List.setAt_p:newValue" type="text/plain">The new value.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+      <method name="reverse">
+        <description locid="WinJS.Binding.List.reverse" type="text/plain">Returns a list with the elements reversed. This method reverses the elements of a list object in place. It does not create a new list object during execution.</description>
+        <returnType datatype="WinJS.Binding.List">
+          <description locid="WinJS.Binding.List.reverse_returnValue" type="text/plain">The reversed list.</description>
+        </returnType>
+      </method>
+      <method name="sort">
+        <description locid="WinJS.Binding.List.sort" type="text/plain">Returns a list with the elements sorted. This method sorts the elements of a list object in place. It does not create a new list object during execution.</description>
+        <parameter name="sortFunction" datatype="Function">
+          <description locid="WinJS.Binding.List.sort_p:sortFunction" type="text/plain">The function used to determine the order of the elements. If omitted, the elements are sorted in ascending, ASCII character order.</description>
+        </parameter>
+        <returnType datatype="WinJS.Binding.List">
+          <description locid="WinJS.Binding.List.sort_returnValue" type="text/plain">The sorted list.</description>
+        </returnType>
+      </method>
+      <method name="pop">
+        <description locid="WinJS.Binding.List.pop" type="text/plain">Removes the last element from a list and returns it.</description>
+        <returnType datatype="Object">
+          <description locid="WinJS.Binding.List.pop_returnValue" type="text/plain">Last element from the list.</description>
+        </returnType>
+      </method>
+      <method name="push">
+        <description locid="WinJS.Binding.List.push" type="text/plain">Appends new element(s) to a list, and returns the new length of the list.</description>
+        <parameter name="value" datatype="Object">
+          <description locid="WinJS.Binding.List.push_p:value" type="text/plain">The element to insert at the end of the list.</description>
+        </parameter>
+        <returnType datatype="Number">
+          <description locid="WinJS.Binding.List.push_returnValue" type="text/plain">The new length of the list.</description>
+        </returnType>
+      </method>
+      <method name="shift">
+        <description locid="WinJS.Binding.List.shift" type="text/plain">Removes the first element from a list and returns it.</description>
+        <returnType datatype="Object">
+          <description locid="WinJS.Binding.List.shift_returnValue" type="text/plain">First element from the list.</description>
+        </returnType>
+      </method>
+      <method name="unshift">
+        <description locid="WinJS.Binding.List.push" type="text/plain">Appends new element(s) to a list, and returns the new length of the list.</description>
+        <parameter name="value" datatype="Object">
+          <description locid="WinJS.Binding.List.unshift_p:value" type="text/plain">The element to insert at the start of the list.</description>
+        </parameter>
+        <returnType datatype="Number">
+          <description locid="WinJS.Binding.List.push_returnValue" type="text/plain">The new length of the list.</description>
+        </returnType>
+      </method>
+      <method name="splice">
+        <description locid="WinJS.Binding.List.splice" type="text/plain">Removes elements from a list and, if necessary, inserts new elements in their place, returning the deleted elements.</description>
+        <parameter name="start" datatype="Number">
+          <description locid="WinJS.Binding.List.splice_p:start" type="text/plain">The zero-based location in the list from which to start removing elements.</description>
+        </parameter>
+        <parameter name="howMany" datatype="Number">
+          <description locid="WinJS.Binding.List.splice_p:howMany" type="text/plain">The number of elements to remove.</description>
+        </parameter>
+        <parameter name="item" datatype="Object">
+          <description locid="WinJS.Binding.List.splice_p:item" type="text/plain">The elements to insert into the list in place of the deleted elements.</description>
+        </parameter>
+        <returnType datatype="Array">
+          <description locid="WinJS.Binding.List.splice_returnValue" type="text/plain">The deleted elements.</description>
+        </returnType>
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.Binding._TemplateCompiler">
+    <properties />
+    <events />
+    <methods>
+      <method name="addClassOneTimeTextBinding">
+        <returnType datatype="*" />
+      </method>
+      <method name="addClassOneTimeTreeBinding">
+        <returnType datatype="*" />
+      </method>
+      <method name="analyze">
+        <returnType datatype="*" />
+      </method>
+      <method name="bindingExpression">
+        <returnType datatype="*" />
+      </method>
+      <method name="capture">
+        <returnType datatype="*" />
+      </method>
+      <method name="cleanControlAndBindingAttributes">
+        <returnType datatype="*" />
+      </method>
+      <method name="compile">
+        <returnType datatype="*" />
+      </method>
+      <method name="createAsyncParts">
+        <returnType datatype="*" />
+      </method>
+      <method name="createTextBindingHole">
+        <returnType datatype="*" />
+      </method>
+      <method name="deadCodeElimination">
+        <returnType datatype="*" />
+      </method>
+      <method name="defineInstance">
+        <returnType datatype="*" />
+      </method>
+      <method name="defineStatic">
+        <returnType datatype="*" />
+      </method>
+      <method name="done">
+        <returnType datatype="*" />
+      </method>
+      <method name="emitScopedSelect">
+        <returnType datatype="*" />
+      </method>
+      <method name="emitOptionsNode">
+        <returnType datatype="*" />
+      </method>
+      <method name="findGlobalIdentifierExpressions">
+        <returnType datatype="*" />
+      </method>
+      <method name="formatCodeN">
+        <returnType datatype="*" />
+      </method>
+      <method name="formatCode">
+        <returnType datatype="*" />
+      </method>
+      <method name="gatherBindings">
+        <returnType datatype="*" />
+      </method>
+      <method name="gatherChildren">
+        <returnType datatype="*" />
+      </method>
+      <method name="gatherControls">
+        <returnType datatype="*" />
+      </method>
+      <method name="generateElementCaptureAccess">
+        <returnType datatype="*" />
+      </method>
+      <method name="generateNormalAccess">
+        <returnType datatype="*" />
+      </method>
+      <method name="generateOptionsLiteral">
+        <returnType datatype="*" />
+      </method>
+      <method name="generateDebugBreak">
+        <returnType datatype="*" />
+      </method>
+      <method name="globalExpression">
+        <returnType datatype="*" />
+      </method>
+      <method name="import">
+        <returnType datatype="*" />
+      </method>
+      <method name="importSafe">
+        <returnType datatype="*" />
+      </method>
+      <method name="importAll">
+        <returnType datatype="*" />
+      </method>
+      <method name="importAllSafe">
+        <returnType datatype="*" />
+      </method>
+      <method name="link">
+        <returnType datatype="*" />
+      </method>
+      <method name="lower">
+        <returnType datatype="*" />
+      </method>
+      <method name="markBindingAsError">
+        <returnType datatype="*" />
+      </method>
+      <method name="oneTimeTextBinding">
+        <returnType datatype="*" />
+      </method>
+      <method name="oneTimeTextBindingAnalyze">
+        <returnType datatype="*" />
+      </method>
+      <method name="oneTimeTreeBinding">
+        <returnType datatype="*" />
+      </method>
+      <method name="optimize">
+        <returnType datatype="*" />
+      </method>
+      <method name="prettify">
+        <returnType datatype="*" />
+      </method>
+      <method name="setAttributeOneTimeTextBinding">
+        <returnType datatype="*" />
+      </method>
+      <method name="setAttributeOneTimeTreeBinding">
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class><locale messages="base_loc_oam.xml" />
+</api>

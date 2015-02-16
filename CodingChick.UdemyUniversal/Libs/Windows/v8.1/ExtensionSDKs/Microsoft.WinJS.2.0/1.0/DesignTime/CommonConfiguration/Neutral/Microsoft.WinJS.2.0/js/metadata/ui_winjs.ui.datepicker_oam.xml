@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Microsoft.WinJS.2.0/js/ui/WinJS.UI.DatePicker" name="WinJS.UI.DatePicker" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="false" xmlns="http://openajax.org/metadata">
+  <author name="Microsoft Corporation" />
+  <title locid="WinJS.UI.DatePicker_name" type="text/plain">Date Picker</title>
+  <description locid="WinJS.UI.DatePicker" type="text/plain">Allows users to pick a date value.</description>
+  <blend:compatibleWiths>
+    <blend:compatibleWith platform="Windows" minVersion="8.0" />
+  </blend:compatibleWiths>
+  <icons>
+    <icon src="ui_winjs.ui.datepicker.12x12.png" />
+    <icon src="ui_winjs.ui.datepicker.16x16.png" />
+  </icons>
+  <properties>
+    <property name="calendar" datatype="String" required="false">
+      <description locid="WinJS.UI.DatePicker.calendar" type="text/plain">Gets or sets the calendar to use.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="current" datatype="Date" required="false">
+      <description locid="WinJS.UI.DatePicker.current" type="text/plain">Gets or sets the current date of the DatePicker.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="disabled" datatype="Boolean" required="false">
+      <description locid="WinJS.UI.DatePicker.disabled" type="text/plain">Gets or sets a value that specifies whether the DatePicker is disabled. A value of true indicates that the DatePicker is disabled.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="datePattern" datatype="String" required="false">
+      <description locid="WinJS.UI.DatePicker.datePattern" type="text/plain">Gets or sets the display pattern for the date.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="element" datatype="HTMLElement" required="false" hidden="true">
+      <description locid="WinJS.UI.DatePicker.element" type="text/plain">Gets the DOM element for the DatePicker.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="minYear" datatype="Number" isInteger="true" required="false">
+      <description locid="WinJS.UI.DatePicker.minYear" type="text/plain">Gets or sets the minimum Gregorian year available for picking.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="maxYear" datatype="Number" isInteger="true" required="false">
+      <description locid="WinJS.UI.DatePicker.maxYear" type="text/plain">Gets or sets the maximum Gregorian year available for picking.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="monthPattern" datatype="String" required="false">
+      <description locid="WinJS.UI.DatePicker.monthPattern" type="text/plain">Gets or sets the display pattern for the month.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="yearPattern" datatype="String" required="false">
+      <description locid="WinJS.UI.DatePicker.yearPattern" type="text/plain">Gets or sets the display pattern for year.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+  </properties>
+  <content><![CDATA[<div data-win-control="WinJS.UI.DatePicker"></div>]]></content>
+  <requires>
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/base.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="//Microsoft.WinJS.2.0/css/ui-dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript"><![CDATA[WinJS.UI.processAll();]]></require>
+  </requires>
+  <blend:parts /><locale messages="ui_loc_oam.xml" />
+</widget>

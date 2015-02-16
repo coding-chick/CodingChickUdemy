@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Microsoft.WinJS.2.0/js/ui/WinJS.UI.MenuCommand" name="WinJS.UI.MenuCommand" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="false" xmlns="http://openajax.org/metadata">
+  <author name="Microsoft Corporation" />
+  <description locid="WinJS.UI.MenuCommand" type="text/plain">Represents a command to be displayed in a Menu. MenuCommand objects provide button, toggle button, flyout button, 
+ or separator functionality for Menu controls.</description>
+  <blend:compatibleWiths>
+    <blend:compatibleWith platform="Windows" minVersion="8.0" />
+  </blend:compatibleWiths>
+  <icons>
+    <icon src="ui_winjs.ui.menucommand.12x12.png" />
+    <icon src="ui_winjs.ui.menucommand.16x16.png" />
+  </icons>
+  <properties>
+    <property name="id" datatype="String" required="false" blend:isAdvanced="true">
+      <description locid="WinJS.UI.MenuCommand.id" type="text/plain">Gets the  ID of the MenuCommand.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="type" datatype="WinJS.UI.MenuCommand.type" required="false" readonly="true" blend:isAdvanced="true">
+      <description locid="WinJS.UI.MenuCommand.type" type="text/plain">Gets the type of the MenuCommand. Possible values are "button", "toggle", "flyout", or "separator".</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="label" datatype="String" required="false">
+      <description locid="WinJS.UI.MenuCommand.label" type="text/plain">The label of the MenuCommand</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="onclick" datatype="Function" required="false">
+      <description locid="WinJS.UI.AppBarCommand.onclick" type="text/plain">Gets or sets the function to invoke when the command is clicked.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="flyout" datatype="Object" required="false">
+      <description locid="WinJS.UI.MenuCommand.flyout" type="text/plain">For flyout type MenuCommands, this property  returns the WinJS.UI.Flyout that this command invokes. When setting this property, you can set 
+ it to the string ID of the Flyout, the DOM object that hosts the Flyout, or the Flyout object itself.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="selected" datatype="Boolean" required="false">
+      <description locid="WinJS.UI.MenuCommand.selected" type="text/plain">Gets or sets the selected state of a toggle button. This property is true if the toggle button is selected; otherwise, it's false.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="element" datatype="HTMLElement" required="false" hidden="true" readonly="true">
+      <description locid="WinJS.UI.MenuCommand.element" type="text/plain">Gets the DOM element that hosts this MenuCommand.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="disabled" datatype="Boolean" required="false">
+      <description locid="WinJS.UI.MenuCommand.disabled" type="text/plain">Gets or sets a value that indicates whether the MenuCommand is disabled. This value is true if the MenuCommand is disabled; otherwise, false.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="hidden" datatype="Boolean" required="false" hidden="true">
+      <description locid="WinJS.UI.MenuCommand.hidden" type="text/plain">Determine if a command is currently hidden.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="extraClass" datatype="String" required="false" blend:isAdvanced="true">
+      <description locid="WinJS.UI.MenuCommand.extraClass" type="text/plain">Gets or sets the extra CSS class that is applied to the host DOM element.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+  </properties>
+  <content><![CDATA[<button data-win-control="WinJS.UI.MenuCommand" data-win-options="{type:'button',label:'Button'}"></button>]]></content>
+  <requires>
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/base.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="//Microsoft.WinJS.2.0/css/ui-dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript"><![CDATA[WinJS.UI.processAll();]]></require>
+  </requires>
+  <blend:parts>
+    <part name="MenuCommand" class="win-command">
+      <description locid="WinJS.UI.MenuCommand_name" type="text/plain">The MenuCommand control itself</description>
+    </part>
+  </blend:parts><locale messages="ui_loc_oam.xml" />
+</widget>

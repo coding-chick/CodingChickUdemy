@@ -1,0 +1,910 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+    <assembly>
+        <name>Microsoft.PlayerFramework.Js.Advertising</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.PlayerFramework.Js.Advertising.AdSource">
+            <summary>
+            Provides a way to define an ad source object that contains info about the ad to be played.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.AdSource.#ctor">
+            <summary>
+            Creates a new instance of AdSource.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.AdSource.#ctor(System.String)">
+            <summary>
+            Creates a new instance of AdSource.
+            </summary>
+            <param name="type">The type of the ad. Typically, this is "vast".</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.AdSource.#ctor(System.Object,System.String)">
+            <summary>
+            Creates a new instance of AdSource.
+            </summary>
+            <param name="payload">The payload for the ad. The type of object used here depends on the ad type.</param>
+            <param name="type">The type of the ad. Typically, this is "vast".</param>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.AdSource.Payload">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.AdSource.Key">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.AdSource.Type">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.AdSource.AllowMultipleAds">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.AdSource.MaxRedirectDepth">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Js.Advertising.ClipAdPayload">
+            <summary>
+            A single linear clip to play.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.ClipAdPayload.#ctor">
+            <summary>
+            Creates a new instance of ClipAdPayload
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.ClipAdPayload.MediaSource">
+            <summary>
+            Gets or sets the source Uri of the ad clip.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.ClipAdPayload.MimeType">
+            <summary>
+            Gets or sets the MimeType of the ad clip.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.ClipAdPayload.ClickThrough">
+            <summary>
+            Gets or sets the click through Uri for the ad. Note: This is optional.
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Js.Advertising.MastAdapter">
+            <summary>
+            Provides an adapter between the player and the MAST mainsail ad scheduler.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.InvokePlay">
+            <summary>
+            Indicates that playback has started
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.InvokeStop">
+            <summary>
+            Indicates that playback has stopped
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.InvokePause">
+            <summary>
+            Indicates that playback has been paused.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.InvokeMute">
+            <summary>
+            Indicates thats mute has been selected
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.InvokeVolumeChange">
+            <summary>
+            Indicates that the volume has changed.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.InvokeEnd">
+            <summary>
+            Indicates that playback has ended.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.InvokeSeek">
+            <summary>
+            Indicates that seeking has occured
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.InvokeItemStart">
+            <summary>
+            Indicates that playback of a new playlist item has started.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.InvokeItemEnd">
+            <summary>
+            Indicates that playback of a playlist item has finished.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.InvokeFullScreenChange">
+            <summary>
+            Indicates that full screen state has changed.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.InvokePlayerSizeChanged">
+            <summary>
+            Indicates that the size of the player has changed. 
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.InvokeError">
+            <summary>
+            Indicates that an error has occured.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.InvokeMouseOver">
+            <summary>
+            Indicates that the mouse has moved over the player
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.SetDuration(Windows.Foundation.TimeSpan)">
+            <summary>
+            Updates the duration of the current playlist item.
+            </summary>
+            <param name="value">The new duration.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.SetPosition(Windows.Foundation.TimeSpan)">
+            <summary>
+            Updates the position of playback.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.SetFullScreen(System.Boolean)">
+            <summary>
+            Updates the fullscreen flag.
+            </summary>
+            <param name="value">The new Fullscreen flag value.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.SetCaptionsActive(System.Boolean)">
+            <summary>
+            Updates the flag indicating if captions are active.
+            </summary>
+            <param name="value">The new CaptionsActive flag value.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.SetHasVideo(System.Boolean)">
+            <summary>
+            Updates the flag indicating if the stream contains video (vs. just audio)
+            </summary>
+            <param name="value">The new HasVideo flag value.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.SetHasAudio(System.Boolean)">
+            <summary>
+            Updates the flag indicating if the stream contains audio (vs. just video)
+            </summary>
+            <param name="value">The new HasAudio flag value.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.SetHasCaptions(System.Boolean)">
+            <summary>
+            Updates the flag indicating if the stream contains captions
+            </summary>
+            <param name="value">The new HasCaptions flag value.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.SetPlayerWidth(System.Int32)">
+            <summary>
+            Relays the current width of the player.
+            </summary>
+            <param name="value">The new PlayerWidth value.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.SetPlayerHeight(System.Int32)">
+            <summary>
+            Relays the current height of the player.
+            </summary>
+            <param name="value">The new PlayerHeight value.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.SetContentWidth(System.Int32)">
+            <summary>
+            Relays the current width of the media.
+            </summary>
+            <param name="value">The new ContentWidth value.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.SetContentHeight(System.Int32)">
+            <summary>
+            Relays the current height of the player.
+            </summary>
+            <param name="value">The new ContentHeight value.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.SetContentBitrate(System.Int64)">
+            <summary>
+            Relays the current bitrate of the media.
+            </summary>
+            <param name="value">The new ContentBitrate value.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.SetContentTitle(System.String)">
+            <summary>
+            Relays the current title of the media.
+            </summary>
+            <param name="value">The new ContentTitle value.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.SetContentUrl(System.String)">
+            <summary>
+            Relays the current url of the media.
+            </summary>
+            <param name="value">The new ContentUrl value.</param>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.OnPlay">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.OnStop">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.OnPause">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.OnMute">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.OnVolumeChange">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.OnEnd">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.OnSeek">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.OnItemStart">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.OnItemEnd">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.OnFullScreenChange">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.OnPlayerSizeChanged">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.OnError">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.OnMouseOver">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.WatchedTime">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.TotalWatchedTime">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.Duration">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.Position">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.IsPlaying">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.IsPaused">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.IsStopped">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.ItemsPlayed">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.FullScreen">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.CaptionsActive">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.HasVideo">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.HasAudio">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.HasCaptions">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.PlayerWidth">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.PlayerHeight">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.ContentWidth">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.ContentHeight">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.ContentBitrate">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.ContentTitle">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.MastAdapter.ContentUrl">
+            <inheritdoc /> 
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Js.Advertising.MediaPlayerAdapterBridge">
+            <summary>
+            Provides an adapter between the advertising component and the player.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.MediaPlayerAdapterBridge.Dimensions">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.MediaPlayerAdapterBridge.IsFullScreen">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.MediaPlayerAdapterBridge.Volume">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.MediaPlayerAdapterBridge.IsMuted">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.MediaPlayerAdapterBridge.CurrentBitrateRequested">
+            <summary>
+            Raised when the current bitrate is requested
+            </summary>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.MediaPlayerAdapterBridge.CurrentPositionRequested">
+            <summary>
+            Raised when the current position is requested
+            </summary>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.MediaPlayerAdapterBridge.FullscreenChanged">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.MediaPlayerAdapterBridge.DimensionsChanged">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.MediaPlayerAdapterBridge.VolumeChanged">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.MediaPlayerAdapterBridge.IsMutedChanged">
+            <inheritdoc /> 
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Js.Advertising.CurrentBitrateRequestedEventArgs">
+            <summary>
+            Provides a way to return the current bitrate when the CurrentBitrateRequested event is raised.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.CurrentBitrateRequestedEventArgs.Result">
+            <summary>
+            The current bitrate. This should be set by the handler of the event.
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Js.Advertising.CurrentPositionRequestedEventArgs">
+            <summary>
+            Provides a way to return the current position when the CurrentPositionRequested event is raised.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.CurrentPositionRequestedEventArgs.Result">
+            <summary>
+            The current Position. This should be set by the handler of the event.
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Js.Advertising.RemoteAdSource">
+            <summary>
+            Provides an ad source that requires a Url to be downloaded and turned into a stream before passing to the ad handler.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.RemoteAdSource.#ctor">
+            <summary>
+            Creates a new instance of RemoteAdSource
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.RemoteAdSource.#ctor(Windows.Foundation.Uri)">
+            <summary>
+            Creates a new instance of RemoteAdSource
+            </summary>
+            <param name="uri">The Uri to download and turn into a stream payload.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.RemoteAdSource.#ctor(Windows.Foundation.Uri,System.String)">
+            <summary>
+            Creates a new instance of RemoteAdSource
+            </summary>
+            <param name="uri">The Uri to download and turn into a stream payload.</param>
+            <param name="type">The type of the ad. Normally this is "vast"</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.RemoteAdSource.LoadPayload">
+            <summary>
+            Loads the ad payload from the web.
+            </summary>
+            <returns>Awaitable action</returns>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.RemoteAdSource.IsLoaded">
+            <summary>
+            Gets if the Payload has been loaded yet.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.RemoteAdSource.Uri">
+            <summary>
+            Gets or sets the URI of the ad.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.RemoteAdSource.Headers">
+            <summary>
+            Gets or sets the headers to send with ad requests.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.RemoteAdSource.Payload">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.RemoteAdSource.Key">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.RemoteAdSource.Type">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.RemoteAdSource.AllowMultipleAds">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.RemoteAdSource.MaxRedirectDepth">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge">
+            <summary>
+            Provides an adapter between a VPAID ad player and the advertising component.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.OnAdLoaded">
+            <summary>
+            Indicates that the AdLoaded event should be raised.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.OnAdStarted">
+            <summary>
+            Indicates that the AdStarted event should be raised.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.OnAdStopped">
+            <summary>
+            Indicates that the AdStopped event should be raised.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.OnAdPaused">
+            <summary>
+            Indicates that the AdPaused event should be raised.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.OnAdPlaying">
+            <summary>
+            Indicates that the AdPlaying event should be raised.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.OnAdExpandedChanged">
+            <summary>
+            Indicates that the AdExpandedChanged event should be raised.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.OnAdLinearChanged">
+            <summary>
+            Indicates that the AdLinearChanged event should be raised.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.OnAdVolumeChanged">
+            <summary>
+            Indicates that the AdVolumeChanged event should be raised.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.OnAdVideoStart">
+            <summary>
+            Indicates that the AdVideoStart event should be raised.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.OnAdVideoFirstQuartile">
+            <summary>
+            Indicates that the AdVideoFirstQuartile event should be raised.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.OnAdVideoMidpoint">
+            <summary>
+            Indicates that the AdVideoMidpoint event should be raised.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.OnAdVideoThirdQuartile">
+            <summary>
+            Indicates that the AdVideoThirdQuartile event should be raised.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.OnAdVideoComplete">
+            <summary>
+            Indicates that the AdVideoComplete event should be raised.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.OnAdUserAcceptInvitation">
+            <summary>
+            Indicates that the AdUserAcceptInvitation event should be raised.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.OnAdUserClose">
+            <summary>
+            Indicates that the AdUserClose event should be raised.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.OnAdUserMinimize">
+            <summary>
+            Indicates that the AdUserMinimize event should be raised.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.OnAdRemainingTimeChange">
+            <summary>
+            Indicates that the AdRemainingTimeChange event should be raised.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.OnAdImpression">
+            <summary>
+            Indicates that the AdImpression event should be raised.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.OnAdClickThru(System.String,System.String,System.Boolean)">
+            <summary>
+            Indicates that the AdClickThru event should be raised.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.OnAdError(System.String)">
+            <summary>
+            Indicates that the AdError event should be raised.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.OnAdLog(System.String)">
+            <summary>
+            Indicates that the AdLog event should be raised.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.OnAdInteraction(System.String)">
+            <summary>
+            Indicates that the AdInteraction event should be raised.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.OnAdSkipped">
+            <summary>
+            Indicates that the AdSkipped event should be raised.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.OnAdSizeChanged">
+            <summary>
+            Indicates that the AdSizeChanged event should be raised.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.OnAdSkippableStateChange">
+            <summary>
+            Indicates that the AdSkippableStateChange event should be raised.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.OnAdDurationChange">
+            <summary>
+            Indicates that the AdDurationChange event should be raised.
+            </summary>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.HandshakeVersionRequested">
+            <summary>
+            Indicates that the HandshakeVersion method was called.
+            </summary>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.SkipAdRequested">
+            <summary>
+            Indicates that the SkipAd method was called.
+            </summary>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.InitAdRequested">
+            <summary>
+            Indicates that the InitAd method was called.
+            </summary>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.StartAdRequested">
+            <summary>
+            Indicates that the StartAd method was called.
+            </summary>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.StopAdRequested">
+            <summary>
+            Indicates that the StopAd method was called.
+            </summary>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.ResizeAdRequested">
+            <summary>
+            Indicates that the ResizeAd method was called.
+            </summary>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.PauseAdRequested">
+            <summary>
+            Indicates that the PauseAd method was called.
+            </summary>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.ResumeAdRequested">
+            <summary>
+            Indicates that the ResumeAd method was called.
+            </summary>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.ExpandAdRequested">
+            <summary>
+            Indicates that the ExpandAd method was called.
+            </summary>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.CollapseAdRequested">
+            <summary>
+            Indicates that the CollapseAd method was called.
+            </summary>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.GetAdWidthRequested">
+            <summary>
+            Indicates that the AdWidth property was requested.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdWidth">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.GetAdHeightRequested">
+            <summary>
+            Indicates that the AdHeight property was requested.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdHeight">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.GetAdSkippableStateRequested">
+            <summary>
+            Indicates that the AdSkippableState property was requested.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdSkippableState">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.GetAdCompanionsRequested">
+            <summary>
+            Indicates that the AdCompanions property was requested.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdCompanions">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.GetAdIconsRequested">
+            <summary>
+            Indicates that the AdIcons property was requested.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdIcons">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.GetAdDurationRequested">
+            <summary>
+            Indicates that the AdDuration property was requested.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdDuration">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.GetAdLinearRequested">
+            <summary>
+            Indicates that the AdLinear property was requested.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdLinear">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.GetAdExpandedRequested">
+            <summary>
+            Indicates that the AdExpanded property was requested.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdExpanded">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.GetAdRemainingTimeRequested">
+            <summary>
+            Indicates that the AdRemainingTime property was requested.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdRemainingTime">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.SetAdVolumeRequested">
+            <summary>
+            Indicates that the AdVolume property was updated.
+            </summary>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.GetAdVolumeRequested">
+            <summary>
+            Indicates that the AdVolume property was requested.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdVolume">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdLoaded">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdStarted">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdStopped">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdPaused">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdPlaying">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdExpandedChanged">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdLinearChanged">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdVolumeChanged">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdVideoStart">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdVideoFirstQuartile">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdVideoMidpoint">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdVideoThirdQuartile">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdVideoComplete">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdUserAcceptInvitation">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdUserClose">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdUserMinimize">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdRemainingTimeChange">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdImpression">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdClickThru">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdError">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdLog">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdInteraction">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdSkipped">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdSizeChanged">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdSkippableStateChange">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Advertising.VpaidAdapterBridge.AdDurationChange">
+            <inheritdoc /> 
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Js.Advertising.InitAdRequestedEventArgs">
+            <summary>
+            Provides information about calls to InitAd
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.InitAdRequestedEventArgs.Width">
+            <summary>
+            The width of the player
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.InitAdRequestedEventArgs.Height">
+            <summary>
+            The height of the player
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.InitAdRequestedEventArgs.ViewMode">
+            <summary>
+            The view mode of the player ("fullscreen" or "normal")
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.InitAdRequestedEventArgs.DesiredBitrate">
+            <summary>
+            The desired bitrate for the ad
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.InitAdRequestedEventArgs.CreativeData">
+            <summary>
+            The data for the ad (usually the Url of the media)
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.InitAdRequestedEventArgs.EnvironmentVariables">
+            <summary>
+            Additional information for the ad.
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Js.Advertising.ResizeAdRequestedEventArgs">
+            <summary>
+            Provides information about calls to ResizeAd
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.ResizeAdRequestedEventArgs.Width">
+            <summary>
+            The width of the player
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.ResizeAdRequestedEventArgs.Height">
+            <summary>
+            The height of the player
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.ResizeAdRequestedEventArgs.ViewMode">
+            <summary>
+            The view mode of the player ("fullscreen" or "normal")
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Js.Advertising.HandshakeVersionRequestedEventArgs">
+            <summary>
+            Provides information about calls to HandshakeVersion
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.HandshakeVersionRequestedEventArgs.Version">
+            <summary>
+            The Version of VPAID that the player supports.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.HandshakeVersionRequestedEventArgs.Result">
+            <summary>
+            The version of VPAID that the ad supports.
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Js.Advertising.SetVolumeRequestedEventArgs">
+            <summary>
+            Provides information about calls to SetVolume
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.SetVolumeRequestedEventArgs.Value">
+            <summary>
+            The new volume for the ad.
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Js.Advertising.DoubleRequestedEventArgs">
+            <summary>
+            Provides information about property requests that are of type Double.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.DoubleRequestedEventArgs.Result">
+            <summary>
+            The value or result of the call.
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Js.Advertising.TimeSpanRequestedEventArgs">
+            <summary>
+            Provides information about property requests that are of type TimeSpan.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.TimeSpanRequestedEventArgs.Result">
+            <summary>
+            The value or result of the call.
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Js.Advertising.BoolRequestedEventArgs">
+            <summary>
+            Provides information about property requests that are of type Boolean.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.BoolRequestedEventArgs.Result">
+            <summary>
+            The value or result of the call.
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Js.Advertising.StringRequestedEventArgs">
+            <summary>
+            Provides information about property requests that are of type String.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Advertising.StringRequestedEventArgs.Result">
+            <summary>
+            The value or result of the call.
+            </summary>
+        </member>
+    </members>
+</doc>

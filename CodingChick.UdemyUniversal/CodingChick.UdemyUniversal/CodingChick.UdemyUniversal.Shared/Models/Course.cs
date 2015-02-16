@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using Caliburn.Micro;
+using CodingChick.UdemyUniversal.Core.Base.Helpers;
 using Newtonsoft.Json;
 using Telerik.Universal.Core;
 
 namespace CodingChick.UdemyUniversal.Models
 {
-    public class Course :PropertyChangedBase
+    public class Course : PropertyChangedBaseNoContract
     {
         private string _description;
         //public string __class { get; set; }
@@ -49,6 +50,6 @@ namespace CodingChick.UdemyUniversal.Models
                 _description = value;
                 NotifyOfPropertyChange(() => Description);
             }
-        }       
+        }
     }
 }

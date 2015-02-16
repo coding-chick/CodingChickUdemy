@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Microsoft.WinJS.2.0/js/ui/WinJS.UI.NavBarContainer" name="WinJS.UI.NavBarContainer" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="true" xmlns="http://openajax.org/metadata">
+  <author name="Microsoft Corporation" />
+  <description locid="WinJS.UI.NavBarContainer" type="text/plain">Contains a group of NavBarCommand objects in a NavBar.</description>
+  <blend:compatibleWiths>
+    <blend:compatibleWith platform="Windows" minVersion="8.1" />
+  </blend:compatibleWiths>
+  <icons>
+    <icon src="ui_winjs.ui.navbarcontainer.12x12.png" />
+    <icon src="ui_winjs.ui.navbarcontainer.16x16.png" />
+  </icons>
+  <properties>
+    <property name="element" datatype="HTMLElement" required="false" hidden="true">
+      <description locid="WinJS.UI.NavBarContainer.element" type="text/plain">Gets the DOM element that hosts the NavBarContainer.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="template" datatype="Object" required="false" blend:potentialValueSelector="[data-win-control='WinJS.Binding.Template']">
+      <description locid="WinJS.UI.NavBarContainer.template" type="text/plain">Gets or sets a Template or custom rendering function that defines the HTML of each item within the NavBarContainer.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="data" datatype="WinJS.Binding.List" required="false">
+      <description locid="WinJS.UI.NavBarContainer.data" type="text/plain">Gets or sets the WinJS.Binding.List that provides the NavBarContainer with items to display.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="maxRows" datatype="Number" isInteger="true" required="false">
+      <description locid="WinJS.UI.NavBarContainer.maxRows" type="text/plain">Gets or sets the number of rows allowed to be used before items are placed on additional pages.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="layout" datatype="WinJS.UI.Orientation" required="false">
+      <description locid="WinJS.UI.NavBarContainer.layout" type="text/plain">Gets or sets a value that specifies whether the NavBarContainer has a horizontal or vertical layout. The default is "horizontal".</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="currentIndex" datatype="Number" isInteger="true" required="false" hidden="true">
+      <description locid="WinJS.UI.NavBarContainer.currentIndex" type="text/plain">Gets or sets the index of the current NavBarCommand.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="fixedSize" datatype="Boolean" required="false">
+      <description locid="WinJS.UI.NavBarContainer.fixedSize" type="text/plain">Gets or sets a value that specifies whether child NavBarCommand  objects should be a fixed width when there are multiple pages. A value of true indicates 
+ that the NavBarCommand objects use a fixed width; a value of false indicates that they use a dynamic width.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+  </properties>
+  <content><![CDATA[<div data-win-control="WinJS.UI.NavBarContainer">
+ <div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{location:'/pages/home/home.html',label:'Home',icon:WinJS.UI.AppBarIcon.home}"></div>
+ </div>]]></content>
+  <requires>
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/base.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="//Microsoft.WinJS.2.0/css/ui-dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript"><![CDATA[WinJS.UI.processAll();]]></require>
+  </requires>
+  <blend:parts>
+    <part name="navbarcontainer" class="win-navbarcontainer">
+      <description locid="WinJS.UI.NavBarContainer_part:navbarcontainer" type="text/plain">Styles the entire NavBarContainer control.</description>
+    </part>
+    <part name="pageindicators" class="win-navbarcontainer-pageindicator-box">
+      <description locid="WinJS.UI.NavBarContainer_part:pageindicators" type="text/plain">Styles the page indication for the NavBarContainer.</description>
+    </part>
+    <part name="indicator" class="win-navbarcontainer-pagination-indicator">
+      <description locid="WinJS.UI.NavBarContainer_part:indicator" type="text/plain">Styles the page indication for each page.</description>
+    </part>
+    <part name="currentindicator" class="win-navbarcontainer-pagination-indicator-current">
+      <description locid="WinJS.UI.NavBarContainer_part:currentindicator" type="text/plain">Styles the indication of the current page.</description>
+    </part>
+    <part name="items" class="win-navbarcontainer-surface">
+      <description locid="WinJS.UI.NavBarContainer_part:items" type="text/plain">Styles the area that contains items for the NavBarContainer.</description>
+    </part>
+    <part name="navigationArrow" class="win-navbarcontainer-navarrow">
+      <description locid="WinJS.UI.NavBarContainer_part:navigationArrow" type="text/plain">Styles left and right navigation arrows.</description>
+    </part>
+    <part name="leftNavigationArrow" class="win-navbarcontainer-navleft">
+      <description locid="WinJS.UI.NavBarContainer_part:leftNavigationArrow" type="text/plain">Styles the left navigation arrow.</description>
+    </part>
+    <part name="rightNavigationArrow" class="win-navbarcontainer-navright">
+      <description locid="WinJS.UI.NavBarContainer_part:rightNavigationArrow" type="text/plain">Styles the right navigation arrow.</description>
+    </part>
+  </blend:parts><locale messages="ui_loc_oam.xml" />
+</widget>

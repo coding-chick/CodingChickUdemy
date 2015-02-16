@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Microsoft.Phone.WinJS.2.1/js/ui/WinJS.UI.ViewBox" name="WinJS.UI.ViewBox" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="true" xmlns="http://openajax.org/metadata">
+  <author name="Microsoft Corporation" />
+  <title locid="WinJS.UI.ViewBox_name" type="text/plain">View Box</title>
+  <description locid="WinJS.UI.ViewBox" type="text/plain">Scales a single child element to fill the available space without
+ resizing it. This control reacts to changes in the size of the container as well as
+ changes in size of the child element. For example, a media query may result in
+ a change in aspect ratio.</description>
+  <icons>
+    <icon src="ui_winjs.ui.viewbox.12x12.png" />
+    <icon src="ui_winjs.ui.viewbox.16x16.png" />
+  </icons>
+  <properties>
+    <property name="element" datatype="HTMLElement" required="false" hidden="true">
+      <description locid="WinJS.UI.ViewBox.element" type="text/plain">Gets the DOM element that functions as the scaling box.</description>
+    </property>
+  </properties>
+  <content><![CDATA[<div data-win-control="WinJS.UI.ViewBox"><div>ViewBox</div></div>]]></content>
+  <requires>
+    <require type="javascript" src="//Microsoft.Phone.WinJS.2.1/js/base.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="//Microsoft.Phone.WinJS.2.1/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="//Microsoft.Phone.WinJS.2.1/css/ui-dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript"><![CDATA[WinJS.UI.processAll();]]></require>
+  </requires>
+  <blend:parts /><locale messages="ui_loc_oam.xml" />
+</widget>

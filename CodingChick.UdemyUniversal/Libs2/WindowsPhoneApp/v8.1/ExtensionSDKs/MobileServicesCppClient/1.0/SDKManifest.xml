@@ -1,0 +1,8 @@
+<FileList
+  MinVSVersion = "12.0"
+  DisplayName = "Windows Azure Mobile Services C++ Client For Windows Phone 8.1"
+  MinToolsVersion = "4.0"
+  AppliesTo="Native+WindowsAppContainer"
+  DependsOn = "CppRESTWindowsPhoneSDK, version=1.0">  
+</FileList>
+

@@ -1,0 +1,14 @@
+﻿<FileList
+	DisplayName = "Microsoft Advertising SDK for Windows 8.1 (Xaml)"
+  ProductFamilyName = "Microsoft.Advertising"
+	TargetFramework = ".NETCore, version=v4.5.1;"
+	MinVSVersion = "12.0"
+  AppliesTo = "WindowsAppContainer + (CSharp | VB | VisualC)"
+  SupportsMultipleVersions = "Error"
+  MoreInfo = "http://go.microsoft.com/fwlink/?LinkId=243197">
+  <File Reference = "Microsoft.Advertising.WinRT.UI.winmd" >
+    <ToolboxItems BlendCategory="Advertising" VSCategory="Advertising" >
+      <Item Type="Microsoft.Advertising.WinRT.UI.AdControl" />
+    </ToolboxItems>
+  </File>
+</FileList>

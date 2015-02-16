@@ -1,0 +1,2079 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Media.Analytics</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Media.Analytics.AnalyticsConfig">
+            <summary>
+            This is the main configuration object used by the diagnostic component.
+            An instance of this object is required for the AnalyticsCollector class to instantiate.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.AnalyticsConfig.#ctor">
+            <summary>
+            Creates a new instance of AnalyticsConfig.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.AnalyticsConfig.Load(Windows.Foundation.Uri)">
+            <summary>
+            Deserializes Xml into an AnalyticsConfig object.
+            </summary>
+            <param name="source">The source URI of the config file.</param>
+            <returns>An awaitable result.</returns>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.AnalyticsConfig.Load(System.Xml.XmlReader)">
+            <summary>
+            Creates an instance of the main diagnostic config object from an XmlReader
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.AnalyticsConfig.QualityConfig">
+            <summary>
+            Responsible for indicating which quality data should be tracked and aggregated. Used to filter data that will not be used at the earliest possible moment to improve performance.
+            Set to null to track all quality data.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.AnalyticsConfig.LoggingConfig">
+            <summary>
+            Responsible for determining how logging data should be collected.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.AnalyticsConfig.TrackDownloadErrors">
+            <summary>
+            Indicates that specifics should be tracked about download errors and reported via the AnalyticsCollector.ReportAggregatedData event.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.AnalyticsConfig.TrackQuality">
+            <summary>
+            Indicates that quality data should be sampled, aggregated and reported via the AnalyticsCollector.ReportAggregatedData event.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.AnalyticsConfig.LatencyAlertThreshold">
+            <summary>
+            Indicates the latency in KBps that needs to be reached before a LatencyAlert is generated.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.AnalyticsConfig.AggregationInterval">
+            <summary>
+            Indicates the interval that quality data should be generated. Default is every 30 seconds.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.AnalyticsConfig.PollingInterval">
+            <summary>
+            This is the polling interval used to retrieve info that needs to be polled (e.g. FPS, CPU, and various adaptive streaming information)
+            Default value is 2 seconds.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.AnalyticsConfig.AdditionalData">
+            <summary>
+            Contains additional data to add to every log.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.LoggingConfig">
+            <summary>
+            Responsible for providing additional configuration data for the logging service.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.EdgeServerConfig">
+            <summary>
+            Defines the rules used to retrieve info about the edge server and client IP.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.EdgeServerConfig.#ctor">
+            <summary>
+            Creates a new instance of EdgeServerConfig.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.EdgeServerConfig.Load(Windows.Foundation.Uri)">
+            <summary>
+            Deserializes a config xml file containing the rules into an instance of EdgeServerConfig
+            </summary>
+            <param name="source">The source URI for the config file</param>
+            <returns>An awaitable EdgeServerConfig</returns>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.EdgeServerConfig.EdgeServerRulesCollection">
+            <summary>
+            Gets a collection of rules for how to determine what edge server is serving the media.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.EdgeServerRules">
+            <summary>
+            Represents the rules for one type of edge server.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.EdgeServerRules.#ctor">
+            <summary>
+            Creates a new instance of EdgeServerRules.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.EdgeServerRules.Load(System.Xml.XmlReader)">
+            <summary>
+            Loads a new instance of the EdgeServerRules class from Xml.
+            </summary>
+            <param name="reader"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.EdgeServerRules.Domain">
+            <summary>
+            Serves as a key to know which rule to select based on the current stream's domain. Rule is selected via the expression: currentStreamUri.Host.EndsWith(ai.Domain)
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.EdgeServerRules.EdgeResolverUrlPattern">
+            <summary>
+            Provides the Url for the request. If baseUri is supplied to EdgeServerDataClient, it will server as a pattern and resolve to an absolute url via the expression: string.Format(EdgeResolverUrlPattern, baseUri.Host, baseUri.Port)
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.EdgeServerRules.EdgeResolverHeaders">
+            <summary>
+            An array of key value pairs to include in the request header. Array is expected to contain an even number of elements.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.EdgeServerRules.ClientIPRegex">
+            <summary>
+            Supplies the regular expression to be used to find the client IP in either the response body or response header. Set to null to ignore.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.EdgeServerRules.ClientIPHeader">
+            <summary>
+            Setting this will indicate that the specified response header includes the client IP (as opposed to the response body).
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.EdgeServerRules.EdgeRegex">
+            <summary>
+            Supplies the regular expression to be used to find the edge server in either the response body or response header. Set to null to ignore.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.EdgeServerRules.EdgeHeader">
+            <summary>
+            Setting this will indicate that the specified response header includes the edge server (as opposed to the response body).
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.EdgeServerMonitor">
+            <summary>
+            Responsible for hitting another url to retrieve information about the edge server and client IP address.
+            Request is built and response is parsed according to rules defined in EdgeServerRules
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.IEdgeServerMonitor">
+            <summary>
+            Provides an interface for a class that can retrieve info about the edge server used to stream the media.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.IEdgeServerMonitor.GetEdgeServerAsync(Windows.Foundation.Uri)">
+            <summary>
+            Initiates the async request to retrieve edge server and client IP info.
+            </summary>
+            <param name="currentStreamUri">The stream Uri.</param>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.EdgeServerMonitor.#ctor">
+            <summary>
+            Creates a new instance of EdgeServerMonitor.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.EdgeServerMonitor.#ctor(Microsoft.Media.Analytics.EdgeServerConfig)">
+            <summary>
+            Creates a new instance of EdgeServerMonitor.
+            </summary>
+            <param name="config">The required configuration object for the monitor</param>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.EdgeServerMonitor.GetEdgeServerAsync(Windows.Foundation.Uri)">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.EdgeServerMonitor.EdgeServerRuleCollection">
+            <summary>
+            Gets a collection of EdgeServerRules
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.EdgeServerResult">
+            <summary>
+            Contains the result of the edge server detection operation
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.EdgeServerResult.EdgeServer">
+            <summary>
+            Gets the edge server address. This could be a domain name or IP address.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.EdgeServerResult.ClientIP">
+            <summary>
+            Gets the Client IP as returned by the edge server dataclient.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.EdgeServerResult.Empty">
+            <summary>
+            Gets an empty EdgeServerResult
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.EdgeServerResult.IpNA">
+            <summary>
+            Represents the default IP Address
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.IEnvironmentMonitor">
+            <summary>
+            Provides an interface that can be implemented in order to provide information about the system and environment.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.IEnvironmentMonitor.ProcessCpuLoad">
+            <summary>
+            Gets the current CPU load of the process.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.IEnvironmentMonitor.SystemCpuLoad">
+            <summary>
+            Gets the current CPU load of the entire system.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.LoggingExtensions">
+            <summary>
+            Provides helper methods to act on logs.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.LoggingExtensions.CreateBasicLogData(Microsoft.Media.Analytics.ILog)">
+            <summary>
+            Gets only the required data for a log. Typically this is called from a log itself in the GetData method to serve as a starting point for the result that will ultimately be returned.
+            </summary>
+            <param name="log">The log to get basic data for.</param>
+            <returns>A dictionary of data for the required properties on the log.</returns>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.ILog">
+            <summary>
+            Provides an common interface for all log objects
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.ILog.GetData">
+            <summary>
+            Gets all log data
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ILog.Id">
+            <summary>
+            Gets a unique Id for the log entry.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ILog.TimeStamp">
+            <summary>
+            Gets or sets when the log was created
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ILog.Type">
+            <summary>
+            Gets a unique identifier for the type of log
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ILog.ExtraData">
+            <summary>
+            Gets extra data about the log. This allows you to attach extra data to the log
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.LogEventArgs">
+            <summary>
+            EventArgs for any event that needs to pass along a single log object.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.LogEventArgs.#ctor(Microsoft.Media.Analytics.ILog)">
+            <summary>
+            Creates a new instance of LogEventArgs.
+            </summary>
+            <param name="log">The log object associated with the event.</param>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.LogEventArgs.Log">
+            <summary>
+            Gets the log object associated with the event.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.ILoggingSource">
+            <summary>
+            An interface to allow an object to become a source of logging events.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Media.Analytics.ILoggingSource.LogCreated">
+            <summary>
+            Notifies the consumer that a new log is available
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.ILoggingTarget">
+            <summary>
+            An interface to allow an object to become a target of logging events.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.ILoggingTarget.LogEntry(Microsoft.Media.Analytics.ILog)">
+            <summary>
+            Called to pass a new log to the target.
+            </summary>
+            <param name="log">The log object that was generated.</param>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.LogTypes">
+            <summary>
+            Constants used for the log type of the base logs defined in the logging service
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.LoggingService">
+            <summary>
+            Provides access to the service that all logs are sent to.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.LoggingService.Log(Microsoft.Media.Analytics.ILog)">
+            <summary>
+            To be called when a new log is generated that should be logged. Any object can call this and pass custom logs to it.
+            </summary>
+            <param name="log">The log object.</param>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.LoggingService.Current">
+            <summary>
+            Gets a singleton instance of teh service.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.LoggingService.LoggingTargets">
+            <summary>
+            Gets a collection of objects that want to handle logs as they are generated.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.LoggingService.LoggingSources">
+            <summary>
+            Gets a collection of objects that want to send logs to the targets. 
+            Note: objects can alternatively just call the Log method directly.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.BitrateChangedLog">
+            <summary>
+            A log generated when the current bitrate changes.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.BitrateChangedLog.#ctor(System.UInt32,System.String)">
+            <summary>
+            Creates a new instance of BitrateChangedLog.
+            </summary>
+            <param name="bitrate">The new bitrate</param>
+            <param name="streamType">The stream type associated with the bitrate (e.g. 'audio' or 'video')</param>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.BitrateChangedLog.GetData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.BitrateChangedLog.ExtraData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.BitrateChangedLog.Id">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.BitrateChangedLog.TimeStamp">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.BitrateChangedLog.Type">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.BitrateChangedLog.Bitrate">
+            <summary>
+            Gets the new bitrate (in bps)
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.BitrateChangedLog.StreamType">
+            <summary>
+            The stream type (e.g. audio or video)
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.ChunkDownloadLog">
+            <summary>
+            A log generated when a new chunk is downloaded.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.ChunkDownloadLog.#ctor(System.String,System.Int32,System.UInt64,System.UInt32)">
+            <summary>
+            Creates a new instance of ChunkDownloadLog.
+            </summary>
+            <param name="streamType">The type of stream (e.g. 'audio' or 'video')</param>
+            <param name="chunkIndex">The index of the chunk.</param>
+            <param name="startTime">The start time of the chunk.</param>
+            <param name="downloadTimeMs">The total time in milliseconds for the chunk to download.</param>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.ChunkDownloadLog.GetData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ChunkDownloadLog.ExtraData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ChunkDownloadLog.Id">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ChunkDownloadLog.TimeStamp">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ChunkDownloadLog.Type">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ChunkDownloadLog.ChunkId">
+            <summary>
+            Gets a unique ID for the chunk so it doesn't conflict with chunks from other streams.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ChunkDownloadLog.ChunkIndex">
+            <summary>
+            The index of the chunk
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ChunkDownloadLog.StreamType">
+            <summary>
+            The stream type (e.g. audio or video)
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ChunkDownloadLog.StartTime">
+            <summary>
+            The timestamp of the chunk. Matches the timestamp that is part of the url for the chunk itself.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ChunkDownloadLog.DownloadTimeMs">
+            <summary>
+            The time it took in milliseconds to download the chunk
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.BufferSizeLog">
+            <summary>
+            A log to indicate current buffer levels. This is generated at regular intervals.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.BufferSizeLog.#ctor(System.UInt64,System.String)">
+            <summary>
+            Creates a new instance of BufferSizeLog.
+            </summary>
+            <param name="bufferSize">The size in bytes of the buffer</param>
+            <param name="streamType">The stream type for the buffer (e.g. 'audio' or 'video')</param>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.BufferSizeLog.GetData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.BufferSizeLog.ExtraData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.BufferSizeLog.Id">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.BufferSizeLog.TimeStamp">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.BufferSizeLog.Type">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.BufferSizeLog.BufferSize">
+            <summary>
+            Gets the size of the buffer (in bytes)
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.BufferSizeLog.StreamType">
+            <summary>
+            The stream type (e.g. audio or video)
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.BufferingChangedLog">
+            <summary>
+            A log generated when buffering of playback either starts or stops.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.BufferingChangedLog.#ctor(System.Boolean)">
+            <summary>
+            Creates a new instance of BufferingChangedLog.
+            </summary>
+            <param name="isBuffering">Whether or not the media is currently buffering</param>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.BufferingChangedLog.GetData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.BufferingChangedLog.ExtraData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.BufferingChangedLog.Id">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.BufferingChangedLog.TimeStamp">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.BufferingChangedLog.Type">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.BufferingChangedLog.IsBuffering">
+            <summary>
+            Gets if the player was changing to a buffering state or not.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.CaptionTrackChangedLog">
+            <summary>
+            A log generated when the currently selected caption track changes.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.CaptionTrackChangedLog.#ctor(System.String)">
+            <summary>
+            Creates a new instance of CaptionTrackChangedLog.
+            </summary>
+            <param name="trackId">The ID of the track</param>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.CaptionTrackChangedLog.GetData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.CaptionTrackChangedLog.ExtraData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.CaptionTrackChangedLog.Id">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.CaptionTrackChangedLog.TimeStamp">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.CaptionTrackChangedLog.Type">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.CaptionTrackChangedLog.TrackId">
+            <summary>
+            Gets the language ID of the caption selection event. Null if no caption was set.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.AudioTrackChangedLog">
+            <summary>
+            A log generated when the currently selected audio track changes.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.AudioTrackChangedLog.#ctor(System.String)">
+            <summary>
+            Creates a new instance of AudioTrackChangedLog.
+            </summary>
+            <param name="trackId">The ID of the track</param>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.AudioTrackChangedLog.GetData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.AudioTrackChangedLog.ExtraData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.AudioTrackChangedLog.Id">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.AudioTrackChangedLog.TimeStamp">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.AudioTrackChangedLog.Type">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.AudioTrackChangedLog.TrackId">
+            <summary>
+            Gets the language ID of the caption selection event. Null if no caption was set.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.ClipEventType">
+            <summary>
+            Enumerates the various types of clip events.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Media.Analytics.ClipEventType.Started">
+            <summary>
+            The clip started
+            </summary>
+        </member>
+        <member name="F:Microsoft.Media.Analytics.ClipEventType.Ended">
+            <summary>
+            The clip ended/finished
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.ClipEventLog">
+            <summary>
+            A log generated when a clip (ususally an advertisement) is started or ends.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.ClipEventLog.#ctor(Microsoft.Media.Analytics.ClipEventType,Windows.Foundation.TimeSpan,Windows.Foundation.Uri)">
+            <summary>
+            Creates a new instance of ClipEventLog.
+            </summary>
+            <param name="clipEventType">The type of clip event that occurred.</param>
+            <param name="position">The position of playback on the main media when the event occurred.</param>
+            <param name="source">The source of the clip (if available).</param>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.ClipEventLog.GetData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ClipEventLog.ExtraData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ClipEventLog.Id">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ClipEventLog.TimeStamp">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ClipEventLog.Type">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ClipEventLog.ClipEventType">
+            <summary>
+            Gets the type of stream event that occured
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ClipEventLog.Position">
+            <summary>
+            Gets the position of the video at the time of the stream event
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ClipEventLog.Source">
+            <summary>
+            Gets the source Uri of the clip
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.AppStartLog">
+            <summary>
+            A log generated when the application starts.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.AppStartLog.#ctor(System.String)">
+            <summary>
+            Creates a new instance of AppStartLog.
+            </summary>
+            <param name="startupParam">The ID of the track</param>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.AppStartLog.GetData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.AppStartLog.ExtraData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.AppStartLog.Id">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.AppStartLog.TimeStamp">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.AppStartLog.Type">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.AppStartLog.StartupParam">
+            <summary>
+            Gets additional info about how the app started
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.PositionPercentageReachedLog">
+            <summary>
+            A log object for when a specific percentage of the duration has been reached. For example, when the 50% point of the media has been reached.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.PositionPercentageReachedLog.#ctor(System.Double)">
+            <summary>
+            Creates a new instance of PositionPercentageReachedLog
+            </summary>
+            <param name="position">The postion as a percentage that was reached.</param>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.PositionPercentageReachedLog.GetData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.PositionPercentageReachedLog.ExtraData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.PositionPercentageReachedLog.Id">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.PositionPercentageReachedLog.TimeStamp">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.PositionPercentageReachedLog.Type">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.PositionPercentageReachedLog.Position">
+            <summary>
+            Gets the percentage of the position compared to the duration when the event occurred.
+            .5 = 50%, 2 = 200%
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.PlayTimePercentageReachedLog">
+            <summary>
+            A log object for when a specific percentage of play back has occurred. For example, when 50% of the media has been played back (regardless of which 50%).
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.PlayTimePercentageReachedLog.#ctor(System.Double)">
+            <summary>
+            Creates a new instance of PlayTimePercentageReachedLog
+            </summary>
+            <param name="playTime">The playtime that was reached.</param>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.PlayTimePercentageReachedLog.GetData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.PlayTimePercentageReachedLog.ExtraData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.PlayTimePercentageReachedLog.Id">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.PlayTimePercentageReachedLog.TimeStamp">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.PlayTimePercentageReachedLog.Type">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.PlayTimePercentageReachedLog.PlayTime">
+            <summary>
+            Gets or sets the percentage of play time compared to the duration that the media has been played before the tracking event will fire.
+            .5 = 50%, 2 = 200%
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.PositionReachedLog">
+            <summary>
+            A log object for when a specific position has been reached during playback. For example, when the 20 minute mark has been reached.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.PositionReachedLog.#ctor(Windows.Foundation.TimeSpan)">
+            <summary>
+            Creates a new instance of PositionReachedLog
+            </summary>
+            <param name="position">The postion that was reached.</param>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.PositionReachedLog.GetData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.PositionReachedLog.ExtraData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.PositionReachedLog.Id">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.PositionReachedLog.TimeStamp">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.PositionReachedLog.Type">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.PositionReachedLog.Position">
+            <summary>
+            Gets the position that playback was at when the event occurred.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.LatencyAlertLog">
+            <summary>
+            A log generated when the latency drops below a certain threshold as defined in the AnalyticsConfig.LatencyAlertThreshold.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.LatencyAlertLog.#ctor(System.UInt32,System.String,System.Int32,System.UInt64,System.UInt32)">
+            <summary>
+            Creates a new instance of LatencyAlertLog.
+            </summary>
+            <param name="bitrate">The bitrate of the chunk</param>
+            <param name="streamType">The type of stream (e.g. 'audio' or 'video')</param>
+            <param name="chunkIndex">The index of the chunk.</param>
+            <param name="startTime">The start time of the chunk.</param>
+            <param name="downloadTimeMs">The total time in milliseconds for the chunk to download.</param>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.LatencyAlertLog.GetData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.LatencyAlertLog.ExtraData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.LatencyAlertLog.Id">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.LatencyAlertLog.TimeStamp">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.LatencyAlertLog.Type">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.LatencyAlertLog.BitRate">
+            <summary>
+            The bitrate of the chunk being downloaded
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.LatencyAlertLog.ChunkIndex">
+            <summary>
+            The index of the chunk
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.LatencyAlertLog.StreamType">
+            <summary>
+            The stream type (e.g. audio or video)
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.LatencyAlertLog.StartTime">
+            <summary>
+            The timestamp of the chunk. Matches the timestamp that is part of the url for the chunk itself.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.LatencyAlertLog.DownloadTimeMs">
+            <summary>
+            The time it took in milliseconds to download the chunk
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.ErrorLog">
+            <summary>
+            A log generated when an application level error (unhandled exception) occurs.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.ErrorLog.#ctor(System.String,System.String)">
+            <summary>
+            Creates a new instance of ErrorLog.
+            </summary>
+            <param name="error">The error message that occurred. This may contain a stacktrace.</param>
+            <param name="applicationArea">The area of the application that the error occurred in.</param>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.ErrorLog.GetData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ErrorLog.ExtraData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ErrorLog.Id">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ErrorLog.TimeStamp">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ErrorLog.Type">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ErrorLog.Error">
+            <summary>
+            Gets the error message that occurred. Note: This may contain a stacktrace or anything else important.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ErrorLog.ApplicationArea">
+            <summary>
+            The area of the application that the error occurred in. Typically this is set to 'UnhandledException'.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ErrorLog.MaxErrorLength">
+            <summary>
+            The maximum length of the error message to be sent to the server. Set to null if you do not want to truncate.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.PlayTimeReachedLog">
+            <summary>
+            A log object for when a specific amount of time during playback has been reached. For example, when the 20 minutes of video has been played regardless of where in the video you are.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.PlayTimeReachedLog.#ctor(Windows.Foundation.TimeSpan)">
+            <summary>
+            Creates a new instance of PlayTimeReachedLog.
+            </summary>
+            <param name="playTime">The amount of time played that has been reached.</param>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.PlayTimeReachedLog.GetData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.PlayTimeReachedLog.ExtraData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.PlayTimeReachedLog.Id">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.PlayTimeReachedLog.TimeStamp">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.PlayTimeReachedLog.Type">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.PlayTimeReachedLog.PlayTime">
+            <summary>
+            Gets the amount of time that has been played when the event occurred.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.StreamFailedLog">
+            <summary>
+            A log generated when there is an error playing back media (e.g. the internet connection is lost for streaming media).
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.StreamFailedLog.#ctor(System.String)">
+            <summary>
+            Creates a new instance of StreamFailedLog.
+            </summary>
+            <param name="reason">The reason for the failure.</param>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.StreamFailedLog.GetData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.StreamFailedLog.ExtraData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.StreamFailedLog.Id">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.StreamFailedLog.TimeStamp">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.StreamFailedLog.Type">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.StreamFailedLog.Reason">
+            <summary>
+            Gets the reason why the media failed
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.StreamLoadedLog">
+            <summary>
+            A log generated when the stream is first loaded.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.StreamLoadedLog.#ctor(Windows.Foundation.Uri)">
+            <summary>
+            Creates a new instance of StreamLoadedLog.
+            </summary>
+            <param name="source">The source URI for the media.</param>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.StreamLoadedLog.GetData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.StreamLoadedLog.ExtraData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.StreamLoadedLog.Id">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.StreamLoadedLog.TimeStamp">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.StreamLoadedLog.Type">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.StreamLoadedLog.EdgeServer">
+            <summary>
+            Gets the edge server IP or address
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.StreamLoadedLog.ClientIp">
+            <summary>
+            Gets the client IP
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.StreamLoadedLog.Source">
+            <summary>
+            Gets the source of the media
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.StreamLoadedLog.MaxBitrate">
+            <summary>
+            Gets the maximum bitrate for the stream
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.StreamLoadedLog.MinBitrate">
+            <summary>
+            Gets the minimum bitrate for the stream
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.StreamEventType">
+            <summary>
+            Enumerates the various types of streaming events.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Media.Analytics.StreamEventType.Loaded">
+            <summary>
+            The media was loaded.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Media.Analytics.StreamEventType.Started">
+            <summary>
+            Playback was started.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Media.Analytics.StreamEventType.Ended">
+            <summary>
+            Playback ended.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Media.Analytics.StreamEventType.Unloaded">
+            <summary>
+            The media was closed/unloaded.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Media.Analytics.StreamEventType.Failed">
+            <summary>
+            Playback failed.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Media.Analytics.StreamEventType.Playing">
+            <summary>
+            The user resumed playing the media
+            </summary>
+        </member>
+        <member name="F:Microsoft.Media.Analytics.StreamEventType.Paused">
+            <summary>
+            The user paused the media
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.StreamEventLog">
+            <summary>
+            A log generated for a major lifecycle event in the stream (e.g. loaded, started, paused, ...etc).
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.IMarkerEntry">
+            <summary>
+            An interface that a log can implement to control how aggregation calculates start and end time.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.IMarkerEntry.IsPlaying">
+            <summary>
+            Gets whether or not playback has started
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.StreamEventLog.#ctor(Microsoft.Media.Analytics.StreamEventType,Windows.Foundation.TimeSpan,Windows.Foundation.TimeSpan)">
+            <summary>
+            Creates a new instance of StreamEventLog
+            </summary>
+            <param name="streamEventType">The type of streaming event that occurred.</param>
+            <param name="position">The position of playback when the operation occured.</param>
+            <param name="duration">The duration of the stream.</param>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.StreamEventLog.GetData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.StreamEventLog.ExtraData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.StreamEventLog.Id">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.StreamEventLog.TimeStamp">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.StreamEventLog.Type">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.StreamEventLog.StreamEventType">
+            <summary>
+            Gets the type of stream event that occured
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.StreamEventLog.Position">
+            <summary>
+            Gets the position of the video at the time of the stream event
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.StreamEventLog.Duration">
+            <summary>
+            Gets the duration of the video
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.StreamEventLog.IsPlaying">
+            <inheritdoc /> 
+        </member>
+        <member name="T:Microsoft.Media.Analytics.FullscreenChangedLog">
+            <summary>
+            A log generated when the user goes in or out of fullscreen mode.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.FullscreenChangedLog.#ctor(System.Boolean)">
+            <summary>
+            Creates a new instance of FullscreenChangedLog.
+            </summary>
+            <param name="isFullScreen">Whether or not the media is currently playing back in fullscreen mode</param>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.FullscreenChangedLog.GetData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.FullscreenChangedLog.ExtraData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.FullscreenChangedLog.Id">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.FullscreenChangedLog.TimeStamp">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.FullscreenChangedLog.Type">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.FullscreenChangedLog.IsFullScreen">
+            <summary>
+            Gets if the player was changing to fullscreen or not.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.CpuLog">
+            <summary>
+            A log to provide current CPU levels. This log is generated at regular intervals.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.CpuLog.#ctor(System.Double,System.Double)">
+            <summary>
+            Creates a new instance of CpuLog.
+            </summary>
+            <param name="systemCpu">The CPU load for the entire system</param>
+            <param name="processCpu">The CPU load for only the process</param>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.CpuLog.GetData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.CpuLog.ExtraData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.CpuLog.Id">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.CpuLog.TimeStamp">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.CpuLog.Type">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.CpuLog.SystemCpu">
+            <summary>
+            Gets the number of rendered frames per second
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.CpuLog.ProcessCpu">
+            <summary>
+            Gets the number of rendered frames per second
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.FpsLog">
+            <summary>
+            A log generated to indicate current frames per second. This log is generated at regular intervals.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.FpsLog.#ctor(System.Double,System.Double)">
+            <summary>
+            Creates a new instance of FpsLog.
+            </summary>
+            <param name="renderedFramesPerSecond">The number of rendered frames per second</param>
+            <param name="droppedFramesPerSecond">The number of dropped frames per second</param>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.FpsLog.GetData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.FpsLog.ExtraData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.FpsLog.Id">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.FpsLog.TimeStamp">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.FpsLog.Type">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.FpsLog.RenderedFramesPerSecond">
+            <summary>
+            Gets the number of rendered frames per second
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.FpsLog.DroppedFramesPerSecond">
+            <summary>
+            Gets the number of dropped frames per second
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.DvrOperationType">
+            <summary>
+            Enumerates the different types of DVR operations
+            </summary>
+        </member>
+        <member name="F:Microsoft.Media.Analytics.DvrOperationType.Seeked">
+            <summary>
+            The user seeked
+            </summary>
+        </member>
+        <member name="F:Microsoft.Media.Analytics.DvrOperationType.ScrubStarted">
+            <summary>
+            The user started a scrub action
+            </summary>
+        </member>
+        <member name="F:Microsoft.Media.Analytics.DvrOperationType.ScrubCompleted">
+            <summary>
+            The user completed or commited the scrub action
+            </summary>
+        </member>
+        <member name="F:Microsoft.Media.Analytics.DvrOperationType.PlayrateChanged">
+            <summary>
+            The user changed the play rate (e.g. FF, RW, or slow motion)
+            </summary>
+        </member>
+        <member name="F:Microsoft.Media.Analytics.DvrOperationType.Pause">
+            <summary>
+            The user paused the media
+            </summary>
+        </member>
+        <member name="F:Microsoft.Media.Analytics.DvrOperationType.Play">
+            <summary>
+            The user started or resumed the media
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.DvrOperationLog">
+            <summary>
+            A log generated each time the user performs a new DVR operation
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.DvrOperationLog.#ctor(Microsoft.Media.Analytics.DvrOperationType,Windows.Foundation.TimeSpan,System.Double,System.Boolean,Windows.Foundation.IReference{Windows.Foundation.TimeSpan})">
+            <summary>
+            Creates a new instance of DvrOperationLog.
+            </summary>
+            <param name="operationType">The operation that occurred.</param>
+            <param name="position">The position of playback when the operation occured.</param>
+            <param name="playbackRate">The playback rate of the DVR operation. If this operation is PlayrateChanged, this will be the new playback rate</param>
+            <param name="isPaused">Indicates if playback is paused at the time of the operation.</param>
+            <param name="previousPosition">The previous position (if applicable) immediately before the operation occurred.</param>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.DvrOperationLog.GetData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.DvrOperationLog.ExtraData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.DvrOperationLog.Id">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.DvrOperationLog.TimeStamp">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.DvrOperationLog.Type">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.DvrOperationLog.OperationType">
+            <summary>
+            Gets the type of DVR operation that occured
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.DvrOperationLog.Position">
+            <summary>
+            Gets the position of the video at the time of the DVR operation
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.DvrOperationLog.PreviousPosition">
+            <summary>
+            Gets the previous position of the video at the time of the DVR operation.
+            Note: This is only applicable to seeking.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.DvrOperationLog.PlaybackRate">
+            <summary>
+            Gets the playrate at the time of the DVR operation
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.DvrOperationLog.IsPaused">
+            <summary>
+            Gets a flag indicating if playback was paused at the time of the DVR operation.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.PerceivedBandwidthLog">
+            <summary>
+            A log to indicate the perceived bandwidth. This is generated at regular intervals.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.PerceivedBandwidthLog.#ctor(System.UInt32)">
+            <summary>
+            Creates a new instance of PerceivedBandwidthLog.
+            </summary>
+            <param name="perceivedBandwidth">The perceived bandwidth in bps at the time of the log.</param>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.PerceivedBandwidthLog.GetData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.PerceivedBandwidthLog.ExtraData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.PerceivedBandwidthLog.Id">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.PerceivedBandwidthLog.TimeStamp">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.PerceivedBandwidthLog.Type">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.PerceivedBandwidthLog.PerceivedBandwidth">
+            <summary>
+            Gets the PerceivedBandwidth in bps
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.DownloadErrorLog">
+            <summary>
+            A log generated when a download error occurs.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.DownloadErrorLog.#ctor">
+            <summary>
+            Creates a new instance of DownloadErrorLog.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.DownloadErrorLog.GetData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.DownloadErrorLog.ExtraData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.DownloadErrorLog.Id">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.DownloadErrorLog.TimeStamp">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.DownloadErrorLog.Type">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.DownloadErrorLog.ChunkId">
+            <summary>
+            Gets a unique ID for the chunk.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.DownloadErrorLog.HttpResponse">
+            <summary>
+            The HTTP response code
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.DownloadErrorReport">
+            <summary>
+            Contains information about a group of download errors. Info about the bitrate is not available.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.DownloadErrorReport.#ctor">
+            <summary>
+            Creates a new instance of DownloadErrorReport.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.DownloadErrorReport.GetData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.DownloadErrorReport.ExtraData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.DownloadErrorReport.Id">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.DownloadErrorReport.TimeStamp">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.DownloadErrorReport.Type">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.DownloadErrorReport.ChunkId">
+            <summary>
+            The index of the time stamp of the chunk
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.DownloadErrorReport.Count">
+            <summary>
+            The total number of download errors for the given chunk (across all bitrates) for a given sample.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.DownloadErrorReport.SampleSizeSeconds">
+            <summary>
+            The sample size in seconds
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.DownloadErrorReportAggregator">
+            <summary>
+            Responsible for aggregating all of the http chunk download errors that occur and group them by stream type and chunk id (aka start time)
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.AnalyticsCollector">
+            <summary>
+            The primary class responsible for connecting to an instance of SSME and reporting diagnostic information.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.AnalyticsCollector.#ctor">
+            <summary>
+            Creates a new instance of AnalyticsCollector.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.AnalyticsCollector.#ctor(Microsoft.Media.Analytics.AnalyticsConfig)">
+            <summary>
+            Creates a new instance of AnalyticsCollector.
+            </summary>
+            <param name="config">The required configuration object for the AnalyticsCollector</param>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.AnalyticsCollector.SendLog(Microsoft.Media.Analytics.ILog)">
+            <summary>
+            Call to send a log to the logging service and stamp it with additional data related to the current video.
+            </summary>
+            <param name="log">The log to send.</param>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.AnalyticsCollector.Attach(Microsoft.Media.Analytics.IPlayerMonitor,Microsoft.Media.Analytics.IAdaptiveMonitor,Microsoft.Media.Analytics.IEnvironmentMonitor,Microsoft.Media.Analytics.IEdgeServerMonitor)">
+            <summary>
+            Connects a player that needs to be monitored
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.AnalyticsCollector.Detach">
+            <summary>
+            Disconnects the player that was passed to the Attach method
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.AnalyticsCollector.Dispatcher">
+            <summary>
+            Gets or sets the a Dispatcher to be used to poll CPU and FPS metrics. Set to null if one is not needed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.AnalyticsCollector.IsAttached">
+            <summary>
+            Gets whether or not this object is in an attached state
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.AnalyticsCollector.EnvironmentMonitor">
+            <summary>
+            Gets the object responsible for reporting on system and app specific information
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.AnalyticsCollector.Player">
+            <summary>
+            Gets the main player object.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.AnalyticsCollector.AdaptiveMonitor">
+            <summary>
+            Gets an optional object to help provide adaptive heuristics data. For progressive download this will be null.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.AnalyticsCollector.EdgeServerMonitor">
+            <summary>
+            Gets an optional object to help provide information about the server serving the content.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.AnalyticsCollector.VideoSessionId">
+            <summary>
+            Gets a generated ID used for the life of the AnalyticsCollector
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.AnalyticsCollector.VideoSessionDuration">
+            <summary>
+            Gets the total time for the life of the AnalyticsCollector
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.AnalyticsCollector.AddtionalData">
+            <summary>
+            Gets or sets addtional data to add to each log
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.AnalyticsCollector.Configuration">
+            <summary>
+            Gets or sets the Configuration data used to drive the AnalyticsCollector. Note: if the analytics collector is already attached, some changes may not take effect until it is reattached.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.AnalyticsCollector.LoggingSources">
+            <summary>
+            Gets a collection of log sources. When a log is generated by a source contained in this
+            collection, common data is added to it before it is passed to the logging service.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Media.Analytics.AnalyticsCollector.LogCreated">
+            <summary>
+            Provides all simple diagnostic events.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.IAdaptiveMonitor">
+            <summary>
+            Provides heuristic information about adaptive streaming for analytic purposes
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.IAdaptiveMonitor.Refresh">
+            <summary>
+            Called from a background thread to indicate that the data should refresh. Note, this does not have to be used.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.IAdaptiveMonitor.CurrentBitrate">
+            <summary>
+            Gets the current bitrate
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.IAdaptiveMonitor.AudioBufferSize">
+            <summary>
+            Gets the size of the audio buffer
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.IAdaptiveMonitor.VideoBufferSize">
+            <summary>
+            Gets the size of the video buffer
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.IAdaptiveMonitor.PerceivedBandwidth">
+            <summary>
+            Gets the perceived bandwidth in bps
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.IAdaptiveMonitor.MaxBitrate">
+            <summary>
+            Gets the maximum bitrate of the stream
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.IAdaptiveMonitor.MinBitrate">
+            <summary>
+            Gets the minimum bitrate of the stream
+            </summary>
+        </member>
+        <member name="E:Microsoft.Media.Analytics.IAdaptiveMonitor.CurrentBitrateChanged">
+            <summary>
+            Notifies when the current bitrate has changed
+            </summary>
+        </member>
+        <member name="E:Microsoft.Media.Analytics.IAdaptiveMonitor.ChunkDownloaded">
+            <summary>
+            Notifies when a new chunk has downloaded
+            </summary>
+        </member>
+        <member name="E:Microsoft.Media.Analytics.IAdaptiveMonitor.ChunkFailure">
+            <summary>
+            Notifies when a chunk fails to download
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.CurrentBitrateChangedEventArgs">
+            <summary>
+            Represents event args for the CurrentBitrateChanged event.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.ChunkDownloadedEventArgs">
+            <summary>
+            Represents event args for the ChunkDownloaded event.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ChunkDownloadedEventArgs.ChunkId">
+            <summary>
+            The index of the time stamp of the chunk
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ChunkDownloadedEventArgs.StreamType">
+            <summary>
+            The stream type (e.g. audio or video)
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ChunkDownloadedEventArgs.StartTime">
+            <summary>
+            The timestamp of the chunk. Matches the timestamp that is part of the url for the chunk itself.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ChunkDownloadedEventArgs.DownloadTimeMs">
+            <summary>
+            Gets or sets the time it took to download the chunk in milliseconds
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ChunkDownloadedEventArgs.PerceivedBandwidth">
+            <summary>
+            Gets or sets the perceived bandwidth for the chunk in bps.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ChunkDownloadedEventArgs.Bitrate">
+            <summary>
+            Gets or sets the bitrate of the chunk in bps.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ChunkDownloadedEventArgs.ByteCount">
+            <summary>
+            Gets or sets the byte count of the chunk.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.ChunkFailureEventArgs">
+            <summary>
+            Represents event args for the ChunkFailure event.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ChunkFailureEventArgs.ChunkId">
+            <summary>
+            The ID or url of the chunk
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ChunkFailureEventArgs.HttpResponse">
+            <summary>
+            The HTTP error code for the chunk.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.IPlayerMonitor">
+            <summary>
+            Provides an interface to relay information about the player
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.IPlayerMonitor.DroppedFramesPerSecond">
+            <summary>
+            Gets the current dropped frames per second.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.IPlayerMonitor.RenderedFramesPerSecond">
+            <summary>
+            Gets the current rendered frames per second.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.IPlayerMonitor.PlaybackRate">
+            <summary>
+            Gets the current play back rate (e.g. 1 = normal, -1 = RW at 1x, 2 = FF at 2x)
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.IPlayerMonitor.IsFullScreen">
+            <summary>
+            Gets whether or not the player is fullscreen.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.IPlayerMonitor.IsLive">
+            <summary>
+            Gets whether or not the stream is a live (vs. VOD) stream.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.IPlayerMonitor.IsBuffering">
+            <summary>
+            Gets whether or not the player is currently buffering.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.IPlayerMonitor.Source">
+            <summary>
+            Gets the source URI of the stream.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.IPlayerMonitor.Position">
+            <summary>
+            Gets the current playback position of the stream.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.IPlayerMonitor.Duration">
+            <summary>
+            Gets the current duration of the stream.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.IPlayerMonitor.AudioTrackId">
+            <summary>
+            Gets the ID of the currently selected audio track.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.IPlayerMonitor.CaptionTrackId">
+            <summary>
+            Gets the ID of the currently selected caption track.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Media.Analytics.IPlayerMonitor.ClipStarted">
+            <summary>
+            Indicates that a clip has started.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Media.Analytics.IPlayerMonitor.ClipEnded">
+            <summary>
+            Indicates that a clip has ended.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Media.Analytics.IPlayerMonitor.StreamFailed">
+            <summary>
+            Indicates that the stream failed.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Media.Analytics.IPlayerMonitor.PositionReached">
+            <summary>
+            Indicates that a monitored position has been reached
+            </summary>
+        </member>
+        <member name="E:Microsoft.Media.Analytics.IPlayerMonitor.PlayTimeReached">
+            <summary>
+            Indicates that a monitored playtime has been reached
+            </summary>
+        </member>
+        <member name="E:Microsoft.Media.Analytics.IPlayerMonitor.PositionPercentageReached">
+            <summary>
+            Indicates that a monitored position (by percentage) has been reached
+            </summary>
+        </member>
+        <member name="E:Microsoft.Media.Analytics.IPlayerMonitor.PlayTimePercentageReached">
+            <summary>
+            Indicates that a monitored play time (by percentage) has been reached
+            </summary>
+        </member>
+        <member name="E:Microsoft.Media.Analytics.IPlayerMonitor.Seeked">
+            <summary>
+            Indicates that the user has seeked.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Media.Analytics.IPlayerMonitor.ScrubCompleted">
+            <summary>
+            Indicates that the user has completed a scrub.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Media.Analytics.IPlayerMonitor.StreamLoaded">
+            <summary>
+            Indicates that the stream loaded.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Media.Analytics.IPlayerMonitor.StreamStarted">
+            <summary>
+            Indicates that the stream started playback.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Media.Analytics.IPlayerMonitor.StreamClosed">
+            <summary>
+            Indicates that the stream closed.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Media.Analytics.IPlayerMonitor.StreamEnded">
+            <summary>
+            Indicates that the stream ended.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Media.Analytics.IPlayerMonitor.Playing">
+            <summary>
+            Indicates that playback started.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Media.Analytics.IPlayerMonitor.Paused">
+            <summary>
+            Indicates that playback was paused.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Media.Analytics.IPlayerMonitor.IsBufferingChanged">
+            <summary>
+            Indicates that the IsBuffering property has changed.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Media.Analytics.IPlayerMonitor.FullScreenChanged">
+            <summary>
+            Indicates that the IsFullScreen property has changed.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Media.Analytics.IPlayerMonitor.ScrubStarted">
+            <summary>
+            Indicates that the user has started to scrub.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Media.Analytics.IPlayerMonitor.PlaybackRateChanged">
+            <summary>
+            Indicates that the property PlaybackRate has changed.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Media.Analytics.IPlayerMonitor.IsLiveChanged">
+            <summary>
+            Indicates that the IsLive property has changed.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Media.Analytics.IPlayerMonitor.CaptionTrackChanged">
+            <summary>
+            Indicates that the CaptionTrackId property has changed.
+            </summary>
+        </member>
+        <member name="E:Microsoft.Media.Analytics.IPlayerMonitor.AudioTrackChanged">
+            <summary>
+            Indicates that the AudioTrackId property has changed.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.StreamFailedEventArgs">
+            <summary>
+            Provides info about a stream failure event.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.StreamFailedEventArgs.#ctor(System.String)">
+            <summary>
+            Creates a new instance of StreamFailedEventArgs.
+            </summary>
+            <param name="errorMessage">An error message related to the reason for the failure.</param>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.StreamFailedEventArgs.ErrorMessage">
+            <summary>
+            Gets the error message associated with the stream failure.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.ClipEventArgs">
+            <summary>
+            Provides info about a clip event.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.ClipEventArgs.#ctor(Windows.Foundation.Uri)">
+            <summary>
+            Creates a new instance of ClipEventArgs.
+            </summary>
+            <param name="source">The source URI of the clip (if available).</param>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ClipEventArgs.Source">
+            <summary>
+            Gets the source URI for the clip (this may not be set if one is not available).
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.PlayTimeReachedEventArgs">
+            <summary>
+            Provides info about a PlayTimeReached event.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.PlayTimeReachedEventArgs.#ctor(Windows.Foundation.TimeSpan)">
+            <summary>
+            Creates a new instance of PlayTimeReachedEventArgs.
+            </summary>
+            <param name="playTime">The play time that triggered this event.</param>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.PlayTimeReachedEventArgs.PlayTime">
+            <summary>
+            Gets the play time that triggered the event.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.PositionReachedEventArgs">
+            <summary>
+            Provides info about a PositionReached event.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.PositionReachedEventArgs.#ctor(Windows.Foundation.TimeSpan)">
+            <summary>
+            Creates a new instance of PositionReachedEventArgs.
+            </summary>
+            <param name="position">The position that triggered this event.</param>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.PositionReachedEventArgs.Position">
+            <summary>
+            Gets the position that triggered the event.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.PlayTimePercentageReachedEventArgs">
+            <summary>
+            Provides info about a PlayTimePercentageReached event.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.PlayTimePercentageReachedEventArgs.#ctor(System.Double)">
+            <summary>
+            Creates a new instance of PlayTimePercentageReachedEventArgs.
+            </summary>
+            <param name="playTime">The play time that triggered this event.</param>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.PlayTimePercentageReachedEventArgs.PlayTime">
+            <summary>
+            Gets the play time that triggered the event.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.PositionPercentageReachedEventArgs">
+            <summary>
+            Provides info about a PositionPercentageReached event.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.PositionPercentageReachedEventArgs.#ctor(System.Double)">
+            <summary>
+            Creates a new instance of PositionPercentageReachedEventArgs.
+            </summary>
+            <param name="position">The position that triggered this event.</param>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.PositionPercentageReachedEventArgs.Position">
+            <summary>
+            Gets the position that triggered the event.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.SeekedEventArgs">
+            <summary>
+            Provides info about a Seeked event.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.SeekedEventArgs.#ctor(Windows.Foundation.TimeSpan,Windows.Foundation.TimeSpan)">
+            <summary>
+            Creates a new instance of SeekedEventArgs.
+            </summary>
+            <param name="previousPosition">The previous position</param>
+            <param name="newPosition">The new position</param>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.SeekedEventArgs.PreviousPosition">
+            <summary>
+            Gets the previous position.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.SeekedEventArgs.NewPosition">
+            <summary>
+            Gets the new position.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.ScrubCompletedEventArgs">
+            <summary>
+            Provides info about a ScrubCompleted event.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.ScrubCompletedEventArgs.#ctor(Windows.Foundation.TimeSpan)">
+            <summary>
+            Creates a new instance of SeekedEventArgs.
+            </summary>
+            <param name="position">The position in the timeline where the scrub completed at.</param>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.ScrubCompletedEventArgs.Position">
+            <summary>
+            Gets the new position.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.QualityConfig">
+            <summary>
+            Responsible for indicating which quality data should be tracked and aggregated. Used to filter data that will not be used at the earliest possible moment to improve performance.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.QualityConfig.#ctor">
+            <summary>
+            Creates a new instance of QualityConfig.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityConfig.DroppedFrames">
+            <summary>
+            Gets or sets if this metric should be recorded.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityConfig.RenderedFrames">
+            <summary>
+            Gets or sets if this metric should be recorded.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityConfig.ProcessCpuLoad">
+            <summary>
+            Gets or sets if this metric should be recorded.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityConfig.SystemCpuLoad">
+            <summary>
+            Gets or sets if this metric should be recorded.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityConfig.Bitrate">
+            <summary>
+            Gets or sets if this metric should be recorded.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityConfig.BitrateMax">
+            <summary>
+            Gets or sets if this metric should be recorded.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityConfig.BitrateMaxDuration">
+            <summary>
+            Gets or sets if this metric should be recorded.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityConfig.PerceivedBandwidth">
+            <summary>
+            Gets or sets if this metric should be recorded.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityConfig.VideoBufferSize">
+            <summary>
+            Gets or sets if this metric should be recorded.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityConfig.AudioBufferSize">
+            <summary>
+            Gets or sets if this metric should be recorded.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityConfig.Buffering">
+            <summary>
+            Gets or sets if this metric should be recorded.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityConfig.BitrateChangeCount">
+            <summary>
+            Gets or sets if this metric should be recorded.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityConfig.DvrOperationCount">
+            <summary>
+            Gets or sets if this metric should be recorded.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityConfig.FullScreenChangeCount">
+            <summary>
+            Gets or sets if this metric should be recorded.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityConfig.DownloadErrorCount">
+            <summary>
+            Gets or sets if this metric should be recorded.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityConfig.VideoDownloadLatency">
+            <summary>
+            Gets or sets if this metric should be recorded.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityConfig.AudioDownloadLatency">
+            <summary>
+            Gets or sets if this metric should be recorded.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Media.Analytics.QualityReport">
+            <summary>
+            Contains all the aggregated values for the sampled quality data
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.QualityReport.#ctor">
+            <summary>
+            Creates a new instance of QualityReport.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Media.Analytics.QualityReport.GetData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityReport.ExtraData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityReport.Id">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityReport.TimeStamp">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityReport.Type">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityReport.DroppedFrames">
+            <summary>
+            Average dropped frames per second
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityReport.RenderedFrames">
+            <summary>
+            Average rendered frames per second
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityReport.ProcessCpuLoad">
+            <summary>
+            The average CPU load for the current process (e.g. 15 = 15%)
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityReport.SystemCpuLoad">
+            <summary>
+            The average CPU load for the entire system (e.g. 15 = 15%)
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityReport.Bitrate">
+            <summary>
+            The average bitrate currently being played
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityReport.PerceivedBandwidth">
+            <summary>
+            The average perceived bandwidth in bytes per second
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityReport.VideoBufferSize">
+            <summary>
+            The average size of the video buffer in bytes
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityReport.AudioBufferSize">
+            <summary>
+            The average size of the audio buffer in bytes
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityReport.BufferingMilliseconds">
+            <summary>
+            The total duration in milliseconds that the player was buffering
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityReport.VideoDownloadLatencyMilliseconds">
+            <summary>
+            The average latency time for video chunks in milliseconds
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityReport.AudioDownloadLatencyMilliseconds">
+            <summary>
+            The average latency time for audio chunks in milliseconds
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityReport.BitrateMax">
+            <summary>
+            The max bitrate achieved in the current sampling period
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityReport.BitrateMaxMilliseconds">
+            <summary>
+            The total amount of time that the max bitrate was achieved within the current sampling period
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityReport.BitrateChangeCount">
+            <summary>
+            The total times that the bitrate changed within the current sampling period
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityReport.DvrOperationCount">
+            <summary>
+            The total times that a DVR operation occured
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityReport.FullScreenChangeCount">
+            <summary>
+            The total times that the video came in or out of full screen mode
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityReport.HttpErrorCount">
+            <summary>
+            The total number of HTTP errors
+            </summary>
+        </member>
+        <member name="P:Microsoft.Media.Analytics.QualityReport.SampleSizeSeconds">
+            <summary>
+            The sample size in seconds
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Microsoft.WinJS.2.0/js/ui/WinJS.UI.FlipView" name="WinJS.UI.FlipView" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="false" xmlns="http://openajax.org/metadata">
+  <author name="Microsoft Corporation" />
+  <description locid="WinJS.UI.FlipView" type="text/plain">Displays a collection, such as a set of photos, one item at a time.</description>
+  <icons>
+    <icon src="ui_winjs.ui.flipview.12x12.png" />
+    <icon src="ui_winjs.ui.flipview.16x16.png" />
+  </icons>
+  <properties>
+    <property name="element" datatype="HTMLElement" required="false" hidden="true">
+      <description locid="WinJS.UI.FlipView.element" type="text/plain">The DOM element that hosts the FlipView control.</description>
+    </property>
+    <property name="currentPage" datatype="Number" isInteger="true" required="false" minimum="0">
+      <description locid="WinJS.UI.FlipView.currentPage" type="text/plain">Gets or sets the index of the currently displayed page. The minimum value is 0 and the maximum value is one less than the total number of items returned by the data source.</description>
+    </property>
+    <property name="orientation" datatype="WinJS.UI.Orientation" required="false">
+      <description locid="WinJS.UI.FlipView.orientation" type="text/plain">Gets or sets the layout orientation of the FlipView, horizontal or vertical.</description>
+    </property>
+    <property name="itemDataSource" datatype="object" required="false">
+      <description locid="WinJS.UI.FlipView.itemDataSource" type="text/plain">Gets or sets the data source that provides the FlipView with items to display.
+ The FlipView displays one item at a time, each on its own page.</description>
+    </property>
+    <property name="itemTemplate" datatype="Function" required="false" blend:potentialValueSelector="[data-win-control='WinJS.Binding.Template']">
+      <description locid="WinJS.UI.FlipView.itemTemplate" type="text/plain">Gets or sets a WinJS.Binding.Template or a function that defines the HTML for each item's page.</description>
+    </property>
+    <property name="itemSpacing" datatype="Number" isInteger="true" required="false">
+      <description locid="WinJS.UI.FlipView.itemSpacing" type="text/plain">Gets or sets the spacing between items, in pixels.</description>
+    </property>
+  </properties>
+  <content><![CDATA[<div data-win-control="WinJS.UI.FlipView"></div>]]></content>
+  <requires>
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/base.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="//Microsoft.WinJS.2.0/css/ui-dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript"><![CDATA[WinJS.UI.processAll();]]></require>
+  </requires>
+  <blend:parts>
+    <part name="flipView" class="win-flipview">
+      <description locid="WinJS.UI.FlipView_part:flipView" type="text/plain">The entire FlipView control.</description>
+    </part>
+    <part name="navigationButton" class="win-navbutton">
+      <description locid="WinJS.UI.FlipView_part:navigationButton" type="text/plain">The general class for all FlipView navigation buttons.</description>
+    </part>
+    <part name="leftNavigationButton" class="win-navleft">
+      <description locid="WinJS.UI.FlipView_part:leftNavigationButton" type="text/plain">The left navigation button.</description>
+    </part>
+    <part name="rightNavigationButton" class="win-navright">
+      <description locid="WinJS.UI.FlipView_part:rightNavigationButton" type="text/plain">The right navigation button.</description>
+    </part>
+    <part name="topNavigationButton" class="win-navtop">
+      <description locid="WinJS.UI.FlipView_part:topNavigationButton" type="text/plain">The top navigation button.</description>
+    </part>
+    <part name="bottomNavigationButton" class="win-navbottom">
+      <description locid="WinJS.UI.FlipView_part:bottomNavigationButton" type="text/plain">The bottom navigation button.</description>
+    </part>
+  </blend:parts><locale messages="ui_loc_oam.xml" />
+</widget>

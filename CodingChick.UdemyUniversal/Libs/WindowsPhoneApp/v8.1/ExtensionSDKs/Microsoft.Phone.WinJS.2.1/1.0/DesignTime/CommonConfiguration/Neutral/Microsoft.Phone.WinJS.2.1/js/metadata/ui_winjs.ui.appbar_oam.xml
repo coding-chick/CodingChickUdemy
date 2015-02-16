@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Microsoft.Phone.WinJS.2.1/js/ui/WinJS.UI.AppBar" name="WinJS.UI.AppBar" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="true" xmlns="http://openajax.org/metadata">
+  <author name="Microsoft Corporation" />
+  <description locid="WinJS.UI.AppBar" type="text/plain">Represents an application toolbar for display commands.</description>
+  <icons>
+    <icon src="ui_winjs.ui.appbar.12x12.png" />
+    <icon src="ui_winjs.ui.appbar.16x16.png" />
+  </icons>
+  <properties>
+    <property name="element" datatype="HTMLElement" required="false" hidden="true" readonly="true">
+      <description locid="WinJS.UI.AppBar.element" type="text/plain">The DOM element the AppBar is attached to</description>
+    </property>
+    <property name="disabled" datatype="Boolean" required="false">
+      <description locid="WinJS.UI.AppBar.disabled" type="text/plain">Disable an AppBar.
+ When disabled the AppBar will animate off of the screen, stop firing events and will no longer respond to method or property changes until it is re-enabled. 
+ If another part of the App takes control of the commandBar while the AppBar is disabled, the AppBar will not know about it and will not respond to commandBar events.
+ Re-enabling an AppBar will take back control of the commandBar and overwrite the commandBar's current state with the commands and state of the re-enabled AppBar.</description>
+    </property>
+    <property name="hidden" datatype="Boolean" required="false" hidden="true">
+      <description locid="WinJS.UI.AppBar.hidden" type="text/plain">Read only, true if the AppBar is currently not open.</description>
+    </property>
+    <property name="placement" datatype="WinJS.UI.AppBar.placement" required="false" hidden="true">
+      <description locid="WinJS.UI.AppBar.placement" type="text/plain">The placement of the AppBar on the display. The only value for phone is"bottom".</description>
+    </property>
+    <property name="layout" datatype="WinJS.UI.AppBar.layout" required="false" hidden="true">
+      <description locid="WinJS.UI.AppBar.layout" type="text/plain">The layout of the AppBar contents. "Commands is the only value on phone"</description>
+    </property>
+    <property name="sticky" datatype="Boolean" required="false" blend:isAdvanced="true">
+      <description locid="WinJS.UI.AppBar.sticky" type="text/plain">The value that indicates whether the AppBar is sticky. false is the only value on phone.</description>
+    </property>
+    <property name="commands" datatype="Array" required="false" blend:isAdvanced="true">
+      <description locid="WinJS.UI.AppBar.commands" type="text/plain">Gets/Sets the AppBarCommands in the AppBar. This property accepts an array of AppBarCommand objects.</description>
+    </property>
+    <property name="closedDisplayMode" datatype="Array" required="false" blend:isAdvanced="true">
+      <description locid="WinJS.UI.AppBar.closedDisplayMode" type="text/plain">Gets/Sets how AppBar will display itself while closed. Values are "compact" and "minimal".</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="WindowsPhoneApp" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+  </properties>
+  <content><![CDATA[<div data-win-control="WinJS.UI.AppBar">
+ <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'',label:'example',icon:'back',type:'button',onclick:null,section:'global'}"></button>
+ </div>]]></content>
+  <requires>
+    <require type="javascript" src="//Microsoft.Phone.WinJS.2.1/js/base.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="//Microsoft.Phone.WinJS.2.1/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="//Microsoft.Phone.WinJS.2.1/css/ui-dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript"><![CDATA[WinJS.UI.processAll();]]></require>
+  </requires>
+  <blend:parts>
+    <part name="appbar" class="win-commandlayout">
+      <description locid="WinJS.UI.AppBar_part:appbar" type="text/plain">The AppBar control itself.</description>
+    </part>
+    <part name="appBarCustom" class="win-appbar">
+      <description locid="WinJS.UI.AppBar_part:appBarCustom" type="text/plain">Style for a custom layout AppBar.</description>
+    </part>
+  </blend:parts><locale messages="ui_loc_oam.xml" />
+</widget>

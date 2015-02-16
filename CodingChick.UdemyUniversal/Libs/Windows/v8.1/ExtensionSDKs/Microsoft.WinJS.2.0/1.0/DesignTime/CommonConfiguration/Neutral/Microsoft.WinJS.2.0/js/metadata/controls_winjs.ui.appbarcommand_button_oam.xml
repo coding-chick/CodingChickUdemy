@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget xmlns="http://openajax.org/metadata"
+        xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011"
+        spec="1.0"
+        id="http://www.microsoft.com/schemas/corsica/1.0/AppBarCommand_Button"
+        name="WinJS.UI.AppBarCommand_Button"
+            blend:supportsContent="false"
+        version="1.0">
+  <author name="Microsoft Corporation" />
+  <title type="text/plain">AppBar Command Button</title>
+  <icons>
+    <icon src="controls_winjs.ui.appbarcommand_button.12x12.png" width="12" height="12" />
+    <icon src="controls_winjs.ui.appbarcommand_button.16x16.png" width="16" height="16" />
+  </icons>
+  <description type="text/plain">
+    <![CDATA[Command Button for use with the AppBar.]]>
+  </description>
+  <requires>
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/base.js" />
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/ui.js" />
+    <require type="javascript"><![CDATA[WinJS.UI.processAll();]]></require>
+  </requires>
+  <content>
+    <![CDATA[
+        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{label:'Button',type:'button'}"></button>
+    ]]>
+  </content>
+</widget>

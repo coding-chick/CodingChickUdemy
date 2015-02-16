@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<FileList
+    DisplayName="SQLite for Windows Phone 8.1"
+    ProductFamilyName="SQLite.WP81"
+    MoreInfo="http://www.sqlite.org/"
+    MinVSVersion="12.0"
+    MaxPlatformVersion="8.1"
+    AppliesTo="WindowsAppContainer"
+    DependsOn="Microsoft.VCLibs, version=12.0"
+    SupportsMultipleVersions="Error"
+    SupportedArchitectures="x86;ARM">
+</FileList>

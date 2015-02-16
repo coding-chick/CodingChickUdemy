@@ -1,0 +1,3088 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<api version="1.0" spec="1.0" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" xmlns="http://openajax.org/metadata">
+  <author name="Microsoft Corporation" />
+  <class name="WinJS.Binding._BindingListDataSource">
+    <properties>
+      <property name="list" required="false" />
+      <property name="moveAfter" required="false" />
+      <property name="moveBefore" required="false" />
+      <property name="moveToEnd" required="false" />
+      <property name="moveToStart" required="false" />
+      <property name="supportedForProcessing" required="false" />
+    </properties>
+    <events />
+    <methods>
+      <method name="addEventListener">
+        <returnType datatype="*" />
+      </method>
+      <method name="removeEventListener">
+        <returnType datatype="*" />
+      </method>
+      <method name="createListBinding">
+        <returnType datatype="*" />
+      </method>
+      <method name="getCount">
+        <returnType datatype="*" />
+      </method>
+      <method name="itemFromKey">
+        <returnType datatype="*" />
+      </method>
+      <method name="itemFromIndex">
+        <returnType datatype="*" />
+      </method>
+      <method name="beginEdits">
+        <returnType datatype="*" />
+      </method>
+      <method name="endEdits">
+        <returnType datatype="*" />
+      </method>
+      <method name="invalidateAll">
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI.VirtualizedDataSource">
+    <description locid="WinJS.UI.IListDataSource.endEdits" type="text/plain">Notifies the data source that a sequence of edits has ended.  The data source will call
+ IListNotificationHandler.beginNotifications and endNotifications once each for a sequence of edits.</description>
+    <properties>
+      <property name="supportedForProcessing" required="false" />
+    </properties>
+    <events />
+    <methods />
+  </class>
+  <class name="WinJS.UI._GroupDataSource">
+    <ancestor datatype="UI.VirtualizedDataSource" />
+    <properties>
+      <property name="supportedForProcessing" required="false" />
+    </properties>
+    <events />
+    <methods />
+  </class>
+  <class name="WinJS.UI.StorageDataSource">
+    <ancestor datatype="WinJS.UI.VirtualizedDataSource" />
+    <constructor>
+      <description locid="WinJS.UI.StorageDataSource" type="text/plain">Creates a data source that enumerates an IStorageQueryResultBase.</description>
+      <parameter name="query" datatype="Windows.Storage.Search.IStorageQueryResultBase">
+        <description locid="WinJS.UI.StorageDataSource_p:query" type="text/plain">The object to enumerate. It must support IStorageQueryResultBase.</description>
+      </parameter>
+      <parameter name="options" datatype="Object">
+        <description locid="WinJS.UI.StorageDataSource_p:options" type="text/plain">An object that specifies options for the data source. This parameter is optional. It can contain these properties: 
+
+ mode:
+ A Windows.Storage.FileProperties.ThumbnailMode - a value that specifies whether to request
+ thumbnails and the type of thumbnails to request.
+
+ requestedThumbnailSize:
+ A Number that specifies the size of the thumbnails.
+
+ thumbnailOptions:
+ A Windows.Storage.FileProperties.ThumbnailOptions value that specifies additional options for the thumbnails.
+
+ waitForFileLoad:
+ If you set this to true, the data source returns items only after it loads their properties and thumbnails.</description>
+      </parameter>
+      <returnType datatype="*" />
+    </constructor>
+    <properties>
+      <property name="supportedForProcessing" required="false" />
+    </properties>
+    <events />
+    <methods>
+      <method name="loadThumbnail">
+        <description locid="WinJS.UI.StorageDataSource.loadThumbnail" type="text/plain">Returns a promise for an image element that completes when the full quality thumbnail of the provided item is drawn to the
+ image element.</description>
+        <parameter name="item" datatype="ITemplateItem">
+          <description locid="WinJS.UI.StorageDataSource.loadThumbnail_p:item" type="text/plain">The item to retrieve a thumbnail for.</description>
+        </parameter>
+        <parameter name="image" datatype="Object" p6:domElement="true" xmlns:p6="http://schemas.microsoft.com/winjs/2011">
+          <description locid="WinJS.UI.StorageDataSource.loadThumbnail_p:image" type="text/plain">The image element to use. If not provided, a new image element is created.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI._createItemsManager">
+    <properties>
+      <property name="supportedForProcessing" required="false" />
+    </properties>
+    <events />
+    <methods>
+      <method name="isPlaceholder">
+        <returnType datatype="*" />
+      </method>
+      <method name="itemObject">
+        <returnType datatype="*" />
+      </method>
+      <method name="release">
+        <returnType datatype="*" />
+      </method>
+      <method name="releaseItemPromise">
+        <returnType datatype="*" />
+      </method>
+      <method name="releaseItem">
+        <returnType datatype="*" />
+      </method>
+      <method name="refresh">
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI._ParallelWorkQueue">
+    <properties>
+      <property name="supportedForProcessing" required="false" />
+    </properties>
+    <events />
+    <methods />
+  </class>
+  <class name="WinJS.UI._VersionManager">
+    <properties>
+      <property name="locked" required="false" />
+      <property name="noOutstandingNotifications" required="false" />
+      <property name="version" required="false" />
+      <property name="unlocked" required="false" />
+      <property name="supportedForProcessing" required="false" />
+    </properties>
+    <events />
+    <methods>
+      <method name="beginUpdating">
+        <returnType datatype="*" />
+      </method>
+      <method name="endUpdating">
+        <returnType datatype="*" />
+      </method>
+      <method name="beginNotifications">
+        <returnType datatype="*" />
+      </method>
+      <method name="endNotifications">
+        <returnType datatype="*" />
+      </method>
+      <method name="receivedNotification">
+        <returnType datatype="*" />
+      </method>
+      <method name="cancelOnNotification">
+        <returnType datatype="*" />
+      </method>
+      <method name="clearCancelOnNotification">
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI.FlipView">
+    <description locid="WinJS.UI.FlipView" type="text/plain">Displays a collection, such as a set of photos, one item at a time.</description>
+    <constructor>
+      <description locid="WinJS.UI.FlipView.constructor" type="text/plain">Creates a new FlipView.</description>
+      <parameter name="element" p5:domElement="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.FlipView.constructor_p:element" type="text/plain">The DOM element that hosts the control.</description>
+      </parameter>
+      <parameter name="options" datatype="Object">
+        <description locid="WinJS.UI.FlipView.constructor_p:options" type="text/plain">An object that contains one or more property/value pairs to apply to the new control.
+ Each property of the options object corresponds to one of the control's properties or events.
+ Event names must begin with "on". For example, to provide a handler for the pageselected event,
+ add a property named "onpageselected" to the options object and set its value to the event handler.
+ This parameter is optional.</description>
+      </parameter>
+      <returnType datatype="WinJS.UI.FlipView">
+        <description locid="WinJS.UI.FlipView.constructor_returnValue" type="text/plain">The new FlipView control.</description>
+      </returnType>
+    </constructor>
+    <properties>
+      <property name="element" datatype="HTMLElement" required="false" hidden="true">
+        <description locid="WinJS.UI.FlipView.element" type="text/plain">The DOM element that hosts the FlipView control.</description>
+      </property>
+      <property name="currentPage" datatype="Number" isInteger="true" required="false" minimum="0">
+        <description locid="WinJS.UI.FlipView.currentPage" type="text/plain">Gets or sets the index of the currently displayed page. The minimum value is 0 and the maximum value is one less than the total number of items returned by the data source.</description>
+      </property>
+      <property name="orientation" datatype="WinJS.UI.Orientation" required="false">
+        <description locid="WinJS.UI.FlipView.orientation" type="text/plain">Gets or sets the layout orientation of the FlipView, horizontal or vertical.</description>
+      </property>
+      <property name="itemDataSource" datatype="object" required="false">
+        <description locid="WinJS.UI.FlipView.itemDataSource" type="text/plain">Gets or sets the data source that provides the FlipView with items to display.
+ The FlipView displays one item at a time, each on its own page.</description>
+      </property>
+      <property name="itemTemplate" datatype="Function" required="false" blend:potentialValueSelector="[data-win-control='WinJS.Binding.Template']">
+        <description locid="WinJS.UI.FlipView.itemTemplate" type="text/plain">Gets or sets a WinJS.Binding.Template or a function that defines the HTML for each item's page.</description>
+      </property>
+      <property name="itemSpacing" datatype="Number" isInteger="true" required="false">
+        <description locid="WinJS.UI.FlipView.itemSpacing" type="text/plain">Gets or sets the spacing between items, in pixels.</description>
+      </property>
+    </properties>
+    <events>
+      <event name="datasourcecountchanged" p5:bubbles="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.FlipView_e:datasourcecountchanged" type="text/plain">Raised when the number of items in the itemDataSource changes.</description>
+      </event>
+      <event name="pagevisibilitychanged" p5:bubbles="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.FlipView_e:pagevisibilitychanged" type="text/plain">Raised when a FlipView page becomes visible or invisible.</description>
+      </event>
+      <event name="pageselected" p5:bubbles="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.FlipView_e:pageselected" type="text/plain">Raised when the FlipView flips to a page.</description>
+      </event>
+      <event name="pagecompleted" p5:bubbles="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.FlipView_e:pagecompleted" type="text/plain">Raised when the FlipView flips to a page and its renderer function completes.</description>
+      </event>
+    </events>
+    <methods>
+      <method name="dispose">
+        <description locid="WinJS.UI.FlipView.dispose" type="text/plain">Disposes this FlipView.</description>
+        <returnType datatype="*" />
+      </method>
+      <method name="next">
+        <description locid="WinJS.UI.FlipView.next" type="text/plain">Navigates to the next item.</description>
+        <returnType datatype="Boolean">
+          <description locid="WinJS.UI.FlipView.next_returnValue" type="text/plain">true if the FlipView begins navigating to the next page;
+ false if the FlipView is at the last page or is in the middle of another navigation animation.</description>
+        </returnType>
+      </method>
+      <method name="previous">
+        <description locid="WinJS.UI.FlipView.previous" type="text/plain">Navigates to the previous item.</description>
+        <returnType datatype="Boolean">
+          <description locid="WinJS.UI.FlipView.previous_returnValue" type="text/plain">true if FlipView begins navigating to the previous page;
+ false if the FlipView is already at the first page or is in the middle of another navigation animation.</description>
+        </returnType>
+      </method>
+      <method name="count">
+        <description locid="WinJS.UI.FlipView.count" type="text/plain">Returns the number of items in the FlipView object's itemDataSource.</description>
+        <returnType datatype="WinJS.Promise">
+          <description locid="WinJS.UI.FlipView.count_returnValue" type="text/plain">A Promise that contains the number of items in the list
+ or WinJS.UI.CountResult.unknown if the count is unavailable.</description>
+        </returnType>
+      </method>
+      <method name="setCustomAnimations">
+        <description locid="WinJS.UI.FlipView.setCustomAnimations" type="text/plain">Sets custom animations for the FlipView to use when navigating between pages.</description>
+        <parameter name="animations" datatype="Object">
+          <description locid="WinJS.UI.FlipView.setCustomAnimations_p:animations" type="text/plain">An object containing up to three fields, one for each navigation action: next, previous, and jump
+ Each of those fields must be a function with this signature: function (outgoingPage, incomingPage).
+ This function returns a WinJS.Promise object that completes once the animations are finished.
+ If a field is null or undefined, the FlipView reverts to its default animation for that action.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+      <method name="forceLayout">
+        <description locid="WinJS.UI.FlipView.forceLayout" type="text/plain">Forces the FlipView to update its layout.
+ Use this function when making the FlipView visible again after its style.display property had been set to "none".</description>
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI._FlipPageManager">
+    <properties>
+      <property name="supportedForProcessing" required="false" />
+    </properties>
+    <events />
+    <methods>
+      <method name="initialize">
+        <returnType datatype="*" />
+      </method>
+      <method name="dispose">
+        <returnType datatype="*" />
+      </method>
+      <method name="setOrientation">
+        <returnType datatype="*" />
+      </method>
+      <method name="resetState">
+        <returnType datatype="*" />
+      </method>
+      <method name="setNewItemsManager">
+        <returnType datatype="*" />
+      </method>
+      <method name="currentIndex">
+        <returnType datatype="*" />
+      </method>
+      <method name="resetScrollPos">
+        <returnType datatype="*" />
+      </method>
+      <method name="scrollPosChanged">
+        <returnType datatype="*" />
+      </method>
+      <method name="itemRetrieved">
+        <returnType datatype="*" />
+      </method>
+      <method name="resized">
+        <returnType datatype="*" />
+      </method>
+      <method name="jumpToIndex">
+        <returnType datatype="*" />
+      </method>
+      <method name="startAnimatedNavigation">
+        <returnType datatype="*" />
+      </method>
+      <method name="endAnimatedNavigation">
+        <returnType datatype="*" />
+      </method>
+      <method name="startAnimatedJump">
+        <returnType datatype="*" />
+      </method>
+      <method name="endAnimatedJump">
+        <returnType datatype="*" />
+      </method>
+      <method name="inserted">
+        <returnType datatype="*" />
+      </method>
+      <method name="changed">
+        <returnType datatype="*" />
+      </method>
+      <method name="moved">
+        <returnType datatype="*" />
+      </method>
+      <method name="removed">
+        <returnType datatype="*" />
+      </method>
+      <method name="reload">
+        <returnType datatype="*" />
+      </method>
+      <method name="getItemSpacing">
+        <returnType datatype="*" />
+      </method>
+      <method name="setItemSpacing">
+        <returnType datatype="*" />
+      </method>
+      <method name="notificationsStarted">
+        <returnType datatype="*" />
+      </method>
+      <method name="notificationsEnded">
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI._GroupFocusCache">
+    <properties />
+    <events />
+    <methods>
+      <method name="updateCache">
+        <returnType datatype="*" />
+      </method>
+      <method name="deleteItem">
+        <returnType datatype="*" />
+      </method>
+      <method name="deleteGroup">
+        <returnType datatype="*" />
+      </method>
+      <method name="updateItemIndex">
+        <returnType datatype="*" />
+      </method>
+      <method name="getIndexForGroup">
+        <returnType datatype="*" />
+      </method>
+      <method name="clear">
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI._UnsupportedGroupFocusCache">
+    <properties />
+    <events />
+    <methods>
+      <method name="updateCache">
+        <returnType datatype="*" />
+      </method>
+      <method name="deleteItem">
+        <returnType datatype="*" />
+      </method>
+      <method name="deleteGroup">
+        <returnType datatype="*" />
+      </method>
+      <method name="updateItemIndex">
+        <returnType datatype="*" />
+      </method>
+      <method name="getIndexForGroup">
+        <returnType datatype="*" />
+      </method>
+      <method name="clear">
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI._GroupsContainerBase">
+    <properties />
+    <events />
+    <methods>
+      <method name="index">
+        <returnType datatype="*" />
+      </method>
+      <method name="headerFrom">
+        <returnType datatype="*" />
+      </method>
+      <method name="requestHeader">
+        <returnType datatype="*" />
+      </method>
+      <method name="notify">
+        <returnType datatype="*" />
+      </method>
+      <method name="groupFromImpl">
+        <returnType datatype="*" />
+      </method>
+      <method name="groupFrom">
+        <returnType datatype="*" />
+      </method>
+      <method name="groupFromItem">
+        <returnType datatype="*" />
+      </method>
+      <method name="groupFromOffset">
+        <returnType datatype="*" />
+      </method>
+      <method name="group">
+        <returnType datatype="*" />
+      </method>
+      <method name="length">
+        <returnType datatype="*" />
+      </method>
+      <method name="cleanUp">
+        <returnType datatype="*" />
+      </method>
+      <method name="synchronizeGroups">
+        <returnType datatype="*" />
+      </method>
+      <method name="fromKey">
+        <returnType datatype="*" />
+      </method>
+      <method name="fromHandle">
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI._UnvirtualizedGroupsContainer">
+    <ancestor datatype="WinJS.UI._GroupsContainerBase" />
+    <properties />
+    <events />
+    <methods>
+      <method name="initialize">
+        <returnType datatype="*" />
+      </method>
+      <method name="renderGroup">
+        <returnType datatype="*" />
+      </method>
+      <method name="setDomElement">
+        <returnType datatype="*" />
+      </method>
+      <method name="removeElements">
+        <returnType datatype="*" />
+      </method>
+      <method name="resetGroups">
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI._NoGroups">
+    <ancestor datatype="WinJS.UI._GroupsContainerBase" />
+    <properties />
+    <events />
+    <methods>
+      <method name="synchronizeGroups">
+        <returnType datatype="*" />
+      </method>
+      <method name="addItem">
+        <returnType datatype="*" />
+      </method>
+      <method name="resetGroups">
+        <returnType datatype="*" />
+      </method>
+      <method name="renderGroup">
+        <returnType datatype="*" />
+      </method>
+      <method name="ensureFirstGroup">
+        <returnType datatype="*" />
+      </method>
+      <method name="groupOf">
+        <returnType datatype="*" />
+      </method>
+      <method name="removeElements">
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI._ItemEventsHandler">
+    <properties />
+    <events />
+    <methods>
+      <method name="dispose">
+        <returnType datatype="*" />
+      </method>
+      <method name="onMSManipulationStateChanged">
+        <returnType datatype="*" />
+      </method>
+      <method name="onPointerDown">
+        <returnType datatype="*" />
+      </method>
+      <method name="onPointerOver">
+        <returnType datatype="*" />
+      </method>
+      <method name="onPointerOut">
+        <returnType datatype="*" />
+      </method>
+      <method name="onDragStart">
+        <returnType datatype="*" />
+      </method>
+      <method name="onClick">
+        <returnType datatype="*" />
+      </method>
+      <method name="onPointerUp">
+        <returnType datatype="*" />
+      </method>
+      <method name="onPointerCancel">
+        <returnType datatype="*" />
+      </method>
+      <method name="onLostPointerCapture">
+        <returnType datatype="*" />
+      </method>
+      <method name="onContextMenu">
+        <returnType datatype="*" />
+      </method>
+      <method name="onMSHoldVisual">
+        <returnType datatype="*" />
+      </method>
+      <method name="onDataChanged">
+        <returnType datatype="*" />
+      </method>
+      <method name="handleSwipeBehavior">
+        <returnType datatype="*" />
+      </method>
+      <method name="handleTap">
+        <returnType datatype="*" />
+      </method>
+      <method name="resetPointerDownState">
+        <returnType datatype="*" />
+      </method>
+      <method name="setAriaSelected">
+        <returnType datatype="*" />
+      </method>
+      <method name="renderSelection">
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI.Layout">
+    <properties />
+    <events />
+    <methods />
+  </class>
+  <class name="WinJS.UI._LayoutCommon">
+    <ancestor datatype="WinJS.UI.Layout" />
+    <description locid="WinJS.UI.Layout.constructor" type="text/plain">Creates a new Layout object.</description>
+    <properties>
+      <property name="groupHeaderPosition" datatype="WinJS.UI.HeaderPosition" required="false">
+        <description locid="WinJS.UI._LayoutCommon.groupHeaderPosition" type="text/plain">Gets or sets the position of group headers relative to their items.
+ The default value is "top".</description>
+      </property>
+      <property name="orientation" datatype="WinJS.UI.Orientation" required="false">
+        <description locid="1" type="text/plain">Gets or sets the orientation for the layout.
+ The default value is "horizontal".</description>
+      </property>
+      <property name="numberOfItemsPerItemsBlock" required="false" />
+    </properties>
+    <events />
+    <methods>
+      <method name="initialize">
+        <returnType datatype="*" />
+      </method>
+      <method name="uninitialize">
+        <returnType datatype="*" />
+      </method>
+      <method name="layout">
+        <returnType datatype="*" />
+      </method>
+      <method name="itemsFromRange">
+        <returnType datatype="*" />
+      </method>
+      <method name="getAdjacent">
+        <returnType datatype="*" />
+      </method>
+      <method name="hitTest">
+        <returnType datatype="*" />
+      </method>
+      <method name="setupAnimations">
+        <returnType datatype="*" />
+      </method>
+      <method name="executeAnimations">
+        <returnType datatype="*" />
+      </method>
+      <method name="dragOver">
+        <returnType datatype="*" />
+      </method>
+      <method name="dragLeave">
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI._LegacyLayout">
+    <ancestor datatype="WinJS.UI._LayoutCommon" />
+    <properties>
+      <property name="disableBackdrop" datatype="Boolean" required="false">
+        <description locid="WinJS.UI._LegacyLayout.disableBackdrop" type="text/plain">Gets or sets a value that indicates whether the layout should disable the backdrop feature
+ which avoids blank areas while panning in a virtualized list.
+ 
+ disableBackdrop is deprecated. Style: .win-listview .win-container.win-backdrop { background-color:transparent; } instead.</description>
+      </property>
+      <property name="backdropColor" datatype="String" required="false">
+        <description locid="WinJS.UI._LegacyLayout.backdropColor" type="text/plain">Gets or sets the fill color for the default pattern used for the backdrops.
+ The default value is "rgba(155,155,155,0.23)".
+ 
+ backdropColor is deprecated. Style: .win-listview .win-container.win-backdrop { rgba(155,155,155,0.23); } instead.</description>
+      </property>
+    </properties>
+    <events />
+    <methods />
+  </class>
+  <class name="WinJS.UI.GridLayout">
+    <ancestor datatype="WinJS.UI._LegacyLayout" />
+    <constructor>
+      <description locid="WinJS.UI.GridLayout" type="text/plain">Creates a new GridLayout.</description>
+      <parameter name="options" datatype="Object">
+        <description locid="WinJS.UI.GridLayout_p:options" type="text/plain">An object that contains one or more property/value pairs to apply to the new control. Each property of the options
+ object corresponds to one of the control's properties or events.</description>
+      </parameter>
+      <returnType datatype="WinJS.UI.GridLayout">
+        <description locid="WinJS.UI.GridLayout_returnValue" type="text/plain">The new GridLayout.</description>
+      </returnType>
+    </constructor>
+    <properties>
+      <property name="maximumRowsOrColumns" datatype="Number" isInteger="true" required="false">
+        <description locid="WinJS.UI.GridLayout.maximumRowsOrColumns" type="text/plain">Gets the maximum number of rows or columns, depending on the orientation, that should present before it introduces wrapping to the layout.
+ A value of 0 indicates that there is no maximum. The default value is 0.</description>
+      </property>
+      <property name="maxRows" datatype="Number" isInteger="true" required="false">
+        <description locid="WinJS.UI.GridLayout.maxRows" type="text/plain">Gets or sets the maximum number of rows displayed by the ListView.
+ 
+ WinJS.UI.GridLayout.maxRows may be altered or unavailable after the Windows Library for JavaScript 2.0. Instead, use the maximumRowsOrColumns property.</description>
+      </property>
+      <property name="itemInfo" datatype="Function" required="false">
+        <description locid="WinJS.UI.GridLayout.itemInfo" type="text/plain">Determines the size of the item and whether
+ the item should be placed in a new column.
+ 
+ GridLayout.itemInfo may be altered or unavailable in future versions. Instead, use CellSpanningLayout.</description>
+      </property>
+      <property name="groupInfo" datatype="Function" required="false">
+        <description locid="WinJS.UI.GridLayout.groupInfo" type="text/plain">Indicates whether a group has cell spanning items and specifies the dimensions of the cell.
+ 
+ GridLayout.groupInfo may be altered or unavailable in future versions. Instead, use CellSpanningLayout.</description>
+      </property>
+    </properties>
+    <events />
+    <methods />
+  </class>
+  <class name="WinJS.UI.ListLayout">
+    <ancestor datatype="WinJS.UI._LegacyLayout" />
+    <constructor>
+      <description locid="WinJS.UI.ListLayout" type="text/plain">Creates a new ListLayout object.</description>
+      <parameter name="options" datatype="Object">
+        <description locid="WinJS.UI.ListLayout_p:options" type="text/plain">An object that contains one or more property/value pairs to apply to the new control. Each property of the options 
+ object corresponds to one of the object's properties or events. Event names must begin with "on".</description>
+      </parameter>
+      <returnType datatype="WinJS.UI.ListLayout">
+        <description locid="WinJS.UI.ListLayout_returnValue" type="text/plain">The new ListLayout object.</description>
+      </returnType>
+    </constructor>
+    <properties>
+      <property name="numberOfItemsPerItemsBlock" required="false" />
+    </properties>
+    <events />
+    <methods>
+      <method name="initialize">
+        <returnType datatype="*" />
+      </method>
+      <method name="uninitialize">
+        <returnType datatype="*" />
+      </method>
+      <method name="layout">
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI.CellSpanningLayout">
+    <ancestor datatype="WinJS.UI._LayoutCommon" />
+    <constructor>
+      <description locid="WinJS.UI.CellSpanningLayout" type="text/plain">Creates a new CellSpanningLayout object.</description>
+      <parameter name="options" datatype="Object">
+        <description locid="WinJS.UI.CellSpanningLayout_p:options" type="text/plain">An object that contains one or more property/value pairs to apply to the new object. Each property of the options 
+ object corresponds to one of the object's properties or events. Event names must begin with "on".</description>
+      </parameter>
+      <returnType datatype="WinJS.UI.CellSpanningLayout">
+        <description locid="WinJS.UI.CellSpanningLayout_returnValue" type="text/plain">The new CellSpanningLayout object.</description>
+      </returnType>
+    </constructor>
+    <properties>
+      <property name="maximumRowsOrColumns" datatype="Number" isInteger="true" required="false">
+        <description locid="WinJS.UI.CellSpanningLayout.maximumRowsOrColumns" type="text/plain">Gets or set the maximum number of rows or columns, depending on the orientation, to display before content begins to wrap.
+ A value of 0 indicates that there is no maximum.</description>
+      </property>
+      <property name="itemInfo" datatype="Function" required="false">
+        <description locid="WinJS.UI.CellSpanningLayout.itemInfo" type="text/plain">Gets or sets a function that returns the width and height of an item, as well as whether 
+ it should  appear in a new column. Setting this function improves performance because 
+ the ListView can allocate space for an item without having to measure it first. 
+ The function takes a single parameter: the index of the item to render. 
+ The function returns an object that has three properties: 
+ width: The  total width of the item.
+ height: The total height of the item.
+ newColumn: Set to true to create a column break; otherwise, false.</description>
+      </property>
+      <property name="groupInfo" datatype="Function" required="false">
+        <description locid="WinJS.UI.CellSpanningLayout.groupInfo" type="text/plain">Gets or sets a function that enables cell-spanning and establishes base cell dimensions.
+ The function returns an object that has these properties:
+ enableCellSpanning: Set to true to allow the ListView to contain items of multiple sizes. 
+ cellWidth: The width of the base cell.
+ cellHeight: The height of the base cell.</description>
+      </property>
+      <property name="orientation" datatype="WinJS.UI.Orientation" required="false">
+        <description locid="2" type="text/plain">Gets the orientation of the layout. CellSpanning layout only supports horizontal orientation.</description>
+      </property>
+    </properties>
+    <events />
+    <methods />
+  </class>
+  <class name="WinJS.UI._LayoutWrapper">
+    <properties>
+      <property name="numberOfItemsPerItemsBlock" required="false" />
+    </properties>
+    <events />
+    <methods>
+      <method name="uninitialize">
+        <returnType datatype="*" />
+      </method>
+      <method name="layout">
+        <returnType datatype="*" />
+      </method>
+      <method name="itemsFromRange">
+        <returnType datatype="*" />
+      </method>
+      <method name="getAdjacent">
+        <returnType datatype="*" />
+      </method>
+      <method name="dragOver">
+        <returnType datatype="*" />
+      </method>
+      <method name="dragLeave">
+        <returnType datatype="*" />
+      </method>
+      <method name="setupAnimations">
+        <returnType datatype="*" />
+      </method>
+      <method name="executeAnimations">
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI.ListView">
+    <description locid="WinJS.UI.ListView" type="text/plain">Displays items in a customizable list or grid.</description>
+    <constructor>
+      <description locid="WinJS.UI.ListView.constructor" type="text/plain">Creates a new ListView.</description>
+      <parameter name="element" p5:domElement="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.ListView.constructor_p:element" type="text/plain">The DOM element that hosts the ListView control.</description>
+      </parameter>
+      <parameter name="options" datatype="Object">
+        <description locid="WinJS.UI.ListView.constructor_p:options" type="text/plain">An object that contains one or more property/value pairs to apply to the new control.
+ Each property of the options object corresponds to one of the control's properties or events.
+ Event names must begin with "on". For example, to provide a handler for the selectionchanged event,
+ add a property named "onselectionchanged" to the options object and set its value to the event handler.</description>
+      </parameter>
+      <returnType datatype="WinJS.UI.ListView">
+        <description locid="WinJS.UI.ListView.constructor_returnValue" type="text/plain">The new ListView.</description>
+      </returnType>
+    </constructor>
+    <properties>
+      <property name="element" datatype="HTMLElement" required="false" hidden="true">
+        <description locid="WinJS.UI.ListView.element" type="text/plain">Gets the DOM element that hosts the ListView.</description>
+      </property>
+      <property name="layout" datatype="WinJS.UI.Layout" required="false">
+        <description locid="WinJS.UI.ListView.layout" type="text/plain">Gets or sets an object that controls the layout of the ListView.</description>
+      </property>
+      <property name="pagesToLoad" datatype="Number" isInteger="true" required="false" blend:isAdvanced="true">
+        <description locid="WinJS.UI.ListView.pagesToLoad" type="text/plain">Gets or sets the number of pages to load when the user scrolls beyond the
+ threshold specified by the pagesToLoadThreshold property if
+ the loadingBehavior property is set to incremental.
+ 
+ pagesToLoad is deprecated. The control will not use this property. Please refer to the 'ListView loading behaviors' SDK Sample for guidance on how to implement incremental load behavior.</description>
+      </property>
+      <property name="pagesToLoadThreshold" datatype="Number" isInteger="true" required="false" blend:isAdvanced="true">
+        <description locid="WinJS.UI.ListView.pagesToLoadThreshold" type="text/plain">Gets or sets the threshold (in pages) for initiating an incremental load. When the last visible item is
+ within the specified number of pages from the end of the loaded portion of the list,
+ and if automaticallyLoadPages is true and loadingBehavior is set to "incremental",
+ the ListView initiates an incremental load.
+ 
+ pagesToLoadThreshold is deprecated.  The control will not use this property. Please refer to the 'ListView loading behaviors' SDK Sample for guidance on how to implement incremental load behavior.</description>
+      </property>
+      <property name="groupDataSource" datatype="Object" required="false">
+        <description locid="WinJS.UI.ListView.groupDataSource" type="text/plain">Gets or sets the data source that contains the groups for the items in the itemDataSource.</description>
+      </property>
+      <property name="automaticallyLoadPages" datatype="Boolean" required="false">
+        <description locid="WinJS.UI.ListView.automaticallyLoadPages" type="text/plain">Gets or sets a value that indicates whether the next set of pages is automatically loaded
+ when the user scrolls beyond the number of pages specified by the
+ pagesToLoadThreshold property.
+ 
+ automaticallyLoadPages is deprecated. The control will default this property to false. Please refer to the 'ListView loading behaviors' SDK Sample for guidance on how to implement incremental load behavior.</description>
+      </property>
+      <property name="loadingBehavior" datatype="WinJS.UI.ListView.LoadingBehavior" required="false">
+        <description locid="WinJS.UI.ListView.loadingBehavior" type="text/plain">Gets or sets a value that determines how many data items are loaded into the DOM.
+ 
+ pagesToLoadThreshold is deprecated. The control will default this property to 'randomAccess'. Please refer to the 'ListView loading behaviors' SDK Sample for guidance on how to implement incremental load behavior.</description>
+      </property>
+      <property name="selectionMode" datatype="WinJS.UI.ListView.SelectionMode" required="false">
+        <description locid="WinJS.UI.ListView.selectionMode" type="text/plain">Gets or sets a value that specifies how many ListView items the user can select: "none", "single", or "multi".</description>
+      </property>
+      <property name="tapBehavior" datatype="WinJS.UI.TapBehavior" required="false">
+        <description locid="WinJS.UI.ListView.tapBehavior" type="text/plain">Gets or sets how the ListView reacts when the user taps or clicks an item.
+ The tap or click can invoke the item, select it and invoke it, or have no
+ effect.</description>
+      </property>
+      <property name="groupHeaderTapBehavior" datatype="WinJS.UI.GroupHeaderTapBehavior" required="false">
+        <description locid="WinJS.UI.ListView.groupHeaderTapBehavior" type="text/plain">Gets or sets how the ListView reacts when the user taps or clicks a group header.</description>
+      </property>
+      <property name="swipeBehavior" datatype="WinJS.UI.SwipeBehavior" required="false">
+        <description locid="WinJS.UI.ListView.swipeBehavior" type="text/plain">Gets or sets how the ListView reacts to the swipe interaction.
+ The swipe gesture can select the swiped items or it can
+ have no effect on the current selection.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="itemDataSource" datatype="Object" required="false">
+        <description locid="WinJS.UI.ListView.itemDataSource" type="text/plain">Gets or sets the data source that provides items for the ListView.</description>
+      </property>
+      <property name="itemTemplate" datatype="Object" required="false" blend:potentialValueSelector="[data-win-control='WinJS.Binding.Template']">
+        <description locid="WinJS.UI.ListView.itemTemplate" type="text/plain">Gets or sets the templating function that creates the DOM elements
+ for each item in the itemDataSource. Each item can contain multiple
+ DOM elements, but we recommend that it have a single root element.</description>
+      </property>
+      <property name="resetItem" datatype="Function" required="false">
+        <description locid="WinJS.UI.ListView.resetItem" type="text/plain">Gets or sets the function that is called when the ListView recycles the
+ element representation of an item.
+ 
+ resetItem may be altered or unavailable in future versions. Instead, mark the element as disposable using WinJS.Utilities.markDisposable.</description>
+      </property>
+      <property name="groupHeaderTemplate" datatype="Object" required="false" blend:potentialValueSelector="[data-win-control='WinJS.Binding.Template']">
+        <description locid="WinJS.UI.ListView.groupHeaderTemplate" type="text/plain">Gets or sets the templating function that creates the DOM elements
+ for each group header in the groupDataSource. Each group header
+ can contain multiple elements, but it must have a single root element.</description>
+      </property>
+      <property name="resetGroupHeader" datatype="Function" required="false" blend:isAdvanced="true">
+        <description locid="WinJS.UI.ListView.resetGroupHeader" type="text/plain">Gets or sets the function that is called when the ListView recycles the DOM element representation
+ of a group header.
+ 
+ resetGroupHeader may be altered or unavailable in future versions. Instead, mark the header element as disposable using WinJS.Utilities.markDisposable.</description>
+      </property>
+      <property name="loadingState" datatype="String" required="false" hidden="true">
+        <description locid="WinJS.UI.ListView.loadingState" type="text/plain">Gets a value that indicates whether the ListView is still loading or whether
+ loading is complete.  This property can return one of these values:
+ "itemsLoading", "viewPortLoaded", "itemsLoaded", or "complete".</description>
+      </property>
+      <property name="selection" datatype="Object" required="false" blend:isAdvanced="true">
+        <description locid="WinJS.UI.ListView.selection" type="text/plain">Gets an ISelection object that contains the currently selected items.</description>
+      </property>
+      <property name="indexOfFirstVisible" datatype="Number" isInteger="true" required="false" blend:isAdvanced="true">
+        <description locid="WinJS.UI.ListView.indexOfFirstVisible" type="text/plain">Gets or sets the first visible item. When setting this property, the ListView scrolls so that the
+ item with the specified index is at the top of the list.</description>
+      </property>
+      <property name="indexOfLastVisible" datatype="Number" isInteger="true" required="false" readonly="true" blend:isAdvanced="true">
+        <description locid="WinJS.UI.ListView.indexOfLastVisible" type="text/plain">Gets the index of the last visible item.</description>
+      </property>
+      <property name="currentItem" datatype="Object" required="false" blend:isAdvanced="true">
+        <description locid="WinJS.UI.ListView.currentItem" type="text/plain">Gets or sets an object that indicates which item should get keyboard focus and its focus status.
+ The object has these properties:
+ index: the index of the item in the itemDataSource.
+ key: the key of the item in the itemDataSource.
+ hasFocus: when getting this property, this value is true if the item already has focus; otherwise, it's false.
+ When setting this property, set this value to true if the item should get focus immediately; otherwise, set it to
+ false and the item will get focus eventually.
+ showFocus: true if the item displays the focus rectangle; otherwise, false.</description>
+      </property>
+      <property name="zoomableView" datatype="Object" required="false" blend:isAdvanced="true">
+        <description locid="WinJS.UI.ListView.zoomableView" type="text/plain">Gets a ZoomableView. This API supports the SemanticZoom infrastructure
+ and is not intended to be used directly from your code.</description>
+      </property>
+      <property name="itemsDraggable" datatype="Boolean" required="false">
+        <description locid="WinJS.UI.ListView.itemsDraggable" type="text/plain">Gets or sets whether the ListView's items can be dragged via drag and drop.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="itemsReorderable" datatype="Boolean" required="false">
+        <description locid="WinJS.UI.ListView.itemsReorderable" type="text/plain">Gets or sets whether the ListView's items can be reordered within itself via drag and drop. When a ListView is marked as reorderable, its items can be dragged about inside itself, but it will not require the itemdrag events it fires to be handled.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="maxDeferredItemCleanup" datatype="Number" isInteger="true" required="false" blend:isAdvanced="true">
+        <description locid="WinJS.UI.ListView.maxDeferredItemCleanup" type="text/plain">Gets or sets the maximum number of realized items.</description>
+      </property>
+      <property name="scrollPosition" datatype="Number" isInteger="true" required="false">
+        <description locid="WinJS.UI.ListView.scrollPosition" type="text/plain">Gets or sets the position of the ListView's scrollbar.</description>
+      </property>
+    </properties>
+    <events>
+      <event name="contentanimating" p5:bubbles="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.ListView_e:contentanimating" type="text/plain">Raised when the ListView is about to play an entrance or a transition animation.</description>
+      </event>
+      <event name="iteminvoked" p5:bubbles="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.ListView_e:iteminvoked" type="text/plain">Raised when the user taps or clicks an item.</description>
+      </event>
+      <event name="groupheaderinvoked" p5:bubbles="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.ListView_e:groupheaderinvoked" type="text/plain">Raised when the user taps or clicks a group header.</description>
+      </event>
+      <event name="selectionchanging" p5:bubbles="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.ListView_e:selectionchanging" type="text/plain">Raised before items are selected or deselected.</description>
+      </event>
+      <event name="selectionchanged" p5:bubbles="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.ListView_e:selectionchanged" type="text/plain">Raised after items are selected or deselected.</description>
+      </event>
+      <event name="loadingstatechanged" p5:bubbles="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.ListView_e:loadingstatechanged" type="text/plain">Raised when the loading state changes.</description>
+      </event>
+      <event name="keyboardnavigating" p5:bubbles="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.ListView_e:keyboardnavigating" type="text/plain">Raised when the focused item changes.</description>
+      </event>
+      <event name="itemdragstart" p5:bubbles="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.ListView_e:itemdragstart" type="text/plain">Raised when the the user begins dragging ListView items.</description>
+      </event>
+      <event name="itemdragenter" p5:bubbles="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.ListView_e:itemdragenter" type="text/plain">Raised when the user drags into the ListView.</description>
+      </event>
+      <event name="itemdragend" p5:bubbles="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.ListView_e:itemdragend" type="text/plain">Raised when a drag operation begun in a ListView ends.</description>
+      </event>
+      <event name="itemdragbetween" p5:bubbles="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.ListView_e:itemdragbetween" type="text/plain">Raised when the user drags between two ListView items.</description>
+      </event>
+      <event name="itemdragleave" p5:bubbles="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.ListView_e:itemdragleave" type="text/plain">Raised when the user drags outside of the ListView region.</description>
+      </event>
+      <event name="itemdragchanged" p5:bubbles="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.ListView_e:itemdragchanged" type="text/plain">Raised when the items being dragged are changed due to a datasource modification.</description>
+      </event>
+      <event name="itemdragdrop" p5:bubbles="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.ListView_e:itemdragdrop" type="text/plain">Raised when the user drops items into the ListView.</description>
+      </event>
+      <event name="accessibilityannotationcomplete" p5:bubbles="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.ListView_e:accessibilityannotationcomplete" type="text/plain">Raised when the accessibility attributes have been added to the ListView items.</description>
+      </event>
+    </events>
+    <methods>
+      <method name="dispose">
+        <description locid="WinJS.UI.ListView.dispose" type="text/plain">Disposes this ListView.</description>
+        <returnType datatype="*" />
+      </method>
+      <method name="elementFromIndex">
+        <description locid="WinJS.UI.ListView.elementFromIndex" type="text/plain">Returns the DOM element that represents the item at the specified index.</description>
+        <parameter name="itemIndex" datatype="Number">
+          <description locid="WinJS.UI.ListView.elementFromIndex_p:itemIndex" type="text/plain">The index of the item.</description>
+        </parameter>
+        <returnType datatype="Object">
+          <description locid="WinJS.UI.ListView.elementFromIndex_returnValue" type="text/plain">The DOM element that represents the specified item.</description>
+        </returnType>
+      </method>
+      <method name="indexOfElement">
+        <description locid="WinJS.UI.ListView.indexOfElement" type="text/plain">Returns the index of the item that the specified DOM element displays.</description>
+        <parameter name="element" datatype="HTMLElement" p6:domElement="true" xmlns:p6="http://schemas.microsoft.com/winjs/2011">
+          <description locid="WinJS.UI.ListView.indexOfElement_p:element" type="text/plain">The DOM element that displays the item.</description>
+        </parameter>
+        <returnType datatype="Number">
+          <description locid="WinJS.UI.ListView.indexOfElement_returnValue" type="text/plain">The index of item that the specified DOM element displays.</description>
+        </returnType>
+      </method>
+      <method name="ensureVisible">
+        <description locid="WinJS.UI.ListView.ensureVisible" type="text/plain">Makes the specified item visible. The ListView scrolls to the item if needed.</description>
+        <parameter name="value" datatype="Number|IListViewEntity">
+          <description locid="WinJS.UI.ListView.ensureVisible_p:value" type="text/plain">The index of the ListView item or IListViewEntity to bring into view.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+      <method name="loadMorePages">
+        <description locid="WinJS.UI.ListView.loadMorePages" type="text/plain">Loads the next set of pages if the ListView object's loadingBehavior is set to incremental.
+ 
+ loadMorePages is deprecated. Invoking this function will not have any effect. Please refer to the 'ListView loading behaviors' SDK Sample for guidance on how to implement incremental load behavior.</description>
+        <returnType datatype="*" />
+      </method>
+      <method name="recalculateItemPosition">
+        <description locid="WinJS.UI.ListView.recalculateItemPosition" type="text/plain">Repositions all the visible items in the ListView to adjust for items whose sizes have changed. Use this function or forceLayout when making the ListView visible again after you set its style.display property to "none" or after style changes have been made that affect the size or position of the ListView or its items. Unlike forceLayout, this method doesn’t recreate items and it doesn’t display entrance animation.</description>
+        <returnType datatype="*" />
+      </method>
+      <method name="forceLayout">
+        <description locid="WinJS.UI.ListView.forceLayout" type="text/plain">Forces the ListView to update its layout. Use this function or relcaculateItemPosition when making the ListView visible again after you set its style.display property to "none” or after style changes have been made that affect the size or position of the ListView or its items. 
+ after you set its style.display property to "none".</description>
+        <returnType datatype="*" />
+      </method>
+      <method name="triggerDispose">
+        <description locid="WinJS.UI.ListView.triggerDispose" type="text/plain">Triggers the ListView disposal service manually. In normal operation this is triggered
+ at ListView instantiation. However in some scenarios it may be appropriate to run
+ the disposal service manually.</description>
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI.Repeater">
+    <description locid="WinJS.UI.Repeater" type="text/plain">Uses templates to generate HTML from a set of data.</description>
+    <constructor>
+      <description locid="WinJS.UI.Repeater.constructor" type="text/plain">Creates a new Repeater control.</description>
+      <parameter name="element" datatype="HTMLElement" p5:domElement="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.Repeater.constructor_p:element" type="text/plain">The DOM element that will host the new control. The Repeater will create an element if this value is null.</description>
+      </parameter>
+      <parameter name="options" datatype="Object">
+        <description locid="WinJS.UI.Repeater.constructor_p:options" type="text/plain">An object that contains one or more property/value pairs to apply to the 
+ new Repeater. Each property of the options object corresponds to one of the 
+ object's properties or events. Event names must begin with "on".</description>
+      </parameter>
+      <returnType datatype="WinJS.UI.Repeater">
+        <description locid="WinJS.UI.Repeater.constructor_returnValue" type="text/plain">The new Repeater control.</description>
+      </returnType>
+    </constructor>
+    <properties>
+      <property name="element" datatype="HTMLElement" required="false" hidden="true" readonly="true">
+        <description locid="WinJS.UI.Repeater.element" type="text/plain">Gets the DOM element that hosts the Repeater.</description>
+      </property>
+      <property name="data" datatype="WinJS.Binding.List" required="false">
+        <description locid="WinJS.UI.Repeater.data" type="text/plain">Gets or sets the WinJS.Binding.List that provides the Repeater control with items to display.</description>
+      </property>
+      <property name="template" datatype="Object" required="false" blend:potentialValueSelector="[data-win-control='WinJS.Binding.Template']">
+        <description locid="WinJS.UI.Repeater.template" type="text/plain">Gets or sets a Template or custom rendering function that defines the HTML of each item within the Repeater.</description>
+      </property>
+      <property name="length" datatype="Number" isInteger="false" required="false" hidden="true">
+        <description locid="WinJS.UI.Repeater.length" type="text/plain">Gets the number of items in the Repeater control.</description>
+      </property>
+      <property name="isDeclarativeControlContainer" required="false" />
+    </properties>
+    <events />
+    <methods>
+      <method name="elementFromIndex">
+        <description locid="WinJS.UI.Repeater.elementFromIndex" type="text/plain">Returns the HTML element for the item with the specified index.</description>
+        <parameter name="index" datatype="Number">
+          <description locid="WinJS.UI.ListView.elementFromIndex_p:itemIndex" type="text/plain">The index of the item.</description>
+        </parameter>
+        <returnType datatype="HTMLElement">
+          <description locid=" WinJS.UI.Repeater.elementFromIndex_returnValue" type="text/plain">The DOM element for the specified item.</description>
+        </returnType>
+      </method>
+      <method name="dispose">
+        <description locid="WinJS.UI.Repeater.dispose" type="text/plain">Prepare this Repeater for garbage collection.</description>
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI._ItemSet">
+    <properties />
+    <events />
+    <methods />
+  </class>
+  <class name="WinJS.UI._Selection">
+    <ancestor datatype="WinJS.UI._ItemSet" />
+    <properties>
+      <property name="supportedForProcessing" required="false" />
+    </properties>
+    <events />
+    <methods>
+      <method name="clear">
+        <description locid="WinJS.UI._Selection.prototype.clear" type="text/plain">Clears the selection.</description>
+        <returnType datatype="Promise">
+          <description locid="WinJS.UI._Selection.prototype.clear_returnValue" type="text/plain">A Promise that is fulfilled when the clear operation completes.</description>
+        </returnType>
+      </method>
+      <method name="set">
+        <description locid="WinJS.UI._Selection.prototype.set" type="text/plain">Clears the current selection and replaces it with the specified items.</description>
+        <parameter name="items">
+          <description locid="WinJS.UI._Selection.prototype.set_items" type="text/plain">The indexes or keys of the items that make up the selection. 
+ You can provide different types of objects for the items parameter: 
+ you can specify an index, a key, or a range of indexes. 
+ It can also be an array that contains one or more of these objects.</description>
+        </parameter>
+        <returnType datatype="Promise">
+          <description locid="WinJS.UI._Selection.prototype.set_returnValue" type="text/plain">A Promise that is fulfilled when the operation completes.</description>
+        </returnType>
+      </method>
+      <method name="add">
+        <description locid="WinJS.UI._Selection.prototype.add" type="text/plain">Adds one or more items to the selection.</description>
+        <parameter name="items">
+          <description locid="WinJS.UI._Selection.prototype.add_items" type="text/plain">The indexes or keys of the items to add. 
+ You can provide different types of objects for the items parameter: 
+ you can specify an index, a key, or a range of indexes. 
+ It can also be an array that contains one or more of these objects.</description>
+        </parameter>
+        <returnType datatype="Promise">
+          <description locid="WinJS.UI._Selection.prototype.set_returnValue" type="text/plain">A Promise that is fulfilled when the operation completes.</description>
+        </returnType>
+      </method>
+      <method name="remove">
+        <description locid="WinJS.UI._Selection.prototype.remove" type="text/plain">Removes the specified items from the selection.</description>
+        <parameter name="items">
+          <description locid="WinJS.UI._Selection.prototype.remove_items" type="text/plain">The indexes or keys of the items to remove. You can provide different types of objects for the items parameter: 
+ you can specify an index, a key, or a range of indexes. 
+ It can also be an array that contains one or more of these objects.</description>
+        </parameter>
+        <returnType datatype="Promise">
+          <description locid="WinJS.UI._Selection.prototype.set_returnValue" type="text/plain">A Promise that is fulfilled when the operation completes.</description>
+        </returnType>
+      </method>
+      <method name="selectAll">
+        <description locid="WinJS.UI._Selection.prototype.selectAll" type="text/plain">Adds all the items in the ListView to the selection.</description>
+        <returnType datatype="Promise">
+          <description locid="WinJS.UI._Selection.prototype.set_returnValue" type="text/plain">A Promise that is fulfilled when the operation completes.</description>
+        </returnType>
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI.DatePicker">
+    <title locid="WinJS.UI.DatePicker_name" type="text/plain">Date Picker</title>
+    <description locid="WinJS.UI.DatePicker" type="text/plain">Allows users to pick a date value.</description>
+    <blend:compatibleWiths>
+      <blend:compatibleWith platform="Windows" minVersion="8.0" />
+    </blend:compatibleWiths>
+    <constructor>
+      <description locid="WinJS.UI.DatePicker.constructor" type="text/plain">Creates a new DatePicker control.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+      <parameter name="element" datatype="HTMLElement" p5:domElement="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.DatePicker.constructor_p:element" type="text/plain">The DOM element that will host the DatePicker control.</description>
+      </parameter>
+      <parameter name="options" datatype="Object">
+        <description locid="WinJS.UI.DatePicker.constructor_p:options" type="text/plain">An object that contains one or more property/value pairs to apply to the new control. Each property of the options object corresponds 
+ to one of the control's properties or events.</description>
+      </parameter>
+      <returnType datatype="WinJS.UI.DatePicker">
+        <description locid="WinJS.UI.DatePicker.constructor_returnValue" type="text/plain">A constructed DatePicker control.</description>
+      </returnType>
+    </constructor>
+    <properties>
+      <property name="calendar" datatype="String" required="false">
+        <description locid="WinJS.UI.DatePicker.calendar" type="text/plain">Gets or sets the calendar to use.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="current" datatype="Date" required="false">
+        <description locid="WinJS.UI.DatePicker.current" type="text/plain">Gets or sets the current date of the DatePicker.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="disabled" datatype="Boolean" required="false">
+        <description locid="WinJS.UI.DatePicker.disabled" type="text/plain">Gets or sets a value that specifies whether the DatePicker is disabled. A value of true indicates that the DatePicker is disabled.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="datePattern" datatype="String" required="false">
+        <description locid="WinJS.UI.DatePicker.datePattern" type="text/plain">Gets or sets the display pattern for the date.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="element" datatype="HTMLElement" required="false" hidden="true">
+        <description locid="WinJS.UI.DatePicker.element" type="text/plain">Gets the DOM element for the DatePicker.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="minYear" datatype="Number" isInteger="true" required="false">
+        <description locid="WinJS.UI.DatePicker.minYear" type="text/plain">Gets or sets the minimum Gregorian year available for picking.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="maxYear" datatype="Number" isInteger="true" required="false">
+        <description locid="WinJS.UI.DatePicker.maxYear" type="text/plain">Gets or sets the maximum Gregorian year available for picking.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="monthPattern" datatype="String" required="false">
+        <description locid="WinJS.UI.DatePicker.monthPattern" type="text/plain">Gets or sets the display pattern for the month.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="yearPattern" datatype="String" required="false">
+        <description locid="WinJS.UI.DatePicker.yearPattern" type="text/plain">Gets or sets the display pattern for year.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+    </properties>
+    <events>
+      <event name="change" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.DatePicker_e:change" type="text/plain">Occurs when the current date changes.</description>
+      </event>
+    </events>
+    <methods>
+      <method name="dispose">
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI.TimePicker">
+    <title locid="WinJS.UI.TimePicker_name" type="text/plain">Time Picker</title>
+    <description locid="WinJS.UI.TimePicker" type="text/plain">Allows users to select time values.</description>
+    <blend:compatibleWiths>
+      <blend:compatibleWith platform="Windows" minVersion="8.0" />
+    </blend:compatibleWiths>
+    <constructor>
+      <description locid="WinJS.UI.TimePicker.constructor" type="text/plain">Initializes a new instance of the TimePicker control</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+      <parameter name="element" datatype="HTMLElement" p5:domElement="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.TimePicker.constructor_p:element" type="text/plain">The DOM element associated with the TimePicker control.</description>
+      </parameter>
+      <parameter name="options" datatype="Object">
+        <description locid="WinJS.UI.TimePicker.constructor_p:options" type="text/plain">The set of options to be applied initially to the TimePicker control.</description>
+      </parameter>
+      <returnType datatype="WinJS.UI.TimePicker">
+        <description locid="WinJS.UI.TimePicker.constructor_returnValue" type="text/plain">A constructed TimePicker control.</description>
+      </returnType>
+    </constructor>
+    <properties>
+      <property name="clock" datatype="String" required="false">
+        <description locid="WinJS.UI.TimePicker.clock" type="text/plain">Gets or sets the type of clock to display (12HourClock or 24HourClock). It defaults to the user setting.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="current" datatype="Date" required="false">
+        <description locid="WinJS.UI.TimePicker.current" type="text/plain">Gets or sets the current date (and time) of the TimePicker.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="disabled" datatype="Boolean" required="false">
+        <description locid="WinJS.UI.TimePicker.disabled" type="text/plain">Specifies whether the TimePicker is disabled.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="element" datatype="HTMLElement" required="false" hidden="true">
+        <description locid="WinJS.UI.TimePicker.element" type="text/plain">Gets the DOM element for the TimePicker.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="hourPattern" datatype="String" required="false">
+        <description locid="WinJS.UI.TimePicker.hourPattern" type="text/plain">Gets or sets the display pattern for the hour.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="minuteIncrement" datatype="Number" isInteger="true" required="false">
+        <description locid="WinJS.UI.TimePicker.minuteIncrement" type="text/plain">Gets or sets the minute increment. For example, "15" specifies that the TimePicker minute control should display only the choices 00, 15, 30, 45.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="minutePattern" datatype="String" required="false">
+        <description locid="WinJS.UI.TimePicker.minutePattern" type="text/plain">Gets or sets the display pattern for the minute.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="periodPattern" datatype="String" required="false">
+        <description locid="WinJS.UI.TimePicker.periodPattern" type="text/plain">Gets or sets the display pattern for the period.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+    </properties>
+    <events>
+      <event name="change" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.TimePicker_e:change" type="text/plain">Occurs when the time changes.</description>
+      </event>
+    </events>
+    <methods>
+      <method name="dispose">
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI._Select">
+    <properties>
+      <property name="dataSource" required="false" />
+      <property name="index" required="false" />
+      <property name="value" required="false" />
+    </properties>
+    <events />
+    <methods>
+      <method name="setDisabled">
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI.BackButton">
+    <description locid="WinJS.UI.BackButton" type="text/plain">Provides backwards navigation functionality.</description>
+    <blend:compatibleWiths>
+      <blend:compatibleWith platform="Windows" minVersion="8.1" />
+    </blend:compatibleWiths>
+    <constructor>
+      <description locid="WinJS.UI.BackButton.constructor" type="text/plain">Creates a new BackButton control</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+      <parameter name="element" p5:domElement="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.BackButton.constructor_p:element" type="text/plain">The DOM element that will host the control. If this parameter is null, this constructor creates one for you.</description>
+      </parameter>
+      <parameter name="options" datatype="Object">
+        <description locid="WinJS.UI.MenuBackButtonCommand.constructor_p:options" type="text/plain">An object that contains one or more property/value pairs to apply to the new control. Each property of the options object corresponds to 
+ one of the control's properties or events.</description>
+      </parameter>
+      <returnType datatype="WinJS.UI.BackButton">
+        <description locid="WinJS.UI.BackButton.constructor_returnValue" type="text/plain">A BackButton control.</description>
+      </returnType>
+    </constructor>
+    <properties>
+      <property name="element" datatype="HTMLElement" required="false" hidden="true" readonly="true">
+        <description locid="WinJS.UI.BackButton.element" type="text/plain">Gets the DOM element that hosts the BackButton control.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+    </properties>
+    <events />
+    <methods>
+      <method name="dispose">
+        <description locid="WinJS.UI.BackButton.dispose" type="text/plain">Disposes this control.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+        <returnType datatype="*" />
+      </method>
+      <method name="refresh">
+        <description locid="WinJS.UI.BackButton.refresh" type="text/plain">Sets the 'disabled' attribute to correct the value based on the current navigation history stack.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI.Rating">
+    <description locid="WinJS.UI.Rating" type="text/plain">The Rating control allows users to give a number on a scale of 1 to maxRating (5 is the default).</description>
+    <blend:compatibleWiths>
+      <blend:compatibleWith platform="Windows" minVersion="8.0" />
+    </blend:compatibleWiths>
+    <constructor>
+      <description locid="WinJS.UI.Rating.constructor" type="text/plain">Creates a new Rating.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+      <parameter name="element" p5:domElement="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.Rating.constructor_p:element" type="text/plain">The DOM element that hosts the new Rating.</description>
+      </parameter>
+      <parameter name="options" datatype="Object">
+        <description locid="WinJS.UI.Rating.constructor_p:options" type="text/plain">An object that contains one or more property/value pairs to apply to the new control.
+ Each property of the options object corresponds to one of the control's properties or events.
+ Event names must begin with "on". For example, to provide a handler for the cancel event,
+ add a property named "oncancel" to the options object and set its value to the event handler.
+ This parameter is optional.</description>
+      </parameter>
+      <returnType datatype="WinJS.UI.Rating">
+        <description locid="WinJS.UI.Rating.constructor_returnValue" type="text/plain">The new Rating.</description>
+      </returnType>
+    </constructor>
+    <properties>
+      <property name="maxRating" datatype="Number" isInteger="true" required="false">
+        <description locid="WinJS.UI.Rating.maxRating" type="text/plain">Gets or sets the maximum possible rating value. The default is 5.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="userRating" datatype="Number" isInteger="true" required="false">
+        <description locid="WinJS.UI.Rating.userRating" type="text/plain">Gets or sets the user's rating. This value must be between greater than or equal to zero and less than or equal to the maxRating.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="averageRating" datatype="Number" isInteger="false" required="false">
+        <description locid="WinJS.UI.Rating.averageRating" type="text/plain">Gets or sets the average rating as a float value. This value must be [equal to zero] OR [greater than or equal to 1 AND less than or equal to the maxRating].</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="disabled" datatype="Boolean" required="false">
+        <description locid="WinJS.UI.Rating.disabled" type="text/plain">Gets or sets a value that specifies whether the control is disabled. When the control is disabled, the user can't specify a
+ new rating or modify an existing rating.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="enableClear" datatype="Boolean" required="false">
+        <description locid="WinJS.UI.Rating.enableClear" type="text/plain">Gets or sets whether the control lets the user clear the rating.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="tooltipStrings" datatype="Array" required="false">
+        <description locid="WinJS.UI.Rating.tooltipStrings" type="text/plain">Gets or sets a set of descriptions to show for rating values in the tooltip. The array must
+ contain a string for each available rating value, and it can contain an optional string
+ (at the end of the array) for the clear rating option.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="element" datatype="HTMLElement" required="false" hidden="true">
+        <description locid="WinJS.UI.Rating.element" type="text/plain">Gets the DOM element that hosts the Rating.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+    </properties>
+    <events>
+      <event name="previewchange" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.Rating_e:previewchange" type="text/plain">Raised when the user chooses a new tentative rating but hasn't commited the change.</description>
+      </event>
+      <event name="cancel" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.Rating_e:cancel" type="text/plain">Raised when the user finishes interacting with the rating control without committing a tentative rating.</description>
+      </event>
+      <event name="change" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.Rating_e:change" type="text/plain">Raised when the user commits a change to the userRating.</description>
+      </event>
+    </events>
+    <methods>
+      <method name="dispose">
+        <description locid="WinJS.UI.Rating.dispose" type="text/plain">Disposes this Rating.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+        <returnType datatype="*" />
+      </method>
+      <method name="addEventListener">
+        <description locid="WinJS.UI.Rating.addEventListener" type="text/plain">Registers an event handler for the specified event.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+        <parameter name="eventName" datatype="String">
+          <description locid="WinJS.UI.Rating.addEventListener_p:eventName" type="text/plain">The name of the event.</description>
+        </parameter>
+        <parameter name="eventCallback" datatype="Function">
+          <description locid="WinJS.UI.Rating.addEventListener_p:eventCallback" type="text/plain">The event handler function to associate with this event.</description>
+        </parameter>
+        <parameter name="capture" datatype="Boolean">
+          <description locid="WinJS.UI.Rating.addEventListener_p:capture" type="text/plain">Set to true to register the event handler for the capturing phase; set to false to register for the bubbling phase.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+      <method name="removeEventListener">
+        <description locid="WinJS.UI.Rating.removeEventListener" type="text/plain">Unregisters an event handler for the specified event.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+        <parameter name="eventName" datatype="String">
+          <description locid="WinJS.UI.Rating.addEventListener_p:eventName" type="text/plain">The name of the event.</description>
+        </parameter>
+        <parameter name="eventCallback" datatype="Function">
+          <description locid="WinJS.UI.Rating.removeEventListener_p:eventCallback" type="text/plain">The event handler function to remove.</description>
+        </parameter>
+        <parameter name="capture" datatype="Boolean">
+          <description locid="WinJS.UI.Rating.removeEventListener_p:capture" type="text/plain">Set to true to unregister the event handler for the capturing phase; otherwise, set to false to unregister the event handler for the bubbling phase.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI.ToggleSwitch">
+    <ancestor datatype="Control" />
+    <description locid="WinJS.UI.ToggleSwitch" type="text/plain">A control that lets the user switch an option on or off.</description>
+    <constructor>
+      <description locid="WinJS.UI.ToggleSwitch.constructor" type="text/plain">Creates a new ToggleSwitch.</description>
+      <parameter name="element" p5:domElement="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.ToggleSwitch.constructor_p:element" type="text/plain">The DOM element that hosts the ToggleSwitch.</description>
+      </parameter>
+      <parameter name="options" datatype="Object">
+        <description locid="WinJS.UI.ToggleSwitch.constructor_p:options" type="text/plain">An object that contains one or more property/value pairs to apply to the new control.
+ Each property of the options object corresponds to one of the control's properties or events.
+ Event names must begin with "on". For example, to provide a handler for the change event,
+ add a property named "onchange" to the options object and set its value to the event handler.
+ This parameter is optional.</description>
+      </parameter>
+      <returnType datatype="WinJS.UI.ToggleSwitch">
+        <description locid="WinJS.UI.ToggleSwitch.constructor_returnValue" type="text/plain">The new ToggleSwitch.</description>
+      </returnType>
+    </constructor>
+    <properties>
+      <property name="checked" datatype="Boolean" required="false">
+        <description locid="WinJS.UI.ToggleSwitch.checked" type="text/plain">Gets or sets whether the control is on (checked is set to true) or off (checked is set to false).</description>
+      </property>
+      <property name="disabled" datatype="Boolean" required="false">
+        <description locid="WinJS.UI.ToggleSwitch.disabled" type="text/plain">Gets or sets a value that specifies whether the control is disabled.</description>
+      </property>
+      <property name="element" datatype="HTMLElement" required="false" hidden="true">
+        <description locid="WinJS.UI.ToggleSwitch.element" type="text/plain">The DOM element that hosts the ToggleSwitch control.</description>
+      </property>
+      <property name="labelOn" datatype="String" required="false">
+        <description locid="WinJS.UI.ToggleSwitch.labelOn" type="text/plain">Gets or sets the text that displays when the control is on (checked is set to true). The default value is "On".</description>
+      </property>
+      <property name="labelOff" datatype="String" required="false">
+        <description locid="WinJS.UI.ToggleSwitch.labelOff" type="text/plain">Gets or sets the text that displays when the control is off (checked is set to false). The default value is "Off".</description>
+      </property>
+      <property name="title" datatype="String" required="false">
+        <description locid="WinJS.UI.ToggleSwitch.title" type="text/plain">Gets or sets the main text for the ToggleSwitch control. This text is always displayed, regardless of whether
+ the control is switched on or off.</description>
+      </property>
+    </properties>
+    <events>
+      <event name="change" p5:bubbles="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.ToggleSwitch_e:change" type="text/plain">Raised when the switch is flipped to on (checked is set to true) or off (checked is set to false).</description>
+      </event>
+    </events>
+    <methods>
+      <method name="dispose">
+        <description locid="WinJS.UI.ToggleSwitch.dispose" type="text/plain">Disposes this ToggleSwitch.</description>
+        <returnType datatype="*" />
+      </method>
+      <method name="addEventListener">
+        <description locid="WinJS.UI.Rating.addEventListener" type="text/plain">Registers an event handler for the specified event.</description>
+        <parameter name="eventName" datatype="String">
+          <description locid="WinJS.UI.Rating.addEventListener_p:eventName" type="text/plain">The name of the event.</description>
+        </parameter>
+        <parameter name="eventCallback" datatype="Function">
+          <description locid="WinJS.UI.Rating.addEventListener_p:eventCallback" type="text/plain">The event handler function to associate with this event.</description>
+        </parameter>
+        <parameter name="capture" datatype="Boolean">
+          <description locid="WinJS.UI.Rating.addEventListener_p:capture" type="text/plain">Set to true to register the event handler for the capturing phase; set to false to register for the bubbling phase.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+      <method name="removeEventListener">
+        <description locid="WinJS.UI.Rating.removeEventListener" type="text/plain">Unregisters an event handler for the specified event.</description>
+        <parameter name="eventName" datatype="String">
+          <description locid="WinJS.UI.Rating.addEventListener_p:eventName" type="text/plain">The name of the event.</description>
+        </parameter>
+        <parameter name="eventCallback" datatype="Function">
+          <description locid="WinJS.UI.Rating.removeEventListener_p:eventCallback" type="text/plain">The event handler function to remove.</description>
+        </parameter>
+        <parameter name="capture" datatype="Boolean">
+          <description locid="WinJS.UI.Rating.removeEventListener_p:capture" type="text/plain">Set to true to unregister the event handler for the capturing phase; otherwise, set to false to unregister the event handler for the bubbling phase.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI.SemanticZoom">
+    <description locid="WinJS.UI.SemanticZoom" type="text/plain">Enables the user to zoom between two different views supplied by two child controls.
+ One child control supplies the zoomed-out view and the other provides the zoomed-in view.</description>
+    <constructor>
+      <description locid="WinJS.UI.SemanticZoom.constructor" type="text/plain">Creates a new SemanticZoom.</description>
+      <parameter name="element" p5:domElement="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.SemanticZoom.constructor_p:element" type="text/plain">The DOM element that hosts the SemanticZoom.</description>
+      </parameter>
+      <parameter name="options" datatype="object">
+        <description locid="WinJS.UI.SemanticZoom.constructor_p:options" type="text/plain">An object that contains one or more property/value pairs to apply to the new control.
+ Each property of the options object corresponds to one of the control's properties or events. This parameter is optional.</description>
+      </parameter>
+      <returnType datatype="WinJS.UI.SemanticZoom">
+        <description locid="WinJS.UI.SemanticZoom.constructor_returnValue" type="text/plain">The new SemanticZoom control.</description>
+      </returnType>
+    </constructor>
+    <properties>
+      <property name="element" datatype="HTMLElement" required="false" hidden="true">
+        <description locid="WinJS.UI.SemanticZoom.element" type="text/plain">The DOM element that hosts the SemanticZoom control.</description>
+      </property>
+      <property name="enableButton" datatype="Boolean" required="false">
+        <description locid="WinJS.UI.SemanticZoom.enableButton" type="text/plain">Gets or sets a value that specifies whether the semantic zoom button should be displayed or not</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="zoomedOut" datatype="Boolean" required="false">
+        <description locid="WinJS.UI.SemanticZoom.zoomedOut" type="text/plain">Gets or sets a value that specifies whether the zoomed out view is currently displayed.</description>
+      </property>
+      <property name="zoomFactor" datatype="Number" isInteger="false" required="false" minimum="0.2" maximum="0.8">
+        <description locid="WinJS.UI.SemanticZoom.zoomFactor" type="text/plain">Gets or sets a value between 0.2 and 0.85 that specifies the scale of the zoomed out view. The default is 0.65.</description>
+      </property>
+      <property name="locked" datatype="Boolean" required="false">
+        <description locid="WinJS.UI.SemanticZoom.locked" type="text/plain">Gets or sets a value that indicates whether SemanticZoom is locked and zooming between views is disabled.</description>
+      </property>
+      <property name="zoomedInItem" datatype="Function" required="false">
+        <description locid="WinJS.UI.SemanticZoom.zoomedInItem" type="text/plain">Gets or sets a mapping function which can be used to change the item which is targeted on zoom in.</description>
+      </property>
+      <property name="zoomedOutItem" datatype="Function" required="false">
+        <description locid="WinJS.UI.SemanticZoom.zoomedOutItem" type="text/plain">Gets or sets a mapping function which can be used to change the item which is targeted on zoom out.</description>
+      </property>
+    </properties>
+    <events />
+    <methods>
+      <method name="dispose">
+        <description locid="WinJS.UI.SemanticZoom.dispose" type="text/plain">Disposes this SemanticZoom.</description>
+        <returnType datatype="*" />
+      </method>
+      <method name="forceLayout">
+        <description locid="WinJS.UI.SemanticZoom.forceLayout" type="text/plain">Forces the SemanticZoom to update its layout. Use this function when making the SemanticZoom visible again
+ after its style.display property had been set to "none".</description>
+        <returnType datatype="*" />
+      </method>
+      <method name="setTimeoutAfterTTFF">
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI.Hub">
+    <description locid="WinJS.UI.Hub" type="text/plain">Displays sections of content.</description>
+    <blend:compatibleWiths>
+      <blend:compatibleWith platform="Windows" minVersion="8.1" />
+    </blend:compatibleWiths>
+    <constructor>
+      <description locid="WinJS.UI.Hub.constructor" type="text/plain">Creates a new Hub control.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+      <parameter name="element" datatype="HTMLElement" p5:domElement="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.Hub.constructor_p:element" type="text/plain">The DOM element that hosts the Hub control.</description>
+      </parameter>
+      <parameter name="options" datatype="Object">
+        <description locid="WinJS.UI.Hub.constructor_p:options" type="text/plain">An object that contains one or more property/value pairs to apply to the new control. 
+ Each property of the options object corresponds to one of the control's properties or events. 
+ Event names must begin with "on". For example, to provide a handler for the contentanimating event,  
+ add a property named "oncontentanimating" to the options object and set its value to the event handler.</description>
+      </parameter>
+      <returnType datatype="WinJS.UI.Hub">
+        <description locid="WinJS.UI.Hub.constructor_returnValue" type="text/plain">The new Hub.</description>
+      </returnType>
+    </constructor>
+    <properties>
+      <property name="element" datatype="HTMLElement" required="false" hidden="true">
+        <description locid="WinJS.UI.Hub.element" type="text/plain">Gets the DOM element that hosts the Hub.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="orientation" datatype="WinJS.UI.Orientation" required="false">
+        <description locid="WinJS.UI.Hub.orientation" type="text/plain">Gets or sets the orientation of sections within the Hub.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="sections" datatype="WinJS.Binding.List" required="false">
+        <description locid="WinJS.UI.Hub.sections" type="text/plain">Gets or sets the WinJS.Binding.List of HubSection objects that belong to this Hub.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="headerTemplate" datatype="Object" required="false" blend:potentialValueSelector="[data-win-control='WinJS.Binding.Template']">
+        <description locid="WinJS.UI.Hub.headerTemplate" type="text/plain">Gets or sets the WinJS.Binding.Template or template function that creates the DOM elements
+ which represent the header for each HubSection. Each header can 
+ contain multiple DOM elements, but we recommend that it have a single 
+ root element.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="scrollPosition" datatype="Number" isInteger="true" required="false">
+        <description locid="WinJS.UI.Hub.scrollPosition" type="text/plain">Gets or sets the position of the Hub's scrollbar.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="sectionOnScreen" datatype="Number" isInteger="true" required="false">
+        <description locid="WinJS.UI.Hub.sectionOnScreen" type="text/plain">Gets or sets the index of first section in view. This property is useful for restoring a previous view when your app launches or resumes.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="indexOfFirstVisible" datatype="Number" isInteger="true" required="false" blend:isAdvanced="true">
+        <description locid="WinJS.UI.Hub.indexOfFirstVisible" type="text/plain">Gets or sets the index of first section at least partially in view. Use for animations.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="indexOfLastVisible" datatype="Number" isInteger="true" required="false" blend:isAdvanced="true">
+        <description locid="WinJS.UI.Hub.indexOfLastVisible" type="text/plain">Gets or sets the index of last section at least partially in view. Use for animations.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="loadingState" datatype="String" required="false" hidden="true">
+        <description locid="WinJS.UI.Hub.loadingState" type="text/plain">Gets a value that indicates whether the Hub is still loading or whether
+ loading is complete.  This property can return one of these values: 
+ "loading" or "complete".</description>
+      </property>
+      <property name="zoomableView" datatype="Object" required="false" blend:isAdvanced="true">
+        <description locid="WinJS.UI.Hub.zoomableView" type="text/plain">Gets a ZoomableView. This API supports the SemanticZoom infrastructure 
+ and is not intended to be used directly from your code.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="AnimationType" required="false">
+        <description locid="WinJS.UI.Hub.AnimationType" type="text/plain">Specifies whether the Hub animation is an entrance animation or a transition animation.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+    </properties>
+    <events>
+      <event name="contentanimating" p5:bubbles="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.Hub_e:contentanimating" type="text/plain">Raised when the Hub is about to play an entrance or a transition animation.</description>
+      </event>
+      <event name="headerinvoked" p5:bubbles="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.Hub_e:headerinvoked" type="text/plain">Raised when a header is invoked.</description>
+      </event>
+      <event name="loadingstatechanged" p5:bubbles="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.ListView_e:loadingstatechanged" type="text/plain">Raised when the loading state changes.</description>
+      </event>
+    </events>
+    <methods>
+      <method name="dispose">
+        <description locid="WinJS.UI.BackButton.dispose" type="text/plain">Disposes this control.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI.HubSection">
+    <description locid="WinJS.UI.HubSection" type="text/plain">Defines a section of a Hub control.</description>
+    <blend:compatibleWiths>
+      <blend:compatibleWith platform="Windows" minVersion="8.1" />
+    </blend:compatibleWiths>
+    <constructor>
+      <description locid="WinJS.UI.HubSection.constructor" type="text/plain">Creates a new HubSection.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+      <parameter name="element" datatype="HTMLElement" p5:domElement="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.HubSection.constructor_p:element" type="text/plain">The DOM element that hosts the HubSection control.</description>
+      </parameter>
+      <parameter name="options" datatype="Object">
+        <description locid="WinJS.UI.HubSection.constructor_p:options" type="text/plain">An object that contains one or more property/value pairs to apply to the new control. 
+ Each property of the options object corresponds to one of the control's properties or events.</description>
+      </parameter>
+      <returnType datatype="WinJS.UI.HubSection">
+        <description locid="WinJS.UI.HubSection.constructor_returnValue" type="text/plain">The new HubSection.</description>
+      </returnType>
+    </constructor>
+    <properties>
+      <property name="element" datatype="HTMLElement" required="false" hidden="true">
+        <description locid="WinJS.UI.HubSection.element" type="text/plain">Gets the DOM element that hosts the HubSection.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="isHeaderStatic" datatype="Boolean" required="false">
+        <description locid="WinJS.UI.HubSection.isHeaderStatic" type="text/plain">Gets or sets a value that specifies whether the header is static. Set this value to true to disable clicks and other interactions.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="contentElement" datatype="HTMLElement" required="false">
+        <description locid="WinJS.UI.HubSection.contentElement" type="text/plain">Gets the DOM element that hosts the HubSection's content.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="header" datatype="Object" required="false">
+        <description locid="WinJS.UI.HubSection.header" type="text/plain">Get or set the HubSection's header. After you set this property, the Hub renders the header again.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+    </properties>
+    <events />
+    <methods>
+      <method name="dispose">
+        <description locid="WinJS.UI.BackButton.dispose" type="text/plain">Disposes this control.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+        <returnType datatype="*" />
+      </method>
+      <method name="isDeclarativeControlContainer">
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI._Overlay">
+    <constructor>
+      <description locid="WinJS.UI._Overlay" type="text/plain">Constructs the Overlay control and associates it with the underlying DOM element.</description>
+      <parameter name="element" datatype="HTMLElement" p5:domElement="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI._Overlay_p:element" type="text/plain">The DOM element to be associated with the Overlay control.</description>
+      </parameter>
+      <parameter name="options" datatype="Object">
+        <description locid="WinJS.UI._Overlay_p:options" type="text/plain">The set of options to be applied initially to the Overlay control.</description>
+      </parameter>
+      <returnType datatype="WinJS.UI._Overlay">
+        <description locid="WinJS.UI._Overlay_returnValue" type="text/plain">A fully constructed Overlay control.</description>
+      </returnType>
+    </constructor>
+    <properties>
+      <property name="element" datatype="HTMLElement" required="false" hidden="true" readonly="true">
+        <description locid="WinJS.UI._Overlay.element" type="text/plain">The DOM element the Overlay is attached to</description>
+      </property>
+      <property name="disabled" datatype="Boolean" required="false">
+        <description locid="WinJS.UI._Overlay.disabled" type="text/plain">Disable an Overlay, setting or getting the HTML disabled attribute.  When disabled the Overlay will no longer display with show(), and will hide if currently visible.</description>
+      </property>
+      <property name="hidden" datatype="Boolean" required="false" hidden="true">
+        <description locid="WinJS.UI._Overlay.hidden" type="text/plain">Read only, true if an overlay is currently not visible.</description>
+      </property>
+    </properties>
+    <events />
+    <methods>
+      <method name="dispose">
+        <description locid="WinJS.UI.Overlay.dispose" type="text/plain">Disposes this Overlay.</description>
+        <returnType datatype="*" />
+      </method>
+      <method name="show">
+        <description locid="WinJS.UI._Overlay.show" type="text/plain">Shows the Overlay, if hidden, regardless of other state</description>
+        <returnType datatype="*" />
+      </method>
+      <method name="hide">
+        <description locid="WinJS.UI._Overlay.hide" type="text/plain">Hides the Overlay, if visible, regardless of other state</description>
+        <returnType datatype="*" />
+      </method>
+      <method name="addEventListener">
+        <description locid="WinJS.UI._Overlay.addEventListener" type="text/plain">Add an event listener to the DOM element for this Overlay</description>
+        <parameter name="type" datatype="String">
+          <description locid="WinJS.UI._Overlay.addEventListener_p:type" type="text/plain">Required. Event type to add, "beforehide", "afterhide", "beforeshow", or "aftershow"</description>
+        </parameter>
+        <parameter name="listener" datatype="Function">
+          <description locid="WinJS.UI._Overlay.addEventListener_p:listener" type="text/plain">Required. The event handler function to associate with this event.</description>
+        </parameter>
+        <parameter name="useCapture" datatype="Boolean">
+          <description locid="WinJS.UI._Overlay.addEventListener_p:useCapture" type="text/plain">Optional. True, register for the event capturing phase.  False for the event bubbling phase.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+      <method name="removeEventListener">
+        <description locid="WinJS.UI._Overlay.removeEventListener" type="text/plain">Remove an event listener to the DOM element for this Overlay</description>
+        <parameter name="type" datatype="String">
+          <description locid="WinJS.UI._Overlay.removeEventListener_p:type" type="text/plain">Required. Event type to remove, "beforehide", "afterhide", "beforeshow", or "aftershow"</description>
+        </parameter>
+        <parameter name="listener" datatype="Function">
+          <description locid="WinJS.UI._Overlay.addEventListener_p:listener" type="text/plain">Required. The event handler function to associate with this event.</description>
+        </parameter>
+        <parameter name="useCapture" datatype="Boolean">
+          <description locid="WinJS.UI._Overlay.addEventListener_p:useCapture" type="text/plain">Optional. True, register for the event capturing phase.  False for the event bubbling phase.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI.AppBarCommand">
+    <description locid="WinJS.UI.AppBarCommand" type="text/plain">Represents a command to display in an AppBar.</description>
+    <constructor>
+      <description locid="WinJS.UI.AppBarCommand.constructor" type="text/plain">Creates a new AppBarCommand control.</description>
+      <parameter name="element" p5:domElement="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.AppBarCommand.constructor_p:element" type="text/plain">The DOM element that will host the control. AppBarCommand will create one if null.</description>
+      </parameter>
+      <parameter name="options" datatype="Object">
+        <description locid="WinJS.UI.AppBarCommand.constructor_p:options" type="text/plain">The set of properties and values to apply to the new AppBarCommand.</description>
+      </parameter>
+      <returnType datatype="WinJS.UI.AppBarCommand">
+        <description locid="WinJS.UI.AppBarCommand.constructor_returnValue" type="text/plain">The new AppBarCommand control.</description>
+      </returnType>
+    </constructor>
+    <properties>
+      <property name="id" datatype="String" required="false" blend:isAdvanced="true">
+        <description locid="WinJS.UI.AppBarCommand.id" type="text/plain">Gets or sets the ID of the AppBarCommand.</description>
+      </property>
+      <property name="type" datatype="WinJS.UI.AppBarCommand.type" required="false" readonly="true" blend:isAdvanced="true">
+        <description locid="WinJS.UI.AppBarCommand.type" type="text/plain">Gets or sets the type of the AppBarCommand. Possible values are "button", "toggle", "flyout", or "separator".</description>
+      </property>
+      <property name="label" datatype="String" required="false">
+        <description locid="WinJS.UI.AppBarCommand.label" type="text/plain">Gets or sets the label of the AppBarCommand.</description>
+      </property>
+      <property name="icon" datatype="String" required="false">
+        <description locid="WinJS.UI.AppBarCommand.icon" type="text/plain">Gets or sets the icon of the AppBarCommand.</description>
+      </property>
+      <property name="onclick" datatype="Function" required="false">
+        <description locid="WinJS.UI.AppBarCommand.onclick" type="text/plain">Gets or sets the function to invoke when the command is clicked.</description>
+      </property>
+      <property name="flyout" datatype="Object" required="false">
+        <description locid="WinJS.UI.AppBarCommand.flyout" type="text/plain">For flyout-type AppBarCommands, this property returns the WinJS.UI.Flyout that this command invokes.
+ When setting this property, you may also use the String ID of the flyout to invoke, the DOM object 
+ for the flyout, or the WinJS.UI.Flayout object itself.</description>
+      </property>
+      <property name="section" datatype="WinJS.UI.AppBarCommand.section" required="false">
+        <description locid="WinJS.UI.AppBarCommand.section" type="text/plain">Gets or sets the section that the AppBarCommand is in. Possible values are "selection" and "global".</description>
+      </property>
+      <property name="tooltip" datatype="String" required="false">
+        <description locid="WinJS.UI.AppBarCommand.tooltip" type="text/plain">Gets or sets the tooltip text of the AppBarCommand.</description>
+      </property>
+      <property name="selected" datatype="Boolean" required="false">
+        <description locid="WinJS.UI.AppBarCommand.selected" type="text/plain">Set or get the selected state of a toggle button.</description>
+      </property>
+      <property name="element" datatype="HTMLElement" required="false" hidden="true" readonly="true">
+        <description locid="WinJS.UI.AppBarCommand.element" type="text/plain">The DOM element that hosts the AppBarCommad.</description>
+      </property>
+      <property name="disabled" datatype="Boolean" required="false">
+        <description locid="WinJS.UI.AppBarCommand.disabled" type="text/plain">Gets or sets a value that indicates whether the AppBarCommand is disabled. A value of true disables the AppBarCommand, and a value of false enables it.</description>
+      </property>
+      <property name="hidden" datatype="Boolean" required="false" hidden="true">
+        <description locid="WinJS.UI.AppBarCommand.hidden" type="text/plain">Gets a value that indicates whether the AppBarCommand is hiding or in the process of becoming hidden.
+ A value of true indicates that the AppBarCommand is hiding or in the process of becoming hidden.</description>
+      </property>
+      <property name="firstElementFocus" datatype="HTMLElement" required="false">
+        <description locid="WinJS.UI.AppBarCommand.firstElementFocus" type="text/plain">Gets or sets the HTMLElement within a "content" type AppBarCommand that should receive focus whenever focus moves via Home or the arrow keys, 
+ from the previous AppBarCommand to the this AppBarCommand. Returns the AppBarCommand object's host element by default.</description>
+      </property>
+      <property name="lastElementFocus" datatype="HTMLElement" required="false">
+        <description locid="WinJS.UI.AppBarCommand.lastElementFocus" type="text/plain">Gets or sets the HTMLElement within a "content" type AppBarCommand that should receive focus whenever focus would move, via End or arrow keys,
+ from the next AppBarCommand to this AppBarCommand. Returns this AppBarCommand object's host element by default.</description>
+      </property>
+      <property name="extraClass" datatype="String" required="false" blend:isAdvanced="true">
+        <description locid="WinJS.UI.AppBarCommand.extraClass" type="text/plain">Adds an extra CSS class during construction.</description>
+      </property>
+    </properties>
+    <events />
+    <methods>
+      <method name="dispose">
+        <description locid="WinJS.UI.BackButton.dispose" type="text/plain">Disposes this control.</description>
+        <returnType datatype="*" />
+      </method>
+      <method name="addEventListener">
+        <description locid="WinJS.UI.Rating.addEventListener" type="text/plain">Registers an event handler for the specified event.</description>
+        <parameter name="type" datatype="String">
+          <description locid="WinJS.UI.AppBarCommand.addEventListener_p:type" type="text/plain">Required. The name of the event to register. It must be "beforeshow", "beforehide", "aftershow", or "afterhide".</description>
+        </parameter>
+        <parameter name="listener" datatype="Function">
+          <description locid="WinJS.UI._Overlay.addEventListener_p:listener" type="text/plain">Required. The event handler function to associate with this event.</description>
+        </parameter>
+        <parameter name="useCapture" datatype="Boolean">
+          <description locid="WinJS.UI.AppBarCommand.addEventListener_p:useCapture" type="text/plain">Optional. Set to true to register the event handler for the capturing phase; otherwise, set to false to register the event handler for the bubbling phase.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+      <method name="removeEventListener">
+        <description locid="WinJS.UI.AppBarCommand.removeEventListener" type="text/plain">Removes an event handler that the addEventListener method registered.</description>
+        <parameter name="type" datatype="String">
+          <description locid="WinJS.UI.AppBarCommand.removeEventListener_p:type" type="text/plain">Required. The name of the event to remove.</description>
+        </parameter>
+        <parameter name="listener" datatype="Function">
+          <description locid="WinJS.UI.AppBarCommand.removeEventListener_p:listener" type="text/plain">Required. The event handler function to remove.</description>
+        </parameter>
+        <parameter name="useCapture" datatype="Boolean">
+          <description locid="WinJS.UI.AppBarCommand.removeEventListener_p:useCapture" type="text/plain">Optional. Set to true to remove the capturing phase event handler; otherwise, set to false to remove the bubbling phase event handler.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI.AppBar">
+    <ancestor datatype="WinJS.UI._Overlay" />
+    <description locid="WinJS.UI.AppBar" type="text/plain">Represents an application toolbar for display commands.</description>
+    <constructor>
+      <description locid="WinJS.UI.AppBar.constructor" type="text/plain">Creates a new AppBar control.</description>
+      <parameter name="element" datatype="HTMLElement" p5:domElement="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.AppBar.constructor_p:element" type="text/plain">The DOM element that will host the control.</description>
+      </parameter>
+      <parameter name="options" datatype="Object">
+        <description locid="WinJS.UI.AppBar.constructor_p:options" type="text/plain">The set of properties and values to apply to the new AppBar control.</description>
+      </parameter>
+      <returnType datatype="WinJS.UI.AppBar">
+        <description locid="WinJS.UI.AppBar.constructor_returnValue" type="text/plain">The new AppBar control.</description>
+      </returnType>
+    </constructor>
+    <properties>
+      <property name="placement" datatype="WinJS.UI.AppBar.placement" required="false">
+        <description locid="WinJS.UI.AppBar.placement" type="text/plain">The placement of the AppBar on the display.  Values are "top" or "bottom".</description>
+      </property>
+      <property name="layout" datatype="WinJS.UI.AppBar.layout" required="false">
+        <description locid="WinJS.UI.AppBar.layout" type="text/plain">Gets or sets the layout of the AppBar contents to either "commands" or "custom".</description>
+      </property>
+      <property name="sticky" datatype="Boolean" required="false" blend:isAdvanced="true">
+        <description locid="WinJS.UI.AppBar.sticky" type="text/plain">Gets or sets value that indicates whether the AppBar is sticky.
+ This value is true if the AppBar is sticky; otherwise, it's false.</description>
+      </property>
+      <property name="commands" datatype="Array" required="false" blend:isAdvanced="true">
+        <description locid="WinJS.UI.AppBar.commands" type="text/plain">Sets the commands for the AppBar. This property accepts an array of AppBarCommand objects.</description>
+      </property>
+    </properties>
+    <events>
+      <event name="beforeshow" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.AppBar_e:beforeshow" type="text/plain">Raised just before showing the AppBar.</description>
+      </event>
+      <event name="aftershow" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.AppBar_e:aftershow" type="text/plain">Raised immediately after the AppBar is fully shown.</description>
+      </event>
+      <event name="beforehide" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.AppBar_e:beforehide" type="text/plain">Raised just before hiding the AppBar.</description>
+      </event>
+      <event name="afterhide" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.AppBar_e:afterhide" type="text/plain">Raised immediately after the AppBar is fully hidden.</description>
+      </event>
+    </events>
+    <methods>
+      <method name="getCommandById">
+        <description locid="WinJS.UI.AppBar.getCommandById" type="text/plain">Retrieves the command with the specified ID from this AppBar.
+ If more than one command is found, this method returns them all.</description>
+        <parameter name="id" datatype="String">
+          <description locid="WinJS.UI.AppBar.getCommandById_p:id" type="text/plain">Id of the command to return.</description>
+        </parameter>
+        <returnType datatype="object">
+          <description locid="WinJS.UI.AppBar.getCommandById_returnValue" type="text/plain">The command found, an array of commands if more than one have the same ID, or null if no command is found.</description>
+        </returnType>
+      </method>
+      <method name="showCommands">
+        <description locid="WinJS.UI.AppBar.showCommands" type="text/plain">Show the specified commands of the AppBar.</description>
+        <parameter name="commands" datatype="Array">
+          <description locid="WinJS.UI.AppBar.showCommands_p:commands" type="text/plain">An array of the commands to show. The array elements may be AppBarCommand objects, or the string identifiers (IDs) of commands.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+      <method name="hideCommands">
+        <description locid="WinJS.UI.AppBar.hideCommands" type="text/plain">Hides the specified commands of the AppBar.</description>
+        <parameter name="commands" datatype="Array">
+          <description locid="WinJS.UI.AppBar.hideCommands_p:commands" type="text/plain">Required. Command or Commands to hide, either String, DOM elements, or WinJS objects.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+      <method name="showOnlyCommands">
+        <description locid="WinJS.UI.AppBar.showOnlyCommands" type="text/plain">Show the specified commands, hiding all of the others in the AppBar.</description>
+        <parameter name="commands" datatype="Array">
+          <description locid="WinJS.UI.AppBar.showCommands_p:commands" type="text/plain">An array of the commands to show. The array elements may be AppBarCommand objects, or the string identifiers (IDs) of commands.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+      <method name="show">
+        <description locid="WinJS.UI.AppBar.show" type="text/plain">Shows the AppBar, if hidden, regardless of other state</description>
+        <returnType datatype="*" />
+      </method>
+      <method name="hide">
+        <description locid="WinJS.UI.AppBar.hide" type="text/plain">Hides the AppBar.</description>
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI.Flyout">
+    <ancestor datatype="WinJS.UI._Overlay" />
+    <title locid="WinJS.UI.Flyout_name" type="text/plain">Flyout</title>
+    <description locid="WinJS.UI.Flyout" type="text/plain">Displays lightweight UI that is either informational, or requires user interaction.
+ Unlike a dialog, a Flyout can be light dismissed by clicking or tapping off of it.</description>
+    <blend:compatibleWiths>
+      <blend:compatibleWith platform="Windows" minVersion="8.0" />
+    </blend:compatibleWiths>
+    <constructor>
+      <description locid="WinJS.UI.Flyout.constructor" type="text/plain">Creates a new Flyout control.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+      <parameter name="element" datatype="HTMLElement" p5:domElement="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.FlipView.constructor_p:element" type="text/plain">The DOM element that hosts the control.</description>
+      </parameter>
+      <parameter name="options" datatype="Object">
+        <description locid="WinJS.UI.Flyout.constructor_p:options" type="text/plain">The set of properties and values to apply to the new Flyout.</description>
+      </parameter>
+      <returnType datatype="WinJS.UI.Flyout">
+        <description locid="WinJS.UI.Flyout.constructor_returnValue" type="text/plain">The new Flyout control.</description>
+      </returnType>
+    </constructor>
+    <properties>
+      <property name="anchor" datatype="String" required="false">
+        <description locid="WinJS.UI.Flyout.anchor" type="text/plain">Gets or sets the Flyout control's anchor. The anchor element is the HTML element which the Flyout originates from and is positioned relative to.
+ (This setting can be overridden when you call the show method.)</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="placement" datatype="WinJS.UI.Flyout.placement" required="false">
+        <description locid="WinJS.UI.Flyout.placement" type="text/plain">Gets or sets the default placement of this Flyout. (This setting can be overridden when you call the show method.)</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="alignment" datatype="WinJS.UI.Flyout.alignment" required="false">
+        <description locid="WinJS.UI.Flyout.alignment" type="text/plain">Gets or sets the default alignment for this Flyout. (This setting can be overridden when you call the show method.)</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+    </properties>
+    <events>
+      <event name="beforeshow" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.Flyout_e:beforeshow" type="text/plain">Raised just before showing a flyout.</description>
+      </event>
+      <event name="aftershow" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.Flyout_e:aftershow" type="text/plain">Raised immediately after a flyout is fully shown.</description>
+      </event>
+      <event name="beforehide" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.Flyout_e:beforehide" type="text/plain">Raised just before hiding a flyout.</description>
+      </event>
+      <event name="afterhide" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.Flyout_e:afterhide" type="text/plain">Raised immediately after a flyout is fully hidden.</description>
+      </event>
+    </events>
+    <methods>
+      <method name="show">
+        <description locid="WinJS.UI.Flyout.show" type="text/plain">Shows the Flyout, if hidden, regardless of other states.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+        <parameter name="anchor" datatype="HTMLElement" p6:domElement="true" xmlns:p6="http://schemas.microsoft.com/winjs/2011">
+          <description locid="WinJS.UI.Flyout.show_p:anchor" type="text/plain">The DOM element, or ID of a DOM element to anchor the Flyout, overriding the anchor property for this time only.</description>
+        </parameter>
+        <parameter name="placement" datatype="Object">
+          <description locid="WinJS.UI.Flyout.show_p:placement" type="text/plain">The placement of the Flyout to the anchor: 'auto' (default), 'top', 'bottom', 'left', or 'right'.  This parameter overrides the placement property for this show only.</description>
+        </parameter>
+        <parameter name="alignment" datatype="Object">
+          <description locid="WinJS.UI.Flyout.show:alignment" type="text/plain">For 'top' or 'bottom' placement, the alignment of the Flyout to the anchor's edge: 'center' (default), 'left', or 'right'.
+ This parameter overrides the alignment property for this show only.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+      <method name="hide">
+        <description locid="WinJS.UI.Flyout.hide" type="text/plain">Hides the Flyout, if visible, regardless of other states.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI.Menu">
+    <ancestor datatype="WinJS.UI.Flyout" />
+    <title locid="WinJS.UI.Menu_name" type="text/plain">Menu</title>
+    <description locid="WinJS.UI.Menu" type="text/plain">Represents a menu flyout for displaying commands.</description>
+    <blend:compatibleWiths>
+      <blend:compatibleWith platform="Windows" minVersion="8.0" />
+    </blend:compatibleWiths>
+    <constructor>
+      <description locid="WinJS.UI.Menu.constructor" type="text/plain">Creates a new Menu control.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+      <parameter name="element" datatype="HTMLElement" p5:domElement="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.AppBar.constructor_p:element" type="text/plain">The DOM element that will host the control.</description>
+      </parameter>
+      <parameter name="options" datatype="Object">
+        <description locid="WinJS.UI.Menu.constructor_p:options" type="text/plain">The set of properties and values to apply to the control.</description>
+      </parameter>
+      <returnType datatype="WinJS.UI.Menu">
+        <description locid="WinJS.UI.Menu.constructor_returnValue" type="text/plain">The new Menu control.</description>
+      </returnType>
+    </constructor>
+    <properties>
+      <property name="commands" datatype="Array" required="false" blend:isAdvanced="true">
+        <description locid="WinJS.UI.Menu.commands" type="text/plain">Sets the MenuCommand objects that appear in the Menu. You can set this to a single MenuCommand or an array of MenuCommand objects.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+    </properties>
+    <events>
+      <event name="beforeshow" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.Menu_e:beforeshow" type="text/plain">Raised just before showing a menu.</description>
+      </event>
+      <event name="aftershow" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.Menu_e:aftershow" type="text/plain">Raised immediately after a menu is fully shown.</description>
+      </event>
+      <event name="beforehide" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.Menu_e:beforehide" type="text/plain">Raised just before hiding a menu.</description>
+      </event>
+      <event name="afterhide" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.Menu_e:afterhide" type="text/plain">Raised immediately after a menu is fully hidden.</description>
+      </event>
+    </events>
+    <methods>
+      <method name="getCommandById">
+        <description locid="WinJS.UI.Menu.getCommandById" type="text/plain">Retrieve the command with the specified ID from this Menu.  If more than one command is found, all are returned.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+        <parameter name="id" datatype="String">
+          <description locid="WinJS.UI.Menu.getCommandById_p:id" type="text/plain">The ID of the command to find.</description>
+        </parameter>
+        <returnType datatype="object">
+          <description locid="WinJS.UI.AppBar.getCommandById_returnValue" type="text/plain">The command found, an array of commands if more than one have the same ID, or null if no command is found.</description>
+        </returnType>
+      </method>
+      <method name="showCommands">
+        <description locid="WinJS.UI.Menu.showCommands" type="text/plain">Shows the specified commands of the Menu.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+        <parameter name="commands" datatype="Array">
+          <description locid="WinJS.UI.Menu.showCommands_p:commands" type="text/plain">The commands to show. The array elements may be Menu objects, or the string identifiers (IDs) of commands.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+      <method name="hideCommands">
+        <description locid="WinJS.UI.Menu.hideCommands" type="text/plain">Hides the Menu.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+        <parameter name="commands" datatype="Array">
+          <description locid="WinJS.UI.AppBar.hideCommands_p:commands" type="text/plain">Required. Command or Commands to hide, either String, DOM elements, or WinJS objects.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+      <method name="showOnlyCommands">
+        <description locid="WinJS.UI.Menu.showOnlyCommands" type="text/plain">Shows the specified commands of the Menu while hiding all other commands.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+        <parameter name="commands" datatype="Array">
+          <description locid="WinJS.UI.Menu.showOnlyCommands_p:commands" type="text/plain">The commands to show. The array elements may be MenuCommand objects, or the string identifiers (IDs) of commands.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+      <method name="show">
+        <description locid="WinJS.UI.Menu.show" type="text/plain">Shows the Menu, if hidden, regardless of other states.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+        <parameter name="anchor" datatype="HTMLElement" p6:domElement="true" xmlns:p6="http://schemas.microsoft.com/winjs/2011">
+          <description locid="WinJS.UI.Menu.show_p:anchor" type="text/plain">The DOM element, or ID of a DOM element,  to anchor the Menu. This parameter overrides the anchor property for this method call only.</description>
+        </parameter>
+        <parameter name="placement" datatype="object">
+          <description locid="WinJS.UI.Menu.show_p:placement" type="text/plain">The placement of the Menu to the anchor: 'auto' (default), 'top', 'bottom', 'left', or 'right'. This parameter overrides the placement
+ property for this method call only.</description>
+        </parameter>
+        <parameter name="alignment" datatype="object">
+          <description locid="WinJS.UI.Menu.show_p:alignment" type="text/plain">For 'top' or 'bottom' placement, the alignment of the Menu to the anchor's edge: 'center' (default), 'left', or 'right'. This parameter 
+ overrides the alignment property for this method call only.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI.MenuCommand">
+    <description locid="WinJS.UI.MenuCommand" type="text/plain">Represents a command to be displayed in a Menu. MenuCommand objects provide button, toggle button, flyout button, 
+ or separator functionality for Menu controls.</description>
+    <blend:compatibleWiths>
+      <blend:compatibleWith platform="Windows" minVersion="8.0" />
+    </blend:compatibleWiths>
+    <constructor>
+      <description locid="WinJS.UI.MenuCommand.constructor" type="text/plain">Creates a new MenuCommand object.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+      <parameter name="element" p5:domElement="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.AppBar.constructor_p:element" type="text/plain">The DOM element that will host the control.</description>
+      </parameter>
+      <parameter name="options" datatype="Object">
+        <description locid="WinJS.UI.MenuCommand.constructor_p:options" type="text/plain">The set of properties and values to apply to the new MenuCommand.</description>
+      </parameter>
+      <returnType datatype="WinJS.UI.MenuCommand">
+        <description locid="WinJS.UI.MenuCommand.constructor_returnValue" type="text/plain">A MenuCommand control.</description>
+      </returnType>
+    </constructor>
+    <properties>
+      <property name="id" datatype="String" required="false" blend:isAdvanced="true">
+        <description locid="WinJS.UI.MenuCommand.id" type="text/plain">Gets the  ID of the MenuCommand.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="type" datatype="WinJS.UI.MenuCommand.type" required="false" readonly="true" blend:isAdvanced="true">
+        <description locid="WinJS.UI.MenuCommand.type" type="text/plain">Gets the type of the MenuCommand. Possible values are "button", "toggle", "flyout", or "separator".</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="label" datatype="String" required="false">
+        <description locid="WinJS.UI.MenuCommand.label" type="text/plain">The label of the MenuCommand</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="onclick" datatype="Function" required="false">
+        <description locid="WinJS.UI.AppBarCommand.onclick" type="text/plain">Gets or sets the function to invoke when the command is clicked.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="flyout" datatype="Object" required="false">
+        <description locid="WinJS.UI.MenuCommand.flyout" type="text/plain">For flyout type MenuCommands, this property  returns the WinJS.UI.Flyout that this command invokes. When setting this property, you can set 
+ it to the string ID of the Flyout, the DOM object that hosts the Flyout, or the Flyout object itself.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="selected" datatype="Boolean" required="false">
+        <description locid="WinJS.UI.MenuCommand.selected" type="text/plain">Gets or sets the selected state of a toggle button. This property is true if the toggle button is selected; otherwise, it's false.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="element" datatype="HTMLElement" required="false" hidden="true" readonly="true">
+        <description locid="WinJS.UI.MenuCommand.element" type="text/plain">Gets the DOM element that hosts this MenuCommand.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="disabled" datatype="Boolean" required="false">
+        <description locid="WinJS.UI.MenuCommand.disabled" type="text/plain">Gets or sets a value that indicates whether the MenuCommand is disabled. This value is true if the MenuCommand is disabled; otherwise, false.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="hidden" datatype="Boolean" required="false" hidden="true">
+        <description locid="WinJS.UI.MenuCommand.hidden" type="text/plain">Determine if a command is currently hidden.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="extraClass" datatype="String" required="false" blend:isAdvanced="true">
+        <description locid="WinJS.UI.MenuCommand.extraClass" type="text/plain">Gets or sets the extra CSS class that is applied to the host DOM element.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+    </properties>
+    <events />
+    <methods>
+      <method name="dispose">
+        <description locid="WinJS.UI.BackButton.dispose" type="text/plain">Disposes this control.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+        <returnType datatype="*" />
+      </method>
+      <method name="addEventListener">
+        <description locid="WinJS.UI.Rating.addEventListener" type="text/plain">Registers an event handler for the specified event.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+        <parameter name="type" datatype="String">
+          <description locid="WinJS.UI.MenuCommand.addEventListener_p:type" type="text/plain">The name of the event to register.</description>
+        </parameter>
+        <parameter name="listener" datatype="Function">
+          <description locid="WinJS.UI.MenuCommand.addEventListener_p:listener" type="text/plain">The function that handles the event.</description>
+        </parameter>
+        <parameter name="useCapture" datatype="Boolean">
+          <description locid="WinJS.UI.MenuCommand.addEventListener_p:useCapture" type="text/plain">Set to true to register the event handler for the capturing phase; otherwise, set to false to register the  event handler for the bubbling phase.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+      <method name="removeEventListener">
+        <description locid="WinJS.UI.MenuCommand.removeEventListener" type="text/plain">Removes the specified event handler that the addEventListener method registered.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+        <parameter name="type" datatype="String">
+          <description locid="WinJS.UI.MenuCommand.removeEventListener_p:type" type="text/plain">The name of the event to remove.</description>
+        </parameter>
+        <parameter name="listener" datatype="Function">
+          <description locid="WinJS.UI.Rating.removeEventListener_p:eventCallback" type="text/plain">The event handler function to remove.</description>
+        </parameter>
+        <parameter name="useCapture" datatype="Boolean">
+          <description locid="WinJS.UI.MenuCommand.removeEventListener_p:useCapture" type="text/plain">Set to true to remove the capturing phase event handler; set to false to remove the bubbling phase event handler.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI.SearchBox">
+    <description locid="WinJS.UI.SearchBox" type="text/plain">Enables the user to perform search queries and select suggestions.</description>
+    <blend:compatibleWiths>
+      <blend:compatibleWith platform="Windows" minVersion="8.1" />
+    </blend:compatibleWiths>
+    <constructor>
+      <description locid="WinJS.UI.SearchBox.constructor" type="text/plain">Creates a new SearchBox.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+      <parameter name="element" p5:domElement="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.SearchBox.constructor_p:element" type="text/plain">The DOM element that hosts the SearchBox.</description>
+      </parameter>
+      <parameter name="options" datatype="Object">
+        <description locid="WinJS.UI.SearchControl.constructor_p:options" type="text/plain">An object that contains one or more property/value pairs to apply to the new control.
+ Each property of the options object corresponds to one of the control's properties or events.
+ Event names must begin with "on". For example, to provide a handler for the querychanged event,
+ add a property named "onquerychanged" to the options object and set its value to the event handler.
+ This parameter is optional.</description>
+      </parameter>
+      <returnType datatype="WinJS.UI.SearchBox">
+        <description locid="WinJS.UI.SearchBox.constructor_returnValue" type="text/plain">The new SearchBox.</description>
+      </returnType>
+    </constructor>
+    <properties>
+      <property name="element" datatype="HTMLElement" required="false" hidden="true">
+        <description locid="WinJS.UI.SearchBox.constructor_p:element" type="text/plain">The DOM element that hosts the SearchBox.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="placeholderText" datatype="String" required="false">
+        <description locid="WinJS.UI.SearchBox.placeholderText" type="text/plain">Gets or sets the placeholder text for the SearchBox. This text is displayed if there is no
+ other text in the input box.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="queryText" datatype="String" required="false">
+        <description locid="WinJS.UI.SearchBox.queryText" type="text/plain">Gets or sets the query text for the SearchBox.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="searchHistoryDisabled" datatype="bool" required="false">
+        <description locid="WinJS.UI.SearchBox.searchHistoryDisabled" type="text/plain">Gets or sets a value that specifies whether search history is disabled for the SearchBox. The default value is false.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="searchHistoryContext" datatype="String" required="false">
+        <description locid="WinJS.UI.SearchBox.searchHistoryContext" type="text/plain">Gets or sets the search history context for the SearchBox. The search history context string is used as a secondary key for storing search history. 
+ (The primary key is the AppId.) An app can use the search history context string to store different search histories based on the context of the application. 
+ If you don't set this property, the system assumes that all searches in your app occur in the same context. 
+ If you update this property while the search pane is open with suggestions showing, the changes won't take effect until the user enters the next character.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="focusOnKeyboardInput" datatype="String" required="false">
+        <description locid="WinJS.UI.SearchBox.focusOnKeyboardInput" type="text/plain">Enable automatically focusing the search box when the user types into the app window (off by default) While this is enabled, 
+ input on the current thread will be intercepted and redirected to the search box. Only textual input will trigger the search box to focus. 
+ The caller will continue to receive non-text keys (such as arrows, tab, etc
+ This will also not affect WIN/CTRL/ALT key combinations (except for Ctrl-V for paste). 
+ If the client needs more to happen than just set focus in the box (make control visible, etc.), they will need to handle the event. 
+ If enabled, the app must be sure to disable this if the user puts focus in some other edit field.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="chooseSuggestionOnEnter" datatype="String" required="false">
+        <description locid="WinJS.UI.SearchBox.chooseSuggestionOnEnter" type="text/plain">Gets or sets whether the first suggestion is chosen when the user presses Enter. 
+ When set to true, as the user types in the search box, a focus rectangle is drawn on the first search suggestion 
+ (if present and no IME composition in progress).  Pressing enter will behave the same as if clicked on the focused suggestion, 
+ and the down arrow key press will put real focus to the second suggestion and the up arrow key will remove focus.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="disabled" datatype="bool" required="false">
+        <description locid="WinJS.UI.SearchBox.disabled" type="text/plain">Gets or sets a value that specifies whether the SearchBox is disabled.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+    </properties>
+    <events>
+      <event name="querychanged" p5:bubbles="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.SearchBox_e:querychanged" type="text/plain">Raised when user or app changes the query text.</description>
+      </event>
+      <event name="querysubmitted" p5:bubbles="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.SearchBox_e:querysubmitted" type="text/plain">Raised when user clicks on search glyph or presses Enter.</description>
+      </event>
+      <event name="resultsuggestionchosen" p5:bubbles="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.SearchBox_e:resultsuggestionchosen" type="text/plain">Raised when user clicks  one of the displayed suggestions.</description>
+      </event>
+      <event name="suggestionsrequested" p5:bubbles="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.SearchBox_e:suggestionsrequested" type="text/plain">Raised when the system requests search suggestions from this app.</description>
+      </event>
+      <event name="receivingfocusonkeyboardinput" p5:bubbles="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.SearchBox_e:receivingfocusonkeyboardinput" type="text/plain">Raised when the app automatically redirects focus to the search box. This event can only be raised when the focusOnKeyboardInput property is set to true.</description>
+      </event>
+    </events>
+    <methods>
+      <method name="setLocalContentSuggestionSettings">
+        <description locid="WinJS.UI.SearchBox.SetLocalContentSuggestionSettings" type="text/plain">Specifies whether suggestions based on local files are automatically displayed in the search pane, and defines the criteria that 
+ the system uses to locate and filter these suggestions.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+        <parameter name="eventName" datatype="Windows.ApplicationModel.Search. LocalContentSuggestionSettings">
+          <description locid="WinJS.UI.SearchBox.setLocalContentSuggestionSettings_p:settings" type="text/plain">The new settings for local content suggestions.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+      <method name="dispose">
+        <description locid="WinJS.UI.BackButton.dispose" type="text/plain">Disposes this control.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI.SettingsFlyout">
+    <ancestor datatype="WinJS.UI._Overlay" />
+    <title locid="WinJS.UI.SettingsFlyout_name" type="text/plain">Settings Flyout</title>
+    <description locid="WinJS.UI.SettingsFlyout" type="text/plain">Provides users with fast, in-context access to settings that affect the current app.</description>
+    <blend:compatibleWiths>
+      <blend:compatibleWith platform="Windows" minVersion="8.0" />
+    </blend:compatibleWiths>
+    <constructor>
+      <description locid="WinJS.UI.SettingsFlyout.constructor" type="text/plain">Creates a new SettingsFlyout control.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+      <parameter name="element" datatype="HTMLElement" p5:domElement="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.AppBar.constructor_p:element" type="text/plain">The DOM element that will host the control.</description>
+      </parameter>
+      <parameter name="options" datatype="Object">
+        <description locid="WinJS.UI.SettingsFlyout.constructor_p:options" type="text/plain">The set of properties and values to apply to the new SettingsFlyout.</description>
+      </parameter>
+      <returnType datatype="WinJS.UI.SettingsFlyout">
+        <description locid="WinJS.UI.SettingsFlyout.constructor_returnValue" type="text/plain">The new SettingsFlyout control.</description>
+      </returnType>
+    </constructor>
+    <properties>
+      <property name="width" datatype="WinJS.UI.SettingsFlyout.width" required="false">
+        <description locid="WinJS.UI.SettingsFlyout.width" type="text/plain">Width of the SettingsFlyout, "narrow", or "wide".
+ 
+ SettingsFlyout.width may be altered or unavailable in future versions. Instead, style the CSS width property on elements with the .win-settingsflyout class.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="settingsCommandId" datatype="String" required="false">
+        <description locid="WinJS.UI.SettingsFlyout.settingsCommandId" type="text/plain">Define the settings command Id for the SettingsFlyout control.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+    </properties>
+    <events>
+      <event name="beforeshow" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.SettingsFlyout_e:beforeshow" type="text/plain">Raised just before showing a SettingsFlyout.</description>
+      </event>
+      <event name="aftershow" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.SettingsFlyout_e:aftershow" type="text/plain">Raised immediately after a SettingsFlyout is fully shown.</description>
+      </event>
+      <event name="beforehide" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.SettingsFlyout_e:beforehide" type="text/plain">Raised just before hiding a SettingsFlyout.</description>
+      </event>
+      <event name="afterhide" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.SettingsFlyout_e:afterhide" type="text/plain">Raised immediately after a SettingsFlyout is fully hidden.</description>
+      </event>
+    </events>
+    <methods>
+      <method name="show">
+        <description locid="WinJS.UI.SettingsFlyout.show" type="text/plain">Shows the SettingsFlyout, if hidden.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+        <returnType datatype="*" />
+      </method>
+      <method name="hide">
+        <description locid="WinJS.UI.SettingsFlyout.hide" type="text/plain">Hides the SettingsFlyout, if visible, regardless of other state.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI.ItemContainer">
+    <description locid="WinJS.UI.ItemContainer" type="text/plain">Defines an item that can be pressed, swiped, and dragged.</description>
+    <constructor>
+      <description locid="WinJS.UI.ItemContainer.constructor" type="text/plain">Creates a new ItemContainer control.</description>
+      <parameter name="element" datatype="HTMLElement" p5:domElement="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.ItemContainer.constructor_p:element" type="text/plain">The DOM element that hosts the ItemContainer control.</description>
+      </parameter>
+      <parameter name="options" datatype="Object">
+        <description locid="WinJS.UI.ItemContainer.constructor_p:options" type="text/plain">An object that contains one or more property/value pairs to apply to the new control.
+ Each property of the options object corresponds to one of the control's properties or events.
+ Event names must begin with "on". For example, to provide a handler for the selectionchanging event,
+ add a property named "onselectionchanging" to the options object and set its value to the event handler.</description>
+      </parameter>
+      <returnType datatype="WinJS.UI.ItemContainer">
+        <description locid="WinJS.UI.ItemContainer.constructor_returnValue" type="text/plain">The new ItemContainer control.</description>
+      </returnType>
+    </constructor>
+    <properties>
+      <property name="element" datatype="HTMLElement" required="false" hidden="true">
+        <description locid="WinJS.UI.ItemContainer.element" type="text/plain">Gets the DOM element that hosts the itemContainer control.</description>
+      </property>
+      <property name="draggable" datatype="Boolean" required="false">
+        <description locid="WinJS.UI.ItemContainer.draggable" type="text/plain">Gets or sets a value that specifies whether the item can be dragged. The default value is false.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="selected" datatype="Boolean" required="false">
+        <description locid="WinJS.UI.ItemContainer.selected" type="text/plain">Gets or sets a value that specifies whether the item is selected.</description>
+      </property>
+      <property name="swipeOrientation" datatype="WinJS.UI.Orientation" required="false">
+        <description locid="WinJS.UI.ItemContainer.swipeOrientation" type="text/plain">Gets or sets the swipe orientation of the ItemContainer control.
+ The default value is "vertical".</description>
+      </property>
+      <property name="tapBehavior" datatype="WinJS.UI.TapBehavior" required="false">
+        <description locid="WinJS.UI.ItemContainer.tapBehavior" type="text/plain">Gets or sets how the ItemContainer control reacts when the user taps or clicks an item.
+ The tap or click can invoke the item, select it and invoke it, or have no effect. 
+ Possible values: "toggleSelect", "invokeOnly", and "none". The default value is "invokeOnly".</description>
+      </property>
+      <property name="swipeBehavior" datatype="WinJS.UI.SwipeBehavior" required="false">
+        <description locid="WinJS.UI.ItemContainer.swipeBehavior" type="text/plain">Gets or sets how the ItemContainer control reacts to the swipe interaction.
+ The swipe gesture can select the item or it can have no effect on the current selection.
+ Possible values: "select", "none". The default value is: "select".</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="selectionDisabled" datatype="Boolean" required="false">
+        <description locid="WinJS.UI.ItemContainer.selectionDisabled" type="text/plain">Gets or sets whether the item selection is disabled. The default value is false.</description>
+      </property>
+    </properties>
+    <events>
+      <event name="invoked" p5:bubbles="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.ItemContainer_e:invoked" type="text/plain">Raised when the user taps or clicks the item.</description>
+      </event>
+      <event name="selectionchanging" p5:bubbles="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.ItemContainer_e:selectionchanging" type="text/plain">Raised before the item is selected or deselected.</description>
+      </event>
+      <event name="selectionchanged" p5:bubbles="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.ItemContainer_e:selectionchanged" type="text/plain">Raised after the item is selected or deselected.</description>
+      </event>
+    </events>
+    <methods>
+      <method name="forceLayout">
+        <description locid="WinJS.UI.ItemContainer.forceLayout" type="text/plain">Forces the ItemContainer control to update its layout.
+ Use this function when the reading direction  of the app changes after the control has been initialized.</description>
+        <returnType datatype="*" />
+      </method>
+      <method name="dispose">
+        <description locid="WinJS.UI.BackButton.dispose" type="text/plain">Disposes this control.</description>
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI._SingleItemSelectionManager">
+    <properties>
+      <property name="selected" required="false" />
+    </properties>
+    <events />
+    <methods>
+      <method name="count">
+        <returnType datatype="*" />
+      </method>
+      <method name="getIndices">
+        <returnType datatype="*" />
+      </method>
+      <method name="getItems">
+        <returnType datatype="*" />
+      </method>
+      <method name="getRanges">
+        <returnType datatype="*" />
+      </method>
+      <method name="isEverything">
+        <returnType datatype="*" />
+      </method>
+      <method name="set">
+        <returnType datatype="*" />
+      </method>
+      <method name="clear">
+        <returnType datatype="*" />
+      </method>
+      <method name="add">
+        <returnType datatype="*" />
+      </method>
+      <method name="remove">
+        <returnType datatype="*" />
+      </method>
+      <method name="selectAll">
+        <returnType datatype="*" />
+      </method>
+      <method name="fireSelectionChanging">
+        <returnType datatype="*" />
+      </method>
+      <method name="fireSelectionChanged">
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI._KeyboardBehavior">
+    <properties>
+      <property name="element" required="false" />
+      <property name="fixedDirection" required="false" />
+      <property name="fixedSize" required="false" />
+      <property name="currentIndex" required="false" />
+      <property name="getAdjacent" required="false" />
+    </properties>
+    <events />
+    <methods />
+  </class>
+  <class name="WinJS.UI.NavBar">
+    <ancestor datatype="WinJS.UI.AppBar" />
+    <description locid="WinJS.UI.NavBar" type="text/plain">Displays navigation commands in a toolbar that the user can show or hide.</description>
+    <blend:compatibleWiths>
+      <blend:compatibleWith platform="Windows" minVersion="8.1" />
+    </blend:compatibleWiths>
+    <constructor>
+      <description locid="WinJS.UI.NavBar.constructor" type="text/plain">Creates a new NavBar.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+      <parameter name="element" datatype="HTMLElement" p5:domElement="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.NavBar.constructor_p:element" type="text/plain">The DOM element that will host the new NavBar control.</description>
+      </parameter>
+      <parameter name="options" datatype="Object">
+        <description locid="WinJS.UI.NavBar.constructor_p:options" type="text/plain">An object that contains one or more property/value pairs to apply to the new control. Each property of the options object corresponds to one of the control's 
+ properties or events.</description>
+      </parameter>
+      <returnType datatype="WinJS.UI.NavBar">
+        <description locid="WinJS.UI.NavBar.constructor_returnValue" type="text/plain">The new NavBar control.</description>
+      </returnType>
+    </constructor>
+    <properties>
+      <property name="layout" datatype="WinJS.UI.NavBar.layout" required="false">
+        <description locid="WinJS.UI.NavBar.layout" type="text/plain">The layout of the NavBar contents.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+    </properties>
+    <events>
+      <event name="beforeshow" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.NavBar_e:beforeshow" type="text/plain">Raised just before showing the NavBar.</description>
+      </event>
+      <event name="aftershow" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.NavBar_e:aftershow" type="text/plain">Raised immediately after an NavBar is fully shown.</description>
+      </event>
+      <event name="beforehide" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.NavBar_e:beforehide" type="text/plain">Raised just before hiding the  NavBar.</description>
+      </event>
+      <event name="afterhide" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.NavBar_e:afterhide" type="text/plain">Raised immediately after the NavBar is fully hidden.</description>
+      </event>
+      <event name="childrenprocessed" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.NavBar_e:childrenprocessed" type="text/plain">Fired when children of NavBar control have been processed from a WinJS.UI.processAll call.</description>
+      </event>
+    </events>
+    <methods>
+      <method name="isDeclarativeControlContainer">
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI.NavBarContainer">
+    <description locid="WinJS.UI.NavBarContainer" type="text/plain">Contains a group of NavBarCommand objects in a NavBar.</description>
+    <blend:compatibleWiths>
+      <blend:compatibleWith platform="Windows" minVersion="8.1" />
+    </blend:compatibleWiths>
+    <constructor>
+      <description locid="WinJS.UI.NavBarContainer.constructor" type="text/plain">Creates a new NavBarContainer.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+      <parameter name="element" datatype="HTMLElement" p5:domElement="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.NavBarContainer.constructor_p:element" type="text/plain">The DOM element that will host the NavBarContainer control.</description>
+      </parameter>
+      <parameter name="options" datatype="Object">
+        <description locid="WinJS.UI.NavBarContainer.constructor_p:options" type="text/plain">An object that contains one or more property/value pairs to apply to the new control. 
+ Each property of the options object corresponds to one of the control's properties or events. 
+ Event names must begin with "on".</description>
+      </parameter>
+      <returnType datatype="WinJS.UI.NavBarContainer">
+        <description locid="WinJS.UI.NavBarContainer.constructor_returnValue" type="text/plain">The new NavBarContainer.</description>
+      </returnType>
+    </constructor>
+    <properties>
+      <property name="element" datatype="HTMLElement" required="false" hidden="true">
+        <description locid="WinJS.UI.NavBarContainer.element" type="text/plain">Gets the DOM element that hosts the NavBarContainer.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="template" datatype="Object" required="false" blend:potentialValueSelector="[data-win-control='WinJS.Binding.Template']">
+        <description locid="WinJS.UI.NavBarContainer.template" type="text/plain">Gets or sets a Template or custom rendering function that defines the HTML of each item within the NavBarContainer.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="data" datatype="WinJS.Binding.List" required="false">
+        <description locid="WinJS.UI.NavBarContainer.data" type="text/plain">Gets or sets the WinJS.Binding.List that provides the NavBarContainer with items to display.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="maxRows" datatype="Number" isInteger="true" required="false">
+        <description locid="WinJS.UI.NavBarContainer.maxRows" type="text/plain">Gets or sets the number of rows allowed to be used before items are placed on additional pages.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="layout" datatype="WinJS.UI.Orientation" required="false">
+        <description locid="WinJS.UI.NavBarContainer.layout" type="text/plain">Gets or sets a value that specifies whether the NavBarContainer has a horizontal or vertical layout. The default is "horizontal".</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="currentIndex" datatype="Number" isInteger="true" required="false" hidden="true">
+        <description locid="WinJS.UI.NavBarContainer.currentIndex" type="text/plain">Gets or sets the index of the current NavBarCommand.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="fixedSize" datatype="Boolean" required="false">
+        <description locid="WinJS.UI.NavBarContainer.fixedSize" type="text/plain">Gets or sets a value that specifies whether child NavBarCommand  objects should be a fixed width when there are multiple pages. A value of true indicates 
+ that the NavBarCommand objects use a fixed width; a value of false indicates that they use a dynamic width.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+    </properties>
+    <events>
+      <event name="invoked" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.NavBarContainer_e:invoked" type="text/plain">Raised when a NavBarCommand is invoked.</description>
+      </event>
+      <event name="splittoggle" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.NavBarContainer_e:splittoggle" type="text/plain">Raised when the split button on a NavBarCommand is toggled.</description>
+      </event>
+    </events>
+    <methods>
+      <method name="forceLayout">
+        <description locid="WinJS.UI.NavBarContainer.forceLayout" type="text/plain">Forces the NavBarContainer to update scroll positions and if there are internal pending measurements, it will also re-measure. 
+ Use this function when making the NavBarContainer visible again after you set its style.display property to "none".</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+        <returnType datatype="*" />
+      </method>
+      <method name="dispose">
+        <description locid="WinJS.UI.BackButton.dispose" type="text/plain">Disposes this control.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI._WinPressed">
+    <properties>
+      <property name="winPressed" required="false" />
+    </properties>
+    <events />
+    <methods>
+      <method name="dispose">
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI.NavBarCommand">
+    <description locid="WinJS.UI.NavBarCommand" type="text/plain">Represents a navigation command in an NavBarContainer.</description>
+    <blend:compatibleWiths>
+      <blend:compatibleWith platform="Windows" minVersion="8.1" />
+    </blend:compatibleWiths>
+    <constructor>
+      <description locid="WinJS.UI.NavBarCommand.constructor" type="text/plain">Creates a new NavBarCommand.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+      <parameter name="element" datatype="HTMLElement" p5:domElement="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.NavBarCommand.constructor_p:element" type="text/plain">The DOM element that will host the new  NavBarCommand control.</description>
+      </parameter>
+      <parameter name="options" datatype="Object">
+        <description locid="WinJS.UI.NavBarContainer.constructor_p:options" type="text/plain">An object that contains one or more property/value pairs to apply to the new control. 
+ Each property of the options object corresponds to one of the control's properties or events. 
+ Event names must begin with "on".</description>
+      </parameter>
+      <returnType datatype="WinJS.UI.NavBarCommand">
+        <description locid="WinJS.UI.NavBarCommand.constructor_returnValue" type="text/plain">The new NavBarCommand.</description>
+      </returnType>
+    </constructor>
+    <properties>
+      <property name="element" datatype="HTMLElement" required="false" hidden="true">
+        <description locid="WinJS.UI.NavBarCommand.element" type="text/plain">Gets the DOM element that hosts the NavBarCommand.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="label" datatype="String" required="false">
+        <description locid="WinJS.UI.NavBarCommand.label" type="text/plain">Gets or sets the label of the NavBarCommand.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="tooltip" datatype="String" required="false">
+        <description locid="WinJS.UI.NavBarCommand.tooltip" type="text/plain">Gets or sets the tooltip of the NavBarCommand.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="icon" datatype="String" required="false">
+        <description locid="WinJS.UI.NavBarCommand.icon" type="text/plain">Gets or sets the icon of the NavBarCommand. This value is either one of the values of the AppBarIcon enumeration or the path of a custom PNG file.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="location" datatype="String" required="false">
+        <description locid="WinJS.UI.NavBarCommand.location" type="text/plain">Gets or sets the command's target location.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="state" datatype="String" required="false">
+        <description locid="WinJS.UI.NavBarCommand.state" type="text/plain">Gets or sets the state value used for navigation. The command passes this object to the WinJS.Navigation.navigate function.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="splitButton" datatype="Boolean" required="false">
+        <description locid="WinJS.UI.NavBarCommand.splitButton" type="text/plain">Gets or sets a value that specifies whether the NavBarCommand has a split button.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="splitOpened" datatype="Boolean" required="false" hidden="true">
+        <description locid="WinJS.UI.NavBarCommand.splitOpened" type="text/plain">Gets or sets a value that specifies whether the split button is open.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+      </property>
+    </properties>
+    <events />
+    <methods>
+      <method name="dispose">
+        <description locid="WinJS.UI.BackButton.dispose" type="text/plain">Disposes this control.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.1" />
+        </blend:compatibleWiths>
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI.Tooltip">
+    <description locid="WinJS.UI.Tooltip" type="text/plain">Displays a tooltip that can contain images and formatting.</description>
+    <blend:compatibleWiths>
+      <blend:compatibleWith platform="Windows" minVersion="8.0" />
+    </blend:compatibleWiths>
+    <constructor>
+      <description locid="WinJS.UI.Tooltip.constructor" type="text/plain">Creates a new Tooltip.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+      <parameter name="element" p5:domElement="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.Tooltip.constructor_p:element" type="text/plain">The DOM element that hosts the Tooltip.</description>
+      </parameter>
+      <parameter name="options" datatype="Object">
+        <description locid="WinJS.UI.Tooltip.constructor_p:options" type="text/plain">An object that contains one or more property/value pairs to apply to the new control.
+ Each property of the options object corresponds to one of the control's properties or events.
+ Event names must begin with "on". For example, to provide a handler for the opened event,
+ add a property named "onopened" to the options object and set its value to the event handler.
+ This parameter is optional.</description>
+      </parameter>
+      <returnType datatype="WinJS.UI.Tooltip">
+        <description locid="WinJS.UI.Tooltip.constructor_returnValue" type="text/plain">The new Tooltip.</description>
+      </returnType>
+    </constructor>
+    <properties>
+      <property name="innerHTML" datatype="String" required="false">
+        <description locid="WinJS.UI.Tooltip.innerHTML" type="text/plain">Gets or sets the HTML content of the Tooltip.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="element" datatype="HTMLElement" required="false" hidden="true">
+        <description locid="WinJS.UI.Tooltip.element" type="text/plain">Gets or sets the DOM element that hosts the Tooltip.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="contentElement" datatype="HTMLElement" required="false" blend:potentialValueSelector="div[style='display: none;']&gt;div[id], div[style='display: none;']&gt;div[class]">
+        <description locid="WinJS.UI.Tooltip.contentElement" type="text/plain">Gets or sets the DOM element that is the content for the ToolTip.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="placement" datatype="WinJS.UI.Tooltip.placement" required="false">
+        <description locid="WinJS.UI.Tooltip.placement" type="text/plain">Gets or sets the position for the Tooltip relative to its target element: top, bottom, left or right.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="infotip" datatype="Boolean" required="false">
+        <description locid="WinJS.UI.Tooltip.infotip" type="text/plain">Gets or sets a value that specifies whether the Tooltip is an infotip, a tooltip that contains
+ a lot of info and should be displayed for longer than a typical Tooltip.
+ The default value is false.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+      <property name="extraClass" datatype="String" required="false" blend:isAdvanced="true">
+        <description locid="WinJS.UI.Tooltip.extraClass" type="text/plain">Gets or sets additional CSS classes to apply to the Tooltip control's host element.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+      </property>
+    </properties>
+    <events>
+      <event name="beforeopen" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.Tooltip_e:beforeopen" type="text/plain">Raised when the tooltip is about to appear.</description>
+      </event>
+      <event name="opened" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.Tooltip_e:opened" type="text/plain">Raised when the tooltip is showing.</description>
+      </event>
+      <event name="beforeclose" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.Tooltip_e:beforeclose" type="text/plain">Raised when the tooltip is about to become hidden.</description>
+      </event>
+      <event name="closed" p5:bubbles="false" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.Tooltip_e:close" type="text/plain">Raised when the tooltip is hidden.</description>
+      </event>
+    </events>
+    <methods>
+      <method name="dispose">
+        <description locid="WinJS.UI.Tooltip.dispose" type="text/plain">Disposes this Tooltip.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+        <returnType datatype="*" />
+      </method>
+      <method name="addEventListener">
+        <description locid="WinJS.UI.Rating.addEventListener" type="text/plain">Registers an event handler for the specified event.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+        <parameter name="eventName" datatype="String">
+          <description locid="WinJS.UI.Rating.addEventListener_p:eventName" type="text/plain">The name of the event.</description>
+        </parameter>
+        <parameter name="eventCallback" datatype="Function">
+          <description locid="WinJS.UI.Rating.addEventListener_p:eventCallback" type="text/plain">The event handler function to associate with this event.</description>
+        </parameter>
+        <parameter name="capture" datatype="Boolean">
+          <description locid="WinJS.UI.Rating.addEventListener_p:capture" type="text/plain">Set to true to register the event handler for the capturing phase; set to false to register for the bubbling phase.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+      <method name="removeEventListener">
+        <description locid="WinJS.UI.Rating.removeEventListener" type="text/plain">Unregisters an event handler for the specified event.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+        <parameter name="eventName" datatype="String">
+          <description locid="WinJS.UI.Rating.addEventListener_p:eventName" type="text/plain">The name of the event.</description>
+        </parameter>
+        <parameter name="eventCallback" datatype="Function">
+          <description locid="WinJS.UI.Rating.removeEventListener_p:eventCallback" type="text/plain">The event handler function to remove.</description>
+        </parameter>
+        <parameter name="capture" datatype="Boolean">
+          <description locid="WinJS.UI.Rating.removeEventListener_p:capture" type="text/plain">Set to true to unregister the event handler for the capturing phase; otherwise, set to false to unregister the event handler for the bubbling phase.</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+      <method name="open">
+        <description locid="WinJS.UI.Tooltip.open" type="text/plain">Shows the Tooltip.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+        <parameter name="type" datatype="String">
+          <description locid="WinJS.UI.Tooltip.open_p:type" type="text/plain">The type of tooltip to show: "touch", "mouseover", "mousedown", or "keyboard". The default value is "mousedown".</description>
+        </parameter>
+        <returnType datatype="*" />
+      </method>
+      <method name="close">
+        <description locid="WinJS.UI.Tooltip.close" type="text/plain">Hids the Tooltip.</description>
+        <blend:compatibleWiths>
+          <blend:compatibleWith platform="Windows" minVersion="8.0" />
+        </blend:compatibleWiths>
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class>
+  <class name="WinJS.UI.ViewBox">
+    <title locid="WinJS.UI.ViewBox_name" type="text/plain">View Box</title>
+    <description locid="WinJS.UI.ViewBox" type="text/plain">Scales a single child element to fill the available space without
+ resizing it. This control reacts to changes in the size of the container as well as
+ changes in size of the child element. For example, a media query may result in
+ a change in aspect ratio.</description>
+    <constructor>
+      <description locid="WinJS.UI.ViewBox.constructor" type="text/plain">Initializes a new instance of the ViewBox control</description>
+      <parameter name="element" datatype="HTMLElement" p5:domElement="true" xmlns:p5="http://schemas.microsoft.com/winjs/2011">
+        <description locid="WinJS.UI.ViewBox.constructor_p:element" type="text/plain">The DOM element that functions as the scaling box. This element fills 100% of the width and height allotted to it.</description>
+      </parameter>
+      <parameter name="options" datatype="Object">
+        <description locid="WinJS.UI.ViewBox.constructor_p:options" type="text/plain">The set of options to be applied initially to the ViewBox control.</description>
+      </parameter>
+      <returnType datatype="WinJS.UI.ViewBox">
+        <description locid="WinJS.UI.ViewBox.constructor_returnValue" type="text/plain">A constructed ViewBox control.</description>
+      </returnType>
+    </constructor>
+    <properties>
+      <property name="element" datatype="HTMLElement" required="false" hidden="true">
+        <description locid="WinJS.UI.ViewBox.element" type="text/plain">Gets the DOM element that functions as the scaling box.</description>
+      </property>
+    </properties>
+    <events />
+    <methods>
+      <method name="dispose">
+        <description locid="WinJS.UI.ViewBox.dispose" type="text/plain">Disposes this ViewBox.</description>
+        <returnType datatype="*" />
+      </method>
+      <method name="forceLayout">
+        <returnType datatype="*" />
+      </method>
+    </methods>
+  </class><locale messages="ui_loc_oam.xml" />
+</api>

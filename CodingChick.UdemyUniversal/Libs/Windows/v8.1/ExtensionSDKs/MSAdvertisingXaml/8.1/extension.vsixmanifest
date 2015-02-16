@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Id="MSAdvertisingXaml.e8f53a08-c543-4b69-ab06-451b6132ae90" Version="8.1.30809.0" Language="en-US" Publisher="Microsoft Advertising" />
+    <DisplayName>Microsoft Advertising SDK for Windows 8.1 (Xaml)</DisplayName>
+    <Description xml:space="preserve">This SDK provides a control to display advertisements in apps (ads-in-apps). The control displays ads and exposes APIs to customize available options provided by the Microsoft ad servers.</Description>
+    <MoreInfo>http://www.windowsadvertising.com</MoreInfo>
+    <License>License.rtf</License>
+    <Icon>ProductIcon.ico</Icon>
+  </Metadata>
+  <Installation Scope="Global" AllUsers="true" InstalledByMsi="true" SystemComponent="true">
+    <InstallationTarget Id="Microsoft.ExtensionSDK" TargetPlatformIdentifier="Windows" TargetPlatformVersion="v8.1" SdkName="MSAdvertisingXaml" SdkVersion="8.1" />
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" Version="4.5.1" />
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.ExtensionSDK" d:Source="File" Path="SDKManifest.xml" />
+  </Assets>
+</PackageManifest>

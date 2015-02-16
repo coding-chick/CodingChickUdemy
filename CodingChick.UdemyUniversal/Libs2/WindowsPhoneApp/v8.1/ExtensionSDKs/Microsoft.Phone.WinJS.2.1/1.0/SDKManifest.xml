@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<FileList
+    DisplayName="Windows Library for JavaScript 2.1"
+    ProductFamilyName="Microsoft.WinJS"
+    SupportsMultipleVersions="Error"
+    FrameworkIdentity="Name=Microsoft.Phone.WinJS.2.1, MinVersion=1.0.9651.0"
+
+    MinVSVersion="12.0"
+    MinToolsVersion="12.0"
+
+    AppliesTo="JavaScript+WindowsAppContainer"
+
+    AppX="Microsoft.Phone.WinJS.2.1.appx"
+
+    MinOSVersion="6.3.1"
+    MaxOSVersionTested="6.3.1"
+    MaxPlatformVersion="8.1"
+
+    MoreInfo="http://go.microsoft.com/fwlink/?LinkId=260891">
+
+    <!-- JS -->
+    <File Content="js\base.js" />
+    <File Content="js\ui.js" />
+    <File Content="js\en-us\base.strings.js" />
+    <File Content="js\en-us\ui.strings.js" />
+
+    <!-- CSS -->
+    <File Content="css\ui-dark.css" />
+    <File Content="css\ui-light.css" />
+</FileList>

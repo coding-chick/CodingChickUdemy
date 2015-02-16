@@ -6,6 +6,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Graphics.Display;
+using Windows.System.Display;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -29,11 +30,21 @@ namespace CodingChick.UdemyUniversal.Views
         {
             this.InitializeComponent();
             this.Loaded += LecturePlayerView_Loaded;
+            this.Unloaded +=LecturePlayerView_Unloaded;
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.Landscape;
         }
 
+        void LecturePlayerView_Unloaded(object sender, RoutedEventArgs e)
+        {
+            _keepScreenOnRequest.RequestRelease();
+        }
+
+        private Windows.System.Display.DisplayRequest _keepScreenOnRequest;
         void LecturePlayerView_Loaded(object sender, RoutedEventArgs e)
         {
+            _keepScreenOnRequest = new Windows.System.Display.DisplayRequest();
+            _keepScreenOnRequest.RequestActive();
+
             //This hack is because playlistplugin doesn't have a data context of its own and could not be bounded via xaml
             PlaylistPlugin plugin = (PlaylistPlugin) Player.Plugins.First();
             

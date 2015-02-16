@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Microsoft.Phone.WinJS.2.1/js/ui/WinJS.UI.PivotItem" name="WinJS.UI.PivotItem" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="true" xmlns="http://openajax.org/metadata">
+  <author name="Microsoft Corporation" />
+  <description locid="WinJS.UI.PivotItem" type="text/plain">Defines a Item of a Pivot control.</description>
+  <blend:compatibleWiths>
+    <blend:compatibleWith platform="WindowsPhoneApp" minVersion="8.1" />
+  </blend:compatibleWiths>
+  <icons>
+    <icon src="ui_winjs.ui.pivotitem.12x12.png" />
+    <icon src="ui_winjs.ui.pivotitem.16x16.png" />
+  </icons>
+  <properties>
+    <property name="element" datatype="HTMLElement" required="false" hidden="true">
+      <description locid="WinJS.UI.PivotItem.element" type="text/plain">Gets the DOM element that hosts the PivotItem.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="WindowsPhoneApp" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="contentElement" datatype="HTMLElement" required="false">
+      <description locid="WinJS.UI.PivotItem.contentElement" type="text/plain">Gets the DOM element that hosts the PivotItem's content.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="WindowsPhoneApp" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="header" datatype="Object" required="false">
+      <description locid="WinJS.UI.PivotItem.header" type="text/plain">Get or set the PivotItem's header. After you set this property, the Pivot renders the header again.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="WindowsPhoneApp" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+  </properties>
+  <content><![CDATA[<div data-win-control="WinJS.UI.PivotItem" data-win-options="{header: 'PivotItem Header'}">PivotItem Content</div>]]></content>
+  <requires>
+    <require type="javascript" src="//Microsoft.Phone.WinJS.2.1/js/base.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="//Microsoft.Phone.WinJS.2.1/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="//Microsoft.Phone.WinJS.2.1/css/ui-dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript"><![CDATA[WinJS.UI.processAll();]]></require>
+  </requires>
+  <blend:parts>
+    <part name="pivotitem" class="win-pivot-item">
+      <description locid="WinJS.UI.PivotItem_part:pivotitem" type="text/plain">The entire PivotItem control.</description>
+    </part>
+    <part name="content" class="win-pivot-item-content">
+      <description locid="WinJS.UI.PivotItem_part:content" type="text/plain">The content region of the PivotItem.</description>
+    </part>
+  </blend:parts><locale messages="ui_loc_oam.xml" />
+</widget>

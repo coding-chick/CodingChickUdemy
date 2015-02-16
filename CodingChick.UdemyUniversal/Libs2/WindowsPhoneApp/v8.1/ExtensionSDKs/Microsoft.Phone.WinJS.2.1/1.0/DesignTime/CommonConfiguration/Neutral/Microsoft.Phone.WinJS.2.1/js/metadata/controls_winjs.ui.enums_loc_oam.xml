@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<messagebundle>
+  <msg name="WinJS.UI.AppBar.layout_commands">AppBar contains AppBarCommand objects</msg>
+  <msg name="WinJS.UI.AppBar.layout_custom">AppBar containing custom content</msg>
+  <msg name="WinJS.UI.AppBar.placement_top">Place AppBar at the top edge</msg>
+  <msg name="WinJS.UI.AppBar.placement_bottom">Place AppBar at the bottom edge</msg>
+  <msg name="WinJS.UI.AppBarCommand.section_global">Place AppBarCommand in the section for global commands</msg>
+  <msg name="WinJS.UI.AppBarCommand.section_selection">Place AppBarCommand in the section for selection commands</msg>
+  <msg name="WinJS.UI.AppBarCommand.type_button">A simple press button</msg>
+  <msg name="WinJS.UI.AppBarCommand.type_toggle">A command that can be selected or unselected</msg>
+  <msg name="WinJS.UI.FlipView.orientation_horizontal">Sets the layout orientation of the FlipView to be horizontal</msg>
+  <msg name="WinJS.UI.FlipView.orientation_vertical">Sets the layout orientation of the FlipView to be vertical</msg>
+  <msg name="WinJS.UI.HeaderPosition_top">Place the header of each group above its items</msg>
+  <msg name="WinJS.UI.HeaderPosition_left">Place the header of each group to the left of its items</msg>
+  <msg name="WinJS.UI.ListView.LoadingBehavior_incremental">ListView represents the beginning of the collection. As the user scrolls, additional items are loaded.</msg>
+  <msg name="WinJS.UI.ListView.LoadingBehavior_randomAccess">ListView represents the complete collection. As the user jumps around the collection, items are loaded and unloaded.</msg>
+  <msg name="WinJS.UI.ListView.SelectionMode_none">Disables the selection of items in ListView</msg>
+  <msg name="WinJS.UI.ListView.SelectionMode_single">Allows up to one item to be selected in ListView</msg>
+  <msg name="WinJS.UI.ListView.SelectionMode_multi">Allows multiple items to be selected in ListView</msg>
+  <msg name="WinJS.UI.ListView.SwipeBehavior_none">Swiping an item has no effect</msg>
+  <msg name="WinJS.UI.ListView.SwipeBehavior_select">Swiping an item toggles its selection state</msg>
+  <msg name="WinJS.UI.ListView.TapBehavior_none">Tapping an item has no effect</msg>
+  <msg name="WinJS.UI.ListView.TapBehavior_invokeOnly">Tapping an item invokes it</msg>
+  <msg name="WinJS.UI.ListView.TapBehavior_toggleSelect">Tapping an item invokes it and toggles its selection state</msg>
+  <msg name="WinJS.UI.ListView.TapBehavior_directSelect">Tapping an item invokes it and causes it to be the only item that is selected</msg>
+  <msg name="WinJS.UI.Orientation_horizontal">Horizontal</msg>
+  <msg name="WinJS.UI.Orientation_vertical">Vertical</msg>
+</messagebundle>

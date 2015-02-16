@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Microsoft.WinJS.2.0/js/ui/WinJS.UI.NavBarCommand" name="WinJS.UI.NavBarCommand" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="false" xmlns="http://openajax.org/metadata">
+  <author name="Microsoft Corporation" />
+  <description locid="WinJS.UI.NavBarCommand" type="text/plain">Represents a navigation command in an NavBarContainer.</description>
+  <blend:compatibleWiths>
+    <blend:compatibleWith platform="Windows" minVersion="8.1" />
+  </blend:compatibleWiths>
+  <icons>
+    <icon src="ui_winjs.ui.navbarcommand.12x12.png" />
+    <icon src="ui_winjs.ui.navbarcommand.16x16.png" />
+  </icons>
+  <properties>
+    <property name="element" datatype="HTMLElement" required="false" hidden="true">
+      <description locid="WinJS.UI.NavBarCommand.element" type="text/plain">Gets the DOM element that hosts the NavBarCommand.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="label" datatype="String" required="false">
+      <description locid="WinJS.UI.NavBarCommand.label" type="text/plain">Gets or sets the label of the NavBarCommand.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="tooltip" datatype="String" required="false">
+      <description locid="WinJS.UI.NavBarCommand.tooltip" type="text/plain">Gets or sets the tooltip of the NavBarCommand.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="icon" datatype="String" required="false">
+      <description locid="WinJS.UI.NavBarCommand.icon" type="text/plain">Gets or sets the icon of the NavBarCommand. This value is either one of the values of the AppBarIcon enumeration or the path of a custom PNG file.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="location" datatype="String" required="false">
+      <description locid="WinJS.UI.NavBarCommand.location" type="text/plain">Gets or sets the command's target location.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="state" datatype="String" required="false">
+      <description locid="WinJS.UI.NavBarCommand.state" type="text/plain">Gets or sets the state value used for navigation. The command passes this object to the WinJS.Navigation.navigate function.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="splitButton" datatype="Boolean" required="false">
+      <description locid="WinJS.UI.NavBarCommand.splitButton" type="text/plain">Gets or sets a value that specifies whether the NavBarCommand has a split button.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="splitOpened" datatype="Boolean" required="false" hidden="true">
+      <description locid="WinJS.UI.NavBarCommand.splitOpened" type="text/plain">Gets or sets a value that specifies whether the split button is open.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+  </properties>
+  <content><![CDATA[<div data-win-control="WinJS.UI.NavBarCommand" data-win-options="{location:'/pages/home/home.html',label:'Home',icon:WinJS.UI.AppBarIcon.home}"></div>]]></content>
+  <requires>
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/base.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="//Microsoft.WinJS.2.0/css/ui-dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript"><![CDATA[WinJS.UI.processAll();]]></require>
+  </requires>
+  <blend:parts>
+    <part name="navbarcommand" class="win-navbarcommand">
+      <description locid="WinJS.UI.NavBarCommand_part:navbarcommand" type="text/plain">Styles the entire NavBarCommand control.</description>
+    </part>
+    <part name="button" class="win-navbarcommand-button">
+      <description locid="WinJS.UI.NavBarCommand_part:button" type="text/plain">Styles the main button in a NavBarCommand.</description>
+    </part>
+    <part name="splitbutton" class="win-navbarcommand-splitbutton">
+      <description locid="WinJS.UI.NavBarCommand_part:splitbutton" type="text/plain">Styles the split button in a NavBarCommand</description>
+    </part>
+    <part name="icon" class="win-navbarcommand-icon">
+      <description locid="WinJS.UI.NavBarCommand_part:icon" type="text/plain">Styles the icon in the main button of a NavBarCommand.</description>
+    </part>
+    <part name="label" class="win-navbarcommand-label">
+      <description locid="WinJS.UI.NavBarCommand_part:label" type="text/plain">Styles the label in the main button of a NavBarCommand.</description>
+    </part>
+  </blend:parts><locale messages="ui_loc_oam.xml" />
+</widget>

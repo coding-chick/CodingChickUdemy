@@ -27,7 +27,7 @@ namespace CodingChick.UdemyUniversal.Views
         {
             this.InitializeComponent();
             DisplayInformation.AutoRotationPreferences = DisplayOrientations.None;
-
+            
         }
 
 

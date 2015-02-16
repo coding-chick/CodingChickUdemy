@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Microsoft.WinJS.2.0/js/ui/WinJS.UI.Rating" name="WinJS.UI.Rating" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="false" xmlns="http://openajax.org/metadata">
+  <author name="Microsoft Corporation" />
+  <description locid="WinJS.UI.Rating" type="text/plain">The Rating control allows users to give a number on a scale of 1 to maxRating (5 is the default).</description>
+  <blend:compatibleWiths>
+    <blend:compatibleWith platform="Windows" minVersion="8.0" />
+  </blend:compatibleWiths>
+  <icons>
+    <icon src="ui_winjs.ui.rating.12x12.png" />
+    <icon src="ui_winjs.ui.rating.16x16.png" />
+  </icons>
+  <properties>
+    <property name="maxRating" datatype="Number" isInteger="true" required="false">
+      <description locid="WinJS.UI.Rating.maxRating" type="text/plain">Gets or sets the maximum possible rating value. The default is 5.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="userRating" datatype="Number" isInteger="true" required="false">
+      <description locid="WinJS.UI.Rating.userRating" type="text/plain">Gets or sets the user's rating. This value must be between greater than or equal to zero and less than or equal to the maxRating.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="averageRating" datatype="Number" isInteger="false" required="false">
+      <description locid="WinJS.UI.Rating.averageRating" type="text/plain">Gets or sets the average rating as a float value. This value must be [equal to zero] OR [greater than or equal to 1 AND less than or equal to the maxRating].</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="disabled" datatype="Boolean" required="false">
+      <description locid="WinJS.UI.Rating.disabled" type="text/plain">Gets or sets a value that specifies whether the control is disabled. When the control is disabled, the user can't specify a
+ new rating or modify an existing rating.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="enableClear" datatype="Boolean" required="false">
+      <description locid="WinJS.UI.Rating.enableClear" type="text/plain">Gets or sets whether the control lets the user clear the rating.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="tooltipStrings" datatype="Array" required="false">
+      <description locid="WinJS.UI.Rating.tooltipStrings" type="text/plain">Gets or sets a set of descriptions to show for rating values in the tooltip. The array must
+ contain a string for each available rating value, and it can contain an optional string
+ (at the end of the array) for the clear rating option.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="element" datatype="HTMLElement" required="false" hidden="true">
+      <description locid="WinJS.UI.Rating.element" type="text/plain">Gets the DOM element that hosts the Rating.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+  </properties>
+  <content><![CDATA[<div data-win-control="WinJS.UI.Rating"></div>]]></content>
+  <requires>
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/base.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="//Microsoft.WinJS.2.0/css/ui-dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript"><![CDATA[WinJS.UI.processAll();]]></require>
+  </requires>
+  <blend:parts>
+    <part name="rating" class="win-rating">
+      <description locid="WinJS.UI.Rating_part:rating" type="text/plain">The entire Rating control.</description>
+    </part>
+    <part name="average-empty" class="win-star win-average win-empty">
+      <description locid="WinJS.UI.Rating_part:average-empty" type="text/plain">The empty star when the Rating control shows the average rating.</description>
+    </part>
+    <part name="average-full" class="win-star win-average win-full">
+      <description locid="WinJS.UI.Rating_part:average-full" type="text/plain">The full star when the Rating control shows the average rating.</description>
+    </part>
+    <part name="user-empty" class="win-star win-user win-empty">
+      <description locid="WinJS.UI.Rating_part:user-empty" type="text/plain">The empty star when the Rating control shows the user rating.</description>
+    </part>
+    <part name="user-full" class="win-star win-user win-full">
+      <description locid="WinJS.UI.Rating_part:user-full" type="text/plain">The full star when the Rating control shows the user rating.</description>
+    </part>
+    <part name="tentative-empty" class="win-star win-tentative win-empty">
+      <description locid="WinJS.UI.Rating_part:tentative-empty" type="text/plain">The empty star when the Rating control shows the tentative rating.</description>
+    </part>
+    <part name="tentative-full" class="win-star win-tentative win-full">
+      <description locid="WinJS.UI.Rating_part:tentative-full" type="text/plain">The full star when the Rating control shows the tentative rating.</description>
+    </part>
+    <part name="disabled-empty" class="win-star win-disabled win-empty">
+      <description locid="WinJS.UI.Rating_part:disabled-empty" type="text/plain">The empty star when the control is disabled.</description>
+    </part>
+    <part name="disabled-full" class="win-star win-disabled win-full">
+      <description locid="WinJS.UI.Rating_part:disabled-full" type="text/plain">The full star when the control is disabled.</description>
+    </part>
+  </blend:parts><locale messages="ui_loc_oam.xml" />
+</widget>

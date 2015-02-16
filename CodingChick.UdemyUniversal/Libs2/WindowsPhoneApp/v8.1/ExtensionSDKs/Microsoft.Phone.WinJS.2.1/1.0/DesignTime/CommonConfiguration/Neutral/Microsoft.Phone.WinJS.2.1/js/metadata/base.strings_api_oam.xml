@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<api version="1.0" spec="1.0" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" xmlns="http://openajax.org/metadata">
+  <author name="Microsoft Corporation" /><locale messages="base.strings_loc_oam.xml" />
+</api>

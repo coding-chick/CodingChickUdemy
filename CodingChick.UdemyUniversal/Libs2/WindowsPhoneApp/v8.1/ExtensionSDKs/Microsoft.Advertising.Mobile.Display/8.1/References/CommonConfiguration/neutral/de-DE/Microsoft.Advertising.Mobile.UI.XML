@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  IntelliSense
+  Culture de-DE
+  Version 
+--><doc>
+  <assembly>
+    <name>Microsoft.Advertising.Mobile.UI</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.Advertising.Mobile.UI.AdControl">
+      <summary>
+        <para>
+        Microsoft <c>AdControl</c> bietet alles, was Sie zur Darstellung von Anzeigen in einer App benötigen.
+      </para>
+        <para>
+        Instanziiert eine <c>AdControl</c> und stellt optionale Parameter für die Zielgruppenadressierung bereit.
+      </para>
+      </summary>
+      <remarks>
+        <para>
+          <c>AdControl</c> ist so konfiguriert, dass alle 60 Sekunden eine neue Anzeige angezeigt wird. Dies ist die Standardeinstellung. Wenn dieses Verhalten nicht für die App geeignet ist, können Sie <c>IsAutoRefreshEnabled</c> auf <c>false</c> festlegen und die <c>Refresh</c>-Methode verwenden, damit <c>AdControl</c> die nächste verfügbare Anzeige anzeigt.
+      </para>
+        <para>
+        Verwenden Sie dieselbe <c>AdControl</c>-Instanz nicht seitenübergreifend.
+      </para>
+        <para>
+        Sobald es festgelegt wurde, sollte das übergeordnete Element der <c>AdControl</c> nicht mehr geändert werden.
+      </para>
+        <para>
+        Alle erforderlichen Eigenschaften der <c>AdControl</c> müssen festgelegt werden, bevor das Steuerelement einem übergeordneten Objekt hinzugefügt wird. Zu diesen erforderlichen Eigenschaften zählen <c>AdUnitId</c> und <c>ApplicationId</c>.
+      </para>
+      </remarks>
+    </member>
+    <member name="M:Microsoft.Advertising.Mobile.UI.AdControl.#ctor">
+      <summary>
+      Initialisiert eine neue <c>AdControl</c>.
+    </summary>
+      <remarks>
+        <para>
+        Der Entwickler muss die <c>ApplicationId</c>- und <c>AdUnitId</c>-Eigenschaften festlegen, bevor in der App eine Anzeige angezeigt werden kann.
+      </para>
+        <para>
+        Der Standardwert für die Größe der <c>AdControl</c> ist 480 x 80 Pixel.
+      </para>
+      </remarks>
+    </member>
+    <member name="M:Microsoft.Advertising.Mobile.UI.AdControl.#ctor(System.String,System.String,System.Boolean)">
+      <summary>
+      Initialisiert eine neue <c>AdControl</c> mit den angegebenen Parametern.
+    </summary>
+      <remarks>
+      Ein Konstruktor für eine <c>AdControl</c>, der die Eigenschaften <c>ApplicationId</c>, <c>AdUnitId</c> und <c>IsAutoRefreshEnabled</c> als Parameter akzeptiert.
+    </remarks>
+      <param name="applicationId">
+      Die Anwendungs-ID der App. Dieser Wert wird bei der Registrierung der App in pubCenter bereitgestellt.
+    </param>
+      <param name="adUnitId">
+      Der Bezeichner der Anzeigeneinheit für diese <c>AdControl</c>-Instanz. Dieser Wert wird dem Herausgeber bereitgestellt, wenn dieser eine <c>AdUnit</c> in pubCenter erstellt. Weitere Informationen finden Sie im Publisher Onboarding Guide.
+    </param>
+      <param name="isAutoRefreshEnabled">Aktiviert oder deaktiviert die automatische Aktualisierung von Anzeigen.</param>
+    </member>
+    <member name="M:Microsoft.Advertising.Mobile.UI.AdControl.Refresh">
+      <summary>
+        <para>
+        Durch den Aufruf dieser Methode wird die <c>AdControl</c> angewiesen, die nächste Anzeige anzuzeigen, sobald eine Anzeige verfügbar ist.
+      </para>
+        <para>
+        Diese Methode darf nicht verwendet werden, wenn <c>IsAutoRefreshEnabled</c> auf <c>true</c> festgelegt ist.
+      </para>
+      </summary>
+      <remarks>
+      Möglicherweise ist keine neue Anzeige verfügbar, da beim Herstellen einer Verbindung mit der Anzeigenplattform ein Fehler aufgetreten ist.
+    </remarks>
+      <exception cref="System.InvalidOperationException">
+      Die IsAutoRefreshEnabled-Eigenschaft ist auf „true“ festgelegt.
+    </exception>
+    </member>
+    <member name="M:Microsoft.Advertising.Mobile.UI.AdControl.Suspend">
+      <summary>
+      Setzt die aktuelle Anzeige aus und ersetzt die derzeitige Anzeigendarstellung durch eine Momentaufnahme
+      der Elemente, die gerade erstellt wurden. Nach einer Interaktion mit der Anzeige wird die Aktion abgebrochen
+      und die erweiterte Anzeige geschlossen. Nach dem Aufrufen von "Aussetzen" wird die AdControl nicht automatisch
+      aktualisiert (auch wenn IsAutoRefreshEnabled=true) und Sie können die AdControl nicht manuell aktualisieren,
+      bis "Fortsetzen" aufgerufen wurde.
+    </summary>
+      <remarks>
+      Wenn die Anzeige ausgesetzt ist, sind keine Benutzerinteraktionen mit der Anzeige möglich, bis "Fortsetzen" aufgerufen wird.
+    </remarks>
+    </member>
+    <member name="M:Microsoft.Advertising.Mobile.UI.AdControl.Suspend(System.Boolean)">
+      <summary>
+        Setzt die aktuelle Anzeige aus und ersetzt die derzeitige Anzeigendarstellung durch eine Momentaufnahme
+        der Elemente, die gerade erstellt wurden. Nach einer Interaktion mit der Anzeige wird die Aktion abgebrochen
+        und die erweiterte Anzeige geschlossen. Nach dem Aufrufen von "Aussetzen" wird die AdControl nicht automatisch
+        aktualisiert (wenn IsAutoRefreshEnabled=true) und Sie können die AdControl nicht manuell aktualisieren,
+        bis "Fortsetzen" aufgerufen wurde.
+    </summary>
+      <remarks>
+      Wenn die Anzeige ausgesetzt ist, sind keine Benutzerinteraktionen mit der Anzeige möglich, bis "Fortsetzen" aufgerufen wird.
+    </remarks>
+      <param name="closeExpandedAd">
+      Wenn "true" bei Interaktion mit einer Anzeige: Die Interaktion wird abgebrochen und die erweiterte Anzeige geschlossen. Wenn "false": Für die erweiterte Anzeige wird keine Aktion ausgeführt.
+    </param>
+    </member>
+    <member name="M:Microsoft.Advertising.Mobile.UI.AdControl.Resume">
+      <summary>
+      Entfernt eine statische Momentaufnahme aus der AdControl und ersetzt sie durch die dynamische Darstellung.
+      Die automatische Aktualisierung der AdControl wird fortgesetzt (wenn IsAutoRefreshEnable=true) und manuelles Aktualisieren ist wieder möglich.
+    </summary>
+    </member>
+    <member name="M:Microsoft.Advertising.Mobile.UI.AdControl.AddAdTag(System.String,System.String)">
+      <summary>
+      Fügt der AdControl ein Anzeigentag hinzu. Pro AdControl sind höchstens 10 Tags zulässig. Wenn die maximale Anzahl an Tags
+      überschritten wird, löst dies ein errorOccurred-Ereignis aus.
+    </summary>
+      <param name="tagName">
+      Der Name des Anzeigentags. Maximal 16 Zeichen. Wenn die maximale Anzahl an Zeichen überschritten wird, löst dies ein errorOccurred-Ereignis aus.
+    </param>
+      <param name="tagValue">
+      Der Wert des Anzeigentags. Maximal 128 Zeichen. Wenn die maximale Anzahl an Zeichen überschritten wird, löst dies ein errorOccurred-Ereignis aus.
+    </param>
+    </member>
+    <member name="M:Microsoft.Advertising.Mobile.UI.AdControl.RemoveAdTag(System.String)">
+      <summary>
+      Entfernt ein Anzeigentag aus der AdControl. Wenn der Tagname nicht vorhanden ist, hat dies keine Auswirkungen.
+    </summary>
+      <param name="tagName">
+      Der Name des zu entfernenden Anzeigentags.
+    </param>
+    </member>
+    <member name="M:Microsoft.Advertising.Mobile.UI.AdControl.SendMessageToAd(System.String,System.String)">
+      <summary>
+      Übergibt Daten an den aktuellen AdControl-Renderer, die von einer anderen AdControl-Instanz über den
+      PublisherMessageEvent-Delegat empfangen wurden. Wird zum Synchronisieren der Anzeigenschaltung zwischen mehreren AdControl-Objekten verwendet.
+    </summary>
+      <param name="type">
+      Der Typ der von einer anderen AdControl empfangenen Nachricht.
+    </param>
+      <param name="data">
+      Die Daten der von einer anderen AdControl empfangenen Nachricht.
+    </param>
+    </member>
+    <member name="E:Microsoft.Advertising.Mobile.UI.AdControl.ErrorOccurred">
+      <summary>
+      Fehlerereignis, das ausgelöst wird, wenn beim Abrufen von Anzeigen durch die <c>AdControl</c> ein Fehler auftritt.
+    </summary>
+    </member>
+    <member name="E:Microsoft.Advertising.Mobile.UI.AdControl.AdRefreshed">
+      <summary>
+      Ereignis, das ausgelöst wird, wenn die <c>AdControl</c> eine neue Anzeige erhält.
+    </summary>
+    </member>
+    <member name="E:Microsoft.Advertising.Mobile.UI.AdControl.IsEngagedChanged">
+      <summary>
+      Ereignis, das ausgelöst wird, wenn der Benutzer auf die Anzeige klickt und im Aktionsdialogfeld auf eine Eingabe des Benutzer gewartet wird.
+    </summary>
+      <remarks>
+      Dieses Ereignis ermöglicht Entwicklern, die App anzuhalten, wenn das Aktionsdialogfeld angezeigt wird.
+    </remarks>
+    </member>
+    <member name="E:Microsoft.Advertising.Mobile.UI.AdControl.PublisherMessageEvent">
+      <summary>
+      Das ausgelöste Ereignis, wenn der Benutzer zu den Medien der Anzeige wechselt. Die Metadaten der von der Anzeige dargestellten Medien werden als Bestandteil dieses Ereignisses übergeben.
+    </summary>
+      <remarks>
+      Senden Sie mithilfe dieses Ereignisses Daten an eine andere AdControl-Instanz, um die Anzeigenschaltung zu synchronisieren.
+    </remarks>
+    </member>
+    <member name="P:Microsoft.Advertising.Mobile.UI.AdControl.Keywords">
+      <summary>
+      Ruft die Stichworte als kommagetrennte Liste ab oder legt diese fest. Durch Stichwörter kann die App Anzeigen bereitstellen, die für den Benutzer relevant sind.
+    </summary>
+    </member>
+    <member name="P:Microsoft.Advertising.Mobile.UI.AdControl.Latitude">
+      <summary>
+      Der geografische Breitengrad des Benutzers. Dieser Standort weist das Format einer Breitenkoordinate auf.
+    </summary>
+    </member>
+    <member name="P:Microsoft.Advertising.Mobile.UI.AdControl.Longitude">
+      <summary>
+      Der geografische Längengrad des Benutzers. Dieser Standort weist das Format einer Längenkoordinate auf.
+    </summary>
+    </member>
+    <member name="P:Microsoft.Advertising.Mobile.UI.AdControl.CountryOrRegion">
+      <summary>
+      Ein aus zwei Zeichen bestehender Länder- oder Regionscode des App-Benutzers. Dieser Wert wird von allen Anzeigen innerhalb der App verwendet.
+    </summary>
+      <remarks>
+      Die Länder- oder Regionscodes werden durch die Norm ISO 3166-1 festgelegt. Weitere Informationen zu dieser Norm finden Sie unter <a href="http://www.iso.org/iso/country_codes/iso_3166_code_lists/english_country_names_and_code_elements.htm">http://www.iso.org/iso/country_codes/iso_3166_code_lists/english_country_names_and_code_elements.htm</a>.
+    </remarks>
+    </member>
+    <member name="P:Microsoft.Advertising.Mobile.UI.AdControl.PostalCode">
+      <summary>
+      Die Postleitzahl des App-Benutzers.
+    </summary>
+    </member>
+    <member name="P:Microsoft.Advertising.Mobile.UI.AdControl.AutoRefreshIntervalInSeconds">
+      <summary>
+      Legen Sie das Intervall für die automatische Aktualisierung in Sekunden fest.
+    </summary>
+      <remarks>
+        <para>Der Wert muss größer oder gleich dem Standardwert für die automatische Aktualisierung sein.</para>
+        <para>
+        Wenn der festgelegte Wert kleiner ist als der Standardwert für die automatische Aktualisierung, wird der Standardwert für die automatische Aktualisierung verwendet.
+      </para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Advertising.Mobile.UI.AdControl.AdUnitId">
+      <summary>
+        <para>
+        Ruft den Bezeichner der Anzeigeneinheit für diese <c>AdControl</c>-Instanz ab oder legt diesen fest.
+      </para>
+        <para>
+        Dieser Wert wird dem Herausgeber bereitgestellt, wenn dieser eine <c>AdUnit</c> in pubCenter erstellt. Weitere Informationen finden Sie im Publisher Onboarding Guide.
+      </para>
+      </summary>
+      <remarks>
+        <para>
+        Diese Eigenschaft kann nur festgelegt werden, wenn die <c>AdControl</c> mithilfe des Standardkonstruktors instanziiert wird.
+      </para>
+        <para>Sobald sie festgelegt wurde, kann diese Eigenschaft nicht mehr geändert werden.</para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Advertising.Mobile.UI.AdControl.ApplicationId">
+      <summary>
+      Die Anwendungs-ID der App. Dieser Wert wird Ihnen bei der Registrierung der App in pubCenter bereitgestellt.
+    </summary>
+      <remarks>
+        <para>Innerhalb einer App kann nur ein Wert für die Anwendungs-ID verwendet werden.</para>
+        <para>
+        Wenn in verschiedenen <c>AdControl</c>-Objekten innerhalb der App mehrere Werte für die <c>ApplicationId</c> verwendet werden, erhalten einige Steuerelemente keine Anzeigen und lösen ein <c>ErrorOccurred</c>-Ereignis aus.
+      </para>
+      </remarks>
+    </member>
+    <member name="P:Microsoft.Advertising.Mobile.UI.AdControl.IsAutoRefreshEnabled">
+      <summary>
+      Aktiviert oder deaktiviert die automatische Aktualisierung von Anzeigen. Diese Eigenschaft kann nicht geändert werden, nachdem die <c>AdControl</c> einer Seite hinzugefügt wurde.
+    </summary>
+      <remarks>
+      Diese Eigenschaft kann nur festgelegt werden, wenn die <c>AdControl</c> mithilfe des Standardkonstruktors oder in XAML instanziiert wird. Sobald sie festgelegt wurde, kann diese Eigenschaft später nicht mehr geändert werden. Diese Eigenschaft ist standardmäßig auf <c>true</c> festgelegt.
+    </remarks>
+    </member>
+    <member name="P:Microsoft.Advertising.Mobile.UI.AdControl.IsAutoCollapseEnabled">
+      <summary>
+      Aktiviert oder deaktiviert das automatische Ausblenden der <c>AdControl</c>, wenn keine Anzeige verfügbar ist oder ein Fehler auftritt.
+    </summary>
+    </member>
+    <member name="P:Microsoft.Advertising.Mobile.UI.AdControl.IsEngaged">
+      <summary>
+      Ruft einen Wert ab, der angibt, ob der Benutzer derzeit mit einer der Anzeigen interagiert.
+    </summary>
+    </member>
+    <member name="P:Microsoft.Advertising.Mobile.UI.AdControl.IsSuspended">
+      <summary>
+      Ruft den aktuellen Sperrstatus der AdControl ab.
+    </summary>
+    </member>
+    <member name="P:Microsoft.Advertising.Mobile.UI.AdControl.HasAd">
+      <summary>
+      Ruft den aktuellen Anzeigestatus ab.
+    </summary>
+    </member>
+    <member name="P:Microsoft.Advertising.Mobile.UI.AdControl.IsBackgroundTransparent">
+      <summary>
+      Wenn diese Eigenschaft auf "true" gesetzt ist, ist der Hintergrund der Inseratsteuerung transparent. Wenn diese Eigenschaft auf "false" gesetzt ist, ist der Hintergrund schwarz.  Der Standardwert ist "schwarz".
+    </summary>
+    </member>
+  </members>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/><Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>f5ZvtuGFS6T5L9rDsgVxzjP9Xjk=</DigestValue></Reference></SignedInfo><SignatureValue>
+    liUssCyatZpthQR/TOLXzSlo2d1eZtYirBq+25yFU20RGTkb8ONR45xu5eUwnJ91IpWmdpsv
+    ffBBRzQfC3rXtC1pARpYbcuPBda7FiJo2FrgwrroV4LbgT9/gwJr4pDoyTirBt02Z4gMj3WQ
+    Yu4ixFyC71NP1ZkLK+CHscsgwtb9IhecnYwU8UWA71PqZ+4qN8OWtPwHdQDqn4C9L0PLz5wj
+    vali6V/xc2rFVHUa+d8THeVHOfyW5+cqWJOL2op7i61NOPwtcckTFoyei1C3qfAx2B/ca5+t
+    YhYy48pcBCZRgLDwjJigdZIJz0/0BwIjeW5Vd7Ogf/Wr7w9nBeSLLw==
+  </SignatureValue><KeyInfo>
+      <KeyValue>
+        <RSAKeyValue>
+          <Modulus>
+            lnFd7QZG+oTLnVu3Rsew4bQROQOtsRVzYJzrp7ZuGjw//2XjNPGmpSFeVplsWOSSoQpcwtPc
+            Ui8MZZogYUBTMZxsjyF9uvn+E1BSYJU6W7lYpXRhQamU4K0mTkyhl3BJJ158Z8pPHnGERrwd
+            S7biD8XGJ8kH5noKpRcAGUxwRTgtgbRQqsVn0fp5vMXMoXKb9CU0mPhU3xI5OBIvpGulmn7H
+            YtHcz+09NPi53zUwuux5MqnhqaxVTUx/TFbDEwt28Qf5zEes+4jVUqUeKPo9Lc/PhJiGcWUR
+            z4XJCUSG4W/nsfysQESlqYsjP4JJndWWWVATWRhz/0MMrSvUfzBAZw==
+          </Modulus>
+          <Exponent>AQAB</Exponent>
+        </RSAKeyValue>
+      </KeyValue>
+      <X509Data>
+        <X509Certificate>
+          MIIE7DCCA9SgAwIBAgITMwAAAMps1TISNcThVQABAAAAyjANBgkqhkiG9w0BAQUFADB5MQsw
+          CQYDVQQGEwJVUzETMBEGA1UECBMKV2FzaGluZ3RvbjEQMA4GA1UEBxMHUmVkbW9uZDEeMBwG
+          A1UEChMVTWljcm9zb2Z0IENvcnBvcmF0aW9uMSMwIQYDVQQDExpNaWNyb3NvZnQgQ29kZSBT
+          aWduaW5nIFBDQTAeFw0xNDA0MjIxNzM5MDBaFw0xNTA3MjIxNzM5MDBaMIGDMQswCQYDVQQG
+          EwJVUzETMBEGA1UECBMKV2FzaGluZ3RvbjEQMA4GA1UEBxMHUmVkbW9uZDEeMBwGA1UEChMV
+          TWljcm9zb2Z0IENvcnBvcmF0aW9uMQ0wCwYDVQQLEwRNT1BSMR4wHAYDVQQDExVNaWNyb3Nv
+          ZnQgQ29ycG9yYXRpb24wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCWcV3tBkb6
+          hMudW7dGx7DhtBE5A62xFXNgnOuntm4aPD//ZeM08aalIV5WmWxY5JKhClzC09xSLwxlmiBh
+          QFMxnGyPIX26+f4TUFJglTpbuVildGFBqZTgrSZOTKGXcEknXnxnyk8ecYRGvB1LtuIPxcYn
+          yQfmegqlFwAZTHBFOC2BtFCqxWfR+nm8xcyhcpv0JTSY+FTfEjk4Ei+ka6Wafsdi0dzP7T00
+          +LnfNTC67HkyqeGprFVNTH9MVsMTC3bxB/nMR6z7iNVSpR4o+j0tz8+EmIZxZRHPhckJRIbh
+          b+ex/KxARKWpiyM/gkmd1ZZZUBNZGHP/QwytK9R/MEBnAgMBAAGjggFgMIIBXDATBgNVHSUE
+          DDAKBggrBgEFBQcDAzAdBgNVHQ4EFgQUH17iXVCNVoa+SjzPBOinh7XLv4MwUQYDVR0RBEow
+          SKRGMEQxDTALBgNVBAsTBE1PUFIxMzAxBgNVBAUTKjMxNTk1K2I0MjE4ZjEzLTZmY2EtNDkw
+          Zi05YzQ3LTNmYzU1N2RmYzQ0MDAfBgNVHSMEGDAWgBTLEejK0rQWWAHJNy4zFha5TJoKHzBW
+          BgNVHR8ETzBNMEugSaBHhkVodHRwOi8vY3JsLm1pY3Jvc29mdC5jb20vcGtpL2NybC9wcm9k
+          dWN0cy9NaWNDb2RTaWdQQ0FfMDgtMzEtMjAxMC5jcmwwWgYIKwYBBQUHAQEETjBMMEoGCCsG
+          AQUFBzAChj5odHRwOi8vd3d3Lm1pY3Jvc29mdC5jb20vcGtpL2NlcnRzL01pY0NvZFNpZ1BD
+          QV8wOC0zMS0yMDEwLmNydDANBgkqhkiG9w0BAQUFAAOCAQEAd1zr15E9zb17g9mFqbBDnXN8
+          F8kP7Tbbx7UsG177VAU6g3FAgQmit3EmXtZ9tmw7yapfXQMYKh0nfgfpxWUftc8Nt1THKDha
+          iOd7wRm2VjK64szLk9uvbg9dRPXUsO8b1U7Brw7vIJvy4f4nXejF/2H2GdIoCiKd381wgp4Y
+          ctgjzHosQ+7/6sDg5h2qnpczAFJvB7jTiGzepAY1p8JThmURdwmPNVm52IaoAP74MX0s9IwF
+          ncDB1XdybOlNWSaD8cKyiFeTNQB8UCu8Wfz+HCk4gtPeUpdFKRhOlludul8bo/EnUOoHleht
+          NA04V9w3KDWVOjic1O1qhV0OIhFeew==
+        </X509Certificate>
+      </X509Data>
+      <X509Data>
+        <X509Certificate>
+          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
+        </X509Certificate>
+      </X509Data>
+      <X509Data>
+        <X509Certificate>
+          MIIFvDCCA6SgAwIBAgIKYTMmGgAAAAAAMTANBgkqhkiG9w0BAQUFADBfMRMwEQYKCZImiZPy
+          LGQBGRYDY29tMRkwFwYKCZImiZPyLGQBGRYJbWljcm9zb2Z0MS0wKwYDVQQDEyRNaWNyb3Nv
+          ZnQgUm9vdCBDZXJ0aWZpY2F0ZSBBdXRob3JpdHkwHhcNMTAwODMxMjIxOTMyWhcNMjAwODMx
+          MjIyOTMyWjB5MQswCQYDVQQGEwJVUzETMBEGA1UECBMKV2FzaGluZ3RvbjEQMA4GA1UEBxMH
+          UmVkbW9uZDEeMBwGA1UEChMVTWljcm9zb2Z0IENvcnBvcmF0aW9uMSMwIQYDVQQDExpNaWNy
+          b3NvZnQgQ29kZSBTaWduaW5nIFBDQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB
+          ALJyWVwZMGS/HZpgICBCmXZTbD4b1m/My/Hqa/6XFhDg3zp0gxq3L6Ay7P/ewkJOI9VyANs1
+          VwqJyq4gSfTwaKxNS42lvXlLcZtHB9r9Jd+ddYjPqnNEf9eB2/O98jakyVxF3K+tPeAoaJca
+          p6Vyc1bxF5Tk/TWUcqDWdl8ed0WDhTgW0HNbBbpnUo2lsmkv2hkL/pJ0KeJ2L1TdFDBZ+NKN
+          Yv3LyV9GMVC5JxPkQDDPcikQKCLHN049oDI9kM2hOAaFXE5WgigqBTK3S9dPY+fSLWLxRT3n
+          rAgA9kahntFbjCZT6HqqSvJGzzc8OJ60d1ylF56NyxGPVjzBrAlfA9MCAwEAAaOCAV4wggFa
+          MA8GA1UdEwEB/wQFMAMBAf8wHQYDVR0OBBYEFMsR6MrStBZYAck3LjMWFrlMmgofMAsGA1Ud
+          DwQEAwIBhjASBgkrBgEEAYI3FQEEBQIDAQABMCMGCSsGAQQBgjcVAgQWBBT90TFO0yaKleGY
+          YDuoMW+mPLzYLTAZBgkrBgEEAYI3FAIEDB4KAFMAdQBiAEMAQTAfBgNVHSMEGDAWgBQOrIJg
+          QFYnl+UlE/wq4QpTlVnkpDBQBgNVHR8ESTBHMEWgQ6BBhj9odHRwOi8vY3JsLm1pY3Jvc29m
+          dC5jb20vcGtpL2NybC9wcm9kdWN0cy9taWNyb3NvZnRyb290Y2VydC5jcmwwVAYIKwYBBQUH
+          AQEESDBGMEQGCCsGAQUFBzAChjhodHRwOi8vd3d3Lm1pY3Jvc29mdC5jb20vcGtpL2NlcnRz
+          L01pY3Jvc29mdFJvb3RDZXJ0LmNydDANBgkqhkiG9w0BAQUFAAOCAgEAWTk+fyZGr+tvQLEy
+          tWrrDi9uqEn361917Uw7LddDrQv+y+ktMaMjzHxQmIAhXaw9L0y6oqhWnONwu7i0+Hm1SXL3
+          PupBf8rhDBdpy6WcIC36C1DEVs0t40rSvHDnqA2iA6VW4LiKS1fylUKc8fPv7uOGHzQ8uFaa
+          8FMjhSqkghyT4pQHHfLiTviMocroE6WRTsgb0o9ylSpxbZsa+BzwU9ZnzCL/XB3Nooy9J7J5
+          Y1ZEolHN+emjWFbdmwJFRC9f9Nqu1IIybvyklRPk62nnqaIsvsgrEA5ljpnb9aL6EiYJZTiU
+          8XofSrvR4Vbo0HiWGFzJNRZf3ZMdSY4tvq00RBzuEBUaAF3dNVshzpjHCe6FDoxPbQ4TTj18
+          KUicctHzbMrB7HCjV5JXfZSNoBtIA1r3z6NnCnSlNu0tLxfI5nI3EvRvsTxngvlSso0zFmUe
+          DordEN5k9G/ORtTTF+l5xAS00/ss3x+KnqwK+xMnQK3k+eGpf0a7B2BHZWBATrBC7E7ts3Z5
+          2Ao0CW0cgDEf4g5U3eWh++VHEK1kmP9QFi58vwUheuKVQSdpw5OPlcmN2Jshrg1cnPCiroZo
+          gwxqLbt2awAdlq3yFnv2FoMkuYjPaqhHMS+a3ONxPdcAfmJH0c6IybgY+g5yjcGjPa8CQGr/
+          aZuW4hCoELQ3UAjWwz0=
+        </X509Certificate>
+      </X509Data>
+    </KeyInfo><Object id="ts-countersig"><X509Data><X509Certificate>MIIEwzCCA6ugAwIBAgITMwAAADf+ve3c0lQBawAAAAAANzANBgkqhkiG9w0BAQUFADB3MQswCQYD
+VQQGEwJVUzETMBEGA1UECBMKV2FzaGluZ3RvbjEQMA4GA1UEBxMHUmVkbW9uZDEeMBwGA1UEChMV
+TWljcm9zb2Z0IENvcnBvcmF0aW9uMSEwHwYDVQQDExhNaWNyb3NvZnQgVGltZS1TdGFtcCBQQ0Ew
+HhcNMTMwMzI3MjAwODI5WhcNMTQwNjI3MjAwODI5WjCBszELMAkGA1UEBhMCVVMxEzARBgNVBAgT
+Cldhc2hpbmd0b24xEDAOBgNVBAcTB1JlZG1vbmQxHjAcBgNVBAoTFU1pY3Jvc29mdCBDb3Jwb3Jh
+dGlvbjENMAsGA1UECxMETU9QUjEnMCUGA1UECxMebkNpcGhlciBEU0UgRVNOOjdEMkUtMzc4Mi1C
+MEY3MSUwIwYDVQQDExxNaWNyb3NvZnQgVGltZS1TdGFtcCBTZXJ2aWNlMIIBIjANBgkqhkiG9w0B
+AQEFAAOCAQ8AMIIBCgKCAQEAwdnnUSmKUvW56djPhbul3BuJzOBTY/59t5DmyCsL79CNcr45xYLc
+vJeuIRNoPyXYB+9rGEejBsfnvr3N/eOS5TuWd2Fx7wo4Yrz84LKLmWfiKxHG48VPciVSCGgK/kFI
+hIIpLNguA7o2hozQUvYX/sWIP+f4adbLx3dgPuaig4XtprW/YKwYKzdZ6DzbYgHnwXNCP5V1lxHW
+G0hjaum4dHqz1bUJY095jU36q0dZjObTorCexxGPmHLlamVh1qQng8tUrH3vRBXVi703poGeckrf
+ALTTnRAysAaOIRpfBfSnmxubFDfQt0dqQWu6EBn2G6L9MFpDM0awUc0LbL4GDwIDAQABo4IBCTCC
+AQUwHQYDVR0OBBYEFAQ0TlArtSCgG/FtYmQK2rqUIHAjMB8GA1UdIwQYMBaAFCM0+NlSRnAK7UD7
+dvuzK7DDNbMPMFQGA1UdHwRNMEswSaBHoEWGQ2h0dHA6Ly9jcmwubWljcm9zb2Z0LmNvbS9wa2kv
+Y3JsL3Byb2R1Y3RzL01pY3Jvc29mdFRpbWVTdGFtcFBDQS5jcmwwWAYIKwYBBQUHAQEETDBKMEgG
+CCsGAQUFBzAChjxodHRwOi8vd3d3Lm1pY3Jvc29mdC5jb20vcGtpL2NlcnRzL01pY3Jvc29mdFRp
+bWVTdGFtcFBDQS5jcnQwEwYDVR0lBAwwCgYIKwYBBQUHAwgwDQYJKoZIhvcNAQEFBQADggEBAIsK
+imiiF1JDvqzJ9DbFfaacTCboZpXzCSKyTBnofZ7qIphqqhA9pLZVfnOae94WdVstA5Kcu7YobE03
+nwIlTQy9brg56RDTmK26FPAneJiRDwsjU1LRm7PSSE9lAe2rxeb8wW3LKAIEE8QY4mvH2CelBfsq
+zGRgPXctppVINg66Tba9EGo9Hob+H4d3eefrkqC6EaeLGILL67YPwrDub9ys8AZKE5C5Vxw0ov8j
+r3SXzKoVwiXTy0X07UNo/T5zNFBbfaCDyWVukN8T09dwwVShlEnA8d3J2K7w3hFYnpA+9dlm9NuM
+wj8PdOcHaRDfMp6G5kaIsOCTZHZ7a4WO4Ls=</X509Certificate></X509Data><X509Data><X509Certificate>MIIGBzCCA++gAwIBAgIKYRZoNAAAAAAAHDANBgkqhkiG9w0BAQUFADBfMRMwEQYKCZImiZPyLGQB
+GRYDY29tMRkwFwYKCZImiZPyLGQBGRYJbWljcm9zb2Z0MS0wKwYDVQQDEyRNaWNyb3NvZnQgUm9v
+dCBDZXJ0aWZpY2F0ZSBBdXRob3JpdHkwHhcNMDcwNDAzMTI1MzA5WhcNMjEwNDAzMTMwMzA5WjB3
+MQswCQYDVQQGEwJVUzETMBEGA1UECBMKV2FzaGluZ3RvbjEQMA4GA1UEBxMHUmVkbW9uZDEeMBwG
+A1UEChMVTWljcm9zb2Z0IENvcnBvcmF0aW9uMSEwHwYDVQQDExhNaWNyb3NvZnQgVGltZS1TdGFt
+cCBQQ0EwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCfoWyx39tIkip8ay4Z4b3i48WZ
+USNQrc7dGE4kD+7Rp9FMrXQwIBHrB9VUlRVJlBtCkq6YXDAm2gBr6Hu97IkHD/cOBJjwicwfyzMk
+h53y9GccLPx754gd6udOo6HBI1PKjfpFzwnQXq/QsEIEovmmbJNn1yjcRlOwhtDlKEYuJ6yGT1VS
+DOQDLPtqkJAwbofzWTCd+n7Wl7PoIZd++NIT8wi3U21StEWQn0gASkdmEScpZqiX5NMGgUqi+YSn
+EUcUCYKfhO1VeP4Bmh1QCIUAEDBG7bfeI0a7xC1Un68eeEExd8yb3zuDk6FhArUdDbH895uyAc4i
+S1T/+QXDwiALAgMBAAGjggGrMIIBpzAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBQjNPjZUkZw
+Cu1A+3b7syuwwzWzDzALBgNVHQ8EBAMCAYYwEAYJKwYBBAGCNxUBBAMCAQAwgZgGA1UdIwSBkDCB
+jYAUDqyCYEBWJ5flJRP8KuEKU5VZ5KShY6RhMF8xEzARBgoJkiaJk/IsZAEZFgNjb20xGTAXBgoJ
+kiaJk/IsZAEZFgltaWNyb3NvZnQxLTArBgNVBAMTJE1pY3Jvc29mdCBSb290IENlcnRpZmljYXRl
+IEF1dGhvcml0eYIQea0WoUqgpa1Mc1j0BxMuZTBQBgNVHR8ESTBHMEWgQ6BBhj9odHRwOi8vY3Js
+Lm1pY3Jvc29mdC5jb20vcGtpL2NybC9wcm9kdWN0cy9taWNyb3NvZnRyb290Y2VydC5jcmwwVAYI
+KwYBBQUHAQEESDBGMEQGCCsGAQUFBzAChjhodHRwOi8vd3d3Lm1pY3Jvc29mdC5jb20vcGtpL2Nl
+cnRzL01pY3Jvc29mdFJvb3RDZXJ0LmNydDATBgNVHSUEDDAKBggrBgEFBQcDCDANBgkqhkiG9w0B
+AQUFAAOCAgEAEJeKw1wDRDbd6bStd9vOeVFNAbEudHFbbQwTq86+e4+4LtQSooxtYrhXAstOIBNQ
+md16QOJXu69YmhzhHQGGrLt48ovQ7DsB7uK+jwoFyI1I4vBTFd1Pq5Lk541q1YDB5pTyBi+FA+mR
+KiQicPv2/OR4mS4N9wficLwYTp2OawpylbihOZxnLcVRDupiXD8WmIsgP+IHGjL5zDFKdjE9K3IL
+yOpwPf+FChPfwgphjvDXuBfrTot/xTUrXqO/67x9C0J71FNyIe4wyrt4ZVxbARcKFA7S2hSY9Ty5
+ZlizLS/n+YWGzFFW6J1wlGysOUzU9nm/qhh6YinvopspNAZ3GmLJPR5tH4LwC8csu89Ds+X57H21
+46SodDW4TsVxIxImdgs8UoxxWkZDFLyzs7BNZ8ifQv+AeSGAnhUwZuhCEl4ayJ4iIdBD6Svpu/RI
+zCzU2DKATCYqSCRfWupW76bemZ3KOm+9gSd0BhHudiG/m4LBJ1S2sWo9iaF2YbRuoROmv6pH8BJv
+/YoybLL+31HIjCPJZr2dHYcSZAI9La9Zj7jkIeW1sMpjtHhUBdRBLlCslLCleKuzoJZ1GtmShxN1
+Ii8yqAhuoFuMJb+g74TKIdbrHk/Jmu5J4PcBZW+JC33Iacjmbuqnl84xKf8OxVtc2E0bodj6L54/
+LlUWa8kTo/0=</X509Certificate></X509Data><CounterSignature xmlns="http://schemas.microsoft.com/xmldsig/timestamp/2003" ts-format="cms-timestamp-message">MIIG0QYJKoZIhvcNAQcCoIIGwjCCBr4CAQMxCzAJBgUrDgMCGgUAMIIBEwYJKoZIhvcNAQcBoIIB
+BASCAQCWJSywLJq1mm2FBH9M4tfNKWjZ3V5m1iKsGr7bnIVTbREZORvw41HjnG7l5TCcn3UilaZ2
+my998EFHNB8Lete0LWkBGlhty48F1rsWImjYWuDCuuhXgtuBP3+DAmvikOjJOKsG3TZniAyPdZBi
+7iLEXILvU0/VmQsr4IexyyDC1v0iF5ydjBTxRYDvU+pn7io3w5a0/Ad1AOqfgL0vQ8vPnCO9qWLp
+X/FzasVUdRr53xMd5Uc5/Jbn5ypYk4vainuLrU04/C1xyRMWjJ6LULep8DHYH9xrn61iFjLjylwE
+JlGAsPCMmKB1kgnPT/QHAiN5blV3s6B/9avvD2cF5IsvoIIDeqGCA3YwggJeAgEBMIHjoYG5pIG2
+MIGzMQswCQYDVQQGEwJVUzETMBEGA1UECBMKV2FzaGluZ3RvbjEQMA4GA1UEBxMHUmVkbW9uZDEe
+MBwGA1UEChMVTWljcm9zb2Z0IENvcnBvcmF0aW9uMQ0wCwYDVQQLEwRNT1BSMScwJQYDVQQLEx5u
+Q2lwaGVyIERTRSBFU046N0QyRS0zNzgyLUIwRjcxJTAjBgNVBAMTHE1pY3Jvc29mdCBUaW1lLVN0
+YW1wIFNlcnZpY2WiJQoBATAJBgUrDgMCGgUAAxUAIrW4mhXYhhhAAAiM8F/UB30qvpGggcIwgb+k
+gbwwgbkxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpXYXNoaW5ndG9uMRAwDgYDVQQHEwdSZWRtb25k
+MR4wHAYDVQQKExVNaWNyb3NvZnQgQ29ycG9yYXRpb24xDTALBgNVBAsTBE1PUFIxJzAlBgNVBAsT
+Hm5DaXBoZXIgTlRTIEVTTjpCMDI3LUM2RjgtMUQ4ODErMCkGA1UEAxMiTWljcm9zb2Z0IFRpbWUg
+U291cmNlIE1hc3RlciBDbG9jazANBgkqhkiG9w0BAQUFAAIFANcDGccwIhgPMjAxNDA0MjQwNTA0
+MDdaGA8yMDE0MDQyNTA1MDQwN1owdDA6BgorBgEEAYRZCgQBMSwwKjAKAgUA1wMZxwIBADAHAgEA
+AgIWqTAHAgEAAgIYnjAKAgUA1wRrRwIBADA2BgorBgEEAYRZCgQCMSgwJjAMBgorBgEEAYRZCgMB
+oAowCAIBAAIDFuNgoQowCAIBAAIDB6EgMA0GCSqGSIb3DQEBBQUAA4IBAQCqMJCd+p204xi/MyXw
+2z35qlxih5F6DrHA11ODk7LGVR5RQAx4btU+QMPYNO7fsILIseyHV6m/RSE/hBUxbwCzcuewKUnS
+lLqRMlBYWi+j8b2xFYCUIhzXfL0X9i80rJ5Ti2RLkbtwi2mXUwolA4Mpqm0Iv6+nGVTdmY/1eMo3
+ICmdjjFhxHWZqkxRqBe9fpZeRRWGNcVK8UlTPla54IhnmHLGM8Z/MHJwiNfX1s1JIhNQac/J287T
+XawMaybRcxFJq/Ebo9McJuNjf042NQ3dGH4vSdQWYTnZ+qXdjL/XmIGd1nzmUo8ynGWW+qdGeXRv
+x2xe/JEvFyfPAC4TQbyqMYICFTCCAhECAQEwgY4wdzELMAkGA1UEBhMCVVMxEzARBgNVBAgTCldh
+c2hpbmd0b24xEDAOBgNVBAcTB1JlZG1vbmQxHjAcBgNVBAoTFU1pY3Jvc29mdCBDb3Jwb3JhdGlv
+bjEhMB8GA1UEAxMYTWljcm9zb2Z0IFRpbWUtU3RhbXAgUENBAhMzAAAAN/697dzSVAFrAAAAAAA3
+MAkGBSsOAwIaBQCgXTAYBgkqhkiG9w0BCQMxCwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0x
+NDA0MjQxODMyNTZaMCMGCSqGSIb3DQEJBDEWBBR18Vt4buUc18q7kWJnkpGlHgVLyzANBgkqhkiG
+9w0BAQUFAASCAQBsHMRuEULhwGoKDgZAu+q5j6V14VEUyUD9y5cX6lAO4qbvRHHIeSEquq0QPgf9
+nfixUuLiS3v8T7O3YN5Nfy98dBT7OmlPiG9GIF4Pe1iCOQXxSeQjyqa+ZeDMrQxRx0hjKaKFKvkn
+q5UKRnEXs26Trnzogk6XO5zP9ATyCHwsjO+rZprBR+3WwgDY9uuOVjfTnXBaaSl1SSmCb5o5SPll
+6vgQtonYmJf/KZEMDxrK87WZGvuNY01BKHyKEsNhUeGNHyuO855eqNxneD9L/209dwAnEco/pZfX
+Hf4GZlPrQ+jhFzkU93TFBDF10hqD1MjvH3WrdMApX//AtWO4MmyY</CounterSignature></Object></Signature></doc>

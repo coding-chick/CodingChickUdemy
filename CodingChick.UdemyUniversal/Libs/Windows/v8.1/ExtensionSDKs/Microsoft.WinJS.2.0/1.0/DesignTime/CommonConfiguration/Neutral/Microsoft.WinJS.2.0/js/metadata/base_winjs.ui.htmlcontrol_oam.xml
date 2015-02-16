@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Microsoft.WinJS.2.0/js/base/WinJS.UI.HtmlControl" name="WinJS.UI.HtmlControl" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="false" xmlns="http://openajax.org/metadata">
+  <author name="Microsoft Corporation" />
+  <title locid="WinJS.UI.HtmlControl_name" type="text/plain">HtmlControl</title>
+  <description locid="WinJS.UI.HtmlControl" type="text/plain">Enables you to include an HTML page dynamically.</description>
+  <icons>
+    <icon src="base_winjs.ui.htmlcontrol.12x12.png" />
+    <icon src="base_winjs.ui.htmlcontrol.16x16.png" />
+  </icons>
+  <properties />
+  <content><![CDATA[<div data-win-control="WinJS.UI.HtmlControl" data-win-options="{ uri: 'somePage.html' }"></div>]]></content>
+  <requires>
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/base.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="//Microsoft.WinJS.2.0/css/ui-dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript"><![CDATA[WinJS.UI.processAll();]]></require>
+  </requires>
+  <blend:parts /><locale messages="base_loc_oam.xml" />
+</widget>

@@ -1,0 +1,13 @@
+﻿<FileList
+  DisplayName = "Microsoft Advertising SDK for Windows Phone 8.1 (XAML)"
+  ProductFamilyName = "Microsoft.Advertising"
+  AppliesTo = "WindowsAppContainer + (Managed | Native)"
+  MinVSVersion = "12.0"
+  SupportsMultipleVersions = "Error"
+  MoreInfo = "http://advertising.microsoft.com/mobile-apps">
+  <File Reference = "Microsoft.Advertising.Mobile.UI.winmd" >
+    <ToolboxItems BlendCategory="Advertising" VSCategory="Advertising" >
+       <Item Type="Microsoft.Advertising.Mobile.UI.AdControl" />
+    </ToolboxItems>
+  </File>
+</FileList>

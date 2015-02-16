@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+    <assembly>
+        <name>Microsoft.PlayerFramework.Js.Analytics</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.PlayerFramework.Js.Analytics.Log">
+            <summary>
+            Provides a default implementation of ILog where the data comes from JSON
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Analytics.Log.#ctor(System.String,System.String)">
+            <summary>
+            Creates a new instance of Log
+            </summary>
+            <param name="type">The type of log</param>
+            <param name="jsondata">The JSON data to be included in the log</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Analytics.Log.GetData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Analytics.Log.ExtraData">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Analytics.Log.Id">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Analytics.Log.TimeStamp">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Analytics.Log.Type">
+            <inheritdoc /> 
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge">
+            <summary>
+            Provides an adapter between the advertising component and the player.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.SetIsFullScreen(System.Boolean)">
+            <summary>
+            To be called when full screen changes.
+            </summary>
+            <param name="value">A boolean indicating if in fullscreen mode or not.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.SetIsBuffering(System.Boolean)">
+            <summary>
+            To be called when buffering starts or stops.
+            </summary>
+            <param name="value">A boolean indicating if buffering or not.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.SetIsLive(System.Boolean)">
+            <summary>
+            To be called when is live changes.
+            </summary>
+            <param name="value">A boolean indicating if the stream is live or VOD.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.SetPlaybackRate(System.Double)">
+            <summary>
+            To be called when the playback rate changes.
+            </summary>
+            <param name="value">The new playback rate.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.SetAudioTrackId(System.String)">
+            <summary>
+            To be called when the currently selected audio track changes.
+            </summary>
+            <param name="value">The ID of the audio track.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.SetCaptionTrackId(System.String)">
+            <summary>
+            To be called when the currently selected caption track changes.
+            </summary>
+            <param name="value">The ID of the caption track.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.SetSource(Windows.Foundation.Uri)">
+            <summary>
+            To be called when the source changes.
+            </summary>
+            <param name="value">The URI of the source.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.OnClipStarted(System.String)">
+            <summary>
+            To be called when a new clip starts.
+            </summary>
+            <param name="source">The clip media source (if available).</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.OnClipEnded(System.String)">
+            <summary>
+            To be called when a clip ends.
+            </summary>
+            <param name="source">The clip media source (if available).</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.OnStreamFailed(System.String)">
+            <summary>
+            To be called when a stream fails to play or start.
+            </summary>
+            <param name="error">The error message associated with the failure.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.OnStreamLoaded">
+            <summary>
+            To be called when a stream first loads.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.OnStreamStarted">
+            <summary>
+            To be called when a stream first starts to play.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.OnStreamClosed">
+            <summary>
+            To be called when a stream is closed.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.OnStreamEnded">
+            <summary>
+            To be called when a stream reaches the end.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.OnPlaying">
+            <summary>
+            To be called when a stream plays (either from starting or after pause).
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.OnPaused">
+            <summary>
+            To be called when a stream is paused.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.OnSeeked(Windows.Foundation.TimeSpan,Windows.Foundation.TimeSpan)">
+            <summary>
+            To be called when the user seeks.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.OnScrubStarted">
+            <summary>
+            To be called when the user starts to scrub.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.OnScrubCompleted(Windows.Foundation.TimeSpan)">
+            <summary>
+            To be called when the user finishes scrubbing.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.OnPositionReached(Windows.Foundation.TimeSpan)">
+            <summary>
+            To be called when a monitored position has been reached
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.OnPositionPercentageReached(System.Double)">
+            <summary>
+            To be called when a monitored position (described as a percentage of the duration) has been reached
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.OnPlayTimeReached(Windows.Foundation.TimeSpan)">
+            <summary>
+            To be called when a monitored play time has been reached
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.OnPlayTimePercentageReached(System.Double)">
+            <summary>
+            To be called when a monitored play time (described as a percentage of the duration) has been reached
+            </summary>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.PositionRequested">
+            <summary>
+            Raised when the current position is requested
+            </summary>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.DurationRequested">
+            <summary>
+            Raised when the current duration is requested
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.Microsoft#Media#Analytics#IPlayerMonitor#IsFullScreen">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.Microsoft#Media#Analytics#IPlayerMonitor#IsBuffering">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.Microsoft#Media#Analytics#IPlayerMonitor#IsLive">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.Microsoft#Media#Analytics#IPlayerMonitor#PlaybackRate">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.Microsoft#Media#Analytics#IPlayerMonitor#AudioTrackId">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.Microsoft#Media#Analytics#IPlayerMonitor#CaptionTrackId">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.Microsoft#Media#Analytics#IPlayerMonitor#Source">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.ClipStarted">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.ClipEnded">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.StreamFailed">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.Seeked">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.ScrubCompleted">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.StreamLoaded">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.StreamStarted">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.StreamClosed">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.StreamEnded">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.Playing">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.Paused">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.IsBufferingChanged">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.FullScreenChanged">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.ScrubStarted">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.PlaybackRateChanged">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.IsLiveChanged">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.CaptionTrackChanged">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.AudioTrackChanged">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.PositionReached">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.PlayTimeReached">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.PositionPercentageReached">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Js.Analytics.MediaPlayerAdapterBridge.PlayTimePercentageReached">
+            <inheritdoc /> 
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Js.Analytics.PositionRequestedEventArgs">
+            <summary>
+            Provides a way to return the current position when the PositionRequested event is raised.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Analytics.PositionRequestedEventArgs.Result">
+            <summary>
+            The current Position. This should be set by the handler of the event.
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Js.Analytics.DurationRequestedEventArgs">
+            <summary>
+            Provides a way to return the current position when the PositionRequested event is raised.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Js.Analytics.DurationRequestedEventArgs.Result">
+            <summary>
+            The current Duration. This should be set by the handler of the event.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Microsoft.WinJS.2.0/js/ui/WinJS.UI.TimePicker" name="WinJS.UI.TimePicker" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="false" xmlns="http://openajax.org/metadata">
+  <author name="Microsoft Corporation" />
+  <title locid="WinJS.UI.TimePicker_name" type="text/plain">Time Picker</title>
+  <description locid="WinJS.UI.TimePicker" type="text/plain">Allows users to select time values.</description>
+  <blend:compatibleWiths>
+    <blend:compatibleWith platform="Windows" minVersion="8.0" />
+  </blend:compatibleWiths>
+  <icons>
+    <icon src="ui_winjs.ui.timepicker.12x12.png" />
+    <icon src="ui_winjs.ui.timepicker.16x16.png" />
+  </icons>
+  <properties>
+    <property name="clock" datatype="String" required="false">
+      <description locid="WinJS.UI.TimePicker.clock" type="text/plain">Gets or sets the type of clock to display (12HourClock or 24HourClock). It defaults to the user setting.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="current" datatype="Date" required="false">
+      <description locid="WinJS.UI.TimePicker.current" type="text/plain">Gets or sets the current date (and time) of the TimePicker.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="disabled" datatype="Boolean" required="false">
+      <description locid="WinJS.UI.TimePicker.disabled" type="text/plain">Specifies whether the TimePicker is disabled.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="element" datatype="HTMLElement" required="false" hidden="true">
+      <description locid="WinJS.UI.TimePicker.element" type="text/plain">Gets the DOM element for the TimePicker.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="hourPattern" datatype="String" required="false">
+      <description locid="WinJS.UI.TimePicker.hourPattern" type="text/plain">Gets or sets the display pattern for the hour.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="minuteIncrement" datatype="Number" isInteger="true" required="false">
+      <description locid="WinJS.UI.TimePicker.minuteIncrement" type="text/plain">Gets or sets the minute increment. For example, "15" specifies that the TimePicker minute control should display only the choices 00, 15, 30, 45.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="minutePattern" datatype="String" required="false">
+      <description locid="WinJS.UI.TimePicker.minutePattern" type="text/plain">Gets or sets the display pattern for the minute.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="periodPattern" datatype="String" required="false">
+      <description locid="WinJS.UI.TimePicker.periodPattern" type="text/plain">Gets or sets the display pattern for the period.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+  </properties>
+  <content><![CDATA[<div data-win-control="WinJS.UI.TimePicker"></div>]]></content>
+  <requires>
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/base.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="//Microsoft.WinJS.2.0/css/ui-dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript"><![CDATA[WinJS.UI.processAll();]]></require>
+  </requires>
+  <blend:parts /><locale messages="ui_loc_oam.xml" />
+</widget>

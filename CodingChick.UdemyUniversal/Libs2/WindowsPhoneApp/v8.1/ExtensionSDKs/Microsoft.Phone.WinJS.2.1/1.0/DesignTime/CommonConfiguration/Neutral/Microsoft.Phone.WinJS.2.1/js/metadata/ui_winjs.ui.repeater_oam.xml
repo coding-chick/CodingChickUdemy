@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Microsoft.Phone.WinJS.2.1/js/ui/WinJS.UI.Repeater" name="WinJS.UI.Repeater" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="false" xmlns="http://openajax.org/metadata">
+  <author name="Microsoft Corporation" />
+  <description locid="WinJS.UI.Repeater" type="text/plain">Uses templates to generate HTML from a set of data.</description>
+  <icons>
+    <icon src="ui_winjs.ui.repeater.12x12.png" />
+    <icon src="ui_winjs.ui.repeater.16x16.png" />
+  </icons>
+  <properties>
+    <property name="element" datatype="HTMLElement" required="false" hidden="true" readonly="true">
+      <description locid="WinJS.UI.Repeater.element" type="text/plain">Gets the DOM element that hosts the Repeater.</description>
+    </property>
+    <property name="data" datatype="WinJS.Binding.List" required="false">
+      <description locid="WinJS.UI.Repeater.data" type="text/plain">Gets or sets the WinJS.Binding.List that provides the Repeater control with items to display.</description>
+    </property>
+    <property name="template" datatype="Object" required="false" blend:potentialValueSelector="[data-win-control='WinJS.Binding.Template']">
+      <description locid="WinJS.UI.Repeater.template" type="text/plain">Gets or sets a Template or custom rendering function that defines the HTML of each item within the Repeater.</description>
+    </property>
+    <property name="length" datatype="Number" isInteger="false" required="false" hidden="true">
+      <description locid="WinJS.UI.Repeater.length" type="text/plain">Gets the number of items in the Repeater control.</description>
+    </property>
+    <property name="isDeclarativeControlContainer" required="false" />
+  </properties>
+  <content><![CDATA[<div data-win-control="WinJS.UI.Repeater"></div>]]></content>
+  <requires>
+    <require type="javascript" src="//Microsoft.Phone.WinJS.2.1/js/base.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="//Microsoft.Phone.WinJS.2.1/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="//Microsoft.Phone.WinJS.2.1/css/ui-dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript"><![CDATA[WinJS.UI.processAll();]]></require>
+  </requires>
+  <blend:parts>
+    <part name="repeater" class="win-repeater">
+      <description locid="WinJS.UI.Repeater_part:repeater" type="text/plain">The Repeater control itself</description>
+    </part>
+  </blend:parts><locale messages="ui_loc_oam.xml" />
+</widget>

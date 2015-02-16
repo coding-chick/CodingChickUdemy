@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Microsoft.WinJS.2.0/js/ui/WinJS.UI.HubSection" name="WinJS.UI.HubSection" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="false" xmlns="http://openajax.org/metadata">
+  <author name="Microsoft Corporation" />
+  <description locid="WinJS.UI.HubSection" type="text/plain">Defines a section of a Hub control.</description>
+  <blend:compatibleWiths>
+    <blend:compatibleWith platform="Windows" minVersion="8.1" />
+  </blend:compatibleWiths>
+  <icons>
+    <icon src="ui_winjs.ui.hubsection.12x12.png" />
+    <icon src="ui_winjs.ui.hubsection.16x16.png" />
+  </icons>
+  <properties>
+    <property name="element" datatype="HTMLElement" required="false" hidden="true">
+      <description locid="WinJS.UI.HubSection.element" type="text/plain">Gets the DOM element that hosts the HubSection.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="isHeaderStatic" datatype="Boolean" required="false">
+      <description locid="WinJS.UI.HubSection.isHeaderStatic" type="text/plain">Gets or sets a value that specifies whether the header is static. Set this value to true to disable clicks and other interactions.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="contentElement" datatype="HTMLElement" required="false">
+      <description locid="WinJS.UI.HubSection.contentElement" type="text/plain">Gets the DOM element that hosts the HubSection's content.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="header" datatype="Object" required="false">
+      <description locid="WinJS.UI.HubSection.header" type="text/plain">Get or set the HubSection's header. After you set this property, the Hub renders the header again.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.1" />
+      </blend:compatibleWiths>
+    </property>
+  </properties>
+  <content><![CDATA[<div data-win-control="WinJS.UI.HubSection" data-win-options="{header: 'HubSection Header'}">HubSection Content</div>]]></content>
+  <requires>
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/base.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="//Microsoft.WinJS.2.0/css/ui-dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript"><![CDATA[WinJS.UI.processAll();]]></require>
+  </requires>
+  <blend:parts>
+    <part name="hubsection" class="win-hub-section">
+      <description locid="WinJS.UI.HubSection_part:hubsection" type="text/plain">The entire HubSection control.</description>
+    </part>
+    <part name="header" class="win-hub-section-header">
+      <description locid="WinJS.UI.HubSection_part:header" type="text/plain">The header region of the HubSection.</description>
+    </part>
+    <part name="headertabstop" class="win-hub-section-header-tabstop">
+      <description locid="WinJS.UI.HubSection_part:headertabstop" type="text/plain">The tab stop region of the header region of the HubSection.</description>
+    </part>
+    <part name="headercontent" class="win-hub-section-header-content">
+      <description locid="WinJS.UI.HubSection_part:headercontent" type="text/plain">The content region of the header region of the HubSection.</description>
+    </part>
+    <part name="headerchevron" class="win-hub-section-header-chevron">
+      <description locid="WinJS.UI.HubSection_part:headerchevron" type="text/plain">The chevron region of the header region of the HubSection.</description>
+    </part>
+    <part name="content" class="win-hub-section-content">
+      <description locid="WinJS.UI.HubSection_part:content" type="text/plain">The content region of the HubSection.</description>
+    </part>
+  </blend:parts><locale messages="ui_loc_oam.xml" />
+</widget>

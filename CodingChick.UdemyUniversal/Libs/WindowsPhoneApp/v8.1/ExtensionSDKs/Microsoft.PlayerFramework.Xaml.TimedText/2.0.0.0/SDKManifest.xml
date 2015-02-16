@@ -1,0 +1,13 @@
+﻿<?xml version="1.0"?>
+<FileList
+  Identity = "MMP.PF.WP81.TimedText.XAML.SDK, Version=1.0"
+  DisplayName = "Microsoft Player Framework Timed Text Plugin"
+  MinVSVersion = "12.0"
+  MinToolsVersion = "4.0"
+  AppliesTo = "WindowsAppContainer + (CSharp | VB | VisualC)"
+  MaxPlatformVersion="8.1"
+  MinOSVersion="6.3.1"
+  MaxOSVersionTested="6.3.1"
+  ReferenceManagerEnumeration = "Files">
+	 <DependsOn Identity = "MMP.PF.WP81.XAML.SDK, Version=1.0"/>
+</FileList>

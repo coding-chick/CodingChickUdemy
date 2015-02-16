@@ -1,0 +1,13 @@
+<FileList
+  FrameworkIdentity-Debug = "Name = Microsoft.VCLibs.120.00.Phone.Debug, MinVersion = 12.0.30113.0"
+  FrameworkIdentity-Retail = "Name = Microsoft.VCLibs.120.00.Phone, MinVersion = 12.0.30113.0"
+  MinVSVersion = "12.0"
+  DisplayName = "Microsoft Visual C++ 2013 Runtime Package for Windows Phone"
+  AppliesTo = "WindowsAppContainer + (Managed | Javascript)"
+  AppX-Debug-x86 = ".\AppX\Debug\x86\Microsoft.VCLibs.x86.Debug.12.00.Phone.appx"
+  AppX-Debug-ARM = ".\AppX\Debug\ARM\Microsoft.VCLibs.ARM.Debug.12.00.Phone.appx"
+  AppX-Retail-x86 = ".\AppX\Retail\x86\Microsoft.VCLibs.x86.12.00.Phone.appx"
+  AppX-Retail-ARM = ".\AppX\Retail\ARM\Microsoft.VCLibs.ARM.12.00.Phone.appx"
+  SupportsMultipleVersions="Error"
+  SupportedArchitectures="x86;ARM">
+</FileList>

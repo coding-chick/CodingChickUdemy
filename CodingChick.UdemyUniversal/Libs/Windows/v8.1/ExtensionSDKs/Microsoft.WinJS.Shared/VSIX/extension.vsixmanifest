@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
+    <Metadata>
+        <Identity Id="Microsoft.WinJS" Version="1.0.9651.40228" Language="en-US" Publisher="Microsoft" />
+        <DisplayName>Visual Studio Extensions for Windows Library for JavaScript</DisplayName>
+        <Description>Development resources for the controls, CSS styles, and helper functions that are included in the Windows Library for JavaScript.</Description>
+        <MoreInfo>http://go.microsoft.com/fwlink/?LinkId=250992</MoreInfo>
+    </Metadata>
+    <Installation Scope="global" AllUsers="true" InstalledByMsi="true">
+        <InstallationTarget Id="Microsoft.ExtensionSDK"
+                            TargetPlatformIdentifier="Windows"
+                            TargetPlatformVersion="v8.1"
+                            SdkName="Microsoft.WinJS"
+                            SdkVersion="1.0.9651.40228" />
+    </Installation>
+    <Assets>
+        <Asset Type="Microsoft.ExtensionSDK" Path="SDKManifest.xml"/>
+    </Assets>
+</PackageManifest>

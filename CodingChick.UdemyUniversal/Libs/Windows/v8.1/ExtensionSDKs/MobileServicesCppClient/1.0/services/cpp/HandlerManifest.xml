@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<HandlerManifest SdkMoniker="MobileServicesCppClient, Version=1.0">
+  <Snippets Context="push">
+    <Snippet Path="push\insert\appinclude" Target="AppInclude" OpenOnCompleted="False" />
+    <Snippet Path="push\insert\appstart" Target="AppStart" OpenOnCompleted="False" />
+  </Snippets>
+  <Files Context="connect">
+    <File Path="connect\add\MobileService.cpp" TargetFilename="$MakeSafeIdentifierName(ServiceInstance.Name)$MobileService.cpp" />
+    <File Path="connect\add\MobileService.h" TargetFilename="$MakeSafeIdentifierName(ServiceInstance.Name)$MobileService.h" OpenOnCompleted="False" />
+  </Files>
+  <Files Context="push">
+    <File Path="connect\add\MobileService.cpp" TargetFilename="$MakeSafeIdentifierName(ServiceInstance.Name)$MobileService.cpp" />
+    <File Path="connect\add\MobileService.h" TargetFilename="$MakeSafeIdentifierName(ServiceInstance.Name)$MobileService.h" OpenOnCompleted="False" />
+
+    <File Path="push\add\PushRegister.cpp" TargetFilename="$MakeSafeIdentifierName(ServiceInstance.Name)$Push.cpp" />
+    <File Path="push\add\PushRegister.h" TargetFilename="$MakeSafeIdentifierName(ServiceInstance.Name)$Push.h" OpenOnCompleted="False" />
+  </Files>
+  <Files Context="server">
+    <File Path="push\server\insert.js" TargetFilename="notifyAllUsers.js" />
+  </Files>
+  <AdditionalData>
+    <Version MinHandlerVersion="1.0.0.0"
+             MaxHandlerVersion="1.0.0.0" />
+  </AdditionalData>
+</HandlerManifest>

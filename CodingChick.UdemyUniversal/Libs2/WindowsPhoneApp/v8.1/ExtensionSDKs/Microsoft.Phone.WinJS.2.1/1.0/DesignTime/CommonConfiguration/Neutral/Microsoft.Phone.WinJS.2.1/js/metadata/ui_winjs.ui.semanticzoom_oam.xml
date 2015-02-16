@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Microsoft.Phone.WinJS.2.1/js/ui/WinJS.UI.SemanticZoom" name="WinJS.UI.SemanticZoom" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="true" xmlns="http://openajax.org/metadata">
+  <author name="Microsoft Corporation" />
+  <description locid="WinJS.UI.SemanticZoom" type="text/plain">Enables the user to zoom between two different views supplied by two child controls.
+ One child control supplies the zoomed-out view and the other provides the zoomed-in view.</description>
+  <icons>
+    <icon src="ui_winjs.ui.semanticzoom.12x12.png" />
+    <icon src="ui_winjs.ui.semanticzoom.16x16.png" />
+  </icons>
+  <properties>
+    <property name="element" datatype="HTMLElement" required="false" hidden="true">
+      <description locid="WinJS.UI.SemanticZoom.element" type="text/plain">The DOM element that hosts the SemanticZoom control.</description>
+    </property>
+    <property name="enableButton" datatype="Boolean" required="false">
+      <description locid="WinJS.UI.SemanticZoom.enableButton" type="text/plain">Gets or sets a value that specifies whether the semantic zoom button should be displayed or not</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="zoomedOut" datatype="Boolean" required="false">
+      <description locid="WinJS.UI.SemanticZoom.zoomedOut" type="text/plain">Gets or sets a value that specifies whether the zoomed out view is currently displayed.</description>
+    </property>
+    <property name="zoomFactor" datatype="Number" isInteger="false" required="false" minimum="0.2" maximum="0.8">
+      <description locid="WinJS.UI.SemanticZoom.zoomFactor" type="text/plain">Gets or sets a value between 0.2 and 0.85 that specifies the scale of the zoomed out view. The default is 0.65.</description>
+    </property>
+    <property name="locked" datatype="Boolean" required="false">
+      <description locid="WinJS.UI.SemanticZoom.locked" type="text/plain">Gets or sets a value that indicates whether SemanticZoom is locked and zooming between views is disabled.</description>
+    </property>
+    <property name="zoomedInItem" datatype="Function" required="false">
+      <description locid="WinJS.UI.SemanticZoom.zoomedInItem" type="text/plain">Gets or sets a mapping function which can be used to change the item which is targeted on zoom in.</description>
+    </property>
+    <property name="zoomedOutItem" datatype="Function" required="false">
+      <description locid="WinJS.UI.SemanticZoom.zoomedOutItem" type="text/plain">Gets or sets a mapping function which can be used to change the item which is targeted on zoom out.</description>
+    </property>
+  </properties>
+  <content><![CDATA[<div data-win-control="WinJS.UI.SemanticZoom"><div class="zoomedInContainer" data-win-control="WinJS.UI.ListView"></div><div class="zoomedOutContainer" data-win-control="WinJS.UI.ListView"></div></div>]]></content>
+  <requires>
+    <require type="javascript" src="//Microsoft.Phone.WinJS.2.1/js/base.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="//Microsoft.Phone.WinJS.2.1/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="//Microsoft.Phone.WinJS.2.1/css/ui-dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript"><![CDATA[WinJS.UI.processAll();]]></require>
+  </requires>
+  <blend:parts>
+    <part name="semanticZoom" class="win-semanticzoom">
+      <description locid="WinJS.UI.SemanticZoom_part:semanticZoom" type="text/plain">The entire SemanticZoom control.</description>
+    </part>
+  </blend:parts><locale messages="ui_loc_oam.xml" />
+</widget>

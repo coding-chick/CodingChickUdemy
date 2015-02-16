@@ -1,0 +1,1357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<api version="1.0" spec="1.0" xmlns="http://openajax.org/metadata" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011">
+  <author name="Microsoft Corporation" />
+  <enum name="WinJS.UI.AppBarCommand.icon" datatype="String">
+    <option value="previous"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE100;" group="Media"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="next"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE101;" group="Media"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="play"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE102;" group="Media"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="pause"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE103;" group="Media"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="edit"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE104;" group="File"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="save"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE105;" group="File"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="delete"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE107;" group="File"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="remove"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE108;" group="File"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="add"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE109;" group="File"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="cancel"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE10A;" group="Editing"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="accept"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE10B;" group="General"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="more"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE10C;" group="General"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="redo"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE10D;" group="Editing"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="undo"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE10E;" group="Editing"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="home"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE10F;" group="General"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="up"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE110;" group="General"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="forward"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE111;" group="General"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="right"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE111;" group="General"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="back"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE112;" group="General"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="left"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE112;" group="General"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="favorite"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE113;" group="Media"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="camera"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE114;" group="System"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="settings"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE115;" group="System"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="video"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE116;" group="Media"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="sync"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE117;" group="Media"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="download"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE118;" group="Media"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="mail"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE119;" group="Mail and calendar"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="find"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE11A;" group="Data"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="help"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE11B;" group="General"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="upload"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE11C;" group="Media"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="emoji"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE11D;" group="Communications"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="twopage"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE11E;" group="Layout"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="leavechat"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE11F;" group="Communications"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="mailforward"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE120;" group="Mail and calendar"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="clock"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE121;" group="General"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="send"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE122;" group="Mail and calendar"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="crop"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE123;" group="Editing"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="rotatecamera"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE124;" group="System"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="people"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE125;" group="Communications"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="closepane"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE126;" group="Layout"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="openpane"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE127;" group="Layout"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="world"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE128;" group="General"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="flag"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE129;" group="Mail and calendar"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="previewlink"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE12A;" group="General"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="globe"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE12B;" group="Communications"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="trim"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE12C;" group="Editing"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="attachcamera"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE12D;" group="System"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="zoomin"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE12E;" group="Layout"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="bookmarks"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE12F;" group="Editing"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="document"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE130;" group="File"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="protecteddocument"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE131;" group="File"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="page"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE132;" group="Layout"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="bullets"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE133;" group="Editing"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="comment"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE134;" group="Communications"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="mail2"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE135;" group="Mail and calendar"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="contactinfo"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE136;" group="Communications"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="hangup"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE137;" group="Communications"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="viewall"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE138;" group="Data"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="mappin"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE139;" group="General"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="phone"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE13A;" group="Communications"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="videochat"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE13B;" group="Communications"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="switch"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE13C;" group="Communications"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="contact"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE13D;" group="Communications"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="rename"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE13E;" group="File"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="pin"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE141;" group="System"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="musicinfo"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE142;" group="Media"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="go"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE143;" group="General"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="keyboard"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE144;" group="System"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="dockleft"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE145;" group="Layout"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="dockright"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE146;" group="Layout"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="dockbottom"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE147;" group="Layout"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="remote"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE148;" group="System"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="refresh"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE149;" group="Data"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="rotate"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE14A;" group="Layout"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="shuffle"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE14B;" group="Media"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="list"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE14C;" group="Editing"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="shop"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE14D;" group="General"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="selectall"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE14E;" group="Data"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="orientation"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE14F;" group="Layout"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="import"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE150;" group="Data"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="importall"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE151;" group="Data"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="browsephotos"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE155;" group="Media"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="webcam"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE156;" group="System"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="pictures"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE158;" group="Media"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="savelocal"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE159;" group="File"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="caption"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE15A;" group="Media"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="stop"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE15B;" group="Media"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="showresults"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE15C;" group="Data"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="volume"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE15D;" group="Media"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="repair"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE15E;" group="System"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="message"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE15F;" group="Communications"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="page2"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE160;" group="Layout"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="calendarday"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE161;" group="Mail and calendar"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="calendarweek"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE162;" group="Mail and calendar"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="calendar"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE163;" group="Mail and calendar"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="characters"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE164;" group="Editing"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="mailreplyall"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE165;" group="Mail and calendar"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="read"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE166;" group="Mail and calendar"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="link"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE167;" group="Communications"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="accounts"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE168;" group="Communications"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="showbcc"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE169;" group="Mail and calendar"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="hidebcc"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE16A;" group="Mail and calendar"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="cut"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE16B;" group="Editing"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="attach"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE16C;" group="Mail and calendar"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="paste"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE16D;" group="Editing"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="filter"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE16E;" group="Data"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="copy"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE16F;" group="Editing"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="emoji2"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE170;" group="Mail and calendar"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="important"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE171;" group="Mail and calendar"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="mailreply"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE172;" group="Mail and calendar"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="slideshow"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE173;" group="Media"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="sort"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE174;" group="Data"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="manage"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE178;" group="System"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="allapps"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE179;" group="System"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="disconnectdrive"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE17A;" group="System"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="mapdrive"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE17B;" group="System"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="newwindow"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE17C;" group="System"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="openwith"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE17D;" group="System"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="contactpresence"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE181;" group="Communications"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="priority"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE182;" group="Mail and calendar"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="uploadskydrive"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE183;" group="File"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="gototoday"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE184;" group="Mail and calendar"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="font"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE185;" group="Editing"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="fontcolor"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE186;" group="Editing"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="contact2"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE187;" group="Communications"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="folder"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE188;" group="File"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="audio"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE189;" group="Media"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="placeholder"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE18A;" group="General"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="view"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE18B;" group="Layout"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="setlockscreen"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE18C;" group="System"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="settile"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE18D;" group="System"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="cc"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE190;" group="Media"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="stopslideshow"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE191;" group="Media"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="permissions"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE192;" group="System"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="highlight"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE193;" group="Editing"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="disableupdates"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE194;" group="System"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="unfavorite"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE195;" group="Media"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="unpin"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE196;" group="System"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="openlocal"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE197;" group="File"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="mute"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE198;" group="Media"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="italic"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE199;" group="Editing"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="underline"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE19A;" group="Editing"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="bold"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE19B;" group="Editing"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="movetofolder"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE19C;" group="File"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="likedislike"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE19D;" group="Data"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="dislike"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE19E;" group="Data"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="like"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE19F;" group="Data"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="alignright"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1A0;" group="Editing"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="aligncenter"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1A1;" group="Editing"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="alignleft"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1A2;" group="Editing"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="zoom"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1A3;" group="Layout"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="zoomout"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1A4;" group="Layout"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="openfile"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1A5;" group="File"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="otheruser"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1A6;" group="System"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="admin"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1A7;" group="System"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="street"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1C3;" group="General"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="map"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1C4;" group="General"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="clearselection"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1C5;" group="Data"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="fontdecrease"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1C6;" group="Editing"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="fontincrease"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1C7;" group="Editing"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="fontsize"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1C8;" group="Editing"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="cellphone"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1C9;" group="Communications"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="reshare"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1CA;" group="Communications"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="tag"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1CB;" group="Data"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="repeatone"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1CC;" group="Media"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="repeatall"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1CD;" group="Media"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="outlinestar"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1CE;" group="Data"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="solidstar"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1CF;" group="Data"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="calculator"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1D0;" group="General"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="directions"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1D1;" group="General"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="target"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1D2;" group="General"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="library"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1D3;" group="Media"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="phonebook"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1D4;" group="Communications"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="memo"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1D5;" group="Communications"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="microphone"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1D6;" group="System"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="postupdate"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1D7;" group="Communications"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="backtowindow"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1D8;" group="Layout"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="fullscreen"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1D9;" group="Layout"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="newfolder"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1DA;" group="File"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="calendarreply"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1DB;" group="Mail and calendar"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="unsyncfolder"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1DD;" group="File"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="reporthacked"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1DE;" group="Communications"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="syncfolder"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1DF;" group="File"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="blockcontact"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1E0;" group="Communications"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="switchapps"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1E1;" group="System"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="addfriend"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1E2;" group="Communications"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="touchpointer"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1E3;" group="System"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="gotostart"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1E4;" group="System"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="zerobars"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1E5;" group="System"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="onebar"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1E6;" group="System"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="twobars"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1E7;" group="System"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="threebars"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1E8;" group="System"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+    <option value="fourbars"><!--  -->
+      <blend:designTime>
+         <icon glyph="&#xE1E9;" group="System"/>
+      </blend:designTime>
+      <label>
+      </label>
+    </option>
+  </enum>
+</api>

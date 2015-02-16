@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.PlayerFramework.TimedText</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.PlayerFramework.TimedText.CaptionsPlugin">
+            <summary>
+            A player framework plugin capable of displaying timed text captions.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.TimedText.CaptionsPlugin.#ctor">
+            <summary>
+            Creates a new instance of the CaptionsPlugin
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.TimedText.CaptionsPlugin.OnActivate">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.TimedText.CaptionsPlugin.OnDeactivate">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.TimedText.CaptionsPlugin.UpdateCaption(Microsoft.PlayerFramework.Caption)">
+            <summary>
+            Updates the current caption track.
+            Will cause the caption source to download and get parsed, and will will start playing.
+            </summary>
+            <param name="caption">The caption track to use.</param>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.TimedText.CaptionsPlugin.CaptionParsed">
+            <summary>
+            Occurs when a caption region is reached.
+            </summary>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.TimedText.CaptionsPlugin.ParseFailed">
+            <summary>
+            Occurs when a caption track fails to parse.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.TimedText.CaptionsPlugin.PollingInterval">
+            <summary>
+            Gets or sets the amount of time to check the server for updated data. Only applies when MediaPlayer.IsLive = true
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.TimedText.CaptionsPlugin.IsSourceLoaded">
+            <summary>
+            Gets whether the captions panel is visible. Returns true if any captions were found.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.TimedText.CaptionsPlugin.TimedTextCaptionsStyle">
+            <summary>
+            Gets or sets the style to be used for the TimedTextCaptions
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.TimedText.CaptionsPlugin.CaptionRegionStyle">
+            <summary>
+            Gets or sets the style to be used for each CaptionBlockRegion instance.
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.TimedText.MediaPlayerExtensions">
+            <summary>
+            Helper class to extend the MediaPlayer with methods specific to this optional plugin.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.TimedText.MediaPlayerExtensions.GetCaptionsPlugin(Microsoft.PlayerFramework.MediaPlayer)">
+            <summary>
+            Returns the active instance of the CaptionsPlugin
+            </summary>
+            <param name="source">The MediaPlayer the plugin is associated with.</param>
+            <returns>The first associated instance of the CaptionsPlugin</returns>
+        </member>
+    </members>
+</doc>

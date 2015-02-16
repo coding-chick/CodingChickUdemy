@@ -1,0 +1,1191 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.PlayerFramework.CaptionSettings</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.PlayerFramework.CaptionSettings.AssemblyResources">
+            <summary>
+            Windows 8.1 Resource loader access
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.AssemblyResources.Get">
+            <summary>
+            Get the resources loader
+            </summary>
+            <returns>the resource loader for the current view</returns>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingFlyout">
+            <summary>
+            Caption Settings Flyout
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingFlyout.#ctor">
+            <summary>
+            Initializes a new instance of the CaptionSettingFlyout class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingFlyout.Control_OnApplyCaptionSettings(System.Object,Microsoft.PlayerFramework.CaptionSettings.CustomCaptionSettingsEventArgs)">
+            <summary>
+            Route the control's OnApplyCaptionSettings event
+            </summary>
+            <param name="sender">the CaptionSettingsControl</param>
+            <param name="e">the custom caption settings event arguments</param>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingFlyout.OnApplyCaptionSettings">
+            <summary>
+            Event to save caption settings
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingFlyout.CaptionSettings">
+            <summary>
+            Gets or sets the custom caption settings
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingFlyout.ControlStyle">
+            <summary>
+            Gets or sets the style for the <see cref="T:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsControl"/>
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsControl">
+            <summary>
+            Caption Settings Control
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsControl.OverrideDefaultKey">
+            <summary>
+            the isolated storage settings key for the override default caption settings flag
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsControl.#ctor">
+            <summary>
+            Initializes a new instance of the CaptionSettingsControl class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsControl.OnApplyTemplate">
+            <summary>
+            Apply templates
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsControl.GetColorPicker(System.String,System.EventHandler{Microsoft.PlayerFramework.CaptionSettings.ColorEventArgs})">
+            <summary>
+            Gets a color picker from the control template
+            </summary>
+            <param name="name">the name of the control</param>
+            <param name="colorSelected">the color selected event handler</param>
+            <returns>the color picker control</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsControl.Initialize">
+            <summary>
+            Initialize the controls and view model
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsControl.OnFontColorSelected(System.Object,Microsoft.PlayerFramework.CaptionSettings.ColorEventArgs)">
+            <summary>
+            Hide the color picker
+            </summary>
+            <param name="sender">the color picker</param>
+            <param name="e">the color event arguments</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsControl.OnBackgroundColorSelected(System.Object,Microsoft.PlayerFramework.CaptionSettings.ColorEventArgs)">
+            <summary>
+            Hide the color picker
+            </summary>
+            <param name="sender">the color picker</param>
+            <param name="e">the color event arguments</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsControl.OnWindowColorSelected(System.Object,Microsoft.PlayerFramework.CaptionSettings.ColorEventArgs)">
+            <summary>
+            Hide the window color picker
+            </summary>
+            <param name="sender">the color picker</param>
+            <param name="e">the color event arguments</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsControl.OnViewModelPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            If the IsEnabled value changes on the viewModel, save that value to the local settings
+            </summary>
+            <param name="sender">the view model</param>
+            <param name="e">the property changed event arguments</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsControl.OnFontStyleChanged(System.Object,Windows.UI.Xaml.Controls.SelectionChangedEventArgs)">
+            <summary>
+            Update the font style when the user selects a different one
+            </summary>
+            <param name="sender">the font style combo box</param>
+            <param name="e">the selection changed event arguments</param>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsControl.OnApplyCaptionSettings">
+            <summary>
+            Event to save caption settings
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsControl.CaptionSettings">
+            <summary>
+            Gets or sets the caption settings
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsControl.FontColorType">
+            <summary>
+            Gets or sets the font color type ComboBox
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsControl.BackgroundColorType">
+            <summary>
+            Gets or sets the BackgroundColorType ComboBox
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsControl.WindowColorType">
+            <summary>
+            Gets or sets the WindowColorType ComboBox
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsControl.FontColorButton">
+            <summary>
+            Gets or sets the FontColor Button 
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsControl.BackgroundColorButton">
+            <summary>
+            Gets or sets the background color button
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsControl.WindowColorButton">
+            <summary>
+            Gets or sets the window color button
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsControl.CaptionFontStyle">
+            <summary>
+            Gets or sets the caption font style ComboBox
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsControl.Preview">
+            <summary>
+            Gets or sets the preview control
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsControl.FontColorPicker">
+            <summary>
+            Gets or sets the font color picker
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsControl.BackgroundColorPicker">
+            <summary>
+            Gets or sets the background color picker
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsControl.WindowColorPicker">
+            <summary>
+            Gets or sets the window color picker
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsPluginBase">
+            <summary>
+            base class for Caption Settings Plug-ins
+            </summary>
+            <summary>
+            Windows 8.1 Caption Settings Plugin Base partial class
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsPluginBase.LocalSettingsKey">
+            <summary>
+            the local settings key
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsPluginBase.ApplyCaptionSettings(Microsoft.PlayerFramework.CaptionSettings.Model.CustomCaptionSettings)">
+            <summary>
+            Apply the caption settings to the media player
+            </summary>
+            <param name="settings">the caption settings</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsPluginBase.OnApplyCaptionSettings(Microsoft.PlayerFramework.CaptionSettings.Model.CustomCaptionSettings)">
+            <summary>
+            Default implementation does nothing - derived classes should 
+            override this to apply caption settings.
+            </summary>
+            <param name="settings">the custom caption settings</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsPluginBase.OnActivate">
+            <summary>
+            Activate the plug-in
+            </summary>
+            <returns>true if the CaptionsPlugIn is also installed</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsPluginBase.OnDeactivate">
+            <summary>
+            Disconnect the plugin.
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsPluginBase.fontFamilyMap">
+            <summary>
+            the font family map
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsPluginBase.#ctor">
+            <summary>
+            Initializes a new instance of the CaptionSettingsPluginBase class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsPluginBase.GetFontFamilyName(Microsoft.PlayerFramework.CaptionSettings.Model.FontFamily)">
+            <summary>
+            Gets the Windows font family mapped to the Captions font Family
+            </summary>
+            <param name="fontFamily">the captions font family</param>
+            <returns>the name of the Windows font family</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsPluginBase.SettingsPaneCommandsRequested(Windows.UI.ApplicationSettings.SettingsPane,Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs)">
+            <summary>
+            The SettingsPane CommandsRequested event handler that can be used on a page that does not have a MediaPlayer on it.
+            </summary>
+            <param name="sender">the Settings Pane</param>
+            <param name="args">the settings pane commands requested event arguments</param>
+            <example>
+            When navigating to the page, instantiate and save a reference to 
+            the plug-in, then attach the CommandsRequested event handler for the 
+            SettingsPane.
+            <code>
+            this.plugin = new TTMLCaptionSettingsPlugin();
+            
+            SettingsPane.GetForCurrentView().CommandsRequested += this.plugin.SettingsPaneCommandsRequested;
+            </code>
+            When navigating from the page, detach the event handler from the 
+            SettingsPane.
+            <code>
+            SettingsPane.GetForCurrentView().CommandsRequested -= this.plugin.SettingsPaneCommandsRequested;
+            </code>
+            </example>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsPluginBase.Activate">
+            <summary>
+            Add the settings pane and load the settings from local storage
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsPluginBase.Deactivate">
+            <summary>
+            Detach the settings pane
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsPluginBase.Save">
+            <summary>
+            Save the settings to local storage
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsPluginBase.GetDefaultFontFamily(Microsoft.PlayerFramework.CaptionSettings.Model.FontFamily,System.String)">
+            <summary>
+            Gets the font family from application data local settings if it has been overridden.
+            </summary>
+            <param name="fontFamily">the font family</param>
+            <param name="defaultName">the default font name</param>
+            <returns>the font family name</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsPluginBase.InitializeSettings">
+            <summary>
+            Initialize the settings
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsPluginBase.CaptionsSettingsPlugin_CommandsRequested(Windows.UI.ApplicationSettings.SettingsPane,Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs)">
+            <summary>
+            Adds the caption settings command to the plug-in
+            </summary>
+            <param name="sender">the settings pane</param>
+            <param name="args">the settings pane commands requested event arguments</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsPluginBase.OnShowCaptionSettings(Windows.UI.Popups.IUICommand)">
+            <summary>
+            Show the caption settings
+            </summary>
+            <param name="command">the command</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsPluginBase.OnApplyCaptionSettings(System.Object,Microsoft.PlayerFramework.CaptionSettings.CustomCaptionSettingsEventArgs)">
+            <summary>
+            Apply the caption settings
+            </summary>
+            <param name="sender">the sender</param>
+            <param name="e">the custom caption settings event arguments</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsPluginBase.OnUnloaded(System.Object,Windows.UI.Xaml.RoutedEventArgs)">
+            <summary>
+            Save the caption settings when the flyout unloads.
+            </summary>
+            <param name="sender">the flyout</param>
+            <param name="e">the routed event arguments</param>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsPluginBase.OnLoadCaptionSettings">
+            <summary>
+            Event to load caption settings
+            </summary>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsPluginBase.OnSaveCaptionSettings">
+            <summary>
+            Event to save caption settings
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsPluginBase.Settings">
+            <summary>
+            Gets or sets the settings
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsPluginBase.IsDefault">
+            <summary>
+            Gets a value indicating whether this is using the default settings
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsPluginBase.SettingsCommandId">
+            <summary>
+            Gets or sets the settings command Id for the Settings pane
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsPluginBase.Label">
+            <summary>
+            Gets or sets the label for the settings pane
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsPluginBase.SettingsCommandIndex">
+            <summary>
+            Gets or sets the index of the settings command
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsPluginBase.SettingsFlyoutStyle">
+            <summary>
+            Gets or sets the settings flyout style (use style for SettingsFlyout)
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsPluginBase.SettingsControlStyle">
+            <summary>
+            Gets or sets the style for the <see cref="T:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsControl"/>
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.CaptionSettingsPluginBase.IconSource">
+            <summary>
+            Gets or sets the icon source of the caption settings pane
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.CaptionSettings.ColorEventArgs">
+            <summary>
+            Color event arguments
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.ColorEventArgs.#ctor(Microsoft.PlayerFramework.CaptionSettings.Model.Color)">
+            <summary>
+            Initializes a new instance of the ColorEventArgs class
+            </summary>
+            <param name="color">the color</param>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.ColorEventArgs.Color">
+            <summary>
+            Gets the color
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.CaptionSettings.ColorExtensions">
+            <summary>
+            Color extension methods
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.ColorExtensions.ToColor(Microsoft.PlayerFramework.CaptionSettings.Model.Color)">
+            <summary>
+            Converts a CaptionSettings Color to a Windows Color
+            </summary>
+            <param name="color">the caption settings color</param>
+            <returns>a Windows Color</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.ColorExtensions.ToCaptionSettingsColor(Windows.UI.Color)">
+            <summary>
+            Convert a Windows Color to a Caption Settings color
+            </summary>
+            <param name="color">a Windows color</param>
+            <returns>a Caption Settings color</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.ColorExtensions.ToCaptionSettingsColor(Windows.UI.Color,System.Byte)">
+            <summary>
+            Convert a Windows Color to a Caption Settings color
+            </summary>
+            <param name="color">a Windows color</param>
+            <param name="alpha">the alpha (transparency) value</param>
+            <returns>a Caption Settings color</returns>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.CaptionSettings.Controls.CaptionComboBox">
+            <summary>
+            Touch-compatible combo box
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.Controls.CaptionComboBox.OnPointerCaptureLost(Windows.UI.Xaml.Input.PointerRoutedEventArgs)">
+            <summary>
+            This fixes a touch issue where the combo box shows a "pressed" 
+            state when a touch leaves the control
+            </summary>
+            <param name="e">the pointer routed event arguments</param>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.CaptionSettings.Controls.ColorPickerControl">
+            <summary>
+            Color Picker Control
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.Controls.ColorPickerControl.SelectedColorProperty">
+            <summary>
+            the SelectedColor dependency property
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.Controls.ColorPickerControl.ColorTypeProperty">
+            <summary>
+            The color type dependency property
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.Controls.ColorPickerControl.#ctor">
+            <summary>
+            Initializes a new instance of the ColorPickerControl class
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.Controls.ColorPickerControl.OnApplyTemplate">
+            <summary>
+            Apply templates and assign tapped handlers to the color swatches
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.Controls.ColorPickerControl.OnTappedColor(System.Object,Windows.UI.Xaml.Input.TappedRoutedEventArgs)">
+            <summary>
+            select the tapped color
+            </summary>
+            <param name="sender">a color rectangle</param>
+            <param name="e">the tapped routed event arguments</param>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.CaptionSettings.Controls.ColorPickerControl.ColorSelected">
+            <summary>
+            Color selected event
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.Controls.ColorPickerControl.SelectedColor">
+            <summary>
+            Gets or sets the selected color
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.Controls.ColorPickerControl.ColorType">
+            <summary>
+            Gets or sets the current color type
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.CaptionSettings.Controls.PreviewControl">
+            <summary>
+            Preview control
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.Controls.PreviewControl.WindowColorProperty">
+            <summary>
+            WindowColor dependency property
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.Controls.PreviewControl.CaptionBackgroundProperty">
+            <summary>
+            CaptionBackground dependency property
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.Controls.PreviewControl.CaptionFontStyleProperty">
+            <summary>
+            Caption Font Style dependency property
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.Controls.PreviewControl.PreviewTextProperty">
+            <summary>
+            PreviewText dependency property
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.Controls.PreviewControl.#ctor">
+            <summary>
+            Initializes a new instance of the PreviewControl class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.Controls.PreviewControl.OnFontStyleChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            go to the font style state when the font style changes
+            </summary>
+            <param name="sender">the preview control</param>
+            <param name="args">the dependency property changed event arguments</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.Controls.PreviewControl.OnPreviewTextChanged(Windows.UI.Xaml.DependencyObject,Windows.UI.Xaml.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Update the view model when the preview text changes
+            </summary>
+            <param name="sender">the <see cref="T:Microsoft.PlayerFramework.CaptionSettings.Controls.PreviewControl"/></param>
+            <param name="args">the dependency property changed event arguments</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.Controls.PreviewControl.GoToFontStyleState(System.Boolean)">
+            <summary>
+            Go to the font style state
+            </summary>
+            <param name="useTransitions">use transitions for the state changes</param>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.Controls.PreviewControl.CaptionBackground">
+            <summary>
+            Gets or sets the caption background brush
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.Controls.PreviewControl.WindowColor">
+            <summary>
+            Gets or sets the window color
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.Controls.PreviewControl.CaptionFontStyle">
+            <summary>
+            Gets or sets the caption font style
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.Controls.PreviewControl.OutlineWidth">
+            <summary>
+            Gets or sets the outline width
+            </summary>
+            <remarks>This isn't working yet - modify the CompositeTransform elements in the control template to adjust the width of the outlines.</remarks>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.Controls.PreviewControl.PreviewText">
+            <summary>
+            Gets or sets the preview text
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.CaptionSettings.CustomCaptionSettingsEventArgs">
+            <summary>
+            custom caption settings event arguments
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.CustomCaptionSettingsEventArgs.#ctor(Microsoft.PlayerFramework.CaptionSettings.Model.CustomCaptionSettings)">
+            <summary>
+            Initializes a new instance of the CustomCaptionSettingsEventArgs class.
+            </summary>
+            <param name="settings">the settings</param>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.CustomCaptionSettingsEventArgs.Settings">
+            <summary>
+            Gets or sets the settings
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.CaptionSettings.Model.BindableBase">
+            <summary>
+            Implementation of <see cref="T:System.ComponentModel.INotifyPropertyChanged"/> to simplify models.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.Model.BindableBase.SetProperty``1(``0@,``0,System.String)">
+            <summary>
+            Checks if a property already matches a desired value.  Sets the property and
+            notifies listeners only when necessary.
+            </summary>
+            <typeparam name="T">Type of the property.</typeparam>
+            <param name="storage">Reference to a property with both getter and setter.</param>
+            <param name="value">Desired value for the property.</param>
+            <param name="propertyName">Name of the property used to notify listeners.  This
+            value is optional and can be provided automatically when invoked from compilers that
+            support CallerMemberName.</param>
+            <returns>True if the value was changed, false if the existing value matched the
+            desired value.</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.Model.BindableBase.OnPropertyChanged(System.String)">
+            <summary>
+            Notifies listeners that a property value has changed.
+            </summary>
+            <param name="propertyName">Name of the property used to notify listeners.  This
+            value is optional and can be provided automatically when invoked from compilers
+            that support <see cref="T:System.Runtime.CompilerServices.CallerMemberNameAttribute"/>.</param>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.CaptionSettings.Model.BindableBase.PropertyChanged">
+            <summary>
+            Multicast event for property change notifications.
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.CaptionSettings.Model.Color">
+            <summary>
+            Caption settings color
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.Model.Color.alpha">
+            <summary>
+            the alpha transparency (0-255)
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.Model.Color.Equals(System.Object)">
+            <summary>
+            Compares two colors
+            </summary>
+            <param name="obj">the other color</param>
+            <returns>true if the two colors have the same values</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.Model.Color.GetHashCode">
+            <summary>
+            Gets the hash code for the color
+            </summary>
+            <returns>the hash code</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.Model.Color.ToString">
+            <summary>
+            gets a string representation of the color
+            </summary>
+            <returns>a string like this: 125R,231G,210B,123A</returns>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.Model.Color.Red">
+            <summary>
+            Gets or sets the Red component
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.Model.Color.Green">
+            <summary>
+            Gets or sets the Green component
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.Model.Color.Blue">
+            <summary>
+            Gets or sets the blue component
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.Model.Color.Alpha">
+            <summary>
+            Gets or sets the transparency component (0-255)
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.CaptionSettings.Model.ColorType">
+            <summary>
+            Color Type enumeration
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.Model.ColorType.Default">
+            <summary>
+            Default color type
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.Model.ColorType.Solid">
+            <summary>
+            Solid color type
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.Model.ColorType.Transparent">
+            <summary>
+            transparent color type (0 alpha)
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.Model.ColorType.Semitransparent">
+            <summary>
+            Semitransparent color type (127 alpha)
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.CaptionSettings.Model.CustomCaptionSettings">
+            <summary>
+            Custom Caption Settings
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.Model.CustomCaptionSettings.fontFamily">
+            <summary>
+            the font family
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.Model.CustomCaptionSettings.fontSize">
+            <summary>
+            the font size
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.Model.CustomCaptionSettings.fontStyle">
+            <summary>
+            the font style
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.Model.CustomCaptionSettings.fontColor">
+            <summary>
+            the font color
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.Model.CustomCaptionSettings.backgroundColor">
+            <summary>
+            the background color
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.Model.CustomCaptionSettings.windowColor">
+            <summary>
+            the window color
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.Model.CustomCaptionSettings.#ctor">
+            <summary>
+            Initializes a new instance of the CustomCaptionSettings class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.Model.CustomCaptionSettings.FromString(System.String)">
+            <summary>
+            Creates a <see cref="T:Microsoft.PlayerFramework.CaptionSettings.Model.CustomCaptionSettings"/> object from an xml 
+            string
+            </summary>
+            <param name="xml">the xml string</param>
+            <returns>a new UserSettings</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.Model.CustomCaptionSettings.ToXmlString">
+            <summary>
+            Gets the XML string for the user settings
+            </summary>
+            <returns>an XML string</returns>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.Model.CustomCaptionSettings.FontFamily">
+            <summary>
+            Gets or sets the font family
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.Model.CustomCaptionSettings.FontSize">
+            <summary>
+            Gets or sets the font size in %
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.Model.CustomCaptionSettings.FontStyle">
+            <summary>
+            Gets or sets the font style
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.Model.CustomCaptionSettings.FontColor">
+            <summary>
+            Gets or sets the font color
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.Model.CustomCaptionSettings.BackgroundColor">
+            <summary>
+            Gets or sets the background color
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.Model.CustomCaptionSettings.WindowColor">
+            <summary>
+            Gets or sets the window color
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.CaptionSettings.Model.FontFamily">
+            <summary>
+            Caption font family
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.Model.FontFamily.Default">
+            <summary>
+            Use the default font
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.Model.FontFamily.MonospaceSerif">
+            <summary>
+            Mono-space serif (like Courier New)
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.Model.FontFamily.ProportionalSerif">
+            <summary>
+            Proportional serif (like Times New Roman)
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.Model.FontFamily.MonospaceSansSerif">
+            <summary>
+            Mono-space Sans serif (like Consolas)
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.Model.FontFamily.ProportionalSansSerif">
+            <summary>
+            Proportional Sans Serif (like Arial)
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.Model.FontFamily.Casual">
+            <summary>
+            Casual (like Comic Sans)
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.Model.FontFamily.Cursive">
+            <summary>
+            Cursive (like Segoe Script)
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.Model.FontFamily.Smallcaps">
+            <summary>
+            Small capitals
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.CaptionSettings.Model.FontStyle">
+            <summary>
+            Caption font style
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.Model.FontStyle.Default">
+            <summary>
+            default font style
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.Model.FontStyle.None">
+            <summary>
+            no font style
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.Model.FontStyle.RaisedEdge">
+            <summary>
+            raised edge font style
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.Model.FontStyle.DepressedEdge">
+            <summary>
+            Depressed edge font style
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.Model.FontStyle.Outline">
+            <summary>
+            Outline font style
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.Model.FontStyle.DropShadow">
+            <summary>
+            Drop shadow font style
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.CaptionSettings.ValueConverters.CapitalsConverter">
+            <summary>
+            Capitals converter
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.ValueConverters.CapitalsConverter.Convert(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Convert from a FontFamily to a FontCapitals
+            </summary>
+            <param name="value">a FontFamily value</param>
+            <param name="targetType">a FontCapitals type</param>
+            <param name="parameter">not used</param>
+            <param name="language">language not used</param>
+            <returns><see cref="F:Windows.UI.Xaml.FontCapitals.SmallCaps"/>if value is <see cref="F:Microsoft.PlayerFramework.CaptionSettings.Model.FontFamily.Smallcaps"/>, <see cref="F:Windows.UI.Xaml.FontCapitals.Normal"/>otherwise</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.ValueConverters.CapitalsConverter.ConvertBack(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Convert back not implemented
+            </summary>
+            <param name="value">value not used</param>
+            <param name="targetType">target type not used</param>
+            <param name="parameter">parameter not used</param>
+            <param name="language">language not used</param>
+            <returns>nothing returned</returns>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.CaptionSettings.ValueConverters.ColorToBrushConverter">
+            <summary>
+            Color to Brush converter
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.ValueConverters.ColorToBrushConverter.Convert(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a <see cref="T:Microsoft.PlayerFramework.CaptionSettings.Model.Color"/> to a <see cref="T:Windows.UI.Xaml.Media.SolidColorBrush"/>
+            </summary>
+            <param name="value">a color</param>
+            <param name="targetType">a Brush type</param>
+            <param name="parameter">not used</param>
+            <param name="language">language not used</param>
+            <returns>a SolidColorBrush</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.ValueConverters.ColorToBrushConverter.ConvertBack(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Not implemented
+            </summary>
+            <param name="value">a brush</param>
+            <param name="targetType">a color</param>
+            <param name="parameter">not used</param>
+            <param name="language">language not used</param>
+            <returns>exception thrown</returns>
+            <exception cref="T:System.NotImplementedException">Not implemented</exception>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.CaptionSettings.ValueConverters.ColorTypeConverter">
+            <summary>
+            ColorType value converter
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.ValueConverters.ColorTypeConverter.loader">
+            <summary>
+            the resource loader
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.ValueConverters.ColorTypeConverter.Convert(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Convert from a ColorType to its string equivalent
+            </summary>
+            <param name="value">the ColorType</param>
+            <param name="targetType">the target type</param>
+            <param name="parameter">not used</param>
+            <param name="language">the language</param>
+            <returns>a string</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.ValueConverters.ColorTypeConverter.ConvertBack(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Not Implemented
+            </summary>
+            <param name="value">a string</param>
+            <param name="targetType">a ColorType</param>
+            <param name="parameter">not used</param>
+            <param name="language">language not used</param>
+            <returns>exception is thrown, no return</returns>
+            <exception cref="T:System.NotImplementedException">Not implemented</exception>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.CaptionSettings.ValueConverters.FontFamilyConverter">
+            <summary>
+            Font Family Converter
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.ValueConverters.FontFamilyConverter.fontMap">
+            <summary>
+            the font map
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.ValueConverters.FontFamilyConverter.Convert(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            convert from a Caption Settings font family to the equivalent 
+            Windows installed font
+            </summary>
+            <param name="value">a Model.FontFamily</param>
+            <param name="targetType">a Windows FontFamily</param>
+            <param name="parameter">parameter not used</param>
+            <param name="language">language not used</param>
+            <returns>a <see cref="T:Windows.UI.Xaml.Media.FontFamily"/></returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.ValueConverters.FontFamilyConverter.ConvertBack(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            not implemented
+            </summary>
+            <param name="value">value not used</param>
+            <param name="targetType">target type not used</param>
+            <param name="parameter">parameter not used</param>
+            <param name="language">language not used</param>
+            <returns>exception thrown</returns>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.CaptionSettings.ValueConverters.FontSizeConverter">
+            <summary>
+            Font Size Converter
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.ValueConverters.FontSizeConverter.#ctor">
+            <summary>
+            Initializes a new instance of the FontSizeConverter class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.ValueConverters.FontSizeConverter.Convert(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Converts a font size
+            </summary>
+            <param name="value">the value</param>
+            <param name="targetType">the target type</param>
+            <param name="parameter">parameter not used</param>
+            <param name="language">language is not used</param>
+            <returns>a font size</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.ValueConverters.FontSizeConverter.ConvertBack(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Convert Back from a font size
+            </summary>
+            <param name="value">the font size as a string or percentage number 50-200</param>
+            <param name="targetType">the target type</param>
+            <param name="parameter">parameter not used</param>
+            <param name="language">language not used</param>
+            <returns>the integer font size</returns>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.ValueConverters.FontSizeConverter.FontSize">
+            <summary>
+            Gets or sets the font size (default is 16.0)
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.CaptionSettings.ValueConverters.NegateConverter">
+            <summary>
+            Negate converter
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.ValueConverters.NegateConverter.Convert(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Convert to the inverse of value (multiply by -1)
+            </summary>
+            <param name="value">a double value</param>
+            <param name="targetType">a double type</param>
+            <param name="parameter">not used</param>
+            <param name="language">language not used</param>
+            <returns>the inverse of value</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.ValueConverters.NegateConverter.ConvertBack(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Convert back not implemented
+            </summary>
+            <param name="value">the value</param>
+            <param name="targetType">the target type</param>
+            <param name="parameter">parameter not used</param>
+            <param name="language">language not used</param>
+            <returns>not implemented</returns>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.CaptionSettings.ValueConverters.ResourceConverter">
+            <summary>
+            Resource Converter
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.ValueConverters.ResourceConverter.loader">
+            <summary>
+            the resource loader
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.ValueConverters.ResourceConverter.Convert(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Convert from a caption font to a Font Family
+            </summary>
+            <param name="value">a string</param>
+            <param name="targetType">a FontFamily type</param>
+            <param name="parameter">not used</param>
+            <param name="language">language not used</param>
+            <returns>a <see cref="T:Windows.UI.Xaml.Media.FontFamily"/></returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.ValueConverters.ResourceConverter.ConvertBack(System.Object,System.Type,System.Object,System.String)">
+            <summary>
+            Not implemented
+            </summary>
+            <param name="value">a FontFamily</param>
+            <param name="targetType">a string</param>
+            <param name="parameter">not used</param>
+            <param name="language">language not used</param>
+            <returns>exception thrown</returns>
+            <exception cref="T:System.NotImplementedException">Not implemented</exception>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.CaptionSettings.ViewModel.CaptionSettingsFlyoutViewModel">
+            <summary>
+            Caption settings flyout view model
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.ViewModel.CaptionSettingsFlyoutViewModel.settings">
+            <summary>
+            the settings
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.ViewModel.CaptionSettingsFlyoutViewModel.isEnabled">
+            <summary>
+            are the settings enabled?
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.ViewModel.CaptionSettingsFlyoutViewModel.previewText">
+            <summary>
+            the preview text
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.ViewModel.CaptionSettingsFlyoutViewModel.#ctor">
+            <summary>
+            Initializes a new instance of the CaptionSettingsFlyoutViewModel class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.ViewModel.CaptionSettingsFlyoutViewModel.SetColorType(Microsoft.PlayerFramework.CaptionSettings.Model.ColorType,Microsoft.PlayerFramework.CaptionSettings.Model.Color,Microsoft.PlayerFramework.CaptionSettings.Model.Color)">
+            <summary>
+            Sets a color type
+            </summary>
+            <param name="type">the color type</param>
+            <param name="color">the current color</param>
+            <param name="defaultColor">the default color</param>
+            <returns>the new color</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.ViewModel.CaptionSettingsFlyoutViewModel.GetColorType(Microsoft.PlayerFramework.CaptionSettings.Model.Color)">
+            <summary>
+            Gets the color type
+            </summary>
+            <param name="color">the color</param>
+            <returns>the color type</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.ViewModel.CaptionSettingsFlyoutViewModel.EnabledPropertyChanged">
+            <summary>
+            the Enabled property changed
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.ViewModel.CaptionSettingsFlyoutViewModel.CaptionSettingsPropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            Caption settings property changes event handler
+            </summary>
+            <param name="sender">the Custom Caption Settings</param>
+            <param name="e">the property changed event arguments</param>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.ViewModel.CaptionSettingsFlyoutViewModel.PreviewText">
+            <summary>
+            Gets or sets the preview text
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.ViewModel.CaptionSettingsFlyoutViewModel.IsEnabled">
+            <summary>
+            Gets or sets a value indicating whether the options are enabled
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.ViewModel.CaptionSettingsFlyoutViewModel.IsFontColorEnabled">
+            <summary>
+            Gets a value indicating whether the font color button is enabled
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.ViewModel.CaptionSettingsFlyoutViewModel.IsBackgroundColorEnabled">
+            <summary>
+            Gets a value indicating whether the background color button is enabled
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.ViewModel.CaptionSettingsFlyoutViewModel.IsWindowColorEnabled">
+            <summary>
+            Gets a value indicating whether the window color button is enabled
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.ViewModel.CaptionSettingsFlyoutViewModel.FontFamilies">
+            <summary>
+            Gets the font families
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.ViewModel.CaptionSettingsFlyoutViewModel.FontSizes">
+            <summary>
+            Gets the font sizes
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.ViewModel.CaptionSettingsFlyoutViewModel.FontStyles">
+            <summary>
+            Gets the font styles
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.ViewModel.CaptionSettingsFlyoutViewModel.FontColorType">
+            <summary>
+            Gets or sets the font color type
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.ViewModel.CaptionSettingsFlyoutViewModel.FontColorTypes">
+            <summary>
+            Gets the font color types
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.ViewModel.CaptionSettingsFlyoutViewModel.BackgroundColorTypes">
+            <summary>
+            Gets the background color types
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.ViewModel.CaptionSettingsFlyoutViewModel.WindowColorTypes">
+            <summary>
+            Gets the window color types
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.ViewModel.CaptionSettingsFlyoutViewModel.BackgroundColorType">
+            <summary>
+            Gets or sets the background color type
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.ViewModel.CaptionSettingsFlyoutViewModel.WindowColorType">
+            <summary>
+            Gets or sets the window color type
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.ViewModel.CaptionSettingsFlyoutViewModel.Settings">
+            <summary>
+            Gets or sets the custom caption settings
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.CaptionSettings.ViewModel.PreviewControlViewModel">
+            <summary>
+            Preview Control View Model
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.CaptionSettings.ViewModel.PreviewControlViewModel.outlineWidth">
+            <summary>
+            the outline width
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.CaptionSettings.ViewModel.PreviewControlViewModel.#ctor">
+            <summary>
+            Initializes a new instance of the PreviewControlViewModel class.
+            </summary>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.CaptionSettings.ViewModel.PreviewControlViewModel.PropertyChanged">
+            <summary>
+            the property changed event handler
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.ViewModel.PreviewControlViewModel.PreviewText">
+            <summary>
+            Gets or sets the preview text
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.CaptionSettings.ViewModel.PreviewControlViewModel.OutlineWidth">
+            <summary>
+            Gets or sets the outline width
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget xmlns="http://openajax.org/metadata"
+        xmlns:win="http://microsoft.com/blend/5/namespace"
+        spec="1.0"
+        id="http://www.microsoft.com/schemas/corsica/1.0/AppBar"
+        name="WinJS.UI.ToolTip_with_Content_Element"
+        version="1.0">
+  <author name="Microsoft Corporation" />
+  <title type="text/plain">Tooltip with Content Element</title>
+  <icons>
+    <icon src="controls_winjs.ui.tooltip_with_content_element.12x12.png" width="12" height="12" />
+    <icon src="controls_winjs.ui.tooltip_with_content_element.16x16.png" width="16" height="16" />
+  </icons>
+  <description type="text/plain">
+    <![CDATA[Tooltip created with external content in an HTML element]]>
+  </description>
+  <requires>
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/base.js" />
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/ui.js" />
+    <require type="css" src="//Microsoft.WinJS.2.0/css/ui-dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript"><![CDATA[WinJS.UI.processAll();]]></require>
+  </requires>
+  <content>
+    <![CDATA[
+      <div style="display: none;">
+           <div class="__WID__">
+               <p>Tooltip contents go here!</p>
+           </div>
+      </div>
+
+        <div data-win-control="WinJS.UI.Tooltip" data-win-options="{contentElement:select('.__WID__')}">
+      </div>
+    ]]>
+  </content>
+</widget>

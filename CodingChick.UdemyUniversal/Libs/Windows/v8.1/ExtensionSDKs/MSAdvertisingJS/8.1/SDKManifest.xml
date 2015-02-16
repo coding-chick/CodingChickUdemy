@@ -1,0 +1,9 @@
+﻿<FileList
+	DisplayName = "Microsoft Advertising SDK for Windows 8.1 (JS)"
+  ProductFamilyName = "Microsoft.Advertising"
+	MinVSVersion = "12.0"
+  AppliesTo = "WindowsAppContainer+JavaScript"
+  SupportsMultipleVersions = "Error"
+  MoreInfo = "http://go.microsoft.com/fwlink/?LinkId=243197" > 
+  <File Content="ads\ad.js" />
+</FileList>

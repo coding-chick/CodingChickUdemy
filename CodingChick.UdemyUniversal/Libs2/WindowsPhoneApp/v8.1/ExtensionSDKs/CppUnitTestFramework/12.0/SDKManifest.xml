@@ -1,0 +1,12 @@
+<FileList
+  DisplayName = "MSTest for CPP Phone Projects"
+  MinVSVersion = "12.0"
+  TargetFramework = "WindowsPhone,Version=v8.1"
+  AppliesTo = "VisualC"
+  SupportsMultipleVersions = "Error"
+  MoreInfo = "http://go.microsoft.com/fwlink/?LinkID=242829" >
+  <File Reference = "CppUnitTestFramework_Executor_WindowsPhone.winmd" Implementation = "CppUnitTestFramework_Executor_WindowsPhone.dll" />
+  <Registration Type = "CppUnitTestFramework_Executor_WindowsPhone.TestResult" Implementation = "CppUnitTestFramework_Executor_WindowsPhone.dll" />
+  <Registration Type = "CppUnitTestFramework_Executor_WindowsPhone.CppTestCase" Implementation = "CppUnitTestFramework_Executor_WindowsPhone.dll" />
+  <Registration Type = "CppUnitTestFramework_Executor_WindowsPhone.CTestRunner" Implementation = "CppUnitTestFramework_Executor_WindowsPhone.dll" />
+</FileList>

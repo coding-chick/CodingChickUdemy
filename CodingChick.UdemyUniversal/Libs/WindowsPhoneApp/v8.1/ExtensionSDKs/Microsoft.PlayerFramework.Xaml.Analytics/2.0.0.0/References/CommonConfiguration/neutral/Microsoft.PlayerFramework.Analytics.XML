@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.PlayerFramework.Analytics</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.PlayerFramework.Analytics.AnalyticsPlugin">
+            <summary>
+            A plugin used to retrieve and log analytics data.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Analytics.AnalyticsPlugin.#ctor">
+            <summary>
+            Creates a new instance of AnalyticsPlugin.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Analytics.AnalyticsPlugin.#ctor(Microsoft.Media.Analytics.AnalyticsConfig)">
+            <summary>
+            Creates a new instance of AnalyticsPlugin.
+            </summary>
+            <param name="analyticsConfig">The required analytics config object used to control what kind of analytics data should be collected.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Analytics.AnalyticsPlugin.Log(Microsoft.Media.Analytics.ILog)">
+            <summary>
+            Sends a log to the LoggingService but stamps it with session and media specific data first.
+            </summary>
+            <param name="log">The log to send</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Analytics.AnalyticsPlugin.Load">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Analytics.AnalyticsPlugin.Update(Microsoft.PlayerFramework.IMediaSource)">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Analytics.AnalyticsPlugin.Unload">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Analytics.AnalyticsPlugin.TrackingEventArea">
+            <summary>
+            Gets the area key to be applied to all analytic related tracking events.
+            Tracking events without this area will be ignored by the analytics plugin.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Analytics.AnalyticsPlugin.Dispatcher">
+            <summary>
+            Gets or sets the a Dispatcher to be used to poll CPU and FPS metrics. Set to null if one is not needed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Analytics.AnalyticsPlugin.EnvironmentMonitor">
+            <summary>
+            Gets or sets an object responsible for providing environment or system level data to log.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Analytics.AnalyticsPlugin.EdgeServerMonitor">
+            <summary>
+            Gets or sets an object responsible for providing information about the edge server used to serve the media.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Analytics.AnalyticsPlugin.AdaptiveMonitor">
+            <summary>
+            Gets or sets an object responsible for providing additional information about adaptive streaming.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Analytics.AnalyticsPlugin.AnalyticsConfig">
+            <summary>
+            Gets or sets the required configuration object to help determine what information to collect, aggregate and log.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Analytics.AnalyticsPlugin.AnalyticsCollector">
+            <summary>
+            Gets the analytics collector object used by the analytics plugin to collect data
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Analytics.AnalyticsPlugin.MediaData">
+            <summary>
+            Gets a collection of data to add to each log only for the current media. (e.g. 'VideoId')
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Analytics.AnalyticsPlugin.SessionData">
+            <summary>
+            Gets a collection of data to add to each log across all media. (e.g. 'AppId')
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Analytics.AnalyticsPlugin.MediaPlayer">
+            <inheritdoc /> 
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Analytics.ErrorLogger">
+            <summary>
+            Represents a helper class responsible for logging unhandled exceptions
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Analytics.ErrorLogger.#ctor">
+            <summary>
+            Creates a new instance of ErrorLogger
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Analytics.ErrorLogger.LogError(System.Exception,System.String)">
+            <summary>
+            Logs an exception
+            </summary>
+            <param name="error">The exception object to log</param>
+            <param name="applicationArea">The area of the application the error occurred in.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Analytics.ErrorLogger.Dispose">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Analytics.ErrorLogger.PreventUnhandledErrors">
+            <summary>
+            Gets or sets whether unhandled exceptions should be prevented. If true, this will catch the exception and not allow it to bubble up.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Analytics.ErrorLogger.MaxErrorLength">
+            <summary>
+            Gets or sets whether exceptions should be trunacted and if so, to what number of characters.
+            </summary>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Analytics.MediaPlayerAdapter.ClipStarted">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Analytics.MediaPlayerAdapter.ClipEnded">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Analytics.MediaPlayerAdapter.StreamFailed">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Analytics.MediaPlayerAdapter.PositionReached">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Analytics.MediaPlayerAdapter.PlayTimeReached">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Analytics.MediaPlayerAdapter.PositionPercentageReached">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Analytics.MediaPlayerAdapter.PlayTimePercentageReached">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Analytics.MediaPlayerAdapter.Seeked">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Analytics.MediaPlayerAdapter.ScrubCompleted">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Analytics.MediaPlayerAdapter.StreamLoaded">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Analytics.MediaPlayerAdapter.StreamStarted">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Analytics.MediaPlayerAdapter.StreamClosed">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Analytics.MediaPlayerAdapter.StreamEnded">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Analytics.MediaPlayerAdapter.Playing">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Analytics.MediaPlayerAdapter.Paused">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Analytics.MediaPlayerAdapter.IsBufferingChanged">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Analytics.MediaPlayerAdapter.FullScreenChanged">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Analytics.MediaPlayerAdapter.ScrubStarted">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Analytics.MediaPlayerAdapter.PlaybackRateChanged">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Analytics.MediaPlayerAdapter.IsLiveChanged">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Analytics.MediaPlayerAdapter.CaptionTrackChanged">
+            <inheritdoc /> 
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Analytics.MediaPlayerAdapter.AudioTrackChanged">
+            <inheritdoc /> 
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Analytics.Analytics">
+            <summary>
+            Helper class used to attach config data specific to each playlist item.
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.Analytics.Analytics.AdditionalDataProperty">
+            <summary>
+            Identifies the AdditionalData attached property.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Analytics.Analytics.SetAdditionalData(Windows.UI.Xaml.DependencyObject,System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Sets the AdditionalData attached property value.
+            </summary>
+            <param name="obj">An instance of the MediaPlayer or PlaylistItem.</param>
+            <param name="propertyValue">A value containing the AdditionalData to apply to the plugin.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Analytics.Analytics.GetAdditionalData(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            Gets the AdditionalData attached property value.
+            </summary>
+            <param name="obj">An instance of the MediaPlayer or PlaylistItem.</param>
+            <returns>A value containing the AdditionalData to apply to the plugin.</returns>
+        </member>
+    </members>
+</doc>

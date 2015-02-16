@@ -1,0 +1,1778 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.PlayerFramework.Advertising</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.PlayerFramework.Advertising.AdHandlerPlugin">
+            <summary>
+            The main player framework plugin to handle ads. Ads can come from various scheduler plugins or be called directly.
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Advertising.AdHandlerBase">
+            <summary>
+            A base class used to play ads.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdHandlerBase.#ctor">
+            <summary>
+            Creates a new instance of AdHandlerBase
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdHandlerBase.WireController">
+            <summary>
+            Wires up the AdHandlerController events
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdHandlerBase.UnwireController">
+            <summary>
+            Unwires the AdHandlerController events
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdHandlerBase.CancelActiveAds">
+            <summary>
+            Cancels all active ads.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdHandlerBase.ShowIcon(Microsoft.Media.Advertising.Icon,Microsoft.Media.Advertising.StaticResource,System.Threading.CancellationTokenSource)">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdHandlerBase.UnloadPlayer(Microsoft.Media.Advertising.IVpaid)">
+            <summary>
+            Called when an ad player should be unloaded.
+            </summary>
+            <param name="player">The VPAID player to unload.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdHandlerBase.GetPlayer(Microsoft.Media.Advertising.ICreativeSource)">
+            <summary>
+            Called to retrieve a VPAID player from a creative source.
+            </summary>
+            <param name="creativeSource">The creative source that needs a VPAID player to play.</param>
+            <returns>The VPAID ad player</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdHandlerBase.LoadPlayer(Microsoft.Media.Advertising.IVpaid)">
+            <summary>
+            Called when a new VPAID player should be loaded.
+            This does not mean it should be made visibile since it could be pre-loading.
+            </summary>
+            <param name="adPlayer">The VPAID player to load.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdHandlerBase.LoadCompanions(System.Collections.Generic.IEnumerable{Microsoft.Media.Advertising.ICompanionSource},Microsoft.Media.Advertising.CompanionAdsRequired,Microsoft.Media.Advertising.ICreativeSource,Microsoft.Media.Advertising.IVpaid,System.Object,Microsoft.Media.Advertising.IAdSource)">
+            <summary>
+            Called to help load companion ads.
+            </summary>
+            <param name="companions">The companion ads that should show.</param>
+            <param name="suggestedCompanionRules">The suggested rules for how to show companions.</param>
+            <param name="creativeSource">The creative source associated with the companions.</param>
+            <param name="adPlayer">The VPAID ad player associated with the companions.</param>
+            <param name="creativeConcept">The creative concept for the companions. Can help provide info to assist with companion life cycle business logic.</param>
+            <param name="adSource">The ad source from which the companion ads came.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdHandlerBase.TryLoadCompanion(Microsoft.Media.Advertising.ICompanionSource,System.Action@)">
+            <summary>
+            Loads the companion ad into the UI.
+            </summary>
+            <param name="source">Source information for the companion ad</param>
+            <param name="unloadAction">The action to perform when it is time to unload the companion.</param>
+            <returns>An action to undo the loaded companion if successful. Null if not.</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdHandlerBase.GetCompanionContainer(Microsoft.Media.Advertising.ICompanionSource)">
+            <summary>
+            Called when the container for a companion ad needs to be displayed.
+            </summary>
+            <param name="source">The source info for the companion ad.</param>
+            <returns>The element in the UI to place the companion ad.</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdHandlerBase.UnloadCompanions">
+            <summary>
+            Unloads all companion ads.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdHandlerBase.RequestNavigation(System.String)">
+            <summary>
+            Called when navigation is requested from a click on an ad.
+            </summary>
+            <param name="url"></param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdHandlerBase.SetAdvertisingState(Microsoft.Media.Advertising.AdState)">
+            <summary>
+            Called when the advertising state has changed.
+            Allows the subclass to change the UI or allowed behaviors appropriately.
+            </summary>
+            <param name="adState"></param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdHandlerBase.PreloadAd(Microsoft.Media.Advertising.IAdSource,System.Threading.CancellationToken)">
+            <summary>
+            Preloads an ad so it is ready to play immediately at the right time.
+            </summary>
+            <param name="source">The source of the ad.</param>
+            <param name="cancellationToken">A cancellation token that can later be used to abort the ad.</param>
+            <returns>An awaitable Task that returns when the ad is done preloading.</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdHandlerBase.PlayAd(Microsoft.Media.Advertising.IAdSource,System.Threading.CancellationToken,System.IProgress{Microsoft.Media.Advertising.AdStatus})">
+            <summary>
+            Plays an ad.
+            </summary>
+            <param name="source">The source of the ad.</param>
+            <param name="cancellationToken">A cancellation token that can later be used to abort the ad.</param>
+            <param name="progress">An object that allows the progress to be monitored</param>
+            <returns>An awaitable Task that returns when the ad is over, fails, or turns into a nonlinear ad.</returns>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.AdHandlerBase.PropertyChanged">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdHandlerBase.ActiveAdPlayer">
+            <summary>
+            Gets the current active VPAID ad player. This is null until an ad is actually playing.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdHandlerBase.CompanionHostStyle">
+            <summary>
+            Gets or sets the Xaml Style to be used on the CompanionHost HyperlinkButton control used to show companion ads.
+            </summary>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.AdHandlerBase.ActiveAdPlayerChanged">
+            <summary>
+            Indicates that the active ad player has changed.
+            </summary>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.AdHandlerBase.AdStateChanged">
+            <summary>
+            Indicates that the advertising state has changed.
+            </summary>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.AdHandlerBase.AdFailure">
+            <summary>
+            Indicates that an ad failed.
+            </summary>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.AdHandlerBase.ActivateAdUnit">
+            <summary>
+            Indicates that a new ad unit has started playing.
+            </summary>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.AdHandlerBase.DeactivateAdUnit">
+            <summary>
+            Indicates that a new ad unit has started playing.
+            </summary>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.AdHandlerBase.NavigationRequested">
+            <summary>
+            Indicates that the active ad player has changed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdHandlerBase.Player">
+            <summary>
+            Gets or set the player adapter needed by the VideoAdvertising component.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdHandlerBase.AdHandlerController">
+            <summary>
+            Gets the current AdHandlerController object
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdHandlerBase.AdContainer">
+            <summary>
+            Gets or sets the container to show the ads in. Note: this does not apply to companion ads.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdHandlerBase.StartTimeout">
+            <summary>
+            The timeout for an ad to start playing. If this is exceeded, the ad will be skipped
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdHandlerBase.AdHandlers">
+            <summary>
+            Gets a list of AdHandlers that are capable of playing different types of ads.
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Advertising.AdHandlerBase.AdStateEventArgs">
+            <summary>
+            Supplies the ad state for the AdStateChangedEventArgs
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdHandlerBase.AdStateEventArgs.AdState">
+            <summary>
+            The new ad state.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdHandlerPlugin.#ctor">
+            <summary>
+            Creates a new instance of AdHandlerPlugin.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdHandlerPlugin.UnloadPlayer(Microsoft.Media.Advertising.IVpaid)">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdHandlerPlugin.LoadPlayer(Microsoft.Media.Advertising.IVpaid)">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdHandlerPlugin.GetPlayer(Microsoft.Media.Advertising.ICreativeSource)">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdHandlerPlugin.GetCompanionContainer(Microsoft.Media.Advertising.ICompanionSource)">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdHandlerPlugin.SetAdvertisingState(Microsoft.Media.Advertising.AdState)">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdHandlerPlugin.PreferredBitrate">
+            <summary>
+            the preferred bitrate for ads (in bps NOT kbps).
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdHandlerPlugin.AutoLoadAdPlayerFactoryPlugin">
+            <summary>
+            Gets or sets whether the AdPlayerFactoryPlugin should be automatically added to the plugin collection. Set to false if you are providing your own.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdHandlerPlugin.MediaPlayer">
+            <inheritdoc /> 
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Advertising.AdPlayerFactoryPlugin">
+            <summary>
+            Provides a default implementation of IAdPlayerFactoryPlugin that is capable of serving linear video ads or nonlinear image ads.
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Advertising.IAdPlayerFactoryPlugin">
+            <summary>
+            An interface for creating VPAID ad players
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.IAdPlayerFactoryPlugin.GetPlayer(Microsoft.Media.Advertising.ICreativeSource)">
+            <summary>
+            Called when a new VPAID player has been requested.
+            </summary>
+            <param name="creativeSource">The creative source of the ad that needs a player.</param>
+            <returns>The VPAID ad player.</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdPlayerFactoryPlugin.#ctor">
+            <summary>
+            Creates a new instance of AdPlayerFactoryPlugin
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdPlayerFactoryPlugin.GetPlayer(Microsoft.Media.Advertising.ICreativeSource)">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdPlayerFactoryPlugin.SupportedVideoMimeTypes">
+            <summary>
+            Gets the collection MIME types supported for video ads.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdPlayerFactoryPlugin.SkippableOffset">
+            <summary>
+            Gets or sets at which the point at which ads can be skipped.
+            Note: This is used only if VAST 3.0 does not specify this already.
+            Can be in TimeSpan format or percentage.
+            Default = null
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdPlayerFactoryPlugin.IsEnabled">
+            <summary>
+            Gets or sets if the plugin is enabled.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdPlayerFactoryPlugin.VpaidVideoAdPlayerStyle">
+            <summary>
+            Gets or sets a custom style to be used for the VpaidVideoAdPlayer
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdPlayerFactoryPlugin.VpaidImageAdPlayerStyle">
+            <summary>
+            Gets or sets a custom style to be used for the VpaidImageAdPlayer
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdPlayerFactoryPlugin.VpaidWebAdPlayerStyle">
+            <summary>
+            Gets or sets a custom style to be used for the VpaidWebAdPlayer (For IFrame and HTML nonlinear resources)
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdPlayerFactoryPlugin.MediaPlayer">
+            <inheritdoc /> 
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Advertising.AdScheduler">
+            <summary>
+            Helper class used to attach config data specific to each playlist item.
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.Advertising.AdScheduler.AdvertisementsProperty">
+            <summary>
+            Identifies the Advertisements attached property.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdScheduler.SetAdvertisements(Windows.UI.Xaml.DependencyObject,Microsoft.PlayerFramework.Advertising.AdvertisementsCollection)">
+            <summary>
+            Sets the Advertisements attached property value.
+            </summary>
+            <param name="obj">An instance of the MediaPlayer or PlaylistItem.</param>
+            <param name="propertyValue">A value containing the Advertisements to apply to the plugin.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdScheduler.GetAdvertisements(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            Gets the Advertisements attached property value.
+            </summary>
+            <param name="obj">An instance of the MediaPlayer or PlaylistItem.</param>
+            <returns>A value containing the Advertisements to apply to the plugin.</returns>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Advertising.AdvertisementsCollection">
+            <summary>
+            A collection class containing the Advertisements objects associated with a PlaylistItem
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Advertising.AdSchedulerPlugin">
+            <summary>
+            The primary plugin used to help schedule ads.
+            Internally, this plugin calls AdHandlerPlugin when it is time to actually play or preload an ad.
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.Advertising.AdSchedulerPlugin.MarkerType_Play">
+            <summary>
+            The TimelineMarker ID used to store when ads should play.
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.Advertising.AdSchedulerPlugin.MarkerType_Preload">
+            <summary>
+            The TimelineMarker ID used to store when ads should start loading.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdSchedulerPlugin.#ctor">
+            <summary>
+            Creates a new instance of AdSchedulerPlugin
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdSchedulerPlugin.OnUpdate">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdSchedulerPlugin.OnUnload">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdSchedulerPlugin.OnActivate">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdSchedulerPlugin.OnDeactivate">
+            <inheritdoc /> 
+        </member>
+        <member name="F:Microsoft.PlayerFramework.Advertising.AdSchedulerPlugin.EvaluateOnForwardOnlyProperty">
+            <summary>
+            Identifies the EvaluateOnForwardOnly dependency property.
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.Advertising.AdSchedulerPlugin.SeekToAdPositionProperty">
+            <summary>
+            Identifies the SyncToAdPosition dependency property.
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.Advertising.AdSchedulerPlugin.InterruptScrubProperty">
+            <summary>
+            Identifies the InterruptScrub dependency property.
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.Advertising.AdSchedulerPlugin.PreloadTimeProperty">
+            <summary>
+            Identifies the PreloadTime dependency property.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdSchedulerPlugin.OnMediaOpened">
+            <summary>
+            Called when the media has opened.
+            Responsible for skipping ads before the startup position.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdSchedulerPlugin.EvaluateMarkers(System.TimeSpan,System.TimeSpan)">
+            <summary>
+            Evaluates all markers in a window and plays an ad if applicable.
+            </summary>
+            <param name="originalPosition">The window start position.</param>
+            <param name="newPosition">The window end position. Note: This can be before originalPosition if going backwards.</param>
+            <returns>A boolean indicating that an ad was played.</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdSchedulerPlugin.SyncMainContent(System.TimeSpan)">
+            <summary>
+            Called right when an ad starts to force the position of the MediaPlayer.
+            This is useful for making sure the main content resumes immediately at the ad or where ever they were trying to seek to.
+            Position synced is determined by the SeekToAdPosition property.
+            </summary>
+            <param name="position"></param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdSchedulerPlugin.PlayAdAsync(Microsoft.PlayerFramework.Advertising.Advertisement,System.Threading.CancellationToken)">
+            <summary>
+            Plays an advertisement.
+            </summary>
+            <param name="ad">The Advertisement to play.</param>
+            <param name="cancellationToken">A cancellation token.</param>
+            <returns>A task to await for.</returns>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdSchedulerPlugin.HandledAds">
+            <summary>
+            Gets a list of ads that have been handled already. You can remove from this collection to reactivate an ad and make it eligible again.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdSchedulerPlugin.EvaluateOnForwardOnly">
+            <summary>
+            Gets or sets whether seeking or scrubbing back in time can trigger ads. Set to false to allow ads to be played when seeking backwards. Default is true.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdSchedulerPlugin.SeekToAdPosition">
+            <summary>
+            Gets or sets whether the position should be set set to that of the ad when an ad is scrubbed or seeked over. Default is true.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdSchedulerPlugin.InterruptScrub">
+            <summary>
+            Gets or sets whether or not scrubbing is interrupted if an ad is encountered. Default is true.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdSchedulerPlugin.PreloadTime">
+            <summary>
+            Gets or sets the amount of time before an ad will occur that preloading will begin. Set to null to disable preloading. Default is 5 seconds.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdSchedulerPlugin.Advertisements">
+            <summary>
+            Provides the list of ads to schedule. You can add or remove ads to/from this collection during playback.
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Advertising.AdSource">
+            <summary>
+            Provides a way to define an ad source object that contains info about the ad to be played.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdSource.#ctor">
+            <summary>
+            Creates a new instance of AdSource.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdSource.#ctor(System.String)">
+            <summary>
+            Creates a new instance of AdSource.
+            </summary>
+            <param name="type">The type of the ad. Typically, this is "vast".</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdSource.#ctor(System.Object,System.String)">
+            <summary>
+            Creates a new instance of AdSource.
+            </summary>
+            <param name="payload">The payload for the ad. The type of object used here depends on the ad type.</param>
+            <param name="type">The type of the ad. Typically, this is "vast".</param>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdSource.Payload">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdSource.Key">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdSource.Type">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdSource.AllowMultipleAds">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdSource.MaxRedirectDepth">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Advertising.Advertisement">
+            <summary>
+            An abstract base class to store an advertisement.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.Advertisement.Source">
+            <summary>
+            Gets or sets the source for the ad.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.Advertisement.Id">
+            <summary>
+            Gets the ID for the ad. This is only used for internal purposes to help associate the ad with a marker.
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Advertising.MidrollAdvertisement">
+            <summary>
+            Represents a midroll ad to be played during the main content.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.MidrollAdvertisement.#ctor">
+            <summary>
+            Creates a new instance of MidrollAdvertisement
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.MidrollAdvertisement.Time">
+            <summary>
+            The time when the midroll should be played.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.MidrollAdvertisement.TimePercentage">
+            <summary>
+            The time (specified as a percentage of the media duration) when the midroll should be played.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.MidrollAdvertisement.Duration">
+            <summary>
+            This is is for advanced use cases to help indicate the duration of the ad slot (this doesn't necessarily have to be the duration of the ad).
+            This helps in situations where the ad is inserted over the top of a blank spot in the main content and allows seeking the video past the blank spot when the ad is complete.
+            Warning: Set to TimeSpan.Zero if your main content is not altered to contain blank video during ad slots.
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Advertising.PrerollAdvertisement">
+            <summary>
+            Represents a preroll ad to be played before the main content starts.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.PrerollAdvertisement.#ctor">
+            <summary>
+            Creates a new instance of PrerollAdvertisement
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Advertising.PostrollAdvertisement">
+            <summary>
+            Represents a postroll ad to be played after the main content finishes.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.PostrollAdvertisement.#ctor">
+            <summary>
+            Creates a new instance of PostrollAdvertisement
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Advertising.ClipAdPayload">
+            <summary>
+            A single linear clip to play.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.ClipAdPayload.MediaSource">
+            <summary>
+            Gets or sets the source Uri of the ad clip.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.ClipAdPayload.MimeType">
+            <summary>
+            Gets or sets the MimeType of the ad clip.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.ClipAdPayload.ClickThrough">
+            <summary>
+            Gets or sets the click through Uri for the ad. Note: This is optional.
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Advertising.CompanionHost">
+            <summary>
+            A control that can be used to host a companion ad. This is just a HyperlinkButton with a custom style.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.CompanionHost.#ctor">
+            <summary>
+            Creates a new instance of CompanionHost.
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Advertising.FreeWheel">
+            <summary>
+            Helper class used to attach config data specific to each playlist item.
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.Advertising.FreeWheel.SourceProperty">
+            <summary>
+            Identifies the Source attached property.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.FreeWheel.SetSource(Windows.UI.Xaml.DependencyObject,System.Uri)">
+            <summary>
+            Sets the Source attached property value.
+            </summary>
+            <param name="obj">An instance of the MediaPlayer or PlaylistItem.</param>
+            <param name="propertyValue">A value containing the MAST Source.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.FreeWheel.GetSource(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            Gets the Source attached property value.
+            </summary>
+            <param name="obj">An instance of the MediaPlayer or PlaylistItem.</param>
+            <returns>A value containing the MAST Source.</returns>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Advertising.FreeWheelPlugin">
+            <summary>
+            A plugin that is capable of downloading a FreeWheel SmartXML source file, parsing it and using it to schedule when ads should play.
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.Advertising.FreeWheelPlugin.SourceProperty">
+            <summary>
+            Identifies the Source dependency property.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.FreeWheelPlugin.OnUpdate">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.FreeWheelPlugin.OnActivate">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.FreeWheelPlugin.OnDeactivate">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.FreeWheelPlugin.LoadAds(System.Uri,System.Threading.CancellationToken)">
+            <summary>
+            Loads ads from a source URI. Note, this is called automatically if you set the source before the MediaLoading event fires and normally does not need to be called.
+            </summary>
+            <param name="source">The SmartXML source URI</param>
+            <param name="c">A cancellation token that allows you to cancel a pending operation</param>
+            <returns>A task to await on.</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.FreeWheelPlugin.PlayAdAsync(Microsoft.PlayerFramework.Advertising.Advertisement,System.Threading.CancellationToken)">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.FreeWheelPlugin.Source">
+            <summary>
+            Gets or sets the source Uri of the FreeWheel SmartXML file
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Advertising.VmapScheduler">
+            <summary>
+            Helper class used to attach config data specific to each playlist item.
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.Advertising.VmapScheduler.SourceProperty">
+            <summary>
+            Identifies the Source attached property.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VmapScheduler.SetSource(Windows.UI.Xaml.DependencyObject,System.Uri)">
+            <summary>
+            Sets the Source attached property value.
+            </summary>
+            <param name="obj">An instance of the MediaPlayer or PlaylistItem.</param>
+            <param name="propertyValue">A value containing the MAST Source.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VmapScheduler.GetSource(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            Gets the Source attached property value.
+            </summary>
+            <param name="obj">An instance of the MediaPlayer or PlaylistItem.</param>
+            <returns>A value containing the MAST Source.</returns>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Advertising.MediaPlayerExtensions">
+            <summary>
+            A helper extension class to make it easy to perform advertising related functions.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.MediaPlayerExtensions.PlayLinearClip(Microsoft.PlayerFramework.MediaPlayer,System.Uri,System.IProgress{Microsoft.Media.Advertising.AdStatus},System.Threading.CancellationToken)">
+            <summary>
+            Plays a simple linear clip
+            </summary>
+            <param name="mediaPlayer">The MediaPlayer instance to play the clip in.</param>
+            <param name="clipSource">The source Uri of the clip.</param>
+            <param name="progress">An object that allows progress to be reported.</param>
+            <param name="cancellationToken">A cancellation token that can be used to cancel the operation.</param>
+            <returns>An awaitable task that returns true if the clip was played.</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.MediaPlayerExtensions.PlayAd(Microsoft.PlayerFramework.MediaPlayer,Microsoft.Media.Advertising.IAdSource,System.IProgress{Microsoft.Media.Advertising.AdStatus},System.Threading.CancellationToken)">
+            <summary>
+            Plays an ad.
+            </summary>
+            <param name="mediaPlayer">The MediaPlayer instance to play the ad in.</param>
+            <param name="adSource">An object that defines the source of the ad.</param>
+            <param name="progress">An object that allows progress to be reported.</param>
+            <param name="cancellationToken">A cancellation token that can be used to cancel the operation.</param>
+            <returns>An awaitable task that returns true if the ad was played.</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.MediaPlayerExtensions.PreloadAd(Microsoft.PlayerFramework.MediaPlayer,Microsoft.Media.Advertising.IAdSource,System.Threading.CancellationToken)">
+            <summary>
+            Preloads an ad so it is ready to play instantly when PlayAd is called.
+            </summary>
+            <param name="mediaPlayer">The MediaPlayer instance to play the ad in.</param>
+            <param name="adSource">An object that defines the source of the ad.</param>
+            <param name="cancellationToken">A cancellation token that can be used to cancel the operation.</param>
+            <returns>An awaitable task that returns when the ad is done preloading.</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.MediaPlayerExtensions.ShowCompanion(Microsoft.PlayerFramework.MediaPlayer,Microsoft.Media.Advertising.ICompanionSource)">
+            <summary>
+            Shows a companion ad not associated with a linear ad.
+            </summary>
+            <param name="mediaPlayer">The MediaPlayer instance to play the ad in.</param>
+            <param name="companionSource">An model containing the companion ad to show.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.MediaPlayerExtensions.UnloadAllCompanions(Microsoft.PlayerFramework.MediaPlayer)">
+            <summary>
+            Unloads all companion ads.
+            </summary>
+            <param name="mediaPlayer">The MediaPlayer instance to play the ad in.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.MediaPlayerExtensions.GetAdSchedulerPlugin(Microsoft.PlayerFramework.MediaPlayer)">
+            <summary>
+            Gets a reference to the active AdSchedulerPlugin.
+            </summary>
+            <param name="mediaPlayer">The MediaPlayer instance to get the associated plugin for.</param>
+            <returns>A reference to the plugin.</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.MediaPlayerExtensions.GetMastSchedulerPlugin(Microsoft.PlayerFramework.MediaPlayer)">
+            <summary>
+            Gets a reference to the active MastSchedulerPlugin.
+            </summary>
+            <param name="mediaPlayer">The MediaPlayer instance to get the associated plugin for.</param>
+            <returns>A reference to the plugin.</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.MediaPlayerExtensions.GetVmapSchedulerPlugin(Microsoft.PlayerFramework.MediaPlayer)">
+            <summary>
+            Gets a reference to the active VmapSchedulerPlugin.
+            </summary>
+            <param name="mediaPlayer">The MediaPlayer instance to get the associated plugin for.</param>
+            <returns>A reference to the plugin.</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.MediaPlayerExtensions.GetFreeWheelPlugin(Microsoft.PlayerFramework.MediaPlayer)">
+            <summary>
+            Gets a reference to the active FreeWheelPlugin (used to advertise with FreeWheel).
+            </summary>
+            <param name="mediaPlayer">The MediaPlayer instance to get the associated plugin for.</param>
+            <returns>A reference to the plugin.</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.MediaPlayerExtensions.GetAdHandlerPlugin(Microsoft.PlayerFramework.MediaPlayer)">
+            <summary>
+            Gets a reference to the active AdHandlerPlugin.
+            </summary>
+            <param name="mediaPlayer">The MediaPlayer instance to get the associated plugin for.</param>
+            <returns>A reference to the plugin.</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.MediaPlayerExtensions.GetAdPlayerFactoryPlugin(Microsoft.PlayerFramework.MediaPlayer)">
+            <summary>
+            Gets a reference to the active AdPlayerFactoryPlugin.
+            </summary>
+            <param name="mediaPlayer">The MediaPlayer instance to get the associated plugin for.</param>
+            <returns>A reference to the plugin.</returns>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Advertising.MastAdapter">
+            <summary>
+            Adapts an IPlayer to IMastAdapter.
+            Used to provide the MAST conditions all the info they need to fire triggers.
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Advertising.MastScheduler">
+            <summary>
+            Helper class used to attach config data specific to each playlist item.
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.Advertising.MastScheduler.SourceProperty">
+            <summary>
+            Identifies the Source attached property.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.MastScheduler.SetSource(Windows.UI.Xaml.DependencyObject,System.Uri)">
+            <summary>
+            Sets the Source attached property value.
+            </summary>
+            <param name="obj">An instance of the MediaPlayer or PlaylistItem.</param>
+            <param name="propertyValue">A value containing the MAST Source.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.MastScheduler.GetSource(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            Gets the Source attached property value.
+            </summary>
+            <param name="obj">An instance of the MediaPlayer or PlaylistItem.</param>
+            <returns>A value containing the MAST Source.</returns>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Advertising.MastSchedulerPlugin">
+            <summary>
+            A plugin that is capable of downloading a MAST source file, parsing it and using it to schedule when ads should play.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.MastSchedulerPlugin.#ctor">
+            <summary>
+            Creates a new instance of MastSchedulerPlugin
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.MastSchedulerPlugin.OnActivate">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.MastSchedulerPlugin.OnDeactivate">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.MastSchedulerPlugin.OnUpdate">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.MastSchedulerPlugin.CancelActiveTriggers">
+            <summary>
+            Cancels all active triggers.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.MastSchedulerPlugin.LoadAds(System.Uri,System.Threading.CancellationToken)">
+            <summary>
+            Loads ads from a source URI. Note, this is called automatically if you set the source before the MediaLoading event fires and normally does not need to be called.
+            </summary>
+            <param name="source">The MAST source URI</param>
+            <param name="c">A cancellation token that allows you to cancel a pending operation</param>
+            <returns>A task to await on.</returns>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.Advertising.MastSchedulerPlugin.SourceProperty">
+            <summary>
+            Identifies the Source dependency property.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.MastSchedulerPlugin.Source">
+            <summary>
+            Gets or sets the source Uri of the MAST file
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Advertising.VmapSchedulerPlugin">
+            <summary>
+            A plugin that is capable of downloading a VMAP source file, parsing it and using it to schedule when ads should play.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VmapSchedulerPlugin.#ctor">
+            <summary>
+            Creates a new instance of VmapSchedulerPlugin
+            </summary>
+        </member>
+        <member name="F:Microsoft.PlayerFramework.Advertising.VmapSchedulerPlugin.SourceProperty">
+            <summary>
+            Identifies the Source dependency property.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VmapSchedulerPlugin.OnUpdate">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VmapSchedulerPlugin.OnActivate">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VmapSchedulerPlugin.OnDeactivate">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VmapSchedulerPlugin.LoadAds(System.Uri,System.Threading.CancellationToken)">
+            <summary>
+            Loads ads from a source URI. Note, this is called automatically if you set the source before the MediaLoading event fires and normally does not need to be called.
+            </summary>
+            <param name="source">The VMAP source URI</param>
+            <param name="c">A cancellation token that allows you to cancel a pending operation</param>
+            <returns>A task to await on.</returns>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VmapSchedulerPlugin.PlayAdAsync(Microsoft.PlayerFramework.Advertising.Advertisement,System.Threading.CancellationToken)">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VmapSchedulerPlugin.GetAdSource(Microsoft.Media.Advertising.VmapAdSource)">
+            <summary>
+            Creates an IAdSource from a VMAP AdSource (required for the AdHandlerPlugin to play the ad).
+            </summary>
+            <param name="source">The VMAP AdSource object</param>
+            <returns>An IAdSource object that can be played by the AdHandlerPlugin. Returns null if insufficient data is available.</returns>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VmapSchedulerPlugin.PollingInterval">
+            <summary>
+            Gets or sets the amount of time to check the server for updated data. Only applies when MediaPlayer.IsLive = true
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VmapSchedulerPlugin.Source">
+            <summary>
+            Gets or sets the source Uri of the VMAP file
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Advertising.AdHost">
+            <summary>
+            Provides a base class to host an ad player in.
+            This is essentially a ContentControl with a hyperlink on top.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdHost.#ctor">
+            <summary>
+            Creates a new instance of AdHost.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.AdHost.OnApplyTemplate">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdHost.LayoutRoot">
+            <summary>
+            Gets the LayoutRoot container for the ad.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdHost.InitialDimensions">
+            <summary>
+            Gets or sets the initial dimensions for the ad.
+            </summary>
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.AdHost.Navigated">
+            <summary>
+            Raised after nativation occurs.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdHost.ClickThroughButton">
+            <summary>
+            Gets the Button control.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdHost.IsTemplateLoaded">
+            <summary>
+            Indicates that the template has been loaded.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdHost.NavigateUri">
+            <summary>
+            Gets or sets the Uri to navigate to when the hyperlink button is clicked.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.AdHost.AdLinear">
+            <summary>
+            Gets or sets if the ad is linear or nonlinear
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer">
+            <summary>
+            A VPAID implementation for a nonlinear image ad.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.#ctor(Microsoft.Media.Advertising.FlexibleOffset,System.Nullable{System.TimeSpan},System.Uri)">
+            <summary>
+            Creates a new instance of VpaidImageAdPlayer.
+            </summary>
+            <param name="skippableOffset">The position in the ad at which the ad can be skipped. If null, the ad cannot be skipped.</param>
+            <param name="suggestedDuration">The duration of the ad. If not specified, the ad is closed when the next ad is played.</param>
+            <param name="clickThru">The Uri to navigate to when the ad is clicked or tapped. Can be null of no action should take place.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.HandshakeVersion(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.InitAd(System.Double,System.Double,System.String,System.Int32,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.StartAd">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.StopAd">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.OnAdEnding">
+            <summary>
+            Called when the ad is ending for any reason besides a failure.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.ResizeAd(System.Double,System.Double,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.PauseAd">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.ResumeAd">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.ExpandAd">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.CollapseAd">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.SkipAd">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.SkippableOffset">
+            <summary>
+            Gets the position in the ad at which the ad can be skipped. If null, the ad cannot be skipped.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.SuggestedDuration">
+            <summary>
+            Gets the duration of the ad. If not specified, the ad is closed when the next ad is played.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.ClickThru">
+            <summary>
+            Gets the Uri to navigate to when the ad is clicked or tapped. Can be null of no action should take place.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdExpanded">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdRemainingTime">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdVolume">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdLoaded">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdStarted">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdStopped">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdPaused">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdPlaying">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdExpandedChanged">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdLinearChanged">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdVolumeChanged">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdVideoStart">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdVideoFirstQuartile">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdVideoMidpoint">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdVideoThirdQuartile">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdVideoComplete">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdUserAcceptInvitation">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdUserClose">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdUserMinimize">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdRemainingTimeChange">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdImpression">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdClickThru">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdError">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdLog">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdSkipped">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdSizeChanged">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdSkippableStateChange">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdDurationChange">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdInteraction">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdWidth">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdHeight">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdSkippableState">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdDuration">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdCompanions">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidImageAdPlayer.AdIcons">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Advertising.VpaidHtmlAdPlayer">
+            <summary>
+            A VPAID implementation base class for a web (HTML string) based ad.
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer">
+            <summary>
+            A VPAID implementation base class for a web (HTML) based ad.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.#ctor(Microsoft.Media.Advertising.FlexibleOffset,System.Nullable{System.TimeSpan},System.Uri,Windows.Foundation.Size)">
+            <summary>
+            Creates a new instance of VpaidImageAdPlayer.
+            </summary>
+            <param name="skippableOffset">The position in the ad at which the ad can be skipped. If null, the ad cannot be skipped.</param>
+            <param name="suggestedDuration">The duration of the ad. If not specified, the ad is closed when the next ad is played.</param>
+            <param name="clickThru">The Uri to navigate to when the ad is clicked or tapped. Can be null of no action should take place.</param>
+            <param name="dimensions">The dimensions of the ad.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.HandshakeVersion(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.InitAd(System.Double,System.Double,System.String,System.Int32,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.StartAd">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.StopAd">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.OnAdEnding">
+            <summary>
+            Called when the ad is ending for any reason besides a failure.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.ResizeAd(System.Double,System.Double,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.PauseAd">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.ResumeAd">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.ExpandAd">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.CollapseAd">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.SkipAd">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.WebView">
+            <summary>
+            Gets the web browser control responsible for displaying the ad.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.SkippableOffset">
+            <summary>
+            Gets the position in the ad at which the ad can be skipped. If null, the ad cannot be skipped.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.SuggestedDuration">
+            <summary>
+            Gets the duration of the ad. If not specified, the ad is closed when the next ad is played.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.ClickThru">
+            <summary>
+            Gets the Uri to navigate to when the ad is clicked or tapped. Can be null of no action should take place.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdExpanded">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdRemainingTime">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdVolume">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdLoaded">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdStarted">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdStopped">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdPaused">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdPlaying">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdExpandedChanged">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdLinearChanged">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdVolumeChanged">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdVideoStart">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdVideoFirstQuartile">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdVideoMidpoint">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdVideoThirdQuartile">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdVideoComplete">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdUserAcceptInvitation">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdUserClose">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdUserMinimize">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdRemainingTimeChange">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdImpression">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdClickThru">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdError">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdLog">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdSkipped">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdSizeChanged">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdSkippableStateChange">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdDurationChange">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdInteraction">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdWidth">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdHeight">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdSkippableState">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdDuration">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdCompanions">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidWebAdPlayer.AdIcons">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidHtmlAdPlayer.#ctor(Microsoft.Media.Advertising.FlexibleOffset,System.Nullable{System.TimeSpan},System.Uri,Windows.Foundation.Size)">
+            <summary>
+            Creates a new instance of VpaidIFrameAdPlayer.
+            </summary>
+            <param name="skippableOffset">The position in the ad at which the ad can be skipped. If null, the ad cannot be skipped.</param>
+            <param name="suggestedDuration">The suggested duration of the ad.</param>
+            <param name="clickThru">The Uri to navigate to when the ad is clicked or tapped. Can be null of no action should take place.</param>
+            <param name="dimensions">The dimensions of the ad.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidHtmlAdPlayer.InitAd(System.Double,System.Double,System.String,System.Int32,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Advertising.VpaidIFrameAdPlayer">
+            <summary>
+            A VPAID implementation base class for a web (IFrame URL) based ad.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidIFrameAdPlayer.#ctor(Microsoft.Media.Advertising.FlexibleOffset,System.Nullable{System.TimeSpan},System.Uri,Windows.Foundation.Size)">
+            <summary>
+            Creates a new instance of VpaidIFrameAdPlayer.
+            </summary>
+            <param name="skippableOffset">The position in the ad at which the ad can be skipped. If null, the ad cannot be skipped.</param>
+            <param name="suggestedDuration">The suggested duration of the ad.</param>
+            <param name="clickThru">The Uri to navigate to when the ad is clicked or tapped. Can be null of no action should take place.</param>
+            <param name="dimensions">The dimensions of the ad.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidIFrameAdPlayer.InitAd(System.Double,System.Double,System.String,System.Int32,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Advertising.VpaidNonLinearAdViewModel">
+            <summary>
+            Provides a view model specific to nonlinear VPAID ad players.
+            This helps the control panel properly display and function during a nonlinear ad.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidNonLinearAdViewModel.#ctor">
+            <summary>
+            HACK: Allows an instance to be created from Xaml. Without this, xamltypeinfo is not generated and binding will not work.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidNonLinearAdViewModel.OnPause">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidNonLinearAdViewModel.OnPlayResume">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidNonLinearAdViewModel.Vpaid">
+            <summary>
+            The VPAID player playing a nonlinear ad.
+            </summary>
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer">
+            <summary>
+            A VPAID implementation for a linear video ad.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.#ctor(Microsoft.Media.Advertising.FlexibleOffset,System.Nullable{System.TimeSpan},System.Uri)">
+            <summary>
+            Creates a new instance of VpaidVideoAdPlayer.
+            </summary>
+            <param name="skippableOffset">The position in the ad at which the ad can be skipped. If null, the ad cannot be skipped.</param>
+            <param name="maxDuration">The max duration of the ad. If not specified, the length of the video is assumed.</param>
+            <param name="clickThru">The Uri to navigate to when the ad is clicked or tapped. Can be null of no action should take place.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.Restart">
+            <summary>
+            Restarts the ad from the beginning. Note: any quartile events that have already fired will not fire again.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.HandshakeVersion(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.InitAd(System.Double,System.Double,System.String,System.Int32,System.String,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.OnInitAd(System.String)">
+            <summary>
+            Invoked when the ad is to be initialized.
+            </summary>
+            <param name="creativeData">The ad itself. Typically a Url for a video.</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.OnLoaded">
+            <summary>
+            Invoked when the ad has finished loading.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.StartAd">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.OnStartAd">
+            <summary>
+            Invoked when the ad should start. Needs to call OnAdStarted when complete.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.StopAd">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.OnAdEnding">
+            <summary>
+            Called when the ad is ending for any reason besides a failure.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.OnTeardown">
+            <summary>
+            Invoked when the ad is being torn down.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.ResizeAd(System.Double,System.Double,System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.PauseAd">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.ResumeAd">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.ExpandAd">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.CollapseAd">
+            <inheritdoc />
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.SkipAd">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.SkippableOffset">
+            <summary>
+            Gets the position in the ad at which the ad can be skipped. If null, the ad cannot be skipped.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.MaxDuration">
+            <summary>
+            Gets the max duration of the ad. If not specified, the length of the video is assumed.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AudioCategory">
+            <summary>
+            Gets or sets the AudioCategory on the underlying MediaElement
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdExpanded">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdRemainingTime">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdVolume">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdLoaded">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdStarted">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdStopped">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdPaused">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdPlaying">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdExpandedChanged">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdLinearChanged">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdVolumeChanged">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdVideoStart">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdVideoFirstQuartile">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdVideoMidpoint">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdVideoThirdQuartile">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdVideoComplete">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdUserAcceptInvitation">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdUserClose">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdUserMinimize">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdRemainingTimeChange">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdImpression">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdClickThru">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdError">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdLog">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdSkipped">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdSizeChanged">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdSkippableStateChange">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdDurationChange">
+            <inheritdoc />
+        </member>
+        <member name="E:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdInteraction">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdWidth">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdHeight">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdSkippableState">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdDuration">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdCompanions">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidVideoAdPlayer.AdIcons">
+            <inheritdoc />
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel">
+            <summary>
+            Binds a vpaid ad player to the UI. This does 2 things: 1) reacts to changes in the vpaid player 2) pushes commands at the vpaid player to pause, resume, stop and skip.
+            Supports both VPAID 1.1 and VPAID 2.0 players
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.#ctor">
+            <summary>
+            HACK: Allows an instance to be created from Xaml. Without this, xamltypeinfo is not generated and binding will not work.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.OnStop">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.OnPause">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.OnInvokeCaptionSelection">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.OnInvokeAudioSelection">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.OnSkipPrevious(Microsoft.PlayerFramework.VisualMarker)">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.OnSkipNext(Microsoft.PlayerFramework.VisualMarker)">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.OnSkipBack(System.TimeSpan)">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.OnSkipAhead(System.TimeSpan)">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.OnSeek(System.TimeSpan,System.Boolean@)">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.OnCompleteScrub(System.TimeSpan,System.Boolean@)">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.OnStartScrub(System.TimeSpan,System.Boolean@)">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.OnScrub(System.TimeSpan,System.Boolean@)">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.OnGoLive">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.OnInvokeInfo">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.OnInvokeMore">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.OnPlayResume">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.OnReplay">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.OnDecreasePlaybackRate">
+            <inheritdoc /> 
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.OnIncreasePlaybackRate">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.Vpaid">
+            <summary>
+            Gets the VPAID 1.1 player associated with the view model.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.Vpaid2">
+            <summary>
+            Gets the VPAID 2.0 player associated with the view mode. This is the same object as Vpaid and is null if the player only supports v1.1
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.MediaPlayer">
+            <summary>
+            Gets the MediaPlayer instance the ViewModel is associated with.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.AvailableCaptions">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.SelectedCaption">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.VisualMarkers">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.IsGoLiveEnabled">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.IsInfoEnabled">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.IsMoreEnabled">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.IsPlayResumeEnabled">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.IsPauseEnabled">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.IsStopEnabled">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.IsReplayEnabled">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.IsAudioSelectionEnabled">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.IsCaptionSelectionEnabled">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.IsRewindEnabled">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.IsFastForwardEnabled">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.IsSlowMotionEnabled">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.IsSeekEnabled">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.IsSkipPreviousEnabled">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.IsSkipNextEnabled">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.IsSkipBackEnabled">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.IsSkipAheadEnabled">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.IsScrubbingEnabled">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.IsFullScreenEnabled">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.IsZoomEnabled">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel._IsMuted">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel._IsFullScreen">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel._IsSlowMotion">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel._Volume">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel._Zoom">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.BufferingProgress">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.DownloadProgress">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.Duration">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.EndTime">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.StartTime">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.TimeRemaining">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.Position">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.MaxPosition">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.CurrentState">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.AvailableAudioStreams">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.SelectedAudioStream">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.TimeFormatConverter">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.SkipBackInterval">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.SkipAheadInterval">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.SignalStrength">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.MediaQuality">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.VpaidLinearAdViewModel.ThumbnailImageSource">
+            <inheritdoc /> 
+        </member>
+        <member name="T:Microsoft.PlayerFramework.Advertising.RemoteAdSource">
+            <summary>
+            Provides an ad source that requires a Url to be downloaded and turned into a stream before passing to the ad handler.
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.RemoteAdSource.#ctor">
+            <summary>
+            Creates a new instance of RemoteAdSource
+            </summary>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.RemoteAdSource.#ctor(System.Uri,System.String)">
+            <summary>
+            Creates a new instance of RemoteAdSource
+            </summary>
+            <param name="uri">The Uri to download and turn into a stream payload.</param>
+            <param name="type">The type of the ad. Normally this is "vast"</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.RemoteAdSource.#ctor(System.Net.Http.HttpClient,System.String)">
+            <summary>
+            Creates a new instance of RemoteAdSource
+            </summary>
+            <param name="httpClient">The HttpClient object to use to download the payload.</param>
+            <param name="type">The type of the ad. Normally this is "vast"</param>
+        </member>
+        <member name="M:Microsoft.PlayerFramework.Advertising.RemoteAdSource.LoadPayload">
+            <summary>
+            Loads the ad payload from the web.
+            </summary>
+            <returns>Awaitable action</returns>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.RemoteAdSource.HttpClient">
+            <summary>
+            Gets or sets an HttpClient object to use when requesting the URLs over HTTP
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.RemoteAdSource.IsLoaded">
+            <summary>
+            Gets if the Payload has been loaded yet.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.RemoteAdSource.Uri">
+            <summary>
+            Gets or sets the Uri of the ad.
+            </summary>
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.RemoteAdSource.Key">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.RemoteAdSource.Type">
+            <inheritdoc /> 
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.RemoteAdSource.AllowMultipleAds">
+            <inheritdoc />
+        </member>
+        <member name="P:Microsoft.PlayerFramework.Advertising.RemoteAdSource.MaxRedirectDepth">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<api version="1.0" spec="1.0" xmlns="http://openajax.org/metadata">
+  <author name="Microsoft Corporation" />
+  <enum name="WinJS.UI.AppBar.layout" datatype="String">
+    <option value="commands">
+      <label locid="WinJS.UI.AppBar.layout_commands">AppBar contains AppBarCommand objects</label>
+    </option>
+    <option value="custom">
+      <label locid="WinJS.UI.AppBar.layout_custom">AppBar containing custom content</label>
+    </option>
+  </enum>
+  <enum name="WinJS.UI.AppBar.placement" datatype="String">
+    <options unconstrained="true">
+      <option value="top">
+        <label locid="WinJS.UI.AppBar.placement_top">Place AppBar at the top edge</label>
+      </option>
+      <option value="bottom">
+        <label locid="WinJS.UI.AppBar.placement_bottom">Place AppBar at the bottom edge</label>
+      </option>
+    </options>
+  </enum>
+  <enum name="WinJS.UI.AppBarCommand.section" datatype="String">
+    <options unconstrained="true">
+      <option value="global">
+        <label locid="WinJS.UI.AppBarCommand.section_global">Place AppBarCommand in the section for global commands</label>
+      </option>
+      <option value="selection">
+        <label locid="WinJS.UI.AppBarCommand.section_selection">Place AppBarCommand in the section for selection commands</label>
+      </option>
+    </options>
+  </enum>
+  <enum name="WinJS.UI.AppBarCommand.type" datatype="String">
+    <option value="button">
+      <label locid="WinJS.UI.AppBarCommand.type_button">A simple press button</label>
+    </option>
+    <option value="toggle">
+      <label locid="WinJS.UI.AppBarCommand.type_toggle">A command that can be selected or unselected</label>
+    </option>
+  </enum>
+  <enum name="WinJS.UI.Orientation" datatype="String">
+    <options>
+      <option value="horizontal">
+        <label locid="WinJS.UI.Orientation_horizontal">Horizontal</label>
+      </option>
+      <option value="vertical">
+        <label locid="WinJS.UI.Orientation_vertical">Vertical</label>
+      </option>
+    </options>
+  </enum>
+  <enum name="WinJS.UI.HeaderPosition" datatype="String">
+    <options>
+      <option value="top">
+        <label locid="WinJS.UI.HeaderPosition_top">Place the header of each group above its items</label>
+      </option>
+      <option value="left">
+        <label locid="WinJS.UI.HeaderPosition_left">Place the header of each group to the left of its items</label>
+      </option>
+    </options>
+  </enum>
+  <enum name="WinJS.UI.ListView.LoadingBehavior" datatype="String">
+    <options>
+      <option value="incremental">
+        <label locid="WinJS.UI.ListView.LoadingBehavior_incremental">ListView represents the beginning of the collection. As the user scrolls, additional items are loaded.</label>
+      </option>
+      <option value="randomAccess">
+        <label locid="WinJS.UI.ListView.LoadingBehavior_randomAccess">ListView represents the complete collection. As the user jumps around the collection, items are loaded and unloaded.</label>
+      </option>
+    </options>
+  </enum>
+  <enum name="WinJS.UI.ListView.SelectionMode" datatype="String">
+    <options>
+      <option value="none">
+        <label locid="WinJS.UI.ListView.SelectionMode_none">Disables the selection of items in ListView</label>
+      </option>
+      <option value="multi">
+        <label locid="WinJS.UI.ListView.SelectionMode_multi">Allows multiple items to be selected in ListView</label>
+      </option>
+    </options>
+  </enum>
+  <enum name="WinJS.UI.SwipeBehavior" datatype="String">
+    <options>
+      <option value="none">
+        <label locid="WinJS.UI.SwipeBehavior_none">Swiping an item has no effect</label>
+      </option>
+      <option value="select">
+        <label locid="WinJS.UI.SwipeBehavior_select">Swiping an item toggles its selection state</label>
+      </option>
+    </options>
+  </enum>
+  <enum name="WinJS.UI.TapBehavior" datatype="String">
+    <options>
+      <option value="none">
+        <label locid="WinJS.UI.TapBehavior_none">Tapping an item has no effect</label>
+      </option>
+      <option value="invokeOnly">
+        <label locid="WinJS.UI.TapBehavior_invokeOnly">Tapping an item invokes it</label>
+      </option>
+      <option value="toggleSelect">
+        <label locid="WinJS.UI.TapBehavior_toggleSelect">Tapping an item invokes it and toggles its selection state</label>
+      </option>
+    </options>
+  </enum>
+  <enum name="WinJS.UI.GroupHeaderTapBehavior" datatype="String">
+    <options>
+      <option value="none">
+        <label locid="WinJS.UI.GroupHeaderTapBehavior_none">Tapping a header has no effect</label>
+      </option>
+      <option value="invoke">
+        <label locid="WinJS.UI.GroupHeaderTapBehavior_invoke">Tapping a header invokes it</label>
+      </option>
+    </options>
+  </enum>  
+  <locale messages="controls_winjs.ui.enums_loc_oam.xml" />
+</api>

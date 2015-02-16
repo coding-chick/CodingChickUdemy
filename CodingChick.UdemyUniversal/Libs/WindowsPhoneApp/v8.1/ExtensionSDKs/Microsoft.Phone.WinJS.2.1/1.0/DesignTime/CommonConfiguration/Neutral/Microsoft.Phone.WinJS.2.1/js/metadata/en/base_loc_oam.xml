@@ -1,0 +1,904 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<messagebundle>
+  <msg name="WinJS.PromiseStateMachine.cancel">Attempts to cancel the fulfillment of a promised value. If the promise hasn't
+ already been fulfilled and cancellation is supported, the promise enters
+ the error state with a value of Error("Canceled").</msg>
+  <msg name="WinJS.PromiseStateMachine.done">Allows you to specify the work to be done on the fulfillment of the promised value,
+ the error handling to be performed if the promise fails to fulfill
+ a value, and the handling of progress notifications along the way.
+
+ After the handlers have finished executing, this function throws any error that would have been returned
+ from then() as a promise in the error state.</msg>
+  <msg name="WinJS.PromiseStateMachine.done_p:onComplete">The function to be called if the promise is fulfilled successfully with a value.
+ The fulfilled value is passed as the single argument. If the value is null,
+ the fulfilled value is returned. The value returned
+ from the function becomes the fulfilled value of the promise returned by
+ then(). If an exception is thrown while executing the function, the promise returned
+ by then() moves into the error state.</msg>
+  <msg name="WinJS.PromiseStateMachine.done_p:onError">The function to be called if the promise is fulfilled with an error. The error
+ is passed as the single argument. If it is null, the error is forwarded.
+ The value returned from the function is the fulfilled value of the promise returned by then().</msg>
+  <msg name="WinJS.PromiseStateMachine.done_p:onProgress">the function to be called if the promise reports progress. Data about the progress
+ is passed as the single argument. Promises are not required to support
+ progress.</msg>
+  <msg name="WinJS.PromiseStateMachine.then">Allows you to specify the work to be done on the fulfillment of the promised value,
+ the error handling to be performed if the promise fails to fulfill
+ a value, and the handling of progress notifications along the way.</msg>
+  <msg name="WinJS.PromiseStateMachine.then_p:onComplete">The function to be called if the promise is fulfilled successfully with a value.
+ The value is passed as the single argument. If the value is null, the value is returned.
+ The value returned from the function becomes the fulfilled value of the promise returned by
+ then(). If an exception is thrown while this function is being executed, the promise returned
+ by then() moves into the error state.</msg>
+  <msg name="WinJS.PromiseStateMachine.then_p:onError">The function to be called if the promise is fulfilled with an error. The error
+ is passed as the single argument. If it is null, the error is forwarded.
+ The value returned from the function becomes the fulfilled value of the promise returned by then().</msg>
+  <msg name="WinJS.PromiseStateMachine.then_p:onProgress">The function to be called if the promise reports progress. Data about the progress
+ is passed as the single argument. Promises are not required to support
+ progress.</msg>
+  <msg name="WinJS.PromiseStateMachine.then_returnValue">The promise whose value is the result of executing the complete or
+ error function.</msg>
+  <msg name="WinJS.Promise">A promise provides a mechanism to schedule work to be done on a value that
+ has not yet been computed. It is a convenient abstraction for managing
+ interactions with asynchronous APIs.</msg>
+  <msg name="WinJS.Promise_p:init">The function that is called during construction of the  promise. The function
+ is given three arguments (complete, error, progress). Inside this function
+ you should add event listeners for the notifications supported by this value.</msg>
+  <msg name="WinJS.Promise_p:oncancel">The function to call if a consumer of this promise wants
+ to cancel its undone work. Promises are not required to
+ support cancellation.</msg>
+  <msg name="WinJS.Promise.addEventListener">Adds an event listener to the control.</msg>
+  <msg name="WinJS.Promise.addEventListener_p:eventType">The type (name) of the event.</msg>
+  <msg name="WinJS.Promise.addEventListener_p:listener">The listener to invoke when the event is raised.</msg>
+  <msg name="WinJS.Promise.addEventListener_p:capture">Specifies whether or not to initiate capture.</msg>
+  <msg name="WinJS.Promise.any">Returns a promise that is fulfilled when one of the input promises
+ has been fulfilled.</msg>
+  <msg name="WinJS.Promise.any_p:values">An array that contains promise objects or objects whose property
+ values include promise objects.</msg>
+  <msg name="WinJS.Promise.any_returnValue">A promise that on fulfillment yields the value of the input (complete or error).</msg>
+  <msg name="WinJS.Promise.as">Returns a promise. If the object is already a promise it is returned;
+ otherwise the object is wrapped in a promise.</msg>
+  <msg name="WinJS.Promise.as_p:value">The value to be treated as a promise.</msg>
+  <msg name="WinJS.Promise.as_returnValue">A promise.</msg>
+  <msg name="WinJS.Promise.cancel">Canceled promise value, can be returned from a promise completion handler
+ to indicate cancelation of the promise chain.</msg>
+  <msg name="WinJS.Promise.dispatchEvent">Raises an event of the specified type and properties.</msg>
+  <msg name="WinJS.Promise.dispatchEvent_p:details">The set of additional properties to be attached to the event object.</msg>
+  <msg name="WinJS.Promise.dispatchEvent_returnValue">Specifies whether preventDefault was called on the event.</msg>
+  <msg name="WinJS.Promise.is">Determines whether a value fulfills the promise contract.</msg>
+  <msg name="WinJS.Promise.is_p:value">A value that may be a promise.</msg>
+  <msg name="WinJS.Promise.is_returnValue">true if the specified value is a promise, otherwise false.</msg>
+  <msg name="WinJS.Promise.join">Creates a promise that is fulfilled when all the values are fulfilled.</msg>
+  <msg name="WinJS.Promise.join_p:values">An object whose fields contain values, some of which may be promises.</msg>
+  <msg name="WinJS.Promise.join_returnValue">A promise whose value is an object with the same field names as those of the object in the values parameter, where
+ each field value is the fulfilled value of a promise.</msg>
+  <msg name="WinJS.Promise.removeEventListener">Removes an event listener from the control.</msg>
+  <msg name="WinJS.Promise.removeEventListener_listener">The listener to remove.</msg>
+  <msg name="WinJS.Promise.then">A static version of the promise instance method then().</msg>
+  <msg name="WinJS.Promise.then_p:value">the value to be treated as a promise.</msg>
+  <msg name="WinJS.Promise.then_p:complete">The function to be called if the promise is fulfilled with a value.
+ If it is null, the promise simply
+ returns the value. The value is passed as the single argument.</msg>
+  <msg name="WinJS.Promise.then_p:error">The function to be called if the promise is fulfilled with an error. The error
+ is passed as the single argument.</msg>
+  <msg name="WinJS.Promise.then_returnValue">A promise whose value is the result of executing the provided complete function.</msg>
+  <msg name="WinJS.Promise.thenEach">Performs an operation on all the input promises and returns a promise
+ that has the shape of the input and contains the result of the operation
+ that has been performed on each input.</msg>
+  <msg name="WinJS.Promise.thenEach_p:values">A set of values (which could be either an array or an object) of which some or all are promises.</msg>
+  <msg name="WinJS.Promise.thenEach_p:complete">The function to be called if the promise is fulfilled with a value.
+ If the value is null, the promise returns the value.
+ The value is passed as the single argument.</msg>
+  <msg name="WinJS.Promise.thenEach_returnValue">A promise that is the result of calling Promise.join on the values parameter.</msg>
+  <msg name="WinJS.Promise.timeout">Creates a promise that is fulfilled after a timeout.</msg>
+  <msg name="WinJS.Promise.timeout_p:timeout">The timeout period in milliseconds. If this value is zero or not specified
+ setImmediate is called, otherwise setTimeout is called.</msg>
+  <msg name="WinJS.Promise.timeout_p:promise">A promise that will be canceled if it doesn't complete before the
+ timeout has expired.</msg>
+  <msg name="WinJS.Promise.timeout_returnValue">A promise that is completed asynchronously after the specified timeout.</msg>
+  <msg name="WinJS.Promise.wrap">Wraps a non-promise value in a promise. You can use this function if you need
+ to pass a value to a function that requires a promise.</msg>
+  <msg name="WinJS.Promise.wrap_p:value">Some non-promise value to be wrapped in a promise.</msg>
+  <msg name="WinJS.Promise.wrap_returnValue">A promise that is successfully fulfilled with the specified value</msg>
+  <msg name="WinJS.Promise.wrapError">Wraps a non-promise error value in a promise. You can use this function if you need
+ to pass an error to a function that requires a promise.</msg>
+  <msg name="WinJS.Promise.wrapError_p:error">A non-promise error value to be wrapped in a promise.</msg>
+  <msg name="WinJS.Promise.wrapError_returnValue">A promise that is in an error state with the specified value.</msg>
+  <msg name="WinJS.Utilities.Scheduler._JobNode.completed">Gets a value that indicates whether the job has completed. This value is true if job has run to completion
+ and false if it hasn't yet run or was canceled.</msg>
+  <msg name="WinJS.Utilities.Scheduler._JobNode.id">Gets the unique identifier for this job.</msg>
+  <msg name="WinJS.Utilities.Scheduler._JobNode.name">Gets or sets a string that specifies the diagnostic name for this job.</msg>
+  <msg name="WinJS.Utilities.Scheduler._JobNode.owner">Gets an owner token for the job. You can use this owner token�s cancelAll method to cancel related jobs.</msg>
+  <msg name="WinJS.Utilities.Scheduler._JobNode.priority">Gets or sets the priority at which this job is executed by the scheduler.</msg>
+  <msg name="WinJS.Utilities.Scheduler._JobNode.cancel">Cancels the job.</msg>
+  <msg name="WinJS.Utilities.Scheduler._JobNode.pause">Pauses the job.</msg>
+  <msg name="WinJS.Utilities.Scheduler._JobNode.resume">Resumes the job if it's been paused.</msg>
+  <msg name="WinJS.Utilities.Scheduler._JobInfo.job">The job instance for which the work is currently being executed.</msg>
+  <msg name="WinJS.Utilities.Scheduler._JobInfo.shouldYield">A boolean which will become true when the work item is requested to cooperatively yield by the scheduler.</msg>
+  <msg name="WinJS.Utilities.Scheduler._JobInfo.setPromise">Called when the  work item is blocked on asynchronous work.
+ The scheduler waits for the specified Promise to complete before rescheduling the job.</msg>
+  <msg name="WinJS.Utilities.Scheduler._JobInfo.setPromise_p:promise">A Promise value which, when completed, provides a work item function to be re-scheduled.</msg>
+  <msg name="WinJS.Utilities.Scheduler._JobInfo.setWork">Called  when the work item is cooperatively yielding to the scheduler and has more work to complete in the future.
+ Use this method to schedule additonal work for when the work item is about to yield.</msg>
+  <msg name="WinJS.Utilities.Scheduler._JobInfo.setWork_p:work">The work function which will be re-scheduled.</msg>
+  <msg name="WinJS.Utilities.Scheduler._OwnerToken.cancelAll">Cancels all jobs that are associated with this owner token.</msg>
+  <msg name="WinJS.ErrorFromName">Creates an Error object with the specified name and message properties.</msg>
+  <msg name="WinJS.ErrorFromName_p:name">The name of this error. The name is meant to be consumed programmatically and should not be localized.</msg>
+  <msg name="WinJS.ErrorFromName_p:message">The message for this error. The message is meant to be consumed by humans and should be localized.</msg>
+  <msg name="WinJS.ErrorFromName_returnValue">Error instance with .name and .message properties populated</msg>
+  <msg name="WinJS.Utilities.QueryCollection">Represents the result of a query selector, and provides
+ various operations that perform actions over the elements of
+ the collection.</msg>
+  <msg name="WinJS.Utilities.QueryCollection_p:items">The items resulting from the query.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.forEach">Performs an action on each item in the QueryCollection</msg>
+  <msg name="WinJS.Utilities.QueryCollection.forEach_p:callbackFn">Action to perform on each item.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.forEach_p:thisArg">Argument to bind to callbackFn</msg>
+  <msg name="WinJS.Utilities.QueryCollection.forEach_returnValue">Returns the QueryCollection</msg>
+  <msg name="WinJS.Utilities.QueryCollection.get">Gets an item from the QueryCollection.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.get_p:index">The index of the item to return.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.get_returnValue">A single item from the collection.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.setAttribute">Sets an attribute value on all the items in the collection.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.setAttribute_p:name">The name of the attribute to be set.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.setAttribute_p:value">The value of the attribute to be set.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.setAttribute_returnValue">This QueryCollection object.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.getAttribute">Gets an attribute value from the first element in the collection.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.getAttribute_p:name">The name of the attribute.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.getAttribute_returnValue">The value of the attribute.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.addClass">Adds the specified class to all the elements in the collection.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.addClass_p:name">The name of the class to add.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.hasClass">Determines whether the specified class exists on the first element of the collection.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.hasClass_p:name">The name of the class.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.hasClass_returnValue">true if the element has the specified class; otherwise, false.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.removeClass">Removes the specified class from all the elements in the collection.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.removeClass_p:name">The name of the class to be removed.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.toggleClass">Toggles (adds or removes) the specified class on all the elements in the collection.
+ If the class is present, it is removed; if it is absent, it is added.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.toggleClass_p:name">The name of the class to be toggled.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.listen">Registers the listener for the specified event on all the elements in the collection.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.listen_p:eventType">The name of the event.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.listen_p:listener">The event handler function to be called when the event occurs.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.listen_p:capture">true if capture == true is to be passed to addEventListener; otherwise, false.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.removeEventListener">Unregisters the listener for the specified event on all the elements in the collection.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.removeEventListener_p:listener">The event handler function.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.removeEventListener_p:capture">true if capture == true; otherwise, false.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.setStyle">Sets the specified style property for all the elements in the collection.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.setStyle_p:name">The name of the style property.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.setStyle_p:value">The value for the property.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.clearStyle">Clears the specified style property for all the elements in the collection.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.clearStyle_p:name">The name of the style property to be cleared.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.query">Executes a query selector on all the elements in the collection
+ and aggregates the result into a QueryCollection.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.query_p:query">The query selector string.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.query_returnValue">A QueryCollection object containing the aggregate results of
+ executing the query on all the elements in the collection.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.include">Adds a set of items to this QueryCollection.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.include_p:items">The items to add to the QueryCollection. This may be an
+ array-like object, a document fragment, or a single item.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.control">Creates controls that are attached to the elements in this QueryCollection.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.control_p:ctor">A constructor function that is used to create controls to attach to the elements.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.control_p:options">The options passed to the newly-created controls.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.control2">Configures the controls that are attached to the elements in this QueryCollection.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.control_p:ctor2">The options passed to the controls.</msg>
+  <msg name="WinJS.UI.HtmlControl">Enables you to include an HTML page dynamically.</msg>
+  <msg name="WinJS.UI.HtmlControl_name">HtmlControl</msg>
+  <msg name="WinJS.UI.HtmlControl.constructor">Initializes a new instance of HtmlControl to define a new page control.</msg>
+  <msg name="WinJS.UI.HtmlControl.constructor_p:element">The element that hosts the HtmlControl.</msg>
+  <msg name="WinJS.UI.HtmlControl.constructor_p:options">The options for configuring the page. The uri option is required in order to specify the source
+ document for the content of the page.</msg>
+  <msg name="WinJS.UI.TabContainer.constructor">Constructs the TabContainer.</msg>
+  <msg name="WinJS.UI.TabContainer.constructor_p:element">The DOM element to be associated with the TabContainer.</msg>
+  <msg name="WinJS.UI.TabContainer.constructor_p:options">The set of options to be applied initially to the TabContainer.</msg>
+  <msg name="WinJS.UI.TabContainer.constructor_returnValue">A constructed TabContainer.</msg>
+  <msg name="WinJS.UI.TabContainer.dispose">Disposes the Tab Container.</msg>
+  <msg name="WinJS.UI.TabContainer.childFocus">Gets or sets the child element that has focus.</msg>
+  <msg name="WinJS.UI.TabContainer.tabIndex">Gets or sets the tab order of the control within its container.</msg>
+  <msg name="WinJS.Application.IOHelper.exists">Determines if the specified file exists in the container</msg>
+  <msg name="WinJS.Application.IOHelper.exists_p:fileName">The file which may exist within this folder</msg>
+  <msg name="WinJS.Application.IOHelper.exists_returnValue">Promise with either true (file exists) or false.</msg>
+  <msg name="WinJS.Application.IOHelper.remove">Delets a file in the container</msg>
+  <msg name="WinJS.Application.IOHelper.remove_p:fileName">The file to be deleted</msg>
+  <msg name="WinJS.Application.IOHelper.remove_returnValue">Promise which is fulfilled when the file has been deleted</msg>
+  <msg name="WinJS.Application.IOHelper.writeText">Writes a file to the container with the specified text</msg>
+  <msg name="WinJS.Application.IOHelper.writeText_p:fileName">The file to write to</msg>
+  <msg name="WinJS.Application.IOHelper.writeText_p:str">Content to be written to the file</msg>
+  <msg name="WinJS.Application.IOHelper.writeText_returnValue">Promise with the count of characters written</msg>
+  <msg name="WinJS.Application.IOHelper.readText">Reads the contents of a file from the container, if the file
+ doesn't exist, def is returned.</msg>
+  <msg name="WinJS.Application.IOHelper.readText_p:fileName">The file to read from</msg>
+  <msg name="WinJS.Application.IOHelper.readText_p:def">Default value to be returned if the file failed to open</msg>
+  <msg name="WinJS.Application.IOHelper.readText_returnValue">Promise containing the contents of the file, or def.</msg>
+  <msg name="WinJS.Application.InMemoryHelper.exists_p:fileName">The filename which may exist within this folder</msg>
+  <msg name="WinJS.Application.InMemoryHelper.remove">Deletes a file in the container</msg>
+  <msg name="WinJS.Application.InMemoryHelper.writeText_p:fileName">The filename to write to</msg>
+  <msg name="WinJS.Application.InMemoryHelper.readText_p:fileName">The filename to read from</msg>
+  <msg name="WinJS.Binding.observableMixin.bind">Links the specified action to the property specified in the name parameter.
+ This function is invoked when the value of the property may have changed.
+ It is not guaranteed that the action will be called only when a value has actually changed,
+ nor is it guaranteed that the action will be called for every value change. The implementation
+ of this function coalesces change notifications, such that multiple updates to a property
+ value may result in only a single call to the specified action.</msg>
+  <msg name="WinJS.Binding.observableMixin.bind_p:name">The name of the property to which to bind the action.</msg>
+  <msg name="WinJS.Binding.observableMixin.bind_p:action">The function to invoke asynchronously when the property may have changed.</msg>
+  <msg name="WinJS.Binding.observableMixin.bind_returnValue">This object is returned.</msg>
+  <msg name="WinJS.Binding.Template.constructor">Creates a template that provides a reusable declarative binding element.</msg>
+  <msg name="WinJS.Binding.Template.constructor_p:element">The DOM element to convert to a template.</msg>
+  <msg name="WinJS.Binding.Template.constructor_p:options">If this parameter is supplied, the template is loaded from the URI and
+ the content of the element parameter is ignored.</msg>
+  <msg name="WinJS.Binding.Template.bindingInitializer">If specified this function is used as the default initializer for any data bindings which do not explicitly specify one. The
+ provided function must be marked as supported for processing.</msg>
+  <msg name="WinJS.Binding.Template.debugBreakOnRender">Indicates whether a templates should break in the debugger on first render</msg>
+  <msg name="WinJS.Binding.Template.disableOptimizedProcessing">Set this property to true to resotre classic template processing and data binding and disable template compilation.</msg>
+  <msg name="WinJS.Binding.Template.element">Gets the DOM element that is used as the template.</msg>
+  <msg name="WinJS.Binding.Template.extractChild">Return the first element child of the template instead of a wrapper element hosting all the template content.</msg>
+  <msg name="WinJS.Binding.Template.processTimeout">Number of milliseconds to delay instantiating declarative controls. Zero (0) will result in no delay, any negative number
+ will result in a setImmediate delay, any positive number will be treated as the number of milliseconds.</msg>
+  <msg name="WinJS.Binding.Template.render">Binds values from the specified data context to elements that are descendents of the specified root element
+ and have the declarative binding attributes (data-win-bind).</msg>
+  <msg name="WinJS.Binding.Template.render_p:dataContext">The object to use for default data binding.</msg>
+  <msg name="WinJS.Binding.Template.render_p:container">The element to which to add this rendered template. If this parameter is omitted, a new DIV is created.</msg>
+  <msg name="WinJS.Binding.Template.render_returnValue">A promise that is completed after binding has finished. The value is
+ either the element specified in the container parameter or the created DIV.</msg>
+  <msg name="WinJS.Binding.Template.renderItem">Renders an instance of this template bound to the data contained in item. If
+ the recycled parameter is present, and enableRecycling is true, then the template attempts
+ to reuse the DOM elements from the recycled parameter.</msg>
+  <msg name="WinJS.Binding.Template.renderItem_p:item">The object that contains the data to bind to. Only item.data is required.</msg>
+  <msg name="WinJS.Binding.Template.renderItem_p:recycled">A previously-generated template instance.</msg>
+  <msg name="WinJS.Binding.Template.renderItem_returnValue">The DOM element.</msg>
+  <msg name="WinJS.Binding.Template">Provides a reusable declarative binding element.</msg>
+  <msg name="WinJS.Binding.Template_name">Template</msg>
+  <msg name="WinJS.Binding.List.constructor">Creates a WinJS.Binding.List object.</msg>
+  <msg name="WinJS.Binding.List.constructor_p:list">The array containing the elements to initalize the list.</msg>
+  <msg name="WinJS.Binding.List.constructor_p:options">If options.binding is true, the list will contain the result of calling WinJS.Binding.as() on the element values. If options.proxy is true, the list specified as the first parameter is used as the storage for the WinJS.Binding.List. This option should be used with care because uncoordinated edits to the data storage will result in errors.</msg>
+  <msg name="WinJS.Binding.List.constructor_returnValue">The newly-constructed WinJS.Binding.List instance.</msg>
+  <msg name="WinJS.Binding.List.length">Gets or sets the length of the list, which is an integer value one higher than the highest element defined in the list.</msg>
+  <msg name="WinJS.Binding.List.getItem">Gets a key/data pair for the specified list index.</msg>
+  <msg name="WinJS.Binding.List.getItem_p:index">The index of value to retrieve.</msg>
+  <msg name="WinJS.Binding.List.getItem_returnValue">An object with .key and .data properties.</msg>
+  <msg name="WinJS.Binding.List.getItemFromKey">Gets a key/data pair for the list item key specified.</msg>
+  <msg name="WinJS.Binding.List.getItemFromKey_p:key">The key of the value to retrieve.</msg>
+  <msg name="WinJS.Binding.List.indexOfKey">Gets the index of the first occurrence of a key in a list.</msg>
+  <msg name="WinJS.Binding.List.indexOfKey_p:key">The key to locate in the list.</msg>
+  <msg name="WinJS.Binding.List.indexOfKey_returnValue">The index of the first occurrence of a key in a list, or -1 if not found.</msg>
+  <msg name="WinJS.Binding.List.move">Moves the value at index to the specified position.</msg>
+  <msg name="WinJS.Binding.List.move_p:index">The original index of the value.</msg>
+  <msg name="WinJS.Binding.List.move_p:newIndex">The index of the value after the move.</msg>
+  <msg name="WinJS.Binding.List.notifyMutated">Forces the list to send a itemmutated notification to any listeners for the value at the specified index.</msg>
+  <msg name="WinJS.Binding.List.notifyMutated_p:index">The index of the value that was mutated.</msg>
+  <msg name="WinJS.Binding.List.setAt">Replaces the value at the specified index with a new value.</msg>
+  <msg name="WinJS.Binding.List.setAt_p:index">The index of the value that was replaced.</msg>
+  <msg name="WinJS.Binding.List.setAt_p:newValue">The new value.</msg>
+  <msg name="WinJS.Binding.List.reverse">Returns a list with the elements reversed. This method reverses the elements of a list object in place. It does not create a new list object during execution.</msg>
+  <msg name="WinJS.Binding.List.reverse_returnValue">The reversed list.</msg>
+  <msg name="WinJS.Binding.List.sort">Returns a list with the elements sorted. This method sorts the elements of a list object in place. It does not create a new list object during execution.</msg>
+  <msg name="WinJS.Binding.List.sort_p:sortFunction">The function used to determine the order of the elements. If omitted, the elements are sorted in ascending, ASCII character order.</msg>
+  <msg name="WinJS.Binding.List.sort_returnValue">The sorted list.</msg>
+  <msg name="WinJS.Binding.List.pop">Removes the last element from a list and returns it.</msg>
+  <msg name="WinJS.Binding.List.pop_returnValue">Last element from the list.</msg>
+  <msg name="WinJS.Binding.List.push">Appends new element(s) to a list, and returns the new length of the list.</msg>
+  <msg name="WinJS.Binding.List.push_p:value">The element to insert at the end of the list.</msg>
+  <msg name="WinJS.Binding.List.push_returnValue">The new length of the list.</msg>
+  <msg name="WinJS.Binding.List.shift">Removes the first element from a list and returns it.</msg>
+  <msg name="WinJS.Binding.List.shift_returnValue">First element from the list.</msg>
+  <msg name="WinJS.Binding.List.unshift_p:value">The element to insert at the start of the list.</msg>
+  <msg name="WinJS.Binding.List.splice">Removes elements from a list and, if necessary, inserts new elements in their place, returning the deleted elements.</msg>
+  <msg name="WinJS.Binding.List.splice_p:start">The zero-based location in the list from which to start removing elements.</msg>
+  <msg name="WinJS.Binding.List.splice_p:howMany">The number of elements to remove.</msg>
+  <msg name="WinJS.Binding.List.splice_p:item">The elements to insert into the list in place of the deleted elements.</msg>
+  <msg name="WinJS.Binding.List.splice_returnValue">The deleted elements.</msg>
+  <msg name="WinJS.Namespace.defineWithParent">Defines a new namespace with the specified name under the specified parent namespace.</msg>
+  <msg name="WinJS.Namespace.defineWithParent_p:parentNamespace">The parent namespace.</msg>
+  <msg name="WinJS.Namespace.defineWithParent_p:name">The name of the new namespace.</msg>
+  <msg name="WinJS.Namespace.defineWithParent_p:members">The members of the new namespace.</msg>
+  <msg name="WinJS.Namespace.defineWithParent_returnValue">The newly-defined namespace.</msg>
+  <msg name="WinJS.Namespace.define">Defines a new namespace with the specified name.</msg>
+  <msg name="WinJS.Namespace.define_p:name">The name of the namespace. This could be a dot-separated name for nested namespaces.</msg>
+  <msg name="WinJS.Class.define">Defines a class using the given constructor and the specified instance members.</msg>
+  <msg name="WinJS.Class.define_p:constructor">A constructor function that is used to instantiate this class.</msg>
+  <msg name="WinJS.Class.define_p:instanceMembers">The set of instance fields, properties, and methods made available on the class.</msg>
+  <msg name="WinJS.Class.define_p:staticMembers">The set of static fields, properties, and methods made available on the class.</msg>
+  <msg name="WinJS.Class.define_returnValue">The newly-defined class.</msg>
+  <msg name="WinJS.Class.derive">Creates a sub-class based on the supplied baseClass parameter, using prototypal inheritance.</msg>
+  <msg name="WinJS.Class.derive_p:baseClass">The class to inherit from.</msg>
+  <msg name="WinJS.Class.derive_p:instanceMembers">The set of instance fields, properties, and methods to be made available on the class.</msg>
+  <msg name="WinJS.Class.derive_p:staticMembers">The set of static fields, properties, and methods to be made available on the class.</msg>
+  <msg name="WinJS.Class.mix">Defines a class using the given constructor and the union of the set of instance members
+ specified by all the mixin objects. The mixin parameter list is of variable length.</msg>
+  <msg name="WinJS.Utilities.hasWinRT">Determine if WinRT is accessible in this script context.</msg>
+  <msg name="WinJS.Utilities.getMember">Gets the leaf-level type or namespace specified by the name parameter.</msg>
+  <msg name="WinJS.Utilities.getMember_p:name">The name of the member.</msg>
+  <msg name="WinJS.Utilities.getMember_p:root">The root to start in. Defaults to the global object.</msg>
+  <msg name="WinJS.Utilities.getMember_returnValue">The leaf-level type or namespace in the specified parent namespace.</msg>
+  <msg name="WinJS.Utilities.ready">Ensures that the specified function executes only after the DOMContentLoaded event has fired
+ for the current page.</msg>
+  <msg name="WinJS.Utilities.ready_returnValue">A promise that completes after DOMContentLoaded has occurred.</msg>
+  <msg name="WinJS.Utilities.ready_p:callback">A function that executes after DOMContentLoaded has occurred.</msg>
+  <msg name="WinJS.Utilities.ready_p:async">If true, the callback is executed asynchronously.</msg>
+  <msg name="WinJS.Utilities.strictProcessing">Determines if strict declarative processing is enabled in this script context.</msg>
+  <msg name="WinJS.Utilities.markSupportedForProcessing">Marks a function as being compatible with declarative processing, such as WinJS.UI.processAll
+ or WinJS.Binding.processAll.</msg>
+  <msg name="WinJS.Utilities.markSupportedForProcessing_p:func">The function to be marked as compatible with declarative processing.</msg>
+  <msg name="WinJS.Utilities.markSupportedForProcessing_returnValue">The input function.</msg>
+  <msg name="WinJS.Utilities.requireSupportedForProcessing">Asserts that the value is compatible with declarative processing, such as WinJS.UI.processAll
+ or WinJS.Binding.processAll. If it is not compatible an exception will be thrown.</msg>
+  <msg name="WinJS.Utilities.requireSupportedForProcessing_p:value">The value to be tested for compatibility with declarative processing. If the
+ value is a function it must be marked with a property 'supportedForProcessing'
+ with a value of true.</msg>
+  <msg name="WinJS.Utilities.requireSupportedForProcessing_returnValue">The input value.</msg>
+  <msg name="WinJS.strictProcessing">Strict processing is always enforced, this method has no effect.</msg>
+  <msg name="WinJS.Utilities.isPhone">Determine if we are currently running in the Phone.</msg>
+  <msg name="WinJS.Utilities.formatLog">Adds tags and type to a logging message.</msg>
+  <msg name="WinJS.Utilities.startLog_p:message">The message to format.</msg>
+  <msg name="WinJS.Utilities.startLog_p:tag">The tag(s) to apply to the message. Separate multiple tags with spaces.</msg>
+  <msg name="WinJS.Utilities.startLog_p:type">The type of the message.</msg>
+  <msg name="WinJS.Utilities.startLog_returnValue">The formatted message.</msg>
+  <msg name="WinJS.Utilities.startLog">Configures a logger that writes messages containing the specified tags from WinJS.log to console.log.</msg>
+  <msg name="WinJS.Utilities.startLog_p:options">The tags for messages to log. Separate multiple tags with spaces.</msg>
+  <msg name="WinJS.Utilities.startLog2">Configure a logger to write WinJS.log output.</msg>
+  <msg name="WinJS.Utilities.startLog_p:options2">May contain .type, .tags, .excludeTags and .action properties.
+  - .type is a required tag.
+  - .excludeTags is a space-separated list of tags, any of which will result in a message not being logged.
+  - .tags is a space-separated list of tags, any of which will result in a message being logged.
+  - .action is a function that, if present, will be called with the log message, tags and type. The default is to log to the console.</msg>
+  <msg name="WinJS.Utilities.stopLog">Removes the previously set up logger.</msg>
+  <msg name="WinJS.Utilities.createEventProperties">Creates an object that has one property for each name passed to the function.</msg>
+  <msg name="WinJS.Utilities.createEventProperties_p:events">A variable list of property names.</msg>
+  <msg name="WinJS.Utilities.createEventProperties_returnValue">The object with the specified properties. The names of the properties are prefixed with 'on'.</msg>
+  <msg name="WinJS.Utilities.eventMixin.addEventListener_p:useCapture">if true initiates capture, otherwise false.</msg>
+  <msg name="WinJS.Utilities.eventMixin.dispatchEvent">Raises an event of the specified type and with the specified additional properties.</msg>
+  <msg name="WinJS.Utilities.eventMixin.dispatchEvent_p:details">The set of additional properties to be attached to the event object when the event is raised.</msg>
+  <msg name="WinJS.Utilities.eventMixin.dispatchEvent_returnValue">true if preventDefault was called on the event.</msg>
+  <msg name="WinJS.Utilities.eventMixin.removeEventListener_p:useCapture">Specifies whether to initiate capture.</msg>
+  <msg name="WinJS.Resources.addEventListener">Registers an event handler for the specified event.</msg>
+  <msg name="WinJS.Resources.addEventListener_p:type">The name of the event to handle.</msg>
+  <msg name="WinJS.Resources.addEventListener_p:listener">The listener to invoke when the event gets raised.</msg>
+  <msg name="WinJS.Resources.addEventListener_p:useCapture">Set to true to register the event handler for the capturing phase; set to false to register for the bubbling phase.</msg>
+  <msg name="WinJS.Resources.getString">Retrieves the resource string that has the specified resource id.</msg>
+  <msg name="WinJS.Resources.getString._p:resourceId">The resource id of the string to retrieve.</msg>
+  <msg name="WinJS.Resources.getString_returnValue">An object that can contain these properties:
+ 
+ value:
+ The value of the requested string. This property is always present.
+ 
+ empty:
+ A value that specifies whether the requested string wasn't found.
+ If its true, the string wasn't found. If its false or undefined,
+ the requested string was found.
+ 
+ lang:
+ The language of the string, if specified. This property is only present
+ for multi-language resources.</msg>
+  <msg name="WinJS.Utilities.Scheduler.retrieveState">Returns a string representation of the scheduler's state for diagnostic
+ purposes. The jobs and drain requests are displayed in the order in which
+ they are currently expected to be processed. The current job and drain
+ request are marked by an asterisk.</msg>
+  <msg name="WinJS.Utilities.Scheduler.requestDrain">Runs jobs in the scheduler without timeslicing until all jobs at the
+ specified priority and higher have executed.</msg>
+  <msg name="WinJS.Utilities.Scheduler.requestDrain_p:priority">The priority to which the scheduler should drain. The default is Priority.min, which drains all jobs in the queue.</msg>
+  <msg name="WinJS.Utilities.Scheduler.requestDrain_p:name">An optional description of the drain request for diagnostics.</msg>
+  <msg name="WinJS.Utilities.Scheduler.requestDrain_returnValue">A promise which completes when the drain has finished. Canceling this
+ promise cancels the drain request. This promise will never enter an error state.</msg>
+  <msg name="WinJS.Utilities.Scheduler.execHigh">Runs the specified callback in a high priority context.</msg>
+  <msg name="WinJS.Utilities.Scheduler.execHigh_p:callback">The callback to run in a high priority context.</msg>
+  <msg name="WinJS.Utilities.Scheduler.execHigh_returnValue">The return value of the callback.</msg>
+  <msg name="WinJS.Utilities.Scheduler.createOwnerToken">Creates and returns a new owner token which can be set to the owner property of one or more jobs.
+ It can then be used to cancel all jobs it "owns".</msg>
+  <msg name="WinJS.Utilities.Scheduler.createOwnerToken_returnValue">The new owner token. You can use this token to control jobs that it owns.</msg>
+  <msg name="WinJS.Utilities.Scheduler.schedule">Schedules the specified function to execute asynchronously.</msg>
+  <msg name="WinJS.Utilities.Scheduler.schedule_p:work">A function that represents the work item to be scheduled. When called the work item will receive as its first argument  
+ a JobInfo object which allows the work item to ask the scheduler if it should yield cooperatively and if so allows the 
+ work item to either provide a function to be run as a continuation or a WinJS.Promise which will when complete
+ provide a function to run as a continuation.</msg>
+  <msg name="WinJS.Utilities.Scheduler.schedule_p:priority">The priority at which to schedule the work item. The default value is Priority.normal.</msg>
+  <msg name="WinJS.Utilities.Scheduler.schedule_p:thisArg">A 'this' instance to be bound into the work item. The default value is null.</msg>
+  <msg name="WinJS.Utilities.Scheduler.schedule_p:name">A description of the work item for diagnostics. The default value is an empty string.</msg>
+  <msg name="WinJS.Utilities.Scheduler.schedule_returnValue">The Job instance which represents this work item.</msg>
+  <msg name="WinJS.Utilities.Scheduler.schedulePromise">Schedules a job to complete a returned Promise.
+ There are four versions of this method for different commonly used priorities: schedulePromiseHigh,
+ schedulePromiseAboveNormal, schedulePromiseNormal, schedulePromiseBelowNormal,
+ and schedulePromiseIdle. 
+ Example usage which shows how to
+ ensure that the last link in a promise chain is run on the scheduler at high priority:
+ asyncOp().then(Scheduler.schedulePromiseHigh).then(function (valueOfAsyncOp) { });</msg>
+  <msg name="WinJS.Utilities.Scheduler.schedulePromise_p:promiseValue">The value with which the returned promise will complete.</msg>
+  <msg name="WinJS.Utilities.Scheduler.schedulePromise_p:jobName">A string that describes the job for diagnostic purposes.</msg>
+  <msg name="WinJS.Utilities.Scheduler.schedulePromise_returnValue">A promise which completes within a job of the desired priority.</msg>
+  <msg name="WinJS.Utilities.Scheduler.currentPriority">Gets the current priority at which the caller is executing.</msg>
+  <msg name="WinJS.xhr">Wraps calls to XMLHttpRequest in a promise.</msg>
+  <msg name="WinJS.xhr_p:options">The options that are applied to the XMLHttpRequest object. They are: type,
+ url, user, password, headers, responseType, data, and customRequestInitializer.</msg>
+  <msg name="WinJS.xhr_returnValue">A promise that returns the XMLHttpRequest object when it completes.</msg>
+  <msg name="WinJS.xhr.constructor._returnValue"></msg>
+  <msg name="WinJS.Utilities.setInnerHTML">Sets the innerHTML property of the specified element to the specified text.</msg>
+  <msg name="WinJS.Utilities.setInnerHTML_p:element">The element on which the innerHTML property is to be set.</msg>
+  <msg name="WinJS.Utilities.setInnerHTML_p:text">The value to be set to the innerHTML property.</msg>
+  <msg name="WinJS.Utilities.setOuterHTML">Sets the outerHTML property of the specified element to the specified text.</msg>
+  <msg name="WinJS.Utilities.setOuterHTML_p:element">The element on which the outerHTML property is to be set.</msg>
+  <msg name="WinJS.Utilities.setOuterHTML_p:text">The value to be set to the outerHTML property.</msg>
+  <msg name="WinJS.Utilities.insertAdjacentHTML">Calls insertAdjacentHTML on the specified element.</msg>
+  <msg name="WinJS.Utilities.insertAdjacentHTML_p:element">The element on which insertAdjacentHTML is to be called.</msg>
+  <msg name="WinJS.Utilities.insertAdjacentHTML_p:position">The position relative to the element at which to insert the HTML.</msg>
+  <msg name="WinJS.Utilities.insertAdjacentHTML_p:text">The value to be provided to insertAdjacentHTML.</msg>
+  <msg name="WinJS.Utilities.setOuterHTMLUnsafe">Sets the outerHTML property of the specified element to the specified text
+ in the context of msWWA.execUnsafeLocalFunction.</msg>
+  <msg name="WinJS.Utilities.insertAdjacentHTMLUnsafe">Calls insertAdjacentHTML on the specified element in the context
+ of msWWA.execUnsafeLocalFunction.</msg>
+  <msg name="WinJS.Utilities.insertAdjacentHTMLUnsafe_p:text">Value to be provided to insertAdjacentHTML.</msg>
+  <msg name="WinJS.Utilities.msIsStaticHTML.setInnerHTML">Sets the innerHTML property of a element to the specified text
+ if it passes a msIsStaticHTML check.</msg>
+  <msg name="WinJS.Utilities.msIsStaticHTML.setOuterHTML">Sets the outerHTML property of a element to the specified text
+ if it passes a msIsStaticHTML check.</msg>
+  <msg name="WinJS.Utilities.msIsStaticHTML.insertAdjacentHTML">Calls insertAdjacentHTML on the element if it passes
+ a msIsStaticHTML check.</msg>
+  <msg name="WinJS.Utilities.markDisposable">Adds the specified dispose implementation to the specified element and marks it as disposable.</msg>
+  <msg name="WinJS.Utilities.markDisposable_p:element">The element to mark as disposable.</msg>
+  <msg name="WinJS.Utilities.markDisposable_p:disposeImpl">The function containing the element-specific dispose logic that will be called by the dispose function.</msg>
+  <msg name="WinJS.Utilities.disposeSubTree">Disposes all first-generation disposable elements that are descendents of the specified element.
+ The specified element itself is not disposed.</msg>
+  <msg name="WinJS.Utilities.disposeSubTree_p:element">The root element whose sub-tree is to be disposed.</msg>
+  <msg name="WinJS.UI.DOMEventMixin.setOptions">Adds the set of declaratively specified options (properties and events) to the specified control.
+ If name of the options property begins with "on", the property value is a function and the control
+ supports addEventListener. The setOptions method calls the addEventListener method on the control.</msg>
+  <msg name="WinJS.UI.DOMEventMixin.setOptions_p:control">The control on which the properties and events are to be applied.</msg>
+  <msg name="WinJS.UI.DOMEventMixin.setOptions_p:options">The set of options that are specified declaratively.</msg>
+  <msg name="WinJS.UI.DOMEventMixin.addEventListener_p:useCapture">true to initiate capture; otherwise, false.</msg>
+  <msg name="WinJS.UI.DOMEventMixin.dispatchEvent">Raises an event of the specified type, adding the specified additional properties.</msg>
+  <msg name="WinJS.UI.DOMEventMixin.dispatchEvent_returnValue">true if preventDefault was called on the event, otherwise false.</msg>
+  <msg name="WinJS.UI.select.createSelect">Walks the DOM tree from the given  element to the root of the document, whenever
+ a selector scope is encountered select performs a lookup within that scope for
+ the given selector string. The first matching element is returned.</msg>
+  <msg name="WinJS.UI.select.createSelect_p:selector">The selector string.</msg>
+  <msg name="WinJS.UI.select.createSelect_returnValue">The target element, if found.</msg>
+  <msg name="WinJS.UI.processAll">Applies declarative control binding to all elements, starting at the specified root element.</msg>
+  <msg name="WinJS.UI.processAll_p:rootElement">The element at which to start applying the binding. If this parameter is not specified, the binding is applied to the entire document.</msg>
+  <msg name="WinJS.UI.processAll_p:skipRoot">If true, the elements to be bound skip the specified root element and include only the children.</msg>
+  <msg name="WinJS.UI.processAll_returnValue">A promise that is fulfilled when binding has been applied to all the controls.</msg>
+  <msg name="WinJS.UI.process">Applies declarative control binding to the specified element.</msg>
+  <msg name="WinJS.UI.process_p:element">The element to bind.</msg>
+  <msg name="WinJS.UI.process_returnValue">A promise that is fulfilled after the control is activated. The value of the
+ promise is the control that is attached to element.</msg>
+  <msg name="WinJS.Utilities.query">Executes a query selector on the specified element or the entire document.</msg>
+  <msg name="WinJS.Utilities.query_p:query">The query selector to be executed.</msg>
+  <msg name="WinJS.Utilities.query_p:element">The element on which to execute the query. If this parameter is not specified, the
+ query is executed on the entire document.</msg>
+  <msg name="WinJS.Utilities.query_returnValue">The QueryCollection that contains the results of the query.</msg>
+  <msg name="WinJS.Utilities.id">Looks up an element by ID and wraps the result in a QueryCollection.</msg>
+  <msg name="WinJS.Utilities.id_p:id">The ID of the element.</msg>
+  <msg name="WinJS.Utilities.id_returnValue">A QueryCollection that contains the element, if it is found.</msg>
+  <msg name="WinJS.Utilities.children">Creates a QueryCollection that contains the children of the specified parent element.</msg>
+  <msg name="WinJS.Utilities.children_p:element">The parent element.</msg>
+  <msg name="WinJS.Utilities.children_returnValue">The QueryCollection that contains the children of the element.</msg>
+  <msg name="WinJS.Utilities.Key">Defines a set of keyboard values.</msg>
+  <msg name="WinJS.Utilities.Key.backspace">BACKSPACE key.</msg>
+  <msg name="WinJS.Utilities.Key.tab">TAB key.</msg>
+  <msg name="WinJS.Utilities.Key.enter">ENTER key.</msg>
+  <msg name="WinJS.Utilities.Key.shift">Shift key.</msg>
+  <msg name="WinJS.Utilities.Key.ctrl">CTRL key.</msg>
+  <msg name="WinJS.Utilities.Key.alt">ALT key</msg>
+  <msg name="WinJS.Utilities.Key.pause">Pause key.</msg>
+  <msg name="WinJS.Utilities.Key.capsLock">CAPS LOCK key.</msg>
+  <msg name="WinJS.Utilities.Key.escape">ESCAPE key.</msg>
+  <msg name="WinJS.Utilities.Key.space">SPACE key.</msg>
+  <msg name="WinJS.Utilities.Key.pageUp">PAGE UP key.</msg>
+  <msg name="WinJS.Utilities.Key.pageDown">PAGE DOWN key.</msg>
+  <msg name="WinJS.Utilities.Key.end">END key.</msg>
+  <msg name="WinJS.Utilities.Key.home">HOME key.</msg>
+  <msg name="WinJS.Utilities.Key.leftArrow">Left arrow key.</msg>
+  <msg name="WinJS.Utilities.Key.upArrow">Up arrow key.</msg>
+  <msg name="WinJS.Utilities.Key.rightArrow">Right arrow key.</msg>
+  <msg name="WinJS.Utilities.Key.downArrow">Down arrow key.</msg>
+  <msg name="WinJS.Utilities.Key.insert">INSERT key.</msg>
+  <msg name="WinJS.Utilities.Key.deleteKey">DELETE key.</msg>
+  <msg name="WinJS.Utilities.Key.num0">Number 0 key.</msg>
+  <msg name="WinJS.Utilities.Key.num1">Number 1 key.</msg>
+  <msg name="WinJS.Utilities.Key.num2">Number 2 key.</msg>
+  <msg name="WinJS.Utilities.Key.num3">Number 3 key.</msg>
+  <msg name="WinJS.Utilities.Key.num4">Number 4 key.</msg>
+  <msg name="WinJS.Utilities.Key.num5">Number 5 key.</msg>
+  <msg name="WinJS.Utilities.Key.num6">Number 6 key.</msg>
+  <msg name="WinJS.Utilities.Key.num7">Number 7 key.</msg>
+  <msg name="WinJS.Utilities.Key.num8">Number 8 key.</msg>
+  <msg name="WinJS.Utilities.Key.num9">Number 9 key.</msg>
+  <msg name="WinJS.Utilities.Key.a">A key.</msg>
+  <msg name="WinJS.Utilities.Key.b">B key.</msg>
+  <msg name="WinJS.Utilities.Key.c">C key.</msg>
+  <msg name="WinJS.Utilities.Key.d">D key.</msg>
+  <msg name="WinJS.Utilities.Key.e">E key.</msg>
+  <msg name="WinJS.Utilities.Key.f">F key.</msg>
+  <msg name="WinJS.Utilities.Key.g">G key.</msg>
+  <msg name="WinJS.Utilities.Key.h">H key.</msg>
+  <msg name="WinJS.Utilities.Key.i">I key.</msg>
+  <msg name="WinJS.Utilities.Key.j">J key.</msg>
+  <msg name="WinJS.Utilities.Key.k">K key.</msg>
+  <msg name="WinJS.Utilities.Key.l">L key.</msg>
+  <msg name="WinJS.Utilities.Key.m">M key.</msg>
+  <msg name="WinJS.Utilities.Key.n">N key.</msg>
+  <msg name="WinJS.Utilities.Key.o">O key.</msg>
+  <msg name="WinJS.Utilities.Key.p">P key.</msg>
+  <msg name="WinJS.Utilities.Key.q">Q key.</msg>
+  <msg name="WinJS.Utilities.Key.r">R key.</msg>
+  <msg name="WinJS.Utilities.Key.s">S key.</msg>
+  <msg name="WinJS.Utilities.Key.t">T key.</msg>
+  <msg name="WinJS.Utilities.Key.u">U key.</msg>
+  <msg name="WinJS.Utilities.Key.v">V key.</msg>
+  <msg name="WinJS.Utilities.Key.w">W key.</msg>
+  <msg name="WinJS.Utilities.Key.x">X key.</msg>
+  <msg name="WinJS.Utilities.Key.y">Y key.</msg>
+  <msg name="WinJS.Utilities.Key.z">Z key.</msg>
+  <msg name="WinJS.Utilities.Key.leftWindows">Left Windows key.</msg>
+  <msg name="WinJS.Utilities.Key.rightWindows">Right Windows key.</msg>
+  <msg name="WinJS.Utilities.Key.menu">Menu key.</msg>
+  <msg name="WinJS.Utilities.Key.numPad0">Number pad 0 key.</msg>
+  <msg name="WinJS.Utilities.Key.numPad1">Number pad 1 key.</msg>
+  <msg name="WinJS.Utilities.Key.numPad2">Number pad 2 key.</msg>
+  <msg name="WinJS.Utilities.Key.numPad3">Number pad 3 key.</msg>
+  <msg name="WinJS.Utilities.Key.numPad4">Number pad 4 key.</msg>
+  <msg name="WinJS.Utilities.Key.numPad5">Number pad 5 key.</msg>
+  <msg name="WinJS.Utilities.Key.numPad6">Number pad 6 key.</msg>
+  <msg name="WinJS.Utilities.Key.numPad7">Number pad 7 key.</msg>
+  <msg name="WinJS.Utilities.Key.numPad8">Number pad 8 key.</msg>
+  <msg name="WinJS.Utilities.Key.numPad9">Number pad 9 key.</msg>
+  <msg name="WinJS.Utilities.Key.multiply">Multiplication key.</msg>
+  <msg name="WinJS.Utilities.Key.add">Addition key.</msg>
+  <msg name="WinJS.Utilities.Key.subtract">Subtraction key.</msg>
+  <msg name="WinJS.Utilities.Key.decimalPoint">Decimal point key.</msg>
+  <msg name="WinJS.Utilities.Key.divide">Division key.</msg>
+  <msg name="WinJS.Utilities.Key.F1">F1 key.</msg>
+  <msg name="WinJS.Utilities.Key.F2">F2 key.</msg>
+  <msg name="WinJS.Utilities.Key.F3">F3 key.</msg>
+  <msg name="WinJS.Utilities.Key.F4">F4 key.</msg>
+  <msg name="WinJS.Utilities.Key.F5">F5 key.</msg>
+  <msg name="WinJS.Utilities.Key.F6">F6 key.</msg>
+  <msg name="WinJS.Utilities.Key.F7">F7 key.</msg>
+  <msg name="WinJS.Utilities.Key.F8">F8 key.</msg>
+  <msg name="WinJS.Utilities.Key.F9">F9 key.</msg>
+  <msg name="WinJS.Utilities.Key.F10">F10 key.</msg>
+  <msg name="WinJS.Utilities.Key.F11">F11 key.</msg>
+  <msg name="WinJS.Utilities.Key.F12">F12 key.</msg>
+  <msg name="WinJS.Utilities.Key.numLock">NUMBER LOCK key.</msg>
+  <msg name="WinJS.Utilities.Key.scrollLock">SCROLL LOCK key.</msg>
+  <msg name="WinJS.Utilities.Key.browserBack">Browser back key.</msg>
+  <msg name="WinJS.Utilities.Key.browserForward">Browser forward key.</msg>
+  <msg name="WinJS.Utilities.Key.semicolon">SEMICOLON key.</msg>
+  <msg name="WinJS.Utilities.Key.equal">EQUAL key.</msg>
+  <msg name="WinJS.Utilities.Key.comma">COMMA key.</msg>
+  <msg name="WinJS.Utilities.Key.dash">DASH key.</msg>
+  <msg name="WinJS.Utilities.Key.period">PERIOD key.</msg>
+  <msg name="WinJS.Utilities.Key.forwardSlash">FORWARD SLASH key.</msg>
+  <msg name="WinJS.Utilities.Key.graveAccent">Accent grave key.</msg>
+  <msg name="WinJS.Utilities.Key.openBracket">OPEN BRACKET key.</msg>
+  <msg name="WinJS.Utilities.Key.backSlash">BACKSLASH key.</msg>
+  <msg name="WinJS.Utilities.Key.closeBracket">CLOSE BRACKET key.</msg>
+  <msg name="WinJS.Utilities.Key.singleQuote">SINGLE QUOTE key.</msg>
+  <msg name="WinJS.Utilities.data">Gets the data value associated with the specified element.</msg>
+  <msg name="WinJS.Utilities.data_p:element">The element.</msg>
+  <msg name="WinJS.Utilities.data_returnValue">The value associated with the element.</msg>
+  <msg name="WinJS.Utilities.hasClass">Determines whether the specified element has the specified class.</msg>
+  <msg name="WinJS.Utilities.hasClass_returnValue">true if the specified element contains the specified class; otherwise, false.</msg>
+  <msg name="WinJS.Utilities.addClass">Adds the specified class(es) to the specified element. Multiple classes can be added using space delimited names.</msg>
+  <msg name="WinJS.Utilities.addClass_p:e">The element to which to add the class.</msg>
+  <msg name="WinJS.Utilities.addClass_p:name">The name of the class to add, multiple classes can be added using space delimited names</msg>
+  <msg name="WinJS.Utilities.removeClass">Removes the specified class from the specified element.</msg>
+  <msg name="WinJS.Utilities.removeClass_p:e">The element from which to remove the class.</msg>
+  <msg name="WinJS.Utilities.removeClass_p:name">The name of the class to remove.</msg>
+  <msg name="WinJS.Utilities.toggleClass">Toggles (adds or removes) the specified class on the specified element.
+ If the class is present, it is removed; if it is absent, it is added.</msg>
+  <msg name="WinJS.Utilities.toggleClass_p:e">The element on which to toggle the class.</msg>
+  <msg name="WinJS.Utilities.toggleClass_p:name">The name of the class to toggle.</msg>
+  <msg name="WinJS.Utilities.getRelativeLeft">Gets the left coordinate of the specified element relative to the specified parent.</msg>
+  <msg name="WinJS.Utilities.getRelativeLeft_returnValue">The relative left coordinate.</msg>
+  <msg name="WinJS.Utilities.getRelativeTop">Gets the top coordinate of the element relative to the specified parent.</msg>
+  <msg name="WinJS.Utilities.getRelativeTop_returnValue">The relative top coordinate.</msg>
+  <msg name="WinJS.Utilities.empty">Removes all the child nodes from the specified element.</msg>
+  <msg name="WinJS.Utilities.getContentWidth">Gets the width of the content of the specified element. The content width does not include borders or padding.</msg>
+  <msg name="WinJS.Utilities.getContentWidth_returnValue">The content width of the element.</msg>
+  <msg name="WinJS.Utilities.getTotalWidth">Gets the width of the element, including margins.</msg>
+  <msg name="WinJS.Utilities.getTotalWidth_returnValue">The width of the element including margins.</msg>
+  <msg name="WinJS.Utilities.getContentHeight">Gets the height of the content of the specified element. The content height does not include borders or padding.</msg>
+  <msg name="WinJS.Utilities.getContentHeight_returnValue">The content height of the element.</msg>
+  <msg name="WinJS.Utilities.getTotalHeight">Gets the height of the element, including its margins.</msg>
+  <msg name="WinJS.Utilities.getTotalHeight_returnValue">The height of the element including margins.</msg>
+  <msg name="WinJS.Utilities.getPosition">Gets the position of the specified element.</msg>
+  <msg name="WinJS.Utilities.getPosition_returnValue">An object that contains the left, top, width and height properties of the element.</msg>
+  <msg name="WinJS.Utilities.convertToPixels">Converts a CSS positioning string for the specified element to pixels.</msg>
+  <msg name="WinJS.Utilities.convertToPixels_p:value">The CSS positioning string.</msg>
+  <msg name="WinJS.Utilities.convertToPixels_returnValue">The number of pixels.</msg>
+  <msg name="WinJS.Utilities.eventWithinElement">Determines whether the specified event occurred within the specified element.</msg>
+  <msg name="WinJS.Utilities.eventWithinElement_p:event">The event.</msg>
+  <msg name="WinJS.Utilities.eventWithinElement_returnValue">true if the event occurred within the element; otherwise, false.</msg>
+  <msg name="WinJS.UI.Pages.dispose">Disposes this Page.</msg>
+  <msg name="WinJS.UI.Pages._mixin.load">Creates a copy of the DOM elements from the specified URI.  In order for this override
+ to be used, the page that contains the load override needs to be defined by calling
+ WinJS.UI.Pages.define() before WinJS.UI.Pages.render() is called.</msg>
+  <msg name="WinJS.UI.Pages._mixin.load_p:uri">The URI from which to copy the DOM elements.</msg>
+  <msg name="WinJS.UI.Pages._mixin.load_returnValue">A promise whose fulfilled value is the set of unparented DOM elements, if asynchronous processing is necessary. If not, returns nothing.</msg>
+  <msg name="WinJS.UI.Pages._mixin.init">Initializes the control before the content of the control is set.
+ Use the processed method for any initialization that should be done after the content
+ of the control has been set.</msg>
+  <msg name="WinJS.UI.Pages._mixin.init_p:element">The DOM element that will contain all the content for the page.</msg>
+  <msg name="WinJS.UI.Pages._mixin.init_p:options">The options passed to the constructor of the page.</msg>
+  <msg name="WinJS.UI.Pages._mixin.init_returnValue">A promise that is fulfilled when initialization is complete, if asynchronous processing is necessary. If not, returns nothing.</msg>
+  <msg name="WinJS.UI.Pages._mixin.processed">Initializes the control after the content of the control is set.</msg>
+  <msg name="WinJS.UI.Pages._mixin.processed_p:options">The options that are to be passed to the constructor of the page.</msg>
+  <msg name="WinJS.UI.Pages._mixin.render">Renders the control, typically by adding the elements specified in the loadResult parameter to the specified element.</msg>
+  <msg name="WinJS.UI.Pages._mixin.render_p:options">The options passed into the constructor of the page.</msg>
+  <msg name="WinJS.UI.Pages._mixin.render_p:loadResult">The elements returned from the load method.</msg>
+  <msg name="WinJS.UI.Pages._mixin.render_returnValue">A promise that is fulfilled when rendering is complete, if asynchronous processing is necessary. If not, returns nothing.</msg>
+  <msg name="WinJS.UI.Pages._mixin.ready">Called after all initialization and rendering is complete. At this
+ time the element is ready for use.</msg>
+  <msg name="WinJS.UI.Pages._mixin.ready_p:element">The DOM element that contains all the content for the page.</msg>
+  <msg name="WinJS.UI.Pages._mixin.ready_p:options">The options passed into the constructor of the page</msg>
+  <msg name="WinJS.UI.Pages._mixin.error">Called if any error occurs during the processing of the page.</msg>
+  <msg name="WinJS.UI.Pages._mixin.error_p:err">The error that occurred.</msg>
+  <msg name="WinJS.UI.Pages._mixin.error_returnValue">Nothing if the error was handled, or an error promise if the error was not handled.</msg>
+  <msg name="WinJS.UI.Pages.define">Creates a new page control from the specified URI that contains the specified members.
+ Multiple calls to this method for the same URI are allowed, and all members will be
+ merged.</msg>
+  <msg name="WinJS.UI.Pages.define_p:uri">The URI for the content that defines the page.</msg>
+  <msg name="WinJS.UI.Pages.define_p:members">Additional members that the control will have.</msg>
+  <msg name="WinJS.UI.Pages.define_returnValue">A constructor function that creates the page.</msg>
+  <msg name="WinJS.UI.Pages.get">Gets an already-defined page control for the specified URI, or creates a new one.</msg>
+  <msg name="WinJS.UI.Pages.render">Creates a page control from the specified URI inside
+ the specified element with the specified options.</msg>
+  <msg name="WinJS.UI.Pages.render_p:element">The element to populate with the page.</msg>
+  <msg name="WinJS.UI.Pages.render_p:options">The options for configuring the page.</msg>
+  <msg name="WinJS.UI.Pages.render_p:parentedPromise">A promise that is fulfilled when the specified element is parented to the final document.</msg>
+  <msg name="WinJS.UI.Pages.render_returnValue">A promise that is fulfilled when the page is done rendering</msg>
+  <msg name="WinJS.UI.Fragments.renderCopy">Copies the contents of the specified URI into the specified element.</msg>
+  <msg name="WinJS.UI.Fragments.renderCopy_p:href">The URI that contains the fragment to copy.</msg>
+  <msg name="WinJS.UI.Fragments.renderCopy_p:target">The element to which the fragment is appended.</msg>
+  <msg name="WinJS.UI.Fragments.renderCopy_returnValue">A promise that is fulfilled when the fragment has been loaded.
+ If a target element is not specified, the copied fragment is the
+ completed value.</msg>
+  <msg name="WinJS.UI.Fragments.cache">Starts loading the fragment at the specified location. The returned promise completes
+ when the fragment is ready to be copied.</msg>
+  <msg name="WinJS.UI.Fragments.cache_p:href">The URI that contains the fragment to be copied.</msg>
+  <msg name="WinJS.UI.Fragments.cache_returnValue">A promise that is fulfilled when the fragment has been prepared for copying.</msg>
+  <msg name="WinJS.UI.Fragments.clearCache">Removes any cached information about the specified fragment. This method does not unload any scripts
+ or styles that are referenced by the fragment.</msg>
+  <msg name="WinJS.UI.Fragments.clearCache_p:href">The URI that contains the fragment to be cleared. If no URI is provided, the entire contents of the cache are cleared.</msg>
+  <msg name="WinJS.UI.isAnimationEnabled">Determines whether the WinJS Animation Library will perform animations.</msg>
+  <msg name="WinJS.UI.isAnimationEnabled_returnValue">true if WinJS animations will be performed.
+ false if WinJS animations are suppressed.</msg>
+  <msg name="WinJS.UI.disableAnimations">Disables animations in the WinJS Animation Library
+ by decrementing the animation enable count.</msg>
+  <msg name="WinJS.UI.enableAnimations">Enables animations in the WinJS Animation Library
+ by incrementing the animation enable count.</msg>
+  <msg name="WinJS.UI.executeAnimation">Perform a CSS animation that can coexist with other
+ Animation Library animations. Applications are not expected
+ to call this function directly; they should prefer to use
+ the high-level animations in the Animation Library.</msg>
+  <msg name="WinJS.UI.executeAnimation_p:element">Single element or collection of elements on which
+ to perform a CSS animation.</msg>
+  <msg name="WinJS.UI.executeAnimation_p:animation">Single animation description or array of animation descriptions.</msg>
+  <msg name="WinJS.UI.executeAnimation_returnValue">Promise object that completes when the CSS animation is complete.</msg>
+  <msg name="WinJS.UI.executeTransition">Perform a CSS transition that can coexist with other
+ Animation Library animations. Applications are not expected
+ to call this function directly; they should prefer to use
+ the high-level animations in the Animation Library.</msg>
+  <msg name="WinJS.UI.executeTransition_p:element">Single element or collection of elements on which
+ to perform a CSS transition.</msg>
+  <msg name="WinJS.UI.executeTransition_p:transition">Single transition description or array of transition descriptions.</msg>
+  <msg name="WinJS.UI.executeTransition_returnValue">Promise object that completes when the CSS transition is complete.</msg>
+  <msg name="WinJS.UI.eventHandler">Marks a event handler function as being compatible with declarative processing.</msg>
+  <msg name="WinJS.UI.eventHandler_p:handler">The handler to be marked as compatible with declarative processing.</msg>
+  <msg name="WinJS.UI.eventHandler_returnValue">The input handler.</msg>
+  <msg name="WinJS.UI.Orientation">Orientation options for a control's property</msg>
+  <msg name="WinJS.UI.Orientation.horizontal">Horizontal</msg>
+  <msg name="WinJS.UI.Orientation.vertical">Vertical</msg>
+  <msg name="WinJS.Application.event.setPromise">Used to inform the application object that asynchronous work is being performed, and that this
+ event handler should not be considered complete until the promise completes.</msg>
+  <msg name="WinJS.Application.eventRecord.setPromise_p:promise">The promise to wait for.</msg>
+  <msg name="WinJS.Application.queueEvent">Queues an event to be processed by the WinJS.Application event queue.</msg>
+  <msg name="WinJS.Application.queueEvent_p:eventRecord">The event object is expected to have a type property that is
+ used as the event name when dispatching on the WinJS.Application
+ event queue. The entire object is provided to event listeners
+ in the detail property of the event.</msg>
+  <msg name="WinJS.Application.stop">Stops application event processing and resets WinJS.Application
+ to its initial state.</msg>
+  <msg name="WinJS.Application.checkpoint">Queues a checkpoint event.</msg>
+  <msg name="WinJS.Application.start">Starts processing events in the WinJS.Application event queue.</msg>
+  <msg name="WinJS.Navigation.beforenavigate.setPromise">Used to inform the ListView that asynchronous work is being performed, and that this
+ event handler should not be considered complete until the promise completes.</msg>
+  <msg name="WinJS.Navigation.canGoForward">Determines whether it is possible to navigate forwards.</msg>
+  <msg name="WinJS.Navigation.canGoBack">Determines whether it is possible to navigate backwards.</msg>
+  <msg name="WinJS.Navigation.location">Gets the current location.</msg>
+  <msg name="WinJS.Navigation.state">Gets or sets the navigation state.</msg>
+  <msg name="WinJS.Navigation.history">Gets or sets the navigation history.</msg>
+  <msg name="WinJS.Navigation.forward">Navigates forwards.</msg>
+  <msg name="WinJS.Navigation.forward_p:distance">The number of entries to go forward.</msg>
+  <msg name="WinJS.Navigation.forward_returnValue">A promise that is completed with a value that indicates whether or not
+ the navigation was successful.</msg>
+  <msg name="WinJS.Navigation.back">Navigates backwards.</msg>
+  <msg name="WinJS.Navigation.back_p:distance">The number of entries to go back into the history.</msg>
+  <msg name="WinJS.Navigation.navigate">Navigates to a location.</msg>
+  <msg name="WinJS.Navigation.navigate_p:location">The location to navigate to. Generally the location is a string, but
+ it may be anything.</msg>
+  <msg name="WinJS.Navigation.navigate_p:initialState">The navigation state that may be accessed through WinJS.Navigation.state.</msg>
+  <msg name="WinJS.Application.local">Allows access to create files in the application local storage, which is preserved across runs
+ of an application and does not roam.</msg>
+  <msg name="WinJS.Application.temp">Allows access to create files in the application temp storage, which may be reclaimed
+ by the system between application runs.</msg>
+  <msg name="WinJS.Application.roaming">Allows access to create files in the application roaming storage, which is preserved across runs
+ of an application and roams with the user across multiple machines.</msg>
+  <msg name="WinJS.Binding.observableMixin.notify">Notifies listeners that a property value was updated.</msg>
+  <msg name="WinJS.Binding.observableMixin.notify_p:name">The name of the property that is being updated.</msg>
+  <msg name="WinJS.Binding.observableMixin.notify_p:newValue">The new value for the property.</msg>
+  <msg name="WinJS.Binding.observableMixin.notify_p:oldValue">The old value for the property.</msg>
+  <msg name="WinJS.Binding.observableMixin.notify_returnValue">A promise that is completed when the notifications are complete.</msg>
+  <msg name="WinJS.Binding.observableMixin.unbind">Removes one or more listeners from the notification list for a given property.</msg>
+  <msg name="WinJS.Binding.observableMixin.unbind_p:name">The name of the property to unbind. If this parameter is omitted, all listeners
+ for all events are removed.</msg>
+  <msg name="WinJS.Binding.observableMixin.unbind_p:action">The function to remove from the listener list for the specified property. If this parameter is omitted, all listeners
+ are removed for the specific property.</msg>
+  <msg name="WinJS.Binding.dynamicObservableMixin.getProperty">Gets a property value by name.</msg>
+  <msg name="WinJS.Binding.dynamicObservableMixin.getProperty_p:name">The name of property to get.</msg>
+  <msg name="WinJS.Binding.dynamicObservableMixin.getProperty_returnValue">The value of the property as an observable object.</msg>
+  <msg name="WinJS.Binding.dynamicObservableMixin.setProperty">Updates a property value and notifies any listeners.</msg>
+  <msg name="WinJS.Binding.dynamicObservableMixin.setProperty_p:name">The name of the property to update.</msg>
+  <msg name="WinJS.Binding.dynamicObservableMixin.setProperty_p:value">The new value of the property.</msg>
+  <msg name="WinJS.Binding.dynamicObservableMixin.addProperty">Adds a property with change notification to this object, including a ECMAScript5 property definition.</msg>
+  <msg name="WinJS.Binding.dynamicObservableMixin.addProperty_p:name">The name of the property to add.</msg>
+  <msg name="WinJS.Binding.dynamicObservableMixin.addProperty_p:value">The value of the property.</msg>
+  <msg name="WinJS.Binding.dynamicObservableMixin.updateProperty_returnValue">A promise that completes when the notifications for
+ this property change have been processed. If multiple notifications are coalesced,
+ the promise may be canceled or the value of the promise may be updated.
+ The fulfilled value of the promise is the new value of the property for
+ which the notifications have been completed.</msg>
+  <msg name="WinJS.Binding.dynamicObservableMixin.removeProperty">Removes a property value.</msg>
+  <msg name="WinJS.Binding.dynamicObservableMixin.removeProperty_p:name">The name of the property to remove.</msg>
+  <msg name="WinJS.Binding.bind">Binds to one or more properties on the observable object or or on child values
+ of that object.</msg>
+  <msg name="WinJS.Binding.bind_p:observable">The object to bind to.</msg>
+  <msg name="WinJS.Binding.bind_p:bindingDescriptor">An object literal containing the binding declarations. Binding declarations take the form:
+ { propertyName: (function | bindingDeclaration), ... }
+
+ For example, binding to a nested member of an object is declared like this:
+ bind(someObject, { address: { street: function(v) { ... } } });</msg>
+  <msg name="WinJS.Binding.bind_returnValue">An object that contains at least a "cancel" field, which is
+ a function that removes all bindings associated with this bind
+ request.</msg>
+  <msg name="WinJS.Binding.expandProperties">Wraps the specified object so that all its properties
+ are instrumented for binding. This is meant to be used in
+ conjunction with the binding mixin.</msg>
+  <msg name="WinJS.Binding.expandProperties_p:shape">The specification for the bindable object.</msg>
+  <msg name="WinJS.Binding.expandProperties_returnValue">An object with a set of properties all of which are wired for binding.</msg>
+  <msg name="WinJS.Binding.define">Creates a new constructor function that supports observability with
+ the specified set of properties.</msg>
+  <msg name="WinJS.Binding.define_p:data">The object to use as the pattern for defining the set of properties, for example:
+ var MyPointClass = define({x:0,y:0});</msg>
+  <msg name="WinJS.Binding.define_returnValue">A constructor function with 1 optional argument that is the initial state of
+ the properties.</msg>
+  <msg name="WinJS.Binding.define.return">Creates a new observable object.</msg>
+  <msg name="WinJS.Binding.define.return_p:init">The initial values for the properties.</msg>
+  <msg name="WinJS.Binding.as">Returns an observable object. This may be an observable proxy for the specified object, an existing proxy, or
+ the specified object itself if it directly supports observability.</msg>
+  <msg name="WinJS.Binding.as_p:data">Object to provide observability for.</msg>
+  <msg name="WinJS.Binding.as_returnValue">The observable object.</msg>
+  <msg name="WinJS.Binding.unwrap">Returns the original (non-observable) object is returned if the specified object is an observable proxy, .</msg>
+  <msg name="WinJS.Binding.unwrap_p:data">The object for which to retrieve the original value.</msg>
+  <msg name="WinJS.Binding.unwrap_returnValue">If the specified object is an observable proxy, the original object is returned, otherwise the same object is returned.</msg>
+  <msg name="WinJS.Binding.Template.render.value">Renders a template based on a URI.</msg>
+  <msg name="WinJS.Binding.Template.render.value_p:href">The URI from which to load the template.</msg>
+  <msg name="WinJS.Binding.Template.render.value_returnValue">A promise that is completed after binding has finished. The value is
+ either the object in the container parameter or the created DIV.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.template">Renders a template that is bound to the given data
+ and parented to the elements included in the QueryCollection.
+ If the QueryCollection contains multiple elements, the template
+ is rendered multiple times, once at each element in the QueryCollection
+ per item of data passed.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.template_p:templateElement">The DOM element to which the template control is attached to.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.template_p:data">The data to render. If the data is an array (or any other object
+ that has a forEach method) then the template is rendered
+ multiple times, once for each item in the collection.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.template_p:renderDonePromiseCallback">If supplied, this function is called
+ each time the template gets rendered, and is passed a promise
+ that is fulfilled when the template rendering is complete.</msg>
+  <msg name="WinJS.Utilities.QueryCollection.template_returnValue">The QueryCollection.</msg>
+  <msg name="WinJS.Binding.declarativeBind">Binds values from the specified data context to elements that are descendants of the specified root element
+ and have declarative binding attributes (data-win-bind).</msg>
+  <msg name="WinJS.Binding.declarativeBind_p:rootElement">The element at which to start traversing to find elements to bind to. If this parameter is omitted, the entire document
+ is searched.</msg>
+  <msg name="WinJS.Binding.declarativeBind_p:bindingCache">The cached binding data.</msg>
+  <msg name="WinJS.Binding.declarativeBind_p:defaultInitializer">The binding initializer to use in the case that one is not specified in a binding expression. If not
+ provided the behavior is the same as WinJS.Binding.defaultBind.</msg>
+  <msg name="WinJS.Binding.declarativeBind_returnValue">A promise that completes when each item that contains binding declarations has
+ been processed and the update has started.</msg>
+  <msg name="WinJS.Binding.converter">Creates a default binding initializer for binding between a source
+ property and a destination property with a provided converter function
+ that is executed on the value of the source property.</msg>
+  <msg name="WinJS.Binding.converter_p:convert">The conversion that operates over the result of the source property
+ to produce a value that is set to the destination property.</msg>
+  <msg name="WinJS.Binding.converter_returnValue">The binding initializer.</msg>
+  <msg name="WinJS.Binding.setAttribute">Creates a one-way binding between the source object and
+ an attribute on the destination element.</msg>
+  <msg name="WinJS.Binding.setAttribute_p:source">The source object.</msg>
+  <msg name="WinJS.Binding.setAttribute_p:sourceProperties">The path on the source object to the source property.</msg>
+  <msg name="WinJS.Binding.setAttribute_p:dest">The destination object (must be a DOM element).</msg>
+  <msg name="WinJS.Binding.setAttribute_p:destProperties">The path on the destination object to the destination property, this must be a single name.</msg>
+  <msg name="WinJS.Binding.setAttribute_p:initialValue">The known initial value of the target, if the source value is the same as this initial
+ value (using ===) then the target is not set the first time.</msg>
+  <msg name="WinJS.Binding.setAttribute_returnValue">An object with a cancel method that is used to coalesce bindings.</msg>
+  <msg name="WinJS.Binding.setAttributeOneTime">Sets an attribute on the destination element to the value of the source property</msg>
+  <msg name="WinJS.Binding.addClassOneTime">Adds a class on the destination element to the value of the source property</msg>
+  <msg name="WinJS.Binding.defaultBind">Creates a one-way binding between the source object and
+ the destination object.</msg>
+  <msg name="WinJS.Binding.defaultBind_p:dest">The destination object.</msg>
+  <msg name="WinJS.Binding.defaultBind_p:destProperties">The path on the destination object to the destination property.</msg>
+  <msg name="WinJS.Binding.oneTime">Sets the destination property to the value of the source property.</msg>
+  <msg name="WinJS.Binding.initializer">Marks a custom initializer function as being compatible with declarative data binding.</msg>
+  <msg name="WinJS.Binding.initializer_p:customInitializer">The custom initializer to be marked as compatible with declarative data binding.</msg>
+  <msg name="WinJS.Binding.initializer_returnValue">The input customInitializer.</msg>
+  <msg name="WinJS.Binding.ListBase.onitemchanged">The value identified by the specified key has been replaced with a different value.</msg>
+  <msg name="WinJS.Binding.ListBase.oniteminserted">A new value has been inserted into the list.</msg>
+  <msg name="WinJS.Binding.ListBase.onitemmoved">The value identified by the specified key has been moved from one index in the list to another index.</msg>
+  <msg name="WinJS.Binding.ListBase.onitemmutated">The value identified by the specified key has been mutated.</msg>
+  <msg name="WinJS.Binding.ListBase.onitemremoved">The value identified by the specified key has been removed from the list.</msg>
+  <msg name="WinJS.Binding.ListBase.onreload">The list has been refreshed. Any references to items in the list may be incorrect.</msg>
+  <msg name="WinJS.Binding.ListBase.notifyReload">Forces the list to send a reload notification to any listeners.</msg>
+  <msg name="WinJS.Binding.ListBase.getAt">Gets the value at the specified index.</msg>
+  <msg name="WinJS.Binding.ListBase.getAt_p:index">The index of the value to get.</msg>
+  <msg name="WinJS.Binding.ListBase.getAt_returnValue">The value at the specified index.</msg>
+  <msg name="WinJS.Binding.ListBase.concat">Returns a new list consisting of a combination of two arrays.</msg>
+  <msg name="WinJS.Binding.ListBase.concat_returnValue">An array containing the concatenation of the list and any other supplied items.</msg>
+  <msg name="WinJS.Binding.ListBase.join">Returns a string consisting of all the elements of a list separated by the specified separator string.</msg>
+  <msg name="WinJS.Binding.ListBase.join_p:separator">A string used to separate the elements of a list. If this parameter is omitted, the list elements are separated with a comma.</msg>
+  <msg name="WinJS.Binding.ListBase.join_returnValue">The elements of a list separated by the specified separator string.</msg>
+  <msg name="WinJS.Binding.ListBase.slice">Extracts a section of a list and returns a new list.</msg>
+  <msg name="WinJS.Binding.ListBase.slice_p:begin">The index that specifies the beginning of the section.</msg>
+  <msg name="WinJS.Binding.ListBase.slice_p:end">The index that specifies the end of the section.</msg>
+  <msg name="WinJS.Binding.ListBase.slice_returnValue">Returns a section of an array.</msg>
+  <msg name="WinJS.Binding.ListBase.indexOf">Gets the index of the first occurrence of the specified value in a list.</msg>
+  <msg name="WinJS.Binding.ListBase.indexOf_p:searchElement">The value to locate in the list.</msg>
+  <msg name="WinJS.Binding.ListBase.indexOf_p:fromIndex">The index at which to begin the search. If fromIndex is omitted, the search starts at index 0.</msg>
+  <msg name="WinJS.Binding.ListBase.indexOf_returnValue">Index of the first occurrence of a value in a list or -1 if not found.</msg>
+  <msg name="WinJS.Binding.ListBase.lastIndexOf">Gets the index of the last occurrence of the specified value in a list.</msg>
+  <msg name="WinJS.Binding.ListBase.lastIndexOf_p:fromIndex">The index at which to begin the search. If fromIndex is omitted, the search starts at the last index in the list.</msg>
+  <msg name="WinJS.Binding.ListBase.lastIndexOf_returnValue">The index of the last occurrence of a value in a list, or -1 if not found.</msg>
+  <msg name="WinJS.Binding.ListBase.every">Checks whether the specified callback function returns true for all elements in a list.</msg>
+  <msg name="WinJS.Binding.ListBase.every_p:callback">A function that accepts up to three arguments. This function is called for each element in the list until it returns false or the end of the list is reached.</msg>
+  <msg name="WinJS.Binding.ListBase.every_p:thisArg">An object to which the this keyword can refer in the callback function. If thisArg is omitted, undefined is used.</msg>
+  <msg name="WinJS.Binding.ListBase.every_returnValue">True if the callback returns true for all elements in the list.</msg>
+  <msg name="WinJS.Binding.ListBase.filter">Returns the elements of a list that meet the condition specified in a callback function.</msg>
+  <msg name="WinJS.Binding.ListBase.filter_p:callback">A function that accepts up to three arguments. The function is called for each element in the list.</msg>
+  <msg name="WinJS.Binding.ListBase.filter_returnValue">An array containing the elements that meet the condition specified in the callback function.</msg>
+  <msg name="WinJS.Binding.ListBase.forEach">Calls the specified callback function for each element in a list.</msg>
+  <msg name="WinJS.Binding.ListBase.map">Calls the specified callback function on each element of a list, and returns an array that contains the results.</msg>
+  <msg name="WinJS.Binding.ListBase.map_returnValue">An array containing the result of calling the callback function on each element in the list.</msg>
+  <msg name="WinJS.Binding.ListBase.some">Checks whether the specified callback function returns true for any element of a list.</msg>
+  <msg name="WinJS.Binding.ListBase.some_p:callback">A function that accepts up to three arguments. The function is called for each element in the list until it returns true, or until the end of the list.</msg>
+  <msg name="WinJS.Binding.ListBase.some_returnValue">True if callback returns true for any element in the list.</msg>
+  <msg name="WinJS.Binding.ListBase.reduce">Accumulates a single result by calling the specified callback function for all elements in a list. The return value of the callback function is the accumulated result, and is provided as an argument in the next call to the callback function.</msg>
+  <msg name="WinJS.Binding.ListBase.reduce_p:callback">A function that accepts up to four arguments. The function is called for each element in the list.</msg>
+  <msg name="WinJS.Binding.ListBase.reduce_p:initialValue">If initialValue is specified, it is used as the value with which to start the accumulation. The first call to the function provides this value as an argument instead of a list value.</msg>
+  <msg name="WinJS.Binding.ListBase.reduce_returnValue">The return value from the last call to the callback function.</msg>
+  <msg name="WinJS.Binding.ListBase.reduceRight">Accumulates a single result by calling the specified callback function for all elements in a list, in descending order. The return value of the callback function is the accumulated result, and is provided as an argument in the next call to the callback function.</msg>
+  <msg name="WinJS.Binding.ListBase.reduceRight_p:initialValue">If initialValue is specified, it is used as the value with which to start the accumulation. The first call to the callbackfn function provides this value as an argument instead of a list value.</msg>
+  <msg name="WinJS.Binding.ListBase.reduceRight_returnValue">The return value from last call to callback function.</msg>
+  <msg name="WinJS.Binding.ListBase.createFiltered">Creates a live filtered projection over this list. As the list changes, the filtered projection reacts to those changes and may also change.</msg>
+  <msg name="WinJS.Binding.ListBase.createFiltered_p:predicate">A function that accepts a single argument. The createFiltered function calls the callback with each element in the list. If the function returns true, that element will be included in the filtered list.</msg>
+  <msg name="WinJS.Binding.ListBase.createFiltered_returnValue">Filtered projection over the list.</msg>
+  <msg name="WinJS.Binding.ListBase.createGrouped">Creates a live grouped projection over this list. As the list changes, the grouped projection reacts to those changes and may also change. The grouped projection sorts all the elements of the list to be in group-contiguous order. The grouped projection also contains a .groups property which is a WinJS.Binding.List representing the groups that were found in the list.</msg>
+  <msg name="WinJS.Binding.ListBase.createGrouped_p:groupKey">A function that accepts a single argument. The function is called with each element in the list, the function should return a string representing the group containing the element.</msg>
+  <msg name="WinJS.Binding.ListBase.createGrouped_p:groupData">A function that accepts a single argument. The function is called on an element in the list for each group. It should return the value that should be set as the data of the .groups list element for this group.</msg>
+  <msg name="WinJS.Binding.ListBase.createGrouped_p:groupSorter">A function that accepts two arguments. The function is called with the key of groups found in the list. It must return one of the following numeric values: negative if the first argument is less than the second, zero if the two arguments are equivalent, positive if the first argument is greater than the second. If omitted, the groups are sorted in ascending, ASCII character order.</msg>
+  <msg name="WinJS.Binding.ListBase.createGrouped_returnValue">A grouped projection over the list.</msg>
+  <msg name="WinJS.Binding.ListBase.createSorted">Creates a live sorted projection over this list. As the list changes, the sorted projection reacts to those changes and may also change.</msg>
+  <msg name="WinJS.Binding.ListBase.createSorted_p:sorter">A function that accepts two arguments. The function is called with elements in the list. It must return one of the following numeric values: negative if the first argument is less than the second, zero if the two arguments are equivalent, positive if the first argument is greater than the second.</msg>
+  <msg name="WinJS.Binding.ListBase.createSorted_returnValue">A sorted projection over the list.</msg>
+  <msg name="WinJS.Binding.ListProjection.dispose">Disconnects this WinJS.Binding.List projection from its underlying WinJS.Binding.List. This is important only if they have different lifetimes.</msg>
+  <msg name="WinJS.Binding.ListProjection.getItemFromKey">Gets a key/data pair for the specified key.</msg>
+  <msg name="WinJS.Binding.ListProjection.move">Moves the value at index to position newIndex.</msg>
+  <msg name="WinJS.Binding.FilteredListProjection.length">Returns an integer value one higher than the highest element defined in an list.</msg>
+  <msg name="WinJS.Binding.FilteredListProjection.getItem">Returns a key/data pair for the specified index.</msg>
+  <msg name="WinJS.Binding.FilteredListProjection.getItem_p:index">The index of the value to retrieve.</msg>
+  <msg name="WinJS.Binding.FilteredListProjection.indexOfKey">Returns the index of the first occurrence of a key in a list.</msg>
+  <msg name="WinJS.Binding.SortedListProjection.length">Gets or sets the length of the list. Returns an integer value one higher than the highest element defined in a list.</msg>
+  <msg name="WinJS.Binding.SortedListProjection.getItem">Returns the index of the first occurrence of a key.</msg>
+  <msg name="WinJS.Binding.GroupedSortedListProjection.groups">Gets a WinJS.Binding.List, which is a projection of the groups that were identified in this list.</msg>
+  <msg name="WinJS.Binding.GroupedSortedListProjection.getItemFromKey">Gets a key/data pair for the specified item key.</msg>
+  <msg name="WinJS.Binding.GroupsListProjection.length">Gets the length of the list. Returns an integer value one higher than the highest element defined in a list.</msg>
+  <msg name="WinJS.Binding.GroupsListProjection.getItem">Gets a key/data pair for the specified index .</msg>
+  <msg name="WinJS.Resources.processAll">Processes resources tag and replaces strings
+ with localized strings.</msg>
+  <msg name="WinJS.Resources.processAll_p:rootElement">The DOM element at which to start processing. processAll processes the element and its child elements. 
+ If you don't specify root element, processAll processes the entire document.</msg>
+</messagebundle>

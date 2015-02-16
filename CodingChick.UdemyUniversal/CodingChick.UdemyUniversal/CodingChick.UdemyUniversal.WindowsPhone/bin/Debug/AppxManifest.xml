@@ -50,13 +50,13 @@
         <ActivatableClass ActivatableClassId="GoogleAnalytics.Core.PlatformInfoProvider" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="GoogleAnalytics.Core.Tracker" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="GoogleAnalytics.Core.Transaction" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="GoogleAnalytics.EasyTracker" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="GoogleAnalytics.AppReceipt" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="GoogleAnalytics.TransactionBuilder" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="GoogleAnalytics.ProductReceipt" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="GoogleAnalytics.EasyTracker" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="GoogleAnalytics.PlatformInfoProvider" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="GoogleAnalytics.AnalyticsEngine" ThreadingModel="both" />
         <ActivatableClass ActivatableClassId="GoogleAnalytics.EasyTrackerConfig" ThreadingModel="both" />
-        <ActivatableClass ActivatableClassId="GoogleAnalytics.TransactionBuilder" ThreadingModel="both" />
       </InProcessServer>
     </Extension>
   </Extensions>

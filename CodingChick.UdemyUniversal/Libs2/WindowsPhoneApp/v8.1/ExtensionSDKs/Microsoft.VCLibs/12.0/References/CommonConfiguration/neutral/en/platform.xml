@@ -1,0 +1,1604 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Platform</name>
+  </assembly>
+  <members>
+      <!-- Begin of default namespace -->  
+     <member name="N:default">
+      <summary>Provides base types for C++/CX.</summary>
+    </member>
+    
+    <member name="T:default.int8">
+      <summary>Representation of default.int8</summary>
+    </member>
+    <member name="F:default.int8._value">
+      <summary>The int8 value of type.</summary>
+    </member>
+    <member name="M:default.int8.#ctor(default.int8)">
+      <summary>Constructor of default.int8 object.</summary>
+    </member>    
+    <member name="M:default.int8.Equals(Platform.Object)">
+      <summary>Compare object with another Platform.Object.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>    
+    <member name="M:default.int8.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of object.</returns>
+    </member>    
+    <member name="M:default.int8.ToString">
+      <summary>Return string representation of object.</summary>
+      <returns>String value of object.</returns>
+    </member>
+    <member name="M:default.int8.GetType">
+      <summary>Method return Platform.Type that represents type of object</summary>      
+      <returns>Return Platform.Type of this object.</returns>
+    </member>
+    
+    <member name="T:default.uint16">
+      <summary>Representation of default.uint16</summary>
+    </member>
+    <member name="F:default.uint16._value">
+      <summary>The uint16 value of type.</summary>
+    </member>
+    <member name="M:default.uint16.#ctor(default.uint16)">
+      <summary>Constructor of uint16 object.</summary>
+    </member>    
+    <member name="M:default.uint16.Equals(Platform.Object)">
+      <summary>Compare object with another Platform.Object.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>    
+    <member name="M:default.uint16.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of the object.</returns>
+    </member>    
+    <member name="M:default.uint16.ToString">
+      <summary>Return string representation of the object.</summary>
+      <returns>String value of the object.</returns>
+    </member>
+    <member name="M:default.uint16.GetType">
+      <summary>Method return Platform.Type that represents type of the object</summary>      
+      <returns>Return Platform.Type of this object.</returns>
+    </member>
+
+    <member name="T:default.int16">
+      <summary>Representation of default.int16</summary>
+    </member>
+    <member name="F:default.int16._value">
+      <summary>The int16 value of type.</summary>
+    </member>
+    <member name="M:default.int16.#ctor(default.int16)">
+      <summary>Constructor of int16 object.</summary>
+    </member>    
+    <member name="M:default.int16.Equals(Platform.Object)">
+      <summary>Compare object with another Platform.Object.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>    
+    <member name="M:default.int16.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of the object.</returns>
+    </member>    
+    <member name="M:default.int16.ToString">
+      <summary>Return string representation of the object.</summary>
+      <returns>String value of the object.</returns>
+    </member>
+    <member name="M:default.int16.GetType">
+      <summary>Method return Platform.Type that represents type of the object</summary>      
+      <returns>Return Platform.Type of this object.</returns>
+    </member>
+    
+    <member name="T:default.uint32">
+      <summary>Representation of default.uint32</summary>
+    </member>
+    <member name="F:default.uint32._value">
+      <summary>The uint32 value of type.</summary>
+    </member>
+    <member name="M:default.uint32.#ctor(default.uint32)">
+      <summary>Constructor of uint32 object.</summary>
+    </member>    
+    <member name="M:default.uint32.Equals(Platform.Object)">
+      <summary>Compare object with another Platform.Object.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>    
+    <member name="M:default.uint32.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of the object.</returns>
+    </member>    
+    <member name="M:default.uint32.ToString">
+      <summary>Return string representation of the object.</summary>
+      <returns>String value of the object.</returns>
+    </member>
+    <member name="M:default.uint32.GetType">
+      <summary>Method return Platform.Type that represents type of the object</summary>      
+      <returns>Return Platform.Type of this object.</returns>
+    </member>
+    
+    <member name="T:default.int32">
+      <summary>Representation of default.int32</summary>
+    </member>
+    <member name="F:default.int32._value">
+      <summary>The int32 value of type.</summary>
+    </member>
+    <member name="M:default.int32.#ctor(default.int32)">
+      <summary>Constructor of int32 object.</summary>
+    </member>    
+    <member name="M:default.int32.Equals(Platform.Object)">
+      <summary>Compare object with another Platform.Object.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>    
+    <member name="M:default.int32.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of the object.</returns>
+    </member>    
+    <member name="M:default.int32.ToString">
+      <summary>Return string representation of the object.</summary>
+      <returns>String value of the object.</returns>
+    </member>
+    <member name="M:default.int32.GetType">
+      <summary>Method return Platform.Type that represents type of the object</summary>      
+      <returns>Return Platform.Type of this object.</returns>
+    </member>
+    
+    <member name="T:default.float32">
+      <summary>Representation of default.float32</summary>
+    </member>
+    <member name="F:default.float32._value">
+      <summary>The float32 value of type.</summary>
+    </member>
+    <member name="M:default.float32.#ctor(default.float32)">
+      <summary>Constructor of float32 object.</summary>
+    </member>    
+    <member name="M:default.float32.Equals(Platform.Object)">
+      <summary>Compare object with another Platform.Object.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>    
+    <member name="M:default.float32.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of the object.</returns>
+    </member>    
+    <member name="M:default.float32.ToString">
+      <summary>Return string representation of the object.</summary>
+      <returns>String value of the object.</returns>
+    </member>
+    <member name="M:default.float32.GetType">
+      <summary>Method return Platform.Type that represents type of the object</summary>      
+      <returns>Return Platform.Type of this object.</returns>
+    </member>
+    
+    <member name="T:default.float64">
+      <summary>Representation of default.float64</summary>
+    </member>
+    <member name="F:default.float64._value">
+      <summary>The float64 value of type.</summary>
+    </member>
+    <member name="M:default.float64.#ctor(default.float64)">
+      <summary>Constructor of float64 object.</summary>
+    </member>    
+    <member name="M:default.float64.Equals(Platform.Object)">
+      <summary>Compare object with another Platform.Object.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>    
+    <member name="M:default.float64.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of the object.</returns>
+    </member>    
+    <member name="M:default.float64.ToString">
+      <summary>Return string representation of the object.</summary>
+      <returns>String value of the object.</returns>
+    </member>
+    <member name="M:default.float64.GetType">
+      <summary>Method return Platform.Type that represents type of the object</summary>      
+      <returns>Return Platform.Type of this object.</returns>
+    </member>
+    
+    <member name="T:default.uint64">
+      <summary>Representation of default.uint64</summary>
+    </member>
+    <member name="F:default.uint64._value">
+      <summary>The uint64 value of type.</summary>
+    </member>
+    <member name="M:default.uint64.#ctor(default.uint64)">
+      <summary>Constructor of uint64 object.</summary>
+    </member>    
+    <member name="M:default.uint64.Equals(Platform.Object)">
+      <summary>Compare object with another Platform.Object.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>    
+    <member name="M:default.uint64.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of the object.</returns>
+    </member>    
+    <member name="M:default.uint64.ToString">
+      <summary>Return string representation of the object.</summary>
+      <returns>String value of the object.</returns>
+    </member>
+    <member name="M:default.uint64.GetType">
+      <summary>Method return Platform.Type that represents type of the object</summary>      
+      <returns>Return Platform.Type of this object.</returns>
+    </member>
+
+    <member name="T:default.int64">
+      <summary>Representation of default int64</summary>
+    </member>
+    <member name="F:default.int64._value">
+      <summary>The int64 value of type.</summary>
+    </member>
+    <member name="M:default.int64.#ctor(default.int64)">
+      <summary>Constructor of int64 object.</summary>
+    </member>    
+    <member name="M:default.int64.Equals(Platform.Object)">
+      <summary>Compare object with another Platform.Object.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>    
+    <member name="M:default.int64.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of the object.</returns>
+    </member>    
+    <member name="M:default.int64.ToString">
+      <summary>Return string representation of the object.</summary>
+      <returns>String value of the object.</returns>
+    </member>
+    <member name="M:default.int64.GetType">
+      <summary>Method return Platform.Type that represents type of the object</summary>      
+      <returns>Return Platform.Type of this object.</returns>
+    </member>
+    
+    <member name="T:default.char16">
+      <summary>Representation of default.char16</summary>
+    </member>
+    <member name="F:default.char16._value">
+      <summary>The char16 value of type.</summary>
+    </member>
+    <member name="M:default.char16.#ctor(default.char16)">
+      <summary>Constructor of char16 object.</summary>
+    </member>    
+    <member name="M:default.char16.Equals(Platform.Object)">
+      <summary>Compare object with another Platform.Object.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>    
+    <member name="M:default.char16.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of the object.</returns>
+    </member>    
+    <member name="M:default.char16.ToString">
+      <summary>Return string representation of the object.</summary>
+      <returns>String value of the object.</returns>
+    </member>
+    <member name="M:default.char16.GetType">
+      <summary>Method return Platform.Type that represents type of the object</summary>      
+      <returns>Return Platform.Type of this object.</returns>
+    </member>
+    
+    <member name="T:default.uint8">
+      <summary>Representation of default.uint8</summary>
+    </member>
+    <member name="F:default.uint8._value">
+      <summary>The uint8 value of type.</summary>
+    </member>
+    <member name="M:default.uint8.#ctor(default.uint8)">
+      <summary>Constructor of uint8 object.</summary>
+    </member>    
+    <member name="M:default.uint8.Equals(Platform.Object)">
+      <summary>Compare object with another Platform.Object.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>    
+    <member name="M:default.uint8.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of the object.</returns>
+    </member>    
+    <member name="M:default.uint8.ToString">
+      <summary>Return string representation of the object.</summary>
+      <returns>String value of the object.</returns>
+    </member>
+    <member name="M:default.uint8.GetType">
+      <summary>Method return Platform.Type that represents type of the object</summary>      
+      <returns>Return Platform.Type of this object.</returns>
+    </member>
+
+    <!-- End of default namespace -->  
+  
+    <!-- Begin of Platform namespace -->
+    <member name="N:Platform">
+      <summary>Provides general C++/CX framework interfaces and classes.</summary>
+    </member>
+
+    <member name="T:Platform.AccessDeniedException">
+      <summary>Represents access denied exception (E_ACCESSDENIED).</summary>
+    </member>
+    <member name="M:Platform.AccessDeniedException.#ctor()">
+      <summary>Default constructor of Platform.AccessDeniedException.</summary>
+    </member>
+    </member>
+    <member name="M:Platform.AccessDeniedException.#ctor(Platform.String)">
+      <summary>Constructor that takes debugging message as parameter.</summary>
+      <param name="message">Input debugging message.</param>
+    </member>    
+
+    <member name="T:Platform.Boolean">
+      <summary>Representation of Platform.Bolean type.</summary>
+    </member>
+    <member name="M:Platform.Boolean.#ctor(Platform.Boolean)">
+      <summary>Default constructor of Platform.Boolean.</summary>
+    </member>
+    <member name="F:Platform.Boolean._value">
+      <summary>The bool value of type.</summary>
+    </member>
+    <member name="M:Platform.Boolean.Equals(Platform.Object)">
+      <summary>Compare object with another Platform.Object.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>    
+    <member name="M:Platform.Boolean.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of the object.</returns>
+    </member>    
+    <member name="M:Platform.Boolean.ToString">
+      <summary>Return string representation of the object.</summary>
+      <returns>String value of the object.</returns>
+    </member>
+    <member name="M:Platform.Boolean.GetType">
+      <summary>Method return Platform.Type that represents type of the object.</summary>      
+      <returns>Return Platform.Type of this object.</returns>
+    </member>
+
+    <member name="T:Platform.COMException">
+      <summary>Represents COMException type.</summary>
+    </member>
+    <member name="M:Platform.COMException.#ctor(default.int32)">
+      <summary>Constructor that takes HRESULT as input parameter.</summary>
+      <param name="hresult">Input HRESULT.</param>
+    </member>
+    <member name="M:Platform.COMException.#ctor(default.int32,Platform.String)">    
+      <summary>Constructor that takes HRESULT and debugging message as parameters.</summary>
+      <param name="hresult">Input HRESULT.</param>
+      <param name="message">Input debugging message.</param>
+    </member>
+
+    <member name="T:Platform.CallbackContext">
+      <summary>Represents Platform.CallbackContext class.</summary>
+    </member>
+    <member name="F:Platform.CallbackContext.value__">
+      <summary>Value of Platform.CallbackContext data.</summary>
+    </member>
+    <member name="F:Platform.CallbackContext.Any">
+      <summary>Any context - support free threaded marshaler.</summary>
+    </member>
+    <member name="F:Platform.CallbackContext.Same">
+      <summary>Some context - no support for free thraded marshaler.</summary>
+    </member>
+
+    <member name="T:Platform.ChangedStateException">
+      <summary>Represents changed state exception (E_CHANGED_STATE).</summary>
+    </member>
+    <member name="M:Platform.ChangedStateException.#ctor">
+      <summary>Default constructor of Platform.ChangedStateException.</summary>
+    </member>
+    <member name="M:Platform.ChangedStateException.#ctor(Platform.String)">    
+      <summary>Constructor that takes debugging message as parameter.</summary>
+      <param name="message">Input debugging message.</param>
+    </member>
+
+    <member name="T:Platform.ClassNotRegisteredException">
+      <summary>Represents class not registered exception (REGDB_E_CLASSNOTREG).</summary>
+    </member>
+    <member name="M:Platform.ClassNotRegisteredException.#ctor">
+      <summary>Default constructor of Platform.ClassNotRegisteredException.</summary>
+    </member>
+    <member name="M:Platform.ClassNotRegisteredException.#ctor(Platform.String)">    
+      <summary>Constructor that takes debugging message as parameter.</summary>
+      <param name="message">Input debugging message.</param>
+    </member>
+    
+    <member name="T:Platform.Delegate">
+      <summary>Represents Platform.Delegate class.</summary>
+    </member>
+    <member name="M:Platform.Delegate.#ctor">
+      <summary>Default constructor of Platform.Delegate.</summary>
+    </member>
+    <member name="M:Platform.Delegate.Equals(Platform.Object)">
+      <summary>Compare object with another Platform.Object.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>    
+    <member name="M:Platform.Delegate.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of the object.</returns>
+    </member>    
+    <member name="M:Platform.Delegate.ToString">
+      <summary>Return string representation of the object.</summary>
+      <returns>String value of the object.</returns>
+    </member>
+    
+    <member name="T:Platform.DisconnectedException">
+      <summary>Represents disconnected exception (RPC_E_DISCONNECTED).</summary>
+    </member>
+    <member name="M:Platform.DisconnectedException.#ctor">
+      <summary>Default constructor of Platform.DisconnectedException.</summary>
+    </member>
+    <member name="M:Platform.DisconnectedException.#ctor(Platform.String)">    
+      <summary>Constructor that takes debugging message as parameter.</summary>
+      <param name="message">Input debugging message.</param>
+    </member>    
+
+    <member name="T:Platform.Enum">
+      <summary>Represents Platform.Enum class.</summary>
+    </member>
+    <member name="M:Platform.Enum.#ctor">
+      <summary>Default constructor of Platform.Enum.</summary>
+    </member>
+    <member name="M:Platform.Enum.Equals(Platform.Object)">
+      <summary>Compare object with another Platform.Object.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>    
+    <member name="M:Platform.Enum.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of the object.</returns>
+    </member>    
+    <member name="M:Platform.Enum.ToString">
+      <summary>Return string representation of the object.</summary>
+      <returns>String value of the object.</returns>
+    </member>
+    
+    <member name="T:Platform.Exception">
+      <summary>Represents Platform.Exception class.</summary>
+    </member>
+    <member name="F:Platform.Exception.__capabilitySid">
+      <summary>Reserved.</summary>
+    </member>
+    <member name="F:Platform.Exception.__description">
+      <summary>Reserved.</summary>
+    </member>
+    <member name="F:Platform.Exception.__hresult">
+      <summary>HRESULT of Platform.Exception.</summary>
+    </member>
+    <member name="F:Platform.Exception.__restrictedErrorReference">
+      <summary>Reserved.</summary>
+    </member>
+    <member name="F:Platform.Exception.__restrictedErrorString">
+      <summary>Reserved.</summary>
+    </member>
+    <member name="F:Platform.Exception.__restrictedInfo">
+      <summary>Reserved.</summary>
+    </member>
+    <member name="F:Platform.Exception.__size">
+      <summary>Reserved.</summary>
+    </member>
+    <member name="F:Platform.Exception.__throwInfo">
+      <summary>Reserved.</summary>
+    </member>
+    <member name="M:Platform.Exception.#ctor(default.int32)">
+      <summary>Constructor that takes HRESULT as input parmater.</summary>
+      <param name="hresult">Input HRESULT.</param>
+    </member>
+    <member name="M:Platform.Exception.#ctor(default.int32,Platform.String)">    
+      <summary>Constructor that takes HRESULT and debugging message as parameters.</summary>
+      <param name="hresult">Input HRESULT.</param>
+      <param name="message">Input debugging message.</param>
+    </member>
+    <member name="M:Platform.Exception.CreateException(default.int32)">
+      <summary>Create instance of strongly type exception according to input HRESULT parameter.</summary>
+      <param name="hresult">Input HRESULT.</param>
+      <returns>Instance of Platform.Exception.</returns>
+    </member>
+    <member name="M:Platform.Exception.CreateException(default.int32,Platform.String)">    
+      <summary>Create instance of strongly type exception according to input HRESULT parameter.</summary>
+      <param name="hresult">Input HRESULT.</param>
+      <param name="message">Input debugging message.</param>
+      <returns>Instance of Platform.Exception.</returns>
+    </member>
+    <member name="M:Platform.Exception.Dispose">
+      <summary>Cleanup routine of Platform.Exception.</summary>
+    </member>
+    <member name="M:Platform.Exception.Equals(Platform.Object)">
+      <summary>Compare object with another Platform.Object.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>    
+    <member name="M:Platform.Exception.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of the object.</returns>
+    </member>
+    <member name="M:Platform.Exception.ReCreateException(default.int32)">
+      <summary>Recreate instance of strongly type exception according to input HRESULT parameter and IRestrictedErrorInfo data.</summary>
+      <param name="hresult">Input HRESULT.</param>
+      <returns>Instance of Platform.Exception.</returns>
+    </member>    
+    <member name="P:Platform.Exception.Message">
+      <summary>Specifies the property that gets string message that represents exception.</summary>      
+    </member>
+    <member name="P:Platform.Exception.HResult">
+      <summary>Specifies the property that gets HRESULT value that represents exception.</summary>      
+    </member>
+    <member name="M:Platform.Exception.ToString">
+      <summary>Return string representation of the object.</summary>
+      <returns>String value of the object.</returns>
+    </member>
+    
+    <member name="T:Platform.FailureException">
+      <summary>Represents disconnected exception (E_FAIL).</summary>
+    </member>
+    <member name="M:Platform.FailureException.#ctor">
+      <summary>Default constructor of Platform.FailureException.</summary>
+    </member>
+    <member name="M:Platform.FailureException.#ctor(Platform.String)">    
+      <summary>Constructor that takes debugging message as parameter.</summary>
+      <param name="message">Input debugging message.</param>
+    </member>
+
+    <member name="T:Platform.Guid">
+      <summary>Represent Platform.Guid class.</summary>
+    </member>
+    <member name="F:Platform.Guid.__a">
+      <summary>The first 4 bytes of the Platform.Guid.</summary>
+    </member>
+    <member name="F:Platform.Guid.__b">
+      <summary>The next 2 bytes of the Platform.Guid.</summary>
+    </member>
+    <member name="F:Platform.Guid.__c">
+      <summary>The next 2 bytes of the Platform.Guid.</summary>
+    </member>
+    <member name="F:Platform.Guid.__d">
+      <summary>The next byte of the Platform.Guid.</summary>
+    </member>
+    <member name="F:Platform.Guid.__e">
+      <summary>The next byte of the Platform.Guid.</summary>
+    </member>
+    <member name="F:Platform.Guid.__f">
+      <summary>The next byte of the Platform.Guid.</summary>
+    </member>
+    <member name="F:Platform.Guid.__g">
+      <summary>The next byte of the Platform.Guid.</summary>
+    </member>
+    <member name="F:Platform.Guid.__h">
+      <summary>The next byte of the Platform.Guid.</summary>
+    </member>
+    <member name="F:Platform.Guid.__i">
+      <summary>The next byte of the Platform.Guid.</summary>
+    </member>
+    <member name="F:Platform.Guid.__j">
+      <summary>The next byte of the Platform.Guid.</summary>
+    </member>
+    <member name="F:Platform.Guid.__k">
+      <summary>The next byte of the Platform.Guid.</summary>
+    </member>    
+    <member name="M:Platform.Guid.#ctor(Platform.Details._GUID)">
+      <summary>Constructor that takes Platform.Details._GUID as input parmater.</summary>
+      <param name="guid">Input Platform.Details._GUID.</param>
+    </member>    
+    <member name="M:Platform.Guid.#ctor(default.uint32,default.uint16,default.uint16,default.uint8[])">
+      <summary>Constructor that takes primitive types as input to create Platform.Guid.</summary>
+      <param name="a">The first 4 bytes of the Platform.Guid.</param>
+      <param name="b">The first 2 bytes of the Platform.Guid.</param>
+      <param name="c">The first 2 bytes of the Platform.Guid.</param>
+      <param name="c">The array of 8 bytes of the Platform.Guid.</param>
+    </member>    
+    <member name="M:Platform.Guid.#ctor(default.uint32,default.uint16,default.uint16,default.uint8,default.uint8,default.uint8,default.uint8,default.uint8,default.uint8,default.uint8,default.uint8)">
+      <summary>Constructor that takes primitive types as input to create Platform.Guid.</summary>
+      <param name="a">The first 4 bytes of the Platform.Guid.</param>
+      <param name="b">The first 2 bytes of the Platform.Guid.</param>
+      <param name="c">The first 2 bytes of the Platform.Guid.</param>
+      <param name="d">The next byte of the Platform.Guid.</param>
+      <param name="e">The next byte of the Platform.Guid.</param>
+      <param name="f">The next byte of the Platform.Guid.</param>
+      <param name="g">The next byte of the Platform.Guid.</param>
+      <param name="h">The next byte of the Platform.Guid.</param>
+      <param name="i">The next byte of the Platform.Guid.</param>
+      <param name="j">The next byte of the Platform.Guid.</param>
+      <param name="k">The next byte of the Platform.Guid.</param>
+    </member>    
+    <member name="M:Platform.Guid.#ctor">
+      <summary>Default constructor of Platform.Guid.</summary>
+    </member>
+    <member name="M:Platform.Guid.Equals(Platform.Details._GUID)">
+      <summary>Compare object with another Platform.Object.</summary>
+      <param name="a">Input Platform.Details._GUID.</param>
+      <returns>Returns true in case that Platform.Details._GUID is equal otherwise false.</returns>
+    </member>
+    <member name="M:Platform.Guid.Equals(Platform.Guid)">
+      <summary>Compare object with another Platform.Object.</summary>
+       <param name="a">Input Platform.Guid.</param>
+      <returns>Returns true in case that Platform.Details.Guid is equal otherwise false.</returns>
+    </member>
+    <member name="M:Platform.Guid.Equals(Platform.Object)">
+      <summary>Compare object with another Platform.Object.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>    
+    <member name="M:Platform.Guid.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of the object.</returns>
+    </member>
+    <member name="M:Platform.Guid.GetType">
+      <summary>Method return Platform.Type that represents type of object</summary>      
+      <returns>Return Platform.Type of this object.</returns>
+    </member>
+    <member name="M:Platform.Guid.ToString">
+      <summary>Return string representation of the object.</summary>
+      <returns>String value of the object.</returns>
+    </member>    
+    <member name="M:Platform.Guid.op_Equality(Platform.Guid,Platform.Guid)">
+      <summary>Return true if objects is equal otherwise false.</summary>
+      <returns>True if equal otherwise false.</returns>
+    </member>
+    <member name="M:Platform.Guid.op_Implicit(Platform.Details._GUID)">
+      <summary>Convert Platform.Details._GUID to Platform.Guid.</summary>
+      <returns>Returns Platform.Guid.</returns>
+    </member>
+    <member name="M:Platform.Guid.op_Inequality(Platform.Guid,Platform.Guid)">
+      <summary>Return true if objects are not equal otherwise false.</summary>
+      <returns>True if not equal otherwise false.</returns>
+    </member>
+    
+    <member name="T:Platform.IBoxArray`1">
+      <summary>Representation of array box interface.</summary>
+    </member>    
+    <member name="P:Platform.IBoxArray`1.Value">
+      <summary>Specifies the property that gets value that contains Platform.IBoxArray`1.</summary>      
+    </member>    
+    
+    <member name="T:Platform.IBox`1">
+      <summary>Representation of box interface.</summary>
+    </member>
+    <member name="P:Platform.IBox`1.Value">
+      <summary>Specifies the property that gets value that contains Platform.IBox`1.</summary>      
+    </member>        
+
+    <member name="T:Platform.IDisposable">
+      <summary>Representation of interface that provides cleanup routine.</summary>
+    </member>    
+    <member name="M:Platform.IDisposable.Dispose">
+      <summary>Cleanup routine.</summary>
+    </member>    
+
+    <member name="T:Platform.IValueType">
+      <summary>Representation of value type interface.</summary>
+    </member>    
+
+    <member name="T:Platform.IntPtr">
+      <summary>Representation of pointer type.</summary>
+    </member>
+    <member name="F:Platform.IntPtr._value">
+      <summary>The void* value of type.</summary>
+    </member>
+    <member name="M:Platform.IntPtr.#ctor(default.int32)">
+      <summary>Constructor that takes default.int32 as parameter.</summary>
+      <param name="ptr">default.int32 pointer value.</param>
+    </member>
+    <member name="M:Platform.IntPtr.#ctor(native int)">
+      <summary>Constructor that takes native int as parameter.</summary>
+      <param name="ptr">native int pointer value.</param>
+    </member>
+    <member name="M:Platform.IntPtr.#ctor(void*)">
+      <summary>Constructor that takes void* as parameter.</summary>
+      <param name="ptr">void* pointer value.</param>
+    </member>
+    <member name="M:Platform.IntPtr.ToInt32">
+      <summary>Provides default.int32 value of the Platform.IntPtr.</summary>
+      <param name="ptr">void* pointer value.</param>
+    </member>
+    <member name="M:Platform.IntPtr.op_Explicit(void*)~Platform.IntPtr">
+      <summary>Convert void* to Platform.IntPtr.</summary>
+      <returns>Returns Platform.IntPtr.</returns>
+    </member>
+    <member name="M:Platform.IntPtr.op_Explicit(default.int32)~Platform.IntPtr">
+      <summary>Convert default.int32 to Platform.IntPtr.</summary>
+      <returns>Returns Platform.IntPtr.</returns>
+    </member>
+    <member name="M:Platform.IntPtr.op_Explicit(native int)~Platform.IntPtr">
+      <summary>Convert native int to Platform.IntPtr.</summary>
+      <returns>Returns Platform.IntPtr.</returns>
+    </member>
+    
+    <member name="T:Platform.InvalidArgumentException">
+      <summary>Represents invalid argument exception (E_INVALIDARG).</summary>
+    </member>
+    <member name="M:Platform.InvalidArgumentException.#ctor">
+      <summary>Default constructor of Platform.InvalidArgumentException.</summary>
+    </member>
+    <member name="M:Platform.InvalidArgumentException.#ctor(Platform.String)">    
+      <summary>Constructor that takes debugging message as parameter.</summary>
+      <param name="message">Input debugging message.</param>
+    </member>
+
+    <member name="T:Platform.InvalidCastException">
+      <summary>Represents invalid argument exception (E_NOINTERFACE).</summary>
+    </member>
+    <member name="M:Platform.InvalidCastException.#ctor">
+      <summary>Default constructor of Platform.InvalidCastException.</summary>
+    </member>
+    <member name="M:Platform.InvalidCastException.#ctor(Platform.String)">    
+      <summary>Constructor that takes debugging message as parameter.</summary>
+      <param name="message">Input debugging message.</param>
+    </member>
+
+    <member name="T:Platform.MTAThreadAttribute">
+      <summary>Represent MTA attribute.</summary>
+    </member>
+    <member name="M:Platform.MTAThreadAttribute.#ctor">
+      <summary>Default constructor of Platform.MTAThreadAttribute.</summary>
+    </member>
+    <member name="M:Platform.MTAThreadAttribute.Equals(Platform.Object)">
+      <summary>Compare object with another Platform.Object.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>    
+    <member name="M:Platform.MTAThreadAttribute.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of the object.</returns>
+    </member>    
+    <member name="M:Platform.MTAThreadAttribute.ToString">
+      <summary>Return string representation of the object.</summary>
+      <returns>String value of the object.</returns>
+    </member>
+
+    <member name="T:Platform.NotImplementedException">
+      <summary>Represents not implemented exception (E_NOTIMPL).</summary>
+    </member>    
+    <member name="M:Platform.NotImplementedException.#ctor">
+      <summary>Default constructor of Platform.NotImplementedException.</summary>
+    </member>
+    <member name="M:Platform.NotImplementedException.#ctor(Platform.String)">    
+      <summary>Constructor that takes debugging message as parameter.</summary>
+      <param name="message">Input debugging message.</param>
+    </member>    
+
+    <member name="T:Platform.NullReferenceException">
+      <summary>Represents not implemented exception (E_POINTER).</summary>
+    </member>
+    <member name="M:Platform.NullReferenceException.#ctor">
+      <summary>Default constructor of Platform.NotImplementedException.</summary>
+    </member>
+    <member name="M:Platform.NullReferenceException.#ctor(Platform.String)">    
+      <summary>Constructor that takes debugging message as parameter.</summary>
+      <param name="message">Input debugging message.</param>
+    </member>    
+    
+    <member name="T:Platform.Object">
+      <summary>Represent Platform.Object class.</summary>
+    </member>
+    <member name="M:Platform.Object.#ctor">
+      <summary>Default constructor of Platform.Object.</summary>
+    </member>
+    <member name="M:Platform.Object.Equals(Platform.Object)">
+      <summary>Compare object with another Platform.Object.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>    
+    <member name="M:Platform.Object.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of object.</returns>
+    </member>
+    <member name="M:Platform.Object.GetType">
+      <summary>Method return Platform.Type that represents type of object</summary>      
+      <returns>Return Platform.Type of this object.</returns>
+    </member>
+    <member name="M:Platform.Object.ReferenceEquals(Platform.Object,Platform.Object)">
+      <summary>Compare reference of two Platform.Object if they are equal.</summary>
+      <param name="obj1">Platform.Object value.</param>
+      <param name="obj2">Platform.Object value.</param>
+      <returns>Return true if references are equal otherwise false.</returns>
+    </member>
+    <member name="M:Platform.Object.ReferenceEquals(Platform.String,Platform.String)">
+      <summary>Compare reference of two Platform.String if they are equal.</summary>    
+      <param name="str1">Platform.String value.</param>
+      <param name="str2">Platform.String value.</param>
+      <returns>Return true if references are equal otherwise false.</returns>
+    </member>
+    <member name="M:Platform.Object.ToString">
+      <summary>Return string representation of object.</summary>
+      <returns>String value of object.</returns>
+    </member>
+    
+    <member name="T:Platform.OperationCanceledException">
+      <summary>Represents operation canceled exception (E_ABORT).</summary>
+    </member>
+    <member name="M:Platform.OperationCanceledException.#ctor">
+      <summary>Default constructor of Platform.OperationCanceledException.</summary>
+    </member>
+    <member name="M:Platform.OperationCanceledException.#ctor(Platform.String)">    
+      <summary>Constructor that takes debugging message as parameter.</summary>
+      <param name="message">Input debugging message.</param>
+    </member>
+
+    <member name="T:Platform.OutOfBoundsException">
+      <summary>Represents out of bounds exception (E_BOUNDS).</summary>
+    </member>
+    <member name="M:Platform.OutOfBoundsException.#ctor">
+      <summary>Default constructor of Platform.OutOfBoundsException.</summary>
+    </member>
+    <member name="M:Platform.OutOfBoundsException.#ctor(Platform.String)">    
+      <summary>Constructor that takes debugging message as parameter.</summary>
+      <param name="message">Input debugging message.</param>
+    </member>    
+    
+    <member name="T:Platform.OutOfMemoryException">
+      <summary>Represents out of memory exception (E_OUTOFMEMORY).</summary>
+    </member>
+    <member name="M:Platform.OutOfMemoryException.#ctor">
+      <summary>Default constructor of Platform.OutOfMemoryException.</summary>
+    </member>
+    <member name="M:Platform.OutOfMemoryException.#ctor(Platform.String)">    
+      <summary>Constructor that takes debugging message as parameter.</summary>
+      <param name="message">Input debugging message.</param>
+    </member>
+    
+    <member name="T:Platform.STAThreadAttribute">
+      <summary>Represent STA attribute.</summary>
+    </member>
+    <member name="M:Platform.STAThreadAttribute.#ctor">
+      <summary>Default constructor of Platform.STAThreadAttribute.</summary>
+    </member>
+    <member name="M:Platform.STAThreadAttribute.Equals(Platform.Object)">
+    <summary>Compare object with another Platform.Object.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>
+    <member name="M:Platform.STAThreadAttribute.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of the object.</returns>
+    </member>
+    <member name="M:Platform.STAThreadAttribute.ToString">
+      <summary>Return string representation of the object.</summary>
+      <returns>String value of the object.</returns>
+    </member>
+
+    <member name="T:Platform.SizeT">
+      <summary>Represents Platform.SizeT class.</summary>
+    </member>
+    <member name="F:Platform.SizeT._value">
+      <summary>The void* value of type.</summary>
+    </member>
+    <member name="M:Platform.SizeT.#ctor(default.int32)">
+      <summary>Constructor that takes default.int32 as parameter.</summary>
+      <param name="ptr">default.int32 pointer value.</param>
+    </member>
+    <member name="M:Platform.SizeT.#ctor(void*)">
+      <summary>Constructor that takes void* as parameter.</summary>
+      <param name="ptr">void* pointer value.</param>
+    </member>
+    <member name="M:Platform.SizeT.Equals(Platform.Object)">
+    <summary>Compare object with another Platform.Object.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>
+    <member name="M:Platform.SizeT.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of the object.</returns>
+    </member>
+    <member name="M:Platform.SizeT.ToString">
+      <summary>Return string representation of the object.</summary>
+      <returns>String value of the object.</returns>
+    </member>
+
+    <member name="T:Platform.String">
+      <summary>Represents Platform.String class.</summary>
+    </member>
+    <member name="M:Platform.String.#ctor(char modopt(Platform.Runtime.CompilerServices.IsConst)*)">
+      <summary>Constructor that takes HSTRING/wchar_t* as input parameter.</summary>
+      <param name="str">String pointer.</param>
+    </member>
+    <member name="M:Platform.String.#ctor(char modopt(Platform.Runtime.CompilerServices.IsConst)*, default.uint32)">
+      <summary>Constructor that takes wchar_t* as input parameter and length of the string.</summary>
+      <param name="str">String pointer.</param>
+      <param name="strLen">String length.</param>
+    </member>
+    <member name="M:Platform.String.#ctor">
+      <summary>Default constructor of Platform.String.</summary>
+    </member>
+    <member name="M:Platform.String.Begin">
+        <summary>Provides pointer that points just beyond the end of the vector.</summary>
+        <returns>Returns pointer.</returns>
+    </member>
+    <member name="M:Platform.String.CompareOrdinal(Platform.String,Platform.String)">
+      <summary>Compare two strings and return true if they are the same otherwise false.</summary>
+      <param name="str1">Input Platform.String.</param>
+      <param name="str2">Input Platform.String.</param>
+      <returns>Returns default.int32.</returns>
+    </member>
+    <member name="M:Platform.String.Concat(Platfrom.Object,Platform.Object)">
+      <summary>Concat two objects as strings.</summary>
+      <param name="str1">Input Platform.Object.</param>
+      <param name="str2">Input Platform.Object.</param>
+      <returns>Returns Platform.String.</returns>
+    </member>
+    <member name="M:Platform.String.Concat(Platform.String,Platform.String)">
+      <summary>Concat two strings.</summary>
+      <param name="str1">Input Platform.String.</param>
+      <param name="str2">Input Platform.String.</param>
+      <returns>Returns Platform.String.</returns>
+    </member>
+    <member name="M:Platform.String.Data">
+      <summary>Extract wchar_t* buffer from Platform.String.</summary>
+      <returns>Returns wchar_t* buffer.</returns>
+    </member>    
+    <member name="M:Platform.String.Dispose">
+      <summary>Cleanup routine of Platform.Exception.</summary>
+    </member>
+    <member name="M:Platform.String.End">
+      <summary>Provides pointer to the first element in the container.</summary>
+      <returns>Returns pointer.</returns>
+    </member>
+    <member name="M:Platform.String.Equals(Platform.Object)">
+      <summary>Compare object with another Platform.Object.</summary>
+      <param name="obj">Platform object.</param>
+      <returns>Returns true if string values of objects are identical otherwise false.</returns>
+    </member>
+    <member name="M:Platform.String.Equals(Platform.String)">
+      <summary>Compare object with another Platform.String.</summary>
+      <param name="str">String object.</param>
+      <returns>Returns true if strings are identical otherwise false.</returns>
+    </member>
+    <member name="M:Platform.String.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of object.</returns>
+    </member>
+    <member name="M:Platform.String.IsEmpty">
+      <summary>Check if Platform.String is empty.</summary>
+      <returns>Returns true if Platform.String is empty otherwise false.</returns>
+    </member>
+    <member name="M:Platform.String.IsFastPass">
+      <summary>Provides information if Platform.String is fast pass.</summary>
+      <returns>Returns true if Platform.String is fast pass otherwise false.</returns>
+    </member>
+    <member name="M:Platform.String.Length">
+      <summary>Returns length of string.</summary>
+      <returns>Length of string.</returns>
+    </member>
+    <member name="M:Platform.String.ToString">
+      <summary>Returns string.</summary>
+      <returns>String value.</returns>
+    </member>
+    <member name="M:Platform.Guid.op_Equality(Platform.String,Platform.String)">
+      <summary>Return true if Platform.String is equal otherwise false.</summary>
+      <param name="str1">Input Platform.String.</param>
+      <param name="str2">Input Platform.String.</param>
+      <returns>True if equal otherwise false.</returns>
+    </member>
+    <member name="M:Platform.Guid.op_GreaterThan(Platform.String,Platform.String)">
+      <summary>Return true if first string is greater than second string otherwise false.</summary>
+      <param name="str1">Input Platform.String.</param>
+      <param name="str2">Input Platform.String.</param>
+      <returns>True if first string is greater than second string otherwise false.</returns>
+    </member>
+    <member name="M:Platform.Guid.op_GreaterThanOrEqual(Platform.String,Platform.String)">
+      <summary>Return true if first string is greater or equal than second string otherwise false.</summary>
+      <param name="str1">Input Platform.String.</param>
+      <param name="str2">Input Platform.String.</param>
+      <returns>True if first string is greater or equal than second string otherwise false.</returns>
+    </member>
+    <member name="M:Platform.Guid.op_Inequality(Platform.String,Platform.String)">
+      <summary>Return true if Platform.String is not equal otherwise false.</summary>
+      <param name="str1">Input Platform.String.</param>
+      <param name="str2">Input Platform.String.</param>
+      <returns>True if not equal otherwise false.</returns>
+    </member>
+    <member name="M:Platform.Guid.op_LessThan(Platform.String,Platform.String)">
+      <summary>Return true if second string is greater than first string otherwise false.</summary>
+      <param name="str1">Input Platform.String.</param>
+      <param name="str2">Input Platform.String.</param>
+      <returns>True if second string is greater than first string otherwise false.</returns>
+    </member>
+    <member name="M:Platform.Guid.op_LessThanOrEqual(Platform.String,Platform.String)">
+      <summary>Return true if second string is greater or equal than first string otherwise false.</summary>
+      <param name="str1">Input Platform.String.</param>
+      <param name="str2">Input Platform.String.</param>
+      <returns>True if second string is greater or equal than first string otherwise false.</returns>
+    </member>
+    
+    <member name="T:Platform.Type">
+      <summary>Represents Platform.Type class.</summary>
+    </member>
+    <member name="F:Platform.Type._descriptior">
+      <summary>Reserved.</summary>
+    </member>
+    <member name="F:Platform.Type._owndescriptior">
+      <summary>Reserved.</summary>
+    </member>
+    <member name="M:Platform.Type.#ctor(Windows.UI.Xaml.Interop.TypeName)">
+      <summary>Constructor that takes Windows.UI.Xaml.Interop.TypeName as parameter.</summary>
+      <param name="type">Windows.UI.Xaml.Interop.TypeName input value.</param>
+    </member>
+    <member name="M:Platform.Type.#ctor(Platform.Object)">
+      <summary>Constructor that takes Platform.Object as parameter.</summary>
+      <param name="obj">Platform.Object input value.</param>
+    </member>
+    <member name="M:Platform.Type.#ctor(Platform.IntPtr)">
+      <summary>Constructor that takes Platform.IntPtr as parameter.</summary>
+      <param name="ptr">Platform.IntPtr input value.</param>
+    </member>
+    <member name="M:Platform.Type.Equals(Platform.Object)">
+      <summary>Compare object with another Platform.Object.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>    
+    <member name="M:Platform.Type.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of the object.</returns>
+    </member>
+    <member name="M:Platform.Type.GetTypeCode(Platform.Type)">
+      <summary>Retrieve Platform.TypeCode from Platform.Type.</summary>
+      <param name="type">Platform.Type value.</param>
+      <returns>Return Plaform.TypeCode.</returns>
+    </member>
+    <member name="M:Platform.Type.ToString">
+      <summary>Return string representation of the object.</summary>
+      <returns>String value of the object.</returns>
+    </member>
+    <member name="P:Platform.Type.FullName">
+      <summary>Specifies the property that gets full name of the object type.</summary>      
+    </member>
+    <member name="M:Platform.Type.op_Implicit Windows.UI.Xaml.Interop.TypeName(Platform.Type)">
+      <summary>Convert Platform.Type to Windows.UI.Xaml.Interop.TypeName.</summary>
+      <returns>Returns Windows.UI.Xaml.Interop.TypeName.</returns>
+    </member>
+    <member name="M:Platform.Type.op_Implicit(Windows.UI.Xaml.Interop.TypeName)">
+      <summary>Convert Windows.UI.Xaml.Interop.TypeName to Platform.Type.</summary>
+      <returns>Returns Platform.Type.</returns>
+    </member>
+    
+    <member name="T:Platform.TypeCode">
+      <summary>Represents Platform.TypeCode class.</summary>
+    </member>
+    <member name="F:Platform.TypeCode._value">
+      <summary>The default.int32 value of type.</summary>
+    </member>
+    <member name="F:Platform.TypeCode.Empty">
+      <summary>The value for empty type.</summary>
+    </member>
+    <member name="F:Platform.TypeCode.Object">
+      <summary>The value for object type.</summary>
+    </member>
+    <member name="F:Platform.TypeCode.Boolean">
+      <summary>The value for bool type.</summary>
+    </member>
+    <member name="F:Platform.TypeCode.Char16">
+      <summary>The value for Char16 type.</summary>
+    </member>
+    <member name="F:Platform.TypeCode.Int8">
+      <summary>The value for Int8 type.</summary>
+    </member>
+    <member name="F:Platform.TypeCode.UInt8">
+      <summary>The value for UInt8 type.</summary>
+    </member>
+    <member name="F:Platform.TypeCode.Int16">
+      <summary>The value for Int16 type.</summary>
+    </member>
+    <member name="F:Platform.TypeCode.UInt16">
+      <summary>The value for UInt16 type.</summary>
+    </member>
+    <member name="F:Platform.TypeCode.Int32">
+      <summary>The value for Int32 type.</summary>
+    </member>
+    <member name="F:Platform.TypeCode.UInt32">
+      <summary>The value for UInt32 type.</summary>
+    </member>
+    <member name="F:Platform.TypeCode.Int64">
+      <summary>The value for Int64 type.</summary>
+    </member>
+    <member name="F:Platform.TypeCode.UInt64">
+      <summary>The value for UInt64 type.</summary>
+    </member>
+    <member name="F:Platform.TypeCode.Single">
+      <summary>The value for Single type.</summary>
+    </member>
+    <member name="F:Platform.TypeCode.Double">
+      <summary>The value for Double type.</summary>
+    </member>
+    <member name="F:Platform.TypeCode.DateTime">
+      <summary>The value for DateTime type.</summary>
+    </member>
+    <member name="F:Platform.TypeCode.String">
+      <summary>The value for String type.</summary>
+    </member>
+    <member name="F:Platform.TypeCode.TimeSpan">
+      <summary>The value for TimeSpan type.</summary>
+    </member>
+    <member name="F:Platform.TypeCode.Point">
+      <summary>The value for Point type.</summary>
+    </member>
+    <member name="F:Platform.TypeCode.Size">
+      <summary>The value for Size type.</summary>
+    </member>
+    <member name="F:Platform.TypeCode.Rect">
+      <summary>The value for Rect type.</summary>
+    </member>
+    <member name="F:Platform.TypeCode.Guid">
+      <summary>The value for Guid type.</summary>
+    </member>
+    <member name="F:Platform.TypeCode.Custom">
+      <summary>The value for Custom type.</summary>
+    </member>
+
+    <member name="T:Platform.UIntPtr">
+      <summary>Representation of unsigned pointer type.</summary>
+    </member>
+    <member name="F:Platform.UIntPtr._value">
+      <summary>The void* value of type.</summary>
+    </member>
+    
+    <member name="T:Platform.ValueType">
+      <summary>Represents Platform.ValueType class.</summary>
+    </member>
+    <member name="M:Platform.ValueType.#ctor">
+      <summary>Default constructor of Platform.Object.</summary>
+    </member>
+    <member name="M:Platform.ValueType.Equals(Platform.Object)">
+      <summary>Compare object with another Platform.ValueType.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>    
+    <member name="M:Platform.ValueType.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of object.</returns>
+    </member>
+    <member name="M:Platform.ValueType.GetType">
+      <summary>Method return Platform.Type that represents type of object</summary>      
+      <returns>Return Platform.Type of this object.</returns>
+    </member>
+    <member name="M:Platform.ValueType.ToString">
+      <summary>Return string representation of object.</summary>
+      <returns>String value of object.</returns>
+    </member>
+    
+    <member name="T:Platform.WrongThreadException">
+      <summary>Represents wrong thread exception (RPC_E_WRONG_THREAD).</summary>
+    </member>
+    <member name="M:Platform.WrongThreadException.#ctor">
+      <summary>Default constructor of Platform.WrongThreadException.</summary>
+    </member>
+    <member name="M:Platform.WrongThreadException.#ctor(Platform.String)">    
+      <summary>Constructor that takes debugging message as parameter.</summary>
+      <param name="message">Input debugging message.</param>
+    </member>    
+    
+    <!-- End of Platform namespace -->
+    
+    <!-- Begin of Platform.Details namespace -->
+    <member name="N:Platform.Details">
+      <summary>Provides general C++/CX framework internal implementation interfaces and classes.</summary>
+    </member>
+    
+    <member name="T:Platform.Details.Console">
+      <summary>Representation of standard output stream.</summary>
+    </member>
+    <member name="M:Platform.Details.Console.WriteLine(Platform.Object)">
+      <summary>Print string value of Platform.Object to the standard output stream.</summary>
+      <param name="obj">Input Platform.Object</param>
+    </member>
+    <member name="M:Platform.Details.Console.WriteLine(Platform.String)">
+      <summary>Print Platform.String to the standard output stream.</summary>
+      <param name="string">Input Platform.String</param>
+    </member>
+    <member name="M:Platform.Details.Console.WriteLine">
+      <summary>Print end of line to the standard output stream.</summary>      
+    </member>
+    
+    <member name="T:Platform.Details.Heap">
+      <summary>Representation of Heap object</summary>
+    </member>
+    <member name="M:Platform.Details.Heap.AlignedAllocate(Platform.SizeT, Platform.SizeT)">
+      <summary>Allocates memory on a specified alignment boundary.</summary>
+      <param name="size">Size of the requested memory allocation.</param>
+      <param name="alignment">The alignment value, which must be an integer power of 2.</param>
+      <returns>Pointer to allocated memory.</returns>      
+    </member>    
+    <member name="M:Platform.Details.Heap.AllignedFree(void*, Platform.SizeT)">
+      <summary>Frees a block of memory that was allocated with Platfrom.Details.Heap.AlignedAllocate.</summary>
+      <param name="ptr">Pointer to allocated memory with Platform.Details.Heap.AlignedAllocate.</param>
+      <param name="alignment">The alignment value, which must be an integer power of 2.</param>
+    </member>    
+    <member name="M:Platform.Details.Heap.Allocate(Platform.SizeT,void*)">
+      <summary>Placement allocate.</summary>
+    </member>
+    <member name="M:Platform.Details.Heap.Allocate(Platform.SizeT)">
+      <summary>Allocates memory blocks.</summary>
+      <param name="size">Bytes to allocate.</param>
+      <returns>Pointer to allocated memory.</returns>      
+    </member>
+    <member name="M:Platform.Details.Heap.EnumerateAllocatedObjects(Platform.Details.HeapEntryHandler)">
+      <summary>Enumerates all allocated objects with Platform.Details.HeapEntryHandler</summary>
+      <param name="size">Delegate that will be invoked while enumerating.</param>
+    </member>    
+    <member name="M:Platform.Details.Heap.Free(void*)">
+      <summary>Deallocates or frees a memory block.</summary>
+      <param name="ptr">Previously allocated memory block to be freed.</param>      
+    </member>
+    <member name="M:Platform.Details.Heap.PlacementFree(void*, void*)">
+      <summary>Placement free.</summary>      
+    </member>
+    <member name="P:Platform.Details.Heap.BreakOnAllocationId">
+      <summary>Specifies the property that sets/gets id on allocation that Platform.Details.Heap will invoke debug break.</summary>      
+    </member>
+    <member name="P:Platform.Details.Heap.BreakOnFreeId">
+      <summary>Specifies the property that sets/gets id on free that Platform.Details.Heap will invoke debug break.</summary>
+    </member>
+    <member name="P:Platform.Details.Heap.CurrentAllocationId">
+      <summary>Specifies the property that gets the current allocation id from Platform.Details.Heap.</summary>      
+    </member>
+    <member name="P:Platform.Details.Heap.ObjectCount">
+      <summary>Specifies the property that gets the object count from Platform.Details.Heap.</summary>      
+    </member>
+    <member name="P:Platform.Details.Heap.TrackingLevel">
+      <summary>Specifies the property that sets/gets tracking level for Platform.Details.Heap.</summary>      
+    </member>
+    
+    <member name="T:Platform.Details.HeapAllocationTrackingLevel">
+      <summary>Represent allocation tracking level value</summary>
+    </member>
+    <member name="F:Platform.Details.HeapAllocationTrackingLevel.value__">
+      <summary>The value for allocation tracking level.</summary>
+    </member>
+    <member name="F:Platform.Details.HeapAllocationTrackingLevel.NoTracking">
+      <summary>Tracking is disabled.</summary>
+    </member>
+    <member name="F:Platform.Details.HeapAllocationTrackingLevel.ObjectCount">
+      <summary>Track object count.</summary>
+    </member>
+    <member name="F:Platform.Details.HeapAllocationTrackingLevel.ObjectInstances">
+      <summary>Track object instances.</summary>
+    </member>
+    <member name="F:Platform.Details.HeapAllocationTrackingLevel.BreakOnErrors">
+      <summary>Break on errors.</summary>
+    </member>
+
+    <member name="T:Platform.Details.HeapEntryHandler">
+      <summary>Represent delegate that can be called by Platform.Details.Heap when enumerating objects</summary>
+    </member>
+    <member name="M:Platform.Details.HeapEntryHandler.Invoke(Platform.Object, default.int32)">
+      <summary>Invokes user defined action when Platform.Details.Heap.EnumerateAllocatedObjects is called</summary>
+      <param name="obj">Platform.Object that were allocated by Platform.Details.Heap</param>
+      <param name="allocId">Allocation id</param>
+    </member>
+    
+    <member name="T:Platform.Details.IActivationFactory">
+      <summary>You must implement this interface for every class that has an activatable class identifier and that you register in the Windows Runtime Activation Store.</summary>
+    </member>
+    <member name="M:Platform.Details.IActivationFactory.ActivateInstance">
+      <summary>Creates a new instance of the Windows Runtime class that is associated with the current activation factory.</summary>
+      <returns>Returns requested object</returns>
+    </member>
+    
+    <member name="T:Platform.Details.IAgileObject">
+      <summary>Marks an interface as agile across apartments.</summary>
+    </member>
+    
+    <member name="T:Platform.Details.IClassFactory">
+      <summary>Enables a class of objects to be created.</summary>
+    </member>
+    <member name="M:Platform.Details.IClassFactory.CreateInstance(Platform.Object, Platform.Guid)">
+      <summary>Creates an uninitialized object.</summary>
+      <param name="pUnkOuter">If the object is being created as part of an aggregate, specify a pointer to the controlling IUnknown interface of the aggregate. Otherwise, this parameter must be NULL.</param>
+      <param name="riid">A reference to the identifier of the interface to be used to communicate with the newly created object. If pUnkOuter is NULL, this parameter is generally the IID of the initializing interface; if pUnkOuter is non-NULL, riid must be IID_IUnknown.</param>
+      <returns>Returns requested object</returns>
+    </member>
+    <member name="M:Platform.Details.IClassFactory.LockSever(default.int32)">
+      <summary>Locks an object application open in memory. This enables instances to be created more quickly.</summary>
+      <param name="fLock">If TRUE, increments the lock count; if FALSE, decrements the lock count.</param>
+    </member>
+    
+    <member name="T:Platform.Details.IEquatable">
+      <summary>Representation of default.int8</summary>
+    </member>
+    <member name="M:Platform.Details.IEquatable.Equals(Platform.Object)">
+      <summary>Compare object with another Platform.Object.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>
+    <member name="M:Platform.Details.IEquatable.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of the object.</returns>
+    </member>
+    
+    <member name="T:Platform.Details.IPrintable">
+      <summary>Represents a printable interface for an object.</summary>
+    </member>
+    <member name="M:Platform.Details.IPrintable.ToString">
+      <summary>Return string representation of an object.</summary>
+      <returns>String value of object.</returns>
+    </member>
+    
+    <member name="T:Platform.Details.IWeakReference">
+      <summary>Represents a weak reference interface to an object.</summary>
+    </member>
+    <member name="M:Platform.Details.IWeakReference.Resolve(Platform.Guid)">
+      <summary>Resolves a weak reference by returning a strong reference to the specified object.</summary>
+      <returns>Returns Platform.Object</returns>
+    </member>
+
+    <member name="T:Platform.Details.IWeakReferenceSource">
+      <summary>Represents a source object to which a weak reference can be retrieved.</summary>
+    </member>    
+    <member name="M:Platform.Details.IWeakReferenceSource.GetWeakReference">
+      <summary>Retrieves a weak reference from an Platform.IWeakReferenceSource.</summary>
+      <returns>Returns Platform.IWeakReference interface</returns>
+    </member>
+    
+    <member name="T:Platform.Details._GUID">
+      <summary>Representation of Platform._GUID.</summary>
+    </member>
+    
+    <!-- End of Platform.Details namespace -->
+    
+    <!-- Begin of Platform.Metadata namespace -->
+    <member name="N:Platform.Metadata">
+      <summary>Provides types for metadata attributes.</summary>
+    </member>
+    
+    <member name="T:Platform.Metadata.Attribute">
+      <summary>Representation of Platform.Metadata.Attribute.</summary>
+    </member>
+    <member name="M:Platform.Metadata.Attribute.#ctor">
+      <summary>Default constructor for Platform.Metadata.Attribute object.</summary>
+    </member>    
+    <member name="M:Platform.Metadata.Attribute.Equals(Platform.Object)">
+      <summary>Compare object with another Platform.Object.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>    
+    <member name="M:Platform.Metadata.Attribute.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of object.</returns>
+    </member>    
+    <member name="M:Platform.Metadata.Attribute.ToString">
+      <summary>Return string representation of object.</summary>
+      <returns>String value of object.</returns>
+    </member>
+    
+    <member name="T:Platform.Metadata.DefaultMemberAttribute">
+      <summary>Representation of Platform.Metadata.DefaultMemberAttribute.</summary>
+    </member>
+    <member name="M:Platform.Metadata.DefaultMemberAttribute.#ctor(Platform.String)">
+      <summary>Constructor for Platform.Metadata.DefaultMemberAttribute object.</summary>
+      <param name="str">Input Platform.String.</param>
+    </member>    
+    <member name="M:Platform.Metadata.DefaultMemberAttribute.Equals(Platform.Object)">
+      <summary>Compare object with another Platform.Object.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>    
+    <member name="M:Platform.Metadata.DefaultMemberAttribute.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of object.</returns>
+    </member>    
+    <member name="M:Platform.Metadata.DefaultMemberAttribute.ToString">
+      <summary>Return string representation of object.</summary>
+      <returns>String value of object.</returns>
+    </member>
+    
+    <member name="T:Platform.Metadata.FlagsAttribute">
+      <summary>Representation of Platform.Metadata.FlagsAttribute.</summary>
+    </member>
+    <member name="M:Platform.Metadata.FlagsAttribute.#ctor">
+      <summary>Default constructor for Platform.Metadata.FlagsAttribute object.</summary>
+    </member>    
+    <member name="M:Platform.Metadata.FlagsAttribute.Equals(Platform.Object)">
+      <summary>Compare object with another Platform.Object.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>    
+    <member name="M:Platform.Metadata.FlagsAttribute.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of object.</returns>
+    </member>    
+    <member name="M:Platform.Metadata.FlagsAttribute.ToString">
+      <summary>Return string representation of object.</summary>
+      <returns>String value of object.</returns>
+    </member>
+    
+    <member name="T:Platform.Metadata.RuntimeClassNameAttribute">
+      <summary>Representation of Platform.Metadata.RuntimeClassNameAttribute. Specifies interface that runtime class name should be taken from.</summary>
+    </member>
+    <member name="M:Platform.Metadata.RuntimeClassNameAttribute.#ctor">
+      <summary>Default constructor for Platform.Metadata.RuntimeClassNameAttribute object.</summary>
+    </member>    
+    <member name="M:Platform.Metadata.RuntimeClassNameAttribute.Equals(Platform.Object)">
+      <summary>Compare object with another Platform.Object.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>    
+    <member name="M:Platform.Metadata.RuntimeClassNameAttribute.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of object.</returns>
+    </member>    
+    <member name="M:Platform.Metadata.RuntimeClassNameAttribute.ToString">
+      <summary>Return string representation of object.</summary>
+      <returns>String value of object.</returns>
+    </member>    
+    <!-- End of Platform.Metadata namespace -->
+    
+    
+    <!-- Begin of Platform.Runtime.CompilerServices namespace -->
+    <member name="N:Platform.Runtime.CompilerServices">
+      <summary>Reserved compiler modifiers.</summary>
+    </member>
+    
+    <member name="T:Platform.Runtime.CompilerServices.CallConvCdecl">
+      <summary>Specifies calling convention __cdecl.</summary>
+    </member>
+    <member name="T:Platform.Runtime.CompilerServices.CallConvFastcall">
+      <summary>Specifies calling convention __fastcall.</summary>
+    </member>
+    <member name="T:Platform.Runtime.CompilerServices.CallConvStdcall">
+      <summary>Specifies calling convention __stdcall.</summary>
+    </member>
+    <member name="T:Platform.Runtime.CompilerServices.CallConvThiscall">
+      <summary>Specifies calling convention __thiscall.</summary>
+    </member>
+    <member name="T:Platform.Runtime.CompilerServices.CompilerMarshalOverride">
+      <summary>Specifies compiler marshal override.</summary>
+    </member>
+
+    <member name="T:Platform.Runtime.CompilerServices.IndexerNameAttribute">
+      <summary>Specifies indexer name attribute.</summary>
+    </member>
+	<member name="M:Platform.Runtime.CompilerServices.IndexerNameAttribute.#ctor(Platform.String)">
+      <summary>Construcotr of Platform.Runtime.CompilerServices.IndexerNameAttribute object.</summary>
+      <param name="str">Input string.</param>
+    </member>  
+	<member name="M:Platform.Runtime.CompilerServices.IndexerNameAttribute.Equals(Platform.Object)">
+      <summary>Compare object with another Platform.Object.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>    
+    <member name="M:Platform.Runtime.CompilerServices.IndexerNameAttribute.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of object.</returns>
+    </member>    
+    <member name="M:Platform.Runtime.CompilerServices.IndexerNameAttribute.ToString">
+      <summary>Return string representation of object.</summary>
+      <returns>String value of object.</returns>
+    </member>    
+
+    <member name="T:Platform.Runtime.CompilerServices.IsBoxed">
+      <summary>Specifies that type is boxed.</summary>
+    </member>
+    <member name="T:Platform.Runtime.CompilerServices.IsByValue">
+      <summary>Specifies that type is by value.</summary>
+    </member>
+    <member name="T:Platform.Runtime.CompilerServices.IsConst">
+      <summary>Specifies that type is const.</summary>
+    </member>
+    <member name="T:Platform.Runtime.CompilerServices.IsCopyConstructed">
+      <summary>Specifies that type is copy constructed.</summary>
+    </member>
+    <member name="T:Platform.Runtime.CompilerServices.IsExplicitlyDereferenced">
+      <summary>Specifies that type is explicitly dereferenced.</summary>
+    </member>
+    <member name="T:Platform.Runtime.CompilerServices.IsImplicitlyDereferenced">
+      <summary>Specifies that type is implicitly dereferenced.</summary>
+    </member>
+    <member name="T:Platform.Runtime.CompilerServices.IsLong">
+      <summary>Specifies that type is long</summary>
+    </member>
+    <member name="T:Platform.Runtime.CompilerServices.IsSignUnspecifiedByte">
+      <summary>Specifies sign unspecified byte.</summary>
+    </member>
+    <member name="T:Platform.Runtime.CompilerServices.IsSigned">
+      <summary>Specifies that type is signed.</summary>
+    </member>
+    <member name="T:Platform.Runtime.CompilerServices.IsUdtReturn">
+      <summary>Specified udt return.</summary>
+    </member>
+    <member name="T:Platform.Runtime.CompilerServices.IsVolatile">
+      <summary>Specifies that type is volatile.</summary>
+    </member>
+    <member name="T:Platform.Runtime.CompilerServices.OnePhaseConstructedAttribute">
+      <summary>Specifies type that using one phase construction.</summary>
+    </member>    
+	<member name="M:Platform.Runtime.CompilerServices.OnePhaseConstructedAttribute.#ctor(Platform.String)">
+      <summary>Default cnstrucotr.</summary>
+    </member>  
+	<member name="M:Platform.Runtime.CompilerServices.OnePhaseConstructedAttribute.Equals(Platform.Object)">
+      <summary>Compare object with another Platform.Object.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>    
+    <member name="M:Platform.Runtime.CompilerServices.OnePhaseConstructedAttribute.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of object.</returns>
+    </member>    
+    <member name="M:Platform.Runtime.CompilerServices.OnePhaseConstructedAttribute.ToString">
+      <summary>Return string representation of object.</summary>
+      <returns>String value of object.</returns>
+    </member>   
+    <!-- End of Platform.Runtime.CompilerServices namespace -->
+
+    <!-- Begin of Platform.Runtime.InteropServices namespace -->
+    <member name="N:Platform.Runtime.InteropServices">
+      <summary>Interopt modifiers.</summary>
+    </member>
+    
+    <member name="T:Platform.Runtime.InteropServices.ComInterfaceType">
+      <summary>Representation of Platform.Runtime.InteropServices.ComInterfaceType.</summary>
+    </member>
+    <member name="F:Platform.Runtime.InteropServices.ComInterfaceType.value__">
+      <summary>The default.int32 value of type.</summary>
+    </member>
+    <member name="F:Platform.Runtime.InteropServices.ComInterfaceType.InterfaceIsDual">
+      <summary>Interface is dual.</summary>
+    </member>
+    <member name="F:Platform.Runtime.InteropServices.ComInterfaceType.InterfaceIsIDispatch">
+      <summary>Interface is dispatchable.</summary>
+    </member>
+    <member name="F:Platform.Runtime.InteropServices.ComInterfaceType.InterfaceIsIInspectable">
+      <summary>Interface is IInspectable based.</summary>
+    </member>
+    <member name="F:Platform.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown">
+      <summary>Interface is IUnknown based.</summary>
+    </member>
+    
+    <member name="T:Platform.Runtime.InteropServices.LayoutKind">
+      <summary>Representation of Platform.Runtime.InteropServices.LayoutKind.</summary>
+    </member>
+    <member name="F:Platform.Runtime.InteropServices.LayoutKind.value__">
+      <summary>The default.int32 value of type.</summary>
+    </member>
+    <member name="F:Platform.Runtime.InteropServices.LayoutKind.Auto">
+      <summary>Layout is automatic.</summary>
+    </member>
+    <member name="F:Platform.Runtime.InteropServices.LayoutKind.Explicit">
+      <summary>Layout is explicit.</summary>
+    </member>
+    <member name="F:Platform.Runtime.InteropServices.LayoutKind.Sequential">
+      <summary>Layout is sequential.</summary>
+    </member>
+    
+    <member name="T:Platform.Runtime.InteropServices.MarshalAsAttribute">
+      <summary>Representation of Platform.Runtime.InteropServices.MarshalAsAttribute.</summary>
+    </member>
+    <member name="M:Platform.Runtime.InteropServices.MarshalAsAttribute.#ctor">
+      <summary>Default constructor of Platform.Runtime.InteropServices.MarshalAsAttribute object.</summary>
+    </member>    
+    <member name="M:Platform.Runtime.InteropServices.MarshalAsAttribute.Equals(Platform.Object)">
+      <summary>Compare object with another Platform.Object.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>    
+    <member name="M:Platform.Runtime.InteropServices.MarshalAsAttribute.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of object.</returns>
+    </member>    
+    <member name="M:Platform.Runtime.InteropServices.MarshalAsAttribute.ToString">
+      <summary>Return string representation of object.</summary>
+      <returns>String value of object.</returns>
+    </member>
+	
+	<member name="T:Platform.Runtime.InteropServices.InterfaceTypeAttribute">
+      <summary>Representation of Platform.Runtime.InteropServices.InterfaceTypeAttribute .</summary>
+    </member>
+    <member name="M:Platform.Runtime.InteropServices.InterfaceTypeAttribute.#ctor(Platform.Runtime.InteropServices.ComInterfaceType)">
+      <summary>Constructor of Platform.Runtime.InteropServices.InterfaceTypeAttribute object.</summary>
+	  <param name="interface type">Type of interface.</param>
+    </member>    
+    <member name="M:Platform.Runtime.InteropServices.InterfaceTypeAttribute.Equals(Platform.Object)">
+      <summary>Compare object with another Platform.Object.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>    
+    <member name="M:Platform.Runtime.InteropServices.InterfaceTypeAttribute.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of object.</returns>
+    </member>    
+    <member name="M:Platform.Runtime.InteropServices.InterfaceTypeAttribute.ToString">
+      <summary>Return string representation of object.</summary>
+      <returns>String value of object.</returns>
+    </member>
+    
+	 <member name="T:Platform.Runtime.InteropServices.StructLayoutAttribute">
+      <summary>Representation of Platform.Runtime.InteropServices.StructLayoutAttribute .</summary>
+    </member>
+    <member name="M:Platform.Runtime.InteropServices.StructLayoutAttribute.#ctor(Platform.Runtime.InteropServices.LayoutKind)">
+      <summary>Constructor of Platform.Runtime.InteropServices.StructLayoutAttribute object.</summary>
+	  <param name="layout">Layout kind.</param>
+    </member>    
+    <member name="M:Platform.Runtime.InteropServices.StructLayoutAttribute.Equals(Platform.Object)">
+      <summary>Compare object with another Platform.Object.</summary>
+      <returns>Returns true in case that object are equals otherwise false.</returns>
+    </member>    
+    <member name="M:Platform.Runtime.InteropServices.StructLayoutAttribute.GetHashCode">
+      <summary>Generate hash code according to contained data.</summary>
+      <returns>Hash code of object.</returns>
+    </member>    
+    <member name="M:Platform.Runtime.InteropServices.StructLayoutAttribute.ToString">
+      <summary>Return string representation of object.</summary>
+      <returns>String value of object.</returns>
+    </member>
+    
+	
+    <member name="T:Platform.Runtime.InteropServices.UnmanagedType">
+      <summary>Representation of Platform.Runtime.InteropServices.UnmanagedType.</summary>
+    </member>
+    <member name="F:Platform.Runtime.InteropServices.UnmanagedType.value__">
+      <summary>The default.int32 value of type.</summary>
+    </member>
+    <member name="F:Platform.Runtime.InteropServices.UnmanagedType.BStr">
+      <summary>Unamnaged type is BStr.</summary>
+    </member>
+    <member name="F:Platform.Runtime.InteropServices.UnmanagedType.LPWStr">
+      <summary>Unmanaged type is LPWstr.</summary>
+    </member>
+    <!-- End of Platform.Runtime.InteropServices namespace -->
+    
+  </members>
+</doc>

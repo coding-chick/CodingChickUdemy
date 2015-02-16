@@ -1,0 +1,21 @@
+﻿<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
+  <Metadata>
+    <Identity Id="MMP.PF.WP81.Adaptive.JS.SDK.VSIX.bb25c41c-f27d-4f8c-acbe-b349c8a6873c" Version="2.0.0.0" Language="en-US" Publisher="Microsoft" />
+    <DisplayName>Microsoft Player Framework Adaptive Streaming Plugin</DisplayName>
+    <Description>Microsoft Media Platform: Player Framework Adaptive Streaming Plugin for Windows 8 JavaScript Windows Store Apps</Description>
+    <MoreInfo>http://playerframework.codeplex.com/</MoreInfo>
+    <License>License.rtf</License>
+    <Icon>MMPPF.ico</Icon>
+    <PreviewImage>MMPPF.ico</PreviewImage>
+    <Tags>Adaptive Streaming, Microsoft Media Platform Player Framework Metro JavaScript, MMPPF</Tags>
+  </Metadata>
+  <Installation Scope="Global" AllUsers="true">
+    <InstallationTarget Id="Microsoft.ExtensionSDK" TargetPlatformIdentifier="WindowsPhoneApp" TargetPlatformVersion="v8.1" SdkName="Microsoft.PlayerFramework.Js.Adaptive" SdkVersion="2.0.0.0" />
+  </Installation>
+  <Dependencies>
+    <!--<Dependency Id="Microsoft.WinJS" DisplayName="Microsoft Windows Library for JavaScript SDK" Version="0.6" />-->
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.ExtensionSDK" Path="SDKManifest.xml" />
+  </Assets>
+</PackageManifest>

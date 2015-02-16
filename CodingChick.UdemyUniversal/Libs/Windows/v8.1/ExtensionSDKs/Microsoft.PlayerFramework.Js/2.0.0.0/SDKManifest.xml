@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<FileList
+  Identity = "MMP.PF.Win81.JS.SDK, Version=1.0"
+  DisplayName = "Microsoft Player Framework"
+  MinVSVersion = "12.0"
+  MinToolsVersion = "4.0"
+  AppliesTo = "WindowsAppContainer + (JavaScript)"
+  MaxPlatformVersion="8.1"
+  MinOSVersion="6.3.0"
+  MaxOSVersionTested="6.3.0"
+  ReferenceManagerEnumeration = "Files">
+    <File Content="js\PlayerFramework.js" />
+    <File Content="css\PlayerFramework-dark.css" />
+    <File Content="css\PlayerFramework-light.css" />
+    <File Content="css\PlayerFramework-Entertainment-dark.css" />
+    <File Content="css\PlayerFramework-Entertainment-light.css" />
+    <File Content="css\PlayerFramework-Universal-dark.css" />
+    <File Content="css\PlayerFramework-Universal-light.css" />
+    <DependsOn Identity = "Microsoft.WinJS.2.0, Version=1.0.9600.16384"/>
+</FileList>

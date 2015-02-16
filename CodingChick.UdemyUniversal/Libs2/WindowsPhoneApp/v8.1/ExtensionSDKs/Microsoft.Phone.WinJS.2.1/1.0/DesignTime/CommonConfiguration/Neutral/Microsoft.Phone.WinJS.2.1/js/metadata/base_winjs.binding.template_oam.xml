@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Microsoft.Phone.WinJS.2.1/js/base/WinJS.Binding.Template" name="WinJS.Binding.Template" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="true" xmlns="http://openajax.org/metadata">
+  <author name="Microsoft Corporation" />
+  <title locid="WinJS.Binding.Template_name" type="text/plain">Template</title>
+  <description locid="WinJS.Binding.Template" type="text/plain">Provides a reusable declarative binding element.</description>
+  <icons>
+    <icon src="base_winjs.ui.template.12x12.png" />
+    <icon src="base_winjs.ui.template.16x16.png" />
+  </icons>
+  <properties>
+    <property name="bindingInitializer" datatype="Function" required="false">
+      <description locid="WinJS.Binding.Template.bindingInitializer" type="text/plain">If specified this function is used as the default initializer for any data bindings which do not explicitly specify one. The
+ provided function must be marked as supported for processing.</description>
+    </property>
+    <property name="debugBreakOnRender" datatype="Boolean" required="false">
+      <description locid="WinJS.Binding.Template.debugBreakOnRender" type="text/plain">Indicates whether a templates should break in the debugger on first render</description>
+    </property>
+    <property name="disableOptimizedProcessing" datatype="Boolean" required="false">
+      <description locid="WinJS.Binding.Template.disableOptimizedProcessing" type="text/plain">Set this property to true to resotre classic template processing and data binding and disable template compilation.</description>
+    </property>
+    <property name="element" datatype="HTMLElement" required="false" hidden="true">
+      <description locid="WinJS.Binding.Template.element" type="text/plain">Gets the DOM element that is used as the template.</description>
+    </property>
+    <property name="extractChild" datatype="Boolean" required="false">
+      <description locid="WinJS.Binding.Template.extractChild" type="text/plain">Return the first element child of the template instead of a wrapper element hosting all the template content.</description>
+    </property>
+    <property name="processTimeout" datatype="Number" isInteger="true" required="false">
+      <description locid="WinJS.Binding.Template.processTimeout" type="text/plain">Number of milliseconds to delay instantiating declarative controls. Zero (0) will result in no delay, any negative number
+ will result in a setImmediate delay, any positive number will be treated as the number of milliseconds.</description>
+    </property>
+    <property name="isDeclarativeControlContainer" required="false" />
+    <property name="render" required="false" />
+  </properties>
+  <content><![CDATA[<div data-win-control="WinJS.Binding.Template"><div>Place content here</div></div>]]></content>
+  <requires>
+    <require type="javascript" src="//Microsoft.Phone.WinJS.2.1/js/base.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="//Microsoft.Phone.WinJS.2.1/css/ui-dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript"><![CDATA[WinJS.UI.processAll();]]></require>
+  </requires>
+  <blend:parts /><locale messages="base_loc_oam.xml" />
+</widget>

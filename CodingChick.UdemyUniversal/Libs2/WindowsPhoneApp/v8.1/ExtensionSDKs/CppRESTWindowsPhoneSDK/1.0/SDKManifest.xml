@@ -1,0 +1,7 @@
+<FileList
+  MinVSVersion = "12.0"
+  DisplayName = "C++ REST Extension SDK for Windows Phone 8.1"
+  MinToolsVersion = "4.0"
+  AppliesTo = "VisualC">  
+</FileList>
+

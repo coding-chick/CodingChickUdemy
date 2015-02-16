@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Microsoft.WinJS.2.0/js/ui/WinJS.UI.AppBar" name="WinJS.UI.AppBar" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="true" xmlns="http://openajax.org/metadata">
+  <author name="Microsoft Corporation" />
+  <description locid="WinJS.UI.AppBar" type="text/plain">Represents an application toolbar for display commands.</description>
+  <icons>
+    <icon src="ui_winjs.ui.appbar.12x12.png" />
+    <icon src="ui_winjs.ui.appbar.16x16.png" />
+  </icons>
+  <properties>
+    <property name="placement" datatype="WinJS.UI.AppBar.placement" required="false">
+      <description locid="WinJS.UI.AppBar.placement" type="text/plain">The placement of the AppBar on the display.  Values are "top" or "bottom".</description>
+    </property>
+    <property name="layout" datatype="WinJS.UI.AppBar.layout" required="false">
+      <description locid="WinJS.UI.AppBar.layout" type="text/plain">Gets or sets the layout of the AppBar contents to either "commands" or "custom".</description>
+    </property>
+    <property name="sticky" datatype="Boolean" required="false" blend:isAdvanced="true">
+      <description locid="WinJS.UI.AppBar.sticky" type="text/plain">Gets or sets value that indicates whether the AppBar is sticky.
+ This value is true if the AppBar is sticky; otherwise, it's false.</description>
+    </property>
+    <property name="commands" datatype="Array" required="false" blend:isAdvanced="true">
+      <description locid="WinJS.UI.AppBar.commands" type="text/plain">Sets the commands for the AppBar. This property accepts an array of AppBarCommand objects.</description>
+    </property>
+  </properties>
+  <content><![CDATA[<div data-win-control="WinJS.UI.AppBar">
+ <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'',label:'example',icon:'back',type:'button',onclick:null,section:'global'}"></button>
+ </div>]]></content>
+  <requires>
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/base.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="//Microsoft.WinJS.2.0/css/ui-dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript"><![CDATA[WinJS.UI.processAll();]]></require>
+  </requires>
+  <blend:parts>
+    <part name="appbar" class="win-commandlayout">
+      <description locid="WinJS.UI.AppBar_part:appbar" type="text/plain">The AppBar control itself.</description>
+    </part>
+    <part name="appBarCustom" class="win-appbar">
+      <description locid="WinJS.UI.AppBar_part:appBarCustom" type="text/plain">Style for a custom layout AppBar.</description>
+    </part>
+  </blend:parts><locale messages="ui_loc_oam.xml" />
+</widget>

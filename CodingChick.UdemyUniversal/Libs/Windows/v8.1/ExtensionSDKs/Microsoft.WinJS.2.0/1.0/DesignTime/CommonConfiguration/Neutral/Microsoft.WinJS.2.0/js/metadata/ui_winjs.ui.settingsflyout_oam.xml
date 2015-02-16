@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<widget version="1.0" spec="1.0" id="ms-appx://Microsoft.WinJS.2.0/js/ui/WinJS.UI.SettingsFlyout" name="WinJS.UI.SettingsFlyout" xmlns:blend="http://schemas.microsoft.com/winjs/Blend/2011" blend:supportsContent="true" xmlns="http://openajax.org/metadata">
+  <author name="Microsoft Corporation" />
+  <title locid="WinJS.UI.SettingsFlyout_name" type="text/plain">Settings Flyout</title>
+  <description locid="WinJS.UI.SettingsFlyout" type="text/plain">Provides users with fast, in-context access to settings that affect the current app.</description>
+  <blend:compatibleWiths>
+    <blend:compatibleWith platform="Windows" minVersion="8.0" />
+  </blend:compatibleWiths>
+  <icons>
+    <icon src="ui_winjs.ui.settingsflyout.12x12.png" />
+    <icon src="ui_winjs.ui.settingsflyout.16x16.png" />
+  </icons>
+  <properties>
+    <property name="width" datatype="WinJS.UI.SettingsFlyout.width" required="false">
+      <description locid="WinJS.UI.SettingsFlyout.width" type="text/plain">Width of the SettingsFlyout, "narrow", or "wide".
+ 
+ SettingsFlyout.width may be altered or unavailable in future versions. Instead, style the CSS width property on elements with the .win-settingsflyout class.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+    <property name="settingsCommandId" datatype="String" required="false">
+      <description locid="WinJS.UI.SettingsFlyout.settingsCommandId" type="text/plain">Define the settings command Id for the SettingsFlyout control.</description>
+      <blend:compatibleWiths>
+        <blend:compatibleWith platform="Windows" minVersion="8.0" />
+      </blend:compatibleWiths>
+    </property>
+  </properties>
+  <content><![CDATA[<div data-win-control="WinJS.UI.SettingsFlyout">
+ <div class="win-header">
+ <button type="button" onclick="WinJS.UI.SettingsFlyout.show()" class="win-backbutton"></button>
+ <div class="win-label">Custom Settings</div>
+ </div>
+ <div class="win-content">
+ {Your Content Here}
+ </div>
+ </div>]]></content>
+  <requires>
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/base.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript" src="//Microsoft.WinJS.2.0/js/ui.js" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="css" src="//Microsoft.WinJS.2.0/css/ui-dark.css" includeRef="true" p4:distinct="false" xmlns:p4="http://schemas.microsoft.com/winjs/2011" />
+    <require type="javascript"><![CDATA[WinJS.UI.processAll();]]></require>
+  </requires>
+  <blend:parts>
+    <part name="settings" class="win-settingsflyout">
+      <description locid="WinJS.UI.SettingsFlyout_part:settings" type="text/plain">The SettingsFlyout control itself.</description>
+    </part>
+  </blend:parts><locale messages="ui_loc_oam.xml" />
+</widget>

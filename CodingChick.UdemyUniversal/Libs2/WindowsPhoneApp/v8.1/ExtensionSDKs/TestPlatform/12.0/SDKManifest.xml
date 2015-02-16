@@ -1,0 +1,11 @@
+<FileList
+  DisplayName = "Microsoft Visual Studio Test Core"
+  MinVSVersion = "12.0"
+  AppliesTo = "WindowsAppContainer + (CSharp | VB | VisualC)"
+  SupportsMultipleVersion = "Error"
+  MoreInfo = "http://go.microsoft.com/fwlink/?LinkID=242829" >
+  <File Reference = "vstest_executionengine_platformbridge.winmd" Implementation = "vstest_executionengine_platformbridge.dll" />
+  <Registration Type = "vstest_executionengine_platformbridge.ServiceMain" Implementation = "vstest_executionengine_platformbridge.dll" />
+  <Registration Type = "vstest_executionengine_platformbridge.MessageTransmitter" Implementation = "vstest_executionengine_platformbridge.dll" />
+  <Registration Type = "vstest_executionengine_platformbridge.NativeMethods" Implementation = "vstest_executionengine_platformbridge.dll" />
+</FileList>
